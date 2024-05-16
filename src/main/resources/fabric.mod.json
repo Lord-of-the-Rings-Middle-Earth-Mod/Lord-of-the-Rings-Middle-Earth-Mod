@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "lotr",
+	"version": "${version}",
+	"name": "Lord of the Rings Middle Earth",
+	"description": "This is a Lord of the Rings Mod for Minecraft inspired by Mevans work.",
+	"authors": [
+		"Anedhel"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "MIT",
+	"icon": "assets/lotr-middle-earth/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+          "me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthMod"
+		],
+		"client": [
+			"me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthModClient"
+		],
+		"fabric-datagen": [
+			"me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthModDataGenerator"
+		]
+	},
+	"mixins": [
+		"lotr-middle-earth.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
