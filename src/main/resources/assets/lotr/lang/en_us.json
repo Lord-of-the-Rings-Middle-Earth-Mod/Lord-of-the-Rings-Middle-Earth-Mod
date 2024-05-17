@@ -1,0 +1,18 @@
+{
+  "item.lotr.ruby": "Ruby",
+  "item.lotr.raw_ruby": "Raw Ruby",
+
+  "item.lotr.metal_detector": "Metal Detector",
+
+  "block.lotr.ruby_block": "Block of Ruby",
+  "block.lotr.raw_ruby_block": "Block of Raw Ruby",
+
+  "block.lotr.ruby_ore": "Ruby Ore",
+  "block.lotr.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "block.lotr.nether_ruby_ore": "Nether Ruby Ore",
+  "block.lotr.end_stone_ruby_ore": "End Stone Ruby Ore",
+
+  "block.lotr.sound_block": "Sound Block",
+
+  "itemgroup.ruby": "Ruby Group"
+}
