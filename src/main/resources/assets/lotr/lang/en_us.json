@@ -1,8 +1,10 @@
 {
   "item.lotr.ruby": "Ruby",
   "item.lotr.raw_ruby": "Raw Ruby",
+  "item.lotr.coal_briquette": "Coal Briquette",
 
   "item.lotr.metal_detector": "Metal Detector",
+  "item.lotr.tomato": "Tomato",
 
   "block.lotr.ruby_block": "Block of Ruby",
   "block.lotr.raw_ruby_block": "Block of Raw Ruby",
@@ -14,5 +16,7 @@
 
   "block.lotr.sound_block": "Sound Block",
 
-  "itemgroup.ruby": "Ruby Group"
+  "itemgroup.ruby": "Ruby Group",
+
+  "tooltip.lotr.metal_detector.tooltip": "Finds valuables underground."
 }

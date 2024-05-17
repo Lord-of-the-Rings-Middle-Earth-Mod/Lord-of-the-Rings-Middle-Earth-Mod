@@ -1,7 +1,7 @@
-package me.anedhel.lotrmiddleearth.item;
+package me.anedhel.lotr.item;
 
-import me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthMod;
-import me.anedhel.lotrmiddleearth.item.custom.MetalDetectorItem;
+import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
+import me.anedhel.lotr.item.custom.MetalDetectorItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroupEntries;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
@@ -21,6 +21,10 @@ public class ModItems {
 
     public static final Item METAL_DETECTOR = registerItem("metal_detector",
             new MetalDetectorItem(new FabricItemSettings().maxDamage(64)));
+
+    public static final Item TOMATO = registerItem("tomato", new Item(new FabricItemSettings().food(ModFoodComponents.TOMATO)));
+
+    public static final Item COAL_BRIQUETTE = registerItem("coal_briquette", new Item(new FabricItemSettings()));
 
     /**
      * This adds the following Items to the Ingredient Tab in the creative Menu.

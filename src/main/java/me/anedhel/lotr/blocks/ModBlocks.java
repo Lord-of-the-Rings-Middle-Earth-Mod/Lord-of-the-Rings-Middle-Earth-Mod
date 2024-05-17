@@ -1,7 +1,7 @@
-package me.anedhel.lotrmiddleearth.blocks;
+package me.anedhel.lotr.blocks;
 
-import me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthMod;
-import me.anedhel.lotrmiddleearth.blocks.custom.SoundBlock;
+import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
+import me.anedhel.lotr.blocks.custom.SoundBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;

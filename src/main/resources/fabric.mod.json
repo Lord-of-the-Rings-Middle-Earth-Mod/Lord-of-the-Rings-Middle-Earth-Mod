@@ -12,17 +12,17 @@
 		"sources": ""
 	},
 	"license": "MIT",
-	"icon": "assets/lotr-middle-earth/icon.png",
+	"icon": "assets/lotr/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthMod"
+          "me.anedhel.lotr.LordOfTheRingsMiddleEarthMod"
 		],
 		"client": [
-			"me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthModClient"
+			"me.anedhel.lotr.LordOfTheRingsMiddleEarthModClient"
 		],
 		"fabric-datagen": [
-			"me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthModDataGenerator"
+			"me.anedhel.lotr.LordOfTheRingsMiddleEarthModDataGenerator"
 		]
 	},
 	"mixins": [

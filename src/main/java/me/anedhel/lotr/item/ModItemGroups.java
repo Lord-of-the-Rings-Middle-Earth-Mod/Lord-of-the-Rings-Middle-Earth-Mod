@@ -1,7 +1,7 @@
-package me.anedhel.lotrmiddleearth.item;
+package me.anedhel.lotr.item;
 
-import me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthMod;
-import me.anedhel.lotrmiddleearth.blocks.ModBlocks;
+import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
+import me.anedhel.lotr.blocks.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -28,6 +28,9 @@ public class ModItemGroups {
                         entries.add(ModBlocks.END_STONE_RUBY_ORE);
 
                         entries.add(ModItems.METAL_DETECTOR);
+
+                        entries.add(ModItems.TOMATO);
+                        entries.add(ModItems.COAL_BRIQUETTE);
 
                         entries.add(ModBlocks.SOUND_BLOCK);
 
