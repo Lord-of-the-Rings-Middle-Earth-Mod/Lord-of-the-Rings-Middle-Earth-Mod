@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "R": {
+      "item": "lotr:raw_ruby"
+    },
+    "S": {
+      "item": "minecraft:stone"
+    }
+  },
+  "pattern": [
+    "SRS",
+    "RSR",
+    "SRS"
+  ],
+  "result": {
+    "item": "lotr:ruby_ore"
+  },
+  "show_notification": true
+}

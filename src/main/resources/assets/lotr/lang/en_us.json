@@ -9,6 +9,16 @@
   "block.lotr.ruby_block": "Block of Ruby",
   "block.lotr.raw_ruby_block": "Block of Raw Ruby",
 
+  "block.lotr.ruby_stairs": "Ruby Stairs",
+  "block.lotr.ruby_slab": "Ruby Slab",
+  "block.lotr.ruby_button": "Ruby Button",
+  "block.lotr.ruby_pressure_plate": "Ruby Pressure Plate",
+  "block.lotr.ruby_fence": "Ruby Fence",
+  "block.lotr.ruby_fence_gate": "Ruby Fence Gate",
+  "block.lotr.ruby_wall": "Ruby Wall",
+  "block.lotr.ruby_door": "Ruby Door",
+  "block.lotr.ruby_trapdoor": "Ruby Trapdoor",
+
   "block.lotr.ruby_ore": "Ruby Ore",
   "block.lotr.deepslate_ruby_ore": "Deepslate Ruby Ore",
   "block.lotr.nether_ruby_ore": "Nether Ruby Ore",

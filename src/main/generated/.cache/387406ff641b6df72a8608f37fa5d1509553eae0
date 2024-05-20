@@ -1,0 +1,17 @@
+// 1.20.1	2024-05-17T18:09:09.4795139	Lord of the Rings Middle Earth/Block Loot Tables
+07cef47a823c0e5d250a4707bccc9a5e1d9a5d1d data\lotr\loot_tables\blocks\ruby_fence_gate.json
+b12799326e7d5c9dfa217b4097106f1c02c3a2d0 data\lotr\loot_tables\blocks\sound_block.json
+938fea1b1f281298054a3f318bd131aec24dbf5f data\lotr\loot_tables\blocks\ruby_block.json
+dbc92cc489ecb393395feae6e4521133966485e8 data\lotr\loot_tables\blocks\nether_ruby_ore.json
+b08bf5413d957f3abcadcc8c1d4b3ca32f66aa6c data\lotr\loot_tables\blocks\ruby_slab.json
+8874e7b12b95369ed174bd777cd6bbff6d2aee42 data\lotr\loot_tables\blocks\ruby_ore.json
+98b2e0a13bb89a5b98bd179f91f641acda19a2ec data\lotr\loot_tables\blocks\ruby_button.json
+b6cec5f1f905ce52a8ab5533dc7abbfeff3e8805 data\lotr\loot_tables\blocks\end_stone_ruby_ore.json
+042de027168abff555d199d08bf3b64ef6ed0d2f data\lotr\loot_tables\blocks\ruby_wall.json
+fb43cc2d67795f067b7fed78b865c74840aec002 data\lotr\loot_tables\blocks\ruby_door.json
+e63e8c8c935a266841a3c4f646f18d76fcb85c8f data\lotr\loot_tables\blocks\ruby_fence.json
+7cfd84ff03fecc031a83a36d91d03506d39c2ec4 data\lotr\loot_tables\blocks\ruby_pressure_plate.json
+54b820891af62cc5502e79e254091e58bc036c86 data\lotr\loot_tables\blocks\raw_ruby_block.json
+ae46063f705cd9cc36b6b38b6842f33c727061c4 data\lotr\loot_tables\blocks\ruby_stairs.json
+5cab92bc5e107ad061c53bc36e149575313c1655 data\lotr\loot_tables\blocks\ruby_trapdoor.json
+3b74342c369be1f6dd72a6c35c6e9c99031eea2e data\lotr\loot_tables\blocks\deepslate_ruby_ore.json
