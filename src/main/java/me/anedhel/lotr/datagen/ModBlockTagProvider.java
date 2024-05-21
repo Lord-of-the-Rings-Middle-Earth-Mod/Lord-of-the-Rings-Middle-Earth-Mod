@@ -22,9 +22,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.CHALK_SLAB)
                 .add(ModBlocks.CHALK_WALL)
                 .add(ModBlocks.CHALK_BUTTON)
-                .add(ModBlocks.CHALK_PRESSURE_PLATE);
+                .add(ModBlocks.CHALK_PRESSURE_PLATE)
+                .add(ModBlocks.COBBLED_CHALK)
+                .add(ModBlocks.COBBLED_CHALK_STAIRS)
+                .add(ModBlocks.COBBLED_CHALK_SLAB)
+                .add(ModBlocks.COBBLED_CHALK_WALL)
+                .add(ModBlocks.COBBLED_CHALK_BUTTON)
+                .add(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
-                .add(ModBlocks.CHALK_WALL);
+                .add(ModBlocks.CHALK_WALL)
+                .add(ModBlocks.COBBLED_CHALK_WALL);
     }
 }

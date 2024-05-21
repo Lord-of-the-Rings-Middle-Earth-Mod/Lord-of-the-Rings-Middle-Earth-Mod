@@ -26,6 +26,20 @@ public class ModBlocks {
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
+    public static final Block COBBLED_CHALK = registerBlock("cobbled_chalk",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block COBBLED_CHALK_STAIRS = registerBlock("cobbled_chalk_stairs",
+            new StairsBlock(ModBlocks.CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+    public static final Block COBBLED_CHALK_SLAB = registerBlock("cobbled_chalk_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+    public static final Block COBBLED_CHALK_WALL = registerBlock("cobbled_chalk_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+    public static final Block COBBLED_CHALK_BUTTON = registerBlock("cobbled_chalk_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block COBBLED_CHALK_PRESSURE_PLATE = registerBlock("cobbled_chalk_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
     private static Block registerBlock (String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK,

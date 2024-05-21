@@ -17,7 +17,13 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CHALK_WALL);
         addDrop(ModBlocks.CHALK_BUTTON);
         addDrop(ModBlocks.CHALK_PRESSURE_PLATE);
-
         addDrop(ModBlocks.CHALK_SLAB, slabDrops(ModBlocks.CHALK_SLAB));
+
+        addDrop(ModBlocks.COBBLED_CHALK);
+        addDrop(ModBlocks.COBBLED_CHALK_STAIRS);
+        addDrop(ModBlocks.COBBLED_CHALK_WALL);
+        addDrop(ModBlocks.COBBLED_CHALK_BUTTON);
+        addDrop(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
+        addDrop(ModBlocks.COBBLED_CHALK_SLAB, slabDrops(ModBlocks.COBBLED_CHALK_SLAB));
     }
 }

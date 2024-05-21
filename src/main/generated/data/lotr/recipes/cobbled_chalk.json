@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:chalk"
+    },
+    "C": {
+      "item": "minecraft:cobblestone"
+    }
+  },
+  "pattern": [
+    "#C",
+    "C#"
+  ],
+  "result": {
+    "count": 4,
+    "item": "lotr:cobbled_chalk"
+  },
+  "show_notification": true
+}

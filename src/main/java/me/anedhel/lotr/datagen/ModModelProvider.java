@@ -14,14 +14,23 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        BlockStateModelGenerator.BlockTexturePool chalkStonePool = blockStateModelGenerator
+        BlockStateModelGenerator.BlockTexturePool chalkPool = blockStateModelGenerator
                 .registerCubeAllModelTexturePool(ModBlocks.CHALK);
 
-        chalkStonePool.stairs(ModBlocks.CHALK_STAIRS);
-        chalkStonePool.slab(ModBlocks.CHALK_SLAB);
-        chalkStonePool.wall(ModBlocks.CHALK_WALL);
-        chalkStonePool.button(ModBlocks.CHALK_BUTTON);
-        chalkStonePool.pressurePlate(ModBlocks.CHALK_PRESSURE_PLATE);
+        chalkPool.stairs(ModBlocks.CHALK_STAIRS);
+        chalkPool.slab(ModBlocks.CHALK_SLAB);
+        chalkPool.wall(ModBlocks.CHALK_WALL);
+        chalkPool.button(ModBlocks.CHALK_BUTTON);
+        chalkPool.pressurePlate(ModBlocks.CHALK_PRESSURE_PLATE);
+
+        BlockStateModelGenerator.BlockTexturePool cobblesChalkPool = blockStateModelGenerator
+                .registerCubeAllModelTexturePool(ModBlocks.COBBLED_CHALK);
+
+        cobblesChalkPool.stairs(ModBlocks.COBBLED_CHALK_STAIRS);
+        cobblesChalkPool.slab(ModBlocks.COBBLED_CHALK_SLAB);
+        cobblesChalkPool.wall(ModBlocks.COBBLED_CHALK_WALL);
+        cobblesChalkPool.button(ModBlocks.COBBLED_CHALK_BUTTON);
+        cobblesChalkPool.pressurePlate(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
     }
 
     @Override
