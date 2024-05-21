@@ -6,5 +6,12 @@
   "block.lotr.chalk_button": "Chalk Button",
   "block.lotr.chalk_pressure_plate": "Chalk Pressure Plate",
 
+  "block.lotr.cobbled_chalk": "Cobbled Chalk",
+  "block.lotr.cobbled_chalk_stairs": "Cobbled Chalk Stairs",
+  "block.lotr.cobbled_chalk_slab": "Cobbled Chalk Slab",
+  "block.lotr.cobbled_chalk_wall": "Cobbled Chalk Wall",
+  "block.lotr.cobbled_chalk_button": "Cobbled Chalk Button",
+  "block.lotr.cobbled_chalk_pressure_plate": "Cobbled Chalk Pressure Plate",
+
   "itemgroup.lotr_blocks": "LotR Blocks"
 }

@@ -6,6 +6,12 @@
     "lotr:chalk_slab",
     "lotr:chalk_wall",
     "lotr:chalk_button",
-    "lotr:chalk_pressure_plate"
+    "lotr:chalk_pressure_plate",
+    "lotr:cobbled_chalk",
+    "lotr:cobbled_chalk_stairs",
+    "lotr:cobbled_chalk_slab",
+    "lotr:cobbled_chalk_wall",
+    "lotr:cobbled_chalk_button",
+    "lotr:cobbled_chalk_pressure_plate"
   ]
 }
