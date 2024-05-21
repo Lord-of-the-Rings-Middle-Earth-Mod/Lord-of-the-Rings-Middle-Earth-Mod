@@ -15,13 +15,13 @@ public class ModItemGroups {
     public static final ItemGroup LOTR_BLOCKS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_blocks"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_blocks"))
-                    .icon(() -> new ItemStack(ModBlocks.CHALK_STONE)).entries(((displayContext, entries) -> {
-                        entries.add(ModBlocks.CHALK_STONE);
-                        entries.add(ModBlocks.CHALK_STONE_STAIRS);
-                        entries.add(ModBlocks.CHALK_STONE_SLAB);
-                        entries.add(ModBlocks.CHALK_STONE_WALL);
-                        entries.add(ModBlocks.CHALK_STONE_BUTTON);
-                        entries.add(ModBlocks.CHALK_STONE_PRESSUREPLATE);
+                    .icon(() -> new ItemStack(ModBlocks.CHALK)).entries(((displayContext, entries) -> {
+                        entries.add(ModBlocks.CHALK);
+                        entries.add(ModBlocks.CHALK_STAIRS);
+                        entries.add(ModBlocks.CHALK_SLAB);
+                        entries.add(ModBlocks.CHALK_WALL);
+                        entries.add(ModBlocks.CHALK_BUTTON);
+                        entries.add(ModBlocks.CHALK_PRESSURE_PLATE);
                     })).build());
 
     public static void registerModItemGroups () {

@@ -12,17 +12,17 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
-    public static final Block CHALK_STONE = registerBlock("chalk_stone",
+    public static final Block CHALK = registerBlock("chalk",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-    public static final Block CHALK_STONE_STAIRS = registerBlock("chalk_stone_stairs",
-            new StairsBlock(ModBlocks.CHALK_STONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-    public static final Block CHALK_STONE_SLAB = registerBlock("chalk_stone_slab",
+    public static final Block CHALK_STAIRS = registerBlock("chalk_stairs",
+            new StairsBlock(ModBlocks.CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+    public static final Block CHALK_SLAB = registerBlock("chalk_slab",
             new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-    public static final Block CHALK_STONE_WALL = registerBlock("chalk_stone_wall",
+    public static final Block CHALK_WALL = registerBlock("chalk_wall",
             new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-    public static final Block CHALK_STONE_BUTTON = registerBlock("chalk_stone_button",
+    public static final Block CHALK_BUTTON = registerBlock("chalk_button",
             new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
-    public static final Block CHALK_STONE_PRESSUREPLATE = registerBlock("chalk_stone_pressure_plate",
+    public static final Block CHALK_PRESSURE_PLATE = registerBlock("chalk_pressure_plate",
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 

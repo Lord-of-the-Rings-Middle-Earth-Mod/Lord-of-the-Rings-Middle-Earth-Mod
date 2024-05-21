@@ -19,15 +19,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
-        //createStairsRecipe(ModBlocks.CHALK_STONE_STAIRS, ModBlocks.CHALK_STONE)
-        //        .criterion(hasItem(ModBlocks.CHALK_STONE), conditionsFromItem(ModBlocks.CHALK_STONE))
-        //        .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.CHALK_STONE_STAIRS)));
-        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_STONE_SLAB, ModBlocks.CHALK_STONE);
-        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_STONE_WALL, ModBlocks.CHALK_STONE);
-        offerPressurePlateRecipe(exporter, ModBlocks.CHALK_STONE_PRESSUREPLATE, ModBlocks.CHALK_STONE);
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_SLAB, ModBlocks.CHALK);
+        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_WALL, ModBlocks.CHALK);
+        offerPressurePlateRecipe(exporter, ModBlocks.CHALK_PRESSURE_PLATE, ModBlocks.CHALK);
 
-        createButtonRecipe(ModBlocks.CHALK_STONE, ModBlocks.CHALK_STONE_BUTTON, 1, RecipeCategory.REDSTONE, exporter);
-        createStairRecipe(ModBlocks.CHALK_STONE, ModBlocks.CHALK_STONE_STAIRS, 4, RecipeCategory.BUILDING_BLOCKS, exporter);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_STAIRS, ModBlocks.CHALK, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_SLAB, ModBlocks.CHALK, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_WALL, ModBlocks.CHALK, 1);
+
+        createButtonRecipe(ModBlocks.CHALK, ModBlocks.CHALK_BUTTON, 1, RecipeCategory.REDSTONE, exporter);
+        createStairRecipe(ModBlocks.CHALK, ModBlocks.CHALK_STAIRS, 4, RecipeCategory.BUILDING_BLOCKS, exporter);
     }
 
     private void createButtonRecipe (Block input, Block output, int count, RecipeCategory category, Consumer<RecipeJsonProvider> exporter) {

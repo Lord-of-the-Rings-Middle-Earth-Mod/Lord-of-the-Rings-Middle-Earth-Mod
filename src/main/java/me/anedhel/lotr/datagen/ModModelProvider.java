@@ -15,13 +15,13 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         BlockStateModelGenerator.BlockTexturePool chalkStonePool = blockStateModelGenerator
-                .registerCubeAllModelTexturePool(ModBlocks.CHALK_STONE);
+                .registerCubeAllModelTexturePool(ModBlocks.CHALK);
 
-        chalkStonePool.stairs(ModBlocks.CHALK_STONE_STAIRS);
-        chalkStonePool.slab(ModBlocks.CHALK_STONE_SLAB);
-        chalkStonePool.wall(ModBlocks.CHALK_STONE_WALL);
-        chalkStonePool.button(ModBlocks.CHALK_STONE_BUTTON);
-        chalkStonePool.pressurePlate(ModBlocks.CHALK_STONE_PRESSUREPLATE);
+        chalkStonePool.stairs(ModBlocks.CHALK_STAIRS);
+        chalkStonePool.slab(ModBlocks.CHALK_SLAB);
+        chalkStonePool.wall(ModBlocks.CHALK_WALL);
+        chalkStonePool.button(ModBlocks.CHALK_BUTTON);
+        chalkStonePool.pressurePlate(ModBlocks.CHALK_PRESSURE_PLATE);
     }
 
     @Override

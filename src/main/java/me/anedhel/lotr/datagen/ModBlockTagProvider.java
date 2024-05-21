@@ -17,14 +17,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.CHALK_STONE)
-                .add(ModBlocks.CHALK_STONE_STAIRS)
-                .add(ModBlocks.CHALK_STONE_SLAB)
-                .add(ModBlocks.CHALK_STONE_WALL)
-                .add(ModBlocks.CHALK_STONE_BUTTON)
-                .add(ModBlocks.CHALK_STONE_PRESSUREPLATE);
+                .add(ModBlocks.CHALK)
+                .add(ModBlocks.CHALK_STAIRS)
+                .add(ModBlocks.CHALK_SLAB)
+                .add(ModBlocks.CHALK_WALL)
+                .add(ModBlocks.CHALK_BUTTON)
+                .add(ModBlocks.CHALK_PRESSURE_PLATE);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
-                .add(ModBlocks.CHALK_STONE_WALL);
+                .add(ModBlocks.CHALK_WALL);
     }
 }

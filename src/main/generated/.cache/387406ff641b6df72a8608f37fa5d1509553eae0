@@ -1,7 +1,7 @@
-// 1.20.1	2024-05-21T11:21:44.9967676	Lord of the Rings Middle Earth/Block Loot Tables
-864b77f192b7425b521a64aeff41832612fedf0a data\lotr\loot_tables\blocks\chalk_stone_stairs.json
-caf3a12e494d41ca07378ecf24a37840c05a4d13 data\lotr\loot_tables\blocks\chalk_stone_pressure_plate.json
-7e3df62a7eb2d5779448cb4497dae919d81f30d7 data\lotr\loot_tables\blocks\chalk_stone_slab.json
-56a287125e364f608acdcc9beb17fed62de1aa97 data\lotr\loot_tables\blocks\chalk_stone_wall.json
-9fee896c09bb94aa2ba8ea5e3ad9dd84d3453647 data\lotr\loot_tables\blocks\chalk_stone_button.json
-ba506c2b1eeb35d967758d5a3cbbe1a50023857f data\lotr\loot_tables\blocks\chalk_stone.json
+// 1.20.1	2024-05-21T14:00:20.6080667	Lord of the Rings Middle Earth/Block Loot Tables
+dd1f8b7a5de73f6c8b8ced3ff6060b2f4c1e7f92 data\lotr\loot_tables\blocks\chalk_button.json
+9190eaa30d06e4d25880dc6ff02ec60aaad0d23a data\lotr\loot_tables\blocks\chalk_pressure_plate.json
+0e5590d62680d535f04154a49d9a173ccb5ccf71 data\lotr\loot_tables\blocks\chalk_wall.json
+65877f412e6fe2fc53d068df5a796d4dc4f2347d data\lotr\loot_tables\blocks\chalk.json
+211e9ea40e24be3b9c8e40bc3934e98a53d1b7ff data\lotr\loot_tables\blocks\chalk_stairs.json
+e83f666251ad345091d159573f288a29de6f5952 data\lotr\loot_tables\blocks\chalk_slab.json
