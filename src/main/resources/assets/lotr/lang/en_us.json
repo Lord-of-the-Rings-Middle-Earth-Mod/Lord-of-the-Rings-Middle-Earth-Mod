@@ -1,0 +1,10 @@
+{
+  "block.lotr.chalk": "Chalk",
+  "block.lotr.chalk_stairs": "Chalk Stairs",
+  "block.lotr.chalk_slab": "Chalk Slab",
+  "block.lotr.chalk_wall": "Chalk Wall",
+  "block.lotr.chalk_button": "Chalk Button",
+  "block.lotr.chalk_pressure_plate": "Chalk Pressure Plate",
+
+  "itemgroup.lotr_blocks": "LotR Blocks"
+}

@@ -1,5 +1,8 @@
-package me.anedhel.lotrmiddleearth;
+package me.anedhel.lotr;
 
+import me.anedhel.lotr.blocks.ModBlocks;
+import me.anedhel.lotr.item.ModItemGroups;
+import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -13,7 +16,9 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		LOGGER.info("The Lord of the Rings Mod starts to initialise.");
-
+		ModItemGroups.registerModItemGroups();
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 		LOGGER.info("The Lord of the Rings Mod is loaded.");
 	}
 }

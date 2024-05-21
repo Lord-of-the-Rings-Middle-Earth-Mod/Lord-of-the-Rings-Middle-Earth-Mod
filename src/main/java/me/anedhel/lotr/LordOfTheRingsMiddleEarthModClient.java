@@ -1,4 +1,4 @@
-package me.anedhel.lotrmiddleearth;
+package me.anedhel.lotr;
 
 import net.fabricmc.api.ClientModInitializer;
 
