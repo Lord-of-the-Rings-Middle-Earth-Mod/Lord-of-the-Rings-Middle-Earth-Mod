@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:ruby_helmet",
+    "lotr:ruby_chestplate",
+    "lotr:ruby_leggings",
+    "lotr:ruby_boots"
+  ]
+}
