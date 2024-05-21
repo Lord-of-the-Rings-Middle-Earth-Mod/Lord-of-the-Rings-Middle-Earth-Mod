@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:chalk_stone",
+    "lotr:chalk_stone_stairs",
+    "lotr:chalk_stone_slab",
+    "lotr:chalk_stone_wall",
+    "lotr:chalk_stone_button",
+    "lotr:chalk_stone_pressure_plate"
+  ]
+}

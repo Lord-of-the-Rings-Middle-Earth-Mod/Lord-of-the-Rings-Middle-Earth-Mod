@@ -1,4 +1,4 @@
-package me.anedhel.lotrmiddleearth.mixin;
+package me.anedhel.lotr.mixin;
 
 import net.minecraft.server.MinecraftServer;
 import org.spongepowered.asm.mixin.Mixin;
