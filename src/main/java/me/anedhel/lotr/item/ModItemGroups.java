@@ -19,6 +19,8 @@ public class ModItemGroups {
                         entries.add(ModItems.RAW_RUBY);
                         entries.add(ModItems.RUBY);
 
+                        entries.add(ModItems.RUBY_STAFF);
+
                         entries.add(ModItems.RUBY_SWORD);
                         entries.add(ModItems.RUBY_PICKAXE);
                         entries.add(ModItems.RUBY_AXE);
