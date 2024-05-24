@@ -26,6 +26,15 @@ public class ModBlocks {
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
+    public static final Block CHALK_BRICK = registerBlock("chalk_brick",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block CHALK_BRICK_STAIRS = registerBlock("chalk_brick_stairs",
+            new StairsBlock(ModBlocks.CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+    public static final Block CHALK_BRICK_SLAB = registerBlock("chalk_brick_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+    public static final Block CHALK_BRICK_WALL = registerBlock("chalk_brick_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+
     public static final Block COBBLED_CHALK = registerBlock("cobbled_chalk",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block COBBLED_CHALK_STAIRS = registerBlock("cobbled_chalk_stairs",

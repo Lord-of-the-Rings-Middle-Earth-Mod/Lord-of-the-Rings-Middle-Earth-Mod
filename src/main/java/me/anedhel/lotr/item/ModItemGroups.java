@@ -22,6 +22,10 @@ public class ModItemGroups {
                         entries.add(ModBlocks.CHALK_WALL);
                         entries.add(ModBlocks.CHALK_BUTTON);
                         entries.add(ModBlocks.CHALK_PRESSURE_PLATE);
+                        entries.add(ModBlocks.CHALK_BRICK);
+                        entries.add(ModBlocks.CHALK_BRICK_STAIRS);
+                        entries.add(ModBlocks.CHALK_BRICK_SLAB);
+                        entries.add(ModBlocks.CHALK_BRICK_WALL);
                         entries.add(ModBlocks.COBBLED_CHALK);
                         entries.add(ModBlocks.COBBLED_CHALK_STAIRS);
                         entries.add(ModBlocks.COBBLED_CHALK_SLAB);
