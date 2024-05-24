@@ -12,7 +12,7 @@
 		"sources": ""
 	},
 	"license": "MIT",
-	"icon": "assets/lotr/icon.png",
+	"icon": "assets/lotr/lotr_middle_earth_mod_logo.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
