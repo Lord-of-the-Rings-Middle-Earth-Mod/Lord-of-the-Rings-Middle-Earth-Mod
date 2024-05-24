@@ -23,6 +23,13 @@ public class ModModelProvider extends FabricModelProvider {
         chalkPool.button(ModBlocks.CHALK_BUTTON);
         chalkPool.pressurePlate(ModBlocks.CHALK_PRESSURE_PLATE);
 
+        BlockStateModelGenerator.BlockTexturePool chalkBrickPool = blockStateModelGenerator
+                .registerCubeAllModelTexturePool(ModBlocks.CHALK_BRICK);
+
+        chalkBrickPool.stairs(ModBlocks.CHALK_BRICK_STAIRS);
+        chalkBrickPool.slab(ModBlocks.CHALK_BRICK_SLAB);
+        chalkBrickPool.wall(ModBlocks.CHALK_BRICK_WALL);
+
         BlockStateModelGenerator.BlockTexturePool cobblesChalkPool = blockStateModelGenerator
                 .registerCubeAllModelTexturePool(ModBlocks.COBBLED_CHALK);
 
