@@ -15,7 +15,7 @@ And you can find a list of Contributors [here](CONTRIBUTORS.md).
 ## Where can I get ask questionos
 If you have any questions, the best way to get them answered is to join our [discord](https://discord.com/invite/cQSpXR6bjz) where we have a channel dedicated for questions.
 You can also contact any maintainer on discord.
-Should you not have a discord account and do not want to create one, you can also contact [Anedhel/Moritz](moritz_rohleder+lotrmod@outlook.de) directly,
+Should you not have a discord account and do not want to create one, you can also contact Anedhel/Moritz directly (<moritz_rohleder+lotrmod@outlook.de>),
 however it might not get you a response within short time.
 
 ## Roadmap
