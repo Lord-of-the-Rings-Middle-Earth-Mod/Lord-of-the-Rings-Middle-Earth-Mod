@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:tin_ore",
+    "lotr:raw_tin_block",
+    "lotr:tin_block",
+    "lotr:bronze_block"
+  ]
+}

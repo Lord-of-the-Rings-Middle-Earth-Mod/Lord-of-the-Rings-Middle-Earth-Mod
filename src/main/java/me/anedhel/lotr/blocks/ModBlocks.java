@@ -12,6 +12,15 @@ import net.minecraft.util.Identifier;
 
 public class ModBlocks {
 
+    public static final Block TIN_ORE = registerBlock("tin_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE)));
+    public static final Block TIN_BLOCK = registerBlock("tin_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK)));
+    public static final Block RAW_TIN_BLOCK = registerBlock("raw_tin_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.RAW_COPPER_BLOCK)));
+    public static final Block BRONZE_BLOCK = registerBlock("bronze_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK)));
+
     public static final Block CHALK = registerBlock("chalk",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block CHALK_STAIRS = registerBlock("chalk_stairs",
@@ -48,6 +57,8 @@ public class ModBlocks {
     public static final Block COBBLED_CHALK_PRESSURE_PLATE = registerBlock("cobbled_chalk_pressure_plate",
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
+
 
     private static Block registerBlock (String name, Block block) {
         registerBlockItem(name, block);
