@@ -4,12 +4,18 @@ import me.anedhel.lotr.blocks.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 
+/**
+ * This class is used to add all LootTables the mod provides and edit existing ones.
+ */
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     public ModLootTableProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
     }
 
+    /**
+     * This method is used to add all LootTables
+     */
     @Override
     public void generate() {
         addDrop(ModBlocks.CHALK);

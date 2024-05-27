@@ -6,12 +6,19 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 
+/**
+ * This class is used to generate all models the mod provides.
+ */
 public class ModModelProvider extends FabricModelProvider {
 
     public ModModelProvider(FabricDataOutput output) {
         super(output);
     }
 
+    /**
+     * This Method is used to generate all BlockStateModels
+     * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
+     */
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         BlockStateModelGenerator.BlockTexturePool chalkPool = blockStateModelGenerator
@@ -40,6 +47,10 @@ public class ModModelProvider extends FabricModelProvider {
         cobblesChalkPool.pressurePlate(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
     }
 
+    /**
+     * This Method is used to generate all ItemModels
+     * @param itemModelGenerator an ItemModelGenerator provided by minecraft
+     */
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
 

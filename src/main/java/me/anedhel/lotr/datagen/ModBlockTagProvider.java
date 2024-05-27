@@ -8,12 +8,19 @@ import net.minecraft.registry.tag.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * This class is used to add custom BlockTags and edit existing ones.
+ */
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
     }
 
+    /**
+     * This Method is used to configure existing BlockTags and add new ones.
+     * @param arg This argument is provided by minecraft
+     */
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
