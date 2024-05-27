@@ -16,6 +16,10 @@ public class ModItemGroups {
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_blocks"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_blocks"))
                     .icon(() -> new ItemStack(ModBlocks.CHALK)).entries(((displayContext, entries) -> {
+                        entries.add(ModBlocks.TIN_ORE);
+                        entries.add(ModBlocks.RAW_TIN_BLOCK);
+                        entries.add(ModBlocks.TIN_BLOCK);
+                        entries.add(ModBlocks.BRONZE_BLOCK);
                         entries.add(ModBlocks.CHALK);
                         entries.add(ModBlocks.CHALK_STAIRS);
                         entries.add(ModBlocks.CHALK_SLAB);
@@ -33,6 +37,15 @@ public class ModItemGroups {
                         entries.add(ModBlocks.COBBLED_CHALK_BUTTON);
                         entries.add(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
                     })).build());
+
+    public static final ItemGroup LOTR_INGREDIENTS = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_ingredients"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_ingredients"))
+                    .icon(() -> new ItemStack(ModItems.TIN_INGOT)).entries((((displayContext, entries) -> {
+                        entries.add(ModItems.RAW_TIN);
+                        entries.add(ModItems.TIN_INGOT);
+                        entries.add(ModItems.BRONZE_INGOT);
+                    }))).build());
 
     public static void registerModItemGroups () {
         LordOfTheRingsMiddleEarthMod.LOGGER.info("Registering Mod ItemGroups for " + LordOfTheRingsMiddleEarthMod.MOD_ID);

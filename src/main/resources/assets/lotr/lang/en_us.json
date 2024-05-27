@@ -1,4 +1,13 @@
 {
+  "item.lotr.raw_tin": "Raw Tin",
+  "item.lotr.tin_ingot": "Tin Ingot",
+  "item.lotr.bronze_ingot": "Bronze Ingot",
+
+  "block.lotr.tin_ore": "Tin Ore",
+  "block.lotr.tin_block": "Block of Tin",
+  "block.lotr.raw_tin_block": "Block of Raw Tin",
+  "block.lotr.bronze_block": "Block of Bronze",
+
   "block.lotr.chalk": "Chalk",
   "block.lotr.chalk_stairs": "Chalk Stairs",
   "block.lotr.chalk_slab": "Chalk Slab",
@@ -20,5 +29,6 @@
   "block.lotr.cobbled_chalk_button": "Cobbled Chalk Button",
   "block.lotr.cobbled_chalk_pressure_plate": "Cobbled Chalk Pressure Plate",
 
-  "itemgroup.lotr_blocks": "LotR Blocks"
+  "itemgroup.lotr_blocks": "LotR Blocks",
+  "itemgroup.lotr_ingredients": "LotR Ingredients"
 }
