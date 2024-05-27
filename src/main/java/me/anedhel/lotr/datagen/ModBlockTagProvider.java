@@ -39,7 +39,17 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.COBBLED_CHALK_SLAB)
                 .add(ModBlocks.COBBLED_CHALK_WALL)
                 .add(ModBlocks.COBBLED_CHALK_BUTTON)
-                .add(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
+                .add(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE)
+                .add(ModBlocks.TIN_ORE)
+                .add(ModBlocks.RAW_TIN_BLOCK)
+                .add(ModBlocks.TIN_BLOCK)
+                .add(ModBlocks.BRONZE_BLOCK);
+
+        getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
+                .add(ModBlocks.TIN_ORE)
+                .add(ModBlocks.RAW_TIN_BLOCK)
+                .add(ModBlocks.TIN_BLOCK)
+                .add(ModBlocks.BRONZE_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(ModBlocks.CHALK_WALL)

@@ -16,6 +16,10 @@
     "lotr:cobbled_chalk_slab",
     "lotr:cobbled_chalk_wall",
     "lotr:cobbled_chalk_button",
-    "lotr:cobbled_chalk_pressure_plate"
+    "lotr:cobbled_chalk_pressure_plate",
+    "lotr:tin_ore",
+    "lotr:raw_tin_block",
+    "lotr:tin_block",
+    "lotr:bronze_block"
   ]
 }

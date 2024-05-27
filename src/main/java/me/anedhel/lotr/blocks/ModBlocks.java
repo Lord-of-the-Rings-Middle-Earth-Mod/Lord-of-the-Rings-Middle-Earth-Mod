@@ -15,6 +15,15 @@ import net.minecraft.util.Identifier;
  */
 public class ModBlocks {
 
+    public static final Block TIN_ORE = registerBlock("tin_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE)));
+    public static final Block TIN_BLOCK = registerBlock("tin_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK)));
+    public static final Block RAW_TIN_BLOCK = registerBlock("raw_tin_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.RAW_COPPER_BLOCK)));
+    public static final Block BRONZE_BLOCK = registerBlock("bronze_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK)));
+
     public static final Block CHALK = registerBlock("chalk",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block CHALK_STAIRS = registerBlock("chalk_stairs",
@@ -52,12 +61,14 @@ public class ModBlocks {
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
+
     /**
      * This Method is used to register a Block with minecraft and also register the Item for the block
      * @param name the name of the Block
      * @param block the Block to be registered
      * @return The Block after it has been registered
      */
+
     private static Block registerBlock (String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK,
