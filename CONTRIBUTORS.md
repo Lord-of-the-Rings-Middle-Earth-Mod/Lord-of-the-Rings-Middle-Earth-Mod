@@ -11,7 +11,9 @@ Special thanks go to following contributors for their contributions.
 
 ## Conributors
 ### Code
-
+- Anedhel/Moritz Rohleder
 ### Art (Textures, Models, etc.)
-
+- bakbar
+- Ano_Jedt
+- SilverElb
 ### Translations

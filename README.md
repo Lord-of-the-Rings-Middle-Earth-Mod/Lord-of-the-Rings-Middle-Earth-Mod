@@ -19,3 +19,4 @@ Should you not have a discord account and do not want to create one, you can als
 however it might not get you a response within short time.
 
 ## Roadmap
+*The Roadmap is yet to be created, but the goals for Release 1.0 are almost set*

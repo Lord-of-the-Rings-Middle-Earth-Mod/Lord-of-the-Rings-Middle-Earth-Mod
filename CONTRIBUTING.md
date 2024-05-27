@@ -22,3 +22,15 @@ look for issues with the tag *Good first issue* those are small and meant for ne
 
 ## Coding Guidelines
 *Coding Guidelines still need to be written down, but they will be looked for during Pull Requests and you will get Feedback there.*
+
+What is to be considered are the following points:
+- Proper Commenting
+  - JavaDoc at every Class describing shortly what the class is used for
+    - Exceptions are the Main Classes: LordOfTheRingsMiddleEarthMod, LordOfTheRingsMiddleEarthModClient, LordOfTheRingsMiddleEarthModDataGenerator
+  - JavaDoc at every Method describing shortly what the method is used for, as well as listing parameters and output 
+    - Exceptions are Constructors, Getter, Setter, ToString, Equals and Hash Methods
+- Versioning is done using SemanticVersioning as described [here](https://semver.org/).
+- Releases are done by maintainers only
+- Every Change needs a Pull-Request(PR), only maintainers can approve PRs
+- Sun Coding Convention for Java is to be used
+- Every Issue has a branch
