@@ -9,12 +9,19 @@ import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.ArmorItem;
 
+/**
+ * This class is used to generate all models the mod provides.
+ */
 public class ModModelProvider extends FabricModelProvider {
 
     public ModModelProvider(FabricDataOutput output) {
         super(output);
     }
 
+    /**
+     * This Method is used to generate all BlockStateModels
+     * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
+     */
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TIN_ORE);
@@ -48,6 +55,10 @@ public class ModModelProvider extends FabricModelProvider {
         cobblesChalkPool.pressurePlate(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
     }
 
+    /**
+     * This Method is used to generate all ItemModels
+     * @param itemModelGenerator an ItemModelGenerator provided by minecraft
+     */
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.RAW_TIN, Models.GENERATED);

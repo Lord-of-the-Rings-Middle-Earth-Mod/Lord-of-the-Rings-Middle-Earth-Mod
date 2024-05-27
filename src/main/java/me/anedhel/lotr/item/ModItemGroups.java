@@ -10,6 +10,9 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+/**
+ * This class is used to manage all ItemGroups the Mod uses and adds
+ */
 public class ModItemGroups {
 
     public static final ItemGroup LOTR_BLOCKS = Registry.register(Registries.ITEM_GROUP,
@@ -68,6 +71,9 @@ public class ModItemGroups {
                         entries.add(ModItems.BRONZE_BOOTS);
                     }).build());
 
+    /**
+     * This Method is run on startup and informs that ItemGroups are being registered.
+     */
     public static void registerModItemGroups () {
         LordOfTheRingsMiddleEarthMod.LOGGER.info("Registering Mod ItemGroups for " + LordOfTheRingsMiddleEarthMod.MOD_ID);
     }

@@ -17,6 +17,9 @@ import net.minecraft.util.Identifier;
 import java.util.List;
 import java.util.function.Consumer;
 
+/**
+ * This class is used to register all crafting recipes the mod provides.
+ */
 public class ModRecipeProvider extends FabricRecipeProvider {
 
     private static final List<ItemConvertible> TIN_SMELTABLES = List.of(ModItems.RAW_TIN, ModBlocks.TIN_ORE);
@@ -25,6 +28,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         super(output);
     }
 
+    /**
+     * This method is where all crafting recipes are added via code.
+     * @param exporter A RecipeJsonProvider, which is provided by minecraft
+     */
     @Override
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         offerSmelting(exporter, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 200, "tin");
@@ -99,6 +106,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         createStairRecipe(ModBlocks.COBBLED_CHALK, ModBlocks.COBBLED_CHALK_STAIRS, exporter);
     }
 
+    /**
+     * This Method creates a BrickRecipe for the given input-stone which will be turned into 4 of the given output-stone
+     * @param input a blank stone type
+     * @param output the brick of the blank stone type
+     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
+     */
     private void createBricksRecipe (Block input, Block output, Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4)
                 .pattern("##")
@@ -108,6 +121,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(output)));
     }
 
+    /**
+     * This Method creates a Crafting Recipe, that uses 2 input-stone and 2 cobble to create 4 output-cobbled-stone
+     * @param input a blank stone type
+     * @param output the cobbled variant of the blank stone type
+     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
+     */
     private void createCobbledStoneTypeRecipe (Block input, Block output, Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4)
                 .pattern("#C")
@@ -119,6 +138,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(output)));
     }
 
+    /**
+     * This Method creates a ButtonRecipe for the given input stone, which will be turned into 1 button.
+     * @param input a blank stone type
+     * @param output the button of the blank stone type
+     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
+     */
     private void createButtonRecipe (Block input, Block output, Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, output, 1)
                 .pattern(" # ")
@@ -127,6 +152,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, new Identifier(getRecipeName(output)));
     }
 
+    /**
+     * This Method creates a StairRecipe for the given input block.
+     * @param input a base block (stone, planks, etc.)
+     * @param output the stairs of the input
+     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
+     */
     private void createStairRecipe (Block input, Block output, Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4)
                 .pattern("#  ")

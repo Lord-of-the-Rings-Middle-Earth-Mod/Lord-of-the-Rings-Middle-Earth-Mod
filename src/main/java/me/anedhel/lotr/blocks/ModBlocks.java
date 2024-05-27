@@ -10,6 +10,9 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+/**
+ * This class is used to register all Custom Blocks.
+ */
 public class ModBlocks {
 
     public static final Block TIN_ORE = registerBlock("tin_ore",
@@ -59,6 +62,12 @@ public class ModBlocks {
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
 
+    /**
+     * This Method is used to register a Block with minecraft and also register the Item for the block
+     * @param name the name of the Block
+     * @param block the Block to be registered
+     * @return The Block after it has been registered
+     */
 
     private static Block registerBlock (String name, Block block) {
         registerBlockItem(name, block);
@@ -67,12 +76,21 @@ public class ModBlocks {
                 block);
     }
 
+    /**
+     * This Method is used to register a Block Item with minecraft
+     * @param name The name of the Block
+     * @param block The Block to be registered as Item
+     * @return The BlockItem after it has been registered
+     */
     private static Item registerBlockItem (String name, Block block) {
         return Registry.register(Registries.ITEM,
                 new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
     }
 
+    /**
+     * This Method is run on startup and informs that Blocks are being registered.
+     */
     public static void registerModBlocks () {
         LordOfTheRingsMiddleEarthMod.LOGGER.info("Registering Mod Blocks for " + LordOfTheRingsMiddleEarthMod.MOD_ID);
     }

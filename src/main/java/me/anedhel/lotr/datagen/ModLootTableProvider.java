@@ -16,12 +16,18 @@ import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
+/**
+ * This class is used to add all LootTables the mod provides and edit existing ones.
+ */
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     public ModLootTableProvider(FabricDataOutput dataOutput) {
         super(dataOutput);
     }
 
+    /**
+     * This method is used to add all LootTables
+     */
     @Override
     public void generate() {
         addDrop(ModBlocks.TIN_ORE, oreDrops(ModBlocks.TIN_ORE, ModItems.RAW_TIN, UniformLootNumberProvider

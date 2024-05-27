@@ -3,16 +3,16 @@
 	"id": "lotr",
 	"version": "${version}",
 	"name": "Lord of the Rings Middle Earth",
-	"description": "This is a Lord of the Rings Mod for Minecraft inspired by Mevans work.",
+	"description": "The *Lord of the Rings Middle Earth Mod* (*LotR ME Mod* in short) is a mod that aims to bring the world of J.R.R. Tolkiens Books into Minecraft.",
 	"authors": [
 		"Anedhel"
 	],
 	"contact": {
 		"homepage": "",
-		"sources": ""
+		"sources": "https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod"
 	},
 	"license": "MIT",
-	"icon": "assets/lotr/icon.png",
+	"icon": "assets/lotr/lotr_middle_earth_mod_logo.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
