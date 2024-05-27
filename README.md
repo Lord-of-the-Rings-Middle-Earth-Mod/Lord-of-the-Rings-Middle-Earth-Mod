@@ -8,7 +8,7 @@ Should you wish to make a suggestion or report a bug, please use the discord or 
 
 ## Maintainers and Contributors
 The *LotR ME Mod* has the following Maintainers:
-- Anedhel/Moritz
+- Anedhel/Moritz (Lead Maintainer)
 
 And you can find a list of Contributors [here](CONTRIBUTORS.md).
 
