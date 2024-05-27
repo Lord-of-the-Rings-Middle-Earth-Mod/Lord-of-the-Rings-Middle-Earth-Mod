@@ -34,3 +34,5 @@ What is to be considered are the following points:
 - Every Change needs a Pull-Request(PR), only maintainers can approve PRs
 - Sun Coding Convention for Java is to be used
 - Every Issue has a branch
+- Any feature noticeable for the players should be listed in the changelog before creating a pull request
+- Before a release, the changelog should always be up-to-date
