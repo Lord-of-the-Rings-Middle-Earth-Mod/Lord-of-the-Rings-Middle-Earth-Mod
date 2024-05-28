@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:chalk_wall",
+    "lotr:cobbled_chalk_wall",
+    "lotr:chalk_brick_wall",
+    "lotr:cobbled_andesite_wall",
+    "lotr:andesite_brick_wall"
+  ]
+}

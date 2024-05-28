@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "lotr:cobbled_andesite"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "lotr:cobbled_andesite_pressure_plate"
+  },
+  "show_notification": true
+}
