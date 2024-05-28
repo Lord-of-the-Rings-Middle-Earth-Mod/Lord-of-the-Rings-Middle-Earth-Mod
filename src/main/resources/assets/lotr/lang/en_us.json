@@ -24,6 +24,21 @@
   "item.lotr.bronze_leggings": "Bronze Leggings",
   "item.lotr.bronze_boots": "Bronze Boots",
 
+  "block.lotr.andesite_button": "Andesite Button",
+  "block.lotr.andesite_pressure_plate": "Andesite Pressure Plate",
+
+  "block.lotr.cobbled_andesite": "Cobbled Andesite",
+  "block.lotr.cobbled_andesite_stairs": "Cobbled Andesite Stairs",
+  "block.lotr.cobbled_andesite_slab": "Cobbled Andesite Slab",
+  "block.lotr.cobbled_andesite_wall": "Cobbled Andesite Wall",
+  "block.lotr.cobbled_andesite_button": "Cobbled Andesite Button",
+  "block.lotr.cobbled_andesite_pressure_plate": "Cobbled Andesite Pressure Plate",
+
+  "block.lotr.andesite_brick": "Andesite Brick",
+  "block.lotr.andesite_brick_stairs": "Andesite Brick Stairs",
+  "block.lotr.andesite_brick_slab": "Andesite Brick Slab",
+  "block.lotr.andesite_brick_wall": "Andesite Brick Wall",
+
   "block.lotr.chalk": "Chalk",
   "block.lotr.chalk_stairs": "Chalk Stairs",
   "block.lotr.chalk_slab": "Chalk Slab",

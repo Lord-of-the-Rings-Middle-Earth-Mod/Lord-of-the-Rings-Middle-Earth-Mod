@@ -1,7 +1,7 @@
 package me.anedhel.lotr.item;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
-import me.anedhel.lotr.blocks.ModBlocks;
+import me.anedhel.lotr.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -23,6 +23,18 @@ public class ModItemGroups {
                         entries.add(ModBlocks.RAW_TIN_BLOCK);
                         entries.add(ModBlocks.TIN_BLOCK);
                         entries.add(ModBlocks.BRONZE_BLOCK);
+                        entries.add(ModBlocks.ANDESITE_BUTTON);
+                        entries.add(ModBlocks.ANDESITE_PRESSURE_PLATE);
+                        entries.add(ModBlocks.COBBLED_ANDESITE);
+                        entries.add(ModBlocks.COBBLED_ANDESITE_STAIRS);
+                        entries.add(ModBlocks.COBBLED_ANDESITE_SLAB);
+                        entries.add(ModBlocks.COBBLED_ANDESITE_WALL);
+                        entries.add(ModBlocks.COBBLED_ANDESITE_BUTTON);
+                        entries.add(ModBlocks.COBBLED_ANDESITE_PRESSURE_PLATE);
+                        entries.add(ModBlocks.ANDESITE_BRICK);
+                        entries.add(ModBlocks.ANDESITE_BRICK_STAIRS);
+                        entries.add(ModBlocks.ANDESITE_BRICK_SLAB);
+                        entries.add(ModBlocks.ANDESITE_BRICK_WALL);
                         entries.add(ModBlocks.CHALK);
                         entries.add(ModBlocks.CHALK_STAIRS);
                         entries.add(ModBlocks.CHALK_SLAB);

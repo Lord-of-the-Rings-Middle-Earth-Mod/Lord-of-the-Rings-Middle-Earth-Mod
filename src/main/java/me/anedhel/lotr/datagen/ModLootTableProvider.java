@@ -1,6 +1,6 @@
 package me.anedhel.lotr.datagen;
 
-import me.anedhel.lotr.blocks.ModBlocks;
+import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -36,6 +36,21 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.RAW_TIN_BLOCK);
         addDrop(ModBlocks.TIN_BLOCK);
         addDrop(ModBlocks.BRONZE_BLOCK);
+
+        addDrop(ModBlocks.ANDESITE_BUTTON);
+        addDrop(ModBlocks.ANDESITE_PRESSURE_PLATE);
+
+        addDrop(ModBlocks.COBBLED_ANDESITE);
+        addDrop(ModBlocks.COBBLED_ANDESITE_STAIRS);
+        addDrop(ModBlocks.COBBLED_ANDESITE_WALL);
+        addDrop(ModBlocks.COBBLED_ANDESITE_BUTTON);
+        addDrop(ModBlocks.COBBLED_ANDESITE_PRESSURE_PLATE);
+        addDrop(ModBlocks.COBBLED_ANDESITE_SLAB, slabDrops(ModBlocks.COBBLED_ANDESITE_SLAB));
+
+        addDrop(ModBlocks.ANDESITE_BRICK);
+        addDrop(ModBlocks.ANDESITE_BRICK_STAIRS);
+        addDrop(ModBlocks.ANDESITE_BRICK_WALL);
+        addDrop(ModBlocks.ANDESITE_BRICK_SLAB, slabDrops(ModBlocks.ANDESITE_BRICK_SLAB));
 
         addDrop(ModBlocks.CHALK);
         addDrop(ModBlocks.CHALK_STAIRS);

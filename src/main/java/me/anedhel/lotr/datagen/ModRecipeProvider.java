@@ -1,10 +1,11 @@
 package me.anedhel.lotr.datagen;
 
-import me.anedhel.lotr.blocks.ModBlocks;
+import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -59,6 +60,43 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT, RecipeCategory.MISC, ModBlocks.TIN_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_INGOT, RecipeCategory.MISC, ModBlocks.BRONZE_BLOCK);
 
+        /*
+         * Andesite
+         */
+        offerPressurePlateRecipe(exporter, ModBlocks.ANDESITE_PRESSURE_PLATE, Blocks.ANDESITE);
+        createButtonRecipe(Blocks.ANDESITE, ModBlocks.ANDESITE_BUTTON, exporter);
+        /*
+         * Cobbled Andesite
+         */
+        createCobbledStoneTypeRecipe(Blocks.ANDESITE, ModBlocks.COBBLED_ANDESITE, exporter);
+
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_ANDESITE_SLAB, ModBlocks.COBBLED_ANDESITE);
+        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_ANDESITE_WALL, ModBlocks.COBBLED_ANDESITE);
+        offerPressurePlateRecipe(exporter, ModBlocks.COBBLED_ANDESITE_PRESSURE_PLATE, ModBlocks.COBBLED_ANDESITE);
+
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_ANDESITE_STAIRS, ModBlocks.COBBLED_ANDESITE, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_ANDESITE_SLAB, ModBlocks.COBBLED_ANDESITE, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_ANDESITE_WALL, ModBlocks.COBBLED_ANDESITE, 1);
+
+        createButtonRecipe(ModBlocks.COBBLED_ANDESITE, ModBlocks.COBBLED_ANDESITE_BUTTON, exporter);
+        createStairRecipe(ModBlocks.COBBLED_ANDESITE, ModBlocks.COBBLED_ANDESITE_STAIRS, exporter);
+        /*
+         * Andesite Bricks
+         */
+        createBricksRecipe(Blocks.ANDESITE, ModBlocks.ANDESITE_BRICK, exporter);
+
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_SLAB, ModBlocks.ANDESITE_BRICK);
+        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_WALL, ModBlocks.ANDESITE_BRICK);
+
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK, Blocks.ANDESITE, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_STAIRS, Blocks.ANDESITE, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_SLAB, Blocks.ANDESITE, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_WALL, Blocks.ANDESITE, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_STAIRS, ModBlocks.ANDESITE_BRICK, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_SLAB, ModBlocks.ANDESITE_BRICK, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_WALL, ModBlocks.ANDESITE_BRICK, 1);
+
+        createStairRecipe(ModBlocks.ANDESITE_BRICK, ModBlocks.ANDESITE_BRICK_STAIRS, exporter);
         /*
          * Chalk
          */

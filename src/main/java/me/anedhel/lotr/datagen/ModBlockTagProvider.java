@@ -1,6 +1,6 @@
 package me.anedhel.lotr.datagen;
 
-import me.anedhel.lotr.blocks.ModBlocks;
+import me.anedhel.lotr.block.ModBlocks;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.registry.RegistryWrapper;
@@ -40,6 +40,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.COBBLED_CHALK_WALL)
                 .add(ModBlocks.COBBLED_CHALK_BUTTON)
                 .add(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE)
+                .add(ModBlocks.ANDESITE_BUTTON)
+                .add(ModBlocks.ANDESITE_PRESSURE_PLATE)
+                .add(ModBlocks.ANDESITE_BRICK)
+                .add(ModBlocks.ANDESITE_BRICK_STAIRS)
+                .add(ModBlocks.ANDESITE_BRICK_SLAB)
+                .add(ModBlocks.ANDESITE_BRICK_WALL)
+                .add(ModBlocks.COBBLED_ANDESITE)
+                .add(ModBlocks.COBBLED_ANDESITE_STAIRS)
+                .add(ModBlocks.COBBLED_ANDESITE_SLAB)
+                .add(ModBlocks.COBBLED_ANDESITE_WALL)
+                .add(ModBlocks.COBBLED_ANDESITE_BUTTON)
+                .add(ModBlocks.COBBLED_ANDESITE_PRESSURE_PLATE)
                 .add(ModBlocks.TIN_ORE)
                 .add(ModBlocks.RAW_TIN_BLOCK)
                 .add(ModBlocks.TIN_BLOCK)
@@ -53,6 +65,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(ModBlocks.CHALK_WALL)
-                .add(ModBlocks.COBBLED_CHALK_WALL);
+                .add(ModBlocks.COBBLED_CHALK_WALL)
+                .add(ModBlocks.CHALK_BRICK_WALL)
+                .add(ModBlocks.COBBLED_ANDESITE_WALL)
+                .add(ModBlocks.ANDESITE_BRICK_WALL);
     }
 }

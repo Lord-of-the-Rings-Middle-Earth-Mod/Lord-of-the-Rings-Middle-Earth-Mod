@@ -1,4 +1,4 @@
-package me.anedhel.lotr.blocks;
+package me.anedhel.lotr.block;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
@@ -48,19 +48,55 @@ public class ModBlocks {
             new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
 
     public static final Block COBBLED_CHALK = registerBlock("cobbled_chalk",
-            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+            new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
     public static final Block COBBLED_CHALK_STAIRS = registerBlock("cobbled_chalk_stairs",
-            new StairsBlock(ModBlocks.CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+            new StairsBlock(ModBlocks.COBBLED_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
     public static final Block COBBLED_CHALK_SLAB = registerBlock("cobbled_chalk_slab",
-            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
     public static final Block COBBLED_CHALK_WALL = registerBlock("cobbled_chalk_wall",
-            new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
     public static final Block COBBLED_CHALK_BUTTON = registerBlock("cobbled_chalk_button",
             new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
     public static final Block COBBLED_CHALK_PRESSURE_PLATE = registerBlock("cobbled_chalk_pressure_plate",
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
+    public static final Block ANDESITE_BUTTON = registerBlock("andesite_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block ANDESITE_PRESSURE_PLATE = registerBlock("andesite_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
+    //public static final Block POLISHED_ANDESITE_WALL = registerBlock("polished_andesite_wall",
+    //        new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)));
+    //public static final Block POLISHED_ANDESITE_BUTTON = registerBlock("polished_andesite_button",
+    //        new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    //public static final Block POLISHED_ANDESITE_PRESSURE_PLATE = registerBlock("polished_andesite_pressure_plate",
+    //        new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+    //                FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
+    public static final Block ANDESITE_BRICK = registerBlock("andesite_brick",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+    public static final Block ANDESITE_BRICK_STAIRS = registerBlock("andesite_brick_stairs",
+            new StairsBlock(ModBlocks.ANDESITE_BRICK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS)));
+    public static final Block ANDESITE_BRICK_SLAB = registerBlock("andesite_brick_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_SLAB)));
+    public static final Block ANDESITE_BRICK_WALL = registerBlock("andesite_brick_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)));
+
+    public static final Block COBBLED_ANDESITE = registerBlock("cobbled_andesite",
+            new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+    public static final Block COBBLED_ANDESITE_STAIRS = registerBlock("cobbled_andesite_stairs",
+            new StairsBlock(ModBlocks.COBBLED_ANDESITE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
+    public static final Block COBBLED_ANDESITE_SLAB = registerBlock("cobbled_andesite_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
+    public static final Block COBBLED_ANDESITE_WALL = registerBlock("cobbled_andesite_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
+    public static final Block COBBLED_ANDESITE_BUTTON = registerBlock("cobbled_andesite_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block COBBLED_ANDESITE_PRESSURE_PLATE = registerBlock("cobbled_andesite_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
     /**
      * This Method is used to register a Block with minecraft and also register the Item for the block

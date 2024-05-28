@@ -1,9 +1,10 @@
 package me.anedhel.lotr.datagen;
 
-import me.anedhel.lotr.blocks.ModBlocks;
+import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
@@ -28,6 +29,28 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_TIN_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TIN_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BRONZE_BLOCK);
+
+        BlockStateModelGenerator.BlockTexturePool andesitePool = blockStateModelGenerator
+                .registerCubeAllModelTexturePool(Blocks.ANDESITE);
+
+        andesitePool.button(ModBlocks.ANDESITE_BUTTON);
+        andesitePool.pressurePlate(ModBlocks.ANDESITE_PRESSURE_PLATE);
+
+        BlockStateModelGenerator.BlockTexturePool cobbled_andesite_pool = blockStateModelGenerator
+                .registerCubeAllModelTexturePool(ModBlocks.COBBLED_ANDESITE);
+
+        cobbled_andesite_pool.stairs(ModBlocks.COBBLED_ANDESITE_STAIRS);
+        cobbled_andesite_pool.slab(ModBlocks.COBBLED_ANDESITE_SLAB);
+        cobbled_andesite_pool.wall(ModBlocks.COBBLED_ANDESITE_WALL);
+        cobbled_andesite_pool.button(ModBlocks.COBBLED_ANDESITE_BUTTON);
+        cobbled_andesite_pool.pressurePlate(ModBlocks.COBBLED_ANDESITE_PRESSURE_PLATE);
+
+        BlockStateModelGenerator.BlockTexturePool andesiteBrickPool = blockStateModelGenerator
+                .registerCubeAllModelTexturePool(ModBlocks.ANDESITE_BRICK);
+
+        andesiteBrickPool.stairs(ModBlocks.ANDESITE_BRICK_STAIRS);
+        andesiteBrickPool.slab(ModBlocks.ANDESITE_BRICK_SLAB);
+        andesiteBrickPool.wall(ModBlocks.ANDESITE_BRICK_WALL);
 
         BlockStateModelGenerator.BlockTexturePool chalkPool = blockStateModelGenerator
                 .registerCubeAllModelTexturePool(ModBlocks.CHALK);
