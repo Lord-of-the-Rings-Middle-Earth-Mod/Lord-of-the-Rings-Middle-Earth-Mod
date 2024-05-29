@@ -1,6 +1,7 @@
-package me.anedhel.lotr.blocks;
+package me.anedhel.lotr.block;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
+import me.anedhel.lotr.block.custom.AlloyForgeBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -61,6 +62,8 @@ public class ModBlocks {
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
+    public static final Block ALLOY_FORGE = registerBlock("alloy_forge",
+            new AlloyForgeBlock(FabricBlockSettings.copyOf(Blocks.BLAST_FURNACE)));
 
     /**
      * This Method is used to register a Block with minecraft and also register the Item for the block

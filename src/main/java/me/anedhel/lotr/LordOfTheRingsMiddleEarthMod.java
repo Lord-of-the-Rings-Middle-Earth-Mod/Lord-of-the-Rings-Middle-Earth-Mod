@@ -1,6 +1,6 @@
 package me.anedhel.lotr;
 
-import me.anedhel.lotr.blocks.ModBlocks;
+import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.item.ModItemGroups;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.api.ModInitializer;

@@ -1,7 +1,7 @@
 package me.anedhel.lotr.item;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
-import me.anedhel.lotr.blocks.ModBlocks;
+import me.anedhel.lotr.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -40,6 +40,13 @@ public class ModItemGroups {
                         entries.add(ModBlocks.COBBLED_CHALK_BUTTON);
                         entries.add(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
                     }).build());
+
+    public static final ItemGroup LOTR_CRAFTING_STATIONS = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_crafting_stations"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_crafting_stations"))
+                    .icon(() -> new ItemStack(ModBlocks.ALLOY_FORGE)).entries(((displayContext, entries) -> {
+                        entries.add(ModBlocks.ALLOY_FORGE);
+                    })).build());
 
     public static final ItemGroup LOTR_INGREDIENTS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_ingredients"),
