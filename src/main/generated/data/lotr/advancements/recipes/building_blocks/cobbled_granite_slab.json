@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chalk": {
+    "has_cobbled_granite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:chalk"
+              "lotr:cobbled_granite"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chalk_brick_wall_from_chalk_stonecutting"
+        "recipe": "lotr:cobbled_granite_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_chalk",
+      "has_cobbled_granite",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chalk_brick_wall_from_chalk_stonecutting"
+      "lotr:cobbled_granite_slab"
     ]
   },
   "sends_telemetry_event": false

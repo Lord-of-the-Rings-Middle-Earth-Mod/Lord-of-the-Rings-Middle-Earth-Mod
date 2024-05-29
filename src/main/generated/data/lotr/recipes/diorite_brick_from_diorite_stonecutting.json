@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "count": 1,
   "ingredient": {
-    "item": "lotr:chalk"
+    "item": "minecraft:diorite"
   },
-  "result": "lotr:chalk_brick_stairs"
+  "result": "lotr:diorite_brick"
 }

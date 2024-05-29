@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_chalk": {
+    "has_cobbled_diorite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:chalk"
+              "lotr:cobbled_diorite"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:chalk_brick_stairs_from_chalk_stonecutting"
+        "recipe": "minecraft:cobbled_diorite_stairs"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_chalk",
+      "has_cobbled_diorite",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:chalk_brick_stairs_from_chalk_stonecutting"
+      "minecraft:cobbled_diorite_stairs"
     ]
   },
   "sends_telemetry_event": false

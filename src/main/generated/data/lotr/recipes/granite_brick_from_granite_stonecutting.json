@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "count": 1,
   "ingredient": {
-    "item": "lotr:chalk"
+    "item": "minecraft:granite"
   },
-  "result": "lotr:chalk_brick_wall"
+  "result": "lotr:granite_brick"
 }
