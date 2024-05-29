@@ -1,11 +1,13 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -60,88 +62,68 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT, RecipeCategory.MISC, ModBlocks.TIN_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_INGOT, RecipeCategory.MISC, ModBlocks.BRONZE_BLOCK);
 
-        /*
-         * Andesite
-         */
-        offerPressurePlateRecipe(exporter, ModBlocks.ANDESITE_PRESSURE_PLATE, Blocks.ANDESITE);
-        createButtonRecipe(Blocks.ANDESITE, ModBlocks.ANDESITE_BUTTON, exporter);
-        /*
-         * Cobbled Andesite
-         */
-        createCobbledStoneTypeRecipe(Blocks.ANDESITE, ModBlocks.COBBLED_ANDESITE, exporter);
+        createModStoneTypeRecipes(ModStoneType.ANDESITE, exporter, ModBlocks.COBBLED_ANDESITE, ModBlocks.ANDESITE_BRICK);
+        createModStoneTypeRecipes(ModStoneType.POLISHED_ANDESITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.COBBLED_ANDESITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.ANDESITE_BRICK, exporter, null, null);
 
-        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_ANDESITE_SLAB, ModBlocks.COBBLED_ANDESITE);
-        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_ANDESITE_WALL, ModBlocks.COBBLED_ANDESITE);
-        offerPressurePlateRecipe(exporter, ModBlocks.COBBLED_ANDESITE_PRESSURE_PLATE, ModBlocks.COBBLED_ANDESITE);
+        createModStoneTypeRecipes(ModStoneType.DIORITE, exporter, ModBlocks.COBBLED_DIORITE, ModBlocks.DIORITE_BRICK);
+        createModStoneTypeRecipes(ModStoneType.POLISHED_DIORITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.COBBLED_DIORITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.DIORITE_BRICK, exporter, null, null);
 
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_ANDESITE_STAIRS, ModBlocks.COBBLED_ANDESITE, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_ANDESITE_SLAB, ModBlocks.COBBLED_ANDESITE, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_ANDESITE_WALL, ModBlocks.COBBLED_ANDESITE, 1);
+        createModStoneTypeRecipes(ModStoneType.GRANITE, exporter, ModBlocks.COBBLED_GRANITE, ModBlocks.GRANITE_BRICK);
+        createModStoneTypeRecipes(ModStoneType.POLISHED_GRANITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.COBBLED_GRANITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.GRANITE_BRICK, exporter, null, null);
 
-        createButtonRecipe(ModBlocks.COBBLED_ANDESITE, ModBlocks.COBBLED_ANDESITE_BUTTON, exporter);
-        createStairRecipe(ModBlocks.COBBLED_ANDESITE, ModBlocks.COBBLED_ANDESITE_STAIRS, exporter);
-        /*
-         * Andesite Bricks
-         */
-        createBricksRecipe(Blocks.ANDESITE, ModBlocks.ANDESITE_BRICK, exporter);
+        createModStoneTypeRecipes(ModStoneType.CHALK, exporter, ModBlocks.COBBLED_CHALK, ModBlocks.CHALK_BRICK);
+        createModStoneTypeRecipes(ModStoneType.COBBLED_CHALK, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.CHALK_BRICK, exporter, null, null);
+    }
 
-        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_SLAB, ModBlocks.ANDESITE_BRICK);
-        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_WALL, ModBlocks.ANDESITE_BRICK);
+    /**
+     * This Method is used to create all crafting recipes using the given ModStoneType
+     * @param stoneType The ModStoneType, for which all Recipes are to be created
+     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
+     * @param cobbledBlock The cobbled version of the stoneType, null if there is none
+     * @param brickBlock The bricks of the stoneType, null if there is none
+     */
+    private void createModStoneTypeRecipes (ModStoneType stoneType, Consumer<RecipeJsonProvider> exporter, Block cobbledBlock, Block brickBlock) {
+        Block baseBlock = stoneType.getBaseBlock();
+        Block stairBlock = stoneType.getStairBlock();
+        Block slabBlock = stoneType.getSlabBlock();
+        Block wallBlock = stoneType.getWallBlock();
+        Block buttonBlock = stoneType.getButtonBlock();
+        Block pressurePlateBlock = stoneType.getPressurePlateBlock();
 
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK, Blocks.ANDESITE, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_STAIRS, Blocks.ANDESITE, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_SLAB, Blocks.ANDESITE, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_WALL, Blocks.ANDESITE, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_STAIRS, ModBlocks.ANDESITE_BRICK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_SLAB, ModBlocks.ANDESITE_BRICK, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.ANDESITE_BRICK_WALL, ModBlocks.ANDESITE_BRICK, 1);
-
-        createStairRecipe(ModBlocks.ANDESITE_BRICK, ModBlocks.ANDESITE_BRICK_STAIRS, exporter);
-        /*
-         * Chalk
-         */
-        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_SLAB, ModBlocks.CHALK);
-        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_WALL, ModBlocks.CHALK);
-        offerPressurePlateRecipe(exporter, ModBlocks.CHALK_PRESSURE_PLATE, ModBlocks.CHALK);
-
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_STAIRS, ModBlocks.CHALK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_SLAB, ModBlocks.CHALK, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_WALL, ModBlocks.CHALK, 1);
-
-        createButtonRecipe(ModBlocks.CHALK, ModBlocks.CHALK_BUTTON, exporter);
-        createStairRecipe(ModBlocks.CHALK, ModBlocks.CHALK_STAIRS, exporter);
-        /*
-         * Chalk Brick
-         */
-        createBricksRecipe(ModBlocks.CHALK, ModBlocks.CHALK_BRICK, exporter);
-
-        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_SLAB, ModBlocks.CHALK_BRICK);
-        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_WALL, ModBlocks.CHALK_BRICK);
-
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK, ModBlocks.CHALK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_STAIRS, ModBlocks.CHALK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_SLAB, ModBlocks.CHALK, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_WALL, ModBlocks.CHALK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_STAIRS, ModBlocks.CHALK_BRICK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_SLAB, ModBlocks.CHALK_BRICK, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_WALL, ModBlocks.CHALK_BRICK, 1);
-
-        createStairRecipe(ModBlocks.CHALK_BRICK, ModBlocks.CHALK_BRICK_STAIRS, exporter);
-        /*
-         * Cobbled Chalk
-         */
-        createCobbledStoneTypeRecipe(ModBlocks.CHALK, ModBlocks.COBBLED_CHALK, exporter);
-
-        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_CHALK_SLAB, ModBlocks.COBBLED_CHALK);
-        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_CHALK_WALL, ModBlocks.COBBLED_CHALK);
-        offerPressurePlateRecipe(exporter, ModBlocks.COBBLED_CHALK_PRESSURE_PLATE, ModBlocks.COBBLED_CHALK);
-
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_CHALK_STAIRS, ModBlocks.COBBLED_CHALK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_CHALK_SLAB, ModBlocks.COBBLED_CHALK, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_CHALK_WALL, ModBlocks.COBBLED_CHALK, 1);
-
-        createButtonRecipe(ModBlocks.COBBLED_CHALK, ModBlocks.COBBLED_CHALK_BUTTON, exporter);
-        createStairRecipe(ModBlocks.COBBLED_CHALK, ModBlocks.COBBLED_CHALK_STAIRS, exporter);
+        if (baseBlock != null) {
+            if (cobbledBlock != null) {
+                createCobbledStoneTypeRecipe(baseBlock, cobbledBlock, exporter);
+            }
+            if (brickBlock != null) {
+                createBricksRecipe(baseBlock, brickBlock, exporter);
+                offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickBlock, baseBlock);
+            }
+            if (stairBlock != null) {
+                createStairRecipe(baseBlock, stairBlock, exporter);
+                offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stairBlock, baseBlock, 1);
+            }
+            if (slabBlock != null) {
+                offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, slabBlock, baseBlock);
+                offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, slabBlock, baseBlock, 2);
+            }
+            if (wallBlock != null) {
+                offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, wallBlock, baseBlock);
+                offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, wallBlock, baseBlock, 1);
+            }
+            if (buttonBlock != null) {
+                createButtonRecipe(baseBlock, buttonBlock, exporter);
+            }
+            if (pressurePlateBlock != null) {
+                offerPressurePlateRecipe(exporter, pressurePlateBlock, baseBlock);
+            }
+        }
     }
 
     /**

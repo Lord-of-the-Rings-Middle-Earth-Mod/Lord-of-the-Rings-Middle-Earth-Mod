@@ -1,11 +1,13 @@
 package me.anedhel.lotr.block;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
+import me.anedhel.lotr.item.ModItemGroups;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -67,13 +69,13 @@ public class ModBlocks {
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
-    //public static final Block POLISHED_ANDESITE_WALL = registerBlock("polished_andesite_wall",
-    //        new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)));
-    //public static final Block POLISHED_ANDESITE_BUTTON = registerBlock("polished_andesite_button",
-    //        new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
-    //public static final Block POLISHED_ANDESITE_PRESSURE_PLATE = registerBlock("polished_andesite_pressure_plate",
-    //        new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-    //                FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+    public static final Block POLISHED_ANDESITE_WALL = registerBlock("polished_andesite_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)));
+    public static final Block POLISHED_ANDESITE_BUTTON = registerBlock("polished_andesite_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block POLISHED_ANDESITE_PRESSURE_PLATE = registerBlock("polished_andesite_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
     public static final Block ANDESITE_BRICK = registerBlock("andesite_brick",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
@@ -95,6 +97,80 @@ public class ModBlocks {
     public static final Block COBBLED_ANDESITE_BUTTON = registerBlock("cobbled_andesite_button",
             new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
     public static final Block COBBLED_ANDESITE_PRESSURE_PLATE = registerBlock("cobbled_andesite_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
+    public static final Block DIORITE_BUTTON = registerBlock("diorite_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block DIORITE_PRESSURE_PLATE = registerBlock("diorite_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
+    public static final Block POLISHED_DIORITE_WALL = registerBlock("polished_diorite_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)));
+    public static final Block POLISHED_DIORITE_BUTTON = registerBlock("polished_diorite_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block POLISHED_DIORITE_PRESSURE_PLATE = registerBlock("polished_diorite_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
+    public static final Block DIORITE_BRICK = registerBlock("diorite_brick",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+    public static final Block DIORITE_BRICK_STAIRS = registerBlock("diorite_brick_stairs",
+            new StairsBlock(ModBlocks.DIORITE_BRICK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS)));
+    public static final Block DIORITE_BRICK_SLAB = registerBlock("diorite_brick_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_SLAB)));
+    public static final Block DIORITE_BRICK_WALL = registerBlock("diorite_brick_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)));
+
+    public static final Block COBBLED_DIORITE = registerBlock("cobbled_diorite",
+            new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+    public static final Block COBBLED_DIORITE_STAIRS = registerBlock("cobbled_diorite_stairs",
+            new StairsBlock(ModBlocks.COBBLED_DIORITE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
+    public static final Block COBBLED_DIORITE_SLAB = registerBlock("cobbled_diorite_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
+    public static final Block COBBLED_DIORITE_WALL = registerBlock("cobbled_diorite_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
+    public static final Block COBBLED_DIORITE_BUTTON = registerBlock("cobbled_diorite_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block COBBLED_DIORITE_PRESSURE_PLATE = registerBlock("cobbled_diorite_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
+    public static final Block GRANITE_BUTTON = registerBlock("granite_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block GRANITE_PRESSURE_PLATE = registerBlock("granite_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
+    public static final Block POLISHED_GRANITE_WALL = registerBlock("polished_granite_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)));
+    public static final Block POLISHED_GRANITE_BUTTON = registerBlock("polished_granite_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block POLISHED_GRANITE_PRESSURE_PLATE = registerBlock("polished_granite_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
+    public static final Block GRANITE_BRICK = registerBlock("granite_brick",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+    public static final Block GRANITE_BRICK_STAIRS = registerBlock("granite_brick_stairs",
+            new StairsBlock(ModBlocks.GRANITE_BRICK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS)));
+    public static final Block GRANITE_BRICK_SLAB = registerBlock("granite_brick_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_SLAB)));
+    public static final Block GRANITE_BRICK_WALL = registerBlock("granite_brick_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)));
+
+    public static final Block COBBLED_GRANITE = registerBlock("cobbled_granite",
+            new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+    public static final Block COBBLED_GRANITE_STAIRS = registerBlock("cobbled_granite_stairs",
+            new StairsBlock(ModBlocks.COBBLED_GRANITE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
+    public static final Block COBBLED_GRANITE_SLAB = registerBlock("cobbled_granite_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
+    public static final Block COBBLED_GRANITE_WALL = registerBlock("cobbled_granite_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
+    public static final Block COBBLED_GRANITE_BUTTON = registerBlock("cobbled_granite_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block COBBLED_GRANITE_PRESSURE_PLATE = registerBlock("cobbled_granite_pressure_plate",
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 

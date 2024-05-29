@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:cobbled_granite"
+  },
+  "result": "lotr:cobbled_granite_wall"
+}

@@ -16,6 +16,8 @@ import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 
+import java.util.List;
+
 /**
  * This class is used to add all LootTables the mod provides and edit existing ones.
  */
@@ -40,6 +42,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ANDESITE_BUTTON);
         addDrop(ModBlocks.ANDESITE_PRESSURE_PLATE);
 
+        addDrop(ModBlocks.POLISHED_ANDESITE_WALL);
+        addDrop(ModBlocks.POLISHED_ANDESITE_BUTTON);
+        addDrop(ModBlocks.POLISHED_ANDESITE_PRESSURE_PLATE);
+
         addDrop(ModBlocks.COBBLED_ANDESITE);
         addDrop(ModBlocks.COBBLED_ANDESITE_STAIRS);
         addDrop(ModBlocks.COBBLED_ANDESITE_WALL);
@@ -51,6 +57,44 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.ANDESITE_BRICK_STAIRS);
         addDrop(ModBlocks.ANDESITE_BRICK_WALL);
         addDrop(ModBlocks.ANDESITE_BRICK_SLAB, slabDrops(ModBlocks.ANDESITE_BRICK_SLAB));
+
+        addDrop(ModBlocks.DIORITE_BUTTON);
+        addDrop(ModBlocks.DIORITE_PRESSURE_PLATE);
+
+        addDrop(ModBlocks.POLISHED_DIORITE_WALL);
+        addDrop(ModBlocks.POLISHED_DIORITE_BUTTON);
+        addDrop(ModBlocks.POLISHED_DIORITE_PRESSURE_PLATE);
+
+        addDrop(ModBlocks.COBBLED_DIORITE);
+        addDrop(ModBlocks.COBBLED_DIORITE_STAIRS);
+        addDrop(ModBlocks.COBBLED_DIORITE_WALL);
+        addDrop(ModBlocks.COBBLED_DIORITE_BUTTON);
+        addDrop(ModBlocks.COBBLED_DIORITE_PRESSURE_PLATE);
+        addDrop(ModBlocks.COBBLED_DIORITE_SLAB, slabDrops(ModBlocks.COBBLED_DIORITE_SLAB));
+
+        addDrop(ModBlocks.DIORITE_BRICK);
+        addDrop(ModBlocks.DIORITE_BRICK_STAIRS);
+        addDrop(ModBlocks.DIORITE_BRICK_WALL);
+        addDrop(ModBlocks.DIORITE_BRICK_SLAB, slabDrops(ModBlocks.DIORITE_BRICK_SLAB));
+
+        addDrop(ModBlocks.GRANITE_BUTTON);
+        addDrop(ModBlocks.GRANITE_PRESSURE_PLATE);
+
+        addDrop(ModBlocks.POLISHED_GRANITE_WALL);
+        addDrop(ModBlocks.POLISHED_GRANITE_BUTTON);
+        addDrop(ModBlocks.POLISHED_GRANITE_PRESSURE_PLATE);
+
+        addDrop(ModBlocks.COBBLED_GRANITE);
+        addDrop(ModBlocks.COBBLED_GRANITE_STAIRS);
+        addDrop(ModBlocks.COBBLED_GRANITE_WALL);
+        addDrop(ModBlocks.COBBLED_GRANITE_BUTTON);
+        addDrop(ModBlocks.COBBLED_GRANITE_PRESSURE_PLATE);
+        addDrop(ModBlocks.COBBLED_GRANITE_SLAB, slabDrops(ModBlocks.COBBLED_GRANITE_SLAB));
+
+        addDrop(ModBlocks.GRANITE_BRICK);
+        addDrop(ModBlocks.GRANITE_BRICK_STAIRS);
+        addDrop(ModBlocks.GRANITE_BRICK_WALL);
+        addDrop(ModBlocks.GRANITE_BRICK_SLAB, slabDrops(ModBlocks.GRANITE_BRICK_SLAB));
 
         addDrop(ModBlocks.CHALK);
         addDrop(ModBlocks.CHALK_STAIRS);

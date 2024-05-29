@@ -27,6 +27,10 @@
   "block.lotr.andesite_button": "Andesite Button",
   "block.lotr.andesite_pressure_plate": "Andesite Pressure Plate",
 
+  "block.lotr.polished_andesite_wall": "Polished Andesite Wall",
+  "block.lotr.polished_andesite_button": "Polished Andesite Button",
+  "block.lotr.polished_andesite_pressure_plate": "Polished Andesite Pressure Plate",
+
   "block.lotr.cobbled_andesite": "Cobbled Andesite",
   "block.lotr.cobbled_andesite_stairs": "Cobbled Andesite Stairs",
   "block.lotr.cobbled_andesite_slab": "Cobbled Andesite Slab",
@@ -38,6 +42,44 @@
   "block.lotr.andesite_brick_stairs": "Andesite Brick Stairs",
   "block.lotr.andesite_brick_slab": "Andesite Brick Slab",
   "block.lotr.andesite_brick_wall": "Andesite Brick Wall",
+
+  "block.lotr.diorite_button": "Diorite Button",
+  "block.lotr.diorite_pressure_plate": "Diorite Pressure Plate",
+
+  "block.lotr.polished_diorite_wall": "Polished Diorite Wall",
+  "block.lotr.polished_diorite_button": "Polished Diorite Button",
+  "block.lotr.polished_diorite_pressure_plate": "Polished Diorite Pressure Plate",
+
+  "block.lotr.cobbled_diorite": "Cobbled Diorite",
+  "block.lotr.cobbled_diorite_stairs": "Cobbled Diorite Stairs",
+  "block.lotr.cobbled_diorite_slab": "Cobbled Diorite Slab",
+  "block.lotr.cobbled_diorite_wall": "Cobbled Diorite Wall",
+  "block.lotr.cobbled_diorite_button": "Cobbled Diorite Button",
+  "block.lotr.cobbled_diorite_pressure_plate": "Cobbled Diorite Pressure Plate",
+
+  "block.lotr.diorite_brick": "Diorite Brick",
+  "block.lotr.diorite_brick_stairs": "Diorite Brick Stairs",
+  "block.lotr.diorite_brick_slab": "Diorite Brick Slab",
+  "block.lotr.diorite_brick_wall": "Diorite Brick Wall",
+
+  "block.lotr.granite_button": "Granite Button",
+  "block.lotr.granite_pressure_plate": "Granite Pressure Plate",
+
+  "block.lotr.polished_granite_wall": "Polished Granite Wall",
+  "block.lotr.polished_granite_button": "Polished Granite Button",
+  "block.lotr.polished_granite_pressure_plate": "Polished Granite Pressure Plate",
+
+  "block.lotr.cobbled_granite": "Cobbled Granite",
+  "block.lotr.cobbled_granite_stairs": "Cobbled Granite Stairs",
+  "block.lotr.cobbled_granite_slab": "Cobbled Granite Slab",
+  "block.lotr.cobbled_granite_wall": "Cobbled Granite Wall",
+  "block.lotr.cobbled_granite_button": "Cobbled Granite Button",
+  "block.lotr.cobbled_granite_pressure_plate": "Cobbled Granite Pressure Plate",
+
+  "block.lotr.granite_brick": "Granite Brick",
+  "block.lotr.granite_brick_stairs": "Granite Brick Stairs",
+  "block.lotr.granite_brick_slab": "Granite Brick Slab",
+  "block.lotr.granite_brick_wall": "Granite Brick Wall",
 
   "block.lotr.chalk": "Chalk",
   "block.lotr.chalk_stairs": "Chalk Stairs",

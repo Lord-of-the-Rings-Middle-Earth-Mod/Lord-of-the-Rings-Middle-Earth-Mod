@@ -1,10 +1,11 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Blocks;
+import net.minecraft.block.Block;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
@@ -30,52 +31,24 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TIN_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BRONZE_BLOCK);
 
-        BlockStateModelGenerator.BlockTexturePool andesitePool = blockStateModelGenerator
-                .registerCubeAllModelTexturePool(Blocks.ANDESITE);
+        generateModStoneTypeModels(ModStoneType.ANDESITE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.POLISHED_ANDESITE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.COBBLED_ANDESITE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.ANDESITE_BRICK, blockStateModelGenerator);
 
-        andesitePool.button(ModBlocks.ANDESITE_BUTTON);
-        andesitePool.pressurePlate(ModBlocks.ANDESITE_PRESSURE_PLATE);
+        generateModStoneTypeModels(ModStoneType.DIORITE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.POLISHED_DIORITE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.COBBLED_DIORITE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.DIORITE_BRICK, blockStateModelGenerator);
 
-        BlockStateModelGenerator.BlockTexturePool cobbled_andesite_pool = blockStateModelGenerator
-                .registerCubeAllModelTexturePool(ModBlocks.COBBLED_ANDESITE);
+        generateModStoneTypeModels(ModStoneType.GRANITE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.POLISHED_GRANITE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.COBBLED_GRANITE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.GRANITE_BRICK, blockStateModelGenerator);
 
-        cobbled_andesite_pool.stairs(ModBlocks.COBBLED_ANDESITE_STAIRS);
-        cobbled_andesite_pool.slab(ModBlocks.COBBLED_ANDESITE_SLAB);
-        cobbled_andesite_pool.wall(ModBlocks.COBBLED_ANDESITE_WALL);
-        cobbled_andesite_pool.button(ModBlocks.COBBLED_ANDESITE_BUTTON);
-        cobbled_andesite_pool.pressurePlate(ModBlocks.COBBLED_ANDESITE_PRESSURE_PLATE);
-
-        BlockStateModelGenerator.BlockTexturePool andesiteBrickPool = blockStateModelGenerator
-                .registerCubeAllModelTexturePool(ModBlocks.ANDESITE_BRICK);
-
-        andesiteBrickPool.stairs(ModBlocks.ANDESITE_BRICK_STAIRS);
-        andesiteBrickPool.slab(ModBlocks.ANDESITE_BRICK_SLAB);
-        andesiteBrickPool.wall(ModBlocks.ANDESITE_BRICK_WALL);
-
-        BlockStateModelGenerator.BlockTexturePool chalkPool = blockStateModelGenerator
-                .registerCubeAllModelTexturePool(ModBlocks.CHALK);
-
-        chalkPool.stairs(ModBlocks.CHALK_STAIRS);
-        chalkPool.slab(ModBlocks.CHALK_SLAB);
-        chalkPool.wall(ModBlocks.CHALK_WALL);
-        chalkPool.button(ModBlocks.CHALK_BUTTON);
-        chalkPool.pressurePlate(ModBlocks.CHALK_PRESSURE_PLATE);
-
-        BlockStateModelGenerator.BlockTexturePool chalkBrickPool = blockStateModelGenerator
-                .registerCubeAllModelTexturePool(ModBlocks.CHALK_BRICK);
-
-        chalkBrickPool.stairs(ModBlocks.CHALK_BRICK_STAIRS);
-        chalkBrickPool.slab(ModBlocks.CHALK_BRICK_SLAB);
-        chalkBrickPool.wall(ModBlocks.CHALK_BRICK_WALL);
-
-        BlockStateModelGenerator.BlockTexturePool cobblesChalkPool = blockStateModelGenerator
-                .registerCubeAllModelTexturePool(ModBlocks.COBBLED_CHALK);
-
-        cobblesChalkPool.stairs(ModBlocks.COBBLED_CHALK_STAIRS);
-        cobblesChalkPool.slab(ModBlocks.COBBLED_CHALK_SLAB);
-        cobblesChalkPool.wall(ModBlocks.COBBLED_CHALK_WALL);
-        cobblesChalkPool.button(ModBlocks.COBBLED_CHALK_BUTTON);
-        cobblesChalkPool.pressurePlate(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
+        generateModStoneTypeModels(ModStoneType.CHALK, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.COBBLED_CHALK, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.CHALK_BRICK, blockStateModelGenerator);
     }
 
     /**
@@ -98,5 +71,40 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_CHESTPLATE);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_LEGGINGS);
         itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_BOOTS);
+    }
+
+    /**
+     * This Method is used to generate all the models for the given stone type.
+     * It only works for blocks completely added by the mod, adding Models for additions made based on vanilla blocks does not work with this method.
+     * @param stoneType The ModStoneType, for which the models should be created
+     * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
+     */
+    private void generateModStoneTypeModels(ModStoneType stoneType, BlockStateModelGenerator blockStateModelGenerator) {
+        Block baseBlock = stoneType.getBaseBlock();
+        Block stairBlock = stoneType.getStairBlock();
+        Block slabBlock = stoneType.getSlabBlock();
+        Block wallBlock = stoneType.getWallBlock();
+        Block buttonBlock = stoneType.getButtonBlock();
+        Block pressurePlateBlock = stoneType.getPressurePlateBlock();
+
+        if (baseBlock != null) {
+            BlockStateModelGenerator.BlockTexturePool stoneTypePool = blockStateModelGenerator
+                    .registerCubeAllModelTexturePool(baseBlock);
+            if (stairBlock != null) {
+                stoneTypePool.stairs(stairBlock);
+            }
+            if (slabBlock != null) {
+                stoneTypePool.slab(slabBlock);
+            }
+            if (wallBlock != null) {
+                stoneTypePool.wall(wallBlock);
+            }
+            if (buttonBlock != null) {
+                stoneTypePool.button(buttonBlock);
+            }
+            if (pressurePlateBlock != null) {
+                stoneTypePool.pressurePlate(pressurePlateBlock);
+            }
+        }
     }
 }
