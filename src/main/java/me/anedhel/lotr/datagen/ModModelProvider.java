@@ -2,6 +2,7 @@ package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModStoneType;
+import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
@@ -10,6 +11,7 @@ import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
 
 /**
  * This class is used to generate all models the mod provides.
@@ -61,16 +63,52 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TIN_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.BRONZE_INGOT, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.BRONZE_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.BRONZE_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.BRONZE_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.BRONZE_SHOVEL, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.BRONZE_HOE, Models.HANDHELD);
+        generateModGearTypeModels(ModGearType.BRONZE, itemModelGenerator);
+    }
 
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_HELMET);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_CHESTPLATE);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_LEGGINGS);
-        itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_BOOTS);
+    /**
+     * This Method is used to generate all the Models for the given GearType
+     * @param gearType The ModGearType the models should be generated for.
+     * @param itemModelGenerator an ItemModelGenerator provided by minecraft
+     */
+    private void generateModGearTypeModels(ModGearType gearType, ItemModelGenerator itemModelGenerator) {
+        Item helmet = gearType.getHelmet();
+        Item chestplate = gearType.getChestplate();
+        Item leggings = gearType.getLeggings();
+        Item boots = gearType.getBoots();
+        Item sword = gearType.getSword();
+        Item axe = gearType.getAxe();
+        Item pickaxe = gearType.getPickaxe();
+        Item shovel = gearType.getShovel();
+        Item hoe = gearType.getHoe();
+
+        if (helmet != null) {
+            itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_HELMET);
+        }
+        if (chestplate != null) {
+            itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_CHESTPLATE);
+        }
+        if (leggings != null) {
+            itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_LEGGINGS);
+        }
+        if (boots != null) {
+            itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_BOOTS);
+        }
+        if (sword != null) {
+            itemModelGenerator.register(ModItems.BRONZE_SWORD, Models.HANDHELD);
+        }
+        if (axe != null) {
+            itemModelGenerator.register(ModItems.BRONZE_AXE, Models.HANDHELD);
+        }
+        if (pickaxe != null) {
+            itemModelGenerator.register(ModItems.BRONZE_PICKAXE, Models.HANDHELD);
+        }
+        if (shovel != null) {
+            itemModelGenerator.register(ModItems.BRONZE_SHOVEL, Models.HANDHELD);
+        }
+        if (hoe != null) {
+            itemModelGenerator.register(ModItems.BRONZE_HOE, Models.HANDHELD);
+        }
     }
 
     /**

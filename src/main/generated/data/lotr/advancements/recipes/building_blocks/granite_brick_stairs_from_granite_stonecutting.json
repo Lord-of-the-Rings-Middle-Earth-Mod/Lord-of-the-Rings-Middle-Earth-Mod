@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_andesite": {
+    "has_granite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:andesite"
+              "minecraft:granite"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cobbled_andesite_slab"
+        "recipe": "minecraft:granite_brick_stairs_from_granite_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_andesite",
+      "has_granite",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cobbled_andesite_slab"
+      "minecraft:granite_brick_stairs_from_granite_stonecutting"
     ]
   },
   "sends_telemetry_event": false

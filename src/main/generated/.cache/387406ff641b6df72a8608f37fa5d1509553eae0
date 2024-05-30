@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-29T18:45:40.2822127	Lord of the Rings Middle Earth/Block Loot Tables
+// 1.20.1	2024-05-30T17:31:57.8151727	Lord of the Rings Middle Earth/Block Loot Tables
 8327d32eff2238aa126b81e7b5832a86b81f0f57 data\lotr\loot_tables\blocks\polished_diorite_button.json
 b3e79583e27b376369ac031d0ddc101875c79810 data\lotr\loot_tables\blocks\andesite_brick_wall.json
 9190eaa30d06e4d25880dc6ff02ec60aaad0d23a data\lotr\loot_tables\blocks\chalk_pressure_plate.json
@@ -54,8 +54,8 @@ b03d9f493c79156fd750a515444071e84b00759b data\lotr\loot_tables\blocks\cobbled_an
 6e46df8ba322714630697d38e6e5f1c19ad7472e data\lotr\loot_tables\blocks\cobbled_chalk_stairs.json
 39fa90f47504e3db110d7874a995ad9d270fa51e data\lotr\loot_tables\blocks\diorite_brick.json
 b8cecc086a907af5b5cb4e6b8576ecdb3b41eb16 data\lotr\loot_tables\blocks\cobbled_diorite_pressure_plate.json
-a6445c21f401c2beb8902c58a98583b4f6bf9c30 data\lotr\loot_tables\blocks\raw_tin_block.json
 8634f89dc88dacf29747add643b696e172e59aa1 data\lotr\loot_tables\blocks\cobbled_granite_wall.json
+a6445c21f401c2beb8902c58a98583b4f6bf9c30 data\lotr\loot_tables\blocks\raw_tin_block.json
 281e42a53308b27cc690e8ea49dcb4a8437f9951 data\lotr\loot_tables\blocks\cobbled_chalk_slab.json
 00500763f640a0291ede7629c6f50404ca16b3d9 data\lotr\loot_tables\blocks\granite_pressure_plate.json
 ccd5243471ee18fc0da8fd6b85c7835f10474abe data\lotr\loot_tables\blocks\bronze_block.json

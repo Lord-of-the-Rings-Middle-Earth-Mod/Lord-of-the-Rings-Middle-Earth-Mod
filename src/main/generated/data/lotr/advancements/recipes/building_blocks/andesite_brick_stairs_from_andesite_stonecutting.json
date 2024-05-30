@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cobbled_andesite_slab"
+        "recipe": "minecraft:andesite_brick_stairs_from_andesite_stonecutting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cobbled_andesite_slab"
+      "minecraft:andesite_brick_stairs_from_andesite_stonecutting"
     ]
   },
   "sends_telemetry_event": false
