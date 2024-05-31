@@ -48,6 +48,12 @@ public class ModModelProvider extends FabricModelProvider {
         generateModStoneTypeModels(ModStoneType.COBBLED_GRANITE, blockStateModelGenerator);
         generateModStoneTypeModels(ModStoneType.GRANITE_BRICK, blockStateModelGenerator);
 
+        generateModStoneTypeModels(ModStoneType.SMOOTH_BASALT, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.BASALT_BRICKS, blockStateModelGenerator);
+
+        generateModStoneTypeModels(ModStoneType.BLUESLATE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.BLUESLATE_BRICK, blockStateModelGenerator);
+
         generateModStoneTypeModels(ModStoneType.CHALK, blockStateModelGenerator);
         generateModStoneTypeModels(ModStoneType.COBBLED_CHALK, blockStateModelGenerator);
         generateModStoneTypeModels(ModStoneType.CHALK_BRICK, blockStateModelGenerator);

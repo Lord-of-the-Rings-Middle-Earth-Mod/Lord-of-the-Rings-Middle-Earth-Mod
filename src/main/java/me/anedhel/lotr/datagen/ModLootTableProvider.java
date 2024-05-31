@@ -96,6 +96,29 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.GRANITE_BRICK_WALL);
         addDrop(ModBlocks.GRANITE_BRICK_SLAB, slabDrops(ModBlocks.GRANITE_BRICK_SLAB));
 
+        addDrop(ModBlocks.SMOOTH_BASALT_STAIRS);
+        addDrop(ModBlocks.SMOOTH_BASALT_SLAB, slabDrops(ModBlocks.SMOOTH_BASALT_SLAB));
+        addDrop(ModBlocks.SMOOTH_BASALT_WALL);
+        addDrop(ModBlocks.SMOOTH_BASALT_BUTTON);
+        addDrop(ModBlocks.SMOOTH_BASALT_PRESSURE_PLATE);
+
+        addDrop(ModBlocks.BASALT_BRICK);
+        addDrop(ModBlocks.BASALT_BRICK_STAIRS);
+        addDrop(ModBlocks.BASALT_BRICK_SLAB, slabDrops(ModBlocks.BASALT_BRICK_SLAB));
+        addDrop(ModBlocks.BASALT_BRICK_WALL);
+
+        addDrop(ModBlocks.BLUESLATE);
+        addDrop(ModBlocks.BLUESLATE_STAIRS);
+        addDrop(ModBlocks.BLUESLATE_SLAB);
+        addDrop(ModBlocks.BLUESLATE_WALL);
+        addDrop(ModBlocks.BLUESLATE_BUTTON);
+        addDrop(ModBlocks.BLUESLATE_PRESSURE_PLATE);
+
+        addDrop(ModBlocks.BLUESLATE_BRICK);
+        addDrop(ModBlocks.BLUESLATE_BRICK_STAIRS);
+        addDrop(ModBlocks.BLUESLATE_BRICK_SLAB);
+        addDrop(ModBlocks.BLUESLATE_BRICK_WALL);
+
         addDrop(ModBlocks.CHALK);
         addDrop(ModBlocks.CHALK_STAIRS);
         addDrop(ModBlocks.CHALK_WALL);
@@ -106,6 +129,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CHALK_BRICK);
         addDrop(ModBlocks.CHALK_BRICK_STAIRS);
         addDrop(ModBlocks.CHALK_BRICK_WALL);
+        addDrop(ModBlocks.CHALK_BRICK_SLAB, slabDrops(ModBlocks.CHALK_BRICK_SLAB));
 
         addDrop(ModBlocks.COBBLED_CHALK);
         addDrop(ModBlocks.COBBLED_CHALK_STAIRS);

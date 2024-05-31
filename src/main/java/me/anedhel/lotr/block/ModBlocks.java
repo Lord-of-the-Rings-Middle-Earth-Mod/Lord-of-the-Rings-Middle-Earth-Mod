@@ -61,13 +61,28 @@ public class ModBlocks {
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
-    /*
-    Blueslate
-     */
+    public static final Block BLUESLATE = registerBlock("blueslate",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block BLUESLATE_STAIRS = registerBlock("blueslate_stairs",
+            new StairsBlock(ModBlocks.BLUESLATE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+    public static final Block BLUESLATE_SLAB = registerBlock("blueslate_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+    public static final Block BLUESLATE_WALL = registerBlock("blueslate_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+    public static final Block BLUESLATE_BUTTON = registerBlock("blueslate_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block BLUESLATE_PRESSURE_PLATE = registerBlock("blueslate_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
-    /*
-    Blueslate Brick
-     */
+    public static final Block BLUESLATE_BRICK = registerBlock("blueslate_brick",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block BLUESLATE_BRICK_STAIRS = registerBlock("blueslate_brick_stairs",
+            new StairsBlock(ModBlocks.BLUESLATE_BRICK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+    public static final Block BLUESLATE_BRICK_SLAB = registerBlock("blueslate_brick_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+    public static final Block BLUESLATE_BRICK_WALL = registerBlock("blueslate_brick_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
 
     public static final Block ANDESITE_BUTTON = registerBlock("andesite_button",
             new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
@@ -180,9 +195,26 @@ public class ModBlocks {
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
-    /*
-    Basalt Brick
-     */
+    public static final Block SMOOTH_BASALT_STAIRS = registerBlock("smooth_basalt_stairs",
+            new StairsBlock(Blocks.SMOOTH_BASALT.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+    public static final Block SMOOTH_BASALT_SLAB = registerBlock("smooth_basalt_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+    public static final Block SMOOTH_BASALT_WALL = registerBlock("smooth_basalt_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+    public static final Block SMOOTH_BASALT_BUTTON = registerBlock("smooth_basalt_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block SMOOTH_BASALT_PRESSURE_PLATE = registerBlock("smooth_basalt_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
+    public static final Block BASALT_BRICK = registerBlock("basalt_brick",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+    public static final Block BASALT_BRICK_STAIRS = registerBlock("basalt_brick_stairs",
+            new StairsBlock(ModBlocks.BASALT_BRICK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS)));
+    public static final Block BASALT_BRICK_SLAB = registerBlock("basalt_brick_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_SLAB)));
+    public static final Block BASALT_BRICK_WALL = registerBlock("basalt_brick_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL)));
 
     /**
      * This Method is used to register a Block with minecraft and also register the Item for the block

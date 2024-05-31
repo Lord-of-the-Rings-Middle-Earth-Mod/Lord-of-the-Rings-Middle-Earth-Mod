@@ -12,13 +12,6 @@ import net.minecraft.util.Identifier;
  */
 public class ModItems {
 
-
-    /**
-     * This Method is used to register Items with minecraft.
-     * @param name the name of the Item
-     * @param item the Item
-     * @return the Item after it has been registered
-     */
     public static final Item RAW_TIN = registerItem("raw_tin", new Item(new FabricItemSettings()));
     public static final Item TIN_INGOT = registerItem("tin_ingot", new Item(new FabricItemSettings()));
     public static final Item BRONZE_INGOT = registerItem("bronze_ingot", new Item(new FabricItemSettings()));
@@ -44,6 +37,12 @@ public class ModItems {
             new ArmorItem(ModArmorMaterial.BRONZE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
 
+    /**
+     * This Method is used to register Items with minecraft.
+     * @param name the name of the Item
+     * @param item the Item
+     * @return the Item after it has been registered
+     */
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM,
                 new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name), item);

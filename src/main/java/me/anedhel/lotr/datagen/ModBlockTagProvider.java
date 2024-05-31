@@ -41,6 +41,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         configureModStoneType(ModStoneType.COBBLED_GRANITE);
         configureModStoneType(ModStoneType.GRANITE_BRICK);
 
+        configureModStoneType(ModStoneType.SMOOTH_BASALT);
+        configureModStoneType(ModStoneType.BASALT_BRICKS);
+
+        configureModStoneType(ModStoneType.BLUESLATE);
+        configureModStoneType(ModStoneType.BLUESLATE_BRICK);
+
         configureModStoneType(ModStoneType.CHALK);
         configureModStoneType(ModStoneType.COBBLED_CHALK);
         configureModStoneType(ModStoneType.CHALK_BRICK);
