@@ -1,7 +1,21 @@
 {
   "replace": false,
   "values": [
+    "lotr:polished_andesite_wall",
+    "lotr:cobbled_andesite_wall",
+    "lotr:andesite_brick_wall",
+    "lotr:polished_diorite_wall",
+    "lotr:cobbled_diorite_wall",
+    "lotr:diorite_brick_wall",
+    "lotr:polished_granite_wall",
+    "lotr:cobbled_granite_wall",
+    "lotr:granite_brick_wall",
+    "lotr:smooth_basalt_wall",
+    "lotr:basalt_brick_wall",
+    "lotr:blueslate_wall",
+    "lotr:blueslate_brick_wall",
     "lotr:chalk_wall",
-    "lotr:cobbled_chalk_wall"
+    "lotr:cobbled_chalk_wall",
+    "lotr:chalk_brick_wall"
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "lotr:cobbled_diorite"
+    }
+  },
+  "pattern": [
+    " # "
+  ],
+  "result": {
+    "item": "lotr:cobbled_diorite_button"
+  },
+  "show_notification": true
+}

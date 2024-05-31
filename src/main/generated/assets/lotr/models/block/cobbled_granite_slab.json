@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "lotr:block/cobbled_granite",
+    "side": "lotr:block/cobbled_granite",
+    "top": "lotr:block/cobbled_granite"
+  }
+}

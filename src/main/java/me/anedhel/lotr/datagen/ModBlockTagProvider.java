@@ -1,8 +1,10 @@
 package me.anedhel.lotr.datagen;
 
-import me.anedhel.lotr.blocks.ModBlocks;
+import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModStoneType;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Block;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
@@ -23,23 +25,33 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
      */
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
+
+        configureModStoneType(ModStoneType.ANDESITE);
+        configureModStoneType(ModStoneType.POLISHED_ANDESITE);
+        configureModStoneType(ModStoneType.COBBLED_ANDESITE);
+        configureModStoneType(ModStoneType.ANDESITE_BRICK);
+
+        configureModStoneType(ModStoneType.DIORITE);
+        configureModStoneType(ModStoneType.POLISHED_DIORITE);
+        configureModStoneType(ModStoneType.COBBLED_DIORITE);
+        configureModStoneType(ModStoneType.DIORITE_BRICK);
+
+        configureModStoneType(ModStoneType.GRANITE);
+        configureModStoneType(ModStoneType.POLISHED_GRANITE);
+        configureModStoneType(ModStoneType.COBBLED_GRANITE);
+        configureModStoneType(ModStoneType.GRANITE_BRICK);
+
+        configureModStoneType(ModStoneType.SMOOTH_BASALT);
+        configureModStoneType(ModStoneType.BASALT_BRICKS);
+
+        configureModStoneType(ModStoneType.BLUESLATE);
+        configureModStoneType(ModStoneType.BLUESLATE_BRICK);
+
+        configureModStoneType(ModStoneType.CHALK);
+        configureModStoneType(ModStoneType.COBBLED_CHALK);
+        configureModStoneType(ModStoneType.CHALK_BRICK);
+
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.CHALK)
-                .add(ModBlocks.CHALK_STAIRS)
-                .add(ModBlocks.CHALK_SLAB)
-                .add(ModBlocks.CHALK_WALL)
-                .add(ModBlocks.CHALK_BUTTON)
-                .add(ModBlocks.CHALK_PRESSURE_PLATE)
-                .add(ModBlocks.CHALK_BRICK)
-                .add(ModBlocks.CHALK_BRICK_STAIRS)
-                .add(ModBlocks.CHALK_BRICK_SLAB)
-                .add(ModBlocks.CHALK_BRICK_WALL)
-                .add(ModBlocks.COBBLED_CHALK)
-                .add(ModBlocks.COBBLED_CHALK_STAIRS)
-                .add(ModBlocks.COBBLED_CHALK_SLAB)
-                .add(ModBlocks.COBBLED_CHALK_WALL)
-                .add(ModBlocks.COBBLED_CHALK_BUTTON)
-                .add(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE)
                 .add(ModBlocks.TIN_ORE)
                 .add(ModBlocks.RAW_TIN_BLOCK)
                 .add(ModBlocks.TIN_BLOCK)
@@ -50,9 +62,43 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.RAW_TIN_BLOCK)
                 .add(ModBlocks.TIN_BLOCK)
                 .add(ModBlocks.BRONZE_BLOCK);
+    }
 
-        getOrCreateTagBuilder(BlockTags.WALLS)
-                .add(ModBlocks.CHALK_WALL)
-                .add(ModBlocks.COBBLED_CHALK_WALL);
+    /**
+     * This Method configures all required tags for the given ModStoneType.
+     * @param stoneType The type, that all tags should be configured for
+     */
+    private void configureModStoneType(ModStoneType stoneType) {
+        Block baseBlock = stoneType.getBaseBlock();
+        Block stairBlock = stoneType.getStairBlock();
+        Block slabBlock = stoneType.getSlabBlock();
+        Block wallBlock = stoneType.getWallBlock();
+        Block buttonBlock = stoneType.getButtonBlock();
+        Block pressurePlateBlock = stoneType.getPressurePlateBlock();
+
+        FabricTagBuilder pickaxeTag = getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE);
+        FabricTagBuilder wallTag = getOrCreateTagBuilder(BlockTags.WALLS);
+
+        if (!stoneType.isVanillaAddition()) {
+            if (baseBlock != null) {
+                pickaxeTag.add(baseBlock);
+            }
+        }
+        if (stairBlock != null) {
+            pickaxeTag.add(stairBlock);
+        }
+        if (slabBlock != null) {
+            pickaxeTag.add(slabBlock);
+        }
+        if (wallBlock != null) {
+            pickaxeTag.add(wallBlock);
+            wallTag.add(wallBlock);
+        }
+        if (buttonBlock != null) {
+            pickaxeTag.add(buttonBlock);
+        }
+        if (pressurePlateBlock != null) {
+            pickaxeTag.add(pressurePlateBlock);
+        }
     }
 }

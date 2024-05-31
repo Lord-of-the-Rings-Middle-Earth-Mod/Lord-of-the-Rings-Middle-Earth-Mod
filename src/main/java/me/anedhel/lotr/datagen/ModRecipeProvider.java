@@ -1,6 +1,8 @@
 package me.anedhel.lotr.datagen;
 
-import me.anedhel.lotr.blocks.ModBlocks;
+import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModStoneType;
+import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -44,66 +46,139 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(Items.COPPER_INGOT), conditionsFromItem(Items.COPPER_INGOT))
                 .offerTo(exporter, new Identifier(getRecipeName(ModItems.BRONZE_INGOT) + "_crafting"));
 
-        createSwordRecipe(ModItems.BRONZE_INGOT, ModItems.BRONZE_SWORD, exporter);
-        createAxeRecipe(ModItems.BRONZE_INGOT, ModItems.BRONZE_AXE, exporter);
-        createPickaxeRecipe(ModItems.BRONZE_INGOT, ModItems.BRONZE_PICKAXE, exporter);
-        createShovelRecipe(ModItems.BRONZE_INGOT, ModItems.BRONZE_SHOVEL, exporter);
-        createHoeRecipe(ModItems.BRONZE_INGOT, ModItems.BRONZE_HOE, exporter);
-
-        createHelmetRecipe(ModItems.BRONZE_INGOT, ModItems.BRONZE_HELMET, exporter);
-        createChestplateRecipe(ModItems.BRONZE_INGOT, ModItems.BRONZE_CHESTPLATE, exporter);
-        createLegginsRecipe(ModItems.BRONZE_INGOT, ModItems.BRONZE_LEGGINGS, exporter);
-        createBootsRecipe(ModItems.BRONZE_INGOT, ModItems.BRONZE_BOOTS, exporter);
-
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.RAW_TIN, RecipeCategory.MISC, ModBlocks.RAW_TIN_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT, RecipeCategory.MISC, ModBlocks.TIN_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_INGOT, RecipeCategory.MISC, ModBlocks.BRONZE_BLOCK);
 
-        /*
-         * Chalk
-         */
-        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_SLAB, ModBlocks.CHALK);
-        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_WALL, ModBlocks.CHALK);
-        offerPressurePlateRecipe(exporter, ModBlocks.CHALK_PRESSURE_PLATE, ModBlocks.CHALK);
+        createModGearTypeRecipes(ModGearType.BRONZE, exporter);
 
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_STAIRS, ModBlocks.CHALK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_SLAB, ModBlocks.CHALK, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_WALL, ModBlocks.CHALK, 1);
+        createModStoneTypeRecipes(ModStoneType.ANDESITE, exporter, ModStoneType.COBBLED_ANDESITE, ModStoneType.ANDESITE_BRICK);
+        createModStoneTypeRecipes(ModStoneType.POLISHED_ANDESITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.COBBLED_ANDESITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.ANDESITE_BRICK, exporter, null, null);
 
-        createButtonRecipe(ModBlocks.CHALK, ModBlocks.CHALK_BUTTON, exporter);
-        createStairRecipe(ModBlocks.CHALK, ModBlocks.CHALK_STAIRS, exporter);
-        /*
-         * Chalk Brick
-         */
-        createBricksRecipe(ModBlocks.CHALK, ModBlocks.CHALK_BRICK, exporter);
+        createModStoneTypeRecipes(ModStoneType.DIORITE, exporter, ModStoneType.COBBLED_DIORITE, ModStoneType.DIORITE_BRICK);
+        createModStoneTypeRecipes(ModStoneType.POLISHED_DIORITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.COBBLED_DIORITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.DIORITE_BRICK, exporter, null, null);
 
-        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_SLAB, ModBlocks.CHALK_BRICK);
-        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_WALL, ModBlocks.CHALK_BRICK);
+        createModStoneTypeRecipes(ModStoneType.GRANITE, exporter, ModStoneType.COBBLED_GRANITE, ModStoneType.GRANITE_BRICK);
+        createModStoneTypeRecipes(ModStoneType.POLISHED_GRANITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.COBBLED_GRANITE, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.GRANITE_BRICK, exporter, null, null);
 
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK, ModBlocks.CHALK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_STAIRS, ModBlocks.CHALK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_SLAB, ModBlocks.CHALK, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_WALL, ModBlocks.CHALK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_STAIRS, ModBlocks.CHALK_BRICK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_SLAB, ModBlocks.CHALK_BRICK, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHALK_BRICK_WALL, ModBlocks.CHALK_BRICK, 1);
+        createModStoneTypeRecipes(ModStoneType.SMOOTH_BASALT, exporter, null, ModStoneType.BASALT_BRICKS);
+        createModStoneTypeRecipes(ModStoneType.BASALT_BRICKS, exporter, null, null);
 
-        createStairRecipe(ModBlocks.CHALK_BRICK, ModBlocks.CHALK_BRICK_STAIRS, exporter);
-        /*
-         * Cobbled Chalk
-         */
-        createCobbledStoneTypeRecipe(ModBlocks.CHALK, ModBlocks.COBBLED_CHALK, exporter);
+        createModStoneTypeRecipes(ModStoneType.BLUESLATE, exporter, null, ModStoneType.BLUESLATE_BRICK);
+        createModStoneTypeRecipes(ModStoneType.BLUESLATE_BRICK, exporter, null, null);
 
-        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_CHALK_SLAB, ModBlocks.COBBLED_CHALK);
-        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_CHALK_WALL, ModBlocks.COBBLED_CHALK);
-        offerPressurePlateRecipe(exporter, ModBlocks.COBBLED_CHALK_PRESSURE_PLATE, ModBlocks.COBBLED_CHALK);
+        createModStoneTypeRecipes(ModStoneType.CHALK, exporter, ModStoneType.COBBLED_CHALK, ModStoneType.CHALK_BRICK);
+        createModStoneTypeRecipes(ModStoneType.COBBLED_CHALK, exporter, null, null);
+        createModStoneTypeRecipes(ModStoneType.CHALK_BRICK, exporter, null, null);
+    }
 
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_CHALK_STAIRS, ModBlocks.COBBLED_CHALK, 1);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_CHALK_SLAB, ModBlocks.COBBLED_CHALK, 2);
-        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.COBBLED_CHALK_WALL, ModBlocks.COBBLED_CHALK, 1);
+    /**
+     * This Method is used to generate all Crafting Recipes for the given GearType
+     * @param gearType The ModGearType that all craftingRecipes are to be generated for
+     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
+     */
+    private void createModGearTypeRecipes (ModGearType gearType, Consumer<RecipeJsonProvider> exporter) {
+        Item material = gearType.getMaterial();
+        Item helmet = gearType.getHelmet();
+        Item chestplate = gearType.getChestplate();
+        Item leggings = gearType.getLeggings();
+        Item boots = gearType.getBoots();
+        Item sword = gearType.getSword();
+        Item axe = gearType.getAxe();
+        Item pickaxe = gearType.getPickaxe();
+        Item shovel = gearType.getShovel();
+        Item hoe = gearType.getHoe();
 
-        createButtonRecipe(ModBlocks.COBBLED_CHALK, ModBlocks.COBBLED_CHALK_BUTTON, exporter);
-        createStairRecipe(ModBlocks.COBBLED_CHALK, ModBlocks.COBBLED_CHALK_STAIRS, exporter);
+        if (!gearType.isVanillaAddition()){
+            if (helmet != null) {
+                createHelmetRecipe(material, helmet, exporter);
+            }
+            if (chestplate != null) {
+                createChestplateRecipe(material, chestplate, exporter);
+            }
+            if (leggings != null) {
+                createLegginsRecipe(material, leggings, exporter);
+            }
+            if (boots != null) {
+                createBootsRecipe(material, boots, exporter);
+            }
+            if (sword != null) {
+                createSwordRecipe(material, sword, exporter);
+            }
+            if (axe != null) {
+                createAxeRecipe(material, axe, exporter);
+            }
+            if (pickaxe != null) {
+                createPickaxeRecipe(material, pickaxe, exporter);
+            }
+            if (shovel != null) {
+                createShovelRecipe(material, shovel, exporter);
+            }
+            if (hoe != null) {
+                createHoeRecipe(material, hoe, exporter);
+            }
+        }
+    }
+
+    /**
+     * This Method is used to create all crafting recipes using the given ModStoneType
+     * @param stoneType The ModStoneType, for which all Recipes are to be created
+     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
+     * @param cobbledVariant The cobbled version of the stoneType, null if there is none
+     * @param brickVariant The bricks of the stoneType, null if there is none
+     */
+    private void createModStoneTypeRecipes (ModStoneType stoneType, Consumer<RecipeJsonProvider> exporter, ModStoneType cobbledVariant, ModStoneType brickVariant) {
+        Block baseBlock = stoneType.getBaseBlock();
+        Block stairBlock = stoneType.getStairBlock();
+        Block slabBlock = stoneType.getSlabBlock();
+        Block wallBlock = stoneType.getWallBlock();
+        Block buttonBlock = stoneType.getButtonBlock();
+        Block pressurePlateBlock = stoneType.getPressurePlateBlock();
+
+        if (baseBlock != null) {
+            if (stairBlock != null) {
+                createStairRecipe(baseBlock, stairBlock, exporter);
+                offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stairBlock, baseBlock, 1);
+            }
+            if (slabBlock != null) {
+                offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, slabBlock, baseBlock);
+                offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, slabBlock, baseBlock, 2);
+            }
+            if (wallBlock != null) {
+                offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, wallBlock, baseBlock);
+                offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, wallBlock, baseBlock, 1);
+            }
+            if (buttonBlock != null) {
+                createButtonRecipe(baseBlock, buttonBlock, exporter);
+            }
+            if (pressurePlateBlock != null) {
+                offerPressurePlateRecipe(exporter, pressurePlateBlock, baseBlock);
+            }
+            if (cobbledVariant != null && !cobbledVariant.isVanillaAddition()) {
+                createCobbledStoneTypeRecipe(baseBlock, cobbledVariant.getBaseBlock(), exporter);
+            }
+            if (brickVariant != null) {
+                if (!brickVariant.isVanillaAddition()) {
+                    createBricksRecipe(baseBlock, brickVariant.getBaseBlock(), exporter);
+                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickVariant.getBaseBlock(), baseBlock);
+                }
+                if (brickVariant.getStairBlock() != null) {
+                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickVariant.getStairBlock(), baseBlock, 1);
+                }
+                if (brickVariant.getSlabBlock() != null) {
+                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickVariant.getSlabBlock(), baseBlock, 2);
+                }
+                if (brickVariant.getWallBlock() != null) {
+                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickVariant.getWallBlock(), baseBlock, 1);
+                }
+            }
+        }
     }
 
     /**

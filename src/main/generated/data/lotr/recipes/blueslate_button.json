@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "lotr:blueslate"
+    }
+  },
+  "pattern": [
+    " # "
+  ],
+  "result": {
+    "item": "lotr:blueslate_button"
+  },
+  "show_notification": true
+}
