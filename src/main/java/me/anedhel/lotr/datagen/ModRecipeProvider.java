@@ -7,6 +7,7 @@ import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -25,6 +26,10 @@ import java.util.function.Consumer;
 public class ModRecipeProvider extends FabricRecipeProvider {
 
     private static final List<ItemConvertible> TIN_SMELTABLES = List.of(ModItems.RAW_TIN, ModBlocks.TIN_ORE);
+    private static final List<ItemConvertible> TIN_BLOCK_SMELTABLES = List.of(ModBlocks.RAW_TIN_BLOCK);
+    private static final List<ItemConvertible> IRON_BLOCK_SMELTABLES = List.of(Blocks.RAW_IRON_BLOCK);
+    private static final List<ItemConvertible> GOLD_BLOCK_SMELTABLES = List.of(Blocks.RAW_GOLD_BLOCK);
+    private static final List<ItemConvertible> COPPER_BLOCK_SMELTABLES = List.of(Blocks.RAW_COPPER_BLOCK);
 
     public ModRecipeProvider(FabricDataOutput output) {
         super(output);
@@ -38,6 +43,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     public void generate(Consumer<RecipeJsonProvider> exporter) {
         offerSmelting(exporter, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 200, "tin");
         offerBlasting(exporter, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 100, "tin");
+        offerSmelting(exporter, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK, 5.6f, 1600, "tin_block");
+        offerBlasting(exporter, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK, 5.6f, 800, "tin_block");
+        offerSmelting(exporter, IRON_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.IRON_BLOCK, 5.6f, 1600, "iron_block");
+        offerBlasting(exporter, IRON_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.IRON_BLOCK, 5.6f, 800, "iron_block");
+        offerSmelting(exporter, GOLD_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.GOLD_BLOCK, 5.6f, 1600, "gold_block");
+        offerBlasting(exporter, GOLD_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.GOLD_BLOCK, 5.6f, 800, "gold_block");
+        offerSmelting(exporter, COPPER_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.COPPER_BLOCK, 5.6f, 1600, "copper_block");
+        offerBlasting(exporter, COPPER_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.COPPER_BLOCK, 5.6f, 800, "copper_block");
+
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BRONZE_INGOT)
                 .input(ModItems.TIN_INGOT)

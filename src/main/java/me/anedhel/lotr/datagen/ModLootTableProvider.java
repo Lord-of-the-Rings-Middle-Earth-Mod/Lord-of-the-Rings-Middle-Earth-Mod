@@ -1,6 +1,8 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
+import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -9,14 +11,14 @@ import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
 import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
-
-import java.util.List;
+import net.minecraft.predicate.StatePredicate;
 
 /**
  * This class is used to add all LootTables the mod provides and edit existing ones.
@@ -34,6 +36,14 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     public void generate() {
         addDrop(ModBlocks.TIN_ORE, oreDrops(ModBlocks.TIN_ORE, ModItems.RAW_TIN, UniformLootNumberProvider
                 .create(2.0f, 5.0f)));
+
+        BlockStatePropertyLootCondition.Builder tomatoCropBuilder = BlockStatePropertyLootCondition.builder(ModBlocks.TOMATO_CROP).properties(StatePredicate.Builder.create()
+                .exactMatch(TomatoCropBlock.AGE, TomatoCropBlock.MAX_AGE));
+        addDrop(ModBlocks.TOMATO_CROP, cropDrops(ModBlocks.TOMATO_CROP, ModItems.TOMATO, ModItems.TOMATO_SEEDS, tomatoCropBuilder));
+
+        BlockStatePropertyLootCondition.Builder lettuceCropBuilder = BlockStatePropertyLootCondition.builder(ModBlocks.LETTUCE_CROP).properties(StatePredicate.Builder.create()
+                .exactMatch(LettuceCropBlock.AGE, LettuceCropBlock.MAX_AGE));
+        addDrop(ModBlocks.LETTUCE_CROP, cropDrops(ModBlocks.LETTUCE_CROP, ModItems.LETTUCE, ModItems.LETTUCE, lettuceCropBuilder));
 
         addDrop(ModBlocks.RAW_TIN_BLOCK);
         addDrop(ModBlocks.TIN_BLOCK);

@@ -1,4 +1,4 @@
-// 1.20.1	2024-05-31T20:00:55.4343676	Lord of the Rings Middle Earth/Block Loot Tables
+// 1.20.1	2024-06-01T09:56:51.9460293	Lord of the Rings Middle Earth/Block Loot Tables
 8327d32eff2238aa126b81e7b5832a86b81f0f57 data\lotr\loot_tables\blocks\polished_diorite_button.json
 b3e79583e27b376369ac031d0ddc101875c79810 data\lotr\loot_tables\blocks\andesite_brick_wall.json
 9190eaa30d06e4d25880dc6ff02ec60aaad0d23a data\lotr\loot_tables\blocks\chalk_pressure_plate.json
@@ -44,9 +44,9 @@ cf2ea328b7dcfc71df74fee63e24620a381abc83 data\lotr\loot_tables\blocks\cobbled_gr
 4b6db16b241956af30480e9cf75dc3a3319dfa5b data\lotr\loot_tables\blocks\cobbled_chalk_pressure_plate.json
 445bc1dc232007b512d99b5d9993c4ccf14b539a data\lotr\loot_tables\blocks\polished_granite_button.json
 20f7fef75cfca0830f1df5034a3a2e5f703a711c data\lotr\loot_tables\blocks\basalt_brick_stairs.json
-0ceab8f155d781334e7da44b5c83f697282ab405 data\lotr\loot_tables\blocks\diorite_button.json
-3d75956cf58d4cce7814e5662df0053d3e3bc70c data\lotr\loot_tables\blocks\cobbled_diorite_stairs.json
 b2313c0f5fddaf28b67b96c3082d4432312d95e8 data\lotr\loot_tables\blocks\andesite_brick.json
+3d75956cf58d4cce7814e5662df0053d3e3bc70c data\lotr\loot_tables\blocks\cobbled_diorite_stairs.json
+0ceab8f155d781334e7da44b5c83f697282ab405 data\lotr\loot_tables\blocks\diorite_button.json
 0e5590d62680d535f04154a49d9a173ccb5ccf71 data\lotr\loot_tables\blocks\chalk_wall.json
 d6e996d9000b326f2b1f20b128581e2ec8ad6e96 data\lotr\loot_tables\blocks\cobbled_chalk.json
 e19db470d2d67d396bb6dd533e6ebc27f6267d56 data\lotr\loot_tables\blocks\blueslate_brick_stairs.json
@@ -60,11 +60,13 @@ d066c78e400b3a3a704ab809fed94b8f03b02a42 data\lotr\loot_tables\blocks\basalt_bri
 7cf0af917e1a356560fb8d98406741c8086d0bd1 data\lotr\loot_tables\blocks\smooth_basalt_pressure_plate.json
 494b360995ddab6d8d0a5510736b555f370e44ce data\lotr\loot_tables\blocks\blueslate_slab.json
 6aa8be2b8be8d61bc7bc7fc0d22203448afeb6cd data\lotr\loot_tables\blocks\basalt_brick_wall.json
+a3f425cd85a8d069f435c02945ad884d0ece107c data\lotr\loot_tables\blocks\tomato_crop.json
 e83f666251ad345091d159573f288a29de6f5952 data\lotr\loot_tables\blocks\chalk_slab.json
 05bf109f5bd5afc96b471ce917081fd2d054bacd data\lotr\loot_tables\blocks\polished_granite_wall.json
 f717e26c291bf562771aa4e3ef7c28d81d858766 data\lotr\loot_tables\blocks\blueslate_stairs.json
 050aff2debbbf310ab17b645aeb61ac963cfbacc data\lotr\loot_tables\blocks\blueslate_brick_slab.json
 677f4e8db148ef21da0890c01b409d901eb24296 data\lotr\loot_tables\blocks\cobbled_granite.json
+91a9f33bd607d3011b1e5bcf9f8c1b8f13df5107 data\lotr\loot_tables\blocks\lettuce_crop.json
 4bb9ad609eb42d8c118ec8ccbcf1d040692637d6 data\lotr\loot_tables\blocks\polished_diorite_wall.json
 8a2dcbed35a02b935ef32120b5e728f52e934e6d data\lotr\loot_tables\blocks\cobbled_andesite_stairs.json
 b03d9f493c79156fd750a515444071e84b00759b data\lotr\loot_tables\blocks\cobbled_andesite_wall.json

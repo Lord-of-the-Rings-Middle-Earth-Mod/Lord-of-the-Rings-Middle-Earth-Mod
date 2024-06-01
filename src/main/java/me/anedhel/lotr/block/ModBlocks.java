@@ -1,6 +1,8 @@
 package me.anedhel.lotr.block;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
+import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
+import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -23,6 +25,11 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.RAW_COPPER_BLOCK)));
     public static final Block BRONZE_BLOCK = registerBlock("bronze_block",
             new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK)));
+
+    public static final Block TOMATO_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "tomato_crop"),
+            new TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block LETTUCE_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lettuce_crop"),
+            new LettuceCropBlock(FabricBlockSettings.copyOf(Blocks.BEETROOTS)));
 
     public static final Block CHALK = registerBlock("chalk",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));

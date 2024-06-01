@@ -105,6 +105,21 @@ public class ModItemGroups {
                         entries.add(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
                     }).build());
 
+    public static final ItemGroup LOTR_FOOD = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_food"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_food"))
+                    .icon(() -> new ItemStack(ModItems.TOMATO)).entries(((displayContext, entries) -> {
+                        entries.add(ModItems.TOMATO);
+                    })).build());
+
+    public static final ItemGroup LOTR_PLANTS = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_plants"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_plants"))
+                    .icon(() -> new ItemStack(ModItems.TOMATO_SEEDS)).entries(((displayContext, entries) -> {
+                        entries.add(ModItems.TOMATO_SEEDS);
+                        entries.add(ModItems.LETTUCE);
+                    })).build());
+
     public static final ItemGroup LOTR_INGREDIENTS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_ingredients"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_ingredients"))
