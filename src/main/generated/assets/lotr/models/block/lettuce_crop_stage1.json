@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "lotr:block/lettuce_crop_stage1"
+  }
+}

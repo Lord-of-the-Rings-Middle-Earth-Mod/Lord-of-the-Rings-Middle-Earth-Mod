@@ -1,5 +1,7 @@
 {
   "itemgroup.lotr_blocks": "LotR Blocks",
+  "itemgroup.lotr_food": "LotR Food",
+  "itemgroup.lotr_plants": "LotR Plants",
   "itemgroup.lotr_ingredients": "LotR Ingredients",
   "itemgroup.lotr_tools": "LotR Tools",
   "itemgroup.lotr_combat": "LotR Combat",
@@ -7,6 +9,14 @@
   "item.lotr.raw_tin": "Raw Tin",
   "item.lotr.tin_ingot": "Tin Ingot",
   "item.lotr.bronze_ingot": "Bronze Ingot",
+
+  "item.lotr.tomato": "Tomato",
+  "item.lotr.tomato_seeds": "Tomato Seeds",
+  "item.lotr.lettuce": "Lettuce",
+  "item.lotr.lettuce_seeds": "Lettuce Seeds",
+
+  "block.lotr.tomato_crate": "Tomato Crate",
+  "block.lotr.lettuce_crate": "Lettuce Crate",
 
   "block.lotr.tin_ore": "Tin Ore",
   "block.lotr.tin_block": "Block of Tin",

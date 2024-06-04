@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 800,
+  "experience": 5.6,
+  "group": "tin_block",
+  "ingredient": {
+    "item": "lotr:raw_tin_block"
+  },
+  "result": "lotr:tin_block"
+}

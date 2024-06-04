@@ -2,6 +2,8 @@ package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModStoneType;
+import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
+import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -32,6 +34,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_TIN_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TIN_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BRONZE_BLOCK);
+
+        blockStateModelGenerator.registerCrop(ModBlocks.TOMATO_CROP, TomatoCropBlock.AGE, 0, 1, 2, 3, 4, 5);
+        blockStateModelGenerator.registerCrop(ModBlocks.LETTUCE_CROP, LettuceCropBlock.AGE, 0, 1, 2, 3);
 
         generateModStoneTypeModels(ModStoneType.ANDESITE, blockStateModelGenerator);
         generateModStoneTypeModels(ModStoneType.POLISHED_ANDESITE, blockStateModelGenerator);
@@ -69,6 +74,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.RAW_TIN, Models.GENERATED);
         itemModelGenerator.register(ModItems.TIN_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.BRONZE_INGOT, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
 
         generateModGearTypeModels(ModGearType.BRONZE, itemModelGenerator);
     }

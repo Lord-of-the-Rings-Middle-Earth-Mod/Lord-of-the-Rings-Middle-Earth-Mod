@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 1600,
+  "experience": 5.6,
+  "group": "tin_block",
+  "ingredient": {
+    "item": "lotr:raw_tin_block"
+  },
+  "result": "lotr:tin_block"
+}
