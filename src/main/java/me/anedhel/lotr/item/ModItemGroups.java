@@ -83,6 +83,12 @@ public class ModItemGroups {
                         entries.add(ModBlocks.BLUESLATE_WALL);
                         entries.add(ModBlocks.BLUESLATE_BUTTON);
                         entries.add(ModBlocks.BLUESLATE_PRESSURE_PLATE);
+                        entries.add(ModBlocks.COBBLED_BLUESLATE);
+                        entries.add(ModBlocks.COBBLED_BLUESLATE_STAIRS);
+                        entries.add(ModBlocks.COBBLED_BLUESLATE_SLAB);
+                        entries.add(ModBlocks.COBBLED_BLUESLATE_WALL);
+                        entries.add(ModBlocks.COBBLED_BLUESLATE_BUTTON);
+                        entries.add(ModBlocks.COBBLED_BLUESLATE_PRESSURE_PLATE);
                         entries.add(ModBlocks.BLUESLATE_BRICK);
                         entries.add(ModBlocks.BLUESLATE_BRICK_STAIRS);
                         entries.add(ModBlocks.BLUESLATE_BRICK_SLAB);

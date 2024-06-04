@@ -16,3 +16,5 @@ ___
 + Added Diorite and Granite Buttons and Pressure Plates
 + Added Diorite and Granite Brick and Cobbled variants with their building blocks
 + Added Smooth Basalt Building Blocks
++ Added Cobbled Blueslate with the building blocks
++ Added Tomato and Lettuce as Crops, with respective crates as Compacted Block
