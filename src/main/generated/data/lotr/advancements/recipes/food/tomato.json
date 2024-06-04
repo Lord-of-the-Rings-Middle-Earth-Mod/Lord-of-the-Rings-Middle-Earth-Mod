@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:tomato"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tomato_crate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:tomato_crate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_tomato_crate",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:tomato"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -1,6 +1,7 @@
 package me.anedhel.lotr.item;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
+import me.anedhel.lotr.block.ModBlocks;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -36,6 +37,13 @@ public class ModItems {
     public static final Item BRONZE_BOOTS = registerItem("bronze_boots",
             new ArmorItem(ModArmorMaterial.BRONZE, ArmorItem.Type.BOOTS, new FabricItemSettings()));
 
+    public static final Item TOMATO = registerItem("tomato",
+            new Item(new FabricItemSettings().food(ModFoodComponents.TOMATO)));
+    public static final Item TOMATO_SEEDS = registerItem("tomato_seeds",
+            new AliasedBlockItem(ModBlocks.TOMATO_CROP, new FabricItemSettings()));
+
+    public static final Item LETTUCE = registerItem("lettuce",
+            new AliasedBlockItem(ModBlocks.LETTUCE_CROP, new FabricItemSettings()));
 
     /**
      * This Method is used to register Items with minecraft.
