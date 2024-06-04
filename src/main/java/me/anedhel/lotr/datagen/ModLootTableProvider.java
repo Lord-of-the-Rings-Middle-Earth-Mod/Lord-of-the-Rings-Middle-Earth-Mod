@@ -45,6 +45,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 .exactMatch(LettuceCropBlock.AGE, LettuceCropBlock.MAX_AGE));
         addDrop(ModBlocks.LETTUCE_CROP, cropDrops(ModBlocks.LETTUCE_CROP, ModItems.LETTUCE, ModItems.LETTUCE, lettuceCropBuilder));
 
+        addDrop(ModBlocks.TOMATO_CRATE);
+        addDrop(ModBlocks.LETTUCE_CRATE);
+
         addDrop(ModBlocks.RAW_TIN_BLOCK);
         addDrop(ModBlocks.TIN_BLOCK);
         addDrop(ModBlocks.BRONZE_BLOCK);

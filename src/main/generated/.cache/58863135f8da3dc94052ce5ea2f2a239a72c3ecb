@@ -1,4 +1,4 @@
-// 1.20.1	2024-06-01T09:56:51.9210282	Lord of the Rings Middle Earth/Model Definitions
+// 1.20.1	2024-06-04T10:31:26.8122123	Lord of the Rings Middle Earth/Model Definitions
 1e2afb301a4fbb975408228f4fb8b722023a9f28 assets\lotr\models\item\blueslate_slab.json
 d59669ac92160f1ba25bbaca6aa86fc411221c98 assets\lotr\models\item\bronze_helmet_redstone_trim.json
 d97cf9aa4bdada5ad376d1a307ff651d28992277 assets\lotr\models\item\cobbled_andesite_stairs.json
@@ -29,8 +29,8 @@ ac28667c9c5d1c67191c8b95ad672ab1ca83fadf assets\lotr\models\block\granite_brick_
 ce97a9393b8bb513593f079bc7b263025995ae5d assets\minecraft\blockstates\diorite.json
 a38ac2f55eb7fad41364fef7018940801e298bfb assets\lotr\blockstates\blueslate_wall.json
 4514f680bc99568ddbdb735671aa5ac6333f7df9 assets\lotr\models\block\diorite_brick_slab.json
-ddb966c1f3479f8edc7905ca748c3d4b3dc6c496 assets\lotr\blockstates\andesite_brick_stairs.json
 62cfe8713f850389a48b947082d4bec143c7f314 assets\lotr\blockstates\granite_brick_stairs.json
+ddb966c1f3479f8edc7905ca748c3d4b3dc6c496 assets\lotr\blockstates\andesite_brick_stairs.json
 b046bc9d3d1d0445a24c4119dbf0cab6cb07f930 assets\lotr\blockstates\chalk_slab.json
 4c94d8098ea87a572e852118ed5626c4ee3f72ef assets\lotr\models\block\tomato_crop_stage3.json
 a846348801ab72e851e9b44c744a57ab65ce238f assets\lotr\models\item\cobbled_andesite_pressure_plate.json
@@ -297,8 +297,8 @@ bbe89436ee38d0652ca1cde000b70a4655ad4af2 assets\lotr\models\block\cobbled_chalk_
 690d53f0df7dcbc45d78d5b1c7aa688ccc88cd89 assets\lotr\blockstates\basalt_brick_stairs.json
 b58e3d2f52ba3c157ef256408ae93597693d3678 assets\lotr\models\block\blueslate_stairs_outer.json
 3a33be69f53ab4b737a76f9be7dcf8f4629ebc78 assets\lotr\blockstates\cobbled_diorite_stairs.json
-28b34663580e39bd54424d8b5215194a37e8c2f5 assets\lotr\blockstates\cobbled_granite_wall.json
 cd24e6eda2c46e7ed379f257be17d41640319f0e assets\lotr\blockstates\raw_tin_block.json
+28b34663580e39bd54424d8b5215194a37e8c2f5 assets\lotr\blockstates\cobbled_granite_wall.json
 f4736d01850482fc1ae5ed2f376fea04bd02e858 assets\lotr\models\block\cobbled_diorite_stairs_outer.json
 97d4db141fe9b9a9fa939bf3ce34d79e60d33d57 assets\lotr\blockstates\smooth_basalt_slab.json
 d4398342dfef9a641a2331da80cf737d4bf3fab0 assets\lotr\models\item\bronze_boots_diamond_trim.json

@@ -15,6 +15,9 @@
   "item.lotr.lettuce": "Lettuce",
   "item.lotr.lettuce_seeds": "Lettuce Seeds",
 
+  "block.lotr.tomato_crate": "Tomato Crate",
+  "block.lotr.lettuce_crate": "Lettuce Crate",
+
   "block.lotr.tin_ore": "Tin Ore",
   "block.lotr.tin_block": "Block of Tin",
   "block.lotr.raw_tin_block": "Block of Raw Tin",

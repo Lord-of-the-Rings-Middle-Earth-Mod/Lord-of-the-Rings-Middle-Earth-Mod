@@ -64,6 +64,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT, RecipeCategory.MISC, ModBlocks.TIN_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_INGOT, RecipeCategory.MISC, ModBlocks.BRONZE_BLOCK);
 
+        createCrateRecipe(ModItems.TOMATO, ModBlocks.TOMATO_CRATE, exporter);
+        createCrateRecipe(ModItems.LETTUCE, ModBlocks.LETTUCE_CRATE, exporter);
+
         createModGearTypeRecipes(ModGearType.BRONZE, exporter);
 
         createModStoneTypeRecipes(ModStoneType.ANDESITE, exporter, ModStoneType.COBBLED_ANDESITE, ModStoneType.ANDESITE_BRICK);
@@ -193,6 +196,22 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
         }
+    }
+
+    private void createCrateRecipe (Item item, Block crate, Consumer<RecipeJsonProvider> exporter) {
+        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, crate, 1)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .input('#', item)
+                .criterion(hasItem(item), conditionsFromItem(item))
+                .offerTo(exporter, new Identifier(getRecipeName(item) + "_crate"));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, item, 9)
+                .input(crate)
+                .criterion(hasItem(crate), conditionsFromItem(crate))
+                .offerTo(exporter, new Identifier(getRecipeName(item)));
+
     }
 
     /**

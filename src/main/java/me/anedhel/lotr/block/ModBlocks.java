@@ -31,6 +31,11 @@ public class ModBlocks {
     public static final Block LETTUCE_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lettuce_crop"),
             new LettuceCropBlock(FabricBlockSettings.copyOf(Blocks.BEETROOTS)));
 
+    public static final Block TOMATO_CRATE = registerBlock("tomato_crate",
+            new Block(FabricBlockSettings.copyOf(Blocks.COMPOSTER)));
+    public static final Block LETTUCE_CRATE = registerBlock("lettuce_crate",
+            new Block(FabricBlockSettings.copyOf(Blocks.COMPOSTER)));
+
     public static final Block CHALK = registerBlock("chalk",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block CHALK_STAIRS = registerBlock("chalk_stairs",
