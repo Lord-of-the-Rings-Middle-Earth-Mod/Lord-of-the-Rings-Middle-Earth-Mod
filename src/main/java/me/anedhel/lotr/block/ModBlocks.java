@@ -75,6 +75,20 @@ public class ModBlocks {
             new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
                     FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
 
+    public static final Block COBBLED_BLUESLATE = registerBlock("cobbled_blueslate",
+            new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+    public static final Block COBBLED_BLUESLATE_STAIRS = registerBlock("cobbled_blueslate_stairs",
+            new StairsBlock(ModBlocks.COBBLED_BLUESLATE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+    public static final Block COBBLED_BLUESLATE_SLAB = registerBlock("cobbled_blueslate_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+    public static final Block COBBLED_BLUESLATE_WALL = registerBlock("cobbled_blueslate_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+    public static final Block COBBLED_BLUESLATE_BUTTON = registerBlock("cobbled_blueslate_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+    public static final Block COBBLED_BLUESLATE_PRESSURE_PLATE = registerBlock("cobbled_blueslate_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+
     public static final Block BLUESLATE_BRICK = registerBlock("blueslate_brick",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block BLUESLATE_BRICK_STAIRS = registerBlock("blueslate_brick_stairs",

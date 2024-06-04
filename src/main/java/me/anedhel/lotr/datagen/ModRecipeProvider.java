@@ -70,7 +70,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         createModStoneTypeRecipes(ModStoneType.SMOOTH_BASALT, exporter, null, ModStoneType.BASALT_BRICKS);
         createModStoneTypeRecipes(ModStoneType.BASALT_BRICKS, exporter, null, null);
 
-        createModStoneTypeRecipes(ModStoneType.BLUESLATE, exporter, null, ModStoneType.BLUESLATE_BRICK);
+        createModStoneTypeRecipes(ModStoneType.BLUESLATE, exporter, ModStoneType.COBBLED_BLUESLATE, ModStoneType.BLUESLATE_BRICK);
+        createModStoneTypeRecipes(ModStoneType.COBBLED_BLUESLATE, exporter, null, null);
         createModStoneTypeRecipes(ModStoneType.BLUESLATE_BRICK, exporter, null, null);
 
         createModStoneTypeRecipes(ModStoneType.CHALK, exporter, ModStoneType.COBBLED_CHALK, ModStoneType.CHALK_BRICK);

@@ -52,6 +52,7 @@ public class ModModelProvider extends FabricModelProvider {
         generateModStoneTypeModels(ModStoneType.BASALT_BRICKS, blockStateModelGenerator);
 
         generateModStoneTypeModels(ModStoneType.BLUESLATE, blockStateModelGenerator);
+        generateModStoneTypeModels(ModStoneType.COBBLED_BLUESLATE, blockStateModelGenerator);
         generateModStoneTypeModels(ModStoneType.BLUESLATE_BRICK, blockStateModelGenerator);
 
         generateModStoneTypeModels(ModStoneType.CHALK, blockStateModelGenerator);
