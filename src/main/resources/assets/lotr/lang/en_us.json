@@ -10,13 +10,25 @@
   "item.lotr.tin_ingot": "Tin Ingot",
   "item.lotr.bronze_ingot": "Bronze Ingot",
 
+  "block.lotr.wild_beetroot": "Wild Beetroot",
+  "block.lotr.wild_carrot": "Wild Carrot",
+  "block.lotr.wild_potato": "Wild Potato",
+  "block.lotr.wild_corn": "Wild Corn",
+  "block.lotr.wild_lettuce": "Wild Lettuce",
+  "block.lotr.wild_tomato": "Wild Tomato",
+
   "item.lotr.tomato": "Tomato",
   "item.lotr.tomato_seeds": "Tomato Seeds",
   "item.lotr.lettuce": "Lettuce",
-  "item.lotr.lettuce_seeds": "Lettuce Seeds",
+  "item.lotr.corn": "Corn",
+  "item.lotr.corn_seeds": "Corn Seeds",
 
+  "block.lotr.beetroot_crate": "Beetroot Crate",
+  "block.lotr.carrot_crate": "Carrot Crate",
+  "block.lotr.potato_crate": "Potato Crate",
   "block.lotr.tomato_crate": "Tomato Crate",
   "block.lotr.lettuce_crate": "Lettuce Crate",
+  "block.lotr.corn_crate": "Corn Crate",
 
   "block.lotr.tin_ore": "Tin Ore",
   "block.lotr.tin_block": "Block of Tin",

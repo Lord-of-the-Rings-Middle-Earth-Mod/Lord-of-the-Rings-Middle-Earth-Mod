@@ -17,6 +17,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
+import java.awt.*;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -64,8 +65,22 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.TIN_INGOT, RecipeCategory.MISC, ModBlocks.TIN_BLOCK);
         offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_INGOT, RecipeCategory.MISC, ModBlocks.BRONZE_BLOCK);
 
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TOMATO_SEEDS, 1)
+                        .input(ModItems.TOMATO)
+                        .criterion(hasItem(ModItems.TOMATO), conditionsFromItem(ModItems.TOMATO))
+                        .offerTo(exporter, new Identifier(getRecipeName(ModItems.TOMATO_SEEDS)));
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CORN_SEEDS, 1)
+                        .input(ModItems.CORN)
+                        .criterion(hasItem(ModItems.CORN), conditionsFromItem(ModItems.CORN))
+                        .offerTo(exporter, new Identifier(getRecipeName(ModItems.CORN_SEEDS)));
+
         createCrateRecipe(ModItems.TOMATO, ModBlocks.TOMATO_CRATE, exporter);
         createCrateRecipe(ModItems.LETTUCE, ModBlocks.LETTUCE_CRATE, exporter);
+        createCrateRecipe(ModItems.CORN, ModBlocks.CORN_CRATE, exporter);
+        createCrateRecipe(Items.POTATO, ModBlocks.POTATO_CRATE, exporter);
+        createCrateRecipe(Items.CARROT, ModBlocks.CARROT_CRATE, exporter);
+        createCrateRecipe(Items.BEETROOT, ModBlocks.BEETROOT_CRATE, exporter);
 
         createModGearTypeRecipes(ModGearType.BRONZE, exporter);
 
@@ -199,6 +214,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         }
     }
 
+    /**
+     * This Method is used to generate a Crafting Recipe for a StorageCrate of the FarmItem
+     * @param item The Farm Item you wish to compact into a crate
+     * @param crate The Crate for the Farm Item
+     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
+     */
     private void createCrateRecipe (Item item, Block crate, Consumer<RecipeJsonProvider> exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, crate, 1)
                 .pattern("###")

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "lotr:corn"
+    }
+  ],
+  "result": {
+    "item": "lotr:corn_seeds"
+  }
+}

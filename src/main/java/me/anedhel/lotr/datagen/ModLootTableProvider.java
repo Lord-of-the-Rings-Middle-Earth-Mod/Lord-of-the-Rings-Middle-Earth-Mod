@@ -1,6 +1,7 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
 import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import me.anedhel.lotr.item.ModItems;
@@ -10,7 +11,9 @@ import net.minecraft.block.Block;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.AnyOfLootCondition;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
@@ -37,6 +40,19 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.TIN_ORE, oreDrops(ModBlocks.TIN_ORE, ModItems.RAW_TIN, UniformLootNumberProvider
                 .create(2.0f, 5.0f)));
 
+        addDrop(ModBlocks.WILD_BEETROOT, wildFlowerDrops(ModBlocks.WILD_BEETROOT, Items.BEETROOT, UniformLootNumberProvider.create(1.0f, 3.0f)));
+        addPottedPlantDrops(ModBlocks.POTTED_WILD_BEETROOT);
+        addDrop(ModBlocks.WILD_CARROT, wildFlowerDrops(ModBlocks.WILD_CARROT, Items.CARROT, UniformLootNumberProvider.create(1.0f, 3.0f)));
+        addPottedPlantDrops(ModBlocks.POTTED_WILD_CARROT);
+        addDrop(ModBlocks.WILD_POTATO, wildFlowerDrops(ModBlocks.WILD_POTATO, Items.POTATO, UniformLootNumberProvider.create(1.0f, 3.0f)));
+        addPottedPlantDrops(ModBlocks.POTTED_WILD_POTATO);
+        addDrop(ModBlocks.WILD_CORN, wildFlowerDrops(ModBlocks.WILD_CORN, ModItems.CORN, UniformLootNumberProvider.create(1.0f, 3.0f)));
+        addPottedPlantDrops(ModBlocks.POTTED_WILD_CORN);
+        addDrop(ModBlocks.WILD_LETTUCE, wildFlowerDrops(ModBlocks.WILD_LETTUCE, ModItems.LETTUCE, UniformLootNumberProvider.create(1.0f, 3.0f)));
+        addPottedPlantDrops(ModBlocks.POTTED_WILD_LETTUCE);
+        addDrop(ModBlocks.WILD_TOMATO, wildFlowerDrops(ModBlocks.WILD_TOMATO, ModItems.TOMATO, UniformLootNumberProvider.create(1.0f, 3.0f)));
+        addPottedPlantDrops(ModBlocks.POTTED_WILD_TOMATO);
+
         BlockStatePropertyLootCondition.Builder tomatoCropBuilder = BlockStatePropertyLootCondition.builder(ModBlocks.TOMATO_CROP).properties(StatePredicate.Builder.create()
                 .exactMatch(TomatoCropBlock.AGE, TomatoCropBlock.MAX_AGE));
         addDrop(ModBlocks.TOMATO_CROP, cropDrops(ModBlocks.TOMATO_CROP, ModItems.TOMATO, ModItems.TOMATO_SEEDS, tomatoCropBuilder));
@@ -45,8 +61,23 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 .exactMatch(LettuceCropBlock.AGE, LettuceCropBlock.MAX_AGE));
         addDrop(ModBlocks.LETTUCE_CROP, cropDrops(ModBlocks.LETTUCE_CROP, ModItems.LETTUCE, ModItems.LETTUCE, lettuceCropBuilder));
 
+        AnyOfLootCondition.Builder builder2 =
+                BlockStatePropertyLootCondition.builder(ModBlocks.CORN_CROP).properties(StatePredicate.Builder.create()
+                                .exactMatch(CornCropBlock.AGE, 7))
+                        .or(BlockStatePropertyLootCondition.builder(ModBlocks.CORN_CROP).properties(StatePredicate.Builder.create()
+                                .exactMatch(CornCropBlock.AGE, 8)));
+
+        // BlockStatePropertyLootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.CORN_CROP).properties(StatePredicate.Builder.create()
+        //         .exactMatch(CornCropBlock.AGE, 8));
+
+        addDrop(ModBlocks.CORN_CROP, cropDrops(ModBlocks.CORN_CROP, ModItems.CORN, ModItems.CORN_SEEDS, builder2));
+
         addDrop(ModBlocks.TOMATO_CRATE);
         addDrop(ModBlocks.LETTUCE_CRATE);
+        addDrop(ModBlocks.CORN_CRATE);
+        addDrop(ModBlocks.POTATO_CRATE);
+        addDrop(ModBlocks.CARROT_CRATE);
+        addDrop(ModBlocks.BEETROOT_CRATE);
 
         addDrop(ModBlocks.RAW_TIN_BLOCK);
         addDrop(ModBlocks.TIN_BLOCK);
@@ -173,5 +204,19 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                                 .apply(SetCountLootFunction
                                         .builder(dropRange)))
                         .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
+    }
+
+    /**
+     *
+     * @param drop The block dropped with SilkTouch
+     * @param item The item dropped without SilkTouch
+     * @param dropRange The range of how many items can drop from one flower
+     * @return The LootTable.Builder that can be added to the addDrop()-Methods
+     */
+    private LootTable.Builder wildFlowerDrops (Block drop, Item item, UniformLootNumberProvider dropRange) {
+        return BlockLootTableGenerator.dropsWithShears(drop, (LootPoolEntry.Builder)this.applyExplosionDecay(drop,
+                ((LeafEntry.Builder)
+                    ItemEntry.builder(item)
+                        .apply(SetCountLootFunction.builder(dropRange)))));
     }
 }

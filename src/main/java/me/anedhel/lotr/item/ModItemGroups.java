@@ -115,17 +115,29 @@ public class ModItemGroups {
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_food"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_food"))
                     .icon(() -> new ItemStack(ModItems.TOMATO)).entries(((displayContext, entries) -> {
+                        entries.add(ModBlocks.BEETROOT_CRATE);
+                        entries.add(ModBlocks.CARROT_CRATE);
+                        entries.add(ModBlocks.POTATO_CRATE);
                         entries.add(ModItems.TOMATO);
                         entries.add(ModBlocks.TOMATO_CRATE);
+                        entries.add(ModItems.CORN);
+                        entries.add(ModBlocks.CORN_CRATE);
                     })).build());
 
     public static final ItemGroup LOTR_PLANTS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_plants"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_plants"))
                     .icon(() -> new ItemStack(ModItems.TOMATO_SEEDS)).entries(((displayContext, entries) -> {
+                        entries.add(ModBlocks.WILD_BEETROOT);
+                        entries.add(ModBlocks.WILD_CARROT);
+                        entries.add(ModBlocks.WILD_POTATO);
+                        entries.add(ModBlocks.WILD_CORN);
+                        entries.add(ModBlocks.WILD_LETTUCE);
+                        entries.add(ModBlocks.WILD_TOMATO);
                         entries.add(ModItems.TOMATO_SEEDS);
                         entries.add(ModItems.LETTUCE);
                         entries.add(ModBlocks.LETTUCE_CRATE);
+                        entries.add(ModItems.CORN_SEEDS);
                     })).build());
 
     public static final ItemGroup LOTR_INGREDIENTS = Registry.register(Registries.ITEM_GROUP,
