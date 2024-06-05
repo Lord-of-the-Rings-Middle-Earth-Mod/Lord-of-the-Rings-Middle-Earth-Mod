@@ -45,6 +45,11 @@ public class ModItems {
     public static final Item LETTUCE = registerItem("lettuce",
             new AliasedBlockItem(ModBlocks.LETTUCE_CROP, new FabricItemSettings()));
 
+    public static final Item CORN = registerItem("corn",
+            new Item(new FabricItemSettings().food(ModFoodComponents.CORN)));
+    public static final Item CORN_SEEDS = registerItem("corn_seeds",
+            new AliasedBlockItem(ModBlocks.CORN_CROP, new FabricItemSettings()));
+
     /**
      * This Method is used to register Items with minecraft.
      * @param name the name of the Item

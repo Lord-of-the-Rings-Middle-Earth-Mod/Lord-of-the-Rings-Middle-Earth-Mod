@@ -1,0 +1,11 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "lotr:block/crate_bottom",
+    "up": "lotr:block/carrot_crate_top",
+    "north": "lotr:block/carrot_crate_side",
+    "south": "lotr:block/carrot_crate_side",
+    "west": "lotr:block/carrot_crate_side",
+    "east": "lotr:block/carrot_crate_side"
+  }
+}

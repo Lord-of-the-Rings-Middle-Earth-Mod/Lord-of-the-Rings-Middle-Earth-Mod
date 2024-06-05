@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_granite",
-      "has_cobblestone",
-      "has_the_recipe"
+      "has_cobblestone"
     ]
   ],
   "rewards": {

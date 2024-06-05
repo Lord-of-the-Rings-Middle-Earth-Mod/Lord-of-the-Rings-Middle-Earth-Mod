@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_andesite": {
+    "has_andesite_brick": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:andesite"
+              "lotr:andesite_brick"
             ]
           }
         ]
@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_andesite",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_andesite_brick"
     ]
   ],
   "rewards": {
