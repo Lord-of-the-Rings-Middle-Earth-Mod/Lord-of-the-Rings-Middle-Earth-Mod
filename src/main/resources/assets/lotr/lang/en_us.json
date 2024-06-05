@@ -103,11 +103,11 @@
   "block.lotr.granite_brick_slab": "Granite Brick Slab",
   "block.lotr.granite_brick_wall": "Granite Brick Wall",
 
-  "block.lotr.basalt_stairs": "Basalt Stairs",
-  "block.lotr.basalt_slab": "Basalt Slab",
-  "block.lotr.basalt_wall": "Basalt Wall",
-  "block.lotr.basalt_button": "Basalt Button",
-  "block.lotr.basalt_pressure_plate": "Basalt Pressure Plate",
+  "block.lotr.smooth_basalt_stairs": "Smooth Basalt Stairs",
+  "block.lotr.smooth_basalt_slab": "Smooth Basalt Slab",
+  "block.lotr.smooth_basalt_wall": "Smooth Basalt Wall",
+  "block.lotr.smooth_basalt_button": "Smooth Basalt Button",
+  "block.lotr.smooth_basalt_pressure_plate": "Smooth Basalt Pressure Plate",
 
   "block.lotr.basalt_brick": "Basalt Brick",
   "block.lotr.basalt_brick_stairs": "Basalt Brick Stairs",

@@ -21,3 +21,4 @@ ___
 + Added Corn as a 2 Block high crop with the respective crate as Compacted Block
 + Added Crates for Beetroot, Carrots and Potatoes
 + Added Wild Flowers for Beetroot, Carrots, Potatoes, Corn, Lettuce and Tomato, that drop the Respective Items or themselves when sheared
++ Added Corn as Composter usable Item

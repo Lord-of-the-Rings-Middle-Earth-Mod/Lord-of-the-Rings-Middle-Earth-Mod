@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_andesite": {
+    "has_cobbled_andesite": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:andesite"
+              "lotr:cobbled_andesite"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cobbled_andesite_wall"
+        "recipe": "lotr:cobbled_andesite_wall"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_andesite",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_cobbled_andesite"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cobbled_andesite_wall"
+      "lotr:cobbled_andesite_wall"
     ]
   },
   "sends_telemetry_event": false

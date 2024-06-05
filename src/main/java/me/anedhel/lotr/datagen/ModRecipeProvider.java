@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.Item;
@@ -17,9 +17,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.util.Identifier;
 
-import java.awt.*;
 import java.util.List;
-import java.util.function.Consumer;
 
 /**
  * This class is used to register all crafting recipes the mod provides.
@@ -41,7 +39,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param exporter A RecipeJsonProvider, which is provided by minecraft
      */
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
         offerSmelting(exporter, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 200, "tin");
         offerBlasting(exporter, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 100, "tin");
         offerSmelting(exporter, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK, 5.6f, 1600, "tin_block");
@@ -116,7 +114,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param gearType The ModGearType that all craftingRecipes are to be generated for
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createModGearTypeRecipes (ModGearType gearType, Consumer<RecipeJsonProvider> exporter) {
+    private void createModGearTypeRecipes (ModGearType gearType, RecipeExporter exporter) {
         Item material = gearType.getMaterial();
         Item helmet = gearType.getHelmet();
         Item chestplate = gearType.getChestplate();
@@ -166,7 +164,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param cobbledVariant The cobbled version of the stoneType, null if there is none
      * @param brickVariant The bricks of the stoneType, null if there is none
      */
-    private void createModStoneTypeRecipes (ModStoneType stoneType, Consumer<RecipeJsonProvider> exporter, ModStoneType cobbledVariant, ModStoneType brickVariant) {
+    private void createModStoneTypeRecipes (ModStoneType stoneType, RecipeExporter exporter, ModStoneType cobbledVariant, ModStoneType brickVariant) {
         Block baseBlock = stoneType.getBaseBlock();
         Block stairBlock = stoneType.getStairBlock();
         Block slabBlock = stoneType.getSlabBlock();
@@ -220,7 +218,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param crate The Crate for the Farm Item
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createCrateRecipe (Item item, Block crate, Consumer<RecipeJsonProvider> exporter) {
+    private void createCrateRecipe (Item item, Block crate, RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, crate, 1)
                 .pattern("###")
                 .pattern("###")
@@ -242,7 +240,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output the brick of the blank stone type
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createBricksRecipe (Block input, Block output, Consumer<RecipeJsonProvider> exporter) {
+    private void createBricksRecipe (Block input, Block output, RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4)
                 .pattern("##")
                 .pattern("##")
@@ -257,7 +255,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output the cobbled variant of the blank stone type
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createCobbledStoneTypeRecipe (Block input, Block output, Consumer<RecipeJsonProvider> exporter) {
+    private void createCobbledStoneTypeRecipe (Block input, Block output, RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4)
                 .pattern("#C")
                 .pattern("C#")
@@ -274,7 +272,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output the button of the blank stone type
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createButtonRecipe (Block input, Block output, Consumer<RecipeJsonProvider> exporter) {
+    private void createButtonRecipe (Block input, Block output, RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, output, 1)
                 .pattern(" # ")
                 .input('#', input)
@@ -288,7 +286,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output the stairs of the input
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createStairRecipe (Block input, Block output, Consumer<RecipeJsonProvider> exporter) {
+    private void createStairRecipe (Block input, Block output, RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4)
                 .pattern("#  ")
                 .pattern("## ")
@@ -304,7 +302,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output The sword made from the Ingredient
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createSwordRecipe (Item input, Item output, Consumer<RecipeJsonProvider> exporter){
+    private void createSwordRecipe (Item input, Item output, RecipeExporter exporter){
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
                 .pattern("#")
                 .pattern("#")
@@ -322,7 +320,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output The axe made from the Ingredient
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createAxeRecipe (Item input, Item output, Consumer<RecipeJsonProvider> exporter){
+    private void createAxeRecipe (Item input, Item output, RecipeExporter exporter){
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
                 .pattern("## ")
                 .pattern("#S ")
@@ -340,7 +338,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output The pickaxe made from the Ingredient
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createPickaxeRecipe (Item input, Item output, Consumer<RecipeJsonProvider> exporter){
+    private void createPickaxeRecipe (Item input, Item output, RecipeExporter exporter){
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
                 .pattern("###")
                 .pattern(" S ")
@@ -358,7 +356,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output The shovel made from the Ingredient
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createShovelRecipe (Item input, Item output, Consumer<RecipeJsonProvider> exporter){
+    private void createShovelRecipe (Item input, Item output, RecipeExporter exporter){
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
                 .pattern("#")
                 .pattern("S")
@@ -376,7 +374,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output The how made from the Ingredient
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createHoeRecipe (Item input, Item output, Consumer<RecipeJsonProvider> exporter){
+    private void createHoeRecipe (Item input, Item output, RecipeExporter exporter){
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
                 .pattern("## ")
                 .pattern(" S ")
@@ -394,7 +392,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output The helmet made from the Ingredient
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createHelmetRecipe(Item input, Item output, Consumer<RecipeJsonProvider> exporter) {
+    private void createHelmetRecipe(Item input, Item output, RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
                 .pattern("###")
                 .pattern("# #")
@@ -409,7 +407,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output The chestplate made from the Ingredient
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createChestplateRecipe(Item input, Item output, Consumer<RecipeJsonProvider> exporter) {
+    private void createChestplateRecipe(Item input, Item output, RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
                 .pattern("# #")
                 .pattern("###")
@@ -425,7 +423,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output The leggins made from the Ingredient
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createLegginsRecipe(Item input, Item output, Consumer<RecipeJsonProvider> exporter) {
+    private void createLegginsRecipe(Item input, Item output, RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
                 .pattern("###")
                 .pattern("# #")
@@ -441,7 +439,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      * @param output The boots made from the Ingredient
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createBootsRecipe(Item input, Item output, Consumer<RecipeJsonProvider> exporter) {
+    private void createBootsRecipe(Item input, Item output, RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
                 .pattern("# #")
                 .pattern("# #")
