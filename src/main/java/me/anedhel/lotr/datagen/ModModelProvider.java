@@ -12,9 +12,13 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Model;
 import net.minecraft.data.client.Models;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
+import net.minecraft.util.Identifier;
+
+import java.util.Optional;
 
 /**
  * This class is used to generate all models the mod provides.
@@ -86,6 +90,9 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
         itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
+
+        itemModelGenerator.register(ModItems.HOBBIT_SPAWN_EGG,
+                new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
 
         generateModGearTypeModels(ModGearType.BRONZE, itemModelGenerator);
     }

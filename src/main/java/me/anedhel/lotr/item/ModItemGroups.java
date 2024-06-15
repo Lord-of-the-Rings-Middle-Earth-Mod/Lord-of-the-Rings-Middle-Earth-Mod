@@ -170,6 +170,13 @@ public class ModItemGroups {
                         entries.add(ModItems.BRONZE_BOOTS);
                     }).build());
 
+    public static final ItemGroup LOTR_SPAWNING = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_spawning"),
+            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_spawning"))
+                    .icon(() -> new ItemStack(ModItems.HOBBIT_SPAWN_EGG)).entries((displayContext, entries) -> {
+                        entries.add(ModItems.HOBBIT_SPAWN_EGG);
+                    }).build());
+
     /**
      * This Method is run on startup and informs that ItemGroups are being registered.
      */

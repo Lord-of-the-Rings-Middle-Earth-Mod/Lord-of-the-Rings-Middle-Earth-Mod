@@ -2,6 +2,7 @@ package me.anedhel.lotr.item;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.entity.ModEntities;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -12,6 +13,9 @@ import net.minecraft.util.Identifier;
  * This class is used to register all Items added by the mod.
  */
 public class ModItems {
+
+    public static final Item HOBBIT_SPAWN_EGG = registerItem("hobbit_spawn_egg",
+            new SpawnEggItem(ModEntities.HOBBIT, 0xa86518, 0x3b260f, new FabricItemSettings()));
 
     public static final Item RAW_TIN = registerItem("raw_tin", new Item(new FabricItemSettings()));
     public static final Item TIN_INGOT = registerItem("tin_ingot", new Item(new FabricItemSettings()));

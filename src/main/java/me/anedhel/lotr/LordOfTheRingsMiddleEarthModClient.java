@@ -1,8 +1,14 @@
 package me.anedhel.lotr;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.entity.ModEntities;
+import me.anedhel.lotr.entity.client.HobbitModel;
+import me.anedhel.lotr.entity.client.HobbitRenderer;
+import me.anedhel.lotr.entity.client.ModModelLayers;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
 
 public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer {
@@ -27,5 +33,8 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_WILD_LETTUCE, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WILD_TOMATO, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_WILD_TOMATO, RenderLayer.getCutout());
+
+        EntityRendererRegistry.register(ModEntities.HOBBIT, HobbitRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.HOBBIT, HobbitModel::getTexturedModelData);
     }
 }
