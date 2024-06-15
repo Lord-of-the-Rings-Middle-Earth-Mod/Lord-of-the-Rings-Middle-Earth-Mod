@@ -5,6 +5,7 @@
   "itemgroup.lotr_ingredients": "LotR Ingredients",
   "itemgroup.lotr_tools": "LotR Tools",
   "itemgroup.lotr_combat": "LotR Combat",
+  "itemgroup.lotr_spawning": "LotR Spawning",
 
   "item.lotr.raw_tin": "Raw Tin",
   "item.lotr.tin_ingot": "Tin Ingot",
@@ -154,5 +155,7 @@
   "block.lotr.cobbled_chalk_slab": "Cobbled Chalk Slab",
   "block.lotr.cobbled_chalk_wall": "Cobbled Chalk Wall",
   "block.lotr.cobbled_chalk_button": "Cobbled Chalk Button",
-  "block.lotr.cobbled_chalk_pressure_plate": "Cobbled Chalk Pressure Plate"
+  "block.lotr.cobbled_chalk_pressure_plate": "Cobbled Chalk Pressure Plate",
+
+  "item.lotr.hobbit_spawn_egg": "Hobbit Spawn Egg"
 }

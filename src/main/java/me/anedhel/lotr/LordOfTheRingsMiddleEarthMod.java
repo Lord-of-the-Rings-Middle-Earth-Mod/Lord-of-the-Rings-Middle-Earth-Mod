@@ -1,10 +1,13 @@
 package me.anedhel.lotr;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.entity.ModEntities;
+import me.anedhel.lotr.entity.custom.HobbitEntity;
 import me.anedhel.lotr.item.ModItemGroups;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.block.ComposterBlock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,6 +23,8 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 		ModItemGroups.registerModItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		FabricDefaultAttributeRegistry.register(ModEntities.HOBBIT, HobbitEntity.createHobbitAttributes());
 
 		addCropsToComposer();
 		LOGGER.info("The Lord of the Rings Mod is loaded.");
