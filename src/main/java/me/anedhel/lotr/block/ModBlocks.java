@@ -74,6 +74,36 @@ public class ModBlocks {
     public static final Block CORN_CRATE = registerBlock("corn_crate",
             new Block(FabricBlockSettings.copyOf(Blocks.COMPOSTER)));
 
+    public static final Block PINE_LOG = registerBlock("pine_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).strength(4f)));
+    public static final Block PINE_WOOD = registerBlock("pine_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+    public static final Block STRIPPED_PINE_LOG = registerBlock("stripped_pine_log",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG).strength(4f)));
+    public static final Block STRIPPED_PINE_WOOD = registerBlock("stripped_pine_wood",
+            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
+    public static final Block PINE_PLANKS = registerBlock("pine_planks",
+            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f)));
+    public static final Block PINE_PLANKS_STAIRS = registerBlock("pine_planks_stairs",
+            new StairsBlock(ModBlocks.PINE_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_STAIRS).strength(4f)));
+    public static final Block PINE_PLANKS_SLAB = registerBlock("pine_planks_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f)));
+    public static final Block PINE_PLANKS_FENCE = registerBlock("pine_planks_fence",
+            new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
+    public static final Block PINE_PLANKS_FENCE_GATE = registerBlock("pine_planks_fence_gate",
+            new FenceGateBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE), WoodType.OAK));
+    public static final Block PINE_PLANKS_BUTTON = registerBlock("pine_planks_button",
+            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f), BlockSetType.OAK, 10, true));
+    public static final Block PINE_PLANKS_PRESSURE_PLATE = registerBlock("pine_planks_pressure_plate",
+            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+                    FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f), BlockSetType.OAK));
+    public static final Block PINE_PLANKS_DOOR = registerBlock("pine_planks_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR), BlockSetType.OAK));
+    public static final Block PINE_PLANKS_TRAPDOOR = registerBlock("pine_planks_trapdoor",
+            new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
+    public static final Block PINE_LEAVES = registerBlock("pine_leaves",
+            new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
+
     public static final Block CHALK = registerBlock("chalk",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block CHALK_STAIRS = registerBlock("chalk_stairs",

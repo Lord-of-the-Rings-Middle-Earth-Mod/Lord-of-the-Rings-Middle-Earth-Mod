@@ -2,6 +2,7 @@ package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModStoneType;
+import me.anedhel.lotr.block.ModWoodType;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
@@ -25,6 +26,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
      */
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
+
+        configureModWoodType(ModWoodType.PINE);
 
         configureModStoneType(ModStoneType.ANDESITE);
         configureModStoneType(ModStoneType.POLISHED_ANDESITE);
@@ -100,6 +103,44 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         }
         if (pressurePlateBlock != null) {
             pickaxeTag.add(pressurePlateBlock);
+        }
+    }
+
+    /**
+     * This Method configures all required tags for the given ModWoodType.
+     * @param woodType The type, that all tags should be configured for
+     */
+    private void configureModWoodType(ModWoodType woodType) {
+        Block log = woodType.getLog();
+        Block wood = woodType.getWood();
+        Block strippedLog = woodType.getStrippedLog();
+        Block strippedWood = woodType.getStrippedWood();
+        Block planksFence = woodType.getPlanksFence();
+        Block planksFenceGate = woodType.getPlanksFenceGate();
+
+        FabricTagBuilder logsThatBurnTag = getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN);
+        FabricTagBuilder fenceTag = getOrCreateTagBuilder(BlockTags.FENCES);
+        FabricTagBuilder fenceGateTag = getOrCreateTagBuilder(BlockTags.FENCE_GATES);
+
+        if (!woodType.isVanillaAddition()) {
+            if (log != null) {
+                logsThatBurnTag.add(log);
+            }
+        }
+        if (wood != null) {
+            logsThatBurnTag.add(wood);
+        }
+        if (strippedLog != null) {
+            logsThatBurnTag.add(strippedLog);
+        }
+        if (strippedWood != null) {
+            logsThatBurnTag.add(strippedWood);
+        }
+        if (planksFence != null) {
+            fenceTag.add(planksFence);
+        }
+        if (planksFenceGate != null) {
+            fenceGateTag.add(planksFenceGate);
         }
     }
 }

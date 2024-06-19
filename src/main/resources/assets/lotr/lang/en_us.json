@@ -47,6 +47,21 @@
   "item.lotr.bronze_leggings": "Bronze Leggings",
   "item.lotr.bronze_boots": "Bronze Boots",
 
+  "block.lotr.pine_log": "Pine Log",
+  "block.lotr.pine_wood": "Pine Wood",
+  "block.lotr.stripped_pine_log": "Stripped Pine Log",
+  "block.lotr.stripped_pine_wood": "Stripped Pine Wood",
+  "block.lotr.pine_planks": "Pine Planks",
+  "block.lotr.pine_planks_stairs": "Pine Planks Stairs",
+  "block.lotr.pine_planks_slab": "Pine Planks Slab",
+  "block.lotr.pine_planks_fence": "Pine Planks Fence",
+  "block.lotr.pine_planks_fence_gate": "Pine Planks Fence Gate",
+  "block.lotr.pine_planks_button": "Pine Planks Button",
+  "block.lotr.pine_planks_pressure_plate": "Pine Planks Pressure Plate",
+  "block.lotr.pine_planks_door": "Pine Planks Door",
+  "block.lotr.pine_planks_trapdoor": "Pine Planks Trapdoor",
+  "block.lotr.pine_leaves": "Pine Leaves",
+
   "block.lotr.andesite_button": "Andesite Button",
   "block.lotr.andesite_pressure_plate": "Andesite Pressure Plate",
 

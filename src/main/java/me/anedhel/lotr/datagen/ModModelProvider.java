@@ -2,6 +2,7 @@ package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModStoneType;
+import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
 import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
@@ -50,6 +51,8 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_CORN, ModBlocks.POTTED_WILD_CORN, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_LETTUCE, ModBlocks.POTTED_WILD_LETTUCE, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_TOMATO, ModBlocks.POTTED_WILD_TOMATO, BlockStateModelGenerator.TintType.NOT_TINTED);
+
+        generateModWoodTypeModels(ModWoodType.PINE, blockStateModelGenerator);
 
         generateModStoneTypeModels(ModStoneType.ANDESITE, blockStateModelGenerator);
         generateModStoneTypeModels(ModStoneType.POLISHED_ANDESITE, blockStateModelGenerator);
@@ -175,5 +178,44 @@ public class ModModelProvider extends FabricModelProvider {
                 stoneTypePool.pressurePlate(pressurePlateBlock);
             }
         }
+    }
+
+    /**
+     * This Method is used to generate all the models for the given wood type.
+     * It only works for blocks completely added by the mod, adding Models for additions made based on vanilla blocks does not work with this method.
+     * @param woodType The ModWoodType, for which the models should be created
+     * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
+     */
+    private void generateModWoodTypeModels(ModWoodType woodType, BlockStateModelGenerator blockStateModelGenerator) {
+        Block log = woodType.getLog();
+        Block wood = woodType.getWood();
+        Block strippedLog = woodType.getStrippedLog();
+        Block strippedWood = woodType.getStrippedWood();
+        Block planks = woodType.getPlanks();
+        Block planksStairs = woodType.getPlanksStairs();
+        Block planksSlab = woodType.getPlanksSlab();
+        Block planksFence = woodType.getPlanksFence();
+        Block planksFenceGate = woodType.getPlanksFenceGate();
+        Block planksButton = woodType.getPlanksButton();
+        Block planksPressurePlate = woodType.getPlanksPressurePlate();
+        Block planksDoor = woodType.getPlanksDoor();
+        Block planksTrapdoor = woodType.getPlanksTrapdoor();
+        Block leaves = woodType.getLeaves();
+
+        BlockStateModelGenerator.BlockTexturePool planksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(planks);
+        planksPool.stairs(planksStairs);
+        planksPool.slab(planksSlab);
+        planksPool.fence(planksFence);
+        planksPool.fenceGate(planksFenceGate);
+        planksPool.button(planksButton);
+        planksPool.pressurePlate(planksPressurePlate);
+
+        blockStateModelGenerator.registerDoor(planksDoor);
+        blockStateModelGenerator.registerTrapdoor(planksTrapdoor);
+
+        blockStateModelGenerator.registerLog(log).log(log).wood(wood);
+        blockStateModelGenerator.registerLog(strippedLog).log(strippedLog).wood(strippedWood);
+
+        blockStateModelGenerator.registerSimpleCubeAll(leaves);
     }
 }
