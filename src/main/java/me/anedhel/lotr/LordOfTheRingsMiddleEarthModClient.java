@@ -1,5 +1,6 @@
 package me.anedhel.lotr;
 
+import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.entity.ModEntities;
 import me.anedhel.lotr.entity.client.HobbitModel;
@@ -11,6 +12,8 @@ import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.TexturedRenderLayers;
+import net.minecraft.client.util.SpriteIdentifier;
 
 public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer {
     /**
@@ -38,6 +41,9 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINE_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINE_PLANKS_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PINE_PLANKS_TRAPDOOR, RenderLayer.getCutout());
+
+        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks.PINE_SIGN_TEXTURE));
+        SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModBlocks.PINE_HANGING_SIGN_TEXTURE));
 
         EntityRendererRegistry.register(ModEntities.HOBBIT, HobbitRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.HOBBIT, HobbitModel::getTexturedModelData);

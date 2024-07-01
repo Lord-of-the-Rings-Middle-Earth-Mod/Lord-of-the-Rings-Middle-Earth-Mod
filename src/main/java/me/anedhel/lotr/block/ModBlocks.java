@@ -1,5 +1,7 @@
 package me.anedhel.lotr.block;
 
+import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
+import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
@@ -7,6 +9,8 @@ import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.data.family.BlockFamilies;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -103,6 +107,34 @@ public class ModBlocks {
             new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR), BlockSetType.OAK));
     public static final Block PINE_LEAVES = registerBlock("pine_leaves",
             new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
+
+    public static final Identifier PINE_SIGN_TEXTURE = new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "entity/signs/pine");
+    public static final Identifier PINE_HANGING_SIGN_TEXTURE = new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "entity/signs/hanging/pine");
+    public static final Identifier PINE_HANGING_GUI_SIGN_TEXTURE = new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "textures/gui/hanging_sign/pine");
+
+    public static final Block STANDING_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_standing_sign"),
+            new TerraformSignBlock(PINE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
+    public static final Block WALL_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_wall_sign"),
+            new TerraformSignBlock(PINE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
+    public static final Block HANGING_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_hanging_sign"),
+            new TerraformHangingSignBlock(PINE_HANGING_SIGN_TEXTURE, PINE_HANGING_GUI_SIGN_TEXTURE,
+                    FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
+    public static final Block WALL_HANGING_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_wall_hanging_sign"),
+            new TerraformHangingSignBlock(PINE_HANGING_SIGN_TEXTURE, PINE_HANGING_GUI_SIGN_TEXTURE,
+                    FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
+
+    public static final BlockFamily PINE_PLANKS_FAMILY = BlockFamilies.register(ModBlocks.PINE_PLANKS)
+            .stairs(ModBlocks.PINE_PLANKS_STAIRS)
+            .slab(ModBlocks.PINE_PLANKS_SLAB)
+            .fence(ModBlocks.PINE_PLANKS_FENCE)
+            .fenceGate(ModBlocks.PINE_PLANKS_FENCE_GATE)
+            .button(ModBlocks.PINE_PLANKS_BUTTON)
+            .pressurePlate(ModBlocks.PINE_PLANKS_PRESSURE_PLATE)
+            .sign(ModBlocks.STANDING_PINE_SIGN, ModBlocks.WALL_PINE_SIGN)
+            .door(ModBlocks.PINE_PLANKS_DOOR)
+            .trapdoor(ModBlocks.PINE_PLANKS_TRAPDOOR)
+            .group("wooden").unlockCriterionName("has_planks").build();
+
 
     public static final Block CHALK = registerBlock("chalk",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));

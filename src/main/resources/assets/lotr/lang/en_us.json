@@ -60,6 +60,10 @@
   "block.lotr.pine_planks_pressure_plate": "Pine Planks Pressure Plate",
   "block.lotr.pine_planks_door": "Pine Planks Door",
   "block.lotr.pine_planks_trapdoor": "Pine Planks Trapdoor",
+  "block.lotr.pine_standing_sign": "Pine Standing Sign",
+  "block.lotr.pine_wall_sign": "Pine Wall Sign",
+  "block.lotr.pine_hanging_sign": "Pine Hanging Sign",
+  "block.lotr.pine_wall_hanging_sign": "Pine Wall Hanging Sign",
   "block.lotr.pine_leaves": "Pine Leaves",
 
   "block.lotr.andesite_button": "Andesite Button",

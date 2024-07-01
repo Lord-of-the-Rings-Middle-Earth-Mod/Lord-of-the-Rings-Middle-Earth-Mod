@@ -17,6 +17,11 @@ public class ModItems {
     public static final Item HOBBIT_SPAWN_EGG = registerItem("hobbit_spawn_egg",
             new SpawnEggItem(ModEntities.HOBBIT, 0xa86518, 0x3b260f, new FabricItemSettings()));
 
+    public static final Item PINE_SIGN = registerItem("pine_sign",
+            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.STANDING_PINE_SIGN, ModBlocks.WALL_PINE_SIGN));
+    public static final Item HANGING_PINE_SIGN = registerItem("hanging_pine_sign",
+            new HangingSignItem(ModBlocks.HANGING_PINE_SIGN, ModBlocks.WALL_HANGING_PINE_SIGN, new FabricItemSettings().maxCount(16)));
+
     public static final Item RAW_TIN = registerItem("raw_tin", new Item(new FabricItemSettings()));
     public static final Item TIN_INGOT = registerItem("tin_ingot", new Item(new FabricItemSettings()));
     public static final Item BRONZE_INGOT = registerItem("bronze_ingot", new Item(new FabricItemSettings()));

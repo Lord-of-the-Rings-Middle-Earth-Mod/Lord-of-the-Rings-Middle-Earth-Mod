@@ -2,6 +2,14 @@ package me.anedhel.lotr.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemConvertible;
+import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public enum ModStoneType {
     ANDESITE(Blocks.ANDESITE, null, null, null,
@@ -66,6 +74,31 @@ public enum ModStoneType {
         this.buttonBlock = buttonBlock;
         this.pressurePlateBlock = pressurePlateBlock;
         this.vanillaAddition = vanillaAddition;
+    }
+
+    public @NotNull List<ItemStack> getItemGroupList() {
+        List<ItemStack> itemGroupList = new ArrayList<>();
+
+        if (baseBlock != null && !vanillaAddition) {
+            itemGroupList.add(new ItemStack(baseBlock));
+        }
+        if (stairBlock != null) {
+            itemGroupList.add(new ItemStack(stairBlock));
+        }
+        if (slabBlock != null) {
+            itemGroupList.add(new ItemStack(slabBlock));
+        }
+        if (wallBlock != null) {
+            itemGroupList.add(new ItemStack(wallBlock));
+        }
+        if (buttonBlock != null) {
+            itemGroupList.add(new ItemStack(buttonBlock));
+        }
+        if (pressurePlateBlock != null) {
+            itemGroupList.add(new ItemStack(pressurePlateBlock));
+        }
+
+        return itemGroupList;
     }
 
     public Block getBaseBlock() {

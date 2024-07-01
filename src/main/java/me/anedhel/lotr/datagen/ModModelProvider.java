@@ -94,6 +94,8 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
         itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.HANGING_PINE_SIGN, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.HOBBIT_SPAWN_EGG,
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
 
@@ -187,35 +189,12 @@ public class ModModelProvider extends FabricModelProvider {
      * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
      */
     private void generateModWoodTypeModels(ModWoodType woodType, BlockStateModelGenerator blockStateModelGenerator) {
-        Block log = woodType.getLog();
-        Block wood = woodType.getWood();
-        Block strippedLog = woodType.getStrippedLog();
-        Block strippedWood = woodType.getStrippedWood();
-        Block planks = woodType.getPlanks();
-        Block planksStairs = woodType.getPlanksStairs();
-        Block planksSlab = woodType.getPlanksSlab();
-        Block planksFence = woodType.getPlanksFence();
-        Block planksFenceGate = woodType.getPlanksFenceGate();
-        Block planksButton = woodType.getPlanksButton();
-        Block planksPressurePlate = woodType.getPlanksPressurePlate();
-        Block planksDoor = woodType.getPlanksDoor();
-        Block planksTrapdoor = woodType.getPlanksTrapdoor();
-        Block leaves = woodType.getLeaves();
+        BlockStateModelGenerator.BlockTexturePool planksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getPlanksFamily().getBaseBlock());
+        planksPool.family(woodType.getPlanksFamily());
 
-        BlockStateModelGenerator.BlockTexturePool planksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(planks);
-        planksPool.stairs(planksStairs);
-        planksPool.slab(planksSlab);
-        planksPool.fence(planksFence);
-        planksPool.fenceGate(planksFenceGate);
-        planksPool.button(planksButton);
-        planksPool.pressurePlate(planksPressurePlate);
+        blockStateModelGenerator.registerLog(woodType.getLog()).log(woodType.getLog()).wood(woodType.getWood());
+        blockStateModelGenerator.registerLog(woodType.getStrippedLog()).log(woodType.getStrippedLog()).wood(woodType.getStrippedWood());
 
-        blockStateModelGenerator.registerDoor(planksDoor);
-        blockStateModelGenerator.registerTrapdoor(planksTrapdoor);
-
-        blockStateModelGenerator.registerLog(log).log(log).wood(wood);
-        blockStateModelGenerator.registerLog(strippedLog).log(strippedLog).wood(strippedWood);
-
-        blockStateModelGenerator.registerSimpleCubeAll(leaves);
+        blockStateModelGenerator.registerSimpleCubeAll(woodType.getLeaves());
     }
 }

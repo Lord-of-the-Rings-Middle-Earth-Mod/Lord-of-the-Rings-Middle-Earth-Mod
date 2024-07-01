@@ -83,6 +83,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         createCrateRecipe(Items.CARROT, ModBlocks.CARROT_CRATE, exporter);
         createCrateRecipe(Items.BEETROOT, ModBlocks.BEETROOT_CRATE, exporter);
 
+        createModWoodTypeRecipes(ModWoodType.PINE, exporter);
+
         createModGearTypeRecipes(ModGearType.BRONZE, exporter);
 
         createModStoneTypeRecipes(ModStoneType.ANDESITE, exporter, ModStoneType.COBBLED_ANDESITE, ModStoneType.ANDESITE_BRICK);
@@ -108,8 +110,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         createModStoneTypeRecipes(ModStoneType.BLUESLATE_BRICK, exporter, null, null);
 
         createModStoneTypeRecipes(ModStoneType.CHALK, exporter, ModStoneType.COBBLED_CHALK, ModStoneType.CHALK_BRICK);
-        createModStoneTypeRecipes(ModStoneType.COBBLED_CHALK, exporter, null, null);
-        createModStoneTypeRecipes(ModStoneType.CHALK_BRICK, exporter, null, null);
     }
 
     /**
@@ -196,10 +196,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             }
             if (cobbledVariant != null && !cobbledVariant.isVanillaAddition()) {
                 createCobbledStoneTypeRecipe(baseBlock, cobbledVariant.getBaseBlock(), exporter);
+                createModStoneTypeRecipes(cobbledVariant, exporter, null, null);
             }
             if (brickVariant != null) {
                 if (!brickVariant.isVanillaAddition()) {
                     createBricksRecipe(baseBlock, brickVariant.getBaseBlock(), exporter);
+                    createModStoneTypeRecipes(ModStoneType.CHALK_BRICK, exporter, null, null);
                     offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickVariant.getBaseBlock(), baseBlock);
                 }
                 if (brickVariant.getStairBlock() != null) {
@@ -225,7 +227,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         Block wood = woodType.getWood();
         Block strippedLog = woodType.getStrippedLog();
         Block strippedWood = woodType.getStrippedWood();
-        Block planks = woodType.getPlanks();
+        /*Block planks = woodType.getPlanks();
         Block planksStairs = woodType.getPlanksStairs();
         Block planksSlab = woodType.getPlanksSlab();
         Block planksFence = woodType.getPlanksFence();
@@ -233,17 +235,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         Block planksButton = woodType.getPlanksButton();
         Block planksPressurePlate = woodType.getPlanksPressurePlate();
         Block planksDoor = woodType.getPlanksDoor();
-        Block planksTrapdoor = woodType.getPlanksTrapdoor();
+        Block planksTrapdoor = woodType.getPlanksTrapdoor();*/
 
         if (!woodType.isVanillaAddition()) {
+            generateFamily(exporter, woodType.getPlanksFamily());
             if (log != null && wood != null && strippedLog != null && strippedWood != null) {
-                offerBarkBlockRecipe(exporter, log, wood);
-                offerBarkBlockRecipe(exporter, strippedLog, strippedWood);
-                if (planks != null) {
+                offerBarkBlockRecipe(exporter, wood, log);
+                offerBarkBlockRecipe(exporter, strippedWood, strippedLog);
+                /*if (planks != null) {
                     offerPlanksRecipe(exporter, planks, TagKey.of(RegistryKeys.ITEM, new Identifier("lotr", log.toString().toUpperCase())), 4);
-                }
+                }*/
             }
-            if (planks != null) {
+            /*if (planks != null) {
                 if (planksStairs != null) {
                     createStairRecipe(planks, planksStairs, exporter);
                 }
@@ -268,7 +271,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 if (planksTrapdoor != null) {
                     createTrapdoorRecipe(planks, planksTrapdoor, exporter);
                 }
-            }
+            }*/
         }
     }
 

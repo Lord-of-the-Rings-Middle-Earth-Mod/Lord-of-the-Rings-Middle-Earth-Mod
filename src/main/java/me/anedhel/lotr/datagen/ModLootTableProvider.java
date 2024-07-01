@@ -87,11 +87,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PINE_WOOD);
         addDrop(ModBlocks.STRIPPED_PINE_LOG);
         addDrop(ModBlocks.STRIPPED_PINE_WOOD);
-        addDrop(ModBlocks.PINE_PLANKS);
+        /*addDrop(ModBlocks.PINE_PLANKS);
         addDrop(ModBlocks.PINE_PLANKS_FENCE);
         addDrop(ModBlocks.PINE_PLANKS_FENCE_GATE);
         addDrop(ModBlocks.PINE_PLANKS_DOOR, doorDrops(ModBlocks.PINE_PLANKS_DOOR));
-        addDrop(ModBlocks.PINE_PLANKS_TRAPDOOR);
+        addDrop(ModBlocks.PINE_PLANKS_TRAPDOOR);*/
         addDrop(ModBlocks.PINE_LEAVES, leavesDrops(ModBlocks.PINE_LEAVES, ModBlocks.WILD_CORN, 0.0025f)); //ToDo: Add proper Sapling
 
         addDrop(ModBlocks.ANDESITE_BUTTON);

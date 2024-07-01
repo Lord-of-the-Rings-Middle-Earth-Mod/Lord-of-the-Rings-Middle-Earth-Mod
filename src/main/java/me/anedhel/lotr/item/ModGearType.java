@@ -1,6 +1,11 @@
 package me.anedhel.lotr.item;
 
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public enum ModGearType {
     BRONZE(ModItems.BRONZE_INGOT, ModItems.BRONZE_HELMET, ModItems.BRONZE_CHESTPLATE, ModItems.BRONZE_LEGGINGS, ModItems.BRONZE_BOOTS,
@@ -30,6 +35,43 @@ public enum ModGearType {
         this.shovel = shovel;
         this.hoe = hoe;
         this.vanillaAddition = vanillaAddition;
+    }
+
+    public @NotNull List<ItemStack> getToolItemGroupList () {
+        List<ItemStack> toolItemGroupList = new ArrayList<>();
+        if (axe != null) {
+            toolItemGroupList.add(new ItemStack(axe));
+        }
+        if (pickaxe != null) {
+            toolItemGroupList.add(new ItemStack(pickaxe));
+        }
+        if (shovel != null) {
+            toolItemGroupList.add(new ItemStack(shovel));
+        }
+        if (hoe != null) {
+            toolItemGroupList.add(new ItemStack(hoe));
+        }
+        return toolItemGroupList;
+    }
+
+    public @NotNull List<ItemStack> getCombatItemGroupList () {
+        List<ItemStack> combatItemGroupList = new ArrayList<>();
+        if (sword != null) {
+            combatItemGroupList.add(new ItemStack(sword));
+        }
+        if (helmet != null) {
+            combatItemGroupList.add(new ItemStack(helmet));
+        }
+        if (chestplate != null) {
+            combatItemGroupList.add(new ItemStack(chestplate));
+        }
+        if (leggings != null) {
+            combatItemGroupList.add(new ItemStack(leggings));
+        }
+        if (boots != null) {
+            combatItemGroupList.add(new ItemStack(boots));
+        }
+        return combatItemGroupList;
     }
 
     public Item getMaterial() {
