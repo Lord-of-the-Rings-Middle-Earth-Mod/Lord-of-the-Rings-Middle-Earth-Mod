@@ -51,6 +51,10 @@
 
   "block.lotr.pine_log": "Pine Log",
   "block.lotr.pine_wood": "Pine Wood",
+  "block.lotr.pine_wood_stairs": "Pine Wood Stairs",
+  "block.lotr.pine_wood_slab": "Pine Wood Slab",
+  "block.lotr.pine_wood_door": "Pine Wood Door",
+  "block.lotr.pine_wood_trapdoor": "Pine Wood Trapdoor",
   "block.lotr.stripped_pine_log": "Stripped Pine Log",
   "block.lotr.stripped_pine_wood": "Stripped Pine Wood",
   "block.lotr.pine_planks": "Pine Planks",

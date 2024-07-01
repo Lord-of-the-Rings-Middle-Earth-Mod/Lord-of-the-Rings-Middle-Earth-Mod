@@ -7,7 +7,6 @@ import me.anedhel.lotr.entity.custom.HobbitEntity;
 import me.anedhel.lotr.item.ModItemGroups;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.minecraft.block.Block;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -59,22 +58,15 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 	 * @param woodType The woodType to be initialised
 	 */
 	private void initModWoodType (ModWoodType woodType) {
-		Block log = woodType.getLog();
-		Block wood = woodType.getWood();
-		Block strippedLog = woodType.getStrippedLog();
-		Block strippedWood = woodType.getStrippedWood();
-		Block planks = woodType.getPlanks();
-		Block leaves = woodType.getLeaves();
-
-		StrippableBlockRegistry.register(log, strippedLog);
-		StrippableBlockRegistry.register(wood, strippedWood);
+		StrippableBlockRegistry.register(woodType.getLog(), woodType.getStrippedLog());
+		StrippableBlockRegistry.register(woodType.getWood(), woodType.getStrippedWood());
 
 		//ToDo: Add Stairs, Slab, Fence, Fence Gate, etc?
-		FlammableBlockRegistry.getDefaultInstance().add(log, 5, 5);
-		FlammableBlockRegistry.getDefaultInstance().add(wood, 5, 5);
-		FlammableBlockRegistry.getDefaultInstance().add(strippedLog, 5, 5);
-		FlammableBlockRegistry.getDefaultInstance().add(strippedWood, 5, 5);
-		FlammableBlockRegistry.getDefaultInstance().add(planks, 5, 20);
-		FlammableBlockRegistry.getDefaultInstance().add(leaves, 30, 60);
+		FlammableBlockRegistry.getDefaultInstance().add(woodType.getLog(), 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(woodType.getWood(), 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(woodType.getStrippedLog(), 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(woodType.getStrippedWood(), 5, 5);
+		FlammableBlockRegistry.getDefaultInstance().add(woodType.getPlanks(), 5, 20);
+		FlammableBlockRegistry.getDefaultInstance().add(woodType.getLeaves(), 30, 60);
 	}
 }

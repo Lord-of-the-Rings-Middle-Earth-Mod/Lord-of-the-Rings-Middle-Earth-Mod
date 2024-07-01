@@ -86,6 +86,14 @@ public class ModBlocks {
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG).strength(4f)));
     public static final Block STRIPPED_PINE_WOOD = registerBlock("stripped_pine_wood",
             new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
+    public static final Block PINE_WOOD_STAIRS = registerBlock("pine_wood_stairs",
+            new StairsBlock(ModBlocks.PINE_WOOD.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+    public static final Block PINE_WOOD_SLAB = registerBlock("pine_wood_slabs",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+    public static final Block PINE_WOOD_DOOR = registerBlock("pine_wood_door",
+            new DoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f), BlockSetType.OAK));
+    public static final Block PINE_WOOD_TRAPDOOR = registerBlock("pine_wood_trapdoor",
+            new TrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f), BlockSetType.OAK));
     public static final Block PINE_PLANKS = registerBlock("pine_planks",
             new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f)));
     public static final Block PINE_PLANKS_STAIRS = registerBlock("pine_planks_stairs",
@@ -135,6 +143,12 @@ public class ModBlocks {
             .trapdoor(ModBlocks.PINE_PLANKS_TRAPDOOR)
             .group("wooden").unlockCriterionName("has_planks").build();
 
+    public static final BlockFamily PINE_WOOD_FAMILY = BlockFamilies.register(ModBlocks.PINE_WOOD)
+            .stairs(ModBlocks.PINE_WOOD_STAIRS)
+            .slab(ModBlocks.PINE_WOOD_SLAB)
+            .door(ModBlocks.PINE_WOOD_DOOR)
+            .trapdoor(ModBlocks.PINE_WOOD_TRAPDOOR)
+            .group("wooden").unlockCriterionName("has_wood").build();
 
     public static final Block CHALK = registerBlock("chalk",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));

@@ -12,8 +12,9 @@ public enum ModWoodType {
             ModBlocks.PINE_PLANKS, ModBlocks.PINE_PLANKS_STAIRS, ModBlocks.PINE_PLANKS_SLAB,
             ModBlocks.PINE_PLANKS_BUTTON, ModBlocks.PINE_PLANKS_PRESSURE_PLATE,
             ModBlocks.PINE_PLANKS_FENCE, ModBlocks.PINE_PLANKS_FENCE_GATE,
-            ModBlocks.PINE_PLANKS_DOOR, ModBlocks.PINE_PLANKS_TRAPDOOR,
-            ModBlocks.PINE_PLANKS_FAMILY, ModBlocks.PINE_LEAVES, false);
+            ModBlocks.PINE_PLANKS_DOOR, ModBlocks.PINE_PLANKS_TRAPDOOR, ModBlocks.PINE_WOOD_STAIRS, ModBlocks.PINE_WOOD_SLAB,
+            ModBlocks.PINE_WOOD_DOOR, ModBlocks.PINE_WOOD_TRAPDOOR,
+            ModBlocks.PINE_PLANKS_FAMILY, ModBlocks.PINE_WOOD_FAMILY, ModBlocks.PINE_LEAVES, false);
 
     private final Block log;
     private final Block wood;
@@ -28,11 +29,16 @@ public enum ModWoodType {
     private final Block planksFenceGate;
     private final Block planksDoor;
     private final Block planksTrapdoor;
+    private final Block woodStairs;
+    private final Block woodSlab;
+    private final Block woodDoor;
+    private final Block woodTrapdoor;
     private final BlockFamily planksFamily;
+    private final BlockFamily woodFamily;
     private final Block leaves;
     private final boolean vanillaAddition;
 
-    ModWoodType(Block log, Block wood, Block strippedLog, Block strippedWood, Block planks, Block planksStairs, Block planksSlab, Block planksButton, Block planksPressurePlate, Block planksFence, Block planksFenceGate, Block planksDoor, Block planksTrapdoor, BlockFamily planksFamily, Block leaves, boolean vanillaAddition) {
+    ModWoodType(Block log, Block wood, Block strippedLog, Block strippedWood, Block planks, Block planksStairs, Block planksSlab, Block planksButton, Block planksPressurePlate, Block planksFence, Block planksFenceGate, Block planksDoor, Block planksTrapdoor, Block woodStairs, Block woodSlab, Block woodDoor, Block woodTrapdoor, BlockFamily planksFamily, BlockFamily woodFamily, Block leaves, boolean vanillaAddition) {
         this.log = log;
         this.wood = wood;
         this.strippedLog = strippedLog;
@@ -45,6 +51,11 @@ public enum ModWoodType {
         this.planksFenceGate = planksFenceGate;
         this.planksDoor = planksDoor;
         this.planksTrapdoor = planksTrapdoor;
+        this.woodStairs = woodStairs;
+        this.woodSlab = woodSlab;
+        this.woodDoor = woodDoor;
+        this.woodTrapdoor = woodTrapdoor;
+        this.woodFamily = woodFamily;
         this.vanillaAddition = vanillaAddition;
         this.planks = planks;
         this.planksFamily = planksFamily;
@@ -59,6 +70,18 @@ public enum ModWoodType {
         }
         if (wood != null) {
             itemGroupList.add(new ItemStack(wood));
+        }
+        if (woodStairs != null) {
+            itemGroupList.add(new ItemStack(woodStairs));
+        }
+        if (woodSlab != null) {
+            itemGroupList.add(new ItemStack(woodSlab));
+        }
+        if (woodDoor != null) {
+            itemGroupList.add(new ItemStack(woodDoor));
+        }
+        if (woodTrapdoor != null) {
+            itemGroupList.add(new ItemStack(woodTrapdoor));
         }
         if (strippedLog != null) {
             itemGroupList.add(new ItemStack(strippedLog));
@@ -116,6 +139,22 @@ public enum ModWoodType {
         return strippedLog;
     }
 
+    public Block getWoodStairs () {
+        return woodStairs;
+    }
+
+    public Block getWoodSlab () {
+        return woodSlab;
+    }
+
+    public Block getWoodDoor () {
+        return woodDoor;
+    }
+
+    public Block getWoodTrapdoor () {
+        return woodTrapdoor;
+    }
+
     public Block getPlanks() {
         return planks;
     }
@@ -154,6 +193,10 @@ public enum ModWoodType {
 
     public BlockFamily getPlanksFamily() {
         return planksFamily;
+    }
+
+    public BlockFamily getWoodFamily() {
+        return woodFamily;
     }
 
     public Block getLeaves() {

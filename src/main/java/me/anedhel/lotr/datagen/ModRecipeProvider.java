@@ -87,25 +87,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         createModStoneTypeRecipes(ModStoneType.ANDESITE, exporter, ModStoneType.COBBLED_ANDESITE, ModStoneType.ANDESITE_BRICK);
         createModStoneTypeRecipes(ModStoneType.POLISHED_ANDESITE, exporter, null, null);
-        createModStoneTypeRecipes(ModStoneType.COBBLED_ANDESITE, exporter, null, null);
-        createModStoneTypeRecipes(ModStoneType.ANDESITE_BRICK, exporter, null, null);
 
         createModStoneTypeRecipes(ModStoneType.DIORITE, exporter, ModStoneType.COBBLED_DIORITE, ModStoneType.DIORITE_BRICK);
         createModStoneTypeRecipes(ModStoneType.POLISHED_DIORITE, exporter, null, null);
-        createModStoneTypeRecipes(ModStoneType.COBBLED_DIORITE, exporter, null, null);
-        createModStoneTypeRecipes(ModStoneType.DIORITE_BRICK, exporter, null, null);
 
         createModStoneTypeRecipes(ModStoneType.GRANITE, exporter, ModStoneType.COBBLED_GRANITE, ModStoneType.GRANITE_BRICK);
         createModStoneTypeRecipes(ModStoneType.POLISHED_GRANITE, exporter, null, null);
-        createModStoneTypeRecipes(ModStoneType.COBBLED_GRANITE, exporter, null, null);
-        createModStoneTypeRecipes(ModStoneType.GRANITE_BRICK, exporter, null, null);
 
         createModStoneTypeRecipes(ModStoneType.SMOOTH_BASALT, exporter, null, ModStoneType.BASALT_BRICKS);
-        createModStoneTypeRecipes(ModStoneType.BASALT_BRICKS, exporter, null, null);
 
         createModStoneTypeRecipes(ModStoneType.BLUESLATE, exporter, ModStoneType.COBBLED_BLUESLATE, ModStoneType.BLUESLATE_BRICK);
-        createModStoneTypeRecipes(ModStoneType.COBBLED_BLUESLATE, exporter, null, null);
-        createModStoneTypeRecipes(ModStoneType.BLUESLATE_BRICK, exporter, null, null);
 
         createModStoneTypeRecipes(ModStoneType.CHALK, exporter, ModStoneType.COBBLED_CHALK, ModStoneType.CHALK_BRICK);
     }
@@ -199,7 +190,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
             if (brickVariant != null) {
                 if (!brickVariant.isVanillaAddition()) {
                     createBricksRecipe(baseBlock, brickVariant.getBaseBlock(), exporter);
-                    createModStoneTypeRecipes(ModStoneType.CHALK_BRICK, exporter, null, null);
+                    createModStoneTypeRecipes(brickVariant, exporter, null, null);
                     offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickVariant.getBaseBlock(), baseBlock);
                 }
                 if (brickVariant.getStairBlock() != null) {
@@ -237,6 +228,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         if (!woodType.isVanillaAddition()) {
             generateFamily(exporter, woodType.getPlanksFamily());
+            generateFamily(exporter, woodType.getWoodFamily());
             if (log != null && wood != null && strippedLog != null && strippedWood != null) {
                 offerBarkBlockRecipe(exporter, wood, log);
                 offerBarkBlockRecipe(exporter, strippedWood, strippedLog);

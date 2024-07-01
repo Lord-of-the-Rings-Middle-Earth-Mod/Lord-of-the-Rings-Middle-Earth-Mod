@@ -1,7 +1,6 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "end": "lotr:block/pine_log",
-    "side": "lotr:block/pine_log"
+    "all": "lotr:block/pine_wood"
   }
 }

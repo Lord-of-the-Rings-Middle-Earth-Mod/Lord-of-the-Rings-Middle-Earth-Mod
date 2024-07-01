@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "lotr:block/pine_wood",
+    "side": "lotr:block/pine_wood",
+    "top": "lotr:block/pine_wood"
+  }
+}

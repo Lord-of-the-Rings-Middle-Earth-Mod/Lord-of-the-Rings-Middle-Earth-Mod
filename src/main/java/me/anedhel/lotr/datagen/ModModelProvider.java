@@ -192,7 +192,10 @@ public class ModModelProvider extends FabricModelProvider {
         BlockStateModelGenerator.BlockTexturePool planksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getPlanksFamily().getBaseBlock());
         planksPool.family(woodType.getPlanksFamily());
 
-        blockStateModelGenerator.registerLog(woodType.getLog()).log(woodType.getLog()).wood(woodType.getWood());
+        BlockStateModelGenerator.BlockTexturePool woodPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getWoodFamily().getBaseBlock());
+        woodPool.family(woodType.getWoodFamily());
+
+        blockStateModelGenerator.registerLog(woodType.getLog()).log(woodType.getLog());
         blockStateModelGenerator.registerLog(woodType.getStrippedLog()).log(woodType.getStrippedLog()).wood(woodType.getStrippedWood());
 
         blockStateModelGenerator.registerSimpleCubeAll(woodType.getLeaves());
