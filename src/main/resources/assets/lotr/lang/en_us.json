@@ -6,6 +6,8 @@
   "itemgroup.lotr_tools": "LotR Tools",
   "itemgroup.lotr_combat": "LotR Combat",
   "itemgroup.lotr_spawning": "LotR Spawning",
+  "itemgroup.lotr_stone": "LotR Stone",
+  "itemgroup.lotr_wood": "LotR Wood",
 
   "item.lotr.raw_tin": "Raw Tin",
   "item.lotr.tin_ingot": "Tin Ingot",

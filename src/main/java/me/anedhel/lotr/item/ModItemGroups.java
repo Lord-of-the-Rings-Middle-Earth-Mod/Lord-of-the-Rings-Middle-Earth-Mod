@@ -43,15 +43,14 @@ public class ModItemGroups {
 
     public static final ItemGroup LOTR_WOOD = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_wood"),
-            FabricItemGroup.builder()
-                    .displayName(Text.translatableWithFallback("itemgroup.lotr_wood", "LotR Wood"))
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_wood", "LotR Wood"))
                     .icon(() -> new ItemStack(ModBlocks.PINE_LOG)).entries(((displayContext, entries) -> {
                         entries.addAll(ModWoodType.PINE.getItemGroupList());
                     })).build());
 
     public static final ItemGroup LOTR_BLOCKS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_blocks"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_blocks"))
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_blocks", "LotR Blocks"))
                     .icon(() -> new ItemStack(ModBlocks.CHALK)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.TIN_ORE);
                         entries.add(ModBlocks.RAW_TIN_BLOCK);
@@ -61,7 +60,7 @@ public class ModItemGroups {
 
     public static final ItemGroup LOTR_FOOD = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_food"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_food"))
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_food", "LotR Food"))
                     .icon(() -> new ItemStack(ModItems.TOMATO)).entries(((displayContext, entries) -> {
                         entries.add(ModBlocks.BEETROOT_CRATE);
                         entries.add(ModBlocks.CARROT_CRATE);
@@ -74,7 +73,7 @@ public class ModItemGroups {
 
     public static final ItemGroup LOTR_PLANTS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_plants"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_plants"))
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_plants", "LotR Plants"))
                     .icon(() -> new ItemStack(ModItems.TOMATO_SEEDS)).entries(((displayContext, entries) -> {
                         entries.add(ModBlocks.WILD_BEETROOT);
                         entries.add(ModBlocks.WILD_CARROT);
@@ -90,7 +89,7 @@ public class ModItemGroups {
 
     public static final ItemGroup LOTR_INGREDIENTS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_ingredients"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_ingredients"))
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_ingredients", "LotR Ingredients"))
                     .icon(() -> new ItemStack(ModItems.TIN_INGOT)).entries((displayContext, entries) -> {
                         entries.add(ModItems.RAW_TIN);
                         entries.add(ModItems.TIN_INGOT);
@@ -99,21 +98,21 @@ public class ModItemGroups {
 
     public static final ItemGroup LOTR_TOOLS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_tools"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_tools"))
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_tools", "LotR Tools"))
                     .icon(() -> new ItemStack(ModItems.BRONZE_AXE)).entries((displayContext, entries) -> {
                         entries.addAll(ModGearType.BRONZE.getToolItemGroupList());
                     }).build());
 
     public static final ItemGroup LOTR_COMBAT = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_combat"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_combat"))
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_combat", "LotR Combar"))
                     .icon(() -> new ItemStack(ModItems.BRONZE_SWORD)).entries((displayContext, entries) -> {
                         entries.addAll(ModGearType.BRONZE.getCombatItemGroupList());
                     }).build());
 
     public static final ItemGroup LOTR_SPAWNING = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_spawning"),
-            FabricItemGroup.builder().displayName(Text.translatable("itemgroup.lotr_spawning"))
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_spawning", "LotR Spawning"))
                     .icon(() -> new ItemStack(ModItems.HOBBIT_SPAWN_EGG)).entries((displayContext, entries) -> {
                         entries.add(ModItems.HOBBIT_SPAWN_EGG);
                     }).build());

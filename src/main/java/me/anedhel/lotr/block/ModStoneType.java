@@ -2,14 +2,11 @@ package me.anedhel.lotr.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public enum ModStoneType {
     ANDESITE(Blocks.ANDESITE, null, null, null,
