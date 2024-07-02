@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "lotr:block/stripped_pine_wood"
+  }
+}

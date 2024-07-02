@@ -3,6 +3,7 @@ package me.anedhel.lotr.item;
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModStoneType;
+import me.anedhel.lotr.block.ModWoodBlocks;
 import me.anedhel.lotr.block.ModWoodType;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
@@ -44,7 +45,7 @@ public class ModItemGroups {
     public static final ItemGroup LOTR_WOOD = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_wood"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_wood", "LotR Wood"))
-                    .icon(() -> new ItemStack(ModBlocks.PINE_LOG)).entries(((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModWoodBlocks.PINE_LOG)).entries(((displayContext, entries) -> {
                         entries.addAll(ModWoodType.PINE.getItemGroupList());
                     })).build());
 

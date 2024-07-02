@@ -29,7 +29,7 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 
 		FabricDefaultAttributeRegistry.register(ModEntities.HOBBIT, HobbitEntity.createHobbitAttributes());
 
-		initModWoodType(ModWoodType.PINE);
+		initModWoodTypes();
 
 		addCropsToComposer();
 		LOGGER.info("The Lord of the Rings Mod is loaded.");
@@ -54,19 +54,20 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 	}
 
 	/**
-	 * This Method is used to initialise the given WoodType to be flammable and the logs to be strippable
-	 * @param woodType The woodType to be initialised
+	 * This Method is used to initialise all WoodTypes to be flammable and the logs to be strippable
 	 */
-	private void initModWoodType (ModWoodType woodType) {
-		StrippableBlockRegistry.register(woodType.getLog(), woodType.getStrippedLog());
-		StrippableBlockRegistry.register(woodType.getWood(), woodType.getStrippedWood());
+	private void initModWoodTypes() {
+		for (ModWoodType woodType : ModWoodType.values()) {
+			StrippableBlockRegistry.register(woodType.getLog(), woodType.getStrippedLog());
+			StrippableBlockRegistry.register(woodType.getWood(), woodType.getStrippedWood());
 
-		//ToDo: Add Stairs, Slab, Fence, Fence Gate, etc?
-		FlammableBlockRegistry.getDefaultInstance().add(woodType.getLog(), 5, 5);
-		FlammableBlockRegistry.getDefaultInstance().add(woodType.getWood(), 5, 5);
-		FlammableBlockRegistry.getDefaultInstance().add(woodType.getStrippedLog(), 5, 5);
-		FlammableBlockRegistry.getDefaultInstance().add(woodType.getStrippedWood(), 5, 5);
-		FlammableBlockRegistry.getDefaultInstance().add(woodType.getPlanks(), 5, 20);
-		FlammableBlockRegistry.getDefaultInstance().add(woodType.getLeaves(), 30, 60);
+			//ToDo: Add Stairs, Slab, Fence, Fence Gate, etc?
+			FlammableBlockRegistry.getDefaultInstance().add(woodType.getLog(), 5, 5);
+			FlammableBlockRegistry.getDefaultInstance().add(woodType.getWood(), 5, 5);
+			FlammableBlockRegistry.getDefaultInstance().add(woodType.getStrippedLog(), 5, 5);
+			FlammableBlockRegistry.getDefaultInstance().add(woodType.getStrippedWood(), 5, 5);
+			FlammableBlockRegistry.getDefaultInstance().add(woodType.getPlanks(), 5, 20);
+			FlammableBlockRegistry.getDefaultInstance().add(woodType.getLeaves(), 30, 60);
+		}
 	}
 }

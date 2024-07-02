@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "lotr:block/pine_wood_pressure_plate"
+    },
+    "powered=true": {
+      "model": "lotr:block/pine_wood_pressure_plate_down"
+    }
+  }
+}

@@ -16,6 +16,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -81,7 +83,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         createCrateRecipe(Items.CARROT, ModBlocks.CARROT_CRATE, exporter);
         createCrateRecipe(Items.BEETROOT, ModBlocks.BEETROOT_CRATE, exporter);
 
-        createModWoodTypeRecipes(ModWoodType.PINE, exporter);
+        createModWoodTypesRecipes(exporter);
 
         createModGearTypeRecipes(ModGearType.BRONZE, exporter);
 
@@ -207,61 +209,23 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     }
 
     /**
-     * This Method is used to create all crafting recipes using the given ModWoodType
-     * @param woodType The ModWoodType, for which all Recipes are to be created
+     * This Method is used to create all crafting recipes for all ModWoodTypes
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
      */
-    private void createModWoodTypeRecipes (ModWoodType woodType, RecipeExporter exporter) {
-        Block log = woodType.getLog();
-        Block wood = woodType.getWood();
-        Block strippedLog = woodType.getStrippedLog();
-        Block strippedWood = woodType.getStrippedWood();
-        /*Block planks = woodType.getPlanks();
-        Block planksStairs = woodType.getPlanksStairs();
-        Block planksSlab = woodType.getPlanksSlab();
-        Block planksFence = woodType.getPlanksFence();
-        Block planksFenceGate = woodType.getPlanksFenceGate();
-        Block planksButton = woodType.getPlanksButton();
-        Block planksPressurePlate = woodType.getPlanksPressurePlate();
-        Block planksDoor = woodType.getPlanksDoor();
-        Block planksTrapdoor = woodType.getPlanksTrapdoor();*/
-
-        if (!woodType.isVanillaAddition()) {
-            generateFamily(exporter, woodType.getPlanksFamily());
-            generateFamily(exporter, woodType.getWoodFamily());
-            if (log != null && wood != null && strippedLog != null && strippedWood != null) {
-                offerBarkBlockRecipe(exporter, wood, log);
-                offerBarkBlockRecipe(exporter, strippedWood, strippedLog);
-                /*if (planks != null) {
-                    offerPlanksRecipe(exporter, planks, TagKey.of(RegistryKeys.ITEM, new Identifier("lotr", log.toString().toUpperCase())), 4);
-                }*/
+    private void createModWoodTypesRecipes(RecipeExporter exporter) {
+        for (ModWoodType woodType : ModWoodType.values()) {
+            if (!woodType.isVanillaAddition()) {
+                generateFamily(exporter, woodType.getWoodFamily());
+                generateFamily(exporter, woodType.getStrippedWoodFamily());
+                generateFamily(exporter, woodType.getPlanksFamily());
+                if (woodType.getLog() != null && woodType.getWood() != null && woodType.getStrippedLog() != null && woodType.getStrippedWood() != null) {
+                    offerBarkBlockRecipe(exporter, woodType.getWood(), woodType.getLog());
+                    offerBarkBlockRecipe(exporter, woodType.getStrippedWood(), woodType.getStrippedLog());
+                    if (woodType.getPlanks() != null) {
+                        offerPlanksRecipe(exporter, woodType.getPlanks(), TagKey.of(RegistryKeys.ITEM, new Identifier("lotr", turnBlockIntoTag(woodType.getLog()))), 4);
+                    }
+                }
             }
-            /*if (planks != null) {
-                if (planksStairs != null) {
-                    createStairRecipe(planks, planksStairs, exporter);
-                }
-                if (planksSlab != null) {
-                    offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, planksSlab, planks);
-                }
-                if (planksFence != null) {
-                    createFenceRecipe(planks, planksFence, exporter);
-                }
-                if (planksFenceGate != null) {
-                    createFenceGateRecipe(planks, planksFenceGate, exporter);
-                }
-                if (planksButton != null) {
-                    createButtonRecipe(planks, planksButton, exporter);
-                }
-                if (planksPressurePlate != null) {
-                    offerPressurePlateRecipe(exporter, planksPressurePlate, planks);
-                }
-                if (planksDoor != null) {
-                    createDoorRecipe(planks, planksDoor, exporter);
-                }
-                if (planksTrapdoor != null) {
-                    createTrapdoorRecipe(planks, planksTrapdoor, exporter);
-                }
-            }*/
         }
     }
 
@@ -328,71 +292,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     private void createButtonRecipe (Block input, Block output, RecipeExporter exporter) {
         ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, output, 1)
                 .pattern(" # ")
-                .input('#', input)
-                .criterion(hasItem(input), conditionsFromItem(input))
-                .offerTo(exporter, new Identifier(getRecipeName(output)));
-    }
-
-    /**
-     * This Method creates a Fence Recipe for the given input, with 3 fence as outcome
-     * @param input The block for which a fence recipe is to be added
-     * @param output The fence block for the input
-     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
-     */
-    private void createFenceRecipe (Block input, Block output, RecipeExporter exporter) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 3)
-                .pattern("#S#")
-                .pattern("#S#")
-                .input('#', input)
-                .input('S', Items.STICK)
-                .criterion(hasItem(input), conditionsFromItem(input))
-                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(output)));
-    }
-
-    /**
-     * This Method creates a Fence Gate Recipe for the given input, with 1 fence gate as outcome
-     * @param input The block for which a fence gate recipe is to be added
-     * @param output The fence gate block for the input
-     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
-     */
-    private void createFenceGateRecipe (Block input, Block output, RecipeExporter exporter) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
-                .pattern("S#S")
-                .pattern("S#S")
-                .input('#', input)
-                .input('S', Items.STICK)
-                .criterion(hasItem(input), conditionsFromItem(input))
-                .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-                .offerTo(exporter, new Identifier(getRecipeName(output)));
-    }
-
-    /**
-     * This Method creates a Door Recipe for the given input, with 3 doors as outcome
-     * @param input The block for which a door recipe is to be added
-     * @param output The door block coming out of this recipe
-     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
-     */
-    private void createDoorRecipe (Block input, Block output, RecipeExporter exporter) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
-                .pattern("##")
-                .pattern("##")
-                .pattern("##")
-                .input('#', input)
-                .criterion(hasItem(input), conditionsFromItem(input))
-                .offerTo(exporter, new Identifier(getRecipeName(output)));
-    }
-
-    /**
-     * This Method creates a Trapdoor Recipe for the given input, with 1 trapdoor as outcome
-     * @param input The block for which a trapdoor recipe is to be added
-     * @param output The trapdoor block coming out of this recipe
-     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
-     */
-    private void createTrapdoorRecipe (Block input, Block output, RecipeExporter exporter) {
-        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
-                .pattern("###")
-                .pattern("###")
                 .input('#', input)
                 .criterion(hasItem(input), conditionsFromItem(input))
                 .offerTo(exporter, new Identifier(getRecipeName(output)));
@@ -564,5 +463,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .input('#', input)
                 .criterion(hasItem(input), conditionsFromItem(input))
                 .offerTo(exporter, new Identifier(getRecipeName(output)));
+    }
+
+    private String turnBlockIntoTag (Block block) {
+        return block.getName().getString().replace(' ', '_').toLowerCase();
     }
 }

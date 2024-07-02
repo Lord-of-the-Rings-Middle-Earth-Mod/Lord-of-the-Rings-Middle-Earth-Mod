@@ -1,6 +1,8 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModWoodBlocks;
+import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
 import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
@@ -83,16 +85,37 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.TIN_BLOCK);
         addDrop(ModBlocks.BRONZE_BLOCK);
 
-        addDrop(ModBlocks.PINE_LOG);
-        addDrop(ModBlocks.PINE_WOOD);
-        addDrop(ModBlocks.STRIPPED_PINE_LOG);
-        addDrop(ModBlocks.STRIPPED_PINE_WOOD);
-        /*addDrop(ModBlocks.PINE_PLANKS);
-        addDrop(ModBlocks.PINE_PLANKS_FENCE);
-        addDrop(ModBlocks.PINE_PLANKS_FENCE_GATE);
-        addDrop(ModBlocks.PINE_PLANKS_DOOR, doorDrops(ModBlocks.PINE_PLANKS_DOOR));
-        addDrop(ModBlocks.PINE_PLANKS_TRAPDOOR);*/
-        addDrop(ModBlocks.PINE_LEAVES, leavesDrops(ModBlocks.PINE_LEAVES, ModBlocks.WILD_CORN, 0.0025f)); //ToDo: Add proper Sapling
+        for (ModWoodType woodType : ModWoodType.values()) {
+            addDrop(woodType.getLog());
+            addDrop(woodType.getWood());
+            addDrop(woodType.getWoodStairs());
+            addDrop(woodType.getWoodSlab());
+            addDrop(woodType.getWoodButton());
+            addDrop(woodType.getWoodPressurePlate());
+            addDrop(woodType.getWoodDoor(), doorDrops(woodType.getWoodDoor()));
+            addDrop(woodType.getWoodTrapdoor());
+
+            addDrop(woodType.getStrippedWood());
+            addDrop(woodType.getStrippedWood());
+            addDrop(woodType.getStrippedWoodStairs());
+            addDrop(woodType.getStrippedWoodSlab());
+            addDrop(woodType.getStrippedWoodButton());
+            addDrop(woodType.getStrippedWoodPressurePlate());
+            addDrop(woodType.getStrippedWoodDoor(), doorDrops(woodType.getStrippedWoodDoor()));
+            addDrop(woodType.getStrippedWoodTrapdoor());
+
+            addDrop(woodType.getPlanks());
+            addDrop(woodType.getPlanksStairs());
+            addDrop(woodType.getPlanksSlab());
+            addDrop(woodType.getPlanksButton());
+            addDrop(woodType.getPlanksPressurePlate());
+            addDrop(woodType.getPlanksFence());
+            addDrop(woodType.getPlanksFenceGate());
+            addDrop(woodType.getPlanksDoor(), doorDrops(woodType.getPlanksDoor()));
+            addDrop(woodType.getPlanksTrapdoor());
+
+            addDrop(woodType.getLeaves(), leavesDrops(ModWoodBlocks.PINE_LEAVES, ModBlocks.WILD_CORN, 0.0025f)); //ToDo: Add proper Sapling
+        }
 
         addDrop(ModBlocks.ANDESITE_BUTTON);
         addDrop(ModBlocks.ANDESITE_PRESSURE_PLATE);

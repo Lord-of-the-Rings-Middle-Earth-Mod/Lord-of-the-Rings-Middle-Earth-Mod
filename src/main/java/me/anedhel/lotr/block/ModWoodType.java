@@ -3,23 +3,36 @@ package me.anedhel.lotr.block;
 import net.minecraft.block.Block;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ItemStack;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public enum ModWoodType {
-    PINE(ModBlocks.PINE_LOG, ModBlocks.PINE_WOOD, ModBlocks.STRIPPED_PINE_LOG, ModBlocks.STRIPPED_PINE_WOOD,
-            ModBlocks.PINE_PLANKS, ModBlocks.PINE_PLANKS_STAIRS, ModBlocks.PINE_PLANKS_SLAB,
-            ModBlocks.PINE_PLANKS_BUTTON, ModBlocks.PINE_PLANKS_PRESSURE_PLATE,
-            ModBlocks.PINE_PLANKS_FENCE, ModBlocks.PINE_PLANKS_FENCE_GATE,
-            ModBlocks.PINE_PLANKS_DOOR, ModBlocks.PINE_PLANKS_TRAPDOOR, ModBlocks.PINE_WOOD_STAIRS, ModBlocks.PINE_WOOD_SLAB,
-            ModBlocks.PINE_WOOD_DOOR, ModBlocks.PINE_WOOD_TRAPDOOR,
-            ModBlocks.PINE_PLANKS_FAMILY, ModBlocks.PINE_WOOD_FAMILY, ModBlocks.PINE_LEAVES, false);
+    PINE(ModWoodBlocks.PINE_LOG, ModWoodBlocks.STRIPPED_PINE_LOG,
+            ModWoodBlocks.PINE_WOOD_FAMILY, ModWoodBlocks.STRIPPED_PINE_FAMILY, ModWoodBlocks.PINE_PLANKS_FAMILY,
+            ModWoodBlocks.PINE_LEAVES, false);
 
     private final Block log;
     private final Block wood;
+    private final Block woodStairs;
+    private final Block woodSlab;
+    private final Block woodButton;
+    private final Block woodPressurePlate;
+    private final Block woodDoor;
+    private final Block woodTrapdoor;
+    private final BlockFamily woodFamily;
+
     private final Block strippedLog;
     private final Block strippedWood;
+    private final Block strippedWoodStairs;
+    private final Block strippedWoodButton;
+    private final Block strippedWoodPressurePlate;
+    private final Block strippedWoodSlab;
+    private final Block strippedWoodDoor;
+    private final Block strippedWoodTrapdoor;
+    private final BlockFamily strippedWoodFamily;
+
     private final Block planks;
     private final Block planksStairs;
     private final Block planksSlab;
@@ -29,98 +42,132 @@ public enum ModWoodType {
     private final Block planksFenceGate;
     private final Block planksDoor;
     private final Block planksTrapdoor;
-    private final Block woodStairs;
-    private final Block woodSlab;
-    private final Block woodDoor;
-    private final Block woodTrapdoor;
     private final BlockFamily planksFamily;
-    private final BlockFamily woodFamily;
+
     private final Block leaves;
+
     private final boolean vanillaAddition;
 
-    ModWoodType(Block log, Block wood, Block strippedLog, Block strippedWood, Block planks, Block planksStairs, Block planksSlab, Block planksButton, Block planksPressurePlate, Block planksFence, Block planksFenceGate, Block planksDoor, Block planksTrapdoor, Block woodStairs, Block woodSlab, Block woodDoor, Block woodTrapdoor, BlockFamily planksFamily, BlockFamily woodFamily, Block leaves, boolean vanillaAddition) {
+    ModWoodType(Block log, Block strippedLog, @NotNull BlockFamily woodFamily, @NotNull BlockFamily strippedWoodFamily, @NotNull BlockFamily planksFamily, Block leaves, boolean vanillaAddition) {
         this.log = log;
-        this.wood = wood;
-        this.strippedLog = strippedLog;
-        this.strippedWood = strippedWood;
-        this.planksStairs = planksStairs;
-        this.planksSlab = planksSlab;
-        this.planksButton = planksButton;
-        this.planksPressurePlate = planksPressurePlate;
-        this.planksFence = planksFence;
-        this.planksFenceGate = planksFenceGate;
-        this.planksDoor = planksDoor;
-        this.planksTrapdoor = planksTrapdoor;
-        this.woodStairs = woodStairs;
-        this.woodSlab = woodSlab;
-        this.woodDoor = woodDoor;
-        this.woodTrapdoor = woodTrapdoor;
+        this.wood = woodFamily.getBaseBlock();
+        this.woodStairs = woodFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.woodSlab = woodFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.woodButton = woodFamily.getVariant(BlockFamily.Variant.BUTTON);
+        this.woodPressurePlate = woodFamily.getVariant(BlockFamily.Variant.PRESSURE_PLATE);
+        this.woodDoor = woodFamily.getVariant(BlockFamily.Variant.DOOR);
+        this.woodTrapdoor = woodFamily.getVariant(BlockFamily.Variant.TRAPDOOR);
         this.woodFamily = woodFamily;
-        this.vanillaAddition = vanillaAddition;
-        this.planks = planks;
+
+        this.strippedLog = strippedLog;
+        this.strippedWood = strippedWoodFamily.getBaseBlock();
+        this.strippedWoodStairs = strippedWoodFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.strippedWoodSlab = strippedWoodFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.strippedWoodButton = strippedWoodFamily.getVariant(BlockFamily.Variant.BUTTON);
+        this.strippedWoodPressurePlate = strippedWoodFamily.getVariant(BlockFamily.Variant.PRESSURE_PLATE);
+        this.strippedWoodDoor = strippedWoodFamily.getVariant(BlockFamily.Variant.DOOR);
+        this.strippedWoodTrapdoor = strippedWoodFamily.getVariant(BlockFamily.Variant.TRAPDOOR);
+        this.strippedWoodFamily = strippedWoodFamily;
+
+        this.planks = planksFamily.getBaseBlock();
+        this.planksStairs = planksFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.planksSlab = planksFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.planksButton = planksFamily.getVariant(BlockFamily.Variant.BUTTON);
+        this.planksPressurePlate = planksFamily.getVariant(BlockFamily.Variant.PRESSURE_PLATE);
+        this.planksFence = planksFamily.getVariant(BlockFamily.Variant.FENCE);
+        this.planksFenceGate = planksFamily.getVariant(BlockFamily.Variant.FENCE_GATE);
+        this.planksDoor = planksFamily.getVariant(BlockFamily.Variant.DOOR);
+        this.planksTrapdoor = planksFamily.getVariant(BlockFamily.Variant.TRAPDOOR);
         this.planksFamily = planksFamily;
+
         this.leaves = leaves;
+
+        this.vanillaAddition = vanillaAddition;
     }
 
     public List<ItemStack> getItemGroupList() {
-        List<ItemStack> itemGroupList = new ArrayList<>();
+        List<ItemStack> woodItemGroupList = new ArrayList<>();
 
         if (log != null && !vanillaAddition) {
-            itemGroupList.add(new ItemStack(log));
+            woodItemGroupList.add(new ItemStack(log));
         }
         if (wood != null) {
-            itemGroupList.add(new ItemStack(wood));
+            woodItemGroupList.add(new ItemStack(wood));
         }
         if (woodStairs != null) {
-            itemGroupList.add(new ItemStack(woodStairs));
+            woodItemGroupList.add(new ItemStack(woodStairs));
         }
         if (woodSlab != null) {
-            itemGroupList.add(new ItemStack(woodSlab));
+            woodItemGroupList.add(new ItemStack(woodSlab));
+        }
+        if (woodButton != null) {
+            woodItemGroupList.add(new ItemStack(woodButton));
+        }
+        if (woodPressurePlate != null) {
+            woodItemGroupList.add(new ItemStack(woodPressurePlate));
         }
         if (woodDoor != null) {
-            itemGroupList.add(new ItemStack(woodDoor));
+            woodItemGroupList.add(new ItemStack(woodDoor));
         }
         if (woodTrapdoor != null) {
-            itemGroupList.add(new ItemStack(woodTrapdoor));
+            woodItemGroupList.add(new ItemStack(woodTrapdoor));
         }
         if (strippedLog != null) {
-            itemGroupList.add(new ItemStack(strippedLog));
+            woodItemGroupList.add(new ItemStack(strippedLog));
         }
         if (strippedWood != null) {
-            itemGroupList.add(new ItemStack(strippedWood));
+            woodItemGroupList.add(new ItemStack(strippedWood));
+        }
+        if (strippedWoodStairs != null) {
+            woodItemGroupList.add(new ItemStack(strippedWoodStairs));
+        }
+        if (strippedWoodSlab != null) {
+            woodItemGroupList.add(new ItemStack(strippedWoodSlab));
+        }
+        if (strippedWoodButton != null) {
+            woodItemGroupList.add(new ItemStack(strippedWoodButton));
+        }
+        if (strippedWoodPressurePlate != null) {
+            woodItemGroupList.add(new ItemStack(strippedWoodPressurePlate));
+        }
+        if (strippedWoodDoor != null) {
+            woodItemGroupList.add(new ItemStack(strippedWoodDoor));
+        }
+        if (strippedWoodTrapdoor != null) {
+            woodItemGroupList.add(new ItemStack(strippedWoodTrapdoor));
         }
         if (planks != null) {
-            itemGroupList.add(new ItemStack(planks));
+            woodItemGroupList.add(new ItemStack(planks));
         }
         if (planksStairs != null) {
-            itemGroupList.add(new ItemStack(planksStairs));
+            woodItemGroupList.add(new ItemStack(planksStairs));
         }
         if (planksSlab != null) {
-            itemGroupList.add(new ItemStack(planksSlab));
+            woodItemGroupList.add(new ItemStack(planksSlab));
         }
         if (planksButton != null) {
-            itemGroupList.add(new ItemStack(planksButton));
+            woodItemGroupList.add(new ItemStack(planksButton));
         }
         if (planksPressurePlate != null) {
-            itemGroupList.add(new ItemStack(planksPressurePlate));
+            woodItemGroupList.add(new ItemStack(planksPressurePlate));
         }
         if (planksFence != null) {
-            itemGroupList.add(new ItemStack(planksFence));
+            woodItemGroupList.add(new ItemStack(planksFence));
         }
         if (planksFenceGate != null) {
-            itemGroupList.add(new ItemStack(planksFenceGate));
+            woodItemGroupList.add(new ItemStack(planksFenceGate));
         }
         if (planksDoor != null) {
-            itemGroupList.add(new ItemStack(planksDoor));
+            woodItemGroupList.add(new ItemStack(planksDoor));
         }
         if (planksTrapdoor != null) {
-            itemGroupList.add(new ItemStack(planksTrapdoor));
+            woodItemGroupList.add(new ItemStack(planksTrapdoor));
         }
         if (leaves != null) {
-            itemGroupList.add(new ItemStack(leaves));
+            woodItemGroupList.add(new ItemStack(leaves));
         }
 
-        return itemGroupList;
+        return woodItemGroupList;
     }
 
     public Block getLog() {
@@ -131,14 +178,6 @@ public enum ModWoodType {
         return wood;
     }
 
-    public Block getStrippedWood() {
-        return strippedWood;
-    }
-
-    public Block getStrippedLog() {
-        return strippedLog;
-    }
-
     public Block getWoodStairs () {
         return woodStairs;
     }
@@ -147,12 +186,60 @@ public enum ModWoodType {
         return woodSlab;
     }
 
+    public Block getWoodButton () {
+        return woodButton;
+    }
+
+    public Block getWoodPressurePlate () {
+        return woodPressurePlate;
+    }
+
     public Block getWoodDoor () {
         return woodDoor;
     }
 
     public Block getWoodTrapdoor () {
         return woodTrapdoor;
+    }
+
+    public BlockFamily getWoodFamily() {
+        return woodFamily;
+    }
+
+    public Block getStrippedLog() {
+        return strippedLog;
+    }
+
+    public Block getStrippedWood() {
+        return strippedWood;
+    }
+
+    public Block getStrippedWoodStairs() {
+        return strippedWoodStairs;
+    }
+
+    public Block getStrippedWoodSlab() {
+        return strippedWoodSlab;
+    }
+
+    public Block getStrippedWoodButton () {
+        return strippedWoodButton;
+    }
+
+    public Block getStrippedWoodPressurePlate() {
+        return strippedWoodPressurePlate;
+    }
+
+    public Block getStrippedWoodDoor() {
+        return strippedWoodDoor;
+    }
+
+    public Block getStrippedWoodTrapdoor() {
+        return strippedWoodTrapdoor;
+    }
+
+    public BlockFamily getStrippedWoodFamily() {
+        return strippedWoodFamily;
     }
 
     public Block getPlanks() {
@@ -193,10 +280,6 @@ public enum ModWoodType {
 
     public BlockFamily getPlanksFamily() {
         return planksFamily;
-    }
-
-    public BlockFamily getWoodFamily() {
-        return woodFamily;
     }
 
     public Block getLeaves() {
