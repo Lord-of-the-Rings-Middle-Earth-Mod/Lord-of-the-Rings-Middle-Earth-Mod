@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lotr:block/stripped_pine_slabs"
+    },
+    "type=double": {
+      "model": "lotr:block/stripped_pine_wood"
+    },
+    "type=top": {
+      "model": "lotr:block/stripped_pine_slabs_top"
+    }
+  }
+}

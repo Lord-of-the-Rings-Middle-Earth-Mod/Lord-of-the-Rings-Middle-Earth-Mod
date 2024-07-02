@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "lotr:stripped_pine_log"
+          "name": "lotr:pine_planks_fence_gate"
         }
       ],
       "rolls": 1.0

@@ -2,6 +2,7 @@ package me.anedhel.lotr.item;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModWoodBlocks;
 import me.anedhel.lotr.entity.ModEntities;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.*;
@@ -18,9 +19,9 @@ public class ModItems {
             new SpawnEggItem(ModEntities.HOBBIT, 0xa86518, 0x3b260f, new FabricItemSettings()));
 
     public static final Item PINE_SIGN = registerItem("pine_sign",
-            new SignItem(new FabricItemSettings().maxCount(16), ModBlocks.STANDING_PINE_SIGN, ModBlocks.WALL_PINE_SIGN));
+            new SignItem(new FabricItemSettings().maxCount(16), ModWoodBlocks.STANDING_PINE_SIGN, ModWoodBlocks.WALL_PINE_SIGN));
     public static final Item HANGING_PINE_SIGN = registerItem("hanging_pine_sign",
-            new HangingSignItem(ModBlocks.HANGING_PINE_SIGN, ModBlocks.WALL_HANGING_PINE_SIGN, new FabricItemSettings().maxCount(16)));
+            new HangingSignItem(ModWoodBlocks.HANGING_PINE_SIGN, ModWoodBlocks.WALL_HANGING_PINE_SIGN, new FabricItemSettings().maxCount(16)));
 
     public static final Item RAW_TIN = registerItem("raw_tin", new Item(new FabricItemSettings()));
     public static final Item TIN_INGOT = registerItem("tin_ingot", new Item(new FabricItemSettings()));

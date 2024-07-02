@@ -27,7 +27,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
 
-        configureModWoodType(ModWoodType.PINE);
+        configureModWoodTypes();
 
         configureModStoneType(ModStoneType.ANDESITE);
         configureModStoneType(ModStoneType.POLISHED_ANDESITE);
@@ -108,39 +108,93 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     /**
      * This Method configures all required tags for the given ModWoodType.
-     * @param woodType The type, that all tags should be configured for
      */
-    private void configureModWoodType(ModWoodType woodType) {
-        Block log = woodType.getLog();
-        Block wood = woodType.getWood();
-        Block strippedLog = woodType.getStrippedLog();
-        Block strippedWood = woodType.getStrippedWood();
-        Block planksFence = woodType.getPlanksFence();
-        Block planksFenceGate = woodType.getPlanksFenceGate();
-
+    private void configureModWoodTypes() {
+        FabricTagBuilder axeTag = getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);
         FabricTagBuilder logsThatBurnTag = getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN);
         FabricTagBuilder fenceTag = getOrCreateTagBuilder(BlockTags.FENCES);
         FabricTagBuilder fenceGateTag = getOrCreateTagBuilder(BlockTags.FENCE_GATES);
 
-        if (!woodType.isVanillaAddition()) {
-            if (log != null) {
-                logsThatBurnTag.add(log);
+        for (ModWoodType value : ModWoodType.values()) {
+            if (!value.isVanillaAddition()) {
+                if (value.getLog() != null) {
+                    logsThatBurnTag.add(value.getLog());
+                }
             }
-        }
-        if (wood != null) {
-            logsThatBurnTag.add(wood);
-        }
-        if (strippedLog != null) {
-            logsThatBurnTag.add(strippedLog);
-        }
-        if (strippedWood != null) {
-            logsThatBurnTag.add(strippedWood);
-        }
-        if (planksFence != null) {
-            fenceTag.add(planksFence);
-        }
-        if (planksFenceGate != null) {
-            fenceGateTag.add(planksFenceGate);
+            if (value.getWood() != null) {
+                logsThatBurnTag.add(value.getWood());
+            }
+            if (value.getWoodStairs() != null) {
+                axeTag.add(value.getWoodStairs());
+            }
+            if (value.getWoodSlab() != null) {
+                axeTag.add(value.getWoodSlab());
+            }
+            if (value.getWoodButton() != null) {
+                axeTag.add(value.getWoodButton());
+            }
+            if (value.getWoodPressurePlate() != null) {
+                axeTag.add(value.getWoodPressurePlate());
+            }
+            if (value.getWoodDoor() != null) {
+                axeTag.add(value.getWoodDoor());
+            }
+            if (value.getWoodTrapdoor() != null) {
+                axeTag.add(value.getWoodTrapdoor());
+            }
+            if (value.getStrippedLog() != null) {
+                logsThatBurnTag.add(value.getStrippedLog());
+            }
+            if (value.getStrippedWood() != null) {
+                logsThatBurnTag.add(value.getStrippedWood());
+            }
+            if (value.getStrippedWoodStairs() != null) {
+                axeTag.add(value.getStrippedWoodStairs());
+            }
+            if (value.getStrippedWoodSlab() != null) {
+                axeTag.add(value.getStrippedWoodSlab());
+            }
+            if (value.getStrippedWoodButton() != null) {
+                axeTag.add(value.getStrippedWoodButton());
+            }
+            if (value.getStrippedWoodPressurePlate() != null) {
+                axeTag.add(value.getStrippedWoodPressurePlate());
+            }
+            if (value.getStrippedWoodDoor() != null) {
+                axeTag.add(value.getStrippedWoodDoor());
+            }
+            if (value.getStrippedWoodTrapdoor() != null) {
+                axeTag.add(value.getStrippedWoodTrapdoor());
+            }
+            if (value.getPlanks() != null) {
+                axeTag.add(value.getPlanks());
+            }
+            if (value.getPlanksStairs() != null) {
+                axeTag.add(value.getPlanksStairs());
+            }
+            if (value.getPlanksSlab() != null) {
+                axeTag.add(value.getPlanksSlab());
+            }
+            if (value.getPlanksButton() != null) {
+                axeTag.add(value.getPlanksButton());
+            }
+            if (value.getPlanksPressurePlate() != null) {
+                axeTag.add(value.getPlanksPressurePlate());
+            }
+            if (value.getPlanksDoor() != null) {
+                axeTag.add(value.getPlanksDoor());
+            }
+            if (value.getPlanksTrapdoor() != null) {
+                axeTag.add(value.getPlanksTrapdoor());
+            }
+            if (value.getPlanksFence() != null) {
+                axeTag.add(value.getPlanksFence());
+                fenceTag.add(value.getPlanksFence());
+            }
+            if (value.getPlanksFenceGate() != null) {
+                axeTag.add(value.getPlanksFenceGate());
+                fenceGateTag.add(value.getPlanksFenceGate());
+            }
         }
     }
 }

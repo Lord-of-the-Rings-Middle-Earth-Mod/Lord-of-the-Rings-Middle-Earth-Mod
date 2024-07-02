@@ -52,7 +52,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_LETTUCE, ModBlocks.POTTED_WILD_LETTUCE, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_TOMATO, ModBlocks.POTTED_WILD_TOMATO, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        generateModWoodTypeModels(ModWoodType.PINE, blockStateModelGenerator);
+        generateModWoodTypesModels(blockStateModelGenerator);
 
         generateModStoneTypeModels(ModStoneType.ANDESITE, blockStateModelGenerator);
         generateModStoneTypeModels(ModStoneType.POLISHED_ANDESITE, blockStateModelGenerator);
@@ -183,21 +183,27 @@ public class ModModelProvider extends FabricModelProvider {
     }
 
     /**
-     * This Method is used to generate all the models for the given wood type.
+     * This Method is used to generate all the models for all woodTypes
      * It only works for blocks completely added by the mod, adding Models for additions made based on vanilla blocks does not work with this method.
-     * @param woodType The ModWoodType, for which the models should be created
      * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
      */
-    private void generateModWoodTypeModels(ModWoodType woodType, BlockStateModelGenerator blockStateModelGenerator) {
-        BlockStateModelGenerator.BlockTexturePool planksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getPlanksFamily().getBaseBlock());
-        planksPool.family(woodType.getPlanksFamily());
+    private void generateModWoodTypesModels(BlockStateModelGenerator blockStateModelGenerator) {
+        for (ModWoodType woodType : ModWoodType.values()) {
+            if (!woodType.isVanillaAddition()) {
+                blockStateModelGenerator.registerLog(woodType.getLog()).log(woodType.getLog());
+                blockStateModelGenerator.registerLog(woodType.getStrippedLog()).log(woodType.getStrippedLog());
 
-        BlockStateModelGenerator.BlockTexturePool woodPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getWoodFamily().getBaseBlock());
-        woodPool.family(woodType.getWoodFamily());
+                BlockStateModelGenerator.BlockTexturePool woodPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getWoodFamily().getBaseBlock());
+                woodPool.family(woodType.getWoodFamily());
 
-        blockStateModelGenerator.registerLog(woodType.getLog()).log(woodType.getLog());
-        blockStateModelGenerator.registerLog(woodType.getStrippedLog()).log(woodType.getStrippedLog()).wood(woodType.getStrippedWood());
+                BlockStateModelGenerator.BlockTexturePool strippedWoodPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getStrippedWoodFamily().getBaseBlock());
+                strippedWoodPool.family(woodType.getStrippedWoodFamily());
 
-        blockStateModelGenerator.registerSimpleCubeAll(woodType.getLeaves());
+                BlockStateModelGenerator.BlockTexturePool planksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getPlanksFamily().getBaseBlock());
+                planksPool.family(woodType.getPlanksFamily());
+
+                blockStateModelGenerator.registerSimpleCubeAll(woodType.getLeaves());
+            }
+        }
     }
 }

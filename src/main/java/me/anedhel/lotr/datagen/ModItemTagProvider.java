@@ -6,7 +6,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
@@ -23,7 +22,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         configureGear(ModGearType.BRONZE);
-        configureModWoodType(ModWoodType.PINE);
+        configureModWoodTypes();
     }
 
     /**
@@ -76,43 +75,39 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     /**
      * This Method configures all required Tags for the given ModWoodType
-     * @param woodType The ModWoodType, that the Tags should be configured for
      */
-    private void configureModWoodType(ModWoodType woodType) {
-        Block log = woodType.getLog();
-        Block wood = woodType.getWood();
-        Block strippedLog = woodType.getStrippedLog();
-        Block strippedWood = woodType.getStrippedWood();
-        Block planks = woodType.getPlanks();
-
+    private void configureModWoodTypes() {
         FabricTagBuilder logsThatBurnTag = getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN);
         FabricTagBuilder planksTag = getOrCreateTagBuilder(ItemTags.PLANKS);
-        FabricTagBuilder logTag = getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, new Identifier("lotr", log.getName().getString().replace(' ', '_').toLowerCase())));
 
-        if (!woodType.isVanillaAddition()) {
-            if (log != null) {
-                logsThatBurnTag.add(log.asItem());
-                logTag.add(log.asItem());
+        for (ModWoodType woodType : ModWoodType.values()) {
+            FabricTagBuilder logTag = getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, new Identifier("lotr", turnBlockIntoTag(woodType.getLog()))));
+
+            if (!woodType.isVanillaAddition()) {
+                if (woodType.getLog() != null) {
+                    logsThatBurnTag.add(woodType.getLog().asItem());
+                    logTag.add(woodType.getLog().asItem());
+                }
             }
-        }
-        if (wood != null) {
-            logsThatBurnTag.add(wood.asItem());
-            logTag.add(wood.asItem());
-        }
-        if (strippedLog != null) {
-            logsThatBurnTag.add(strippedLog.asItem());
-            logTag.add(strippedLog.asItem());
-        }
-        if (strippedWood != null) {
-            logsThatBurnTag.add(strippedWood.asItem());
-            logTag.add(strippedWood.asItem());
-        }
-        if (planks != null) {
-            planksTag.add(planks.asItem());
+            if (woodType.getWood() != null) {
+                logsThatBurnTag.add(woodType.getWood().asItem());
+                logTag.add(woodType.getWood().asItem());
+            }
+            if (woodType.getStrippedLog() != null) {
+                logsThatBurnTag.add(woodType.getStrippedLog().asItem());
+                logTag.add(woodType.getStrippedLog().asItem());
+            }
+            if (woodType.getStrippedWood() != null) {
+                logsThatBurnTag.add(woodType.getStrippedWood().asItem());
+                logTag.add(woodType.getStrippedWood().asItem());
+            }
+            if (woodType.getPlanks() != null) {
+                planksTag.add(woodType.getPlanks().asItem());
+            }
         }
     }
 
-    private String turnBlockIntoTag () {
-        return null;
+    private String turnBlockIntoTag (Block block) {
+        return block.getName().getString().replace(' ', '_').toLowerCase();
     }
 }
