@@ -3,16 +3,14 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "minecraft:andesite"
+      "item": "lotr:cobbled_andesite"
     }
   },
   "pattern": [
-    "#  ",
-    "## ",
     "###"
   ],
   "result": {
-    "count": 4,
+    "count": 6,
     "item": "lotr:cobbled_andesite_slab"
   },
   "show_notification": true

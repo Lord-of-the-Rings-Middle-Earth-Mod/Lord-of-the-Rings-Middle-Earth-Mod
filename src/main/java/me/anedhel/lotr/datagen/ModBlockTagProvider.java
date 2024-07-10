@@ -29,31 +29,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         configureModWoodTypes();
 
-        configureModStoneType(ModStoneType.ANDESITE);
-        configureModStoneType(ModStoneType.POLISHED_ANDESITE);
-        configureModStoneType(ModStoneType.COBBLED_ANDESITE);
-        configureModStoneType(ModStoneType.ANDESITE_BRICK);
-
-        configureModStoneType(ModStoneType.DIORITE);
-        configureModStoneType(ModStoneType.POLISHED_DIORITE);
-        configureModStoneType(ModStoneType.COBBLED_DIORITE);
-        configureModStoneType(ModStoneType.DIORITE_BRICK);
-
-        configureModStoneType(ModStoneType.GRANITE);
-        configureModStoneType(ModStoneType.POLISHED_GRANITE);
-        configureModStoneType(ModStoneType.COBBLED_GRANITE);
-        configureModStoneType(ModStoneType.GRANITE_BRICK);
-
-        configureModStoneType(ModStoneType.SMOOTH_BASALT);
-        configureModStoneType(ModStoneType.BASALT_BRICKS);
-
-        configureModStoneType(ModStoneType.BLUESLATE);
-        configureModStoneType(ModStoneType.COBBLED_BLUESLATE);
-        configureModStoneType(ModStoneType.BLUESLATE_BRICK);
-
-        configureModStoneType(ModStoneType.CHALK);
-        configureModStoneType(ModStoneType.COBBLED_CHALK);
-        configureModStoneType(ModStoneType.CHALK_BRICK);
+        configureModStoneType();
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.TIN_ORE)
@@ -70,39 +46,49 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     /**
      * This Method configures all required tags for the given ModStoneType.
-     * @param stoneType The type, that all tags should be configured for
      */
-    private void configureModStoneType(ModStoneType stoneType) {
-        Block baseBlock = stoneType.getBaseBlock();
-        Block stairBlock = stoneType.getStairBlock();
-        Block slabBlock = stoneType.getSlabBlock();
-        Block wallBlock = stoneType.getWallBlock();
-        Block buttonBlock = stoneType.getButtonBlock();
-        Block pressurePlateBlock = stoneType.getPressurePlateBlock();
+    private void configureModStoneType() {
+        for (ModStoneType stoneType : ModStoneType.values()) {
+            FabricTagBuilder pickaxeTag = getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE);
+            FabricTagBuilder wallTag = getOrCreateTagBuilder(BlockTags.WALLS);
 
-        FabricTagBuilder pickaxeTag = getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE);
-        FabricTagBuilder wallTag = getOrCreateTagBuilder(BlockTags.WALLS);
-
-        if (!stoneType.isVanillaAddition()) {
-            if (baseBlock != null) {
-                pickaxeTag.add(baseBlock);
+            if (!stoneType.isVanillaAddition()) {
+                if (stoneType.getStone() != null) {
+                    pickaxeTag.add(stoneType.getStone());
+                }
             }
-        }
-        if (stairBlock != null) {
-            pickaxeTag.add(stairBlock);
-        }
-        if (slabBlock != null) {
-            pickaxeTag.add(slabBlock);
-        }
-        if (wallBlock != null) {
-            pickaxeTag.add(wallBlock);
-            wallTag.add(wallBlock);
-        }
-        if (buttonBlock != null) {
-            pickaxeTag.add(buttonBlock);
-        }
-        if (pressurePlateBlock != null) {
-            pickaxeTag.add(pressurePlateBlock);
+            if (stoneType.getStoneStairs() != null) {
+                pickaxeTag.add(stoneType.getStoneStairs());
+            }
+            if (stoneType.getStoneSlab() != null) {
+                pickaxeTag.add(stoneType.getStoneSlab());
+            }
+            if (stoneType.getStoneWall() != null) {
+                pickaxeTag.add(stoneType.getStoneWall());
+                wallTag.add(stoneType.getStoneWall());
+            }
+            if (stoneType.getStoneButton() != null) {
+                pickaxeTag.add(stoneType.getStoneButton());
+            }
+            if (stoneType.getStonePressurePlate() != null) {
+                pickaxeTag.add(stoneType.getStonePressurePlate());
+            }
+            if (stoneType.getCobbled() != null) {
+                pickaxeTag.add(stoneType.getCobbled());
+                pickaxeTag.add(stoneType.getCobbledStairs());
+                pickaxeTag.add(stoneType.getCobbledSlab());
+                pickaxeTag.add(stoneType.getCobbledWall());
+                wallTag.add(stoneType.getCobbledWall());
+                pickaxeTag.add(stoneType.getCobbledButton());
+                pickaxeTag.add(stoneType.getCobbledPressurePlate());
+            }
+            if (stoneType.getBrick() != null) {
+                pickaxeTag.add(stoneType.getBrick());
+                pickaxeTag.add(stoneType.getBrickStairs());
+                pickaxeTag.add(stoneType.getBrickSlab());
+                pickaxeTag.add(stoneType.getBrickWall());
+                wallTag.add(stoneType.getBrickWall());
+            }
         }
     }
 

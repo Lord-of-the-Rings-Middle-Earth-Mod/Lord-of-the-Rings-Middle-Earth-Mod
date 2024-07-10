@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
@@ -87,20 +88,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         createModGearTypeRecipes(ModGearType.BRONZE, exporter);
 
-        createModStoneTypeRecipes(ModStoneType.ANDESITE, exporter, ModStoneType.COBBLED_ANDESITE, ModStoneType.ANDESITE_BRICK);
-        createModStoneTypeRecipes(ModStoneType.POLISHED_ANDESITE, exporter, null, null);
-
-        createModStoneTypeRecipes(ModStoneType.DIORITE, exporter, ModStoneType.COBBLED_DIORITE, ModStoneType.DIORITE_BRICK);
-        createModStoneTypeRecipes(ModStoneType.POLISHED_DIORITE, exporter, null, null);
-
-        createModStoneTypeRecipes(ModStoneType.GRANITE, exporter, ModStoneType.COBBLED_GRANITE, ModStoneType.GRANITE_BRICK);
-        createModStoneTypeRecipes(ModStoneType.POLISHED_GRANITE, exporter, null, null);
-
-        createModStoneTypeRecipes(ModStoneType.SMOOTH_BASALT, exporter, null, ModStoneType.BASALT_BRICKS);
-
-        createModStoneTypeRecipes(ModStoneType.BLUESLATE, exporter, ModStoneType.COBBLED_BLUESLATE, ModStoneType.BLUESLATE_BRICK);
-
-        createModStoneTypeRecipes(ModStoneType.CHALK, exporter, ModStoneType.COBBLED_CHALK, ModStoneType.CHALK_BRICK);
+        createModStoneTypeRecipes(exporter);
     }
 
     /**
@@ -153,56 +141,68 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     /**
      * This Method is used to create all crafting recipes using the given ModStoneType
-     * @param stoneType The ModStoneType, for which all Recipes are to be created
      * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
-     * @param cobbledVariant The cobbled version of the stoneType, null if there is none
-     * @param brickVariant The bricks of the stoneType, null if there is none
      */
-    private void createModStoneTypeRecipes (ModStoneType stoneType, RecipeExporter exporter, ModStoneType cobbledVariant, ModStoneType brickVariant) {
-        Block baseBlock = stoneType.getBaseBlock();
-        Block stairBlock = stoneType.getStairBlock();
-        Block slabBlock = stoneType.getSlabBlock();
-        Block wallBlock = stoneType.getWallBlock();
-        Block buttonBlock = stoneType.getButtonBlock();
-        Block pressurePlateBlock = stoneType.getPressurePlateBlock();
-
-        if (baseBlock != null) {
-            if (stairBlock != null) {
-                createStairRecipe(baseBlock, stairBlock, exporter);
-                offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stairBlock, baseBlock, 1);
-            }
-            if (slabBlock != null) {
-                offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, slabBlock, baseBlock);
-                offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, slabBlock, baseBlock, 2);
-            }
-            if (wallBlock != null) {
-                offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, wallBlock, baseBlock);
-                offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, wallBlock, baseBlock, 1);
-            }
-            if (buttonBlock != null) {
-                createButtonRecipe(baseBlock, buttonBlock, exporter);
-            }
-            if (pressurePlateBlock != null) {
-                offerPressurePlateRecipe(exporter, pressurePlateBlock, baseBlock);
-            }
-            if (cobbledVariant != null && !cobbledVariant.isVanillaAddition()) {
-                createCobbledStoneTypeRecipe(baseBlock, cobbledVariant.getBaseBlock(), exporter);
-                createModStoneTypeRecipes(cobbledVariant, exporter, null, null);
-            }
-            if (brickVariant != null) {
-                if (!brickVariant.isVanillaAddition()) {
-                    createBricksRecipe(baseBlock, brickVariant.getBaseBlock(), exporter);
-                    createModStoneTypeRecipes(brickVariant, exporter, null, null);
-                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickVariant.getBaseBlock(), baseBlock);
+    private void createModStoneTypeRecipes (RecipeExporter exporter) {
+        for (ModStoneType stoneType : ModStoneType.values()) {
+            if (stoneType.getStone() != null) {
+                if (stoneType.getStoneStairs() != null) {
+                    createStairRecipe(stoneType.getStone(), stoneType.getStoneStairs(), exporter);
+                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getStoneStairs(), stoneType.getStone(), 1);
                 }
-                if (brickVariant.getStairBlock() != null) {
-                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickVariant.getStairBlock(), baseBlock, 1);
+                if (stoneType.getStoneSlab() != null) {
+                    offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getStoneSlab(), stoneType.getStone());
+                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getStoneSlab(), stoneType.getStone(), 2);
                 }
-                if (brickVariant.getSlabBlock() != null) {
-                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickVariant.getSlabBlock(), baseBlock, 2);
+                if (stoneType.getStoneWall() != null) {
+                    offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getStoneWall(), stoneType.getStone());
+                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getStoneWall(), stoneType.getStone(), 1);
                 }
-                if (brickVariant.getWallBlock() != null) {
-                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, brickVariant.getWallBlock(), baseBlock, 1);
+                if (stoneType.getStoneButton() != null) {
+                    createButtonRecipe(stoneType.getStone(), stoneType.getStoneButton(), exporter);
+                }
+                if (stoneType.getStonePressurePlate() != null) {
+                    offerPressurePlateRecipe(exporter, stoneType.getStonePressurePlate(), stoneType.getStone());
+                }
+                if (stoneType.getCobbled() != null) {
+                    createCobbledStoneTypeRecipe(stoneType.getStone(), stoneType.getCobbled(), exporter);
+                    if (stoneType.getCobbledStairs() != null) {
+                        createStairRecipe(stoneType.getCobbled(), stoneType.getCobbledStairs(), exporter);
+                        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCobbledStairs(), stoneType.getCobbled(), 1);
+                    }
+                    if (stoneType.getCobbledSlab() != null) {
+                        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCobbledSlab(), stoneType.getCobbled());
+                        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCobbledSlab(), stoneType.getCobbled(), 2);
+                    }
+                    if (stoneType.getCobbledWall() != null) {
+                        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCobbledWall(), stoneType.getCobbled());
+                        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCobbledWall(), stoneType.getCobbled(), 1);
+                    }
+                    if (stoneType.getCobbledButton() != null) {
+                        createButtonRecipe(stoneType.getCobbled(), stoneType.getCobbledButton(), exporter);
+                    }
+                    if (stoneType.getCobbledPressurePlate() != null) {
+                        offerPressurePlateRecipe(exporter, stoneType.getCobbledPressurePlate(), stoneType.getCobbled());
+                    }
+                }
+                if (stoneType.getBrick() != null) {
+                    createBricksRecipe(stoneType.getStone(), stoneType.getBrick(), exporter);
+                    offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getBrick(), stoneType.getStone());
+                    if (stoneType.getBrickStairs() != null) {
+                        createStairRecipe(stoneType.getBrick(), stoneType.getBrickStairs(), exporter);
+                        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getBrickStairs(), stoneType.getStone(), 1);
+                        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getBrickStairs(), stoneType.getBrick(), 1);
+                    }
+                    if (stoneType.getBrickSlab() != null) {
+                        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getBrickSlab(), stoneType.getBrick());
+                        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getBrickSlab(), stoneType.getStone(), 2);
+                        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getBrickSlab(), stoneType.getBrick(), 2);
+                    }
+                    if (stoneType.getBrickWall() != null) {
+                        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getBrickWall(), stoneType.getBrick());
+                        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getBrickWall(), stoneType.getStone(), 1);
+                        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getBrickWall(), stoneType.getBrick(), 1);
+                    }
                 }
             }
         }

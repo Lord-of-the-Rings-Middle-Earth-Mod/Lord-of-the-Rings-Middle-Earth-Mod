@@ -1,10 +1,7 @@
 package me.anedhel.lotr.item;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
-import me.anedhel.lotr.block.ModBlocks;
-import me.anedhel.lotr.block.ModStoneType;
-import me.anedhel.lotr.block.ModWoodBlocks;
-import me.anedhel.lotr.block.ModWoodType;
+import me.anedhel.lotr.block.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -22,24 +19,18 @@ public class ModItemGroups {
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_stones"),
             FabricItemGroup.builder()
                     .displayName(Text.translatableWithFallback("itemgroup.lotr_stone", "LotR Stones"))
-                    .icon(() -> new ItemStack(ModBlocks.BLUESLATE)).entries(((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModStoneBlocks.BLUESLATE)).entries(((displayContext, entries) -> {
                         entries.addAll(ModStoneType.ANDESITE.getItemGroupList());
-                        entries.addAll(ModStoneType.ANDESITE_BRICK.getItemGroupList());
-                        entries.addAll(ModStoneType.COBBLED_ANDESITE.getItemGroupList());
                         entries.addAll(ModStoneType.POLISHED_ANDESITE.getItemGroupList());
 
                         entries.addAll(ModStoneType.DIORITE.getItemGroupList());
-                        entries.addAll(ModStoneType.DIORITE_BRICK.getItemGroupList());
-                        entries.addAll(ModStoneType.COBBLED_DIORITE.getItemGroupList());
                         entries.addAll(ModStoneType.POLISHED_DIORITE.getItemGroupList());
 
-                        entries.addAll(ModStoneType.BLUESLATE.getItemGroupList());
-                        entries.addAll(ModStoneType.BLUESLATE_BRICK.getItemGroupList());
-                        entries.addAll(ModStoneType.COBBLED_BLUESLATE.getItemGroupList());
+                        entries.addAll(ModStoneType.GRANITE.getItemGroupList());
+                        entries.addAll(ModStoneType.POLISHED_GRANITE.getItemGroupList());
 
+                        entries.addAll(ModStoneType.BLUESLATE.getItemGroupList());
                         entries.addAll(ModStoneType.CHALK.getItemGroupList());
-                        entries.addAll(ModStoneType.CHALK_BRICK.getItemGroupList());
-                        entries.addAll(ModStoneType.COBBLED_CHALK.getItemGroupList());
                     })).build());
 
     public static final ItemGroup LOTR_WOOD = Registry.register(Registries.ITEM_GROUP,
@@ -52,7 +43,7 @@ public class ModItemGroups {
     public static final ItemGroup LOTR_BLOCKS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_blocks"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_blocks", "LotR Blocks"))
-                    .icon(() -> new ItemStack(ModBlocks.CHALK)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModStoneBlocks.CHALK)).entries((displayContext, entries) -> {
                         entries.add(ModBlocks.TIN_ORE);
                         entries.add(ModBlocks.RAW_TIN_BLOCK);
                         entries.add(ModBlocks.TIN_BLOCK);
