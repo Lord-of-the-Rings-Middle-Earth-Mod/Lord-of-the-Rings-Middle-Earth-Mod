@@ -1,9 +1,11 @@
 package me.anedhel.lotr;
 
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModWoodBlocks;
 import me.anedhel.lotr.block.ModWoodType;
+import me.anedhel.lotr.entity.ModBoats;
 import me.anedhel.lotr.entity.ModEntities;
 import me.anedhel.lotr.entity.client.HobbitModel;
 import me.anedhel.lotr.entity.client.HobbitRenderer;
@@ -45,6 +47,8 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
             BlockRenderLayerMap.INSTANCE.putBlock(woodType.getStrippedWoodDoor(), RenderLayer.getCutout());
             BlockRenderLayerMap.INSTANCE.putBlock(woodType.getPlanksDoor(), RenderLayer.getCutout());
         }
+
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.PINE_BOAT_ID, false);
 
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModWoodBlocks.PINE_SIGN_TEXTURE));
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModWoodBlocks.PINE_HANGING_SIGN_TEXTURE));

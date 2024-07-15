@@ -224,6 +224,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         offerPlanksRecipe(exporter, woodType.getPlanks(), TagKey.of(RegistryKeys.ITEM, new Identifier("lotr", turnBlockIntoTag(woodType.getLog()))), 4);
                     }
                 }
+                if (woodType.getPlanksBoat() != null) {
+                    offerBoatRecipe(exporter, woodType.getPlanksBoat(), woodType.getPlanks());
+                    if (woodType.getPlanksChestBoat() != null) {
+                        offerChestBoatRecipe(exporter, woodType.getPlanksChestBoat(), woodType.getPlanksBoat());
+                    }
+                }
             }
         }
     }

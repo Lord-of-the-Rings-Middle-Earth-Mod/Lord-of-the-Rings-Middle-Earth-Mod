@@ -95,6 +95,13 @@ public class ModItemGroups {
                         entries.addAll(ModGearType.BRONZE.getToolItemGroupList());
                     }).build());
 
+    public static final ItemGroup LOTR_TRANSPORT = Registry.register(Registries.ITEM_GROUP,
+            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_transport"),
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr:transport", "LotR Transport"))
+                    .icon(() -> new ItemStack(ModItems.PINE_BOAT)).entries(((displayContext, entries) -> {
+                        entries.addAll(ModWoodType.PINE.getItemGroupTransportList());
+                    })).build());
+
     public static final ItemGroup LOTR_COMBAT = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_combat"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_combat", "LotR Combar"))

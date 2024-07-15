@@ -8,6 +8,7 @@
   "itemgroup.lotr_spawning": "LotR Spawning",
   "itemgroup.lotr_stone": "LotR Stone",
   "itemgroup.lotr_wood": "LotR Wood",
+  "itemgroup.lotr_transport": "LotR Transport",
 
   "item.lotr.raw_tin": "Raw Tin",
   "item.lotr.tin_ingot": "Tin Ingot",
@@ -43,6 +44,9 @@
   "item.lotr.bronze_pickaxe": "Bronze Pickaxe",
   "item.lotr.bronze_shovel": "Bronze Shovel",
   "item.lotr.bronze_hoe": "Bronze Hoe",
+
+  "item.lotr.pine_boat": "Pine Boat",
+  "item.lotr.pine_chest_boat": "Pine Chest Boat",
 
   "item.lotr.bronze_helmet": "Bronze Helmet",
   "item.lotr.bronze_chestplate": "Bronze Chestplate",

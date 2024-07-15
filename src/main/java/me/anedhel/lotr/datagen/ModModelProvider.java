@@ -75,6 +75,8 @@ public class ModModelProvider extends FabricModelProvider {
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
 
         generateModGearTypeModels(ModGearType.BRONZE, itemModelGenerator);
+
+        generateModWoodTypesModels(itemModelGenerator);
     }
 
     /**
@@ -181,6 +183,13 @@ public class ModModelProvider extends FabricModelProvider {
 
                 blockStateModelGenerator.registerSimpleCubeAll(woodType.getLeaves());
             }
+        }
+    }
+
+    private void generateModWoodTypesModels(ItemModelGenerator itemModelGenerator) {
+        for (ModWoodType woodType : ModWoodType.values()) {
+            itemModelGenerator.register(woodType.getPlanksBoat(), Models.GENERATED);
+            itemModelGenerator.register(woodType.getPlanksChestBoat(), Models.GENERATED);
         }
     }
 }

@@ -2,6 +2,7 @@ package me.anedhel.lotr;
 
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModWoodType;
+import me.anedhel.lotr.entity.ModBoats;
 import me.anedhel.lotr.entity.ModEntities;
 import me.anedhel.lotr.entity.custom.HobbitEntity;
 import me.anedhel.lotr.item.ModItemGroups;
@@ -26,6 +27,7 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 		ModItemGroups.registerModItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+		ModBoats.registerBoats();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.HOBBIT, HobbitEntity.createHobbitAttributes());
 
