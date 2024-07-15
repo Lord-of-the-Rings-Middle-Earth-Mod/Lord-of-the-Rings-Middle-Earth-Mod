@@ -1,7 +1,9 @@
 package me.anedhel.lotr.block;
 
+import me.anedhel.lotr.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
@@ -11,7 +13,7 @@ import java.util.List;
 public enum ModWoodType {
     PINE(ModWoodBlocks.PINE_LOG, ModWoodBlocks.STRIPPED_PINE_LOG,
             ModWoodBlocks.PINE_WOOD_FAMILY, ModWoodBlocks.STRIPPED_PINE_FAMILY, ModWoodBlocks.PINE_PLANKS_FAMILY,
-            ModWoodBlocks.PINE_LEAVES, false);
+            ModItems.PINE_BOAT, ModItems.PINE_CHEST_BOAT, ModWoodBlocks.PINE_LEAVES, false);
 
     private final Block log;
     private final Block wood;
@@ -42,13 +44,15 @@ public enum ModWoodType {
     private final Block planksFenceGate;
     private final Block planksDoor;
     private final Block planksTrapdoor;
+    private final Item planksBoat;
+    private final Item planksChestBoat;
     private final BlockFamily planksFamily;
 
     private final Block leaves;
 
     private final boolean vanillaAddition;
 
-    ModWoodType(Block log, Block strippedLog, @NotNull BlockFamily woodFamily, @NotNull BlockFamily strippedWoodFamily, @NotNull BlockFamily planksFamily, Block leaves, boolean vanillaAddition) {
+    ModWoodType(Block log, Block strippedLog, @NotNull BlockFamily woodFamily, @NotNull BlockFamily strippedWoodFamily, @NotNull BlockFamily planksFamily, Item planksBoat, Item planksChestBoat, Block leaves, boolean vanillaAddition) {
         this.log = log;
         this.wood = woodFamily.getBaseBlock();
         this.woodStairs = woodFamily.getVariant(BlockFamily.Variant.STAIRS);
@@ -79,6 +83,8 @@ public enum ModWoodType {
         this.planksDoor = planksFamily.getVariant(BlockFamily.Variant.DOOR);
         this.planksTrapdoor = planksFamily.getVariant(BlockFamily.Variant.TRAPDOOR);
         this.planksFamily = planksFamily;
+        this.planksBoat = planksBoat;
+        this.planksChestBoat = planksChestBoat;
 
         this.leaves = leaves;
 
@@ -168,6 +174,19 @@ public enum ModWoodType {
         }
 
         return woodItemGroupList;
+    }
+
+    public List<ItemStack> getItemGroupTransportList () {
+        List<ItemStack> transportItemGroupList = new ArrayList<>();
+
+        if (planksBoat != null) {
+            transportItemGroupList.add(new ItemStack(planksBoat));
+        }
+        if (planksChestBoat != null) {
+            transportItemGroupList.add(new ItemStack(planksChestBoat));
+        }
+
+        return transportItemGroupList;
     }
 
     public Block getLog() {
@@ -280,6 +299,14 @@ public enum ModWoodType {
 
     public BlockFamily getPlanksFamily() {
         return planksFamily;
+    }
+
+    public Item getPlanksBoat() {
+        return planksBoat;
+    }
+
+    public Item getPlanksChestBoat() {
+        return planksChestBoat;
     }
 
     public Block getLeaves() {
