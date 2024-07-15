@@ -1,4 +1,8 @@
-// 1.20.2	2024-06-11T11:12:48.7327793	Lord of the Rings Middle Earth/Tags for minecraft:block
-24f72b09987f8458e32c56a52931e298781bbb78 data\minecraft\tags\blocks\mineable\pickaxe.json
-3c6aac1f15d2b5ab88ead4940159bb3c5b784c70 data\minecraft\tags\blocks\walls.json
+// 1.20.2	2024-07-15T16:43:54.7808921	Lord of the Rings Middle Earth/Tags for minecraft:block
+59515db6145551ea3358e5225327509ff242a9a7 data\minecraft\tags\blocks\logs_that_burn.json
+c241b1b87fd5ac9fe075305492048d4a7a28cc9c data\minecraft\tags\blocks\fence_gates.json
+dcd46f6ddbdbd464fd00cce6da6cefabe0198231 data\minecraft\tags\blocks\mineable\pickaxe.json
+5a3490e4a8c4e653ff27c99375706373f1840fb4 data\minecraft\tags\blocks\walls.json
+1fa30e534d02e9399496a1dcd0e8b8ab41b6ade1 data\minecraft\tags\blocks\mineable\axe.json
+f78cbdb9573e37f15c32862d77889d6ce71d6c29 data\minecraft\tags\blocks\fences.json
 9f14039fde11d2eaccdf6f523be7b7885c51a35f data\minecraft\tags\blocks\needs_stone_tool.json

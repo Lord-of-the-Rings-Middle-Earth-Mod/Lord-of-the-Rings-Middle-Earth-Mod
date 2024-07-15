@@ -2,6 +2,7 @@ package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModStoneType;
+import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
 import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
@@ -9,7 +10,6 @@ import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Block;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Model;
@@ -51,31 +51,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_LETTUCE, ModBlocks.POTTED_WILD_LETTUCE, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_TOMATO, ModBlocks.POTTED_WILD_TOMATO, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        generateModStoneTypeModels(ModStoneType.ANDESITE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.POLISHED_ANDESITE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.COBBLED_ANDESITE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.ANDESITE_BRICK, blockStateModelGenerator);
+        generateModWoodTypesModels(blockStateModelGenerator);
 
-        generateModStoneTypeModels(ModStoneType.DIORITE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.POLISHED_DIORITE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.COBBLED_DIORITE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.DIORITE_BRICK, blockStateModelGenerator);
-
-        generateModStoneTypeModels(ModStoneType.GRANITE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.POLISHED_GRANITE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.COBBLED_GRANITE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.GRANITE_BRICK, blockStateModelGenerator);
-
-        generateModStoneTypeModels(ModStoneType.SMOOTH_BASALT, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.BASALT_BRICKS, blockStateModelGenerator);
-
-        generateModStoneTypeModels(ModStoneType.BLUESLATE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.COBBLED_BLUESLATE, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.BLUESLATE_BRICK, blockStateModelGenerator);
-
-        generateModStoneTypeModels(ModStoneType.CHALK, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.COBBLED_CHALK, blockStateModelGenerator);
-        generateModStoneTypeModels(ModStoneType.CHALK_BRICK, blockStateModelGenerator);
+        generateModStoneTypeModels(blockStateModelGenerator);
     }
 
     /**
@@ -91,10 +69,14 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
         itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
 
+        itemModelGenerator.register(ModItems.HANGING_PINE_SIGN, Models.GENERATED);
+
         itemModelGenerator.register(ModItems.HOBBIT_SPAWN_EGG,
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
 
         generateModGearTypeModels(ModGearType.BRONZE, itemModelGenerator);
+
+        generateModWoodTypesModels(itemModelGenerator);
     }
 
     /**
@@ -145,35 +127,69 @@ public class ModModelProvider extends FabricModelProvider {
     /**
      * This Method is used to generate all the models for the given stone type.
      * It only works for blocks completely added by the mod, adding Models for additions made based on vanilla blocks does not work with this method.
-     * @param stoneType The ModStoneType, for which the models should be created
      * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
      */
-    private void generateModStoneTypeModels(ModStoneType stoneType, BlockStateModelGenerator blockStateModelGenerator) {
-        Block baseBlock = stoneType.getBaseBlock();
-        Block stairBlock = stoneType.getStairBlock();
-        Block slabBlock = stoneType.getSlabBlock();
-        Block wallBlock = stoneType.getWallBlock();
-        Block buttonBlock = stoneType.getButtonBlock();
-        Block pressurePlateBlock = stoneType.getPressurePlateBlock();
+    private void generateModStoneTypeModels(BlockStateModelGenerator blockStateModelGenerator) {
+        for (ModStoneType stoneType : ModStoneType.values()) {
+            if (stoneType.getStone() != null) {
+                BlockStateModelGenerator.BlockTexturePool stoneTypePool = blockStateModelGenerator
+                        .registerCubeAllModelTexturePool(stoneType.getStone());
+                if (stoneType.getStoneStairs() != null) {
+                    stoneTypePool.stairs(stoneType.getStoneStairs());
+                }
+                if (stoneType.getStoneSlab() != null) {
+                    stoneTypePool.slab(stoneType.getStoneSlab());
+                }
+                if (stoneType.getStoneWall() != null) {
+                    stoneTypePool.wall(stoneType.getStoneWall());
+                }
+                if (stoneType.getStoneButton() != null) {
+                    stoneTypePool.button(stoneType.getStoneButton());
+                }
+                if (stoneType.getStonePressurePlate() != null) {
+                    stoneTypePool.pressurePlate(stoneType.getStonePressurePlate());
+                }
+                if (stoneType.getCobbled() != null) {
+                    BlockStateModelGenerator.BlockTexturePool cobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbled());
+                    cobbledPool.family(stoneType.getCobbledFamily());
+                }
+                if (stoneType.getBrick() != null) {
+                    BlockStateModelGenerator.BlockTexturePool bricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getBrick());
+                    bricksPool.family(stoneType.getBrickFamily());
+                }
+            }
+        }
+    }
 
-        if (baseBlock != null) {
-            BlockStateModelGenerator.BlockTexturePool stoneTypePool = blockStateModelGenerator
-                    .registerCubeAllModelTexturePool(baseBlock);
-            if (stairBlock != null) {
-                stoneTypePool.stairs(stairBlock);
+    /**
+     * This Method is used to generate all the models for all woodTypes
+     * It only works for blocks completely added by the mod, adding Models for additions made based on vanilla blocks does not work with this method.
+     * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
+     */
+    private void generateModWoodTypesModels(BlockStateModelGenerator blockStateModelGenerator) {
+        for (ModWoodType woodType : ModWoodType.values()) {
+            if (!woodType.isVanillaAddition()) {
+                blockStateModelGenerator.registerLog(woodType.getLog()).log(woodType.getLog());
+                blockStateModelGenerator.registerLog(woodType.getStrippedLog()).log(woodType.getStrippedLog());
+
+                BlockStateModelGenerator.BlockTexturePool woodPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getWoodFamily().getBaseBlock());
+                woodPool.family(woodType.getWoodFamily());
+
+                BlockStateModelGenerator.BlockTexturePool strippedWoodPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getStrippedWoodFamily().getBaseBlock());
+                strippedWoodPool.family(woodType.getStrippedWoodFamily());
+
+                BlockStateModelGenerator.BlockTexturePool planksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(woodType.getPlanksFamily().getBaseBlock());
+                planksPool.family(woodType.getPlanksFamily());
+
+                blockStateModelGenerator.registerSimpleCubeAll(woodType.getLeaves());
             }
-            if (slabBlock != null) {
-                stoneTypePool.slab(slabBlock);
-            }
-            if (wallBlock != null) {
-                stoneTypePool.wall(wallBlock);
-            }
-            if (buttonBlock != null) {
-                stoneTypePool.button(buttonBlock);
-            }
-            if (pressurePlateBlock != null) {
-                stoneTypePool.pressurePlate(pressurePlateBlock);
-            }
+        }
+    }
+
+    private void generateModWoodTypesModels(ItemModelGenerator itemModelGenerator) {
+        for (ModWoodType woodType : ModWoodType.values()) {
+            itemModelGenerator.register(woodType.getPlanksBoat(), Models.GENERATED);
+            itemModelGenerator.register(woodType.getPlanksChestBoat(), Models.GENERATED);
         }
     }
 }

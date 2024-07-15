@@ -1,6 +1,9 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModStoneType;
+import me.anedhel.lotr.block.ModWoodBlocks;
+import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
 import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
@@ -83,111 +86,70 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.TIN_BLOCK);
         addDrop(ModBlocks.BRONZE_BLOCK);
 
-        addDrop(ModBlocks.ANDESITE_BUTTON);
-        addDrop(ModBlocks.ANDESITE_PRESSURE_PLATE);
+        for (ModWoodType woodType : ModWoodType.values()) {
+            addDrop(woodType.getLog());
+            addDrop(woodType.getWood());
+            addDrop(woodType.getWoodStairs());
+            addDrop(woodType.getWoodSlab());
+            addDrop(woodType.getWoodButton());
+            addDrop(woodType.getWoodPressurePlate());
+            addDrop(woodType.getWoodDoor(), doorDrops(woodType.getWoodDoor()));
+            addDrop(woodType.getWoodTrapdoor());
 
-        addDrop(ModBlocks.POLISHED_ANDESITE_WALL);
-        addDrop(ModBlocks.POLISHED_ANDESITE_BUTTON);
-        addDrop(ModBlocks.POLISHED_ANDESITE_PRESSURE_PLATE);
+            addDrop(woodType.getStrippedWood());
+            addDrop(woodType.getStrippedWood());
+            addDrop(woodType.getStrippedWoodStairs());
+            addDrop(woodType.getStrippedWoodSlab());
+            addDrop(woodType.getStrippedWoodButton());
+            addDrop(woodType.getStrippedWoodPressurePlate());
+            addDrop(woodType.getStrippedWoodDoor(), doorDrops(woodType.getStrippedWoodDoor()));
+            addDrop(woodType.getStrippedWoodTrapdoor());
 
-        addDrop(ModBlocks.COBBLED_ANDESITE);
-        addDrop(ModBlocks.COBBLED_ANDESITE_STAIRS);
-        addDrop(ModBlocks.COBBLED_ANDESITE_WALL);
-        addDrop(ModBlocks.COBBLED_ANDESITE_BUTTON);
-        addDrop(ModBlocks.COBBLED_ANDESITE_PRESSURE_PLATE);
-        addDrop(ModBlocks.COBBLED_ANDESITE_SLAB, slabDrops(ModBlocks.COBBLED_ANDESITE_SLAB));
+            addDrop(woodType.getPlanks());
+            addDrop(woodType.getPlanksStairs());
+            addDrop(woodType.getPlanksSlab());
+            addDrop(woodType.getPlanksButton());
+            addDrop(woodType.getPlanksPressurePlate());
+            addDrop(woodType.getPlanksFence());
+            addDrop(woodType.getPlanksFenceGate());
+            addDrop(woodType.getPlanksDoor(), doorDrops(woodType.getPlanksDoor()));
+            addDrop(woodType.getPlanksTrapdoor());
 
-        addDrop(ModBlocks.ANDESITE_BRICK);
-        addDrop(ModBlocks.ANDESITE_BRICK_STAIRS);
-        addDrop(ModBlocks.ANDESITE_BRICK_WALL);
-        addDrop(ModBlocks.ANDESITE_BRICK_SLAB, slabDrops(ModBlocks.ANDESITE_BRICK_SLAB));
+            addDrop(woodType.getLeaves(), leavesDrops(ModWoodBlocks.PINE_LEAVES, ModBlocks.WILD_CORN, 0.0025f)); //ToDo: Add proper Sapling
+        }
 
-        addDrop(ModBlocks.DIORITE_BUTTON);
-        addDrop(ModBlocks.DIORITE_PRESSURE_PLATE);
-
-        addDrop(ModBlocks.POLISHED_DIORITE_WALL);
-        addDrop(ModBlocks.POLISHED_DIORITE_BUTTON);
-        addDrop(ModBlocks.POLISHED_DIORITE_PRESSURE_PLATE);
-
-        addDrop(ModBlocks.COBBLED_DIORITE);
-        addDrop(ModBlocks.COBBLED_DIORITE_STAIRS);
-        addDrop(ModBlocks.COBBLED_DIORITE_WALL);
-        addDrop(ModBlocks.COBBLED_DIORITE_BUTTON);
-        addDrop(ModBlocks.COBBLED_DIORITE_PRESSURE_PLATE);
-        addDrop(ModBlocks.COBBLED_DIORITE_SLAB, slabDrops(ModBlocks.COBBLED_DIORITE_SLAB));
-
-        addDrop(ModBlocks.DIORITE_BRICK);
-        addDrop(ModBlocks.DIORITE_BRICK_STAIRS);
-        addDrop(ModBlocks.DIORITE_BRICK_WALL);
-        addDrop(ModBlocks.DIORITE_BRICK_SLAB, slabDrops(ModBlocks.DIORITE_BRICK_SLAB));
-
-        addDrop(ModBlocks.GRANITE_BUTTON);
-        addDrop(ModBlocks.GRANITE_PRESSURE_PLATE);
-
-        addDrop(ModBlocks.POLISHED_GRANITE_WALL);
-        addDrop(ModBlocks.POLISHED_GRANITE_BUTTON);
-        addDrop(ModBlocks.POLISHED_GRANITE_PRESSURE_PLATE);
-
-        addDrop(ModBlocks.COBBLED_GRANITE);
-        addDrop(ModBlocks.COBBLED_GRANITE_STAIRS);
-        addDrop(ModBlocks.COBBLED_GRANITE_WALL);
-        addDrop(ModBlocks.COBBLED_GRANITE_BUTTON);
-        addDrop(ModBlocks.COBBLED_GRANITE_PRESSURE_PLATE);
-        addDrop(ModBlocks.COBBLED_GRANITE_SLAB, slabDrops(ModBlocks.COBBLED_GRANITE_SLAB));
-
-        addDrop(ModBlocks.GRANITE_BRICK);
-        addDrop(ModBlocks.GRANITE_BRICK_STAIRS);
-        addDrop(ModBlocks.GRANITE_BRICK_WALL);
-        addDrop(ModBlocks.GRANITE_BRICK_SLAB, slabDrops(ModBlocks.GRANITE_BRICK_SLAB));
-
-        addDrop(ModBlocks.SMOOTH_BASALT_STAIRS);
-        addDrop(ModBlocks.SMOOTH_BASALT_SLAB, slabDrops(ModBlocks.SMOOTH_BASALT_SLAB));
-        addDrop(ModBlocks.SMOOTH_BASALT_WALL);
-        addDrop(ModBlocks.SMOOTH_BASALT_BUTTON);
-        addDrop(ModBlocks.SMOOTH_BASALT_PRESSURE_PLATE);
-
-        addDrop(ModBlocks.BASALT_BRICK);
-        addDrop(ModBlocks.BASALT_BRICK_STAIRS);
-        addDrop(ModBlocks.BASALT_BRICK_SLAB, slabDrops(ModBlocks.BASALT_BRICK_SLAB));
-        addDrop(ModBlocks.BASALT_BRICK_WALL);
-
-        addDrop(ModBlocks.BLUESLATE);
-        addDrop(ModBlocks.BLUESLATE_STAIRS);
-        addDrop(ModBlocks.BLUESLATE_SLAB);
-        addDrop(ModBlocks.BLUESLATE_WALL);
-        addDrop(ModBlocks.BLUESLATE_BUTTON);
-        addDrop(ModBlocks.BLUESLATE_PRESSURE_PLATE);
-
-        addDrop(ModBlocks.COBBLED_BLUESLATE);
-        addDrop(ModBlocks.COBBLED_BLUESLATE_STAIRS);
-        addDrop(ModBlocks.COBBLED_BLUESLATE_SLAB);
-        addDrop(ModBlocks.COBBLED_BLUESLATE_WALL);
-        addDrop(ModBlocks.COBBLED_BLUESLATE_BUTTON);
-        addDrop(ModBlocks.COBBLED_BLUESLATE_PRESSURE_PLATE);
-
-        addDrop(ModBlocks.BLUESLATE_BRICK);
-        addDrop(ModBlocks.BLUESLATE_BRICK_STAIRS);
-        addDrop(ModBlocks.BLUESLATE_BRICK_SLAB);
-        addDrop(ModBlocks.BLUESLATE_BRICK_WALL);
-
-        addDrop(ModBlocks.CHALK);
-        addDrop(ModBlocks.CHALK_STAIRS);
-        addDrop(ModBlocks.CHALK_WALL);
-        addDrop(ModBlocks.CHALK_BUTTON);
-        addDrop(ModBlocks.CHALK_PRESSURE_PLATE);
-        addDrop(ModBlocks.CHALK_SLAB, slabDrops(ModBlocks.CHALK_SLAB));
-
-        addDrop(ModBlocks.CHALK_BRICK);
-        addDrop(ModBlocks.CHALK_BRICK_STAIRS);
-        addDrop(ModBlocks.CHALK_BRICK_WALL);
-        addDrop(ModBlocks.CHALK_BRICK_SLAB, slabDrops(ModBlocks.CHALK_BRICK_SLAB));
-
-        addDrop(ModBlocks.COBBLED_CHALK);
-        addDrop(ModBlocks.COBBLED_CHALK_STAIRS);
-        addDrop(ModBlocks.COBBLED_CHALK_WALL);
-        addDrop(ModBlocks.COBBLED_CHALK_BUTTON);
-        addDrop(ModBlocks.COBBLED_CHALK_PRESSURE_PLATE);
-        addDrop(ModBlocks.COBBLED_CHALK_SLAB, slabDrops(ModBlocks.COBBLED_CHALK_SLAB));
+        for (ModStoneType stoneType : ModStoneType.values()) {
+            addDrop(stoneType.getStone());
+            if (stoneType.getStoneStairs() != null) {
+                addDrop(stoneType.getStoneStairs());
+            }
+            if (stoneType.getStoneSlab() != null) {
+                addDrop(stoneType.getStoneSlab(), slabDrops(stoneType.getStoneSlab()));
+            }
+            if (stoneType.getStoneWall() != null) {
+                addDrop(stoneType.getStoneWall());
+            }
+            if (stoneType.getStoneButton() != null) {
+                addDrop(stoneType.getStoneButton());
+            }
+            if (stoneType.getStonePressurePlate() != null) {
+                addDrop(stoneType.getStonePressurePlate());
+            }
+            if (stoneType.getCobbled() != null) {
+                addDrop(stoneType.getCobbled());
+                addDrop(stoneType.getCobbledStairs());
+                addDrop(stoneType.getCobbledSlab(), slabDrops(stoneType.getCobbledSlab()));
+                addDrop(stoneType.getCobbledWall());
+                addDrop(stoneType.getCobbledButton());
+                addDrop(stoneType.getCobbledPressurePlate());
+            }
+            if (stoneType.getBrick() != null) {
+                addDrop(stoneType.getBrick());
+                addDrop(stoneType.getBrickStairs());
+                addDrop(stoneType.getBrickSlab(), slabDrops(stoneType.getBrickSlab()));
+                addDrop(stoneType.getBrickWall());
+            }
+        }
     }
 
     /**

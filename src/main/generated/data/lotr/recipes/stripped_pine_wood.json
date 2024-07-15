@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "bark",
+  "key": {
+    "#": {
+      "item": "lotr:stripped_pine_log"
+    }
+  },
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "result": {
+    "count": 3,
+    "item": "lotr:stripped_pine_wood"
+  },
+  "show_notification": true
+}

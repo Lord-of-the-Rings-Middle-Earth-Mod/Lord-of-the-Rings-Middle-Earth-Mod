@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_trapdoor",
+  "key": {
+    "#": {
+      "item": "lotr:stripped_pine_wood"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "item": "lotr:stripped_pine_trapdoor"
+  },
+  "show_notification": true
+}

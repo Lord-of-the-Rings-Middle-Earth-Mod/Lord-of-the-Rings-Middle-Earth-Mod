@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "lotr:block/stripped_pine_wood",
+    "side": "lotr:block/stripped_pine_wood",
+    "top": "lotr:block/stripped_pine_wood"
+  }
+}

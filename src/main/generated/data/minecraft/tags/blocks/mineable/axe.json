@@ -1,0 +1,26 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:pine_wood_stairs",
+    "lotr:pine_wood_slabs",
+    "lotr:pine_wood_button",
+    "lotr:pine_wood_pressure_plate",
+    "lotr:pine_wood_door",
+    "lotr:pine_wood_trapdoor",
+    "lotr:stripped_pine_stairs",
+    "lotr:stripped_pine_slabs",
+    "lotr:stripped_pine_wood_button",
+    "lotr:stripped_pine_wood_pressure_plate",
+    "lotr:stripped_pine_door",
+    "lotr:stripped_pine_trapdoor",
+    "lotr:pine_planks",
+    "lotr:pine_planks_stairs",
+    "lotr:pine_planks_slab",
+    "lotr:pine_planks_button",
+    "lotr:pine_planks_pressure_plate",
+    "lotr:pine_planks_door",
+    "lotr:pine_planks_trapdoor",
+    "lotr:pine_planks_fence",
+    "lotr:pine_planks_fence_gate"
+  ]
+}
