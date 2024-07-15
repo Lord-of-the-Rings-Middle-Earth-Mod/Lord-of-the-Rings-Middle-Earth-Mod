@@ -7,6 +7,7 @@ import me.anedhel.lotr.entity.ModEntities;
 import me.anedhel.lotr.entity.custom.HobbitEntity;
 import me.anedhel.lotr.item.ModItemGroups;
 import me.anedhel.lotr.item.ModItems;
+import me.anedhel.lotr.world.gen.ModWorldGeneration;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.api.ModInitializer;
 
@@ -30,6 +31,8 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 		ModBoats.registerBoats();
 
 		FabricDefaultAttributeRegistry.register(ModEntities.HOBBIT, HobbitEntity.createHobbitAttributes());
+
+		ModWorldGeneration.generateModWorldGen();
 
 		initModWoodTypes();
 
