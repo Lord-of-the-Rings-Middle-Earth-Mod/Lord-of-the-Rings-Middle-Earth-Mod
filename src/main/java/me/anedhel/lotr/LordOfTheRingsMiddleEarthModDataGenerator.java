@@ -1,8 +1,12 @@
 package me.anedhel.lotr;
 
 import me.anedhel.lotr.datagen.*;
+import me.anedhel.lotr.world.ModConfiguredFeatures;
+import me.anedhel.lotr.world.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 
 public class LordOfTheRingsMiddleEarthModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -14,5 +18,12 @@ public class LordOfTheRingsMiddleEarthModDataGenerator implements DataGeneratorE
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModWorldGenerator::new);
+	}
+
+	@Override
+	public void buildRegistry(RegistryBuilder registryBuilder) {
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::boostrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::boostrap);
 	}
 }
