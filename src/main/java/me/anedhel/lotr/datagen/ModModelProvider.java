@@ -182,6 +182,7 @@ public class ModModelProvider extends FabricModelProvider {
                 planksPool.family(woodType.getPlanksFamily());
 
                 blockStateModelGenerator.registerSimpleCubeAll(woodType.getLeaves());
+                blockStateModelGenerator.registerTintableCross(woodType.getSapling(), BlockStateModelGenerator.TintType.NOT_TINTED);
             }
         }
     }

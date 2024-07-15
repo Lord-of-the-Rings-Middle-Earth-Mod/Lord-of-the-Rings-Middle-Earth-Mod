@@ -13,7 +13,8 @@ import java.util.List;
 public enum ModWoodType {
     PINE(ModWoodBlocks.PINE_LOG, ModWoodBlocks.STRIPPED_PINE_LOG,
             ModWoodBlocks.PINE_WOOD_FAMILY, ModWoodBlocks.STRIPPED_PINE_FAMILY, ModWoodBlocks.PINE_PLANKS_FAMILY,
-            ModItems.PINE_BOAT, ModItems.PINE_CHEST_BOAT, ModWoodBlocks.PINE_LEAVES, false);
+            ModItems.PINE_BOAT, ModItems.PINE_CHEST_BOAT, ModWoodBlocks.PINE_LEAVES, ModWoodBlocks.PINE_SAPLINGS,
+            false);
 
     private final Block log;
     private final Block wood;
@@ -49,10 +50,11 @@ public enum ModWoodType {
     private final BlockFamily planksFamily;
 
     private final Block leaves;
+    private final Block sapling;
 
     private final boolean vanillaAddition;
 
-    ModWoodType(Block log, Block strippedLog, @NotNull BlockFamily woodFamily, @NotNull BlockFamily strippedWoodFamily, @NotNull BlockFamily planksFamily, Item planksBoat, Item planksChestBoat, Block leaves, boolean vanillaAddition) {
+    ModWoodType(Block log, Block strippedLog, @NotNull BlockFamily woodFamily, @NotNull BlockFamily strippedWoodFamily, @NotNull BlockFamily planksFamily, Item planksBoat, Item planksChestBoat, Block leaves, Block sapling, boolean vanillaAddition) {
         this.log = log;
         this.wood = woodFamily.getBaseBlock();
         this.woodStairs = woodFamily.getVariant(BlockFamily.Variant.STAIRS);
@@ -87,6 +89,7 @@ public enum ModWoodType {
         this.planksChestBoat = planksChestBoat;
 
         this.leaves = leaves;
+        this.sapling = sapling;
 
         this.vanillaAddition = vanillaAddition;
     }
@@ -169,9 +172,6 @@ public enum ModWoodType {
         if (planksTrapdoor != null) {
             woodItemGroupList.add(new ItemStack(planksTrapdoor));
         }
-        if (leaves != null) {
-            woodItemGroupList.add(new ItemStack(leaves));
-        }
 
         return woodItemGroupList;
     }
@@ -187,6 +187,19 @@ public enum ModWoodType {
         }
 
         return transportItemGroupList;
+    }
+
+    public List<ItemStack> getItemGroupPlantList () {
+        List<ItemStack> plantItemGroupList = new ArrayList<>();
+
+        if (leaves != null) {
+            plantItemGroupList.add(new ItemStack(leaves));
+        }
+        if (sapling != null) {
+            plantItemGroupList.add(new ItemStack(sapling));
+        }
+
+        return plantItemGroupList;
     }
 
     public Block getLog() {
@@ -311,6 +324,10 @@ public enum ModWoodType {
 
     public Block getLeaves() {
         return leaves;
+    }
+
+    public Block getSapling() {
+        return sapling;
     }
 
     public boolean isVanillaAddition() {

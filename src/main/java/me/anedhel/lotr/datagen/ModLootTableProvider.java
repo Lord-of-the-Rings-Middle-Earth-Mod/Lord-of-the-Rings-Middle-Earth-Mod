@@ -2,7 +2,6 @@ package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModStoneType;
-import me.anedhel.lotr.block.ModWoodBlocks;
 import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
@@ -115,7 +114,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
             addDrop(woodType.getPlanksDoor(), doorDrops(woodType.getPlanksDoor()));
             addDrop(woodType.getPlanksTrapdoor());
 
-            addDrop(woodType.getLeaves(), leavesDrops(ModWoodBlocks.PINE_LEAVES, ModBlocks.WILD_CORN, 0.0025f)); //ToDo: Add proper Sapling
+            addDrop(woodType.getLeaves(), leavesDrops(woodType.getLeaves(), woodType.getSapling(), 0.0025f));
+            addDrop(woodType.getSapling());
         }
 
         for (ModStoneType stoneType : ModStoneType.values()) {
