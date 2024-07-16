@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
-      "model": "lotr:block/wild_corn"
+    "half=lower": {
+      "model": "lotr:block/wild_corn_bottom"
+    },
+    "half=upper": {
+      "model": "lotr:block/wild_corn_top"
     }
   }
 }

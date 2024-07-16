@@ -7,6 +7,7 @@ import me.anedhel.lotr.block.ModWoodBlocks;
 import me.anedhel.lotr.entity.ModBoats;
 import me.anedhel.lotr.entity.ModEntities;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

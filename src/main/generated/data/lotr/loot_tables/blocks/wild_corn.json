@@ -3,43 +3,24 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
       "entries": [
         {
-          "type": "minecraft:alternatives",
-          "children": [
+          "type": "minecraft:item",
+          "conditions": [
             {
-              "type": "minecraft:item",
-              "conditions": [
-                {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "items": [
-                      "minecraft:shears"
-                    ]
-                  }
-                }
-              ],
-              "name": "lotr:wild_corn"
-            },
-            {
-              "type": "minecraft:item",
-              "functions": [
-                {
-                  "add": false,
-                  "count": {
-                    "type": "minecraft:uniform",
-                    "max": 3.0,
-                    "min": 1.0
-                  },
-                  "function": "minecraft:set_count"
-                },
-                {
-                  "function": "minecraft:explosion_decay"
-                }
-              ],
-              "name": "lotr:corn"
+              "block": "lotr:wild_corn",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "half": "lower"
+              }
             }
-          ]
+          ],
+          "name": "lotr:wild_corn"
         }
       ],
       "rolls": 1.0

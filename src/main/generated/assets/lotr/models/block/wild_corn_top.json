@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cross",
   "textures": {
-    "cross": "lotr:block/wild_corn"
+    "cross": "lotr:block/wild_corn_top"
   }
 }
