@@ -7,7 +7,6 @@ import me.anedhel.lotr.block.ModWoodBlocks;
 import me.anedhel.lotr.entity.ModBoats;
 import me.anedhel.lotr.entity.ModEntities;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -66,6 +65,8 @@ public class ModItems {
 
     public static final Item CORN = registerItem("corn",
             new Item(new FabricItemSettings().food(ModFoodComponents.CORN)));
+    public static final Item COOKED_CORN = registerItem("cooked_corn",
+            new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_CORN)));
     public static final Item CORN_SEEDS = registerItem("corn_seeds",
             new AliasedBlockItem(ModBlocks.CORN_CROP, new FabricItemSettings()));
 

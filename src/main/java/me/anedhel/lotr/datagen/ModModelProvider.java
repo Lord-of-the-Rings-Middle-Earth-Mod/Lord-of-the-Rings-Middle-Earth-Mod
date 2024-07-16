@@ -68,6 +68,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
         itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
+        itemModelGenerator.register(ModItems.COOKED_CORN, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.HANGING_PINE_SIGN, Models.GENERATED);
 

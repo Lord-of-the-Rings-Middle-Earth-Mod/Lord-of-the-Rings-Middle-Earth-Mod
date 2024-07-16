@@ -60,6 +60,7 @@ public class ModItemGroups {
                         entries.add(ModItems.TOMATO);
                         entries.add(ModBlocks.TOMATO_CRATE);
                         entries.add(ModItems.CORN);
+                        entries.add(ModItems.COOKED_CORN);
                         entries.add(ModBlocks.CORN_CRATE);
                     })).build());
 

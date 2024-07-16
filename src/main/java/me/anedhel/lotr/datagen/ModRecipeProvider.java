@@ -7,14 +7,15 @@ import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.minecraft.advancement.AdvancementCriterion;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.server.recipe.RecipeExporter;
-import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
-import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
+import net.minecraft.recipe.Ingredient;
+import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
@@ -54,6 +55,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerSmelting(exporter, COPPER_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.COPPER_BLOCK, 5.6f, 1600, "copper_block");
         offerBlasting(exporter, COPPER_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.COPPER_BLOCK, 5.6f, 800, "copper_block");
 
+        offerFoodCookingRecipe(exporter, "smooking", RecipeSerializer.SMOKING, 100, ModItems.CORN, ModItems.COOKED_CORN, 0.35f);
+        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, ModItems.CORN, ModItems.COOKED_CORN, 0.35f);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.CORN), RecipeCategory.FOOD, ModItems.COOKED_CORN, 0.35f, 200).criterion("has_corn", (AdvancementCriterion)VanillaRecipeProvider.conditionsFromItem(ModItems.CORN)).offerTo(exporter);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BRONZE_INGOT)
                 .input(ModItems.TIN_INGOT)
