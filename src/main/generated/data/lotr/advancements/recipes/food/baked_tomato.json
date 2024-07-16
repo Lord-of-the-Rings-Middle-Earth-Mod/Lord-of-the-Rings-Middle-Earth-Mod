@@ -6,7 +6,7 @@
         "items": [
           {
             "items": [
-              "lotr:corn"
+              "lotr:tomato"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "lotr:cooked_corn"
+        "recipe": "lotr:baked_tomato"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "lotr:cooked_corn"
+      "lotr:baked_tomato"
     ]
   },
   "sends_telemetry_event": false

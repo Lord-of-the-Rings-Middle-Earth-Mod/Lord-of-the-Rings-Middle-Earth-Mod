@@ -1,34 +1,34 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_food": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:baked_tomato_from_smooking"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tomato": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:corn"
+              "lotr:tomato"
             ]
           }
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "lotr:cooked_corn"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_food"
+      "has_tomato"
     ]
   ],
   "rewards": {
     "recipes": [
-      "lotr:cooked_corn"
+      "minecraft:baked_tomato_from_smooking"
     ]
   },
   "sends_telemetry_event": false

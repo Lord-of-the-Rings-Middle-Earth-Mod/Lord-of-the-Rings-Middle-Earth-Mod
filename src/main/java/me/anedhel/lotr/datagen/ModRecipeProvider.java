@@ -55,9 +55,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerSmelting(exporter, COPPER_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.COPPER_BLOCK, 5.6f, 1600, "copper_block");
         offerBlasting(exporter, COPPER_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.COPPER_BLOCK, 5.6f, 800, "copper_block");
 
-        offerFoodCookingRecipe(exporter, "smooking", RecipeSerializer.SMOKING, 100, ModItems.CORN, ModItems.COOKED_CORN, 0.35f);
-        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, ModItems.CORN, ModItems.COOKED_CORN, 0.35f);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(ModItems.CORN), RecipeCategory.FOOD, ModItems.COOKED_CORN, 0.35f, 200).criterion("has_corn", (AdvancementCriterion)VanillaRecipeProvider.conditionsFromItem(ModItems.CORN)).offerTo(exporter);
+        createCookedFoodRecipes(exporter, ModItems.CORN, ModItems.COOKED_CORN);
+        createCookedFoodRecipes(exporter, ModItems.TOMATO, ModItems.BAKED_TOMATO);
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.BRONZE_INGOT)
                 .input(ModItems.TIN_INGOT)
@@ -236,6 +235,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 }
             }
         }
+    }
+
+    private void createCookedFoodRecipes(RecipeExporter exporter, Item rawItem, Item cookedItem) {
+        offerFoodCookingRecipe(exporter, "smooking", RecipeSerializer.SMOKING, 100, rawItem,cookedItem, 0.35f);
+        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, rawItem, cookedItem, 0.35f);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(rawItem), RecipeCategory.FOOD, cookedItem, 0.35f, 200).criterion("has_food", (AdvancementCriterion)VanillaRecipeProvider.conditionsFromItem(rawItem)).offerTo(exporter);
     }
 
     /**

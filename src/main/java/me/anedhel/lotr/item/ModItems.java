@@ -57,6 +57,8 @@ public class ModItems {
 
     public static final Item TOMATO = registerItem("tomato",
             new Item(new FabricItemSettings().food(ModFoodComponents.TOMATO)));
+    public static final Item BAKED_TOMATO = registerItem("baked_tomato",
+            new Item(new FabricItemSettings().food(ModFoodComponents.BAKED_TOMATO)));
     public static final Item TOMATO_SEEDS = registerItem("tomato_seeds",
             new AliasedBlockItem(ModBlocks.TOMATO_CROP, new FabricItemSettings()));
 
