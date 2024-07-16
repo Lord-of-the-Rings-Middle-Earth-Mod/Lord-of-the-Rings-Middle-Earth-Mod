@@ -60,6 +60,7 @@ public class ModItemGroups {
                         entries.add(ModItems.TOMATO);
                         entries.add(ModBlocks.TOMATO_CRATE);
                         entries.add(ModItems.CORN);
+                        entries.add(ModItems.COOKED_CORN);
                         entries.add(ModBlocks.CORN_CRATE);
                     })).build());
 
@@ -77,6 +78,7 @@ public class ModItemGroups {
                         entries.add(ModItems.LETTUCE);
                         entries.add(ModBlocks.LETTUCE_CRATE);
                         entries.add(ModItems.CORN_SEEDS);
+                        entries.addAll(ModWoodType.PINE.getItemGroupPlantList());
                     })).build());
 
     public static final ItemGroup LOTR_INGREDIENTS = Registry.register(Registries.ITEM_GROUP,

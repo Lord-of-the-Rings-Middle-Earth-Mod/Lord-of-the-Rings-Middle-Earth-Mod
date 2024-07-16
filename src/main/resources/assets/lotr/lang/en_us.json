@@ -25,6 +25,7 @@
   "item.lotr.tomato_seeds": "Tomato Seeds",
   "item.lotr.lettuce": "Lettuce",
   "item.lotr.corn": "Corn",
+  "item.lotr.cooked_corn": "Cooked Corn",
   "item.lotr.corn_seeds": "Corn Seeds",
 
   "block.lotr.beetroot_crate": "Beetroot Crate",
@@ -75,6 +76,7 @@
   "block.lotr.pine_hanging_sign": "Pine Hanging Sign",
   "block.lotr.pine_wall_hanging_sign": "Pine Wall Hanging Sign",
   "block.lotr.pine_leaves": "Pine Leaves",
+  "block.lotr.pine_sapling": "Pine Sapling",
 
   "block.lotr.andesite_button": "Andesite Button",
   "block.lotr.andesite_pressure_plate": "Andesite Pressure Plate",

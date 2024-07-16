@@ -11,16 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "lotr:wild_corn",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "half": "lower"
-              }
-            }
-          ],
-          "name": "lotr:wild_corn"
+          "name": "lotr:pine_sapling"
         }
       ],
       "rolls": 1.0

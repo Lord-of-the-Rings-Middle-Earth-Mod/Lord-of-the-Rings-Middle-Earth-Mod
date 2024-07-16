@@ -2,7 +2,6 @@ package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModStoneType;
-import me.anedhel.lotr.block.ModWoodBlocks;
 import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
@@ -11,6 +10,8 @@ import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.TallPlantBlock;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
@@ -49,8 +50,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(ModBlocks.POTTED_WILD_CARROT);
         addDrop(ModBlocks.WILD_POTATO, wildFlowerDrops(ModBlocks.WILD_POTATO, Items.POTATO, UniformLootNumberProvider.create(1.0f, 3.0f)));
         addPottedPlantDrops(ModBlocks.POTTED_WILD_POTATO);
-        addDrop(ModBlocks.WILD_CORN, wildFlowerDrops(ModBlocks.WILD_CORN, ModItems.CORN, UniformLootNumberProvider.create(1.0f, 3.0f)));
-        addPottedPlantDrops(ModBlocks.POTTED_WILD_CORN);
+        addDrop(ModBlocks.WILD_CORN, (Block block) -> this.dropsWithProperty((Block)block, TallPlantBlock.HALF, DoubleBlockHalf.LOWER));
+
         addDrop(ModBlocks.WILD_LETTUCE, wildFlowerDrops(ModBlocks.WILD_LETTUCE, ModItems.LETTUCE, UniformLootNumberProvider.create(1.0f, 3.0f)));
         addPottedPlantDrops(ModBlocks.POTTED_WILD_LETTUCE);
         addDrop(ModBlocks.WILD_TOMATO, wildFlowerDrops(ModBlocks.WILD_TOMATO, ModItems.TOMATO, UniformLootNumberProvider.create(1.0f, 3.0f)));
@@ -115,7 +116,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
             addDrop(woodType.getPlanksDoor(), doorDrops(woodType.getPlanksDoor()));
             addDrop(woodType.getPlanksTrapdoor());
 
-            addDrop(woodType.getLeaves(), leavesDrops(ModWoodBlocks.PINE_LEAVES, ModBlocks.WILD_CORN, 0.0025f)); //ToDo: Add proper Sapling
+            addDrop(woodType.getLeaves(), leavesDrops(woodType.getLeaves(), woodType.getSapling(), 0.0025f));
+            addDrop(woodType.getSapling());
         }
 
         for (ModStoneType stoneType : ModStoneType.values()) {

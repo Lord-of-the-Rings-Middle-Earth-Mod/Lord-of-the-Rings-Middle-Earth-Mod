@@ -48,9 +48,7 @@ public class ModBlocks {
     public static final Block POTTED_WILD_POTATO = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_potato"),
             new FlowerPotBlock(WILD_POTATO, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
     public static final Block WILD_CORN = registerBlock("wild_corn",
-            new FlowerBlock(StatusEffects.SATURATION, 10, FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()));
-    public static final Block POTTED_WILD_CORN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_corn"),
-            new FlowerPotBlock(WILD_CORN, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
+            new TallFlowerBlock(FabricBlockSettings.copyOf(Blocks.ROSE_BUSH)));
     public static final Block WILD_LETTUCE = registerBlock("wild_lettuce",
             new FlowerBlock(StatusEffects.SATURATION, 10, FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()));
     public static final Block POTTED_WILD_LETTUCE = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_lettuce"),

@@ -65,6 +65,8 @@ public class ModItems {
 
     public static final Item CORN = registerItem("corn",
             new Item(new FabricItemSettings().food(ModFoodComponents.CORN)));
+    public static final Item COOKED_CORN = registerItem("cooked_corn",
+            new Item(new FabricItemSettings().food(ModFoodComponents.COOKED_CORN)));
     public static final Item CORN_SEEDS = registerItem("corn_seeds",
             new AliasedBlockItem(ModBlocks.CORN_CROP, new FabricItemSettings()));
 

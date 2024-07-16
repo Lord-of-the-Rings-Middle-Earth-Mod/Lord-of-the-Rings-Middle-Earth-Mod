@@ -73,6 +73,9 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 			FlammableBlockRegistry.getDefaultInstance().add(woodType.getStrippedWood(), 5, 5);
 			FlammableBlockRegistry.getDefaultInstance().add(woodType.getPlanks(), 5, 20);
 			FlammableBlockRegistry.getDefaultInstance().add(woodType.getLeaves(), 30, 60);
+
+			ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(woodType.getSapling(), 0.35f);
+			ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(woodType.getLeaves(), 0.25f);
 		}
 	}
 }
