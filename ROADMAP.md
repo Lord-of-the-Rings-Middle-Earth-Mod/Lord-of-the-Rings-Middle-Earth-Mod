@@ -1,0 +1,78 @@
+# Roadmap
+___
+## Release 1.0: We are going on an adventure.
+
+- Arda Dimension with a custom Portal
+- World Generation in the Arda Dimension is based on the north-west of the Middle Earth Map
+- Factions with Alignment System, NPCs and simple structures
+  - Angmar
+  - Dol Guldur
+  - Dunland
+  - Near Harad
+  - Misty Mountain Orcs
+  - Isengard
+  - Mordor
+  - Rhun
+  - Blue Mountain Dwarves
+  - Durins Folk
+  - Gondor
+  - Hobbits
+  - High Elves
+  - Silvan Elves
+  - Rangers
+  - Rohan
+  - Dorwinion
+- Following Biomes are placed in the Arda Dimenstion
+  - Lindon
+  - Blue Mountains
+  - Eriador
+  - Eriador Hills
+  - Shire
+  - Old Forest
+  - White Downs
+  - Barrow Downs
+  - Tower Hills
+  - Angmar
+  - Misty Mountains
+  - Bree
+  - Angle
+  - Rivendell
+  - Dunland
+  - Eregion
+  - Trollshaws
+  - Ettenmoors
+  - Minhiriath
+  - Eryn Vorn
+  - Swanfleet
+  - Enedwaith
+  - Midgewater
+  - Tundra
+  - Taiga
+  - Forodwaith
+  - Grey Mountains
+  - Anduin Vales
+  - Gladden Fields
+  - Lothlórien
+  - Fangorn
+  - Emyn Muil
+  - Isengard
+  - Rohan
+  - White Mountains
+  - Gondor
+  - Ithilien
+  - Dead Marshes
+  - Mordor Mountains
+  - Mordor
+  - Minas Morgul
+  - Harondor
+  - Near Harad
+  - Umbar
+  - Wilderland
+  - Mirkwood
+  - Mirkwood Mountains
+  - Dol Guldur
+  - Dale
+  - Erebor
+  - Iron Hills
+  - Dorwinion
+  - Rhun
