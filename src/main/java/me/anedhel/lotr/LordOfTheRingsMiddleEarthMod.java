@@ -13,7 +13,9 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.block.ComposterBlock;
+import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,6 +39,13 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 		initModWoodTypes();
 
 		addCropsToComposer();
+
+		CustomPortalBuilder.beginPortal()
+				.frameBlock(ModBlocks.BRONZE_BLOCK)
+				.lightWithItem(ModItems.TIN_INGOT)
+				.destDimID(new Identifier(MOD_ID, "arda"))
+				.tintColor(0xc76efa)
+				.registerPortal();
 		LOGGER.info("The Lord of the Rings Mod is loaded.");
 	}
 

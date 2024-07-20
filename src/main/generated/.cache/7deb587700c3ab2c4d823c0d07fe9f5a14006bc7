@@ -1,5 +1,7 @@
-// 1.20.2	2024-07-16T11:11:08.6918035	Lord of the Rings Middle Earth/World Gen
+// 1.20.2	2024-07-20T21:59:19.1507511	Lord of the Rings Middle Earth/World Gen
 d8095720dd37636a9a1a7f149ddfbbb86155173c data\lotr\worldgen\configured_feature\tin_ore.json
+1c784ada4c8ba758993a45ad38cd01a13f2834b2 data\lotr\worldgen\biome\first_biome.json
 fd2e22170307634c0b00ac7f8702aa26de7af146 data\lotr\worldgen\placed_feature\pine_placed.json
 6e4d7025d71c3a6365536ed010657b486d08deae data\lotr\worldgen\placed_feature\tin_ore_placed.json
+157340322d2d0de75999d1ae20fd06a4164705d5 data\lotr\dimension_type\arda_type.json
 9e76963c2ea9a625ad46868f20ddc71e21f49be9 data\lotr\worldgen\configured_feature\pine.json

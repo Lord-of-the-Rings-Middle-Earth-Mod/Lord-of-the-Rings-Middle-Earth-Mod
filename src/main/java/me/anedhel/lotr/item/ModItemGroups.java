@@ -58,6 +58,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.CARROT_CRATE);
                         entries.add(ModBlocks.POTATO_CRATE);
                         entries.add(ModItems.TOMATO);
+                        entries.add(ModItems.BAKED_TOMATO);
                         entries.add(ModBlocks.TOMATO_CRATE);
                         entries.add(ModItems.CORN);
                         entries.add(ModItems.COOKED_CORN);
