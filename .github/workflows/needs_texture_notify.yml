@@ -28,39 +28,39 @@ jobs:
           DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
         run: |
           python -c "
-            import requests
-            import os
-            import json
-            
-            # Konfiguration
-            LABEL = 'needs texture'
-            DISCORD_CHANNEL_ID = os.getenv('DISCORD_CHANNEL_ID')
-            DISCORD_BOT_TOKEN = os.getenv('DISCORD_BOT_TOKEN')
-          
-          # GitHub Event Daten laden
-          with open(os.getenv('GITHUB_EVENT_PATH')) as f:
-            event_data = json.load(f)
-          
-          # Prüfen, ob das Label 'needs texture' hinzugefügt wurde
-          if event_data['action'] == 'labeled' and event_data['label']['name'] == LABEL:
-            issue = event_data['issue']
-            thread_name = f'{issue["title"][:90]}...' if len(issue["title"]) > 90 else issue["title"]
-            message_content = f'**Title:** {issue["title"]}\n**Body:** {issue["body"]}\n**URL:** {issue["html_url"]}'
-            
-            # Erstelle einen neuen Thread im Forums-Channel
-            url = f'https://discord.com/api/v10/channels/{DISCORD_CHANNEL_ID}/threads'
-            headers = {
-            'Authorization': f'Bot {DISCORD_BOT_TOKEN}',
-            'Content-Type': 'application/json'
-          }
-            payload = {
-            'name': thread_name,
-            'auto_archive_duration': 1440,  # 24 Stunden
-            'type': 11,  # Type 11 für Forums Post
-            'message': {
-              'content': message_content
-            }
-          }
-            response = requests.post(url, headers=headers, json=payload)
-            response.raise_for_status()
-            "
+import requests
+import os
+import json
+
+# Konfiguration
+LABEL = 'needs texture'
+DISCORD_CHANNEL_ID = os.getenv('DISCORD_CHANNEL_ID')
+DISCORD_BOT_TOKEN = os.getenv('DISCORD_BOT_TOKEN')
+
+# GitHub Event Daten laden
+with open(os.getenv('GITHUB_EVENT_PATH')) as f:
+    event_data = json.load(f)
+
+# Prüfen, ob das Label 'needs texture' hinzugefügt wurde
+if event_data['action'] == 'labeled' and event_data['label']['name'] == LABEL:
+    issue = event_data['issue']
+    thread_name = f'{issue["title"][:90]}...' if len(issue["title"]) > 90 else issue["title"]
+    message_content = f'**Title:** {issue["title"]}\n**Body:** {issue["body"]}\n**URL:** {issue["html_url"]}'
+
+    # Erstelle einen neuen Thread im Forums-Channel
+    url = f'https://discord.com/api/v10/channels/{DISCORD_CHANNEL_ID}/threads'
+    headers = {
+        'Authorization': f'Bot {DISCORD_BOT_TOKEN}',
+        'Content-Type': 'application/json'
+    }
+    payload = {
+        'name': thread_name,
+        'auto_archive_duration': 1440,  # 24 Stunden
+        'type': 11,  # Type 11 für Forums Post
+        'message': {
+            'content': message_content
+        }
+    }
+    response = requests.post(url, headers=headers, json=payload)
+    response.raise_for_status()
+          "
