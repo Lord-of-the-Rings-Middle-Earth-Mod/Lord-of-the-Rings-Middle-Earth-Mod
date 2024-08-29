@@ -1,6 +1,7 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
@@ -41,9 +42,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
      */
     @Override
     public void generate() {
-        addDrop(ModBlocks.TIN_ORE, oreDrops(ModBlocks.TIN_ORE, ModItems.RAW_TIN, UniformLootNumberProvider
-                .create(2.0f, 5.0f)));
-
         addDrop(ModBlocks.WILD_BEETROOT, wildFlowerDrops(ModBlocks.WILD_BEETROOT, Items.BEETROOT, UniformLootNumberProvider.create(1.0f, 3.0f)));
         addPottedPlantDrops(ModBlocks.POTTED_WILD_BEETROOT);
         addDrop(ModBlocks.WILD_CARROT, wildFlowerDrops(ModBlocks.WILD_CARROT, Items.CARROT, UniformLootNumberProvider.create(1.0f, 3.0f)));
@@ -150,6 +148,33 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 addDrop(stoneType.getBrickStairs());
                 addDrop(stoneType.getBrickSlab(), slabDrops(stoneType.getBrickSlab()));
                 addDrop(stoneType.getBrickWall());
+            }
+        }
+
+        for (ModOreType oreType : ModOreType.values()) {
+            if (!oreType.isVanillaAddition()) {
+                if (oreType.getStoneOre() != null) {
+                    addDrop(oreType.getStoneOre(), oreDrops(oreType.getStoneOre(), oreType.getOreDrop(), oreType.getDropRange()));
+                }
+                if (oreType.getDeepslateOre() != null) {
+                    addDrop(oreType.getDeepslateOre(), oreDrops(oreType.getDeepslateOre(), oreType.getOreDrop(), oreType.getDropRange()));
+                }
+            }
+            if (oreType.getAndesiteOre() != null) {
+                addDrop(oreType.getAndesiteOre(), oreDrops(oreType.getAndesiteOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+            if (oreType.getDioriteOre() != null) {
+                addDrop(oreType.getDioriteOre(), oreDrops(oreType.getDioriteOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+            if (oreType.getGraniteOre() != null) {
+                addDrop(oreType.getGraniteOre(), oreDrops(oreType.getGraniteOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+
+            if (oreType.getBlueslateOre() != null) {
+                addDrop(oreType.getBlueslateOre(), oreDrops(oreType.getBlueslateOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+            if (oreType.getChalkOre() != null) {
+                addDrop(oreType.getChalkOre(), oreDrops(oreType.getChalkOre(), oreType.getOreDrop(), oreType.getDropRange()));
             }
         }
     }

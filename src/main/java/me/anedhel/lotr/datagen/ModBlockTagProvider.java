@@ -1,10 +1,12 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.block.ModWoodType;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
@@ -26,25 +28,23 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
 
-        configureModWoodTypes();
-
         configureModStoneType();
+        configureModWoodTypes();
+        configureModOreTypes();
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.TIN_ORE)
                 .add(ModBlocks.RAW_TIN_BLOCK)
                 .add(ModBlocks.TIN_BLOCK)
                 .add(ModBlocks.BRONZE_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.TIN_ORE)
                 .add(ModBlocks.RAW_TIN_BLOCK)
                 .add(ModBlocks.TIN_BLOCK)
                 .add(ModBlocks.BRONZE_BLOCK);
     }
 
     /**
-     * This Method configures all required tags for the given ModStoneType.
+     * This Method configures all required tags for all ModStoneTypes.
      */
     private void configureModStoneType() {
         for (ModStoneType stoneType : ModStoneType.values()) {
@@ -92,7 +92,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     }
 
     /**
-     * This Method configures all required tags for the given ModWoodType.
+     * This Method configures all required tags for all ModWoodTypes.
      */
     private void configureModWoodTypes() {
         FabricTagBuilder axeTag = getOrCreateTagBuilder(BlockTags.AXE_MINEABLE);
@@ -179,6 +179,68 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             if (value.getPlanksFenceGate() != null) {
                 axeTag.add(value.getPlanksFenceGate());
                 fenceGateTag.add(value.getPlanksFenceGate());
+            }
+        }
+    }
+
+    /**
+     * This Method configures all required tags for all ModOreTypes.
+     */
+    private void configureModOreTypes() {
+        for (ModOreType oreType : ModOreType.values()) {
+            FabricTagBuilder pickaxeTag = getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE);
+            FabricTagBuilder toolLevelTag;
+            switch (oreType.getMiningLevel()) {
+                case MiningLevels.STONE -> toolLevelTag = getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL);
+                case MiningLevels.IRON -> toolLevelTag = getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL);
+                case MiningLevels.DIAMOND -> toolLevelTag = getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL);
+                default -> toolLevelTag = null;
+            }
+
+            if (!oreType.isVanillaAddition()) {
+                if (oreType.getStoneOre() != null) {
+                    pickaxeTag.add(oreType.getStoneOre());
+                    if (toolLevelTag != null) {
+                        toolLevelTag.add(oreType.getStoneOre());
+                    }
+                }
+                if (oreType.getDeepslateOre() != null) {
+                    pickaxeTag.add(oreType.getDeepslateOre());
+                    if (toolLevelTag != null) {
+                        toolLevelTag.add(oreType.getDeepslateOre());
+                    }
+                }
+            }
+            if (oreType.getAndesiteOre() != null) {
+                pickaxeTag.add(oreType.getAndesiteOre());
+                if (toolLevelTag != null) {
+                    toolLevelTag.add(oreType.getAndesiteOre());
+                }
+            }
+            if (oreType.getDioriteOre() != null) {
+                pickaxeTag.add(oreType.getDioriteOre());
+                if (toolLevelTag != null) {
+                    toolLevelTag.add(oreType.getDioriteOre());
+                }
+            }
+            if (oreType.getGraniteOre() != null) {
+                pickaxeTag.add(oreType.getGraniteOre());
+                if (toolLevelTag != null) {
+                    toolLevelTag.add(oreType.getGraniteOre());
+                }
+            }
+
+            if (oreType.getBlueslateOre() != null) {
+                pickaxeTag.add(oreType.getBlueslateOre());
+                if (toolLevelTag != null) {
+                    toolLevelTag.add(oreType.getBlueslateOre());
+                }
+            }
+            if (oreType.getChalkOre() != null) {
+                pickaxeTag.add(oreType.getChalkOre());
+                if (toolLevelTag != null) {
+                    toolLevelTag.add(oreType.getChalkOre());
+                }
             }
         }
     }
