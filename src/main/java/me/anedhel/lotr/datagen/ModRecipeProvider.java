@@ -1,6 +1,7 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.item.ModGearType;
@@ -86,11 +87,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         createCrateRecipe(Items.CARROT, ModBlocks.CARROT_CRATE, exporter);
         createCrateRecipe(Items.BEETROOT, ModBlocks.BEETROOT_CRATE, exporter);
 
-        createModWoodTypesRecipes(exporter);
-
         createModGearTypeRecipes(ModGearType.BRONZE, exporter);
-
         createModStoneTypeRecipes(exporter);
+        createModWoodTypesRecipes(exporter);
+        createOreSmeltingRecipes(exporter);
     }
 
     /**
@@ -233,6 +233,30 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         offerChestBoatRecipe(exporter, woodType.getPlanksChestBoat(), woodType.getPlanksBoat());
                     }
                 }
+            }
+        }
+    }
+
+    /**
+     * This Method is used to create all smelting recipes for all ModOreTypes, that should have a smelting recipe
+     * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one is provided in the parameters of the method you edit.
+     */
+    private void createOreSmeltingRecipes(RecipeExporter exporter) {
+        for (ModOreType oreType : ModOreType.values()) {
+            ItemConvertible smeltedDrop;
+            String smeltingGroup = switch (oreType) {
+                case TIN_ORE -> {
+                    smeltedDrop = ModItems.TIN_INGOT;
+                    yield "tin";
+                }
+                default -> {
+                    smeltedDrop = null;
+                    yield "";
+                }
+            };
+            if (smeltedDrop != null) {
+                offerSmelting(exporter, oreType.getSmeltables(), RecipeCategory.MISC, smeltedDrop, 0.7f, 200, smeltingGroup);
+                offerBlasting(exporter, oreType.getSmeltables(), RecipeCategory.MISC, smeltedDrop, 0.7f, 100, smeltingGroup);
             }
         }
     }

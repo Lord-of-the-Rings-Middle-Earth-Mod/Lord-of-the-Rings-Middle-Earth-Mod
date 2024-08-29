@@ -1,6 +1,7 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
@@ -35,7 +36,6 @@ public class ModModelProvider extends FabricModelProvider {
      */
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TIN_ORE);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_TIN_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TIN_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BRONZE_BLOCK);
@@ -51,9 +51,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_TOMATO, ModBlocks.POTTED_WILD_TOMATO, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.WILD_CORN, BlockStateModelGenerator.TintType.NOT_TINTED);
 
-        generateModWoodTypesModels(blockStateModelGenerator);
-
         generateModStoneTypeModels(blockStateModelGenerator);
+        generateModWoodTypesBlockModels(blockStateModelGenerator);
+        generateModOreTypeModels(blockStateModelGenerator);
     }
 
     /**
@@ -78,7 +78,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         generateModGearTypeModels(ModGearType.BRONZE, itemModelGenerator);
 
-        generateModWoodTypesModels(itemModelGenerator);
+        generateModWoodTypesItemModels(itemModelGenerator);
     }
 
     /**
@@ -168,7 +168,7 @@ public class ModModelProvider extends FabricModelProvider {
      * It only works for blocks completely added by the mod, adding Models for additions made based on vanilla blocks does not work with this method.
      * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
      */
-    private void generateModWoodTypesModels(BlockStateModelGenerator blockStateModelGenerator) {
+    private void generateModWoodTypesBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         for (ModWoodType woodType : ModWoodType.values()) {
             if (!woodType.isVanillaAddition()) {
                 blockStateModelGenerator.registerLog(woodType.getLog()).log(woodType.getLog());
@@ -189,10 +189,39 @@ public class ModModelProvider extends FabricModelProvider {
         }
     }
 
-    private void generateModWoodTypesModels(ItemModelGenerator itemModelGenerator) {
+    private void generateModWoodTypesItemModels(ItemModelGenerator itemModelGenerator) {
         for (ModWoodType woodType : ModWoodType.values()) {
             itemModelGenerator.register(woodType.getPlanksBoat(), Models.GENERATED);
             itemModelGenerator.register(woodType.getPlanksChestBoat(), Models.GENERATED);
+        }
+    }
+
+    private void generateModOreTypeModels(BlockStateModelGenerator blockStateModelGenerator) {
+        for (ModOreType oreType : ModOreType.values()) {
+            if (!oreType.isVanillaAddition()) {
+                if (oreType.getStoneOre() != null) {
+                    blockStateModelGenerator.registerSimpleCubeAll(oreType.getStoneOre());
+                }
+                if (oreType.getDeepslateOre() != null) {
+                    blockStateModelGenerator.registerSimpleCubeAll(oreType.getDeepslateOre());
+                }
+            }
+            if (oreType.getAndesiteOre() != null) {
+                blockStateModelGenerator.registerSimpleCubeAll(oreType.getAndesiteOre());
+            }
+            if (oreType.getDioriteOre() != null) {
+                blockStateModelGenerator.registerSimpleCubeAll(oreType.getDioriteOre());
+            }
+            if (oreType.getGraniteOre() != null) {
+                blockStateModelGenerator.registerSimpleCubeAll(oreType.getGraniteOre());
+            }
+
+            if (oreType.getBlueslateOre() != null) {
+                blockStateModelGenerator.registerSimpleCubeAll(oreType.getBlueslateOre());
+            }
+            if (oreType.getChalkOre() != null) {
+                blockStateModelGenerator.registerSimpleCubeAll(oreType.getChalkOre());
+            }
         }
     }
 }

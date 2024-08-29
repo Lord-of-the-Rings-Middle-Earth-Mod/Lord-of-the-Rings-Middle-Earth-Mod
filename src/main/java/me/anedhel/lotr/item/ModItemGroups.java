@@ -44,7 +44,7 @@ public class ModItemGroups {
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_blocks"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_blocks", "LotR Blocks"))
                     .icon(() -> new ItemStack(ModStoneBlocks.CHALK)).entries((displayContext, entries) -> {
-                        entries.add(ModBlocks.TIN_ORE);
+                        entries.addAll(ModOreType.TIN_ORE.getItemGroupList());
                         entries.add(ModBlocks.RAW_TIN_BLOCK);
                         entries.add(ModBlocks.TIN_BLOCK);
                         entries.add(ModBlocks.BRONZE_BLOCK);
@@ -100,7 +100,7 @@ public class ModItemGroups {
 
     public static final ItemGroup LOTR_TRANSPORT = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_transport"),
-            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr:transport", "LotR Transport"))
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_transport", "LotR Transport"))
                     .icon(() -> new ItemStack(ModItems.PINE_BOAT)).entries(((displayContext, entries) -> {
                         entries.addAll(ModWoodType.PINE.getItemGroupTransportList());
                     })).build());
