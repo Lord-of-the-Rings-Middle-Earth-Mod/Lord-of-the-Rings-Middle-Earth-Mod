@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:bronze_ingot_crafting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_food": {
+    "has_corn": {
       "conditions": {
         "items": [
           {
@@ -23,13 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_food"
+      "has_corn"
     ]
   ],
   "rewards": {
     "recipes": [
       "lotr:cooked_corn"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

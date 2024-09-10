@@ -1,4 +1,4 @@
-// 1.20.2	2024-07-20T21:59:19.1547512	Lord of the Rings Middle Earth/Block Loot Tables
+// 1.20.4	2024-09-06T16:01:32.3007435	Lord of the Rings Middle Earth/Block Loot Tables
 8327d32eff2238aa126b81e7b5832a86b81f0f57 data\lotr\loot_tables\blocks\polished_diorite_button.json
 b3e79583e27b376369ac031d0ddc101875c79810 data\lotr\loot_tables\blocks\andesite_brick_wall.json
 efcfcde20984809a067f4858650bc224b0010ef3 data\lotr\loot_tables\blocks\cobbled_blueslate_button.json
@@ -35,6 +35,7 @@ a40a9de2e5e86d53044780b699afb0e0add08f67 data\lotr\loot_tables\blocks\potted_wil
 f6be16653ff23bd78cc0325907692bf10752ac4f data\lotr\loot_tables\blocks\stripped_pine_stairs.json
 3d75956cf58d4cce7814e5662df0053d3e3bc70c data\lotr\loot_tables\blocks\cobbled_diorite_stairs.json
 0ceab8f155d781334e7da44b5c83f697282ab405 data\lotr\loot_tables\blocks\diorite_button.json
+ec3e5fa7ed6281bf0aa8e4dd597b276c00625b54 data\lotr\loot_tables\blocks\andesite_tin_ore.json
 0e5590d62680d535f04154a49d9a173ccb5ccf71 data\lotr\loot_tables\blocks\chalk_wall.json
 c8fd91669076469e47a368ea1b73e05a7143c78a data\lotr\loot_tables\blocks\wild_carrot.json
 461de9ca3a35c0daa917f60541556a98904f85f1 data\lotr\loot_tables\blocks\cobbled_diorite.json
@@ -68,7 +69,9 @@ fcecc438350a8ce5c7a40203ab45ca1871fcc895 data\lotr\loot_tables\blocks\wild_beetr
 c2050f80541d1b11087b0fd65f7bcc2ec8c9ae3d data\lotr\loot_tables\blocks\pine_leaves.json
 897105cba5326873578dc78b631d9fb2b931e265 data\lotr\loot_tables\blocks\pine_planks_button.json
 8e63eb6d1a346966d713241760556c6b2f304435 data\minecraft\loot_tables\blocks\granite.json
+8a22fde67d17bc0d13b5e85d4dc9490b09d33c13 data\lotr\loot_tables\blocks\granite_tin_ore.json
 56e30007a9aedc37c3e87b95e35325b1b49c38ae data\lotr\loot_tables\blocks\basalt_brick.json
+90a9581764cc571a1a1d126f70a9407c856dc761 data\lotr\loot_tables\blocks\blueslate_tin_ore.json
 9190eaa30d06e4d25880dc6ff02ec60aaad0d23a data\lotr\loot_tables\blocks\chalk_pressure_plate.json
 8faf717001b3d473cc4ecb2487570999431f9559 data\lotr\loot_tables\blocks\potted_wild_potato.json
 79d83b37bb7eedff27ee988de9b0726fdbe2171e data\lotr\loot_tables\blocks\granite_brick.json
@@ -120,6 +123,7 @@ c8d15a816e1949397593a88dc1545dd96afd4cab data\minecraft\loot_tables\blocks\smoot
 fd00ad97d82a335cc0c83446d28e083713765f59 data\lotr\loot_tables\blocks\pine_planks_fence.json
 05bf109f5bd5afc96b471ce917081fd2d054bacd data\lotr\loot_tables\blocks\polished_granite_wall.json
 fb3e734460743dc41611a9a1980ed677947ebea4 data\lotr\loot_tables\blocks\stripped_pine_trapdoor.json
+0f5aee11c4e0cc4c078ffc47c8cfd102db9e9ab2 data\lotr\loot_tables\blocks\chalk_tin_ore.json
 677f4e8db148ef21da0890c01b409d901eb24296 data\lotr\loot_tables\blocks\cobbled_granite.json
 212256092cd82d3ee93ad76f68b7409f1ba744ac data\lotr\loot_tables\blocks\pine_planks_pressure_plate.json
 37a2aa99f8417cfd6d284801041cd646b16a42fe data\lotr\loot_tables\blocks\pine_log.json
@@ -129,11 +133,12 @@ ee4c8eb9c7f4f2e6fa2d4983b43e1de335dc7f5c data\lotr\loot_tables\blocks\pine_wood_
 39fa90f47504e3db110d7874a995ad9d270fa51e data\lotr\loot_tables\blocks\diorite_brick.json
 39f506f81dae28a93711a3b17b55b5f42bff03a1 data\lotr\loot_tables\blocks\stripped_pine_wood.json
 94aa120c4aae61a7ac59773f8c410fc3ac653d1b data\lotr\loot_tables\blocks\smooth_basalt_button.json
-a6445c21f401c2beb8902c58a98583b4f6bf9c30 data\lotr\loot_tables\blocks\raw_tin_block.json
 fda84e28a59de99b527d9963a48aef1eeaf205f6 data\lotr\loot_tables\blocks\pine_wood_pressure_plate.json
+a6445c21f401c2beb8902c58a98583b4f6bf9c30 data\lotr\loot_tables\blocks\raw_tin_block.json
 8634f89dc88dacf29747add643b696e172e59aa1 data\lotr\loot_tables\blocks\cobbled_granite_wall.json
 c57dfaf000cf3f7d96ddabf6fa9d19fc08581c34 data\lotr\loot_tables\blocks\pine_sapling.json
 281e42a53308b27cc690e8ea49dcb4a8437f9951 data\lotr\loot_tables\blocks\cobbled_chalk_slab.json
+615de322aa55498c960eec3864506d01893ba1a5 data\lotr\loot_tables\blocks\diorite_tin_ore.json
 9a3981f09a450c424d3214e43294a3c9b3976467 data\lotr\loot_tables\blocks\lettuce_crate.json
 00500763f640a0291ede7629c6f50404ca16b3d9 data\lotr\loot_tables\blocks\granite_pressure_plate.json
 ccd5243471ee18fc0da8fd6b85c7835f10474abe data\lotr\loot_tables\blocks\bronze_block.json
@@ -142,3 +147,4 @@ c78bf34fee78773df43bbdb5efec7428e6f23eda data\lotr\loot_tables\blocks\pine_wood_
 aa758d5ca82c353777c166e4ffb5e5055ea34a44 data\lotr\loot_tables\blocks\diorite_brick_slab.json
 f84024368b839cb78e8160632b9db95d2355f640 data\lotr\loot_tables\blocks\tin_ore.json
 7c00e8aa8f77a0ad9dd8601a78239da72ea0f689 data\lotr\loot_tables\blocks\granite_brick_wall.json
+d8cc05318c8b3d3a4143727bb34ed69403d4481e data\lotr\loot_tables\blocks\deepslate_tin_ore.json

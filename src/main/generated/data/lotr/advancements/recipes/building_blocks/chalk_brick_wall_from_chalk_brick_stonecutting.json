@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chalk_brick_wall_from_chalk_brick_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

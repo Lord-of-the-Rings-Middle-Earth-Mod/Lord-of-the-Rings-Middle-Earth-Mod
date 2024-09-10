@@ -30,6 +30,5 @@
     "recipes": [
       "lotr:cobbled_blueslate_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

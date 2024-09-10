@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:cobbled_diorite_stairs_from_cobbled_diorite_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

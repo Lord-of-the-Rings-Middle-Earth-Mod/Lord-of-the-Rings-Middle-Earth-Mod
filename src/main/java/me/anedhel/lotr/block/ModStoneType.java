@@ -113,7 +113,7 @@ public enum ModStoneType {
     public @NotNull List<ItemStack> getItemGroupList() {
         List<ItemStack> itemGroupList = new ArrayList<>();
 
-        if (stone != null && !vanillaAddition) {
+        if (stone != null) {
             itemGroupList.add(new ItemStack(stone));
         }
         if (stoneStairs != null) {
@@ -132,9 +132,7 @@ public enum ModStoneType {
             itemGroupList.add(new ItemStack(stonePressurePlate));
         }
         if (cobbled != null) {
-            if (!vanillaAddition) {
-                itemGroupList.add(new ItemStack(cobbled));
-            }
+            itemGroupList.add(new ItemStack(cobbled));
             if (cobbledStairs != null) {
                 itemGroupList.add(new ItemStack(cobbledStairs));
             }
@@ -152,9 +150,7 @@ public enum ModStoneType {
             }
         }
         if (brick != null) {
-            if (!vanillaAddition) {
-                itemGroupList.add(new ItemStack(brick));
-            }
+            itemGroupList.add(new ItemStack(brick));
             if (brickStairs != null) {
                 itemGroupList.add(new ItemStack(brickStairs));
             }

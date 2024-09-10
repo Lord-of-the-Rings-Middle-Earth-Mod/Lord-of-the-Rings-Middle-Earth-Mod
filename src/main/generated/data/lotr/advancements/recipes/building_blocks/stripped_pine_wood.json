@@ -30,6 +30,5 @@
     "recipes": [
       "lotr:stripped_pine_wood"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

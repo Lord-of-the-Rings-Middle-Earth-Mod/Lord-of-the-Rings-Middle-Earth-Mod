@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:blueslate_brick_wall_from_blueslate_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

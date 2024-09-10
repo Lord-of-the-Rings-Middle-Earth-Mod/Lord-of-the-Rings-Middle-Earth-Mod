@@ -30,6 +30,5 @@
     "recipes": [
       "lotr:cobbled_granite_wall"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

@@ -1,5 +1,6 @@
 package me.anedhel.lotr.datagen;
 
+import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModStoneType;
@@ -8,7 +9,6 @@ import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.advancement.AdvancementCriterion;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.*;
@@ -16,10 +16,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.util.Identifier;
 
 import java.util.List;
@@ -29,7 +29,7 @@ import java.util.List;
  */
 public class ModRecipeProvider extends FabricRecipeProvider {
 
-    private static final List<ItemConvertible> TIN_SMELTABLES = List.of(ModItems.RAW_TIN, ModBlocks.TIN_ORE);
+    private static final List<ItemConvertible> TIN_SMELTABLES = List.of(ModItems.RAW_TIN, ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE);
     private static final List<ItemConvertible> TIN_BLOCK_SMELTABLES = List.of(ModBlocks.RAW_TIN_BLOCK);
     private static final List<ItemConvertible> IRON_BLOCK_SMELTABLES = List.of(Blocks.RAW_IRON_BLOCK);
     private static final List<ItemConvertible> GOLD_BLOCK_SMELTABLES = List.of(Blocks.RAW_GOLD_BLOCK);
@@ -45,8 +45,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      */
     @Override
     public void generate(RecipeExporter exporter) {
-        offerSmelting(exporter, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 200, "tin");
-        offerBlasting(exporter, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 100, "tin");
         offerSmelting(exporter, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK, 5.6f, 1600, "tin_block");
         offerBlasting(exporter, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK, 5.6f, 800, "tin_block");
         offerSmelting(exporter, IRON_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.IRON_BLOCK, 5.6f, 1600, "iron_block");
@@ -217,9 +215,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     private void createModWoodTypesRecipes(RecipeExporter exporter) {
         for (ModWoodType woodType : ModWoodType.values()) {
             if (!woodType.isVanillaAddition()) {
-                generateFamily(exporter, woodType.getWoodFamily());
-                generateFamily(exporter, woodType.getStrippedWoodFamily());
-                generateFamily(exporter, woodType.getPlanksFamily());
+                generateFamily(exporter, woodType.getWoodFamily(), FeatureSet.empty());
+                generateFamily(exporter, woodType.getStrippedWoodFamily(), FeatureSet.empty());
+                generateFamily(exporter, woodType.getPlanksFamily(), FeatureSet.empty());
                 if (woodType.getLog() != null && woodType.getWood() != null && woodType.getStrippedLog() != null && woodType.getStrippedWood() != null) {
                     offerBarkBlockRecipe(exporter, woodType.getWood(), woodType.getLog());
                     offerBarkBlockRecipe(exporter, woodType.getStrippedWood(), woodType.getStrippedLog());
@@ -243,28 +241,42 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      */
     private void createOreSmeltingRecipes(RecipeExporter exporter) {
         for (ModOreType oreType : ModOreType.values()) {
-            ItemConvertible smeltedDrop;
+            List<ItemConvertible> smeltables = List.of(oreType.getOreDrop(), oreType.getStoneOre(), oreType.getDeepslateOre(),
+                    oreType.getAndesiteOre(), oreType.getDioriteOre(), oreType.getGraniteOre(),
+                    oreType.getBlueslateOre(), oreType.getChalkOre());
+            ItemConvertible output = null;
             String smeltingGroup = switch (oreType) {
                 case TIN_ORE -> {
-                    smeltedDrop = ModItems.TIN_INGOT;
+                    output = ModItems.TIN_INGOT;
                     yield "tin";
                 }
                 default -> {
-                    smeltedDrop = null;
+                    output = null;
                     yield "";
                 }
             };
-            if (smeltedDrop != null) {
-                offerSmelting(exporter, oreType.getSmeltables(), RecipeCategory.MISC, smeltedDrop, 0.7f, 200, smeltingGroup);
-                offerBlasting(exporter, oreType.getSmeltables(), RecipeCategory.MISC, smeltedDrop, 0.7f, 100, smeltingGroup);
+            if (output != null) {
+                offerSmelting(exporter, smeltables, RecipeCategory.MISC, output, 0.7f, 200, smeltingGroup);
+                offerBlasting(exporter, smeltables, RecipeCategory.MISC, output, 0.7f, 100, smeltingGroup);
             }
         }
     }
 
     private void createCookedFoodRecipes(RecipeExporter exporter, Item rawItem, Item cookedItem) {
-        offerFoodCookingRecipe(exporter, "smooking", RecipeSerializer.SMOKING, 100, rawItem,cookedItem, 0.35f);
-        offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, rawItem, cookedItem, 0.35f);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(rawItem), RecipeCategory.FOOD, cookedItem, 0.35f, 200).criterion("has_food", (AdvancementCriterion)VanillaRecipeProvider.conditionsFromItem(rawItem)).offerTo(exporter);
+        CookingRecipeJsonBuilder.createCampfireCooking(Ingredient.ofItems(rawItem), RecipeCategory.FOOD,
+                        cookedItem, 0.35f, 600)
+                .criterion(hasItem(rawItem), conditionsFromItem(rawItem))
+                .offerTo(exporter, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
+                        cookedItem.getTranslationKey() + "_campfire"));
+        CookingRecipeJsonBuilder.createSmoking(Ingredient.ofItems(rawItem), RecipeCategory.FOOD,
+                            cookedItem, 0.35f, 100)
+                .criterion(hasItem(rawItem), conditionsFromItem(rawItem))
+                .offerTo(exporter, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
+                        cookedItem.getTranslationKey() + "_smoking"));
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(rawItem), RecipeCategory.FOOD, cookedItem,
+                0.35f, 200)
+                .criterion(hasItem(rawItem), conditionsFromItem(rawItem))
+                .offerTo(exporter);
     }
 
     /**

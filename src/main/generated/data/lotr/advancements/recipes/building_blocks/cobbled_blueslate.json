@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:cobbled_blueslate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

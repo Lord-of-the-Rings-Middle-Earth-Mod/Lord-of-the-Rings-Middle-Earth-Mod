@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:smooth_basalt_slab_from_smooth_basalt_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

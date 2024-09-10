@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:bronze_shovel"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

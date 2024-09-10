@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:chalk_brick"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

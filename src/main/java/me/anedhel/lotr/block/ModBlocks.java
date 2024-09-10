@@ -23,6 +23,17 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE)));
     public static final Block DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore",
             new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_COPPER_ORE)));
+    public static final Block ANDESITE_TIN_ORE = registerBlock("andesite_tin_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE)));
+    public static final Block DIORITE_TIN_ORE = registerBlock("diorite_tin_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE)));
+    public static final Block GRANITE_TIN_ORE = registerBlock("granite_tin_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE)));
+    public static final Block BLUESLATE_TIN_ORE = registerBlock("blueslate_tin_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE)));
+    public static final Block CHALK_TIN_ORE = registerBlock("chalk_tin_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.COPPER_ORE)));
+
     public static final Block TIN_BLOCK = registerBlock("tin_block",
             new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK)));
     public static final Block RAW_TIN_BLOCK = registerBlock("raw_tin_block",

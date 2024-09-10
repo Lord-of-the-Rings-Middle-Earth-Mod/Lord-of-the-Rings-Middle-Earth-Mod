@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:cobbled_andesite_stairs_from_cobbled_andesite_stonecutting"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

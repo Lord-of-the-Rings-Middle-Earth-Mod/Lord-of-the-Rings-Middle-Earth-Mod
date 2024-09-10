@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:raw_tin"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

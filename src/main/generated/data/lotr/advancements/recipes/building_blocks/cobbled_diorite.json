@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:cobbled_diorite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

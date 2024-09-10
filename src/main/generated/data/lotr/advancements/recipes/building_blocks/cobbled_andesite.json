@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:cobbled_andesite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

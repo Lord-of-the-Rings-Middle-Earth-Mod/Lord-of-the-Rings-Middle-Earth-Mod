@@ -30,6 +30,5 @@
     "recipes": [
       "lotr:blueslate_pressure_plate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

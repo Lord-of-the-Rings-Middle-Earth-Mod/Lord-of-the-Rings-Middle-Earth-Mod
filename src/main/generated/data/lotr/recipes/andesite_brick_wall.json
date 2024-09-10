@@ -3,17 +3,15 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "minecraft:andesite"
+      "item": "lotr:andesite_brick"
     }
   },
   "pattern": [
-    "#  ",
-    "## ",
+    "###",
     "###"
   ],
   "result": {
-    "count": 4,
+    "count": 6,
     "item": "lotr:andesite_brick_wall"
-  },
-  "show_notification": true
+  }
 }

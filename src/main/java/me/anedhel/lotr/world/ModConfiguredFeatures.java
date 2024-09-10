@@ -3,10 +3,12 @@ package me.anedhel.lotr.world;
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModWoodBlocks;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.structure.rule.BlockMatchRuleTest;
 import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.structure.rule.TagMatchRuleTest;
 import net.minecraft.util.Identifier;
@@ -25,11 +27,19 @@ public class ModConfiguredFeatures {
 
     public static void boostrap(Registerable<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplacables = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest deepslateReplacables = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest andesiteReplacables = new BlockMatchRuleTest(Blocks.ANDESITE);
+        RuleTest dioriteReplacables = new BlockMatchRuleTest(Blocks.DIORITE);
+        RuleTest graniteReplacables = new BlockMatchRuleTest(Blocks.GRANITE);
 
-        List<OreFeatureConfig.Target> overworldRubyOres =
-                List.of(OreFeatureConfig.createTarget(stoneReplacables, ModBlocks.TIN_ORE.getDefaultState()));
+        List<OreFeatureConfig.Target> overworldTinOres =
+                List.of(OreFeatureConfig.createTarget(stoneReplacables, ModBlocks.TIN_ORE.getDefaultState()),
+                        OreFeatureConfig.createTarget(deepslateReplacables, ModBlocks.DEEPSLATE_TIN_ORE.getDefaultState()),
+                        OreFeatureConfig.createTarget(andesiteReplacables, ModBlocks.ANDESITE_TIN_ORE.getDefaultState()),
+                        OreFeatureConfig.createTarget(dioriteReplacables, ModBlocks.DIORITE_TIN_ORE.getDefaultState()),
+                        OreFeatureConfig.createTarget(graniteReplacables, ModBlocks.GRANITE_TIN_ORE.getDefaultState()));
 
-        register(context, TIN_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldRubyOres, 12));
+        register(context, TIN_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTinOres, 4));
 
         register(context, PINE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModWoodBlocks.PINE_LOG),

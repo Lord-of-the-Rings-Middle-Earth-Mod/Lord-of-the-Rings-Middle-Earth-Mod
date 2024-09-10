@@ -14,8 +14,9 @@ import java.util.Objects;
 
 public enum ModOreType {
 
-    TIN_ORE(ModBlocks.TIN_ORE , ModBlocks.DEEPSLATE_TIN_ORE, null, null, null,
-            null, null,
+    TIN_ORE(ModBlocks.TIN_ORE , ModBlocks.DEEPSLATE_TIN_ORE,
+            ModBlocks.ANDESITE_TIN_ORE, ModBlocks.DIORITE_TIN_ORE, ModBlocks.GRANITE_TIN_ORE,
+            ModBlocks.BLUESLATE_TIN_ORE, ModBlocks.CHALK_TIN_ORE,
             ModItems.RAW_TIN, UniformLootNumberProvider.create(2.0f, 5.0f), MiningLevels.STONE,false);
 
     private final Block stoneOre;

@@ -30,6 +30,5 @@
     "recipes": [
       "lotr:smooth_basalt_pressure_plate"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

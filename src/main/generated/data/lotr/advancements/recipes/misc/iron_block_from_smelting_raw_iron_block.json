@@ -30,6 +30,5 @@
     "recipes": [
       "minecraft:iron_block_from_smelting_raw_iron_block"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

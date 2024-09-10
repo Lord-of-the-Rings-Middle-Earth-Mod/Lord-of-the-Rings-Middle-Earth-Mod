@@ -43,6 +43,5 @@
     "recipes": [
       "minecraft:cobbled_granite"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

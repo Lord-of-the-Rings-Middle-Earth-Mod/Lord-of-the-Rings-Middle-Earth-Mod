@@ -30,6 +30,5 @@
     "recipes": [
       "lotr:cobbled_chalk_slab"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

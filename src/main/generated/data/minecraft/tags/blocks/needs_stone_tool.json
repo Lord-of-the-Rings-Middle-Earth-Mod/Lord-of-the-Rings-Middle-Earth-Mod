@@ -2,6 +2,12 @@
   "replace": false,
   "values": [
     "lotr:tin_ore",
+    "lotr:deepslate_tin_ore",
+    "lotr:andesite_tin_ore",
+    "lotr:diorite_tin_ore",
+    "lotr:granite_tin_ore",
+    "lotr:blueslate_tin_ore",
+    "lotr:chalk_tin_ore",
     "lotr:raw_tin_block",
     "lotr:tin_block",
     "lotr:bronze_block"

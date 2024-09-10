@@ -22,6 +22,7 @@
   "block.lotr.wild_tomato": "Wild Tomato",
 
   "item.lotr.tomato": "Tomato",
+  "item.lotr.baked_tomato": "Backed Tomato",
   "item.lotr.tomato_seeds": "Tomato Seeds",
   "item.lotr.lettuce": "Lettuce",
   "item.lotr.corn": "Corn",
@@ -36,6 +37,7 @@
   "block.lotr.corn_crate": "Corn Crate",
 
   "block.lotr.tin_ore": "Tin Ore",
+  "block.lotr.deepslate_tin_ore": "Deepslate Tin Ore",
   "block.lotr.tin_block": "Block of Tin",
   "block.lotr.raw_tin_block": "Block of Raw Tin",
   "block.lotr.bronze_block": "Block of Bronze",
@@ -45,9 +47,6 @@
   "item.lotr.bronze_pickaxe": "Bronze Pickaxe",
   "item.lotr.bronze_shovel": "Bronze Shovel",
   "item.lotr.bronze_hoe": "Bronze Hoe",
-
-  "item.lotr.pine_boat": "Pine Boat",
-  "item.lotr.pine_chest_boat": "Pine Chest Boat",
 
   "item.lotr.bronze_helmet": "Bronze Helmet",
   "item.lotr.bronze_chestplate": "Bronze Chestplate",
@@ -60,8 +59,16 @@
   "block.lotr.pine_wood_slab": "Pine Wood Slab",
   "block.lotr.pine_wood_door": "Pine Wood Door",
   "block.lotr.pine_wood_trapdoor": "Pine Wood Trapdoor",
+  "block.lotr.pine_wood_button": "Pine Wood Button",
+  "block.lotr.pine_wood_pressure_plate": "Pine Wood Pressure Plate",
   "block.lotr.stripped_pine_log": "Stripped Pine Log",
   "block.lotr.stripped_pine_wood": "Stripped Pine Wood",
+  "block.lotr.stripped_pine_wood_stairs": "Stripped Pine Wood Stairs",
+  "block.lotr.stripped_pine_wood_slab": "Stripped Pine Wood Slab",
+  "block.lotr.stripped_pine_wood_door": "Stripped Pine Wood Door",
+  "block.lotr.stripped_pine_wood_trapdoor": "Stripped Pine Wood Trapdoor",
+  "block.lotr.stripped_pine_wood_button": "Stripped Pine Wood Button",
+  "block.lotr.stripped_pine_wood_pressure_plate": "Stripped Pine Wood Pressure Plate",
   "block.lotr.pine_planks": "Pine Planks",
   "block.lotr.pine_planks_stairs": "Pine Planks Stairs",
   "block.lotr.pine_planks_slab": "Pine Planks Slab",
@@ -75,6 +82,8 @@
   "block.lotr.pine_wall_sign": "Pine Wall Sign",
   "block.lotr.pine_hanging_sign": "Pine Hanging Sign",
   "block.lotr.pine_wall_hanging_sign": "Pine Wall Hanging Sign",
+  "item.lotr.pine_boat": "Pine Boat",
+  "item.lotr.pine_chest_boat": "Pine Chest Boat",
   "block.lotr.pine_leaves": "Pine Leaves",
   "block.lotr.pine_sapling": "Pine Sapling",
 

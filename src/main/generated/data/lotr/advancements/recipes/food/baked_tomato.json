@@ -1,7 +1,13 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_food": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "lotr:baked_tomato"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_tomato": {
       "conditions": {
         "items": [
           {
@@ -12,24 +18,17 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "lotr:baked_tomato"
-      },
-      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
       "has_the_recipe",
-      "has_food"
+      "has_tomato"
     ]
   ],
   "rewards": {
     "recipes": [
       "lotr:baked_tomato"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }
