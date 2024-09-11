@@ -25,7 +25,8 @@ Should you wish to contribute within your possibilities there is more than just 
 Depending on how you wish to contribute following skills are adviced:
 - Basic Java Knowledge (code) 
 - Basic knowledge on how to mod with fabric (code) 
-- Basic Blockbench knowledge (models, textures and animations) 
+- Basic Blockbench knowledge (models, textures and animations)
+
 Should you lack a skill you'd like to learn we will happily help you learn it, just contact us on discord. 
 
 For further information on how to Contribute please check out the [Contributing](CONTRIBUTING.md) file.
@@ -40,4 +41,5 @@ And you can find a list of Contributors [here](CONTRIBUTORS.md).
 ## Roadmap
 **ToDo:**
 - Add a rough roadmap where just the "topics" of the releases are listed
+
 The full and more detailed Roadmap can be found [here](ROADMAP.md).
