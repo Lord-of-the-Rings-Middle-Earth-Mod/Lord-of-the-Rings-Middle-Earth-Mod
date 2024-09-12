@@ -15,50 +15,61 @@ diverse, inclusive, and healthy community.
 ## Our Rules
 
 These Rules apply to any chat within the discord Server as well as all content on Github and within the code.
-1. Do not promote, coordinate or engage in harassment and discrimination.
-We don´t want any harassing or discriminating behavior in this community.
-This includes, but is not limited to, sustained bullying, sexual harassment, as well as spamming of any kind.
-2. Do not threaten to harm another individual or group of people or call for violence
-We want everyone to feel safe in this community. Any threat, no matter if direct, indirect or suggestive is a violation of this rule.
-This also includes, but is not limited to, coordinating violent acts, glorifying or promoting violence, or the perpetrators of violent acts.
-Memes are not excluded from this rule
-3. Don´t share someone elses personal information without their content.
-Everyone deserves their privacy, respect it.
-This includes the threat to share someone´s personal information.
-4. No hate speech or other hateful conduct
-Any form of hateful content is unwanted in this community.
-Hate speech is any form of expression that attacks other people or promotes hatred against others.
-This includes, but is not limited to, hate symbols.
-5. Do not share any content, depicting, promoting or "normalizing" child abuse.
-We don´t content with child abuse of any form, including sexual. Any media depciting child abuse,
-no matter if real, manipulated, AI-generated or animated.
-Any member breaking this rule will also be reported to Discord directly!
-6. No NSFW content, or other sexualizing content
-We are a Lord of the Rings Minecraft Community and do not content with sexual content in our Community.
-We also consider Erotic Roleplay (ERP), gore, excessive violence or animal harm to be NSFW content.
-7. Respect each other and their opinions
-While we do not want to ban controversial topics, such as politics or religion,
-discussions of those topics need to be respectful.
-If you feel a discussion is getting out of hand, stop it.
-The Maintainers have the right to stop any discussion, if they have the feeling it is getting out of hand.
-8. No Drama baiting
-Do not bring up previous drama or controversial discussions that have been resolved or stopped.
-Do not constantly flame other members or behave in a toxic manner towards them.
-9. Do not advertise
-We do not want any advertising of any kind. Don´t ask players if they are interested in a different server, or joining a community.
-If you have something to advertise, and deem it interesting enough for the whole community, contact the lead maintainters, who will decide if they
-will forward your advertisement to the community or not.
-10. Don´t share misinformation
-We don´t want any fake news being shared on this discord.
-This includes content that is false or misleading, that is shared knowing of these properties.
-If you make clear that what you share is fake/misleading/etc, we consider it not breaking this rule
-11. English in Chat
-Every public conversation, chat or voice, should be english.
-12. Don´t evade rule enforcement
-If we enforce the rules, it is for a reason.
-Trying to evade the rule enforcements or helping someone to evade them, by using alts or other means is punished with a ban.
-If you feel the enforcement was unjust you can always appeal to the maintainers with [this form](Link to form).
-Using Alts, is considered trying to evade enforcement and thus prohibited. Any alt is banned without warning.
+1. **Do not promote, coordinate or engage in harassment and discrimination.**
+   
+   We don´t want any harassing or discriminating behavior in this community.  
+   This includes, but is not limited to, sustained bullying, sexual harassment, as well as spamming of any kind.
+2. **Do not threaten to harm another individual or group of people or call for violence.**
+   
+   We want everyone to feel safe in this community. Any threat, no matter if direct, indirect or suggestive is a violation of this rule.  
+   This also includes, but is not limited to, coordinating violent acts, glorifying or promoting violence, or the perpetrators of violent acts.  
+   Memes are not excluded from this rule
+3. **Don´t share someone elses personal information without their content.**
+   
+   Everyone deserves their privacy, respect it.  
+   This includes the threat to share someone´s personal information.
+4. **No hate speech or other hateful conduct.**
+   
+   Any form of hateful content is unwanted in this community.  
+   Hate speech is any form of expression that attacks other people or promotes hatred against others.  
+  This includes, but is not limited to, hate symbols.
+5. **Do not share any content, depicting, promoting or "normalizing" child abuse.**
+    
+   We don´t content with child abuse of any form, including sexual. Any media depciting child abuse,
+   no matter if real, manipulated, AI-generated or animated.  
+   Any member breaking this rule will also be reported to Discord directly!
+6. **No NSFW content, or other sexualizing content.**
+    
+   We are a Lord of the Rings Minecraft Community and do not content with sexual content in our Community.  
+   We also consider Erotic Roleplay (ERP), gore, excessive violence or animal harm to be NSFW content.
+7. **Respect each other and their opinions.**
+   
+   While we do not want to ban controversial topics, such as politics or religion,
+   discussions of those topics need to be respectful.  
+   If you feel a discussion is getting out of hand, stop it.  
+   The Maintainers have the right to stop any discussion, if they have the feeling it is getting out of hand.
+8. **No Drama baiting.**
+   
+   Do not bring up previous drama or controversial discussions that have been resolved or stopped.  
+   Do not constantly flame other members or behave in a toxic manner towards them.
+9. **Do not advertise.**
+    
+   We do not want any advertising of any kind. Don´t ask players if they are interested in a different server, or joining a community.  
+   If you have something to advertise, and deem it interesting enough for the whole community, contact the lead maintainters, who will decide if they
+   will forward your advertisement to the community or not.
+10. **Don´t share misinformation.**
+    We don´t want any fake news being shared on this discord.  
+    This includes content that is false or misleading, that is shared knowing of these properties.  
+    If you make clear that what you share is fake/misleading/etc, we consider it not breaking this rule.
+12. **English in Chat.**
+   
+    Every public conversation, chat or voice, should be english.
+12. **Don´t evade rule enforcement.**
+   
+    If we enforce the rules, it is for a reason.  
+    Trying to evade the rule enforcements or helping someone to evade them, by using alts or other means is punished with a ban.  
+    If you feel the enforcement was unjust you can always appeal to the maintainers with [this form](Link to form).  
+    Using Alts, is considered trying to evade enforcement and thus prohibited. Any alt is banned without warning.
 
 ## Enforcement Responsibilities
 
