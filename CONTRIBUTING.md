@@ -1,26 +1,45 @@
 # Contributing
 Before contributing please read the [Code of Conduct](CODE_OF_CONDUCT.md) and make sure you understand it.
+It is also advised to join our [discord](https://discord.com/invite/cQSpXR6bjz), as this is our main communication platform.
+---
+## Bug Reports and Suggestions
+### Bug Reports
+If you have a bug to report, please do so using our discord.
+Should you not have discord you can use our Issue Template for Bug Reports.
+Please provide as much Information as you can for bug reports, this helps us fix the bugs.
+### Suggestions
+If you have a suggestion, please share it on our discord in the suggestion channel.
+Please describe your suggestion as detailed as possible when sharing it.
+If you don´t have discord, you can create a GitHub Discussion to share a suggestion.
+## Translations
+If you are looking to help with translations, you can see a list of outdated translation files [here]().
+Translations may be submitted on discord or on GitHub.
+When submitting on Discord follow these steps:
+1. Create a post on discord in the forums channel [Contributions]()
+2. Post the translation file in the post
+3. Maintainers will upload the translation file to GitHub and close the forums post.
 
-## How to file a bug report
-Bug Reports can be filed on our discord at the dedicated channel.
-Alternatively you can file a Bug Report using the proper issue template for that.
+When submitting on GitHub follow these steps:
+1. Create an Issue using the appropriate [template]().
+2. Create a branch from the Issue to upload the translation file to.
+3. Open a Pull Request, maintainers will check it and than merge and close the Pull Request.
+## Textures, Models and Animations
+If you are looking to help with textures, models or animations, you can see a list of outdated textures, models and animations [here]().
+Textures, models and animations may be submitted on discord or on GitHub.
+When submitting on Discord follow these steps: 
+1. Create a post on discord in the forums channel [Contributions]()
+2. Post the texture, model or animation in the post
+3. Maintainers will upload the texture, model or animation to GitHub and close the forums post.
 
-## How to suggest features
-To suggest a feature you can either use our suggestion channels on our discord (link is in the [README File](README.md)),
-or start a discussion on GitHub in the proper category.
+When submitting on GitHub follow these steps:
+1. Create an Issue using the appropriate [template]().
+2. Create a branch from the Issue to upload the texture, model or animation to.
+3. Open a Pull Request, maintainers will check it and than merge and close the Pull Request.
 
-## How to set up the environment
-*A detailed walkthrough how to set up the environment will follow but for now I´d advise to look this [tutorial](https://youtu.be/0Pr_iHlVKsI?si=qNeruHugsvn6y2bc).*
+We have some Guidelines for textures please follow them.
+## Code
 
-## What Contributions are looked for?
-When it comes to contributions, any kind of contribution whether small or big is welcome and appreciated.
-If you wish to contribute, please look through the issues listed for something that interests you.
-We prefer to get issues for the next planned Milestone done first, but that is not a must.
-
-If you are new to the project or open source in general, 
-look for issues with the tag *Good first issue* those are small and meant for newcomers.
-
-## Coding Guidelines
+### Coding Guidelines
 *Coding Guidelines still need to be written down, but they will be looked for during Pull Requests and you will get Feedback there.*
 
 What is to be considered are the following points:
