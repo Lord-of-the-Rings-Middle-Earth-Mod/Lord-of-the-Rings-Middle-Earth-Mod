@@ -3,13 +3,13 @@
 Before contributing please read the [Code of Conduct](CODE_OF_CONDUCT.md) and make sure you understand it.
 It is also advised to join our [discord](https://discord.com/invite/cQSpXR6bjz), as this is our main communication platform.
 
-| Table of Contents |
-|:---:|
-| [Branching and Issues](#branching-and-issues) |
-| [Bug Reports and Suggestions](#bug-reports-and-suggestions) |
-| [Translations](#translations) |
+| Table of Contents                                                  |
+|:-------------------------------------------------------------------|
+| [Branching and Issues](#branching-and-issues)                      |
+| [Bug Reports and Suggestions](#bug-reports-and-suggestions)        |
+| [Translations](#translations)                                      |
 | [Textures, Models and Animations](#textures-models-and-animations) |
-| [Code](#code) |
+| [Code](#code)                                                      |
 
 ---
 
