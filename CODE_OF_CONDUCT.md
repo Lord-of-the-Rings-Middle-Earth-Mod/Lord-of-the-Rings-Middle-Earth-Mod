@@ -85,7 +85,7 @@ These Rules apply to any chat within the discord Server as well as all content o
    
     If we enforce the rules, it is for a reason.  
     Trying to evade the rule enforcements or helping someone to evade them, by using alts or other means is punished with a ban.  
-    If you feel the enforcement was unjust you can always appeal to the maintainers with [this form](Link to form).  
+    If you feel the enforcement was unjust you can always appeal to the maintainers with [this form](https://forms.gle/GsgLm9oVvS964ofCA).  
     Using Alts, is considered trying to evade enforcement and thus prohibited. Any alt is banned without warning.
 13. **No harmful content**
 

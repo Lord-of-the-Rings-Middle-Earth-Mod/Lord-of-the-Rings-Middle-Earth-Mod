@@ -9,11 +9,12 @@ Special thanks go to following contributors for their contributions.
 
 - Bakbar: Created the Logo for the Mod
 
-## Conributors
+## Contributors
 ### Code
 - Anedhel/Moritz Rohleder
 ### Art (Textures, Models, etc.)
 - bakbar
 - Ano_Jedt
 - SilverElb
+- Marja2000
 ### Translations
