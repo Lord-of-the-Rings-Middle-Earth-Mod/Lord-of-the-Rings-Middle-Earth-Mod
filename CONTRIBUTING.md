@@ -23,7 +23,18 @@ Maintainers will check Pull Requests regularly and give feedback on them or merg
 
 ### Issues
 We use GitHub Issues to track bugs, features and other tasks, all Issues can be seen with their current status on our [Issue Board](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2)
-When working on an Issue, always keep it in the appropriate column of the Issue Board, so everyone can see what the status is.
+When working on an Issue please keep the following in mind:
+- Always assign yourself to the issue so everyone can see someone is actually working on it.
+- Always keep the Issue in the appropriate column of the Issue Board, so everyone can see what the status is. (see below for column descriptions)
+- Always create a branch from the Issue. The branch should be named as follows and have develop as base branch:
+  - `feature/issueNumber-issueName` for features
+  - `bugfix/issueNumber-issueName` for bugfixes.
+  - `translation/issueNumber-issueName` for translations.
+  - `texture-model/issueNumber-issueName` for textures and models.
+  - `animation/issueNumber-issueName` for animations.
+- Always create a Pull Request from the branch to the develop branch. The Pull Request should be named `IssueNumber - IssueName` and will be reviewed by a maintainer.
+- Always link the Issue in the Pull Request and the Pull Request in the Issue.
+
 | Column/Status | Description |
 | --- | --- |
 | Backlog | Issues that are not yet assigned to a milestone/release and have lower priority |
