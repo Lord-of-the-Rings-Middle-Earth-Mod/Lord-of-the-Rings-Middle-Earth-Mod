@@ -1,5 +1,10 @@
 name: Texture/Model Contribution
 description: Create a texture/model contribution issue, so we can work on adding the texture/model to the mod.
+projects:
+  - "LotR Mod Issue Board"
+title: "[Texture/Model] "
+labels:
+  - "texture/model"
 body:
   - type: markdown
     attributes:

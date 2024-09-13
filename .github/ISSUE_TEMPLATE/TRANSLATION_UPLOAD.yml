@@ -1,5 +1,10 @@
 name: Translation Contribution
 description: Create a translation contribution issue, so we can work on adding the translation to the mod.
+projects:
+  - "LotR Mod Issue Board"
+title: "[Translation] "
+labels:
+  - "translation"
 body:
   - type: markdown
     attributes:

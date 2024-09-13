@@ -1,5 +1,10 @@
 name: Animation Contribution
 description: Create a animation contribution issue, so we can work on adding the animation to the mod.
+projects:
+  - "LotR Mod Issue Board"
+title: "[Animation] "
+labels:
+  - "animation"
 body:
   - type: markdown
     attributes:
