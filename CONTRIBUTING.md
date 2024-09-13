@@ -1,5 +1,5 @@
 # Contributing
-
+---
 Before contributing please read the [Code of Conduct](CODE_OF_CONDUCT.md) and make sure you understand it.
 It is also advised to join our [discord](https://discord.com/invite/cQSpXR6bjz), as this is our main communication platform.
 ---
