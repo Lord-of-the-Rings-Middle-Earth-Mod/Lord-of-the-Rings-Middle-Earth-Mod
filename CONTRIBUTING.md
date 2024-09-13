@@ -1,4 +1,5 @@
 # Contributing
+
 Before contributing please read the [Code of Conduct](CODE_OF_CONDUCT.md) and make sure you understand it.
 It is also advised to join our [discord](https://discord.com/invite/cQSpXR6bjz), as this is our main communication platform.
 
@@ -30,7 +31,7 @@ When working on an Issue, always keep it in the appropriate column of the Issue 
 | Testing | Issues that are already merged into dev and are waiting on testing (mainly animations and code) |
 | Done | Issues that are all tested and only wait on the release. |
 | Closed | Issues that are released |
-
+---
 ## Bug Reports and Suggestions
 
 ### Bug Reports
@@ -42,7 +43,7 @@ Please provide as much Information as you can for bug reports, this helps us fix
 If you have a suggestion, please share it on our discord in the suggestion channel.
 Please describe your suggestion as detailed as possible when sharing it.
 If you don´t have discord, you can create a GitHub Discussion to share a suggestion.
-
+---
 ## Translations
 If you are looking to help with translations, you can see a list of all translation files and their status [here]().
 If you are missing a language in general for the mod, feel free to translate it and submit it.
@@ -56,7 +57,7 @@ When submitting on GitHub follow these steps:
 1. Create an Issue using the appropriate [template]().
 2. Create a branch from the Issue to upload the translation file to.
 3. Open a Pull Request, maintainers will check it and than merge and close the Pull Request.
-
+---
 ## Textures, Models and Animations
 If you are looking to help with textures, models or animations, you can see a list of needed textures, models and animations [here]().
 If you think you could make a texture, model or animation better than the current one, we are happy to see your submission, but do not guarantee it will be used.
@@ -73,7 +74,7 @@ When submitting on GitHub follow these steps:
 3. Open a Pull Request, maintainers will check it and than merge and close the Pull Request.
 
 We have some Guidelines for textures please follow them.
-
+---
 ## Code
 
 
