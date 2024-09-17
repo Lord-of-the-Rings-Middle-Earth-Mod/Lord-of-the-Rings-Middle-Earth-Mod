@@ -100,23 +100,43 @@ We have some Guidelines for textures please follow them.
 
 ## Code
 
-If you are looking to help code the mod, you can find all features and code changes we have planned on the issue board. 
-If you are new to coding a mod, open source projects or java in general look for issues tagged with *good first issue*. 
-If you think there is some feature or code that could be improved please provide a suggestion and don't just change it, Maintainers will get back to you regarding the suggestion and if needed create an issue for the implementation. 
+If you are looking to help code the mod, you can find all features and code changes we have planned on the issue board.   
+If you are new to coding a mod, open source projects or java in general look for issues tagged with *good first issue*, those issues are good to get started in the project.   
+If you think there is some feature or code that could be improved please make a suggestion and don't just change it, Maintainers will get back to you regarding the suggestion and if needed, will create an issue for the implementation.
 
 ### Coding Guidelines
-*Coding Guidelines still need to be written down, but they will be looked for during Pull Requests and you will get Feedback there.*
+With the goal to ensure all contributions are consistent and of the quality we strive for we put together some coding guidelines.
+Each Pull Request will be checked if the coding guidelines are followed, if they are no the pull request will be denied.
+
+#### Coding Style
+
+#### Comments and Documentation
+
+
+#### Workflow
+1. Pick an Issue from the *To Do* Column of the [Issue Tracker](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2/views/1)
+2. Move the Issue to *In Progress* and assign yourself as Assignee
+3. Create a branch from the issue following the conventions mentioned in [Issues](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/blob/task/setting-up-the-open-source-project/CONTRIBUTING.md#issues)
+4. Work on the issue until you finished, you are finished, if all acceptance criteria (ACs) are met
+5. Open a Pull Request from the branch to the develop branch. The Pull Request should be named `IssueNumber - IssueName` and will be reviewed by a maintainer.
+6. Link the Pull Request to the Issue and move the Issue into *In Review*
+7. The Pull Request will be checked by maintainers and
+   * Merged and closed if no changes are requested
+   * Reopened, aka moved back into *In Progress* with you as Assignee, should changes be requested. The Reviewers will comment what they think is missing/needs change within the issue.
 
 What is to be considered are the following points:
 - Proper Commenting
   - JavaDoc at every Class describing shortly what the class is used for
     - Exceptions are the Main Classes: LordOfTheRingsMiddleEarthMod, LordOfTheRingsMiddleEarthModClient, LordOfTheRingsMiddleEarthModDataGenerator
-  - JavaDoc at every Method describing shortly what the method is used for, as well as listing parameters and output 
+  - JavaDoc at every Method describing shortly what the method is used for, as well as listing parameters and output
     - Exceptions are Constructors, Getter, Setter, ToString, Equals and Hash Methods
-- Versioning is done using SemanticVersioning as described [here](https://semver.org/).
-- Releases are done by maintainers only
-- Every Change needs a Pull-Request(PR), only maintainers can approve PRs
 - Sun Coding Convention for Java is to be used
-- Every Issue has a branch
-- Any feature noticeable for the players should be listed in the changelog before creating a pull request
-- Before a release, the changelog should always be up-to-date
+
+### Releases
+Releases are planned and released by maintainers only.
+During each release following actions are to be taken:
+- The version is increased following [Semantic Versioning](https://semver.org/).
+- The changelog is checked for sufficiency. Any additions and changes noticeable to players and server owners need to be listed.
+- The release-branch is merged into the master-branch and a release is created on GitHub with a matching tag.
+- The changelog of the release is published on [discord](https://discord.com/channels/1237739289689985138/1241277621766197268) following the format provided and using discohook.
+- The milestone of the release is closed and the actions properly documented in the release Issue, which is than also closed.
