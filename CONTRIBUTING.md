@@ -65,6 +65,7 @@ If you don´t have discord, you can create a GitHub Discussion to share a sugges
 If you are looking to help with translations, you can see a list of all translation files and their status [here]().
 If you are missing a language in general for the mod, feel free to translate it and submit it.
 Translations may be submitted on discord or on GitHub.
+
 When submitting on Discord follow these steps:
 1. Create a post on discord in the forums channel [Contributions](https://discord.com/channels/1237739289689985138/1283839182602768414)
 2. Post the translation file in the post
@@ -82,6 +83,7 @@ If you are looking to help with textures, models or animations, you can see a li
 If you think you could make a texture, model or animation better than the current one, we are happy to see your submission, but do not guarantee it will be used.
 If you think there is a texture, model or animation missing and not listed, feel free to create it and submit it.
 Textures, models and animations may be submitted on discord or on GitHub.
+
 When submitting on Discord follow these steps: 
 1. Create a post on discord in the forums channel [Contributions](https://discord.com/channels/1237739289689985138/1283839182602768414)
 2. Post the texture, model or animation in the post
@@ -98,7 +100,9 @@ We have some Guidelines for textures please follow them.
 
 ## Code
 
-
+If you are looking to help code the mod, you can find all features and code changes we have planned on the issue board. 
+If you are new to coding a mod, open source projects or java in general look for issues tagged with *good first issue*. 
+If you think there is some feature or code that could be improved please provide a suggestion and don't just change it, Maintainers will get back to you regarding the suggestion and if needed create an issue for the implementation. 
 
 ### Coding Guidelines
 *Coding Guidelines still need to be written down, but they will be looked for during Pull Requests and you will get Feedback there.*
