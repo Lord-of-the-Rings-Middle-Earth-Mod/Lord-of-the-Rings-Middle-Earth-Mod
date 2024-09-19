@@ -37,20 +37,22 @@ When working on an Issue please keep the following in mind:
 
 | Column/Status | Description |
 | --- | --- |
-| Backlog | Issues that are not yet assigned to a milestone/release and have lower priority |
+| Backlog | Issues that are not yet assigned to a milestone/release and have lower priority, Maintainers will move these issues into *To Do* once they have priority. |
 | To Do | Issues that are assigned to a milestone/release but not yet worked on |
 | In Progress | Issues that are currently being worked on |
 | Review | Issues that are done and have a Pull Request waiting on being reviewed by a maintainer |
 | Testing | Issues that are already merged into dev and are waiting on testing (mainly animations and code) |
 | Done | Issues that are all tested and only wait on the release. |
-| Closed | Issues that are released |
+| Closed | Issues that are released. Issues are moved here by Maintainers when a release is completed. |
 
 ---
 
 ## Bug Reports and Suggestions
+When reporting bugs and suggesting things please use discord if possible. Our discord is our main form of communication and especially suggestions reach many more people then just Github discussions. 
+The Github options are just a backup option for those without discord. 
 
 ### Bug Reports
-If you have a bug to report, please do so using our discord.
+If you have a bug to report, please do so using our discord in the according channel.
 Should you not have discord you can use our Issue Template for Bug Reports.
 Please provide as much Information as you can for bug reports, this helps us fix the bugs.
 
@@ -114,15 +116,19 @@ Each Pull Request will be checked if the coding guidelines are followed, if they
 
 
 #### Workflow
+When contributing code follow the following Workflows steps to ensure the integrity of the branching model and issue tracker. 
+
 1. Pick an Issue from the *To Do* Column of the [Issue Tracker](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2/views/1)
 2. Move the Issue to *In Progress* and assign yourself as Assignee
 3. Create a branch from the issue following the conventions mentioned in [Issues](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/blob/task/setting-up-the-open-source-project/CONTRIBUTING.md#issues)
-4. Work on the issue until you finished, you are finished, if all acceptance criteria (ACs) are met
+4. Work on the issue until you finished, you are finished, if all acceptance criteria (ACs) are met. *Test what you have implemented in a [developers test]() to ensure it also works as intended.*
 5. Open a Pull Request from the branch to the develop branch. The Pull Request should be named `IssueNumber - IssueName` and will be reviewed by a maintainer.
 6. Link the Pull Request to the Issue and move the Issue into *In Review*
 7. The Pull Request will be checked by maintainers and
    * Merged and closed if no changes are requested
    * Reopened, aka moved back into *In Progress* with you as Assignee, should changes be requested. The Reviewers will comment what they think is missing/needs change within the issue.
+
+If the Pull Requests was approved and merged by Maintainers, Testers will test the addition to the code with a compiled and compacted mod. Should they notice a mistake the issue will be reopened again and the issue is moved into *To Do* again. We would prefer to have you fix the found issue, but understand it is not always possible. 
 
 What is to be considered are the following points:
 - Proper Commenting
