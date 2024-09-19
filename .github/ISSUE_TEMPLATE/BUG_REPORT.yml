@@ -55,7 +55,7 @@ body:
     attributes:
       label: "Steps to Reproduce"
       description: "Please provide a step-by-step guide on how to reproduce the bug."
-      placeholder: "Example: 1. Open the game. 2. Place a block."
+      placeholder: "Example:1. Start the mod with launcher xyz  2. Connect to world/server  3. Jump arround  4. Place a block  5. Game crashes"
     validations:
       required: true
   - type: textarea
