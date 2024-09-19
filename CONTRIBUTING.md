@@ -53,12 +53,12 @@ When reporting bugs and suggesting things please use discord if possible. Our di
 The Github options are just a backup option for those without discord. 
 
 ### Bug Reports
-If you have a bug to report, please do so using our discord in the according channel.
+If you have a bug to report, please do so using our discord in the [bug-report channel](https://discord.com/channels/1237739289689985138/1286200697045520405).
 Should you not have discord you can use our Issue Template for Bug Reports.
 Please provide as much Information as you can for bug reports, this helps us fix the bugs.
 
 ### Suggestions
-If you have a suggestion, please share it on our discord in the suggestion channel.
+If you have a suggestion, please share it on our discord in the [suggestion channel](https://discord.com/channels/1237739289689985138/1283840850144792616).
 Please describe your suggestion as detailed as possible when sharing it.
 If you don´t have discord, you can create a GitHub Discussion to share a suggestion.
 
