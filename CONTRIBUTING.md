@@ -9,6 +9,7 @@ It is also advised to join our [discord](https://discord.com/invite/cQSpXR6bjz),
 | [Bug Reports and Suggestions](#bug-reports-and-suggestions)        |
 | [Translations](#translations)                                      |
 | [Textures, Models and Animations](#textures-models-and-animations) |
+| [Testing](#testing) |
 | [Code](#code)                                                      |
 
 ---
@@ -100,8 +101,16 @@ We have some Guidelines for textures please follow them.
 
 ---
 
-## Code
+## Testing
+If you wish to help with testing the mod we ask you to follow the following steps to ensure the mod we release is stable and playable. 
 
+1. Chose an issue from the *Testing* column of the [Issue Tracker](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2/views/1). Maintainers will attach a compiled and compacted mod version you should use for testing. 
+2. If testing a bug, follow the recreation steps in an attempt to recreate the bug, otherwise try to test the new addition as good as you can. The developer should have left a documentation on his developer test if you don't know how to test the addition. 
+3. Check for all *Acceptance Criteria* being matched and note all unexpected behaviours you notice. 
+
+---
+
+## Code
 If you are looking to help code the mod, you can find all features and code changes we have planned on the issue board.   
 If you are new to coding a mod, open source projects or java in general look for issues tagged with *good first issue*, those issues are good to get started in the project.   
 If you think there is some feature or code that could be improved please make a suggestion and don't just change it, Maintainers will get back to you regarding the suggestion and if needed, will create an issue for the implementation.
@@ -111,6 +120,7 @@ With the goal to ensure all contributions are consistent and of the quality we s
 Each Pull Request will be checked if the coding guidelines are followed, if they are no the pull request will be denied.
 
 #### Coding Style
+
 
 #### Comments and Documentation
 
@@ -128,7 +138,7 @@ When contributing code follow the following Workflows steps to ensure the integr
    * Merged and closed if no changes are requested
    * Reopened, aka moved back into *In Progress* with you as Assignee, should changes be requested. The Reviewers will comment what they think is missing/needs change within the issue.
 
-If the Pull Requests was approved and merged by Maintainers, Testers will test the addition to the code with a compiled and compacted mod. Should they notice a mistake the issue will be reopened again and the issue is moved into *To Do* again. We would prefer to have you fix the found issue, but understand it is not always possible. 
+If the Pull Requests was approved and merged by Maintainers, Testers will test the addition to the code with a compiled and compacted mod. Should they notice a mistake the issue will be reopened and moved into *To Do* again. We would prefer to have you fix the found issue, but understand it is not always possible. 
 
 What is to be considered are the following points:
 - Proper Commenting
