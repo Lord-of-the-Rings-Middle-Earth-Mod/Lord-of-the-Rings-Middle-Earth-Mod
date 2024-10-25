@@ -39,8 +39,8 @@ dependencies {
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
 
-	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20.2'
-	include 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20.2'
+	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta64.5-1.20.2'
+	include 'net.kyrptonaught:customportalapi:0.0.1-beta64.5-1.20.2'
 }
 
 processResources {
