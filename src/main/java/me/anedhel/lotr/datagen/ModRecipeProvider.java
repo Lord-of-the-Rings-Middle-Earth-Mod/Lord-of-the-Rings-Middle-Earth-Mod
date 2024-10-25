@@ -29,7 +29,6 @@ import java.util.List;
  */
 public class ModRecipeProvider extends FabricRecipeProvider {
 
-    private static final List<ItemConvertible> TIN_SMELTABLES = List.of(ModItems.RAW_TIN, ModBlocks.TIN_ORE);
     private static final List<ItemConvertible> TIN_BLOCK_SMELTABLES = List.of(ModBlocks.RAW_TIN_BLOCK);
     private static final List<ItemConvertible> IRON_BLOCK_SMELTABLES = List.of(Blocks.RAW_IRON_BLOCK);
     private static final List<ItemConvertible> GOLD_BLOCK_SMELTABLES = List.of(Blocks.RAW_GOLD_BLOCK);
@@ -45,8 +44,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
      */
     @Override
     public void generate(RecipeExporter exporter) {
-        offerSmelting(exporter, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 200, "tin");
-        offerBlasting(exporter, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 100, "tin");
         offerSmelting(exporter, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK, 5.6f, 1600, "tin_block");
         offerBlasting(exporter, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK, 5.6f, 800, "tin_block");
         offerSmelting(exporter, IRON_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.IRON_BLOCK, 5.6f, 1600, "iron_block");
@@ -264,7 +261,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     private void createCookedFoodRecipes(RecipeExporter exporter, Item rawItem, Item cookedItem) {
         offerFoodCookingRecipe(exporter, "smooking", RecipeSerializer.SMOKING, 100, rawItem,cookedItem, 0.35f);
         offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING, 600, rawItem, cookedItem, 0.35f);
-        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(rawItem), RecipeCategory.FOOD, cookedItem, 0.35f, 200).criterion("has_food", (AdvancementCriterion)VanillaRecipeProvider.conditionsFromItem(rawItem)).offerTo(exporter);
+        CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(rawItem), RecipeCategory.FOOD, cookedItem, 0.35f, 200).criterion("has_food", VanillaRecipeProvider.conditionsFromItem(rawItem)).offerTo(exporter);
     }
 
     /**

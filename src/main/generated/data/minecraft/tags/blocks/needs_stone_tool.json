@@ -2,6 +2,7 @@
   "replace": false,
   "values": [
     "lotr:tin_ore",
+    "lotr:deepslate_tin_ore",
     "lotr:raw_tin_block",
     "lotr:tin_block",
     "lotr:bronze_block"
