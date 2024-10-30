@@ -7,7 +7,7 @@ Before you interact with the community please read our [Community Standards and 
 ## What if I have questions or need help?
 If you have any questions, the best way to get them answered is to join our [discord](https://discord.com/invite/cQSpXR6bjz) where we have a channel dedicated for questions and one for technical support.
 You can also contact any maintainer on discord.
-Should you not have a discord account and do not want to create one, you can also contact Anedhel/Moritz directly (<moritz_rohleder+lotrmod@outlook.de>),
+Should you not have a discord account and do not want to create one, you can also contact [Anedhel/Moritz](mailto:moritz_rohleder+lotrmod@outlook.de) directly,
 however it might not get you a response within short time.
 
 ## How to get startet
