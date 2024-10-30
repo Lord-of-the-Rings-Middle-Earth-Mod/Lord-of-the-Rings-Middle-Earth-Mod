@@ -47,25 +47,72 @@ Should you wish to contribute within your possibilities there is more than just 
 - Creating models, textures and models 
 - Translations 
 - Testing
+- Bug Reports
 
-Depending on how you wish to contribute following skills are adviced:
+Depending on how you wish to contribute following skills are advised:
 - Basic Java Knowledge (code) 
 - Basic knowledge on how to mod with fabric (code) 
 - Basic Blockbench knowledge (models, textures and animations)
+- Knowledge of the English language (translations)
 
 Should you lack a skill you'd like to learn we will happily help you learn it, just contact us on discord. 
 
 For further information on how to Contribute please check out the [Contributing](CONTRIBUTING.md) file.
 
-## Maintainers and Contributors
-The *LotR ME Mod* has the following Maintainers:
-- Anedhel/Moritz (Lead Maintainer)
-- Ano_Jedt (Maintainer)
+## Roles within the Project
+Within the Project we define several roles with different responsibilities and perks:
+- Contributors: Contributors are those people, who regularly contribute to the Mod and show a high level of activity. They are able to do Code-Reviews and get a vote in the decision making process.
+- Maintainers: Maintainers are responsible for the Release Management and the overall direction of the Mod. They plan and execute the Releases as well as bugfixes and suggestions.
+- Lead-Maintainers: The Lead-Maintainers are responsible for the Mod in general and have the final say in all decisions.
 
-And you can find a list of Contributors [here](CONTRIBUTORS.md).
+Apart from the above roles, Moderators are responsible for making sure the Community Standards and Rules are followed and the Community is a friendly place for everyone.
+
+### Moderators
+The *LotR ME Mod* has the following Moderators:
+
+#### How to become a Moderator
+When we are looking for new Moderators we will announce it on our discord and ask for applications.
+Within those applications we are looking for the following:
+- Motivation and experience
+- Understanding of Community philosophy and goals
+- Behavior in the Community
+- Activity within the Community, especially in the chats
+
+### Contributors
+A list of all Contributors can be found [here](CONTRIBUTORS.md).
+Contributors are able to perform Code-Reviews and are also involved in the decision-making process to a certain extent.
+Contributors can be active in all areas of the Mod where we look for [contributions](#how-to-contribute), and are not limited to code contributions.
+
+#### How to become a Contributor
+Contributors are not chosen by application, but by activity and contribution.
+When the Maintainers notice a high level of activity and contribution from a user, they will contact said user in order to start the acceptance process.
+In order to be accepted as Contributor maintainers will check the following:
+- Commit frequency and Quality
+- Behavior in the Community
+- Understanding of Community philosophy and goals
+- Motivation and experience
+- Understanding of the Processes
+
+In order to check the above points the maintainers will get in contact with the user and ask some questions.
+
+If all criteria are met to our satisfaction, the user will be granted triage access of the Contributor Role for 3 months. 
+After the 3 months of triage access, the Maintainers will make a final decision based on the performance during the triage period.
+
+### Maintainers
+The *LotR ME Mod* has the following Maintainers:
+- Ano_Jedt
+
+Maintainers are chosen from the Contributors by the Lead-Maintainers.
+The selection is based on the performance of the Contributor and the need for Maintainers.
+In order to become a maintainer a unanimously vote of all Lead-Maintainers is needed.
+
+### Lead-Maintainers
+The *LotR ME Mod* has the following Lead-Maintainers:
+- Anedhel/Moritz (Lead Maintainer)
+
 
 ## Roadmap
-**ToDo:**
-- Add a rough roadmap where just the "topics" of the releases are listed
+Roadmap is a rough plan of all planned releases. It is not set in stone and can change at any time.
+- Release 1.0.0 (To be announced): The first release that is intended for server play.
 
-The full and more detailed Roadmap can be found [here](ROADMAP.md).
+The full and more detailed Roadmap, including planned features and ideas, can be found [here](ROADMAP.md).
