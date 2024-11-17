@@ -436,7 +436,207 @@ The Biomes strived for within Release 1.0 are just enough to display the map, bu
 Each Biome is also going to get some subbiomes.
 
 Following is a list of all biomes planned in general
-<!-- ToDo: Add the list of planned Biomes based on the Atlas of Middle Earth -->
+### Planned Biomes
+#### Ocean
+- Ocean
+- Bay of Belfalas
+- Bay of Forochel
+- Gulf of Lune
+- Himring
+- Tol Fuin
+- Tol Morwen
+- Tolfalas
+
+#### Eriador
+- Eriador
+- Eriador Downs (North-/ South Downs)
+- Hills of Evendim
+- Towerhills
+- Weather Hills
+- Barrow Downs
+- Bree
+- Chetwood
+- Midgewaters
+- Trollshaws
+- Troll Caves (Underground Biome)
+- The Angle
+- Minhiriath
+- Eryn Vorn
+- Lone Lands
+- Swanfleet
+- Eregion
+- Coldfels
+- Ettenmoors
+- Rivendell
+- Enedwaith
+- Dunland
+
+##### Shire
+- North Fathering
+- West Fathering
+- South Fathering
+- East Fathering
+- Bockland
+- White Downs
+- Far Downs
+- Old Forest
+- Bindbale Forest
+- Greenhill Country
+- Woody End
+- Overbourn Marsches
+- Tookland
+- Hills of Scray
+- North Moors
+
+##### Angmar
+- Angmar
+- Angmar Mountains
+
+#### Lindon & Blue Mountains
+- Harlindon
+- Forlindon
+- Lindon Forest (North and South)
+- Mithlond
+- Blue Mountains
+
+#### Forodwaith
+- Forodwaith
+- Forodwaith Mountains
+- Forochel
+- Taiga
+- Tundra
+- Withered Heath
+
+#### White Mnts & Surrounding
+- Drúwaith Iaur
+
+##### Gondor
+- White Mountains
+- Anórien
+- Pellennor Fields
+- White Mountains Foothills
+- Firien Woods (Gondor)
+- Drúadan Wood
+- Grey Wood
+- North Ithilien
+- South Ithilien
+- Ithiien Wastelands
+- Emyn Arnen
+- South Ithilien Hills
+- Lossarnach
+- Lebennin
+- Dor en Ernil
+- Belfalas
+- Dor en Ernil Hills
+- Lamedon
+- Blackroot Vale
+- Anfalas
+- Ethir Anduin
+- Pelargir
+- Ras Motrhil
+- Andrast
+- Pinnath Gelin
+- Mouth of the Entwash
+
+##### Rohan
+- Firien Woods (Rohan)
+- Eastfold
+- East Emnet
+- The Wold
+- West Emnet
+- Westfold
+- Fold
+- Glittering Caves (Underground Biome)
+- Path of the Dead (Underground Biome)
+- Fangorn
+- Isengard
+
+#### Mordor
+- Ered Lithuin (Ash Mountains)
+- Ephel Dúath (Mountains of Shadow)
+- Morgai
+- Minas Morgul
+- Udûn
+- Slag Hills (Infornt of the Black Gate)
+- Gorgoroth
+- Mordor
+- Nurn
+- Lithlad
+- Path of Cirith Ungol (Underground Biome)
+- Sea of Nurn
+
+#### Wilderlands & Rhovanion
+- Wilderlands
+- Brown Lands
+- Emyn Muil
+- Nindalf
+- Dead Marsches
+- Dagorlad
+
+##### Misty Mountains
+- Misty Mountains
+- Moria (Underground Biome)
+- Orctown (Underground Biome)
+
+##### Anduin Vales
+- Anduin Hills
+- Anduin Vales
+- Gladden Fields
+- Grey Mountains
+- Fields of Celebrant
+- Lothlórien
+
+##### Green-/Mirk-Wood
+- Dol Guldur
+- Mirkwood
+- Mirkwood Mountains
+- East Bight
+- Woodland Realm
+- North Greenwood
+- Woodland Realm Hills
+- Woodman Areas (Western Mirkwood, should get a proper name, and should be a biome on its own)
+
+##### Dale, Erebor & Iron Hills
+- Dale
+- Erebor
+- Iron Hills
+- Long Marshes
+
+#### Harad
+- Harondor
+- Near Harad
+- Umbar
+- Khand
+- Lostladen
+- Coastal Mountains
+- Harad Desert
+- Far Harad Plains
+- Far Harad Jungle
+- Far Harad Desert Hills
+- Harad Oasis
+- Harad River Banks
+
+#### Rhun
+- Dorwinion
+- Dorwinion Hills
+- Rhun Forest
+- Sea of Rhun
+- Orocarni
+- Wild Woods
+
+### Possible Further Biomes
+#### Darklands
+The Darklands are a continent in the south east of arda, that is not much described in the lore.
+- Darklands
+- Darklands Forest
+
+#### Meneltarma
+Meneltarma is the holy mountain of the Númenóreans, that is said to still peak the ocean after the fall of Númenor.
+- Meneltarma
+
+#### New Lands
+The new lands are a new continent in the west of arda, that was created after the fall of Númenor.
+- New Lands
 
 ## NPC Variants
 In order to make the world and mod feel more immersive, we plan to introduce variants of each NPC, that show different behavior and maybe also have different models.
