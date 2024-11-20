@@ -26,7 +26,9 @@ Every member of this community is putting their free time into this, be patient 
 Mistakes happen, if they happen to you, apologize to those effected, if you are effected be forgiving when apologized.
 4. Give constructive feedback
 Not everyone is a professional at what they try to do here, give constructive feedback so they may learn from the feedback.
-5. Contribute and partake
+5. Be honest and transparent
+Be honest to yourself and everyone else. It is okay to struggle with an issue or to not find the time to work on it, nobody is going to blame you for that. Just be transparent about it and ask for help/assistance in such cases.
+6. Contribute and partake
 This community lives and thrives from participation and contribution, we ask you to do your part and contribute and partake within your possibilities.
 
 ## Our Rules
