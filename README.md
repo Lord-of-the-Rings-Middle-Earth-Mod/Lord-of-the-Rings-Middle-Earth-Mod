@@ -4,6 +4,9 @@ This Mod is an open Source Project and as such welcoming anyone who is wishing t
 
 Before you interact with the community please read our [Community Standards and Rules](CODE_OF_CONDUCT.md) and make sure you understand them.
 
+## License
+The code of the Mod is licensed under the [GNU General Public License Version 3](LICENSE_GPL) while textures, models, sounds and translations are licensed under [CC BY-NC-SA 4.0](LICENSE_CC-BY-NC-SA)
+
 ## What if I have questions or need help?
 If you have any questions, the best way to get them answered is to join our [discord](https://discord.com/invite/cQSpXR6bjz) where we have a channel dedicated for questions and one for technical support.
 You can also contact any maintainer on discord.
