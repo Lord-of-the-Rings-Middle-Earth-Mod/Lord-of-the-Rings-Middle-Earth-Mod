@@ -307,7 +307,7 @@ Following Wood Types will be added by the mod: *Not all listed are required for 
 - Pomgranate
 - Cedar
 - Cypress
-- Ilex
+- Ilex/Holly
 - Beech
 - Fir
 - Larch

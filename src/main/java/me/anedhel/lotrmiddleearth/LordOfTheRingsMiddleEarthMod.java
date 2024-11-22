@@ -27,9 +27,16 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 	public static final String MOD_ID = "lotr";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	public static final String COPYRIGHT = "LotR ME Mod Copyright (C) 2024\n" +
+			"    Authors are found in the CONTRIBUTORS-File.\n" +
+			"    This program comes with ABSOLUTELY NO WARRANTY.\n" +
+			"    This is free software, and you are welcome to redistribute it\n" +
+			"    under certain conditions, described in the LICENSE-File.";
+
 	@Override
 	public void onInitialize() {
 		LOGGER.info("The Lord of the Rings Mod starts to initialise.");
+		LOGGER.info(COPYRIGHT); //Logging the Copyright notice as defined in the GNU General Public License
 
 		LOGGER.info("The Lord of the Rings Mod is loaded.");
 	}
