@@ -3,6 +3,8 @@
 Before contributing please read the [Code of Conduct](CODE_OF_CONDUCT.md) and make sure you understand it.
 It is also advised to join our [discord](https://discord.com/invite/cQSpXR6bjz), as this is our main communication platform.
 
+Many of the following information is compacted to the most essential information, for a more indepth view with background information check out our [Project Wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/wiki).
+
 | Table of Contents                                                  |
 |:-------------------------------------------------------------------|
 | [Branching and Issues](#branching-and-issues)                      |
