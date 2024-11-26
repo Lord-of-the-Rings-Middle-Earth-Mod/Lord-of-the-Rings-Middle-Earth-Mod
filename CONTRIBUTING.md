@@ -22,7 +22,7 @@ Many of the following information is compacted to the most essential information
 We use a branching model based on [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/).
 In most cases you will only come into contact with feature branches, which are branches created from the develop branch.
 When you are done with your work, you create a Pull Request to merge your feature branch into the develop branch.
-Maintainers will check Pull Requests regularly and give feedback on them or merge them.
+Maintainers and Contributors will check Pull Requests regularly and give feedback on them or merge them.
 
 ### Issues
 We use GitHub Issues to track bugs, features and other tasks, all Issues can be seen with their current status on our [Issue Board](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2)
@@ -35,13 +35,13 @@ When working on an Issue please keep the following in mind:
   - `translation/issueNumber-issueName` for translations.
   - `texture-model/issueNumber-issueName` for textures and models.
   - `animation/issueNumber-issueName` for animations.
-- Always create a Pull Request from the branch to the develop branch. The Pull Request should be named `IssueNumber - IssueName` and will be reviewed by a maintainer.
+- Always create a Pull Request from the branch to the develop branch. The Pull Request should be named `IssueNumber - IssueName` and will be reviewed by a maintainer or Contributor.
 - Always link the Issue in the Pull Request and the Pull Request in the Issue.
 
 | Column/Status | Description |
 | --- | --- |
-| Backlog | Issues that are not yet assigned to a milestone/release and have lower priority, Maintainers will move these issues into *To Do* once they have priority. |
-| To Do | Issues that are assigned to a milestone/release but not yet worked on |
+| Backlog | Issues that are not yet assigned to a milestone/release and have lower priority, Maintainers will move these issues into *To Do* once they have priority. Usually those issues listed as planned features in the Roadmap. |
+| To Do | Issues that are assigned to a milestone/release but not yet worked on. |
 | In Progress | Issues that are currently being worked on |
 | Review | Issues that are done and have a Pull Request waiting on being reviewed by a maintainer |
 | Testing | Issues that are already merged into dev and are waiting on testing (mainly animations and code) |
