@@ -40,7 +40,7 @@ When working on an Issue please keep the following in mind:
 
 | Column/Status | Description |
 | --- | --- |
-| Backlog | Issues that are not yet assigned to a milestone/release and have lower priority, Maintainers will move these issues into *To Do* once they have priority. Usually those issues listed as planned features in the Roadmap. |
+| Backlog | Issues that are not yet assigned to a milestone/release and have lower priority, Maintainers will move these issues into *To Do* once they have priority. Usually those issues are listed as planned features in the Roadmap. |
 | To Do | Issues that are assigned to a milestone/release but not yet worked on. |
 | In Progress | Issues that are currently being worked on |
 | Review | Issues that are done and have a Pull Request waiting on being reviewed by a maintainer |
