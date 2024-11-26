@@ -119,13 +119,18 @@ If you think there is some feature or code that could be improved please make a 
 With the goal to ensure all contributions are consistent and of the quality we strive for we put together some coding guidelines.
 Each Pull Request will be checked if the coding guidelines are followed, if they are no the pull request will be denied.
 
-#### Coding Style
+#### Source File Basics
 
+#### File Structure
+
+#### Formatting 
+
+#### Naming
 
 #### Comments and Documentation
 
 
-#### Workflow
+### Workflow
 When contributing code follow the following Workflows steps to ensure the integrity of the branching model and issue tracker. 
 
 1. Pick an Issue from the *To Do* Column of the [Issue Tracker](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2/views/1)
