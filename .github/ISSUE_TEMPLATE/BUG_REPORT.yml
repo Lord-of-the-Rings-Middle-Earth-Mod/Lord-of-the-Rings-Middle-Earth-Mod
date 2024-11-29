@@ -64,3 +64,9 @@ body:
       label: "Server Config"
       description: "If you the bug occurs on a server, please provide which configurations where made for the server."
       placeholder: "Example: server.properties"
+  - type: textarea
+    id: further_information
+    attributes:
+      label: "Further Information"
+      description: "If you have any further information you wish to provide."
+      placeholder: "I have already a solution for a fix."

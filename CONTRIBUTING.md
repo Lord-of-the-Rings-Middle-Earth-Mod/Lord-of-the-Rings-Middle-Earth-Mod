@@ -3,6 +3,8 @@
 Before contributing please read the [Code of Conduct](CODE_OF_CONDUCT.md) and make sure you understand it.
 It is also advised to join our [discord](https://discord.com/invite/cQSpXR6bjz), as this is our main communication platform.
 
+Many of the following information is compacted to the most essential information, for a more indepth view with background information check out our [Project Wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/wiki).
+
 | Table of Contents                                                  |
 |:-------------------------------------------------------------------|
 | [Branching and Issues](#branching-and-issues)                      |
@@ -20,7 +22,7 @@ It is also advised to join our [discord](https://discord.com/invite/cQSpXR6bjz),
 We use a branching model based on [GitFlow](https://nvie.com/posts/a-successful-git-branching-model/).
 In most cases you will only come into contact with feature branches, which are branches created from the develop branch.
 When you are done with your work, you create a Pull Request to merge your feature branch into the develop branch.
-Maintainers will check Pull Requests regularly and give feedback on them or merge them.
+Maintainers and Contributors will check Pull Requests regularly and give feedback on them or merge them.
 
 ### Issues
 We use GitHub Issues to track bugs, features and other tasks, all Issues can be seen with their current status on our [Issue Board](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2)
@@ -33,13 +35,13 @@ When working on an Issue please keep the following in mind:
   - `translation/issueNumber-issueName` for translations.
   - `texture-model/issueNumber-issueName` for textures and models.
   - `animation/issueNumber-issueName` for animations.
-- Always create a Pull Request from the branch to the develop branch. The Pull Request should be named `IssueNumber - IssueName` and will be reviewed by a maintainer.
+- Always create a Pull Request from the branch to the develop branch. The Pull Request should be named `IssueNumber - IssueName` and will be reviewed by a maintainer or Contributor.
 - Always link the Issue in the Pull Request and the Pull Request in the Issue.
 
 | Column/Status | Description |
 | --- | --- |
-| Backlog | Issues that are not yet assigned to a milestone/release and have lower priority, Maintainers will move these issues into *To Do* once they have priority. |
-| To Do | Issues that are assigned to a milestone/release but not yet worked on |
+| Backlog | Issues that are not yet assigned to a milestone/release and have lower priority, Maintainers will move these issues into *To Do* once they have priority. Usually those issues are listed as planned features in the Roadmap. |
+| To Do | Issues that are assigned to a milestone/release but not yet worked on. |
 | In Progress | Issues that are currently being worked on |
 | Review | Issues that are done and have a Pull Request waiting on being reviewed by a maintainer |
 | Testing | Issues that are already merged into dev and are waiting on testing (mainly animations and code) |
@@ -119,13 +121,18 @@ If you think there is some feature or code that could be improved please make a 
 With the goal to ensure all contributions are consistent and of the quality we strive for we put together some coding guidelines.
 Each Pull Request will be checked if the coding guidelines are followed, if they are no the pull request will be denied.
 
-#### Coding Style
+#### Source File Basics
 
+#### File Structure
+
+#### Formatting 
+
+#### Naming
 
 #### Comments and Documentation
 
 
-#### Workflow
+### Workflow
 When contributing code follow the following Workflows steps to ensure the integrity of the branching model and issue tracker. 
 
 1. Pick an Issue from the *To Do* Column of the [Issue Tracker](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2/views/1)
