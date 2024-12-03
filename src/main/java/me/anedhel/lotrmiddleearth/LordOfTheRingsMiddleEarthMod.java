@@ -30,7 +30,8 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 	public static final String COPYRIGHT =
 			"LotR ME Mod Copyright (C) 2024\n" + "    Authors are found in the CONTRIBUTORS-File.\n"
 			+ "    This program comes with ABSOLUTELY NO WARRANTY.\n"
-			+ "    This is free software, and you are welcome to redistribute it\n"
+			+ "    This is free software under the GNU General public License."
+			+ "    You are welcome to redistribute it\n"
 			+ "    under certain conditions, described in the LICENSE-File.";
 
 	@Override
