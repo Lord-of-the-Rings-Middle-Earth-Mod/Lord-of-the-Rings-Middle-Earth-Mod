@@ -1,4 +1,5 @@
 # Lord of the Rings Middle Earth Mod
+![LotrModBannerv1](https://github.com/user-attachments/assets/c0394c6c-ad56-4576-b0dd-dabd99106ab7)
 The *Lord of the Rings Middle Earth Mod* (*LotR ME Mod* in short) is a Fabric Minecraft Mod, with the goal of bringing the world of J.R.R. Tolkiens Books into Minecraft, with a focus on the third age. 
 This Mod is an open Source Project and as such welcoming anyone who is wishing to help. 
 
