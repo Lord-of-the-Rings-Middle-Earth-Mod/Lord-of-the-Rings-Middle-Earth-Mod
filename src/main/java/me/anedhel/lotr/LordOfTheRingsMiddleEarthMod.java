@@ -1,3 +1,20 @@
+/*
+ * Copyright (c) 2024-2024
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * lord-of-the-rings-middle-earth is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * lord-of-the-rings-middle-earth is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package me.anedhel.lotr;
 
 import me.anedhel.lotr.block.ModBlocks;
@@ -11,18 +28,21 @@ import me.anedhel.lotr.world.gen.ModWorldGeneration;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.api.ModInitializer;
 
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
+
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
-import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
+
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.util.Identifier;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 
 	public static final String MOD_ID = "lotr";
-    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
 	@Override
 	public void onInitialize() {
@@ -40,12 +60,8 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 
 		addCropsToComposer();
 
-		CustomPortalBuilder.beginPortal()
-				.frameBlock(ModBlocks.BRONZE_BLOCK)
-				.lightWithItem(ModItems.TIN_INGOT)
-				.destDimID(new Identifier(MOD_ID, "arda"))
-				.tintColor(0xc76efa)
-				.registerPortal();
+		CustomPortalBuilder.beginPortal().frameBlock(ModBlocks.BRONZE_BLOCK).lightWithItem(ModItems.TIN_INGOT)
+		                   .destDimID(new Identifier(MOD_ID, "arda")).tintColor(0xc76efa).registerPortal();
 		LOGGER.info("The Lord of the Rings Mod is loaded.");
 	}
 
@@ -71,7 +87,7 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 	 * This Method is used to initialise all WoodTypes to be flammable and the logs to be strippable
 	 */
 	private void initModWoodTypes() {
-		for (ModWoodType woodType : ModWoodType.values()) {
+		for(ModWoodType woodType : ModWoodType.values()) {
 			StrippableBlockRegistry.register(woodType.getLog(), woodType.getStrippedLog());
 			StrippableBlockRegistry.register(woodType.getWood(), woodType.getStrippedWood());
 
