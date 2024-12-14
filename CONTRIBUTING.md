@@ -117,21 +117,6 @@ If you are looking to help code the mod, you can find all features and code chan
 If you are new to coding a mod, open source projects or java in general look for issues tagged with *good first issue*, those issues are good to get started in the project.   
 If you think there is some feature or code that could be improved please make a suggestion and don't just change it, Maintainers will get back to you regarding the suggestion and if needed, will create an issue for the implementation.
 
-### Coding Guidelines
-With the goal to ensure all contributions are consistent and of the quality we strive for we put together some coding guidelines.
-Each Pull Request will be checked if the coding guidelines are followed, if they are no the pull request will be denied.
-
-#### Source File Basics
-
-#### File Structure
-
-#### Formatting 
-
-#### Naming
-
-#### Comments and Documentation
-
-
 ### Workflow
 When contributing code follow the following Workflows steps to ensure the integrity of the branching model and issue tracker. 
 
