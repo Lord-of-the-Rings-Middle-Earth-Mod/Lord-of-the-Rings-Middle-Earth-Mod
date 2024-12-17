@@ -1,0 +1,70 @@
+name: Build and Attach JAR to Linked Issue
+
+on:
+  push:
+    branches:
+      - develop # Trigger nach Merge in develop-Branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v3
+
+      - name: Build JAR
+        run: ./gradlew build
+        # Alternativ: mvn package
+
+      - name: Extract Issue Number from Branch Name
+        id: extract_issue
+        run: |
+          # Ersten Branch aus Merge-Commit extrahieren
+          BRANCH_NAME=$(git log -1 --pretty=%D | grep -o "origin/.*" | cut -d',' -f1 | sed 's/origin\///')
+          echo "Branch Name: $BRANCH_NAME"
+
+          # Issue-Nummer aus Branch-Namen extrahieren (Format: feature/123-beschreibung oder bug/123-beschreibung)
+          ISSUE_NUMBER=$(echo $BRANCH_NAME | grep -oP '(?<=feature/|bug/|hotfix/|enhancement/|improvement/|task/)\d+')
+          
+          if [[ -z "$ISSUE_NUMBER" ]]; then
+            echo "Konnte die Issue-Nummer nicht extrahieren. Branch-Name muss das Format feature/<issue-number>-beschreibung oder bug/<issue-number>-beschreibung haben."
+            exit 1
+          fi
+
+          echo "Extracted Issue Number: $ISSUE_NUMBER"
+          echo "issue_number=$ISSUE_NUMBER" >> $GITHUB_OUTPUT
+
+      - name: Rename and Upload JAR
+        run: |
+          # Umbenennen der .jar-Datei nach dem gewünschten Format
+          JAR_FILE_PATH=$(find build/libs -type f -name '*.jar')
+          JAR_NAME="lotr-me-mod-test-${{ steps.extract_issue.outputs.issue_number }}.jar"
+          mv "$JAR_FILE_PATH" "build/libs/$JAR_NAME"
+
+          # Upload der umbenannten .jar-Datei als Artifact
+          echo "Renaming JAR file to: $JAR_NAME"
+          echo "Uploading $JAR_NAME as an artifact"
+        
+      - name: Upload JAR as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: minecraft-mod-jar
+          path: build/libs/lotr-me-mod-test-${{ steps.extract_issue.outputs.issue_number }}.jar
+
+      - name: Comment on Linked Issue and Attach JAR
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Adding comment to Issue #${{ steps.extract_issue.outputs.issue_number }}"
+          gh issue comment ${{ steps.extract_issue.outputs.issue_number }} \
+          -b "Die aktuelle Mod-Version ist verfügbar :hammer_and_wrench:  
+          Download die JAR-Datei hier: [Run Artifacts](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}/artifacts)."
