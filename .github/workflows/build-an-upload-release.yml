@@ -1,0 +1,63 @@
+name: Build and Upload Release
+
+on:
+  release:
+    types: [created] # Trigger on new Release
+
+jobs:
+  build:
+    name: Build Mod Jar
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write # Permission to upload the .jar-file and attach it to the release
+
+    steps:
+      # 1. Checking out the repository
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      # 2. set up the Java Enviorment
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # 3. Build the project with gradle
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      # 4. Create the Name for the jar and rename the .jar-file
+      - name: Rename Jar File with Mod Name and Version
+        id: rename_jar
+        run: |
+          # Definiere Präfix und Versionsnummer
+          MOD_NAME="LotR ME Mod" # Fester Name der Mod
+          RELEASE_NAME=${{ github.event.release.name }} # Release-Name (z.B. v1.2.3)
+          
+          # Ersetze Leerzeichen und invaliden Zeichen durch Bindestriche
+          SAFE_MOD_NAME=$(echo "$MOD_NAME" | tr ' ' '-')
+          SAFE_RELEASE_NAME=$(echo "$RELEASE_NAME" | tr ' ' '-')
+
+          # Original-Jar-Datei finden
+          ORIGINAL_JAR=$(find ./build/libs -name "*.jar" | head -n 1)
+
+          # Combine Mod-Name + Release-Name für den Dateinamen
+          NEW_JAR_NAME="${SAFE_MOD_NAME}-${SAFE_RELEASE_NAME}.jar"
+
+          echo "Renaming Jar to $NEW_JAR_NAME"
+
+          # Datei umbenennen
+          mv "$ORIGINAL_JAR" "./build/libs/$NEW_JAR_NAME"
+
+          # Pfad speichern für den nächsten Step
+          echo "jar_path=./build/libs/$NEW_JAR_NAME" >> $GITHUB_ENV
+
+      # 5. attach the .jar-file to the release
+      - name: Upload Jar to Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ env.jar_path }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
