@@ -55,15 +55,22 @@ When reporting bugs and suggesting things please use discord if possible. Our di
 The Github options are just a backup option for those without discord. 
 
 ### Bug Reports
-If you have a bug to report, please do so using our discord in the [bug-report channel](https://discord.com/channels/1237739289689985138/1286200697045520405).
-Should you not have discord you can use our Issue Template for Bug Reports.
-Please provide as much Information as you can for bug reports, this helps us fix the bugs.
+When you wish to report a bug, you can do so either in our [bug-report channel](https://discord.com/channels/1237739289689985138/1286200697045520405) on our discord, or using the [bug-report issue template]() here on GitHub.
+Please provide as much and as detailed information as you can.
 
+For further information on how to report a bug check out https://www.chiark.greenend.org.uk/~sgtatham/bugs.html
+
+If you want to know more about the workflow behind a bug-report, you can check out the [wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/wiki/Workflow-Documentation#bug-report).
 ### Suggestions
-If you have a suggestion, please share it on our discord in the [suggestion channel](https://discord.com/channels/1237739289689985138/1283840850144792616).
-Please describe your suggestion as detailed as possible when sharing it.
-If you don´t have discord, you can create a GitHub Discussion to share a suggestion.
+Suggestions can be submitted either on our [discord](https://discord.com/channels/1237739289689985138/1283840850144792616) or via a [GitHub Discussion](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/discussions/categories/ideas-and-suggestions).
 
+Before posting a suggestion, please make sure it isn´t already planned on our [Roadmap](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/blob/master/ROADMAP.md) or has already been posted to [discord](https://discord.com/channels/1237739289689985138/1283840850144792616) or [GitHub](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/discussions/categories/ideas-and-suggestions).
+
+Please give as much context alongside your suggestion as you can and describe it as detailed as possible. That will allow us to understand your idea better without having to ask everything from you first. If you are suggesting something with textures, please provide an example if possible.
+
+For more information on how to properly make a suggestion check out https://nohello.net/en/ and https://xyproblem.info/
+
+You can get more information on the full suggestion workflow on the [wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/wiki/Workflow-Documentation#suggestion).
 ---
 
 ## Translations
