@@ -69,8 +69,8 @@ Before posting a suggestion, please make sure it isn´t already planned on our [
 Please give as much context alongside your suggestion as you can and describe it as detailed as possible. That will allow us to understand your idea better without having to ask everything from you first. If you are suggesting something with textures, please provide an example if possible.
 
 For more information on how to properly make a suggestion check out https://nohello.net/en/ and https://xyproblem.info/
-
 You can get more information on the full suggestion workflow on the [wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/wiki/Workflow-Documentation#suggestion).
+
 ---
 
 ## Translations
