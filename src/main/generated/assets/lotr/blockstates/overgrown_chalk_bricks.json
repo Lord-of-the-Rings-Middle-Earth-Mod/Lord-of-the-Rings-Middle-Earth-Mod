@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "lotr:block/overgrown_chalk_bricks_overgrown"
+      "model": "lotr:block/overgrown_chalk_bricks"
     }
   }
 }

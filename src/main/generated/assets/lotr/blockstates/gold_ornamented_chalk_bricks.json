@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "lotr:block/gold_ornamented_chalk_bricks_gold_ornamented"
+      "model": "lotr:block/gold_ornamented_chalk_bricks"
     }
   }
 }
