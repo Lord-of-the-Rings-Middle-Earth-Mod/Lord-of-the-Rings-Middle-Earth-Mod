@@ -27,9 +27,6 @@ import net.minecraft.util.Identifier;
 
 import java.util.Optional;
 
-import static me.anedhel.lotrmiddleearth.blocks.ModBlocks.TEST_OVERGROWN;
-import static me.anedhel.lotrmiddleearth.blocks.ModBlocks.TEST_OVERGROWN_ORNAMENTED;
-
 public class ModModelProvider extends FabricModelProvider {
 
 	/**
@@ -39,49 +36,71 @@ public class ModModelProvider extends FabricModelProvider {
 	 */
 	public static final Model EXAMPLE_1_OVERLAY = block("example_1_overlay", "_1_overlay", TextureKey.ALL,
 			TextureKey.LAYER1);
+
 	public static final Model EXAMPLE_2_OVERLAYS = block("example_2_overlays", "_2_overlays", TextureKey.ALL,
 			TextureKey.LAYER1, TextureKey.LAYER2);
-	public static final Model GOLD_ORNAMENTED_CHALK_BRICKS_MODEL = block("gold_ornamented_chalk_bricks",
-			"_gold_ornamented",
+
+
+
+	/*I deleted the variant String since it caused the name to be really messy.
+	* I also changed the name to be more universal*/
+	public static final Model CUBE_ALL_OVERLAY = block("cube_all_overlay",
 			TextureKey.ALL,
 			TextureKey.LAYER1);
-	public static final Model OVERGROWN_CHALK_BRICKS = block("overgrown_chalk_bricks", "_overgrown",
-			TextureKey.ALL, TextureKey.LAYER1);
-	public static final Model GOLD_ORNAMENTED_OVERGROWN_CHALK_BRICKS = block("gold_ornamented_overgrown_chalk_bricks",
-			"_gold_ornamented_overgrown", TextureKey.ALL,
-			TextureKey.LAYER1, TextureKey.LAYER2);
+
+	//same thing here
+	public static final Model CUBE_ALL_2_OVERLAYS = block("cube_all_2_overlays",
+			TextureKey.ALL,
+			TextureKey.LAYER1,
+			TextureKey.LAYER2);
 
 	public ModModelProvider(FabricDataOutput output) {
 		super(output);
 	}
 
 	@Override
-	public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHALK);
-		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHALK_BRICKS);
+	//Renamed the blockStateModelGenerator param to be shorter
+	public void generateBlockStateModels(BlockStateModelGenerator bsmg) {
 
-		overgrownBlock(ModBlocks.OVERGROWN_CHALK_BRICKS, overlay1(ModBlocks.OVERGROWN_CHALK_BRICKS,
-				new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overgrown_bricks_overlay")),
-				blockStateModelGenerator);
-		goldOrnamentedBlock(ModBlocks.GOLD_ORNAMENTED_CHALK_BRICKS, overlay1(ModBlocks.GOLD_ORNAMENTED_CHALK_BRICKS,
-				new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/gold_ornamented_brick_overlay")),
-				blockStateModelGenerator);
+		bsmg.registerSimpleCubeAll(ModBlocks.CHALK);
+		bsmg.registerSimpleCubeAll(ModBlocks.CHALK_BRICKS);
+
+		overgrownBlock(ModBlocks.OVERGROWN_CHALK_BRICKS,
+				overlay1(
+						//You have to change this block to the "base" block
+						ModBlocks.CHALK_BRICKS,
+						new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overgrown_bricks_overlay")
+				),
+				bsmg);
+
+		ornamentedBlock(ModBlocks.GOLD_ORNAMENTED_CHALK_BRICKS,
+				overlay1(
+						ModBlocks.CHALK_BRICKS,
+						new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/gold_ornamented_brick_overlay")
+				),
+				bsmg);
+
 		overgrownOrnamentedBlock(ModBlocks.GOLD_ORNAMENTED_OVERGROWN_CHALK_BRICKS,
-				overlays2(ModBlocks.GOLD_ORNAMENTED_OVERGROWN_CHALK_BRICKS,
+				overlays2(
+						ModBlocks.CHALK_BRICKS,
 						new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/gold_ornamented_brick_overlay"),
-						new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overgrown_bricks_overlay")),
-				blockStateModelGenerator);
+						new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overgrown_bricks_overlay")
+				),
+				bsmg);
 
-		Test.overgrownBlock(
-				TEST_OVERGROWN,
-				overlay1(TEST_OVERGROWN, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overgrown_bricks_overlay")),
-				blockStateModelGenerator);
-		Test.overgrownOrnamentedBlock(
-				TEST_OVERGROWN_ORNAMENTED,
-				overlays2(TEST_OVERGROWN_ORNAMENTED, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block"
-								+ "/gold_ornamented_brick_overlay"),
-						Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overgrown_bricks_overlay")),
-				blockStateModelGenerator);
+		Test.overgrownBlock(ModBlocks.TEST_OVERGROWN,
+				overlay1(
+						ModBlocks.CHALK,
+						new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overgrown_bricks_overlay")
+				),
+				bsmg);
+		Test.overgrownOrnamentedBlock(ModBlocks.TEST_OVERGROWN_ORNAMENTED,
+				overlays2(
+						ModBlocks.CHALK,
+						new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/gold_ornamented_brick_overlay"),
+						new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overgrown_bricks_overlay")
+				),
+				bsmg);
 	}
 
 	@Override
@@ -106,7 +125,7 @@ public class ModModelProvider extends FabricModelProvider {
 	 * 		/test" }</code> in the generated JSON
 	 */
 	private static Model block(String parent, String variant, TextureKey... requiredTextureKeys) {
-		return new Model(Optional.of(Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent)), Optional.of(variant),
+		return new Model(Optional.of(new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent)), Optional.of(variant),
 				requiredTextureKeys);
 	}
 
@@ -114,7 +133,7 @@ public class ModModelProvider extends FabricModelProvider {
 	 * This is technically the same, just without the variant => <code>"test_overgrown.json"</code><br>
 	 */
 	private static Model block(String parent, TextureKey... requiredTextureKeys) {
-		return new Model(Optional.of(Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent)), Optional.empty(),
+		return new Model(Optional.of(new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent)), Optional.empty(),
 				requiredTextureKeys);
 	}
 
@@ -150,19 +169,20 @@ public class ModModelProvider extends FabricModelProvider {
 	 * @see BlockStateModelGenerator
 	 */
 	public static void overgrownBlock(Block block, TextureMap textureMap, BlockStateModelGenerator bsmg) {
-		Identifier identifier = OVERGROWN_CHALK_BRICKS.upload(block, textureMap, bsmg.modelCollector);
+		//I merged the two models into one since they were identical. You don't need two separate models for two separate blocks.
+		Identifier identifier = CUBE_ALL_OVERLAY.upload(block, textureMap, bsmg.modelCollector);
 		bsmg.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, identifier));
 		bsmg.registerParentedItemModel(block, identifier);
 	}
 
-	public static void goldOrnamentedBlock(Block block, TextureMap textureMap, BlockStateModelGenerator bsmg) {
-		Identifier identifier = GOLD_ORNAMENTED_CHALK_BRICKS_MODEL.upload(block, textureMap, bsmg.modelCollector);
+	public static void ornamentedBlock(Block block, TextureMap textureMap, BlockStateModelGenerator bsmg) {
+		Identifier identifier = CUBE_ALL_OVERLAY.upload(block, textureMap, bsmg.modelCollector);
 		bsmg.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, identifier));
 		bsmg.registerParentedItemModel(block, identifier);
 	}
 
 	public static void overgrownOrnamentedBlock(Block block, TextureMap textureMap, BlockStateModelGenerator bsmg) {
-		Identifier identifier = GOLD_ORNAMENTED_OVERGROWN_CHALK_BRICKS.upload(block, textureMap, bsmg.modelCollector);
+		Identifier identifier = CUBE_ALL_2_OVERLAYS.upload(block, textureMap, bsmg.modelCollector);
 		bsmg.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, identifier));
 		bsmg.registerParentedItemModel(block, identifier);
 	}

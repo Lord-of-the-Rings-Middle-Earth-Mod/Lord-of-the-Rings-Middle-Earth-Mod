@@ -1,7 +1,7 @@
 {
   "parent": "lotr:block/example_2_overlays",
   "textures": {
-    "all": "lotr:block/test_overgrown_ornamented",
+    "all": "lotr:block/chalk",
     "layer1": "lotr:block/gold_ornamented_brick_overlay",
     "layer2": "lotr:block/overgrown_bricks_overlay"
   }
