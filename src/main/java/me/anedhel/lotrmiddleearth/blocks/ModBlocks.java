@@ -20,6 +20,7 @@ package me.anedhel.lotrmiddleearth.blocks;
 import me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthMod;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
@@ -31,18 +32,17 @@ import net.minecraft.util.Identifier;
 public class ModBlocks {
 
 	public static final Block CHALK = registerBlock("chalk", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-
 	public static final Block CHALK_BRICKS = registerBlock("chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
-
 	public static final Block GOLD_ORNAMENTED_CHALK_BRICKS = registerBlock("gold_ornamented_chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
-
-	public static final Block MOSSY_CHALK_BRICKS = registerBlock("mossy_chalk_bricks",
+	public static final Block OVERGROWN_CHALK_BRICKS = registerBlock("overgrown_chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+	public static final Block GOLD_ORNAMENTED_OVERGROWN_CHALK_BRICKS = registerBlock(
+			"gold_ornamented_overgrown_chalk_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
 
-	public static final Block GOLD_ORNAMENTED_MOSSY_CHALK_BRICKS = registerBlock("gold_ornamented_mossy_chalk_bricks",
-			new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+	public static final Block TEST_OVERGROWN = registerBlock("test_overgrown", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block TEST_OVERGROWN_ORNAMENTED = registerBlock("test_overgrown_ornamented", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 
 	private static Block registerBlock(String name, Block block) {
 		registerBlockItem(name, block);

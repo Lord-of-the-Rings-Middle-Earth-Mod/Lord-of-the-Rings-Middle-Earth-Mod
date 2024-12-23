@@ -1,0 +1,7 @@
+{
+  "parent": "lotr:block/overgrown_chalk_bricks",
+  "textures": {
+    "all": "lotr:block/overgrown_chalk_bricks",
+    "layer1": "lotr:block/overgrown_bricks_overlay"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "lotr:block/gold_ornamented_overgrown_chalk_bricks",
+  "textures": {
+    "all": "lotr:block/gold_ornamented_overgrown_chalk_bricks",
+    "layer1": "lotr:block/gold_ornamented_brick_overlay",
+    "layer2": "lotr:block/overgrown_bricks_overlay"
+  }
+}

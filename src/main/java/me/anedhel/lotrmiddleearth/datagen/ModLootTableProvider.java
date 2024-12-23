@@ -17,6 +17,22 @@
 
 package me.anedhel.lotrmiddleearth.datagen;
 
-public class ModLootTableProvider {
+import me.anedhel.lotrmiddleearth.blocks.ModBlocks;
+import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 
+public class ModLootTableProvider extends FabricBlockLootTableProvider {
+
+	public ModLootTableProvider(FabricDataOutput dataOutput) {
+		super(dataOutput);
+	}
+
+	@Override
+	public void generate() {
+		addDrop(ModBlocks.CHALK);
+		addDrop(ModBlocks.CHALK_BRICKS);
+		addDrop(ModBlocks.OVERGROWN_CHALK_BRICKS);
+		addDrop(ModBlocks.GOLD_ORNAMENTED_CHALK_BRICKS);
+		addDrop(ModBlocks.GOLD_ORNAMENTED_OVERGROWN_CHALK_BRICKS);
+	}
 }

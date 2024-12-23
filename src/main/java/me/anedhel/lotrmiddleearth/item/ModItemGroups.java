@@ -31,9 +31,15 @@ public class ModItemGroups {
 
 	public static final ItemGroup testGroup = Registry.register(Registries.ITEM_GROUP,
 			new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "test_group"),
-			FabricItemGroup.builder().displayName(Text.translatable("itemgroup.ruby"))
+			FabricItemGroup.builder().displayName(Text.translatable("test_group"))
 					.icon(() -> new ItemStack(ModBlocks.CHALK)).entries((displayContext, entries) -> {
 						entries.add(new ItemStack(ModBlocks.CHALK));
+						entries.add(new ItemStack(ModBlocks.CHALK_BRICKS));
+						entries.add(new ItemStack(ModBlocks.GOLD_ORNAMENTED_CHALK_BRICKS));
+						entries.add(new ItemStack(ModBlocks.OVERGROWN_CHALK_BRICKS));
+						entries.add(new ItemStack(ModBlocks.GOLD_ORNAMENTED_OVERGROWN_CHALK_BRICKS));
+						entries.add(new ItemStack(ModBlocks.TEST_OVERGROWN));
+						entries.add(new ItemStack(ModBlocks.TEST_OVERGROWN_ORNAMENTED));
 					}).build());
 
 	/**
