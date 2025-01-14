@@ -23,6 +23,7 @@ We use a branching model based on [GitFlow](https://nvie.com/posts/a-successful-
 In most cases you will only come into contact with feature branches, which are branches created from the develop branch.
 When you are done with your work, you create a Pull Request to merge your feature branch into the develop branch.
 Maintainers and Contributors will check Pull Requests regularly and give feedback on them or merge them.
+For a more in-depth guide on our branching model, check out the [wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/wiki/Workflow-Documentation#branching).
 
 ### Issues
 We use GitHub Issues to track bugs, features and other tasks, all Issues can be seen with their current status on our [Issue Board](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2)
