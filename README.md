@@ -73,6 +73,8 @@ Apart from the above roles, Moderators are responsible for making sure the Commu
 
 ### Moderators
 The *LotR ME Mod* has the following Moderators:
+- Anedhel (Moritz Rohleder) -> Lead Maintainer
+- Ano_Jedt -> Maintainer
 
 #### How to become a Moderator
 When we are looking for new Moderators we will announce it on our discord and ask for applications.
@@ -80,7 +82,8 @@ Within those applications we are looking for the following:
 - Motivation and experience
 - Understanding of Community philosophy and goals
 - Behavior in the Community
-- Activity within the Community, especially in the chats
+- Activity within the Community, especially within the chats
+- Having the role of a Contributor or be eligible to become one
 
 ### Contributors
 A list of all Contributors can be found [here](CONTRIBUTORS.md).
@@ -91,7 +94,7 @@ Contributors can be active in all areas of the Mod where we look for [contributi
 Contributors are not chosen by application, but by activity and contribution.
 When the Maintainers notice a high level of activity and contribution from a user, they will contact said user in order to start the acceptance process.
 In order to be accepted as Contributor maintainers will check the following:
-- Commit frequency and Quality
+- Contribution frequency and Quality
 - Behavior in the Community
 - Understanding of Community philosophy and goals
 - Motivation and experience
