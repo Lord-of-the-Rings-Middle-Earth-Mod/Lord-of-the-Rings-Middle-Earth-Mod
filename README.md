@@ -73,8 +73,6 @@ Apart from the above roles, Moderators are responsible for making sure the Commu
 
 ### Moderators
 The *LotR ME Mod* has the following Moderators:
-- Anedhel (Moritz Rohleder) -> Lead Maintainer
-- Ano_Jedt -> Maintainer
 
 #### How to become a Moderator
 When we are looking for new Moderators we will announce it on our discord and ask for applications.
@@ -83,7 +81,6 @@ Within those applications we are looking for the following:
 - Understanding of Community philosophy and goals
 - Behavior in the Community
 - Activity within the Community, especially within the chats
-- Having the role of a Contributor or be eligible to become one
 
 ### Contributors
 A list of all Contributors can be found [here](CONTRIBUTORS.md).
