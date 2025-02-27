@@ -25,17 +25,13 @@ import me.anedhel.lotr.entity.custom.HobbitEntity;
 import me.anedhel.lotr.item.ModItemGroups;
 import me.anedhel.lotr.item.ModItems;
 import me.anedhel.lotr.world.gen.ModWorldGeneration;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.api.ModInitializer;
-
-import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
-
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
-
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.util.Identifier;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -58,7 +54,7 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 
 		initModWoodTypes();
 
-		addCropsToComposer();
+		addCropsToComposter();
 
 		CustomPortalBuilder.beginPortal().frameBlock(ModBlocks.BRONZE_BLOCK).lightWithItem(ModItems.TIN_INGOT)
 		                   .destDimID(new Identifier(MOD_ID, "arda")).tintColor(0xc76efa).registerPortal();
@@ -68,7 +64,7 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 	/**
 	 * In this Method compostable ModCrops and ModFlowers are defined
 	 */
-	private void addCropsToComposer() {
+	private void addCropsToComposter() {
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.WILD_BEETROOT, 0.4f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.WILD_CARROT, 0.4f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.WILD_POTATO, 0.4f);
