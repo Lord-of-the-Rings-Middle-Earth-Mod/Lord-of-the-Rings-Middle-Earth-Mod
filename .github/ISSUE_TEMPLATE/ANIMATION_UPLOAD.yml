@@ -1,0 +1,34 @@
+name: Animation Contribution
+description: Create a animation contribution issue, so we can work on adding the animation to the mod.
+projects:
+  - "LotR Mod Issue Board"
+title: "[Animation] "
+labels:
+  - "animation"
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you for submitting a animation contribution! 
+      Please fill out the following information for the issue, that will help with the Pull Request later on."
+  - type: input
+    id: texture
+    attributes:
+      label: "Animation"
+      description: "Which animation did you create/edit?"
+      placeholder: "Example: Swimming Animation"
+    validations:
+      required: true
+  - type: input
+    id: mob
+    attributes:
+      label: "Mob"
+      description: "For which mob is the animation?"
+      placeholder: "Example: Hobbit"
+    validations:
+      required: true
+  - type: textarea
+    id: other
+    attributes:
+      label: "Additional Information"
+      description: "Please provide any additional information you think is necessary."
+      placeholder: "Example: I created a new animation for the Hobbit, but I would like to see it added to just the chilling Hobbit variant."
