@@ -155,9 +155,37 @@ public class ModModelProvider extends FabricModelProvider {
                     BlockStateModelGenerator.BlockTexturePool cobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbled());
                     cobbledPool.family(stoneType.getCobbledFamily());
                 }
+                if (stoneType.getSmooth() != null) {
+                    blockStateModelGenerator.registerSimpleCubeAll(stoneType.getSmooth());
+                }
+                if (stoneType.getSmoothSlab() != null) {
+                    //ToDo: Model for Smooth Stone Slab
+                }
                 if (stoneType.getBrick() != null) {
                     BlockStateModelGenerator.BlockTexturePool bricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getBrick());
                     bricksPool.family(stoneType.getBrickFamily());
+                }
+                if (stoneType.getTiles() != null) {
+                    BlockStateModelGenerator.BlockTexturePool tilesPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getTiles());
+                    tilesPool.family(stoneType.getTilesFamily());
+                }
+                if (stoneType.getCobbledBrick() != null) {
+                    BlockStateModelGenerator.BlockTexturePool cobbledBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbledBrick());
+                    cobbledBricksPool.family(stoneType.getCobbledBrickFamily());
+                }
+                if (stoneType.getPillar() != null) {
+                    //ToDo: Model for Pillar
+                }
+                if (stoneType.getPillarSlab() != null) {
+                    //ToDo: Model for Pillar Slab
+                }
+                if (stoneType.getPavement() != null) {
+                    BlockStateModelGenerator.BlockTexturePool pavementPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getPavement());
+                    pavementPool.family(stoneType.getPavementFamily());
+                }
+                if (stoneType.getFancyBricks() != null) {
+                    BlockStateModelGenerator.BlockTexturePool fancyBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getFancyBricks());
+                    fancyBricksPool.family(stoneType.getFancyBricksFamily());
                 }
             }
         }

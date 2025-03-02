@@ -81,12 +81,47 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 pickaxeTag.add(stoneType.getCobbledButton());
                 pickaxeTag.add(stoneType.getCobbledPressurePlate());
             }
+            if (stoneType.getSmooth() != null) {
+                pickaxeTag.add(stoneType.getSmooth());
+                pickaxeTag.add(stoneType.getSmoothSlab());
+            }
             if (stoneType.getBrick() != null) {
                 pickaxeTag.add(stoneType.getBrick());
                 pickaxeTag.add(stoneType.getBrickStairs());
                 pickaxeTag.add(stoneType.getBrickSlab());
                 pickaxeTag.add(stoneType.getBrickWall());
                 wallTag.add(stoneType.getBrickWall());
+                pickaxeTag.add(stoneType.getChiseledBrick());
+            }
+            if (stoneType.getTiles() != null) {
+                pickaxeTag.add(stoneType.getTiles());
+                pickaxeTag.add(stoneType.getTilesStairs());
+                pickaxeTag.add(stoneType.getTilesSlab());
+                pickaxeTag.add(stoneType.getTilesWall());
+                wallTag.add(stoneType.getTilesWall());
+            }
+            if (stoneType.getCobbledBrick() != null) {
+                pickaxeTag.add(stoneType.getCobbledBrick());
+                pickaxeTag.add(stoneType.getCobbledBrickStairs());
+                pickaxeTag.add(stoneType.getCobbledBrickSlab());
+                pickaxeTag.add(stoneType.getCobbledBrickWall());
+                wallTag.add(stoneType.getCobbledBrickWall());
+            }
+            if (stoneType.getPillar() != null) {
+                pickaxeTag.add(stoneType.getPillar());
+                pickaxeTag.add(stoneType.getPillarSlab());
+            }
+            if (stoneType.getPavement() != null) {
+                pickaxeTag.add(stoneType.getPavement());
+                pickaxeTag.add(stoneType.getPavementStairs());
+                pickaxeTag.add(stoneType.getPavementSlab());
+            }
+            if (stoneType.getFancyBricks() != null) {
+                pickaxeTag.add(stoneType.getFancyBricks());
+                pickaxeTag.add(stoneType.getFancyBricksStairs());
+                pickaxeTag.add(stoneType.getFancyBricksSlab());
+                pickaxeTag.add(stoneType.getFancyBricksWall());
+                wallTag.add(stoneType.getFancyBricksWall());
             }
         }
     }

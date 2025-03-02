@@ -143,11 +143,43 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 addDrop(stoneType.getCobbledButton());
                 addDrop(stoneType.getCobbledPressurePlate());
             }
+            if (stoneType.getSmooth() != null) {
+                addDrop(stoneType.getSmooth());
+                addDrop(stoneType.getSmoothSlab(), slabDrops(stoneType.getSmoothSlab()));
+            }
             if (stoneType.getBrick() != null) {
                 addDrop(stoneType.getBrick());
                 addDrop(stoneType.getBrickStairs());
                 addDrop(stoneType.getBrickSlab(), slabDrops(stoneType.getBrickSlab()));
                 addDrop(stoneType.getBrickWall());
+                addDrop(stoneType.getChiseledBrick());
+            }
+            if (stoneType.getTiles() != null) {
+                addDrop(stoneType.getTiles());
+                addDrop(stoneType.getTilesStairs());
+                addDrop(stoneType.getTilesSlab(), slabDrops(stoneType.getTilesSlab()));
+                addDrop(stoneType.getTilesWall());
+            }
+            if (stoneType.getCobbledBrick() != null) {
+                addDrop(stoneType.getCobbledBrick());
+                addDrop(stoneType.getCobbledBrickStairs());
+                addDrop(stoneType.getCobbledBrickSlab(), slabDrops(stoneType.getCobbledBrickSlab()));
+                addDrop(stoneType.getCobbledBrickWall());
+            }
+            if (stoneType.getPillar() != null) {
+                addDrop(stoneType.getPillar());
+                addDrop(stoneType.getPillarSlab(), slabDrops(stoneType.getPillarSlab()));
+            }
+            if (stoneType.getPavement() != null) {
+                addDrop(stoneType.getPavement());
+                addDrop(stoneType.getPavementStairs());
+                addDrop(stoneType.getPavementSlab(), slabDrops(stoneType.getPavementSlab()));
+            }
+            if (stoneType.getFancyBricks() != null) {
+                addDrop(stoneType.getFancyBricks());
+                addDrop(stoneType.getFancyBricksStairs());
+                addDrop(stoneType.getFancyBricksSlab(), slabDrops(stoneType.getFancyBricksSlab()));
+                addDrop(stoneType.getFancyBricksWall());
             }
         }
 
