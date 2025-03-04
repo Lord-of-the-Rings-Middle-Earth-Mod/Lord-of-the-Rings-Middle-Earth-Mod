@@ -1,5 +1,6 @@
 package me.anedhel.lotr.datagen;
 
+import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModStoneType;
@@ -11,10 +12,9 @@ import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Model;
-import net.minecraft.data.client.Models;
+import net.minecraft.block.Block;
+import net.minecraft.data.client.*;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
@@ -155,11 +155,8 @@ public class ModModelProvider extends FabricModelProvider {
                     BlockStateModelGenerator.BlockTexturePool cobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbled());
                     cobbledPool.family(stoneType.getCobbledFamily());
                 }
-                if (stoneType.getSmooth() != null) {
-                    blockStateModelGenerator.registerSimpleCubeAll(stoneType.getSmooth());
-                }
-                if (stoneType.getSmoothSlab() != null) {
-                    //ToDo: Model for Smooth Stone Slab
+                if (stoneType.getSmooth() != null && stoneType.getSmoothSlab() != null) {
+                    registerSmoothStone(blockStateModelGenerator, stoneType.getSmooth(), stoneType.getSmoothSlab());
                 }
                 if (stoneType.getBrick() != null) {
                     BlockStateModelGenerator.BlockTexturePool bricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getBrick());
@@ -180,8 +177,12 @@ public class ModModelProvider extends FabricModelProvider {
                     //ToDo: Model for Pillar Slab
                 }
                 if (stoneType.getPavement() != null) {
-                    BlockStateModelGenerator.BlockTexturePool pavementPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getPavement());
-                    pavementPool.family(stoneType.getPavementFamily());
+                    String topTexture = stoneType.getPavement().getTranslationKey()
+                            .substring(stoneType.getPavement().getTranslationKey().indexOf('.')+6);
+                    String sideTexture = stoneType.getTiles().getTranslationKey()
+                            .substring(stoneType.getTiles().getTranslationKey().indexOf('.')+6);
+
+                    registerPavement(blockStateModelGenerator, stoneType.getPavementFamily(), topTexture, sideTexture);
                 }
                 if (stoneType.getFancyBricks() != null) {
                     BlockStateModelGenerator.BlockTexturePool fancyBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getFancyBricks());
@@ -252,4 +253,67 @@ public class ModModelProvider extends FabricModelProvider {
             }
         }
     }
+
+    private void registerPavement (BlockStateModelGenerator blockStateModelGenerator,
+            BlockFamily blockFamily,
+            String topTexture,
+            String sideTexture) {
+
+        TextureMap textureMap = new TextureMap()
+                .put(TextureKey.TOP, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture))
+                .put(TextureKey.BOTTOM, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture));
+
+        blockStateModelGenerator.registerSingleton(blockFamily.getBaseBlock(), textureMap, Models.CUBE_TOP);
+
+        Identifier innerStairModelId = Models.INNER_STAIRS.upload(blockFamily.getVariant(BlockFamily.Variant.STAIRS), textureMap,
+                blockStateModelGenerator.modelCollector);
+        Identifier regularStairModelId = Models.STAIRS.upload(blockFamily.getVariant(BlockFamily.Variant.STAIRS), textureMap,
+                blockStateModelGenerator.modelCollector);
+        Identifier outerStairModelId = Models.OUTER_STAIRS.upload(blockFamily.getVariant(BlockFamily.Variant.STAIRS), textureMap,
+                blockStateModelGenerator.modelCollector);
+
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
+                .createStairsBlockState(blockFamily.getVariant(BlockFamily.Variant.STAIRS),
+                innerStairModelId, regularStairModelId, outerStairModelId));
+
+        Identifier slabModelId = Models.SLAB.upload(blockFamily.getVariant(BlockFamily.Variant.SLAB), textureMap,
+                blockStateModelGenerator.modelCollector);
+        Identifier slabTopModelId = Models.SLAB_TOP.upload(blockFamily.getVariant(BlockFamily.Variant.SLAB), textureMap,
+                blockStateModelGenerator.modelCollector);
+        Identifier doubleSlabModelId = Models.CUBE_TOP.uploadWithoutVariant(blockFamily.getVariant(
+                        BlockFamily.Variant.SLAB), "_double",
+                textureMap, blockStateModelGenerator.modelCollector);
+
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
+                .createSlabBlockState(blockFamily.getVariant(BlockFamily.Variant.SLAB),
+                slabModelId, slabTopModelId, doubleSlabModelId));
+    }
+
+    private void registerSmoothStone(BlockStateModelGenerator blockStateModelGenerator, Block smoothStone, Block smoothStoneSlab) {
+        TextureMap textureMap = TextureMap.all(smoothStone);
+        TextureMap textureMap2 = TextureMap.sideEnd(TextureMap.getSubId(smoothStoneSlab, "_side"),
+                textureMap.getTexture(TextureKey.TOP));
+        Identifier identifier = Models.SLAB.upload(smoothStoneSlab, textureMap2, blockStateModelGenerator.modelCollector);
+        Identifier identifier2 = Models.SLAB_TOP.upload(smoothStoneSlab, textureMap2, blockStateModelGenerator.modelCollector);
+        Identifier identifier3 = Models.CUBE_COLUMN.uploadWithoutVariant(smoothStoneSlab, "_double", textureMap2,
+                blockStateModelGenerator.modelCollector);
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSlabBlockState(smoothStoneSlab, identifier,
+                identifier2,
+                identifier3));
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(smoothStone,
+                Models.CUBE_ALL.upload(smoothStone, textureMap, blockStateModelGenerator.modelCollector)));
+    }
+
+    /*private void registerPillarBlock(BlockStateModelGenerator blockStateModelGenerator, Block pillar,
+            Block pillarSlab) {
+        Identifier singlePillarIdentifier = TexturedModel.CUBE_COLUMN.upload(pillar, blockStateModelGenerator.modelCollector);
+        Identifier basePillarIdentifier = TexturedModel.CUBE_COLUMN.upload(pillar, blockStateModelGenerator.modelCollector);
+        Identifier middlePillarIdentifier = TexturedModel.CUBE_COLUMN.upload(pillar, blockStateModelGenerator.modelCollector);
+        Identifier topPillarIdentifier = TexturedModel.CUBE_COLUMN.upload(pillar, blockStateModelGenerator.modelCollector);
+
+        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(pillar)
+                .coordinate(BlockStateVariantMap.create(ModPillarBlock.PILLAR_TYPE).register()));
+
+    }*/
 }
