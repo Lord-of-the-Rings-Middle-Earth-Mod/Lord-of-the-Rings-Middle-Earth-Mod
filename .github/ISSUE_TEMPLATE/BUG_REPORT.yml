@@ -3,8 +3,7 @@ description: Create a bug report issue, so we can work on resolving the issue.
 projects:
   - "LotR Mod Issue Board"
 title: "[Bug Report] "
-labels:
-  - "bug"
+type: "Bug"
 body:
   - type: markdown
     attributes:
