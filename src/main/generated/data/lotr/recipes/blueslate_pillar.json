@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:blueslate"
+    }
+  },
+  "pattern": [
+    "#",
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 3,
+    "item": "lotr:blueslate_pillar"
+  },
+  "show_notification": true
+}

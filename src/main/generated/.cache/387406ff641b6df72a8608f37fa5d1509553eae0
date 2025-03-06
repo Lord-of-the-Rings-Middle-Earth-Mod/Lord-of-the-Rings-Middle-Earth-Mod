@@ -1,4 +1,4 @@
-// 1.20.2	2025-03-04T10:43:49.6431806	Lord of the Rings Middle Earth/Block Loot Tables
+// 1.20.2	2025-03-06T12:33:08.7481794	Lord of the Rings Middle Earth/Block Loot Tables
 efcfcde20984809a067f4858650bc224b0010ef3 data\lotr\loot_tables\blocks\cobbled_blueslate_button.json
 8faf717001b3d473cc4ecb2487570999431f9559 data\lotr\loot_tables\blocks\potted_wild_potato.json
 e384d465a40bebdc0d7c2dcb6f5978ba75ad93ba data\lotr\loot_tables\blocks\potted_wild_lettuce.json
@@ -37,8 +37,8 @@ d26dc27beb6b6367ddb31f2d9a902a7b97b7edcd data\lotr\loot_tables\blocks\fancy_blue
 c341b2cf07e5074e414edb7538be7bbc9d036cf1 data\lotr\loot_tables\blocks\pine_planks_slab.json
 f6be16653ff23bd78cc0325907692bf10752ac4f data\lotr\loot_tables\blocks\stripped_pine_stairs.json
 b4cfddd241ea1583563ad79c50f130a14621ae5b data\lotr\loot_tables\blocks\blueslate_pavement_slab.json
-c8fd91669076469e47a368ea1b73e05a7143c78a data\lotr\loot_tables\blocks\wild_carrot.json
 f6247bc6d1f2c0dac5de7111b464f024ff253d50 data\lotr\loot_tables\blocks\potted_wild_tomato.json
+c8fd91669076469e47a368ea1b73e05a7143c78a data\lotr\loot_tables\blocks\wild_carrot.json
 e19db470d2d67d396bb6dd533e6ebc27f6267d56 data\lotr\loot_tables\blocks\blueslate_brick_stairs.json
 172f90d4f7d2c3fb2f16af0e6703bec1b8e5d0cc data\lotr\loot_tables\blocks\cobbled_blueslate_bricks_slab.json
 4659601c3431854014da355c0a7ca5c99d69a690 data\lotr\loot_tables\blocks\blueslate_wall.json

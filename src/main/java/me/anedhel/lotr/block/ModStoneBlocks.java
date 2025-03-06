@@ -1,6 +1,7 @@
 package me.anedhel.lotr.block;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
+import me.anedhel.lotr.block.custom.ModPillarBlock;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -278,7 +279,7 @@ public class ModStoneBlocks {
             .group("stone").unlockCriterionName("has_cobbled_brick").build();
 
     public static final Block BLUESLATE_PILLAR = registerBlock("blueslate_pillar",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+            new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
     public static final Block BLUESLATE_PILLAR_SLAB = registerBlock("blueslate_pillar_slab",
             new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
 

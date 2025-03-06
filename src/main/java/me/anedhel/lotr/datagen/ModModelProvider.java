@@ -5,6 +5,8 @@ import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.block.ModWoodType;
+import me.anedhel.lotr.block.custom.ModPillarBlock;
+import me.anedhel.lotr.block.custom.ModPillarType;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
 import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
@@ -25,6 +27,15 @@ import java.util.Optional;
  * This class is used to generate all models the mod provides.
  */
 public class ModModelProvider extends FabricModelProvider {
+
+    public static final Model PILLAR = new Model(Optional.of(new Identifier("minecraft", "block/" + "cube_column")),
+                    Optional.empty() ,TextureKey.END, TextureKey.SIDE);
+    public static final Model PILLAR_TOP = new Model(Optional.of(new Identifier("minecraft", "block/" + "cube_column")),
+            Optional.of("_top") ,TextureKey.END, TextureKey.SIDE);
+    public static final Model PILLAR_MIDDLE = new Model(Optional.of(new Identifier("minecraft", "block/" +
+            "cube_column")), Optional.of("_middle") ,TextureKey.END, TextureKey.SIDE);
+    public static final Model PILLAR_BASE = new Model(Optional.of(new Identifier("minecraft", "block/" + "cube_column")),
+            Optional.of("_base") ,TextureKey.END, TextureKey.SIDE);
 
     public ModModelProvider(FabricDataOutput output) {
         super(output);
@@ -170,11 +181,12 @@ public class ModModelProvider extends FabricModelProvider {
                     BlockStateModelGenerator.BlockTexturePool cobbledBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbledBrick());
                     cobbledBricksPool.family(stoneType.getCobbledBrickFamily());
                 }
-                if (stoneType.getPillar() != null) {
-                    //ToDo: Model for Pillar
-                }
-                if (stoneType.getPillarSlab() != null) {
-                    //ToDo: Model for Pillar Slab
+                if (stoneType.getPillar() != null && stoneType.getPillarSlab() != null) {
+                    String topTexture = stoneType.getPillar().getTranslationKey()
+                            .substring(stoneType.getPillar().getTranslationKey().indexOf('.')+6).concat("_end");
+                    String sideTexture = stoneType.getPillar().getTranslationKey()
+                            .substring(stoneType.getPillar().getTranslationKey().indexOf('.')+6).concat("_side");
+                    registerPillarBlock(blockStateModelGenerator, stoneType.getPillar(), stoneType.getPillarSlab(), topTexture, sideTexture);
                 }
                 if (stoneType.getPavement() != null) {
                     String topTexture = stoneType.getPavement().getTranslationKey()
@@ -305,15 +317,41 @@ public class ModModelProvider extends FabricModelProvider {
                 Models.CUBE_ALL.upload(smoothStone, textureMap, blockStateModelGenerator.modelCollector)));
     }
 
-    /*private void registerPillarBlock(BlockStateModelGenerator blockStateModelGenerator, Block pillar,
-            Block pillarSlab) {
-        Identifier singlePillarIdentifier = TexturedModel.CUBE_COLUMN.upload(pillar, blockStateModelGenerator.modelCollector);
-        Identifier basePillarIdentifier = TexturedModel.CUBE_COLUMN.upload(pillar, blockStateModelGenerator.modelCollector);
-        Identifier middlePillarIdentifier = TexturedModel.CUBE_COLUMN.upload(pillar, blockStateModelGenerator.modelCollector);
-        Identifier topPillarIdentifier = TexturedModel.CUBE_COLUMN.upload(pillar, blockStateModelGenerator.modelCollector);
+    private void registerPillarBlock(BlockStateModelGenerator blockStateModelGenerator, Block pillar,
+            Block pillarSlab, String topTexture, String sideTexture) {
+        TextureMap singlePillarTM = new TextureMap()
+                .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
+                        "_single"));
+        TextureMap basePillarTM = new TextureMap()
+                .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
+                        "_base"));
+        TextureMap middlePillarTM = new TextureMap()
+                .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
+                        "_middle"));
+        TextureMap topPillarTM = new TextureMap()
+                .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
+                        "_top"));
+        Identifier singlePillarIdentifier = PILLAR.upload(pillar, singlePillarTM, blockStateModelGenerator.modelCollector);
+        Identifier basePillarIdentifier = PILLAR_BASE.upload(pillar, basePillarTM,
+                blockStateModelGenerator.modelCollector);
+        Identifier middlePillarIdentifier = PILLAR_MIDDLE.upload(pillar, middlePillarTM,
+                blockStateModelGenerator.modelCollector);
+        Identifier topPillarIdentifier = PILLAR_TOP.upload(pillar, topPillarTM, blockStateModelGenerator.modelCollector);
 
-        blockStateModelGenerator.blockStateCollector.accept(VariantsBlockStateSupplier.create(pillar)
-                .coordinate(BlockStateVariantMap.create(ModPillarBlock.PILLAR_TYPE).register()));
+        blockStateModelGenerator.blockStateCollector.accept(createPillarBlockState(pillar, singlePillarIdentifier, topPillarIdentifier,
+                middlePillarIdentifier, basePillarIdentifier));
+    }
 
-    }*/
+    private BlockStateSupplier createPillarBlockState(Block pillar, Identifier singlePillarIdentifier, Identifier topPillarIdentifier,
+            Identifier middlePillarIdentifier, Identifier basePillarIdentifier) {
+        return VariantsBlockStateSupplier.create(pillar).coordinate(BlockStateVariantMap.create(ModPillarBlock.PILLAR_TYPE)
+                .register(ModPillarType.SINGLE, BlockStateVariant.create().put(VariantSettings.MODEL, singlePillarIdentifier))
+                .register(ModPillarType.TOP, BlockStateVariant.create().put(VariantSettings.MODEL, topPillarIdentifier))
+                .register(ModPillarType.MIDDLE, BlockStateVariant.create().put(VariantSettings.MODEL, middlePillarIdentifier))
+                .register(ModPillarType.BASE, BlockStateVariant.create().put(VariantSettings.MODEL, basePillarIdentifier)));
+    }
 }
