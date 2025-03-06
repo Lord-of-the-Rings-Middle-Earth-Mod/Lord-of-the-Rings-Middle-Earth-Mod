@@ -169,13 +169,24 @@ public class ModModelProvider extends FabricModelProvider {
                 if (stoneType.getSmooth() != null && stoneType.getSmoothSlab() != null) {
                     registerSmoothStone(blockStateModelGenerator, stoneType.getSmooth(), stoneType.getSmoothSlab());
                 }
+                if (stoneType.getCrackedSmooth() != null && stoneType.getCrackedSmoothSlab() != null) {
+                    registerSmoothStone(blockStateModelGenerator, stoneType.getCrackedSmooth(), stoneType.getCrackedSmoothSlab());
+                }
                 if (stoneType.getBrick() != null) {
                     BlockStateModelGenerator.BlockTexturePool bricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getBrick());
                     bricksPool.family(stoneType.getBrickFamily());
                 }
+                if (stoneType.getCrackedBrick() != null) {
+                    BlockStateModelGenerator.BlockTexturePool crackedBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCrackedBrick());
+                    crackedBricksPool.family(stoneType.getCrackedBrickFamily());
+                }
                 if (stoneType.getTiles() != null) {
                     BlockStateModelGenerator.BlockTexturePool tilesPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getTiles());
                     tilesPool.family(stoneType.getTilesFamily());
+                }
+                if (stoneType.getCrackedTiles() != null) {
+                    BlockStateModelGenerator.BlockTexturePool crackedTilesPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCrackedTiles());
+                    crackedTilesPool.family(stoneType.getCrackedTilesFamily());
                 }
                 if (stoneType.getCobbledBrick() != null) {
                     BlockStateModelGenerator.BlockTexturePool cobbledBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbledBrick());
@@ -188,17 +199,34 @@ public class ModModelProvider extends FabricModelProvider {
                             .substring(stoneType.getPillar().getTranslationKey().indexOf('.')+6).concat("_side");
                     registerPillarBlock(blockStateModelGenerator, stoneType.getPillar(), stoneType.getPillarSlab(), topTexture, sideTexture);
                 }
+                if (stoneType.getCrackedPillar() != null) {
+                    String topTexture = stoneType.getCrackedPillar().getTranslationKey()
+                            .substring(stoneType.getCrackedPillar().getTranslationKey().indexOf('.')+6).concat("_end");
+                    String sideTexture = stoneType.getCrackedPillar().getTranslationKey()
+                            .substring(stoneType.getCrackedPillar().getTranslationKey().indexOf('.')+6).concat("_side");
+                    registerPillarBlock(blockStateModelGenerator, stoneType.getCrackedPillar(), stoneType.getCrackedPillarSlab(), topTexture, sideTexture);
+                }
                 if (stoneType.getPavement() != null) {
                     String topTexture = stoneType.getPavement().getTranslationKey()
                             .substring(stoneType.getPavement().getTranslationKey().indexOf('.')+6);
                     String sideTexture = stoneType.getTiles().getTranslationKey()
                             .substring(stoneType.getTiles().getTranslationKey().indexOf('.')+6);
-
                     registerPavement(blockStateModelGenerator, stoneType.getPavementFamily(), topTexture, sideTexture);
+                }
+                if (stoneType.getCrackedPavement() != null) {
+                    String topTexture = stoneType.getCrackedPavement().getTranslationKey()
+                            .substring(stoneType.getCrackedPavement().getTranslationKey().indexOf('.')+6);
+                    String sideTexture = stoneType.getCrackedTiles().getTranslationKey()
+                            .substring(stoneType.getCrackedTiles().getTranslationKey().indexOf('.')+6);
+                    registerPavement(blockStateModelGenerator, stoneType.getCrackedPavementFamily(), topTexture, sideTexture);
                 }
                 if (stoneType.getFancyBricks() != null) {
                     BlockStateModelGenerator.BlockTexturePool fancyBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getFancyBricks());
                     fancyBricksPool.family(stoneType.getFancyBricksFamily());
+                }
+                if (stoneType.getCrackedFancyBricks() != null) {
+                    BlockStateModelGenerator.BlockTexturePool crackedFancyBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCrackedFancyBricks());
+                    crackedFancyBricksPool.family(stoneType.getCrackedFancyBricksFamily());
                 }
             }
         }

@@ -85,6 +85,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 pickaxeTag.add(stoneType.getSmooth());
                 pickaxeTag.add(stoneType.getSmoothSlab());
             }
+            if (stoneType.getCrackedSmooth() != null) {
+                pickaxeTag.add(stoneType.getCrackedSmooth());
+                pickaxeTag.add(stoneType.getCrackedSmoothSlab());
+            }
             if (stoneType.getBrick() != null) {
                 pickaxeTag.add(stoneType.getBrick());
                 pickaxeTag.add(stoneType.getBrickStairs());
@@ -93,12 +97,26 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 wallTag.add(stoneType.getBrickWall());
                 pickaxeTag.add(stoneType.getChiseledBrick());
             }
+            if (stoneType.getCrackedBrick() != null) {
+                pickaxeTag.add(stoneType.getCrackedBrick());
+                pickaxeTag.add(stoneType.getCrackedBrickStairs());
+                pickaxeTag.add(stoneType.getCrackedBrickSlab());
+                pickaxeTag.add(stoneType.getCrackedBrickWall());
+                wallTag.add(stoneType.getCrackedBrickWall());
+            }
             if (stoneType.getTiles() != null) {
                 pickaxeTag.add(stoneType.getTiles());
                 pickaxeTag.add(stoneType.getTilesStairs());
                 pickaxeTag.add(stoneType.getTilesSlab());
                 pickaxeTag.add(stoneType.getTilesWall());
                 wallTag.add(stoneType.getTilesWall());
+            }
+            if (stoneType.getCrackedTiles() != null) {
+                pickaxeTag.add(stoneType.getCrackedTiles());
+                pickaxeTag.add(stoneType.getCrackedTilesStairs());
+                pickaxeTag.add(stoneType.getCrackedTilesSlab());
+                pickaxeTag.add(stoneType.getCrackedTilesWall());
+                wallTag.add(stoneType.getCrackedTilesWall());
             }
             if (stoneType.getCobbledBrick() != null) {
                 pickaxeTag.add(stoneType.getCobbledBrick());
@@ -111,10 +129,19 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 pickaxeTag.add(stoneType.getPillar());
                 pickaxeTag.add(stoneType.getPillarSlab());
             }
+            if (stoneType.getCrackedPillar() != null) {
+                pickaxeTag.add(stoneType.getCrackedPillar());
+                pickaxeTag.add(stoneType.getCrackedPillarSlab());
+            }
             if (stoneType.getPavement() != null) {
                 pickaxeTag.add(stoneType.getPavement());
                 pickaxeTag.add(stoneType.getPavementStairs());
                 pickaxeTag.add(stoneType.getPavementSlab());
+            }
+            if (stoneType.getCrackedPavement() != null) {
+                pickaxeTag.add(stoneType.getCrackedPavement());
+                pickaxeTag.add(stoneType.getCrackedPavementStairs());
+                pickaxeTag.add(stoneType.getCrackedPavementSlab());
             }
             if (stoneType.getFancyBricks() != null) {
                 pickaxeTag.add(stoneType.getFancyBricks());
@@ -122,6 +149,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 pickaxeTag.add(stoneType.getFancyBricksSlab());
                 pickaxeTag.add(stoneType.getFancyBricksWall());
                 wallTag.add(stoneType.getFancyBricksWall());
+            }
+            if (stoneType.getCrackedFancyBricks() != null) {
+                pickaxeTag.add(stoneType.getCrackedFancyBricks());
+                pickaxeTag.add(stoneType.getCrackedFancyBricksStairs());
+                pickaxeTag.add(stoneType.getCrackedFancyBricksSlab());
+                pickaxeTag.add(stoneType.getCrackedFancyBricksWall());
+                wallTag.add(stoneType.getCrackedFancyBricksWall());
             }
         }
     }

@@ -195,12 +195,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				}
 				if(stoneType.getStoneButton() != null) {
 					createButtonRecipe(stoneType.getStone(), stoneType.getStoneButton(), exporter);
-					//ToDo: Potentially add a Stonecutting Recipe for the Button
+					offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
+							stoneType.getStoneButton(), stoneType.getStone(), 1);
 				}
 				if(stoneType.getStonePressurePlate() != null) {
 					offerPressurePlateRecipe(exporter, stoneType.getStonePressurePlate(),
 					                         stoneType.getStone());
-					//ToDo: Potentially add a Stonecutting Recipe for the PressurePlate
+					offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
+							stoneType.getStonePressurePlate(), stoneType.getStone());
 				}
 				if(stoneType.getCobbled() != null) {
 					createCobbledStoneTypeRecipe(stoneType.getStone(), stoneType.getCobbled(),
@@ -229,12 +231,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					if(stoneType.getCobbledButton() != null) {
 						createButtonRecipe(stoneType.getCobbled(), stoneType.getCobbledButton(),
 						                   exporter);
-						//ToDo: Potentially add a Stonecutting Recipe for the Button
+						offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
+								stoneType.getCobbledButton(), stoneType.getCobbled());
 					}
 					if(stoneType.getCobbledPressurePlate() != null) {
 						offerPressurePlateRecipe(exporter, stoneType.getCobbledPressurePlate(),
 						                         stoneType.getCobbled());
-						//ToDo: Potentially add a Stonecutting Recipe for the PressurePlate
+						offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
+								stoneType.getCobbledPressurePlate(), stoneType.getCobbled());
 					}
 				}
 				if (stoneType.getSmooth() != null) {
@@ -242,9 +246,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 							stoneType.getSmooth(),
 							0.1f, 200, "stone");*/
 					if (stoneType.getSmoothSlab() != null) {
-						createStairRecipe(stoneType.getSmooth(), stoneType.getSmoothSlab(), exporter);
+						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getSmoothSlab(), stoneType.getSmooth());
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
 								stoneType.getSmoothSlab(), stoneType.getSmooth(), 1);
+					}
+					if (stoneType.getCrackedSmooth() != null) {
+						/*offerSmelting(exporter, (List<ItemConvertible>) stoneType.getSmooth(), RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedSmooth(), 0.1f, 200, "stone");*/
+						if (stoneType.getCrackedSmoothSlab() != null) {
+							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedSmoothSlab(), stoneType.getCrackedSmooth());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedSmoothSlab(), stoneType.getCrackedSmooth(), 2);
+						}
 					}
 				}
 				if(stoneType.getBrick() != null) {
@@ -284,6 +299,27 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
 								stoneType.getChiseledBrick(), stoneType.getStone());
 					}
+					if (stoneType.getCrackedBrick() != null) {
+						/*offerSmelting(exporter, (List<ItemConvertible>) stoneType.getBrick(), RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedBrick(), 0.1f, 200, "stone");*/
+						if (stoneType.getCrackedBrickStairs() != null) {
+							createStairRecipe(stoneType.getCrackedBrick(), stoneType.getCrackedBrickStairs(), exporter);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedBrickStairs(), stoneType.getCrackedBrick(), 1);
+						}
+						if (stoneType.getCrackedBrickSlab() != null) {
+							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedBrickSlab(), stoneType.getCrackedBrick());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedBrickSlab(), stoneType.getCrackedBrick(), 2);
+						}
+						if (stoneType.getCrackedBrickWall() != null) {
+							offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedBrickWall(), stoneType.getCrackedBrick());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedBrickWall(), stoneType.getCrackedBrick(), 1);
+						}
+					}
 				}
 				if (stoneType.getTiles() != null) {
 					createBricksRecipe(stoneType.getBrick(), stoneType.getTiles(), exporter);
@@ -313,6 +349,32 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 								stoneType.getTilesWall(), stoneType.getBrick(), 1);
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
 								stoneType.getTilesWall(), stoneType.getTiles(), 1);
+					}
+					if (stoneType.getCrackedTiles() != null) {
+						createBricksRecipe(stoneType.getCrackedBrick(), stoneType.getCrackedTiles(), exporter);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedTiles(), stoneType.getCrackedBrick());
+						if(stoneType.getCrackedTilesStairs() != null) {
+							createStairRecipe(stoneType.getCrackedTiles(), stoneType.getCrackedTilesStairs(), exporter);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedTilesStairs(), stoneType.getCrackedTiles(), 1);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedTilesStairs(), stoneType.getCrackedBrick(), 1);
+						}
+						if (stoneType.getCrackedTilesSlab() != null) {
+							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedTilesSlab(), stoneType.getCrackedTiles());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedTilesSlab(), stoneType.getCrackedBrick(), 2);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedTilesSlab(), stoneType.getCrackedTiles(), 2);
+						}
+						if (stoneType.getCrackedTilesWall() != null) {
+							offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedTilesWall(), stoneType.getCrackedTiles());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedTilesWall(), stoneType.getCrackedBrick(), 1);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedTilesWall(), stoneType.getCrackedTiles(), 1);
+						}
 					}
 				}
 				if (stoneType.getCobbledBrick() != null) {
@@ -353,9 +415,83 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
 								stoneType.getPillarSlab(), stoneType.getPillar(), 2);
 					}
+					if (stoneType.getCrackedPillar() != null) {
+						/*
+						offerSmelting(exporter, (List<ItemConvertible>) stoneType.getPillar(), RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedPillar(), 0.1f, 200, "stone");
+						 */
+						if (stoneType.getCrackedPillarSlab() != null) {
+							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedPillarSlab(), stoneType.getCrackedPillar());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedPillarSlab(), stoneType.getCrackedPillar(), 2);
+						}					}
 				}
 				if (stoneType.getPavement() != null) {
-					//ToDo: Think of a Pavement Recipe
+					ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, stoneType.getPavement(), 2)
+							.pattern("#").pattern("#").input('#', stoneType.getTiles())
+							.criterion(hasItem(stoneType.getTiles()), conditionsFromItem(stoneType.getTiles()))
+							.offerTo(exporter, new Identifier(getRecipeName(stoneType.getPavement())));
+					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+							stoneType.getPavement(), stoneType.getTiles());
+					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+							stoneType.getPavement(), stoneType.getBrick());
+					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+							stoneType.getPavement(), stoneType.getStone());
+					if (stoneType.getPavementStairs() != null) {
+						createStairRecipe(stoneType.getPavement(), stoneType.getPavementStairs(), exporter);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getPavementStairs(), stoneType.getPavement(), 1);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getPavementStairs(), stoneType.getTiles(), 1);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getPavementStairs(), stoneType.getBrick(), 1);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getPavementStairs(), stoneType.getStone(), 1);
+					}
+					if (stoneType.getPavementSlab() != null) {
+						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getPavementSlab(), stoneType.getPavement());
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getPavementSlab(), stoneType.getPavement(), 2);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getPavementSlab(), stoneType.getTiles(), 2);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getPavementSlab(), stoneType.getBrick(), 2);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getPavementSlab(), stoneType.getStone(), 2);
+					}
+					if (stoneType.getCrackedPavement() != null) {
+						/*
+						offerSmelting(exporter, (List<ItemConvertible>) stoneType.getPavement(), RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedPavement(), 0.1f, 200, "stone");
+						 */
+						ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPavement(), 2)
+								.pattern("#").pattern("#").input('#', stoneType.getCrackedTiles())
+								.criterion(hasItem(stoneType.getPavement()), conditionsFromItem(stoneType.getPavement()))
+								.offerTo(exporter, new Identifier(getRecipeName(stoneType.getCrackedPavement())));
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedPavement(), stoneType.getCrackedTiles());
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedPavement(), stoneType.getCrackedBrick());
+						if (stoneType.getCrackedPavementStairs() != null) {
+							createStairRecipe(stoneType.getCrackedPavement(), stoneType.getCrackedPavementStairs(), exporter);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedPavementStairs(), stoneType.getCrackedPavement(), 1);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedPavementStairs(), stoneType.getCrackedTiles(), 1);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedPavementStairs(), stoneType.getCrackedBrick(), 1);
+						}
+						if (stoneType.getCrackedPavementSlab() != null) {
+							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPavementSlab(), stoneType.getCrackedPavement());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedPavementSlab(), stoneType.getCrackedPavement(), 2);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedPavementSlab(), stoneType.getCrackedTiles(), 2);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedPavementSlab(), stoneType.getCrackedBrick(), 2);
+						}
+					}
 				}
 				if (stoneType.getFancyBricks() != null) {
 					createBricksRecipe(stoneType.getTiles(), stoneType.getFancyBricks(), exporter);
@@ -395,6 +531,45 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 								stoneType.getFancyBricksWall(), stoneType.getBrick(), 1);
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
 								stoneType.getFancyBricksWall(), stoneType.getStone(), 1);
+					}
+					if (stoneType.getCrackedFancyBricks() != null) {
+						/*
+						offerSmelting(exporter, (List<ItemConvertible>) stoneType.getFancyBricks(), RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedFancyBricks(), 0.1f, 200, "stone");
+						 */
+						createBricksRecipe(stoneType.getCrackedTiles(), stoneType.getCrackedFancyBricks(), exporter);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedFancyBricks(), stoneType.getCrackedTiles());
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedFancyBricks(), stoneType.getCrackedBrick());
+						if (stoneType.getCrackedFancyBricksStairs() != null) {
+							createStairRecipe(stoneType.getCrackedFancyBricks(), stoneType.getCrackedFancyBricksStairs(), exporter);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedFancyBricksStairs(), stoneType.getCrackedFancyBricks(), 1);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedFancyBricksStairs(), stoneType.getCrackedTiles(), 1);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedFancyBricksStairs(), stoneType.getCrackedBrick(), 1);
+						}
+						if (stoneType.getCrackedFancyBricksSlab() != null) {
+							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedFancyBricksSlab(), stoneType.getCrackedFancyBricks());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedFancyBricksSlab(), stoneType.getCrackedFancyBricks(), 2);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedFancyBricksSlab(), stoneType.getCrackedTiles(), 2);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedFancyBricksSlab(), stoneType.getCrackedBrick(), 2);
+						}
+						if (stoneType.getCrackedFancyBricksWall() != null) {
+							offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedFancyBricksWall(), stoneType.getCrackedFancyBricks());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedFancyBricksWall(), stoneType.getCrackedFancyBricks(), 1);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedFancyBricksWall(), stoneType.getCrackedTiles(), 1);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getCrackedFancyBricksWall(), stoneType.getCrackedBrick(), 1);
+						}
 					}
 				}
 			}

@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:smooth_blueslate_slab"
+        "recipe": "lotr:smooth_blueslate_slab"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -28,7 +28,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:smooth_blueslate_slab"
+      "lotr:smooth_blueslate_slab"
     ]
   },
   "sends_telemetry_event": false

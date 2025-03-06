@@ -4,8 +4,11 @@
     "lotr:blueslate_wall",
     "lotr:cobbled_blueslate_wall",
     "lotr:blueslate_brick_wall",
+    "lotr:cracked_blueslate_brick_wall",
     "lotr:blueslate_tiles_wall",
+    "lotr:cracked_blueslate_tiles_wall",
     "lotr:cobbled_blueslate_bricks_wall",
-    "lotr:fancy_blueslate_bricks_wall"
+    "lotr:fancy_blueslate_brick_wall",
+    "lotr:cracked_fancy_blueslate_brick_wall"
   ]
 }

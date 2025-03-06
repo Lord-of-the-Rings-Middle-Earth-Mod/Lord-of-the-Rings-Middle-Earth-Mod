@@ -147,6 +147,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 addDrop(stoneType.getSmooth());
                 addDrop(stoneType.getSmoothSlab(), slabDrops(stoneType.getSmoothSlab()));
             }
+            if (stoneType.getCrackedSmooth() != null) {
+                addDrop(stoneType.getCrackedSmooth());
+                addDrop(stoneType.getCrackedSmoothSlab(), slabDrops(stoneType.getCrackedSmoothSlab()));
+            }
             if (stoneType.getBrick() != null) {
                 addDrop(stoneType.getBrick());
                 addDrop(stoneType.getBrickStairs());
@@ -154,11 +158,23 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 addDrop(stoneType.getBrickWall());
                 addDrop(stoneType.getChiseledBrick());
             }
+            if (stoneType.getCrackedBrick() != null) {
+                addDrop(stoneType.getCrackedBrick());
+                addDrop(stoneType.getCrackedBrickStairs());
+                addDrop(stoneType.getCrackedBrickSlab(), slabDrops(stoneType.getCrackedBrickSlab()));
+                addDrop(stoneType.getCrackedBrickWall());
+            }
             if (stoneType.getTiles() != null) {
                 addDrop(stoneType.getTiles());
                 addDrop(stoneType.getTilesStairs());
                 addDrop(stoneType.getTilesSlab(), slabDrops(stoneType.getTilesSlab()));
                 addDrop(stoneType.getTilesWall());
+            }
+            if (stoneType.getCrackedTiles() != null) {
+                addDrop(stoneType.getCrackedTiles());
+                addDrop(stoneType.getCrackedTilesStairs());
+                addDrop(stoneType.getCrackedTilesSlab(), slabDrops(stoneType.getCrackedTilesSlab()));
+                addDrop(stoneType.getCrackedTilesWall());
             }
             if (stoneType.getCobbledBrick() != null) {
                 addDrop(stoneType.getCobbledBrick());
@@ -170,16 +186,31 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 addDrop(stoneType.getPillar());
                 addDrop(stoneType.getPillarSlab(), slabDrops(stoneType.getPillarSlab()));
             }
+            if (stoneType.getCrackedPillar() != null) {
+                addDrop(stoneType.getCrackedPillar());
+                addDrop(stoneType.getCrackedPillarSlab(), slabDrops(stoneType.getCrackedPillarSlab()));
+            }
             if (stoneType.getPavement() != null) {
                 addDrop(stoneType.getPavement());
                 addDrop(stoneType.getPavementStairs());
                 addDrop(stoneType.getPavementSlab(), slabDrops(stoneType.getPavementSlab()));
+            }
+            if (stoneType.getCrackedPavement() != null) {
+                addDrop(stoneType.getCrackedPavement());
+                addDrop(stoneType.getCrackedPavementStairs());
+                addDrop(stoneType.getCrackedPavementSlab(), slabDrops(stoneType.getCrackedPavementSlab()));
             }
             if (stoneType.getFancyBricks() != null) {
                 addDrop(stoneType.getFancyBricks());
                 addDrop(stoneType.getFancyBricksStairs());
                 addDrop(stoneType.getFancyBricksSlab(), slabDrops(stoneType.getFancyBricksSlab()));
                 addDrop(stoneType.getFancyBricksWall());
+            }
+            if (stoneType.getCrackedFancyBricks() != null) {
+                addDrop(stoneType.getCrackedFancyBricks());
+                addDrop(stoneType.getCrackedFancyBricksStairs());
+                addDrop(stoneType.getCrackedFancyBricksSlab(), slabDrops(stoneType.getCrackedFancyBricksSlab()));
+                addDrop(stoneType.getCrackedFancyBricksWall());
             }
         }
 

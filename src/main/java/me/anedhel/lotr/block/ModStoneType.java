@@ -33,10 +33,16 @@ public enum ModStoneType {
             null, null, null, null, false),
      */
 
-    BLUESLATE(ModStoneBlocks.BLUESLATE_FAMILY, ModStoneBlocks.COBBLED_BLUESLATE_FAMILY, ModStoneBlocks.BLUESLATE_BRICK_FAMILY,
-            ModStoneBlocks.BLUESLATE_TILES_FAMILY, ModStoneBlocks.COBBLED_BLUESLATE_BRICKS_FAMILY,
-            ModStoneBlocks.BLUESLATE_PAVEMENT_FAMILY, ModStoneBlocks.FANCY_BLUESLATE_BRICKS_FAMILY,
-            ModStoneBlocks.SMOOTH_BLUESLATE, ModStoneBlocks.SMOOTH_BLUESLATE_SLAB, ModStoneBlocks.BLUESLATE_PILLAR, ModStoneBlocks.BLUESLATE_PILLAR_SLAB,
+    BLUESLATE(ModStoneBlocks.BLUESLATE_FAMILY, ModStoneBlocks.COBBLED_BLUESLATE_FAMILY,
+            ModStoneBlocks.BLUESLATE_BRICK_FAMILY, ModStoneBlocks.CRACKED_BLUESLATE_BRICK_FAMILY,
+            ModStoneBlocks.BLUESLATE_TILES_FAMILY, ModStoneBlocks.CRACKED_BLUESLATE_TILES_FAMILY,
+            ModStoneBlocks.COBBLED_BLUESLATE_BRICKS_FAMILY,
+            ModStoneBlocks.BLUESLATE_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_BLUESLATE_PAVEMENT_FAMILY,
+            ModStoneBlocks.FANCY_BLUESLATE_BRICKS_FAMILY, ModStoneBlocks.CRACKED_FANCY_BLUESLATE_BRICKS_FAMILY,
+            ModStoneBlocks.SMOOTH_BLUESLATE, ModStoneBlocks.SMOOTH_BLUESLATE_SLAB,
+            ModStoneBlocks.CRACKED_SMOOTH_BLUESLATE, ModStoneBlocks.CRACKED_SMOOTH_BLUESLATE_SLAB,
+            ModStoneBlocks.BLUESLATE_PILLAR, ModStoneBlocks.BLUESLATE_PILLAR_SLAB,
+            ModStoneBlocks.CRACKED_BLUELATE_PILLAR, ModStoneBlocks.CRACKED_BLUELATE_PILLAR_SLAB,
             false);
 
     //CHALK(ModStoneBlocks.CHALK_FAMILY, ModStoneBlocks.COBBLED_CHALK_FAMILY, ModStoneBlocks.CHALK_BRICK_FAMILY, false);
@@ -59,6 +65,8 @@ public enum ModStoneType {
 
     private final Block smooth;
     private final Block smoothSlab;
+    private final Block crackedSmooth;
+    private final Block crackedSmoothSlab;
 
     private final Block brick;
     private final Block brickStairs;
@@ -66,12 +74,22 @@ public enum ModStoneType {
     private final Block brickWall;
     private final Block chiseledBrick;
     private final BlockFamily brickFamily;
+    private final Block crackedBrick;
+    private final Block crackedBrickStairs;
+    private final Block crackedBrickSlab;
+    private final Block crackedBrickWall;
+    private final BlockFamily crackedBrickFamily;
 
     private final Block tiles;
     private final Block tilesStairs;
     private final Block tilesSlab;
     private final Block tilesWall;
     private final BlockFamily tilesFamily;
+    private final Block crackedTiles;
+    private final Block crackedTilesStairs;
+    private final Block crackedTilesSlab;
+    private final Block crackedTilesWall;
+    private final BlockFamily crackedTilesFamily;
 
     private final Block cobbledBrick;
     private final Block cobbledBrickStairs;
@@ -81,23 +99,39 @@ public enum ModStoneType {
 
     private final Block pillar;
     private final Block pillarSlab;
+    private final Block crackedPillar;
+    private final Block crackedPillarSlab;
 
     private final Block pavement;
     private final Block pavementStairs;
     private final Block pavementSlab;
     private final BlockFamily pavementFamily;
+    private final Block crackedPavement;
+    private final Block crackedPavementStairs;
+    private final Block crackedPavementSlab;
+    private final BlockFamily crackedPavementFamily;
 
     private final Block fancyBricks;
     private final Block fancyBricksStairs;
     private final Block fancyBricksSlab;
     private final Block fancyBricksWall;
     private final BlockFamily fancyBricksFamily;
+    private final Block crackedFancyBricks;
+    private final Block crackedFancyBricksStairs;
+    private final Block crackedFancyBricksSlab;
+    private final Block crackedFancyBricksWall;
+    private final BlockFamily crackedFancyBricksFamily;
 
     private final boolean vanillaAddition;
 
     ModStoneType(BlockFamily stoneFamily, BlockFamily cobbledFamily,
-            BlockFamily brickFamily, BlockFamily tilesFamily, BlockFamily cobbledBrickFamily, BlockFamily pavementFamily,
-            BlockFamily fancyBricksFamily, Block smooth, Block smoothSlab, Block pillar, Block pillarSlab,
+            BlockFamily brickFamily, BlockFamily crackedBrickFamily,
+            BlockFamily tilesFamily, BlockFamily crackedTilesFamily,
+            BlockFamily cobbledBrickFamily,
+            BlockFamily pavementFamily, BlockFamily crackedPavementFamily,
+            BlockFamily fancyBricksFamily, BlockFamily crackedFancyBricksFamily,
+            Block smooth, Block smoothSlab, Block crackedSmooth, Block crackedSmoothSlab,
+            Block pillar, Block pillarSlab, Block crackedPillar, Block crackedPillarSlab,
             boolean vanillaAddition) {
         this.stone = stoneFamily.getBaseBlock();
         this.stoneStairs = stoneFamily.getVariant(BlockFamily.Variant.STAIRS);
@@ -117,6 +151,8 @@ public enum ModStoneType {
 
         this.smooth = smooth;
         this.smoothSlab = smoothSlab;
+        this.crackedSmooth = crackedSmooth;
+        this.crackedSmoothSlab = crackedSmoothSlab;
 
         this.brick = brickFamily.getBaseBlock();
         this.brickStairs = brickFamily.getVariant(BlockFamily.Variant.STAIRS);
@@ -124,12 +160,22 @@ public enum ModStoneType {
         this.brickWall = brickFamily.getVariant(BlockFamily.Variant.WALL);
         this.chiseledBrick = brickFamily.getVariant(BlockFamily.Variant.CHISELED);
         this.brickFamily = brickFamily;
+        this.crackedBrick = crackedBrickFamily.getBaseBlock();
+        this.crackedBrickStairs = crackedBrickFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.crackedBrickSlab = crackedBrickFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.crackedBrickWall = crackedBrickFamily.getVariant(BlockFamily.Variant.WALL);
+        this.crackedBrickFamily = crackedBrickFamily;
 
         this.tiles = tilesFamily.getBaseBlock();
         this.tilesStairs = tilesFamily.getVariant(BlockFamily.Variant.STAIRS);
         this.tilesSlab = tilesFamily.getVariant(BlockFamily.Variant.SLAB);
         this.tilesWall = tilesFamily.getVariant(BlockFamily.Variant.WALL);
         this.tilesFamily = tilesFamily;
+        this.crackedTiles = crackedTilesFamily.getBaseBlock();
+        this.crackedTilesStairs = crackedTilesFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.crackedTilesSlab = crackedTilesFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.crackedTilesWall = crackedTilesFamily.getVariant(BlockFamily.Variant.WALL);
+        this.crackedTilesFamily = crackedTilesFamily;
 
         this.cobbledBrick = cobbledBrickFamily.getBaseBlock();
         this.cobbledBrickStairs = cobbledBrickFamily.getVariant(BlockFamily.Variant.STAIRS);
@@ -139,24 +185,40 @@ public enum ModStoneType {
 
         this.pillar = pillar;
         this.pillarSlab = pillarSlab;
+        this.crackedPillar = crackedPillar;
+        this.crackedPillarSlab = crackedPillarSlab;
 
         this.pavement = pavementFamily.getBaseBlock();
         this.pavementStairs = pavementFamily.getVariant(BlockFamily.Variant.STAIRS);
         this.pavementSlab = pavementFamily.getVariant(BlockFamily.Variant.SLAB);
         this.pavementFamily = pavementFamily;
+        this.crackedPavement = crackedPavementFamily.getBaseBlock();
+        this.crackedPavementStairs = crackedPavementFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.crackedPavementSlab = crackedPavementFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.crackedPavementFamily = crackedPavementFamily;
 
         this.fancyBricks = fancyBricksFamily.getBaseBlock();
         this.fancyBricksStairs = fancyBricksFamily.getVariant(BlockFamily.Variant.STAIRS);
         this.fancyBricksSlab = fancyBricksFamily.getVariant(BlockFamily.Variant.SLAB);
         this.fancyBricksWall = fancyBricksFamily.getVariant(BlockFamily.Variant.WALL);
         this.fancyBricksFamily = fancyBricksFamily;
+        this.crackedFancyBricks = crackedFancyBricksFamily.getBaseBlock();
+        this.crackedFancyBricksStairs = crackedFancyBricksFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.crackedFancyBricksSlab = crackedFancyBricksFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.crackedFancyBricksWall = crackedFancyBricksFamily.getVariant(BlockFamily.Variant.WALL);
+        this.crackedFancyBricksFamily = crackedFancyBricksFamily;
 
         this.vanillaAddition = vanillaAddition;
     }
 
     ModStoneType(Block baseBlock, Block basestairBlock, Block baseslabBlock, Block basewallBlock, Block basebuttonBlock, Block basepressurePlateBlock,
-            BlockFamily cobbledFamily, BlockFamily brickFamily, BlockFamily tilesFamily, BlockFamily cobbledBrickFamily, BlockFamily pavementFamily,
-            BlockFamily fancyBricksFamily, Block smooth, Block smoothSlab, Block pillar, Block pillarSlab,
+            BlockFamily cobbledFamily, BlockFamily brickFamily, BlockFamily crackedBrickFamily,
+            BlockFamily tilesFamily, BlockFamily crackedTilesFamily,
+            BlockFamily cobbledBrickFamily,
+            BlockFamily pavementFamily, BlockFamily crackedPavementFamily,
+            BlockFamily fancyBricksFamily, BlockFamily crackedFancyBricksFamily,
+            Block smooth, Block smoothSlab, Block crackedSmooth, Block crackedSmoothSlab,
+            Block pillar, Block pillarSlab, Block crackedPillar, Block crackedPillarSlab,
             boolean vanillaAddition) {
         this.stone = baseBlock;
         this.stoneStairs = basestairBlock;
@@ -176,6 +238,8 @@ public enum ModStoneType {
 
         this.smooth = smooth;
         this.smoothSlab = smoothSlab;
+        this.crackedSmooth = crackedSmooth;
+        this.crackedSmoothSlab = crackedSmoothSlab;
 
         this.brick = brickFamily != null ? brickFamily.getBaseBlock() : null;
         this.brickStairs = brickFamily != null ? brickFamily.getVariant(BlockFamily.Variant.STAIRS) : null;
@@ -183,12 +247,22 @@ public enum ModStoneType {
         this.brickWall = brickFamily != null ? brickFamily.getVariant(BlockFamily.Variant.WALL) : null;
         this.chiseledBrick = brickFamily != null ? brickFamily.getVariant(BlockFamily.Variant.CHISELED) : null;
         this.brickFamily = brickFamily;
+        this.crackedBrick = crackedBrickFamily != null ? crackedBrickFamily.getBaseBlock() : null;
+        this.crackedBrickStairs = crackedBrickFamily != null ? crackedBrickFamily.getVariant(BlockFamily.Variant.STAIRS) : null;
+        this.crackedBrickSlab = crackedBrickFamily != null ? crackedBrickFamily.getVariant(BlockFamily.Variant.SLAB) : null;
+        this.crackedBrickWall = crackedBrickFamily != null ? crackedBrickFamily.getVariant(BlockFamily.Variant.WALL) : null;
+        this.crackedBrickFamily = crackedBrickFamily;
 
         this.tiles = tilesFamily != null ? tilesFamily.getBaseBlock() : null;
         this.tilesStairs = tilesFamily != null ? tilesFamily.getVariant(BlockFamily.Variant.STAIRS) : null;
         this.tilesSlab = tilesFamily != null ? tilesFamily.getVariant(BlockFamily.Variant.SLAB) : null;
         this.tilesWall = tilesFamily != null ? tilesFamily.getVariant(BlockFamily.Variant.WALL) : null;
         this.tilesFamily = tilesFamily;
+        this.crackedTiles = crackedTilesFamily != null ? crackedTilesFamily.getBaseBlock() : null;
+        this.crackedTilesStairs = crackedTilesFamily != null ? crackedTilesFamily.getVariant(BlockFamily.Variant.STAIRS) : null;
+        this.crackedTilesSlab = crackedTilesFamily != null ? crackedTilesFamily.getVariant(BlockFamily.Variant.SLAB) : null;
+        this.crackedTilesWall = crackedTilesFamily != null ? crackedTilesFamily.getVariant(BlockFamily.Variant.WALL) : null;
+        this.crackedTilesFamily = crackedTilesFamily;
 
         this.cobbledBrick = cobbledBrickFamily != null ? cobbledBrickFamily.getBaseBlock() : null;
         this.cobbledBrickStairs = cobbledBrickFamily != null ? cobbledBrickFamily.getVariant(BlockFamily.Variant.STAIRS) : null;
@@ -198,17 +272,28 @@ public enum ModStoneType {
 
         this.pillar = pillar;
         this.pillarSlab = pillarSlab;
+        this.crackedPillar = crackedPillar;
+        this.crackedPillarSlab = crackedPillarSlab;
 
         this.pavement = pavementFamily != null ? pavementFamily.getBaseBlock() : null;
         this.pavementStairs = pavementFamily != null ? pavementFamily.getVariant(BlockFamily.Variant.STAIRS) : null;
         this.pavementSlab = pavementFamily != null ? pavementFamily.getVariant(BlockFamily.Variant.SLAB) : null;
         this.pavementFamily = pavementFamily;
+        this.crackedPavement = crackedPavementFamily != null ? crackedPavementFamily.getBaseBlock() : null;
+        this.crackedPavementStairs = crackedPavementFamily != null ? crackedPavementFamily.getVariant(BlockFamily.Variant.STAIRS) : null;
+        this.crackedPavementSlab = crackedPavementFamily != null ? crackedPavementFamily.getVariant(BlockFamily.Variant.SLAB) : null;
+        this.crackedPavementFamily = crackedPavementFamily;
 
         this.fancyBricks = fancyBricksFamily != null ? fancyBricksFamily.getBaseBlock() : null;
         this.fancyBricksStairs = fancyBricksFamily != null ? fancyBricksFamily.getVariant(BlockFamily.Variant.STAIRS) : null;
         this.fancyBricksSlab = fancyBricksFamily != null ? fancyBricksFamily.getVariant(BlockFamily.Variant.SLAB) : null;
         this.fancyBricksWall = fancyBricksFamily != null ? fancyBricksFamily.getVariant(BlockFamily.Variant.WALL) : null;
         this.fancyBricksFamily = fancyBricksFamily;
+        this.crackedFancyBricks = crackedFancyBricksFamily != null ? crackedFancyBricksFamily.getBaseBlock() : null;
+        this.crackedFancyBricksStairs = crackedFancyBricksFamily != null ? crackedFancyBricksFamily.getVariant(BlockFamily.Variant.STAIRS) : null;
+        this.crackedFancyBricksSlab = crackedFancyBricksFamily != null ? crackedFancyBricksFamily.getVariant(BlockFamily.Variant.SLAB) : null;
+        this.crackedFancyBricksWall = crackedFancyBricksFamily != null ? crackedFancyBricksFamily.getVariant(BlockFamily.Variant.WALL) : null;
+        this.crackedFancyBricksFamily = crackedFancyBricksFamily;
 
         this.vanillaAddition = vanillaAddition;
     }
@@ -262,6 +347,14 @@ public enum ModStoneType {
                 itemGroupList.add(new ItemStack(smoothSlab));
             }
         }
+        if(crackedSmooth != null) {
+            if(!vanillaAddition) {
+                itemGroupList.add(new ItemStack(crackedSmooth));
+            }
+            if(crackedSmoothSlab != null) {
+                itemGroupList.add(new ItemStack(crackedSmoothSlab));
+            }
+        }
         if (brick != null) {
             if (!vanillaAddition) {
                 itemGroupList.add(new ItemStack(brick));
@@ -279,6 +372,20 @@ public enum ModStoneType {
                 itemGroupList.add(new ItemStack(chiseledBrick));
             }
         }
+        if (crackedBrick != null) {
+            if (!vanillaAddition) {
+                itemGroupList.add(new ItemStack(crackedBrick));
+            }
+            if (crackedBrickStairs != null) {
+                itemGroupList.add(new ItemStack(crackedBrickStairs));
+            }
+            if (crackedBrickSlab != null) {
+                itemGroupList.add(new ItemStack(crackedBrickSlab));
+            }
+            if (crackedBrickWall != null) {
+                itemGroupList.add(new ItemStack(crackedBrickWall));
+            }
+        }
         if(tiles != null) {
             if(!vanillaAddition) {
                 itemGroupList.add(new ItemStack(tiles));
@@ -291,6 +398,20 @@ public enum ModStoneType {
             }
             if(tilesWall != null) {
                 itemGroupList.add(new ItemStack(tilesWall));
+            }
+        }
+        if (crackedTiles != null) {
+            if (!vanillaAddition) {
+                itemGroupList.add(new ItemStack(crackedTiles));
+            }
+            if (crackedTilesStairs != null) {
+                itemGroupList.add(new ItemStack(crackedTilesStairs));
+            }
+            if (crackedTilesSlab != null) {
+                itemGroupList.add(new ItemStack(crackedTilesSlab));
+            }
+            if (crackedTilesWall != null) {
+                itemGroupList.add(new ItemStack(crackedTilesWall));
             }
         }
         if(cobbledBrick != null) {
@@ -315,6 +436,14 @@ public enum ModStoneType {
                 itemGroupList.add(new ItemStack(pillarSlab));
             }
         }
+        if(crackedPillar != null) {
+            if(!vanillaAddition) {
+                itemGroupList.add(new ItemStack(crackedPillar));
+            }
+            if(crackedPillarSlab != null) {
+                itemGroupList.add(new ItemStack(crackedPillarSlab));
+            }
+        }
         if(pavement != null) {
             if(!vanillaAddition) {
                 itemGroupList.add(new ItemStack(pavement));
@@ -324,6 +453,17 @@ public enum ModStoneType {
             }
             if(pavementSlab != null) {
                 itemGroupList.add(new ItemStack(pavementSlab));
+            }
+        }
+        if(crackedPavement != null) {
+            if(!vanillaAddition) {
+                itemGroupList.add(new ItemStack(crackedPavement));
+            }
+            if(crackedPavementStairs != null) {
+                itemGroupList.add(new ItemStack(crackedPavementStairs));
+            }
+            if(crackedPavementSlab != null) {
+                itemGroupList.add(new ItemStack(crackedPavementSlab));
             }
         }
         if(fancyBricks != null) {
@@ -338,6 +478,20 @@ public enum ModStoneType {
             }
             if(fancyBricksWall != null) {
                 itemGroupList.add(new ItemStack(fancyBricksWall));
+            }
+        }
+        if(crackedTiles != null) {
+            if(!vanillaAddition) {
+                itemGroupList.add(new ItemStack(crackedFancyBricks));
+            }
+            if(crackedFancyBricksStairs != null) {
+                itemGroupList.add(new ItemStack(crackedFancyBricksStairs));
+            }
+            if(crackedFancyBricksSlab != null) {
+                itemGroupList.add(new ItemStack(crackedFancyBricksSlab));
+            }
+            if(crackedFancyBricksWall != null) {
+                itemGroupList.add(new ItemStack(crackedFancyBricksWall));
             }
         }
 
@@ -408,6 +562,14 @@ public enum ModStoneType {
         return smoothSlab;
     }
 
+    public Block getCrackedSmooth() {
+        return crackedSmooth;
+    }
+
+    public Block getCrackedSmoothSlab() {
+        return crackedSmoothSlab;
+    }
+
     public Block getBrick() {
         return brick;
     }
@@ -432,6 +594,26 @@ public enum ModStoneType {
         return brickFamily;
     }
 
+    public Block getCrackedBrick() {
+        return crackedBrick;
+    }
+
+    public Block getCrackedBrickStairs() {
+        return crackedBrickStairs;
+    }
+
+    public Block getCrackedBrickSlab() {
+        return crackedBrickSlab;
+    }
+
+    public Block getCrackedBrickWall() {
+        return crackedBrickWall;
+    }
+
+    public BlockFamily getCrackedBrickFamily() {
+        return crackedBrickFamily;
+    }
+
     public Block getTiles() {
         return tiles;
     }
@@ -450,6 +632,26 @@ public enum ModStoneType {
 
     public BlockFamily getTilesFamily() {
         return tilesFamily;
+    }
+
+    public Block getCrackedTiles() {
+        return crackedTiles;
+    }
+
+    public Block getCrackedTilesStairs() {
+        return crackedTilesStairs;
+    }
+
+    public Block getCrackedTilesSlab() {
+        return crackedTilesSlab;
+    }
+
+    public Block getCrackedTilesWall() {
+        return crackedTilesWall;
+    }
+
+    public BlockFamily getCrackedTilesFamily() {
+        return crackedTilesFamily;
     }
 
     public Block getCobbledBrick() {
@@ -480,6 +682,14 @@ public enum ModStoneType {
         return pillarSlab;
     }
 
+    public Block getCrackedPillar() {
+        return crackedPillar;
+    }
+
+    public Block getCrackedPillarSlab() {
+        return crackedPillarSlab;
+    }
+
     public Block getPavement() {
         return pavement;
     }
@@ -494,6 +704,22 @@ public enum ModStoneType {
 
     public BlockFamily getPavementFamily() {
         return pavementFamily;
+    }
+
+    public Block getCrackedPavement() {
+        return crackedPavement;
+    }
+
+    public Block getCrackedPavementStairs() {
+        return crackedPavementStairs;
+    }
+
+    public Block getCrackedPavementSlab() {
+        return crackedPavementSlab;
+    }
+
+    public BlockFamily getCrackedPavementFamily() {
+        return crackedPavementFamily;
     }
 
     public Block getFancyBricks() {
@@ -514,6 +740,26 @@ public enum ModStoneType {
 
     public BlockFamily getFancyBricksFamily() {
         return fancyBricksFamily;
+    }
+
+    public Block getCrackedFancyBricks() {
+        return crackedFancyBricks;
+    }
+
+    public Block getCrackedFancyBricksStairs() {
+        return crackedFancyBricksStairs;
+    }
+
+    public Block getCrackedFancyBricksSlab() {
+        return crackedFancyBricksSlab;
+    }
+
+    public Block getCrackedFancyBricksWall() {
+        return crackedFancyBricksWall;
+    }
+
+    public BlockFamily getCrackedFancyBricksFamily() {
+        return crackedFancyBricksFamily;
     }
 
     public boolean isVanillaAddition() {

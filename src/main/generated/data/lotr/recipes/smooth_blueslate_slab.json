@@ -7,12 +7,10 @@
     }
   },
   "pattern": [
-    "#  ",
-    "## ",
     "###"
   ],
   "result": {
-    "count": 4,
+    "count": 6,
     "item": "lotr:smooth_blueslate_slab"
   },
   "show_notification": true

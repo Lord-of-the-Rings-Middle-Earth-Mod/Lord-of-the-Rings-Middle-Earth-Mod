@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lotr:block/fancy_blueslate_brick_slab"
+    },
+    "type=double": {
+      "model": "lotr:block/fancy_blueslate_brick"
+    },
+    "type=top": {
+      "model": "lotr:block/fancy_blueslate_brick_slab_top"
+    }
+  }
+}

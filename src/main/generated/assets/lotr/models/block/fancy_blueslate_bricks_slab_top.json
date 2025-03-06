@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "lotr:block/fancy_blueslate_bricks",
-    "side": "lotr:block/fancy_blueslate_bricks",
-    "top": "lotr:block/fancy_blueslate_bricks"
-  }
-}
