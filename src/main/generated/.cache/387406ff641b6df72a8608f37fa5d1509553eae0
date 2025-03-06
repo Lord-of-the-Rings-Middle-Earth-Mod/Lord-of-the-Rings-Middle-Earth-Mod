@@ -1,4 +1,4 @@
-// 1.20.2	2025-03-06T12:33:08.7481794	Lord of the Rings Middle Earth/Block Loot Tables
+// 1.20.2	2025-03-06T14:51:21.7655714	Lord of the Rings Middle Earth/Block Loot Tables
 efcfcde20984809a067f4858650bc224b0010ef3 data\lotr\loot_tables\blocks\cobbled_blueslate_button.json
 8faf717001b3d473cc4ecb2487570999431f9559 data\lotr\loot_tables\blocks\potted_wild_potato.json
 e384d465a40bebdc0d7c2dcb6f5978ba75ad93ba data\lotr\loot_tables\blocks\potted_wild_lettuce.json
@@ -37,8 +37,8 @@ d26dc27beb6b6367ddb31f2d9a902a7b97b7edcd data\lotr\loot_tables\blocks\fancy_blue
 c341b2cf07e5074e414edb7538be7bbc9d036cf1 data\lotr\loot_tables\blocks\pine_planks_slab.json
 f6be16653ff23bd78cc0325907692bf10752ac4f data\lotr\loot_tables\blocks\stripped_pine_stairs.json
 b4cfddd241ea1583563ad79c50f130a14621ae5b data\lotr\loot_tables\blocks\blueslate_pavement_slab.json
-f6247bc6d1f2c0dac5de7111b464f024ff253d50 data\lotr\loot_tables\blocks\potted_wild_tomato.json
 c8fd91669076469e47a368ea1b73e05a7143c78a data\lotr\loot_tables\blocks\wild_carrot.json
+f6247bc6d1f2c0dac5de7111b464f024ff253d50 data\lotr\loot_tables\blocks\potted_wild_tomato.json
 e19db470d2d67d396bb6dd533e6ebc27f6267d56 data\lotr\loot_tables\blocks\blueslate_brick_stairs.json
 172f90d4f7d2c3fb2f16af0e6703bec1b8e5d0cc data\lotr\loot_tables\blocks\cobbled_blueslate_bricks_slab.json
 4659601c3431854014da355c0a7ca5c99d69a690 data\lotr\loot_tables\blocks\blueslate_wall.json
@@ -59,8 +59,8 @@ fb3e734460743dc41611a9a1980ed677947ebea4 data\lotr\loot_tables\blocks\stripped_p
 c73582aa28cf8f5f370a5583930e6007b5840397 data\lotr\loot_tables\blocks\stripped_pine_door.json
 6172f4df733d3866f3013b44b59d4dae8dcafd1d data\lotr\loot_tables\blocks\blueslate_pavement.json
 f717e26c291bf562771aa4e3ef7c28d81d858766 data\lotr\loot_tables\blocks\blueslate_stairs.json
-42cc420bf52d7208b499cf7885f34311a1a0a950 data\lotr\loot_tables\blocks\blueslate_brick_slab.json
 f2ec941c04e9c911f43e963a915747f3850a0a3f data\lotr\loot_tables\blocks\cobbled_blueslate_bricks_stairs.json
+42cc420bf52d7208b499cf7885f34311a1a0a950 data\lotr\loot_tables\blocks\blueslate_brick_slab.json
 91a9f33bd607d3011b1e5bcf9f8c1b8f13df5107 data\lotr\loot_tables\blocks\lettuce_crop.json
 212256092cd82d3ee93ad76f68b7409f1ba744ac data\lotr\loot_tables\blocks\pine_planks_pressure_plate.json
 37a2aa99f8417cfd6d284801041cd646b16a42fe data\lotr\loot_tables\blocks\pine_log.json
@@ -82,7 +82,7 @@ de00e989b19e9521f3d2d6ce2d31373bdee8689d data\lotr\loot_tables\blocks\fancy_blue
 f260b6aa82f98a7b51b56fc4a28540b7495897b5 data\lotr\loot_tables\blocks\chiseled_blueslate_brick.json
 9a3981f09a450c424d3214e43294a3c9b3976467 data\lotr\loot_tables\blocks\lettuce_crate.json
 897105cba5326873578dc78b631d9fb2b931e265 data\lotr\loot_tables\blocks\pine_planks_button.json
-c78bf34fee78773df43bbdb5efec7428e6f23eda data\lotr\loot_tables\blocks\pine_wood_stairs.json
 ccd5243471ee18fc0da8fd6b85c7835f10474abe data\lotr\loot_tables\blocks\bronze_block.json
+c78bf34fee78773df43bbdb5efec7428e6f23eda data\lotr\loot_tables\blocks\pine_wood_stairs.json
 f84024368b839cb78e8160632b9db95d2355f640 data\lotr\loot_tables\blocks\tin_ore.json
 d8cc05318c8b3d3a4143727bb34ed69403d4481e data\lotr\loot_tables\blocks\deepslate_tin_ore.json

@@ -1,4 +1,4 @@
-// 1.20.2	2025-03-06T12:33:08.7341806	Lord of the Rings Middle Earth/Recipes
+// 1.20.2	2025-03-06T14:51:21.7495706	Lord of the Rings Middle Earth/Recipes
 60c283a111a6af6c99fb6b9ecd04ac951b432c2f data\lotr\advancements\recipes\building_blocks\cobbled_blueslate_bricks_from_cobbled_blueslate_stonecutting.json
 ea02a4261c58678b9686ac22a84b4be22265408a data\lotr\recipes\pine_wood_pressure_plate.json
 236aaadbf67bed40e0f623e6ce7d3087ad1d3f8f data\lotr\advancements\recipes\misc\bronze_ingot_crafting.json
@@ -178,8 +178,8 @@ d443bdac99b2ca509f59023d6e1d12317bc1c536 data\lotr\recipes\pine_planks_door.json
 4736865ff0edeb7e93beb91528e71909cf462319 data\lotr\advancements\recipes\food\cooked_corn.json
 5eb97c0e9513d7e43eab73b4730c8f7f42f56a98 data\lotr\recipes\bronze_ingot_crafting.json
 7cf931480f64deb154eb5eb604dd1830ad94198e data\lotr\recipes\raw_tin.json
-7e3490847d057f2abe35d18aaae7013c50c43a95 data\lotr\recipes\stripped_pine_door.json
 db610d28035f72225afda2552e10f5a2c0ff4f52 data\lotr\advancements\recipes\building_blocks\pine_wood.json
+7e3490847d057f2abe35d18aaae7013c50c43a95 data\lotr\recipes\stripped_pine_door.json
 afc97a535c99ee496816fbcdcae1a96e524bbb76 data\lotr\recipes\fancy_blueslate_bricks_wall.json
 6933046cfeff31f28ca859101b3103b1e12019b5 data\lotr\advancements\recipes\building_blocks\blueslate_stairs_from_blueslate_stonecutting.json
 f7d7980347b8c597cf396a27589b3882f82a6b05 data\lotr\advancements\recipes\building_blocks\blueslate_tiles_wall.json
