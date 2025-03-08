@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blueslate_brick": {
+    "has_smooth_stone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:blueslate_brick"
+              "lotr:smooth_blueslate"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:blueslate_tiles"
+        "recipe": "lotr:cracked_smooth_blueslate"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_blueslate_brick"
+      "has_smooth_stone"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:blueslate_tiles"
+      "lotr:cracked_smooth_blueslate"
     ]
   },
   "sends_telemetry_event": false

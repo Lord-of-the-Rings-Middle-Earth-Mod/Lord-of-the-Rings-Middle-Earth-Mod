@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_fancy_bricks": {
+    "has_cobbled_blueslate": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:fancy_blueslate_brick"
+              "lotr:cobbled_blueslate"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "lotr:cracked_fancy_blueslate_brick"
+        "recipe": "minecraft:cobbled_blueslate_bricks_crafting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_fancy_bricks"
+      "has_cobbled_blueslate"
     ]
   ],
   "rewards": {
     "recipes": [
-      "lotr:cracked_fancy_blueslate_brick"
+      "minecraft:cobbled_blueslate_bricks_crafting"
     ]
   },
   "sends_telemetry_event": false

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cobbled_blueslate": {
+    "has_blueslate_pavement": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:cobbled_blueslate"
+              "lotr:blueslate_pavement"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cobbled_blueslate_bricks"
+        "recipe": "minecraft:cracked_blueslate_pavement_crafting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cobbled_blueslate"
+      "has_blueslate_pavement"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cobbled_blueslate_bricks"
+      "minecraft:cracked_blueslate_pavement_crafting"
     ]
   },
   "sends_telemetry_event": false

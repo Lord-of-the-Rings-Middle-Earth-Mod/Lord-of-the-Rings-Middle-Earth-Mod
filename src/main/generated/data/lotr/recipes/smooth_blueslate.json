@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 0.1,
   "ingredient": {
-    "item": "lotr:blueslate_tiles"
+    "item": "lotr:blueslate"
   },
-  "result": "lotr:cracked_blueslate_tiles"
+  "result": "lotr:smooth_blueslate"
 }

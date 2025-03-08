@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blueslate_pavement": {
+    "has_pavement": {
       "conditions": {
         "items": [
           {
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:cracked_blueslate_pavement"
+        "recipe": "lotr:cracked_blueslate_pavement"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_blueslate_pavement"
+      "has_pavement"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:cracked_blueslate_pavement"
+      "lotr:cracked_blueslate_pavement"
     ]
   },
   "sends_telemetry_event": false

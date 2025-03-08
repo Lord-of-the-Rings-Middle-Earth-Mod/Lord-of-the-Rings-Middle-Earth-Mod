@@ -484,7 +484,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPavement(), 2)
 								.pattern("#").pattern("#").input('#', stoneType.getCrackedTiles())
 								.criterion(hasItem(stoneType.getPavement()), conditionsFromItem(stoneType.getPavement()))
-								.offerTo(exporter, new Identifier(getRecipeName(stoneType.getCrackedPavement())));
+								.offerTo(exporter,
+										new Identifier(getRecipeName(stoneType.getCrackedPavement()) + "_crafting"));
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
 								stoneType.getCrackedPavement(), stoneType.getCrackedTiles());
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
@@ -703,7 +704,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4).pattern("##")
 		                       .pattern("##").input('#', input)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
-		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+		                       .offerTo(exporter, new Identifier(getRecipeName(output) + "_crafting"));
 	}
 
 	private void createPillarRecipe(Block input, Block output, RecipeExporter exporter) {

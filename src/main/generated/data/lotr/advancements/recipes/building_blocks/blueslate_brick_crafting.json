@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_blueslate_tiles": {
+    "has_blueslate": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:blueslate_tiles"
+              "lotr:blueslate"
             ]
           }
         ]
@@ -15,7 +15,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:fancy_blueslate_brick"
+        "recipe": "minecraft:blueslate_brick_crafting"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -23,12 +23,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_blueslate_tiles"
+      "has_blueslate"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:fancy_blueslate_brick"
+      "minecraft:blueslate_brick_crafting"
     ]
   },
   "sends_telemetry_event": false
