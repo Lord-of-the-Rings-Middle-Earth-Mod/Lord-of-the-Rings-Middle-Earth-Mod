@@ -33,12 +33,19 @@ public class ModBlocks {
 	public static final Block CHALK = registerBlock("chalk", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block CHALK_BRICKS = registerBlock("chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+	public static final Block CHALK_BRICK_STAIRS = registerBlock("chalk_brick_stairs",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS)));
 	public static final Block GOLD_ORNAMENTED_CHALK_BRICKS = registerBlock("gold_ornamented_chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+	public static final Block GOLD_ORNAMENTED_CHALK_BRICK_STAIRS = registerBlock("gold_ornamented_chalk_brick_stairs",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS)));
 	public static final Block OVERGROWN_CHALK_BRICKS = registerBlock("overgrown_chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
 	public static final Block GOLD_ORNAMENTED_OVERGROWN_CHALK_BRICKS = registerBlock(
 			"gold_ornamented_overgrown_chalk_bricks", new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS)));
+	public static final Block GOLD_ORNAMENTED_OVERGROWN_CHALK_BRICK_STAIRS = registerBlock(
+			"gold_ornamented_overgrown_chalk_brick_stairs",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS)));
 
 	public static final Block TEST_OVERGROWN = registerBlock("test_overgrown", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block TEST_OVERGROWN_ORNAMENTED = registerBlock("test_overgrown_ornamented", new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
