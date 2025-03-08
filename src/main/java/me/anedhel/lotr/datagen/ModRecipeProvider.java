@@ -8,7 +8,6 @@ import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.advancement.AdvancementCriterion;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.*;
@@ -246,7 +245,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getStone()),
 							RecipeCategory.BUILDING_BLOCKS, stoneType.getSmooth().asItem(),
 							0.1f, 200)
-							.criterion("has_stone", (AdvancementCriterion)VanillaRecipeProvider
+							.criterion("has_stone", VanillaRecipeProvider
 									.conditionsFromItem(stoneType.getStone())).offerTo(exporter);
 					if (stoneType.getSmoothSlab() != null) {
 						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
@@ -258,7 +257,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getSmooth()),
 								RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedSmooth().asItem(),
 								0.1f, 200)
-								.criterion("has_smooth_stone", (AdvancementCriterion)VanillaRecipeProvider
+								.criterion("has_smooth_stone", VanillaRecipeProvider
 										.conditionsFromItem(stoneType.getSmooth())).offerTo(exporter);
 						if (stoneType.getCrackedSmoothSlab() != null) {
 							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
@@ -309,7 +308,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getBrick()),
 								RecipeCategory.BUILDING_BLOCKS,stoneType.getCrackedBrick().asItem(),
 								0.1f, 200)
-								.criterion("has_stone_bricks", (AdvancementCriterion)VanillaRecipeProvider
+								.criterion("has_stone_bricks", VanillaRecipeProvider
 										.conditionsFromItem(stoneType.getBrick())).offerTo(exporter);
 						if (stoneType.getCrackedBrickStairs() != null) {
 							createStairRecipe(stoneType.getCrackedBrick(), stoneType.getCrackedBrickStairs(), exporter);
@@ -342,6 +341,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 								stoneType.getTilesStairs(), stoneType.getTiles(), 1);
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
 								stoneType.getTilesStairs(), stoneType.getBrick(), 1);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getTilesStairs(), stoneType.getStone(), 1);
 					}
 					if (stoneType.getTilesSlab() != null) {
 						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
@@ -350,6 +351,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 								stoneType.getTilesSlab(), stoneType.getBrick(), 2);
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
 								stoneType.getTilesSlab(), stoneType.getTiles(), 2);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getTilesSlab(), stoneType.getStone(), 2);
 					}
 					if (stoneType.getTilesWall() != null) {
 						offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
@@ -358,12 +361,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 								stoneType.getTilesWall(), stoneType.getBrick(), 1);
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
 								stoneType.getTilesWall(), stoneType.getTiles(), 1);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getTilesWall(), stoneType.getStone(), 1);
 					}
 					if (stoneType.getCrackedTiles() != null) {
 						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getTiles()),
 								RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedTiles().asItem(),
 								0.1f, 200)
-								.criterion("has_tiles", (AdvancementCriterion)VanillaRecipeProvider
+								.criterion("has_tiles", VanillaRecipeProvider
 										.conditionsFromItem(stoneType.getTiles())).offerTo(exporter);
 						createBricksRecipe(stoneType.getCrackedBrick(), stoneType.getCrackedTiles(), exporter);
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
@@ -428,12 +433,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 								stoneType.getPillarSlab(), stoneType.getPillar());
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
 								stoneType.getPillarSlab(), stoneType.getPillar(), 2);
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getPillarSlab(), stoneType.getStone(), 2);
 					}
 					if (stoneType.getCrackedPillar() != null) {
 						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getPillar()),
 								RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPillar().asItem(),
 								0.1f, 200)
-								.criterion("has_pillar", (AdvancementCriterion)VanillaRecipeProvider
+								.criterion("has_pillar", VanillaRecipeProvider
 										.conditionsFromItem(stoneType.getPillar())).offerTo(exporter);
 						if (stoneType.getCrackedPillarSlab() != null) {
 							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
@@ -479,7 +486,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getPavement()),
 								RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPavement().asItem(),
 								0.1f, 200)
-								.criterion("has_pavement", (AdvancementCriterion)VanillaRecipeProvider
+								.criterion("has_pavement", VanillaRecipeProvider
 										.conditionsFromItem(stoneType.getPavement())).offerTo(exporter);
 						ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPavement(), 2)
 								.pattern("#").pattern("#").input('#', stoneType.getCrackedTiles())
@@ -553,7 +560,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getFancyBricks()),
 								RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedFancyBricks().asItem(),
 								0.1f, 200)
-								.criterion("has_fancy_bricks", (AdvancementCriterion)VanillaRecipeProvider
+								.criterion("has_fancy_bricks", VanillaRecipeProvider
 										.conditionsFromItem(stoneType.getFancyBricks())).offerTo(exporter);
 						createBricksRecipe(stoneType.getCrackedTiles(), stoneType.getCrackedFancyBricks(), exporter);
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,

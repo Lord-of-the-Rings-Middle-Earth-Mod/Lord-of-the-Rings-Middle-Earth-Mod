@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "lotr:block/cracked_fancy_blueslate_brick",
-    "side": "lotr:block/cracked_fancy_blueslate_brick",
-    "top": "lotr:block/cracked_fancy_blueslate_brick"
-  }
-}
