@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "all": "lotr:block/cobbled_blueslate",
+    "layer1": "lotr:block/mossy_overlay_one"
+  }
+}

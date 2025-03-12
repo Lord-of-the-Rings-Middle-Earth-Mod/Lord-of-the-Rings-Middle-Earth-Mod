@@ -48,7 +48,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addPottedPlantDrops(ModBlocks.POTTED_WILD_CARROT);
         addDrop(ModBlocks.WILD_POTATO, wildFlowerDrops(ModBlocks.WILD_POTATO, Items.POTATO, UniformLootNumberProvider.create(1.0f, 3.0f)));
         addPottedPlantDrops(ModBlocks.POTTED_WILD_POTATO);
-        addDrop(ModBlocks.WILD_CORN, (Block block) -> this.dropsWithProperty((Block)block, TallPlantBlock.HALF, DoubleBlockHalf.LOWER));
+        addDrop(ModBlocks.WILD_CORN, (Block block) -> this.dropsWithProperty(block, TallPlantBlock.HALF, DoubleBlockHalf.LOWER));
 
         addDrop(ModBlocks.WILD_LETTUCE, wildFlowerDrops(ModBlocks.WILD_LETTUCE, ModItems.LETTUCE, UniformLootNumberProvider.create(1.0f, 3.0f)));
         addPottedPlantDrops(ModBlocks.POTTED_WILD_LETTUCE);
@@ -142,6 +142,14 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 addDrop(stoneType.getCobbledWall());
                 addDrop(stoneType.getCobbledButton());
                 addDrop(stoneType.getCobbledPressurePlate());
+            }
+            if (stoneType.getMossyCobbled() != null) {
+                addDrop(stoneType.getMossyCobbled());
+                addDrop(stoneType.getMossyCobbledStairs());
+                addDrop(stoneType.getMossyCobbledSlab(), slabDrops(stoneType.getMossyCobbledSlab()));
+                addDrop(stoneType.getMossyCobbledWall());
+                addDrop(stoneType.getMossyCobbledButton());
+                addDrop(stoneType.getMossyCobbledPressurePlate());
             }
             if (stoneType.getSmooth() != null) {
                 addDrop(stoneType.getSmooth());

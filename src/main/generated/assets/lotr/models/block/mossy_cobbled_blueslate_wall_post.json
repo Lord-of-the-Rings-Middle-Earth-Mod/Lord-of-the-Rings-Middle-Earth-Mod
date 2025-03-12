@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "all": "lotr:block/cobbled_blueslate",
+    "layer1": "lotr:block/mossy_overlay_one"
+  }
+}

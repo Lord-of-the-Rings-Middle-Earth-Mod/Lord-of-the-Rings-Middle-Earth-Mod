@@ -33,7 +33,8 @@ public enum ModStoneType {
             null, null, null, null, false),
      */
 
-    BLUESLATE(ModStoneBlocks.BLUESLATE_FAMILY, ModStoneBlocks.COBBLED_BLUESLATE_FAMILY,
+    BLUESLATE(ModStoneBlocks.BLUESLATE_FAMILY,
+            ModStoneBlocks.COBBLED_BLUESLATE_FAMILY, ModStoneBlocks.MOSSY_COBBLED_BLUESLATE_FAMILY,
             ModStoneBlocks.BLUESLATE_BRICK_FAMILY, ModStoneBlocks.CRACKED_BLUESLATE_BRICK_FAMILY,
             ModStoneBlocks.BLUESLATE_TILES_FAMILY, ModStoneBlocks.CRACKED_BLUESLATE_TILES_FAMILY,
             ModStoneBlocks.COBBLED_BLUESLATE_BRICKS_FAMILY,
@@ -62,6 +63,14 @@ public enum ModStoneType {
     private final Block cobbledButton;
     private final Block cobbledPressurePlate;
     private final BlockFamily cobbledFamily;
+
+    private final Block mossyCobbled;
+    private final Block mossyCobbledStairs;
+    private final Block mossyCobbledSlab;
+    private final Block mossyCobbledWall;
+    private final Block mossyCobbledButton;
+    private final Block mossyCobbledPressurePlate;
+    private final BlockFamily mossyCobbledFamily;
 
     private final Block smooth;
     private final Block smoothSlab;
@@ -124,7 +133,8 @@ public enum ModStoneType {
 
     private final boolean vanillaAddition;
 
-    ModStoneType(BlockFamily stoneFamily, BlockFamily cobbledFamily,
+    ModStoneType(BlockFamily stoneFamily,
+            BlockFamily cobbledFamily, BlockFamily mossyCobbledFamily,
             BlockFamily brickFamily, BlockFamily crackedBrickFamily,
             BlockFamily tilesFamily, BlockFamily crackedTilesFamily,
             BlockFamily cobbledBrickFamily,
@@ -148,6 +158,14 @@ public enum ModStoneType {
         this.cobbledButton = cobbledFamily.getVariant(BlockFamily.Variant.BUTTON);
         this.cobbledPressurePlate = cobbledFamily.getVariant(BlockFamily.Variant.PRESSURE_PLATE);
         this.cobbledFamily = cobbledFamily;
+
+        this.mossyCobbled = mossyCobbledFamily.getBaseBlock();
+        this.mossyCobbledStairs = mossyCobbledFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.mossyCobbledSlab = mossyCobbledFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.mossyCobbledWall = mossyCobbledFamily.getVariant(BlockFamily.Variant.WALL);
+        this.mossyCobbledButton = mossyCobbledFamily.getVariant(BlockFamily.Variant.BUTTON);
+        this.mossyCobbledPressurePlate = mossyCobbledFamily.getVariant(BlockFamily.Variant.PRESSURE_PLATE);
+        this.mossyCobbledFamily = mossyCobbledFamily;
 
         this.smooth = smooth;
         this.smoothSlab = smoothSlab;
@@ -212,7 +230,8 @@ public enum ModStoneType {
     }
 
     ModStoneType(Block baseBlock, Block basestairBlock, Block baseslabBlock, Block basewallBlock, Block basebuttonBlock, Block basepressurePlateBlock,
-            BlockFamily cobbledFamily, BlockFamily brickFamily, BlockFamily crackedBrickFamily,
+            BlockFamily cobbledFamily, BlockFamily mossyCobbledFamily,
+            BlockFamily brickFamily, BlockFamily crackedBrickFamily,
             BlockFamily tilesFamily, BlockFamily crackedTilesFamily,
             BlockFamily cobbledBrickFamily,
             BlockFamily pavementFamily, BlockFamily crackedPavementFamily,
@@ -235,6 +254,14 @@ public enum ModStoneType {
         this.cobbledButton = cobbledFamily != null ? cobbledFamily.getVariant(BlockFamily.Variant.BUTTON) : null;
         this.cobbledPressurePlate = cobbledFamily != null ? cobbledFamily.getVariant(BlockFamily.Variant.PRESSURE_PLATE) : null;
         this.cobbledFamily = cobbledFamily;
+
+        this.mossyCobbled = mossyCobbledFamily != null ? mossyCobbledFamily.getBaseBlock() : null;
+        this.mossyCobbledStairs = mossyCobbledFamily != null ? mossyCobbledFamily.getVariant(BlockFamily.Variant.STAIRS) : null;
+        this.mossyCobbledSlab = mossyCobbledFamily != null ? mossyCobbledFamily.getVariant(BlockFamily.Variant.SLAB) : null;
+        this.mossyCobbledWall = mossyCobbledFamily != null ? mossyCobbledFamily.getVariant(BlockFamily.Variant.WALL) : null;
+        this.mossyCobbledButton = mossyCobbledFamily != null ? mossyCobbledFamily.getVariant(BlockFamily.Variant.BUTTON) : null;
+        this.mossyCobbledPressurePlate = mossyCobbledFamily != null ? mossyCobbledFamily.getVariant(BlockFamily.Variant.PRESSURE_PLATE) : null;
+        this.mossyCobbledFamily = mossyCobbledFamily;
 
         this.smooth = smooth;
         this.smoothSlab = smoothSlab;
@@ -337,6 +364,26 @@ public enum ModStoneType {
             }
             if (cobbledPressurePlate != null) {
                 itemGroupList.add(new ItemStack(cobbledPressurePlate));
+            }
+        }
+        if(mossyCobbled != null) {
+            if(!vanillaAddition) {
+                itemGroupList.add(new ItemStack(mossyCobbled));
+            }
+            if(mossyCobbledStairs != null) {
+                itemGroupList.add(new ItemStack(mossyCobbledStairs));
+            }
+            if(mossyCobbledSlab != null) {
+                itemGroupList.add(new ItemStack(mossyCobbledSlab));
+            }
+            if(mossyCobbledWall != null) {
+                itemGroupList.add(new ItemStack(mossyCobbledWall));
+            }
+            if(mossyCobbledButton != null) {
+                itemGroupList.add(new ItemStack(mossyCobbledButton));
+            }
+            if(mossyCobbledPressurePlate != null) {
+                itemGroupList.add(new ItemStack(mossyCobbledPressurePlate));
             }
         }
         if(smooth != null) {
@@ -552,6 +599,34 @@ public enum ModStoneType {
 
     public BlockFamily getCobbledFamily() {
         return cobbledFamily;
+    }
+
+    public Block getMossyCobbled() {
+        return mossyCobbled;
+    }
+
+    public Block getMossyCobbledStairs() {
+        return mossyCobbledStairs;
+    }
+
+    public Block getMossyCobbledSlab() {
+        return mossyCobbledSlab;
+    }
+
+    public Block getMossyCobbledWall() {
+        return mossyCobbledWall;
+    }
+
+    public Block getMossyCobbledButton() {
+        return mossyCobbledButton;
+    }
+
+    public Block getMossyCobbledPressurePlate() {
+        return mossyCobbledPressurePlate;
+    }
+
+    public BlockFamily getMossyCobbledFamily() {
+        return mossyCobbledFamily;
     }
 
     public Block getSmooth() {

@@ -10,6 +10,8 @@ import me.anedhel.lotr.block.custom.ModPillarType;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
 import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
+import me.anedhel.lotr.datagen.util.ModModelType;
+import me.anedhel.lotr.datagen.util.ModModels;
 import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -28,14 +30,7 @@ import java.util.Optional;
  */
 public class ModModelProvider extends FabricModelProvider {
 
-    public static final Model PILLAR = new Model(Optional.of(new Identifier("minecraft", "block/" + "cube_column")),
-                    Optional.empty() ,TextureKey.END, TextureKey.SIDE);
-    public static final Model PILLAR_TOP = new Model(Optional.of(new Identifier("minecraft", "block/" + "cube_column")),
-            Optional.of("_top") ,TextureKey.END, TextureKey.SIDE);
-    public static final Model PILLAR_MIDDLE = new Model(Optional.of(new Identifier("minecraft", "block/" +
-            "cube_column")), Optional.of("_middle") ,TextureKey.END, TextureKey.SIDE);
-    public static final Model PILLAR_BASE = new Model(Optional.of(new Identifier("minecraft", "block/" + "cube_column")),
-            Optional.of("_base") ,TextureKey.END, TextureKey.SIDE);
+
 
     public ModModelProvider(FabricDataOutput output) {
         super(output);
@@ -165,6 +160,18 @@ public class ModModelProvider extends FabricModelProvider {
                 if (stoneType.getCobbled() != null) {
                     BlockStateModelGenerator.BlockTexturePool cobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbled());
                     cobbledPool.family(stoneType.getCobbledFamily());
+
+                    if(stoneType.getMossyCobbled() != null) {
+                        TextureMap mossyCobbledTM = createOneOverlayTextureMap(stoneType.getCobbled(),
+                                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/mossy_overlay_one"),
+                                ModModelType.CUBE_ALL);
+                        oneOverlayBlock(stoneType.getMossyCobbled(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
+                        oneOverlayStairs(stoneType.getMossyCobbledStairs(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
+                        oneOverlaySlab(stoneType.getMossyCobbledSlab(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
+                        oneOverlayWall(stoneType.getMossyCobbledWall(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
+                        oneOverlayButton(stoneType.getMossyCobbledButton(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
+                        oneOverlayPressurePlate(stoneType.getMossyCobbledPressurePlate(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
+                    }
                 }
                 if (stoneType.getSmooth() != null && stoneType.getSmoothSlab() != null) {
                     registerSmoothStone(blockStateModelGenerator, stoneType.getSmooth(), stoneType.getSmoothSlab());
@@ -363,12 +370,13 @@ public class ModModelProvider extends FabricModelProvider {
                 .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
                 .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
                         "_top"));
-        Identifier singlePillarIdentifier = PILLAR.upload(pillar, singlePillarTM, blockStateModelGenerator.modelCollector);
-        Identifier basePillarIdentifier = PILLAR_BASE.upload(pillar, basePillarTM,
+        Identifier singlePillarIdentifier = ModModels.PILLAR.upload(pillar, singlePillarTM,
                 blockStateModelGenerator.modelCollector);
-        Identifier middlePillarIdentifier = PILLAR_MIDDLE.upload(pillar, middlePillarTM,
+        Identifier basePillarIdentifier = ModModels.PILLAR_BASE.upload(pillar, basePillarTM,
                 blockStateModelGenerator.modelCollector);
-        Identifier topPillarIdentifier = PILLAR_TOP.upload(pillar, topPillarTM, blockStateModelGenerator.modelCollector);
+        Identifier middlePillarIdentifier = ModModels.PILLAR_MIDDLE.upload(pillar, middlePillarTM,
+                blockStateModelGenerator.modelCollector);
+        Identifier topPillarIdentifier = ModModels.PILLAR_TOP.upload(pillar, topPillarTM, blockStateModelGenerator.modelCollector);
 
         blockStateModelGenerator.blockStateCollector.accept(createPillarBlockState(pillar, singlePillarIdentifier, topPillarIdentifier,
                 middlePillarIdentifier, basePillarIdentifier));
@@ -392,5 +400,127 @@ public class ModModelProvider extends FabricModelProvider {
                 .register(ModPillarType.TOP, BlockStateVariant.create().put(VariantSettings.MODEL, topPillarIdentifier))
                 .register(ModPillarType.MIDDLE, BlockStateVariant.create().put(VariantSettings.MODEL, middlePillarIdentifier))
                 .register(ModPillarType.BASE, BlockStateVariant.create().put(VariantSettings.MODEL, basePillarIdentifier)));
+    }
+
+    /**
+     * This Method is used to generate the Overlay Texture Map for the Block and the given overlay1Id
+     *
+     * For the overlay1Id´s the following should be used:
+     * mossy_overlay_one: base, cobbled, smooth, smooth slab
+     * mossy_overlay_two: bricks, tiles, fancy bricks, pavement
+     *
+     * @param baseBlock The block the TextureMap is based on
+     * @param overlay1Id The Identifier of the overlay texture
+     * @param modelType The model type the textureMap is meant for
+     */
+    private static TextureMap createOneOverlayTextureMap (Block baseBlock, Identifier overlay1Id, ModModelType modelType) {
+        switch(modelType) {
+            case CUBE_ALL -> {
+                return new TextureMap()
+                        .put(TextureKey.ALL, TextureMap.getId(baseBlock)).put(TextureKey.LAYER1, overlay1Id);
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    private static void oneOverlayBlock(Block block, TextureMap textureMap,
+            BlockStateModelGenerator blockStateModelGenerator, ModModelType modelType) {
+        Identifier modelId = null;
+        switch(modelType) {
+            case CUBE_ALL -> modelId = ModModels.CUBE_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
+        }
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSingletonBlockState(block, modelId));
+        blockStateModelGenerator.registerParentedItemModel(block, modelId);
+    }
+
+    private static void oneOverlayStairs(Block block, TextureMap textureMap,
+            BlockStateModelGenerator blockStateModelGenerator, ModModelType modelType) {
+        Identifier innerModelId = null;
+        Identifier outerModelId = null;
+        Identifier regularModelId = null;
+        switch(modelType) {
+            case CUBE_ALL -> {
+                innerModelId = ModModels.INNER_STAIRS_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
+                regularModelId = ModModels.STAIRS_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
+                outerModelId = ModModels.OUTER_STAIRS_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
+            }
+        }
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createStairsBlockState(block, innerModelId, regularModelId, outerModelId));
+        blockStateModelGenerator.registerParentedItemModel(block, regularModelId);
+    }
+
+    private static void oneOverlaySlab(Block block, TextureMap textureMap,
+            BlockStateModelGenerator blockStateModelGenerator, ModModelType modelType) {
+        Identifier slabModelId = null;
+        Identifier slabTopModelId = null;
+        Identifier doubleSlabModelId = null;
+        switch(modelType) {
+            case CUBE_ALL -> {
+                slabModelId = ModModels.SLAB_ALL_OVERLAY.upload(block, textureMap,
+                        blockStateModelGenerator.modelCollector);
+                slabTopModelId = ModModels.SLAB_TOP_ALL_OVERLAY.upload(block, textureMap,
+                        blockStateModelGenerator.modelCollector);
+                doubleSlabModelId = ModModels.DOUBLE_SLAB_ALL_OVERLAY.upload(block, textureMap,
+                        blockStateModelGenerator.modelCollector);
+            }
+        }
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSlabBlockState(block, slabModelId, slabTopModelId, doubleSlabModelId));
+        blockStateModelGenerator.registerParentedItemModel(block, slabModelId);
+    }
+
+    private static void oneOverlayWall(Block block, TextureMap textureMap,
+            BlockStateModelGenerator blockStateModelGenerator, ModModelType modelType) {
+        Identifier wallPostModelId = null;
+        Identifier wallSideModelId = null;
+        Identifier wallSideTallModelId = null;
+        Identifier wallInventoryModelId = null;
+        switch(modelType) {
+            case CUBE_ALL -> {
+                wallPostModelId = ModModels.WALL_POST_ALL_OVERLAY.upload(block, textureMap,
+                        blockStateModelGenerator.modelCollector);
+                wallSideModelId = ModModels.WALL_SIDE_ALL_OVERLAY.upload(block, textureMap,
+                        blockStateModelGenerator.modelCollector);
+                wallSideTallModelId = ModModels.WALL_SIDE_TALL_ALL_OVERLAY.upload(block, textureMap,
+                        blockStateModelGenerator.modelCollector);
+                wallInventoryModelId = ModModels.WALL_INVENTORY_ALL_OVERLAY.upload(block, textureMap,
+                        blockStateModelGenerator.modelCollector);
+            }
+        }
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createWallBlockState(block, wallPostModelId, wallSideModelId, wallSideTallModelId));
+        blockStateModelGenerator.registerParentedItemModel(block, wallInventoryModelId);
+    }
+
+    private static void oneOverlayButton(Block block, TextureMap textureMap,
+            BlockStateModelGenerator blockStateModelGenerator, ModModelType modelType) {
+        Identifier buttonModelId = null;
+        Identifier buttonPressedModelId = null;
+        Identifier buttonInventoryModelId = null;
+        switch(modelType) {
+            case CUBE_ALL -> {
+                buttonModelId = ModModels.BUTTON_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
+                buttonPressedModelId = ModModels.BUTTON_PRESSED_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
+                buttonInventoryModelId = ModModels.BUTTON_INVENTORY_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
+            }
+        }
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createButtonBlockState(block, buttonModelId, buttonPressedModelId));
+        blockStateModelGenerator.registerParentedItemModel(block, buttonInventoryModelId);
+    }
+
+    private static void oneOverlayPressurePlate(Block block, TextureMap textureMap,
+            BlockStateModelGenerator blockStateModelGenerator, ModModelType modelType) {
+        Identifier pressurePlateUpModelId = null;
+        Identifier pressurePlateDownModelId = null;
+        switch(modelType) {
+            case CUBE_ALL -> {
+                pressurePlateUpModelId = ModModels.PRESSURE_PLATE_UP_ALL_OVERLAY.upload(block, textureMap,
+                        blockStateModelGenerator.modelCollector);
+                pressurePlateDownModelId = ModModels.PRESSURE_PLATE_DOWN_ALL_OVERLAY.upload(block, textureMap,
+                        blockStateModelGenerator.modelCollector);
+            }
+        }
+        blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createPressurePlateBlockState(block, pressurePlateUpModelId, pressurePlateDownModelId));
+        blockStateModelGenerator.registerParentedItemModel(block, pressurePlateUpModelId);
     }
 }

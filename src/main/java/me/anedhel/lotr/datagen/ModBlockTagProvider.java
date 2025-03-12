@@ -81,6 +81,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 pickaxeTag.add(stoneType.getCobbledButton());
                 pickaxeTag.add(stoneType.getCobbledPressurePlate());
             }
+            if (stoneType.getMossyCobbled() != null) {
+                pickaxeTag.add(stoneType.getMossyCobbled());
+                pickaxeTag.add(stoneType.getMossyCobbledStairs());
+                pickaxeTag.add(stoneType.getMossyCobbledSlab());
+                pickaxeTag.add(stoneType.getMossyCobbledWall());
+                wallTag.add(stoneType.getMossyCobbledWall());
+                pickaxeTag.add(stoneType.getMossyCobbledButton());
+                pickaxeTag.add(stoneType.getMossyCobbledPressurePlate());
+            }
             if (stoneType.getSmooth() != null) {
                 pickaxeTag.add(stoneType.getSmooth());
                 pickaxeTag.add(stoneType.getSmoothSlab());

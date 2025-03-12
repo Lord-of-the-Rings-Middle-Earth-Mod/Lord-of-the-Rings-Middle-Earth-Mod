@@ -240,6 +240,34 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
 								stoneType.getCobbledPressurePlate(), stoneType.getCobbled());
 					}
+					if (stoneType.getMossyCobbled() != null) {
+						createMossyRecipe(stoneType.getCobbled(), stoneType.getMossyCobbled(), exporter);
+						if (stoneType.getMossyCobbledStairs() != null) {
+							createStairRecipe(stoneType.getMossyCobbled(), stoneType.getMossyCobbledStairs(), exporter);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getMossyCobbledStairs(), stoneType.getMossyCobbled(), 1);
+						}
+						if (stoneType.getMossyCobbledSlab() != null) {
+							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getMossyCobbledSlab(), stoneType.getMossyCobbled());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getMossyCobbledSlab(), stoneType.getMossyCobbled(), 2);
+						}
+						if (stoneType.getMossyCobbledWall() != null) {
+							offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getMossyCobbledWall(), stoneType.getMossyCobbled());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getMossyCobbledWall(), stoneType.getMossyCobbled(), 1);
+						}
+						if (stoneType.getMossyCobbledButton() != null) {
+							createButtonRecipe(stoneType.getMossyCobbled(), stoneType.getMossyCobbledButton(), exporter);
+							offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
+									stoneType.getMossyCobbledButton(), stoneType.getMossyCobbled());
+						}
+						if (stoneType.getMossyCobbledPressurePlate() != null) {
+							offerPressurePlateRecipe(exporter, stoneType.getMossyCobbledPressurePlate(), stoneType.getMossyCobbled());
+							offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
+									stoneType.getMossyCobbledPressurePlate(), stoneType.getMossyCobbled());
+							}
+					}
 				}
 				if (stoneType.getSmooth() != null) {
 					CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getStone()),
@@ -745,6 +773,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                                  conditionsFromItem(Items.COBBLESTONE))
 		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
 	}
+
+	/**
+	  * Creates a shapeless crafting recipe for a mossy variant of a block.
+	  *
+	  * @param input The base block to be combined with a vine to create the mossy variant.
+	  * @param output The resulting mossy block.
+	  * @param exporter The exporter to which the recipe will be offered.
+	  */
+	 private void createMossyRecipe(Block input, Block output, RecipeExporter exporter) {
+	     ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
+	             .input(input)
+	             .input(Items.VINE)
+	             .criterion(hasItem(input), conditionsFromItem(input))
+	             .offerTo(exporter, new Identifier(getRecipeName(output)));
+	 }
 
 	/**
 	 * This Method creates a ButtonRecipe for the given input stone, which will be turned into 1
