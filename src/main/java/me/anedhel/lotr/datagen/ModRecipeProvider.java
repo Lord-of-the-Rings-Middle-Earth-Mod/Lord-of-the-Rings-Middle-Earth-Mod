@@ -266,7 +266,36 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 							offerPressurePlateRecipe(exporter, stoneType.getMossyCobbledPressurePlate(), stoneType.getMossyCobbled());
 							offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
 									stoneType.getMossyCobbledPressurePlate(), stoneType.getMossyCobbled());
-							}
+						}
+					}
+					if (stoneType.getOvergrownCobbled() != null) {
+						createMossyRecipe(stoneType.getMossyCobbled(), stoneType.getOvergrownCobbled(), exporter);
+						createOvergrownRecipe(stoneType.getCobbled(), stoneType.getOvergrownCobbled(), exporter);
+						if (stoneType.getOvergrownCobbledStairs() != null) {
+							createStairRecipe(stoneType.getOvergrownCobbled(), stoneType.getOvergrownCobbledStairs(), exporter);
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getOvergrownCobbledStairs(), stoneType.getOvergrownCobbled(), 1);
+						}
+						if (stoneType.getOvergrownCobbledSlab() != null) {
+							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getOvergrownCobbledSlab(), stoneType.getOvergrownCobbled());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getOvergrownCobbledSlab(), stoneType.getOvergrownCobbled(), 2);
+						}
+						if (stoneType.getOvergrownCobbledWall() != null) {
+							offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getOvergrownCobbledWall(), stoneType.getOvergrownCobbled());
+							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+									stoneType.getOvergrownCobbledWall(), stoneType.getOvergrownCobbled(), 1);
+						}
+						if (stoneType.getOvergrownCobbledButton() != null) {
+							createButtonRecipe(stoneType.getOvergrownCobbled(), stoneType.getOvergrownCobbledButton(), exporter);
+							offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
+									stoneType.getOvergrownCobbledButton(), stoneType.getOvergrownCobbled());
+						}
+						if (stoneType.getOvergrownCobbledPressurePlate() != null) {
+							offerPressurePlateRecipe(exporter, stoneType.getOvergrownCobbledPressurePlate(), stoneType.getOvergrownCobbled());
+							offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
+									stoneType.getOvergrownCobbledPressurePlate(), stoneType.getOvergrownCobbled());
+						}
 					}
 				}
 				if (stoneType.getSmooth() != null) {
@@ -787,6 +816,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	             .input(Items.VINE)
 	             .criterion(hasItem(input), conditionsFromItem(input))
 	             .offerTo(exporter, new Identifier(getRecipeName(output)));
+	 }
+
+	 private void createOvergrownRecipe(Block input, Block output, RecipeExporter exporter) {
+		 ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
+				 .input(input)
+				 .input(Items.VINE)
+				 .input(Items.VINE)
+				 .criterion(hasItem(input), conditionsFromItem(input))
+				 .offerTo(exporter, new Identifier(getRecipeName(output) + "_doublevines"));
 	 }
 
 	/**

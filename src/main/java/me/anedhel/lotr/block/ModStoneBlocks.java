@@ -249,6 +249,30 @@ public class ModStoneBlocks {
 			.pressurePlate(MOSSY_COBBLED_BLUESLATE_PRESSURE_PLATE)
 			.group("stone").unlockCriterionName("has_mossy_cobbled_stone").build();
 
+	public static final Block OVERGROWN_COBBLED_BLUESLATE = registerBlock("overgrown_cobbled_blueslate",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_COBBLED_BLUESLATE_STAIRS = registerBlock("overgrown_cobbled_blueslate_stairs",
+			new StairsBlock(ModStoneBlocks.OVERGROWN_COBBLED_BLUESLATE.getDefaultState(),
+					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block OVERGROWN_COBBLED_BLUESLATE_SLAB = registerBlock("overgrown_cobbled_blueslate_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_COBBLED_BLUESLATE_WALL = registerBlock("overgrown_cobbled_blueslate_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block OVERGROWN_COBBLED_BLUESLATE_BUTTON = registerBlock("overgrown_cobbled_blueslate_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block OVERGROWN_COBBLED_BLUESLATE_PRESSURE_PLATE = registerBlock(
+			"overgrown_cobbled_blueslate_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily OVERGROWN_COBBLED_BLUESLATE_FAMILY = BlockFamilies.register(OVERGROWN_COBBLED_BLUESLATE)
+			.stairs(OVERGROWN_COBBLED_BLUESLATE_STAIRS)
+			.slab(OVERGROWN_COBBLED_BLUESLATE_SLAB)
+			.wall(OVERGROWN_COBBLED_BLUESLATE_WALL)
+			.button(OVERGROWN_COBBLED_BLUESLATE_BUTTON)
+			.pressurePlate(OVERGROWN_COBBLED_BLUESLATE_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_overgrown_cobbled_stone").build();
+
+
     public static final Block SMOOTH_BLUESLATE = registerBlock("smooth_blueslate",
             new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE)));
     public static final Block SMOOTH_BLUESLATE_SLAB = registerBlock("smooth_blueslate_slab",

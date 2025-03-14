@@ -35,6 +35,7 @@ public enum ModStoneType {
 
     BLUESLATE(ModStoneBlocks.BLUESLATE_FAMILY,
             ModStoneBlocks.COBBLED_BLUESLATE_FAMILY, ModStoneBlocks.MOSSY_COBBLED_BLUESLATE_FAMILY,
+            ModStoneBlocks.OVERGROWN_COBBLED_BLUESLATE_FAMILY,
             ModStoneBlocks.BLUESLATE_BRICK_FAMILY, ModStoneBlocks.CRACKED_BLUESLATE_BRICK_FAMILY,
             ModStoneBlocks.BLUESLATE_TILES_FAMILY, ModStoneBlocks.CRACKED_BLUESLATE_TILES_FAMILY,
             ModStoneBlocks.COBBLED_BLUESLATE_BRICKS_FAMILY,
@@ -71,6 +72,14 @@ public enum ModStoneType {
     private final Block mossyCobbledButton;
     private final Block mossyCobbledPressurePlate;
     private final BlockFamily mossyCobbledFamily;
+
+    private final Block overgrownCobbled;
+    private final Block overgrownCobbledStairs;
+    private final Block overgrownCobbledSlab;
+    private final Block overgrownCobbledWall;
+    private final Block overgrownCobbledButton;
+    private final Block overgrownCobbledPressurePlate;
+    private final BlockFamily overgrownCobbledFamily;
 
     private final Block smooth;
     private final Block smoothSlab;
@@ -134,7 +143,7 @@ public enum ModStoneType {
     private final boolean vanillaAddition;
 
     ModStoneType(BlockFamily stoneFamily,
-            BlockFamily cobbledFamily, BlockFamily mossyCobbledFamily,
+            BlockFamily cobbledFamily, BlockFamily mossyCobbledFamily, BlockFamily overgrownCobbledFamily,
             BlockFamily brickFamily, BlockFamily crackedBrickFamily,
             BlockFamily tilesFamily, BlockFamily crackedTilesFamily,
             BlockFamily cobbledBrickFamily,
@@ -166,6 +175,14 @@ public enum ModStoneType {
         this.mossyCobbledButton = mossyCobbledFamily.getVariant(BlockFamily.Variant.BUTTON);
         this.mossyCobbledPressurePlate = mossyCobbledFamily.getVariant(BlockFamily.Variant.PRESSURE_PLATE);
         this.mossyCobbledFamily = mossyCobbledFamily;
+
+        this.overgrownCobbled = overgrownCobbledFamily.getBaseBlock();
+        this.overgrownCobbledStairs = overgrownCobbledFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.overgrownCobbledSlab = overgrownCobbledFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.overgrownCobbledWall = overgrownCobbledFamily.getVariant(BlockFamily.Variant.WALL);
+        this.overgrownCobbledButton = overgrownCobbledFamily.getVariant(BlockFamily.Variant.BUTTON);
+        this.overgrownCobbledPressurePlate = overgrownCobbledFamily.getVariant(BlockFamily.Variant.PRESSURE_PLATE);
+        this.overgrownCobbledFamily = overgrownCobbledFamily;
 
         this.smooth = smooth;
         this.smoothSlab = smoothSlab;
@@ -229,6 +246,7 @@ public enum ModStoneType {
         this.vanillaAddition = vanillaAddition;
     }
 
+    /*
     ModStoneType(Block baseBlock, Block basestairBlock, Block baseslabBlock, Block basewallBlock, Block basebuttonBlock, Block basepressurePlateBlock,
             BlockFamily cobbledFamily, BlockFamily mossyCobbledFamily,
             BlockFamily brickFamily, BlockFamily crackedBrickFamily,
@@ -323,7 +341,7 @@ public enum ModStoneType {
         this.crackedFancyBricksFamily = crackedFancyBricksFamily;
 
         this.vanillaAddition = vanillaAddition;
-    }
+    }*/
 
     public @NotNull List<ItemStack> getItemGroupList() {
         List<ItemStack> itemGroupList = new ArrayList<>();
@@ -384,6 +402,24 @@ public enum ModStoneType {
             }
             if(mossyCobbledPressurePlate != null) {
                 itemGroupList.add(new ItemStack(mossyCobbledPressurePlate));
+            }
+        }
+        if(overgrownCobbled != null) {
+            itemGroupList.add(new ItemStack(overgrownCobbled));
+            if(overgrownCobbledStairs != null) {
+                itemGroupList.add(new ItemStack(overgrownCobbledStairs));
+            }
+            if(overgrownCobbledSlab != null) {
+                itemGroupList.add(new ItemStack(overgrownCobbledSlab));
+            }
+            if(overgrownCobbledWall != null) {
+                itemGroupList.add(new ItemStack(overgrownCobbledWall));
+            }
+            if(overgrownCobbledButton != null) {
+                itemGroupList.add(new ItemStack(overgrownCobbledButton));
+            }
+            if(overgrownCobbledPressurePlate != null) {
+                itemGroupList.add(new ItemStack(overgrownCobbledPressurePlate));
             }
         }
         if(smooth != null) {
@@ -627,6 +663,34 @@ public enum ModStoneType {
 
     public BlockFamily getMossyCobbledFamily() {
         return mossyCobbledFamily;
+    }
+
+    public Block getOvergrownCobbled() {
+        return overgrownCobbled;
+    }
+
+    public Block getOvergrownCobbledStairs() {
+        return overgrownCobbledStairs;
+    }
+
+    public Block getOvergrownCobbledSlab() {
+        return overgrownCobbledSlab;
+    }
+
+    public Block getOvergrownCobbledWall() {
+        return overgrownCobbledWall;
+    }
+
+    public Block getOvergrownCobbledButton() {
+        return overgrownCobbledButton;
+    }
+
+    public Block getOvergrownCobbledPressurePlate() {
+        return overgrownCobbledPressurePlate;
+    }
+
+    public BlockFamily getOvergrownCobbledFamily() {
+        return overgrownCobbledFamily;
     }
 
     public Block getSmooth() {

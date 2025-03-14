@@ -172,6 +172,25 @@ public class ModModelProvider extends FabricModelProvider {
                         oneOverlayButton(stoneType.getMossyCobbledButton(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
                         oneOverlayPressurePlate(stoneType.getMossyCobbledPressurePlate(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
                     }
+
+                    if(stoneType.getOvergrownCobbled() != null) {
+                        TextureMap overgrownCobbledTM = createOneOverlayTextureMap(stoneType.getCobbled(),
+                                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overgrown_overlay"),
+                                ModModelType.CUBE_ALL);
+                        oneOverlayBlock(stoneType.getOvergrownCobbled(), overgrownCobbledTM, blockStateModelGenerator
+                                , ModModelType.CUBE_ALL);
+                        oneOverlayStairs(stoneType.getOvergrownCobbledStairs(), overgrownCobbledTM,
+                                blockStateModelGenerator, ModModelType.CUBE_ALL);
+                        oneOverlaySlab(stoneType.getOvergrownCobbledSlab(), overgrownCobbledTM,
+                                blockStateModelGenerator, ModModelType.CUBE_ALL);
+                        oneOverlayWall(stoneType.getOvergrownCobbledWall(), overgrownCobbledTM,
+                                blockStateModelGenerator, ModModelType.CUBE_ALL);
+                        oneOverlayButton(stoneType.getOvergrownCobbledButton(), overgrownCobbledTM,
+                                blockStateModelGenerator, ModModelType.CUBE_ALL);
+                        oneOverlayPressurePlate(stoneType.getOvergrownCobbledPressurePlate(), overgrownCobbledTM,
+                                blockStateModelGenerator, ModModelType.CUBE_ALL);
+
+                    }
                 }
                 if (stoneType.getSmooth() != null && stoneType.getSmoothSlab() != null) {
                     registerSmoothStone(blockStateModelGenerator, stoneType.getSmooth(), stoneType.getSmoothSlab());

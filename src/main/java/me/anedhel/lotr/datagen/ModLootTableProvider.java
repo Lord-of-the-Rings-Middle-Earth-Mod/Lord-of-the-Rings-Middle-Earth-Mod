@@ -151,6 +151,14 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 addDrop(stoneType.getMossyCobbledButton());
                 addDrop(stoneType.getMossyCobbledPressurePlate());
             }
+            if (stoneType.getOvergrownCobbled() != null) {
+               addDrop(stoneType.getOvergrownCobbled());
+               addDrop(stoneType.getOvergrownCobbledStairs());
+               addDrop(stoneType.getOvergrownCobbledSlab(), slabDrops(stoneType.getOvergrownCobbledSlab()));
+               addDrop(stoneType.getOvergrownCobbledWall());
+               addDrop(stoneType.getOvergrownCobbledButton());
+               addDrop(stoneType.getOvergrownCobbledPressurePlate());
+            }
             if (stoneType.getSmooth() != null) {
                 addDrop(stoneType.getSmooth());
                 addDrop(stoneType.getSmoothSlab(), slabDrops(stoneType.getSmoothSlab()));
