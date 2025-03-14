@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "lotr:block/cube_all_overlay",
   "textures": {
     "all": "lotr:block/cobbled_blueslate",
     "layer1": "lotr:block/mossy_overlay_one"

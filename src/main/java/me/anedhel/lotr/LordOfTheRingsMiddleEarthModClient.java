@@ -67,7 +67,13 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
         }
 
         for (ModStoneType stoneType : ModStoneType.values()) {
-            BlockRenderLayerMap.INSTANCE.putBlock(stoneType.getMossyCobbled(), RenderLayer.getCutout());
+            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+                    stoneType.getMossyCobbled(),
+                    stoneType.getMossyCobbledStairs(),
+                    stoneType.getMossyCobbledSlab(),
+                    stoneType.getMossyCobbledWall(),
+                    stoneType.getMossyCobbledButton(),
+                    stoneType.getMossyCobbledPressurePlate());
         }
 
         TerraformBoatClientHelper.registerModelLayers(ModBoats.PINE_BOAT_ID, false);

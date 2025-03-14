@@ -462,8 +462,8 @@ public class ModModelProvider extends FabricModelProvider {
                         blockStateModelGenerator.modelCollector);
                 slabTopModelId = ModModels.SLAB_TOP_ALL_OVERLAY.upload(block, textureMap,
                         blockStateModelGenerator.modelCollector);
-                doubleSlabModelId = ModModels.DOUBLE_SLAB_ALL_OVERLAY.upload(block, textureMap,
-                        blockStateModelGenerator.modelCollector);
+                doubleSlabModelId = ModModels.CUBE_ALL_OVERLAY.uploadWithoutVariant(block,"_double",
+                        textureMap, blockStateModelGenerator.modelCollector);
             }
         }
         blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSlabBlockState(block, slabModelId, slabTopModelId, doubleSlabModelId));

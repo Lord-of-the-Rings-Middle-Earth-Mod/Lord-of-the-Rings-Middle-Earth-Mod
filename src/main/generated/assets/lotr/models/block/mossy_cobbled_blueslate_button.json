@@ -1,7 +1,7 @@
 {
-  "parent": "minecraft:block/button",
+  "parent": "lotr:block/button_all_overlay",
   "textures": {
-    "all": "lotr:block/cobbled_blueslate",
-    "layer1": "lotr:block/mossy_overlay_one"
+    "layer1": "lotr:block/mossy_overlay_one",
+    "texture": "lotr:block/cobbled_blueslate"
   }
 }
