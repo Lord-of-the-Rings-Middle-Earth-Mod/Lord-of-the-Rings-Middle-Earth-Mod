@@ -1,0 +1,7 @@
+{
+  "parent": "lotr:block/wall_inventory_all_overlay",
+  "textures": {
+    "layer1": "lotr:block/mossy_overlay_two",
+    "wall": "lotr:block/cobbled_blueslate_bricks"
+  }
+}

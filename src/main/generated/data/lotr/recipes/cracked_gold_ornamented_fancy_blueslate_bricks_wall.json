@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cracked_gold_ornamented_fancy_blueslate_bricks"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "item": "lotr:cracked_gold_ornamented_fancy_blueslate_bricks_wall"
+  },
+  "show_notification": true
+}

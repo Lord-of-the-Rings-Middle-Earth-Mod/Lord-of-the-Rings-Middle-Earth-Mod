@@ -1,0 +1,7 @@
+{
+  "parent": "lotr:block/cube_all_overlay",
+  "textures": {
+    "all": "lotr:block/cracked_blueslate_tiles",
+    "layer1": "lotr:block/cracked_gold_ornamented_tiles_overlay"
+  }
+}

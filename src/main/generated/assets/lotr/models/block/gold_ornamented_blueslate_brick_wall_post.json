@@ -1,0 +1,7 @@
+{
+  "parent": "lotr:block/wall_post_all_overlay",
+  "textures": {
+    "layer1": "lotr:block/gold_ornamented_brick_overlay",
+    "wall": "lotr:block/blueslate_brick"
+  }
+}
