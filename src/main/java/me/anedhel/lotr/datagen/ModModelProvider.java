@@ -139,121 +139,196 @@ public class ModModelProvider extends FabricModelProvider {
      */
     private void generateModStoneTypeModels(BlockStateModelGenerator blockStateModelGenerator) {
         for (ModStoneType stoneType : ModStoneType.values()) {
-            if (stoneType.getStone() != null) {
-                BlockStateModelGenerator.BlockTexturePool stoneTypePool = blockStateModelGenerator
-                        .registerCubeAllModelTexturePool(stoneType.getStone());
-                if (stoneType.getStoneStairs() != null) {
-                    stoneTypePool.stairs(stoneType.getStoneStairs());
-                }
-                if (stoneType.getStoneSlab() != null) {
-                    stoneTypePool.slab(stoneType.getStoneSlab());
-                }
-                if (stoneType.getStoneWall() != null) {
-                    stoneTypePool.wall(stoneType.getStoneWall());
-                }
-                if (stoneType.getStoneButton() != null) {
-                    stoneTypePool.button(stoneType.getStoneButton());
-                }
-                if (stoneType.getStonePressurePlate() != null) {
-                    stoneTypePool.pressurePlate(stoneType.getStonePressurePlate());
-                }
-                if (stoneType.getCobbled() != null) {
-                    BlockStateModelGenerator.BlockTexturePool cobbledPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbled());
-                    cobbledPool.family(stoneType.getCobbledFamily());
+            BlockStateModelGenerator.BlockTexturePool stonePool =
+                    blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getStoneVariant("base"));
+            stonePool.family(stoneType.getStoneFamily());
 
-                    if(stoneType.getMossyCobbled() != null) {
-                        TextureMap mossyCobbledTM = createOneOverlayTextureMap(stoneType.getCobbled(),
-                                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/mossy_overlay_one"),
-                                ModModelType.CUBE_ALL);
-                        oneOverlayBlock(stoneType.getMossyCobbled(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
-                        oneOverlayStairs(stoneType.getMossyCobbledStairs(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
-                        oneOverlaySlab(stoneType.getMossyCobbledSlab(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
-                        oneOverlayWall(stoneType.getMossyCobbledWall(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
-                        oneOverlayButton(stoneType.getMossyCobbledButton(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
-                        oneOverlayPressurePlate(stoneType.getMossyCobbledPressurePlate(), mossyCobbledTM, blockStateModelGenerator, ModModelType.CUBE_ALL);
-                    }
+            BlockStateModelGenerator.BlockTexturePool cobbledPool =
+                    blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbledVariant("base"));
+            cobbledPool.family(stoneType.getCobbledFamily());
 
-                    if(stoneType.getOvergrownCobbled() != null) {
-                        TextureMap overgrownCobbledTM = createOneOverlayTextureMap(stoneType.getCobbled(),
-                                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overgrown_overlay"),
-                                ModModelType.CUBE_ALL);
-                        oneOverlayBlock(stoneType.getOvergrownCobbled(), overgrownCobbledTM, blockStateModelGenerator
-                                , ModModelType.CUBE_ALL);
-                        oneOverlayStairs(stoneType.getOvergrownCobbledStairs(), overgrownCobbledTM,
-                                blockStateModelGenerator, ModModelType.CUBE_ALL);
-                        oneOverlaySlab(stoneType.getOvergrownCobbledSlab(), overgrownCobbledTM,
-                                blockStateModelGenerator, ModModelType.CUBE_ALL);
-                        oneOverlayWall(stoneType.getOvergrownCobbledWall(), overgrownCobbledTM,
-                                blockStateModelGenerator, ModModelType.CUBE_ALL);
-                        oneOverlayButton(stoneType.getOvergrownCobbledButton(), overgrownCobbledTM,
-                                blockStateModelGenerator, ModModelType.CUBE_ALL);
-                        oneOverlayPressurePlate(stoneType.getOvergrownCobbledPressurePlate(), overgrownCobbledTM,
-                                blockStateModelGenerator, ModModelType.CUBE_ALL);
+            BlockStateModelGenerator.BlockTexturePool cobbledBricksPool =
+                    blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbledBrickVariant("base"));
+            cobbledBricksPool.family(stoneType.getCobbledBrickFamily());
 
-                    }
+            BlockStateModelGenerator.BlockTexturePool bricksPool =
+                    blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getBrickVariant("base"));
+            bricksPool.family(stoneType.getBrickFamily());
+
+            BlockStateModelGenerator.BlockTexturePool crackedBricksPool =
+                    blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCrackedBrickVariant("base"));
+            crackedBricksPool.family(stoneType.getCrackedBrickFamily());
+
+            BlockStateModelGenerator.BlockTexturePool tilesPool =
+                    blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getTilesVariant("base"));
+            tilesPool.family(stoneType.getTilesFamily());
+
+            BlockStateModelGenerator.BlockTexturePool crackedTilesPool =
+                    blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCrackedTilesVariant("base"));
+            crackedTilesPool.family(stoneType.getCrackedTilesFamily());
+
+            BlockStateModelGenerator.BlockTexturePool fancyBricksPool =
+                    blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getFancyBrickVariant("base"));
+            fancyBricksPool.family(stoneType.getFancyBricksFamily());
+
+            BlockStateModelGenerator.BlockTexturePool crackedFancyBricksPool =
+                    blockStateModelGenerator.registerCubeAllModelTexturePool(
+                            stoneType.getCrackedFancyBrickVariant("base"));
+            crackedFancyBricksPool.family(stoneType.getCrackedFancyBricksFamily());
+
+            if (stoneType.getSmooth() != null && stoneType.getSmoothSlab() != null) {
+                registerSmoothStone(blockStateModelGenerator, stoneType.getSmooth(), stoneType.getSmoothSlab());
+            }
+            if (stoneType.getCrackedSmooth() != null && stoneType.getCrackedSmoothSlab() != null) {
+                registerSmoothStone(blockStateModelGenerator, stoneType.getCrackedSmooth(), stoneType.getCrackedSmoothSlab());
+            }
+
+            if (stoneType.getCobbledVariant("base") != null) {
+                if (stoneType.getMossyCobbledVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCobbledVariant("base"),
+                            stoneType.getMossyCobbledFamily(), "mossy_overlay_one", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getSmooth() != null && stoneType.getSmoothSlab() != null) {
-                    registerSmoothStone(blockStateModelGenerator, stoneType.getSmooth(), stoneType.getSmoothSlab());
+                if (stoneType.getOvergrownCobbledVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCobbledVariant("base"),
+                            stoneType.getOvergrownCobbledFamily(), "overgrown_overlay", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getCrackedSmooth() != null && stoneType.getCrackedSmoothSlab() != null) {
-                    registerSmoothStone(blockStateModelGenerator, stoneType.getCrackedSmooth(), stoneType.getCrackedSmoothSlab());
+            }
+
+            if (stoneType.getCobbledBrickVariant("base") != null) {
+                if (stoneType.getMossyCobbledBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCobbledBrickVariant("base"),
+                            stoneType.getMossyCobbledBrickFamily(), "mossy_overlay_two", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getBrick() != null) {
-                    BlockStateModelGenerator.BlockTexturePool bricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getBrick());
-                    bricksPool.family(stoneType.getBrickFamily());
+                if (stoneType.getOvergrownCobbledBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCobbledBrickVariant("base"),
+                            stoneType.getOvergrownCobbledBrickFamily(), "overgrown_overlay", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getCrackedBrick() != null) {
-                    BlockStateModelGenerator.BlockTexturePool crackedBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCrackedBrick());
-                    crackedBricksPool.family(stoneType.getCrackedBrickFamily());
+            }
+
+            if (stoneType.getBrickVariant("base") != null) {
+                if (stoneType.getMossyBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getBrickVariant("base"),
+                            stoneType.getMossyBrickFamily(), "mossy_overlay_two", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getTiles() != null) {
-                    BlockStateModelGenerator.BlockTexturePool tilesPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getTiles());
-                    tilesPool.family(stoneType.getTilesFamily());
+                if (stoneType.getOvergrownBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getBrickVariant("base"),
+                            stoneType.getOvergrownBrickFamily(), "overgrown_overlay", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getCrackedTiles() != null) {
-                    BlockStateModelGenerator.BlockTexturePool crackedTilesPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCrackedTiles());
-                    crackedTilesPool.family(stoneType.getCrackedTilesFamily());
+                if (stoneType.getGoldOrnamentedBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getBrickVariant("base"),
+                            stoneType.getGoldOrnamentedBrickFamily(), "gold_ornamented_brick_overlay", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getCobbledBrick() != null) {
-                    BlockStateModelGenerator.BlockTexturePool cobbledBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCobbledBrick());
-                    cobbledBricksPool.family(stoneType.getCobbledBrickFamily());
+            }
+
+            if (stoneType.getCrackedBrickVariant("base") != null) {
+                if (stoneType.getMossyBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCrackedBrickVariant(
+                            "base"), stoneType.getCrackedMossyBrickFamily(), "mossy_overlay_two", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getPillar() != null && stoneType.getPillarSlab() != null) {
-                    String topTexture = stoneType.getPillar().getTranslationKey()
-                            .substring(stoneType.getPillar().getTranslationKey().indexOf('.')+6).concat("_end");
-                    String sideTexture = stoneType.getPillar().getTranslationKey()
-                            .substring(stoneType.getPillar().getTranslationKey().indexOf('.')+6).concat("_side");
-                    registerPillarBlock(blockStateModelGenerator, stoneType.getPillar(), stoneType.getPillarSlab(), topTexture, sideTexture);
+                if (stoneType.getCrackedOvergrownBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCrackedBrickVariant(
+                            "base"), stoneType.getCrackedOvergrownBrickFamily(), "overgrown_overlay", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getCrackedPillar() != null) {
-                    String topTexture = stoneType.getCrackedPillar().getTranslationKey()
-                            .substring(stoneType.getCrackedPillar().getTranslationKey().indexOf('.')+6).concat("_end");
-                    String sideTexture = stoneType.getCrackedPillar().getTranslationKey()
-                            .substring(stoneType.getCrackedPillar().getTranslationKey().indexOf('.')+6).concat("_side");
-                    registerPillarBlock(blockStateModelGenerator, stoneType.getCrackedPillar(), stoneType.getCrackedPillarSlab(), topTexture, sideTexture);
+                if (stoneType.getCrackedGoldOrnamentedBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCrackedBrickVariant(
+                            "base"), stoneType.getCrackedGoldOrnamentedBrickFamily(),
+                            "cracked_gold_ornamented_brick_overlay", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getPavement() != null) {
-                    String topTexture = stoneType.getPavement().getTranslationKey()
-                            .substring(stoneType.getPavement().getTranslationKey().indexOf('.')+6);
-                    String sideTexture = stoneType.getTiles().getTranslationKey()
-                            .substring(stoneType.getTiles().getTranslationKey().indexOf('.')+6);
-                    registerPavement(blockStateModelGenerator, stoneType.getPavementFamily(), topTexture, sideTexture);
+            }
+
+            if(stoneType.getTilesVariant("base") != null) {
+                if(stoneType.getMossyTilesVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getTilesVariant("base"),
+                            stoneType.getMossyTilesFamily(), "mossy_overlay_two", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getCrackedPavement() != null) {
-                    String topTexture = stoneType.getCrackedPavement().getTranslationKey()
-                            .substring(stoneType.getCrackedPavement().getTranslationKey().indexOf('.')+6);
-                    String sideTexture = stoneType.getCrackedTiles().getTranslationKey()
-                            .substring(stoneType.getCrackedTiles().getTranslationKey().indexOf('.')+6);
-                    registerPavement(blockStateModelGenerator, stoneType.getCrackedPavementFamily(), topTexture, sideTexture);
+                if(stoneType.getOvergrownTilesVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getTilesVariant("base"),
+                            stoneType.getOvergrownTilesFamily(), "overgrown_overlay", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getFancyBricks() != null) {
-                    BlockStateModelGenerator.BlockTexturePool fancyBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getFancyBricks());
-                    fancyBricksPool.family(stoneType.getFancyBricksFamily());
+                if(stoneType.getGoldOrnamentedTilesVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getTilesVariant("base"),
+                            stoneType.getGoldOrnamentedTilesFamily(), "gold_ornamented_tiles_overlay", ModModelType.CUBE_ALL);
                 }
-                if (stoneType.getCrackedFancyBricks() != null) {
-                    BlockStateModelGenerator.BlockTexturePool crackedFancyBricksPool = blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getCrackedFancyBricks());
-                    crackedFancyBricksPool.family(stoneType.getCrackedFancyBricksFamily());
+            }
+
+            if (stoneType.getCrackedTilesVariant("base") != null) {
+                if (stoneType.getCrackedMossyTilesVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCrackedTilesVariant(
+                            "base"), stoneType.getCrackedMossyTilesFamily(), "mossy_overlay_two", ModModelType.CUBE_ALL);
                 }
+                if (stoneType.getCrackedOvergrownTilesVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCrackedTilesVariant(
+                            "base"), stoneType.getCrackedOvergrownTilesFamily(), "overgrown_overlay", ModModelType.CUBE_ALL);
+                }
+                if (stoneType.getCrackedGoldOrnamentedTilesVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCrackedTilesVariant(
+                            "base"), stoneType.getCrackedGoldOrnamentedTilesFamily(),
+                            "cracked_gold_ornamented_tiles_overlay", ModModelType.CUBE_ALL);
+                }
+            }
+
+            if (stoneType.getFancyBrickVariant("base") != null) {
+                if(stoneType.getMossyFancyBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getFancyBrickVariant("base"),
+                            stoneType.getMossyFancyBricksFamily(), "mossy_overlay_two", ModModelType.CUBE_ALL);
+                }
+                if(stoneType.getOvergrownFancyBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getFancyBrickVariant("base"),
+                            stoneType.getOvergrownFancyBricksFamily(), "overgrown_overlay", ModModelType.CUBE_ALL);
+                }
+                if(stoneType.getGoldOrnamentedFancyBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getFancyBrickVariant("base"),
+                            stoneType.getGoldOrnamentedFancyBricksFamily(), "gold_ornamented_fancy_bricks_overlay", ModModelType.CUBE_ALL);
+                }
+            }
+
+            if(stoneType.getCrackedFancyBrickVariant("base") != null) {
+                if(stoneType.getCrackedMossyFancyBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator,
+                            stoneType.getCrackedFancyBrickVariant("base"), stoneType.getCrackedMossyFancyBricksFamily(),
+                            "mossy_overlay_two", ModModelType.CUBE_ALL);
+                }
+                if(stoneType.getCrackedOvergrownFancyBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator,
+                            stoneType.getCrackedFancyBrickVariant("base"),
+                            stoneType.getCrackedOvergrownFancyBricksFamily(), "overgrown_overlay",
+                            ModModelType.CUBE_ALL);
+                }
+                if(stoneType.getCrackedGoldOrnamentedFancyBrickVariant("base") != null) {
+                    registerOneOverlayBlockFamilyModel(blockStateModelGenerator,
+                            stoneType.getCrackedFancyBrickVariant("base"),
+                            stoneType.getCrackedGoldOrnamentedFancyBricksFamily(),
+                            "cracked_gold_ornamented_fancy_bricks_overlay", ModModelType.CUBE_ALL);
+                }
+            }
+
+            if (stoneType.getPillar() != null && stoneType.getPillarSlab() != null) {
+                String topTexture = stoneType.getPillar().getTranslationKey()
+                        .substring(stoneType.getPillar().getTranslationKey().indexOf('.')+6).concat("_end");
+                String sideTexture = stoneType.getPillar().getTranslationKey()
+                        .substring(stoneType.getPillar().getTranslationKey().indexOf('.')+6).concat("_side");
+                registerPillarBlock(blockStateModelGenerator, stoneType.getPillar(), stoneType.getPillarSlab(), topTexture, sideTexture);
+            }
+            if (stoneType.getCrackedPillar() != null) {
+                String topTexture = stoneType.getCrackedPillar().getTranslationKey()
+                        .substring(stoneType.getCrackedPillar().getTranslationKey().indexOf('.')+6).concat("_end");
+                String sideTexture = stoneType.getCrackedPillar().getTranslationKey()
+                        .substring(stoneType.getCrackedPillar().getTranslationKey().indexOf('.')+6).concat("_side");
+                registerPillarBlock(blockStateModelGenerator, stoneType.getCrackedPillar(), stoneType.getCrackedPillarSlab(), topTexture, sideTexture);
+            }
+            if (stoneType.getPavementVariant("base") != null) {
+                String topTexture = stoneType.getPavementVariant("base").getTranslationKey()
+                        .substring(stoneType.getPavementVariant("base").getTranslationKey().indexOf('.')+6);
+                String sideTexture = stoneType.getTilesVariant("base").getTranslationKey()
+                        .substring(stoneType.getTilesVariant("base").getTranslationKey().indexOf('.')+6);
+                registerPavement(blockStateModelGenerator, stoneType.getPavementFamily(), topTexture, sideTexture);
+            }
+            if (stoneType.getCrackedPavementVariant("base") != null) {
+                String topTexture = stoneType.getCrackedPavementVariant("base").getTranslationKey()
+                        .substring(stoneType.getCrackedPavementVariant("base").getTranslationKey().indexOf('.')+6);
+                String sideTexture = stoneType.getCrackedTilesVariant("base").getTranslationKey()
+                        .substring(stoneType.getCrackedTilesVariant("base").getTranslationKey().indexOf('.')+6);
+                registerPavement(blockStateModelGenerator, stoneType.getCrackedPavementFamily(), topTexture, sideTexture);
             }
         }
     }
@@ -317,6 +392,39 @@ public class ModModelProvider extends FabricModelProvider {
             if (oreType.getChalkOre() != null) {
                 blockStateModelGenerator.registerSimpleCubeAll(oreType.getChalkOre());
             }
+        }
+    }
+
+    /**
+     * Generates the Models for OneOverlay Block Families
+     * @param blockStateModelGenerator the blockStateModelGenerator
+     * @param baseBlock the base block, which texture should be used below the overlay.
+     * @param overlayFamily the blockFamily that should have overlay Models
+     * @param texture the overlay texture
+     * @param modModelType the modModelType that is used
+     */
+    private void registerOneOverlayBlockFamilyModel(BlockStateModelGenerator blockStateModelGenerator,
+            Block baseBlock, BlockFamily overlayFamily, String texture, ModModelType modModelType) {
+        TextureMap overlayTextureMap = createOneOverlayTextureMap(baseBlock,
+                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + texture),
+                modModelType);
+        oneOverlayBlock(overlayFamily.getBaseBlock(), overlayTextureMap, blockStateModelGenerator,
+                modModelType);
+        oneOverlayStairs(overlayFamily.getVariant(BlockFamily.Variant.STAIRS), overlayTextureMap,
+                blockStateModelGenerator, modModelType);
+        oneOverlaySlab(overlayFamily.getVariant(BlockFamily.Variant.SLAB), overlayTextureMap,
+                blockStateModelGenerator, modModelType);
+        if (overlayFamily.getVariants().containsKey(BlockFamily.Variant.WALL)) {
+            oneOverlayWall(overlayFamily.getVariant(BlockFamily.Variant.WALL), overlayTextureMap,
+                    blockStateModelGenerator, modModelType);
+        }
+        if (overlayFamily.getVariants().containsKey(BlockFamily.Variant.BUTTON)) {
+            oneOverlayButton(overlayFamily.getVariant(BlockFamily.Variant.BUTTON), overlayTextureMap,
+                    blockStateModelGenerator, modModelType);
+        }
+        if (overlayFamily.getVariants().containsKey(BlockFamily.Variant.PRESSURE_PLATE)) {
+            oneOverlayPressurePlate(overlayFamily.getVariant(BlockFamily.Variant.PRESSURE_PLATE), overlayTextureMap,
+                    blockStateModelGenerator, modModelType);
         }
     }
 
@@ -424,9 +532,10 @@ public class ModModelProvider extends FabricModelProvider {
     /**
      * This Method is used to generate the Overlay Texture Map for the Block and the given overlay1Id
      *
-     * For the overlay1Id´s the following should be used:
+     * For the overlay1Id´s, that are not explicitly named by a block, the following should be used:
      * mossy_overlay_one: base, cobbled, smooth, smooth slab
      * mossy_overlay_two: bricks, tiles, fancy bricks, pavement
+     * overgrown_overlay: base, cobbled, smooth, smooth slab, bricks, tiles, fancy bricks, pavement
      *
      * @param baseBlock The block the TextureMap is based on
      * @param overlay1Id The Identifier of the overlay texture

@@ -11,8 +11,10 @@ import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.SlabBlock;
 import net.minecraft.block.TallPlantBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.server.loottable.BlockLootTableGenerator;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
@@ -27,6 +29,7 @@ import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * This class is used to add all LootTables the mod provides and edit existing ones.
@@ -118,117 +121,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
             addDrop(woodType.getSapling());
         }
 
-        for (ModStoneType stoneType : ModStoneType.values()) {
-            addDrop(stoneType.getStone());
-            if (stoneType.getStoneStairs() != null) {
-                addDrop(stoneType.getStoneStairs());
-            }
-            if (stoneType.getStoneSlab() != null) {
-                addDrop(stoneType.getStoneSlab(), slabDrops(stoneType.getStoneSlab()));
-            }
-            if (stoneType.getStoneWall() != null) {
-                addDrop(stoneType.getStoneWall());
-            }
-            if (stoneType.getStoneButton() != null) {
-                addDrop(stoneType.getStoneButton());
-            }
-            if (stoneType.getStonePressurePlate() != null) {
-                addDrop(stoneType.getStonePressurePlate());
-            }
-            if (stoneType.getCobbled() != null) {
-                addDrop(stoneType.getCobbled());
-                addDrop(stoneType.getCobbledStairs());
-                addDrop(stoneType.getCobbledSlab(), slabDrops(stoneType.getCobbledSlab()));
-                addDrop(stoneType.getCobbledWall());
-                addDrop(stoneType.getCobbledButton());
-                addDrop(stoneType.getCobbledPressurePlate());
-            }
-            if (stoneType.getMossyCobbled() != null) {
-                addDrop(stoneType.getMossyCobbled());
-                addDrop(stoneType.getMossyCobbledStairs());
-                addDrop(stoneType.getMossyCobbledSlab(), slabDrops(stoneType.getMossyCobbledSlab()));
-                addDrop(stoneType.getMossyCobbledWall());
-                addDrop(stoneType.getMossyCobbledButton());
-                addDrop(stoneType.getMossyCobbledPressurePlate());
-            }
-            if (stoneType.getOvergrownCobbled() != null) {
-               addDrop(stoneType.getOvergrownCobbled());
-               addDrop(stoneType.getOvergrownCobbledStairs());
-               addDrop(stoneType.getOvergrownCobbledSlab(), slabDrops(stoneType.getOvergrownCobbledSlab()));
-               addDrop(stoneType.getOvergrownCobbledWall());
-               addDrop(stoneType.getOvergrownCobbledButton());
-               addDrop(stoneType.getOvergrownCobbledPressurePlate());
-            }
-            if (stoneType.getSmooth() != null) {
-                addDrop(stoneType.getSmooth());
-                addDrop(stoneType.getSmoothSlab(), slabDrops(stoneType.getSmoothSlab()));
-            }
-            if (stoneType.getCrackedSmooth() != null) {
-                addDrop(stoneType.getCrackedSmooth());
-                addDrop(stoneType.getCrackedSmoothSlab(), slabDrops(stoneType.getCrackedSmoothSlab()));
-            }
-            if (stoneType.getBrick() != null) {
-                addDrop(stoneType.getBrick());
-                addDrop(stoneType.getBrickStairs());
-                addDrop(stoneType.getBrickSlab(), slabDrops(stoneType.getBrickSlab()));
-                addDrop(stoneType.getBrickWall());
-                addDrop(stoneType.getChiseledBrick());
-            }
-            if (stoneType.getCrackedBrick() != null) {
-                addDrop(stoneType.getCrackedBrick());
-                addDrop(stoneType.getCrackedBrickStairs());
-                addDrop(stoneType.getCrackedBrickSlab(), slabDrops(stoneType.getCrackedBrickSlab()));
-                addDrop(stoneType.getCrackedBrickWall());
-            }
-            if (stoneType.getTiles() != null) {
-                addDrop(stoneType.getTiles());
-                addDrop(stoneType.getTilesStairs());
-                addDrop(stoneType.getTilesSlab(), slabDrops(stoneType.getTilesSlab()));
-                addDrop(stoneType.getTilesWall());
-            }
-            if (stoneType.getCrackedTiles() != null) {
-                addDrop(stoneType.getCrackedTiles());
-                addDrop(stoneType.getCrackedTilesStairs());
-                addDrop(stoneType.getCrackedTilesSlab(), slabDrops(stoneType.getCrackedTilesSlab()));
-                addDrop(stoneType.getCrackedTilesWall());
-            }
-            if (stoneType.getCobbledBrick() != null) {
-                addDrop(stoneType.getCobbledBrick());
-                addDrop(stoneType.getCobbledBrickStairs());
-                addDrop(stoneType.getCobbledBrickSlab(), slabDrops(stoneType.getCobbledBrickSlab()));
-                addDrop(stoneType.getCobbledBrickWall());
-            }
-            if (stoneType.getPillar() != null) {
-                addDrop(stoneType.getPillar());
-                addDrop(stoneType.getPillarSlab(), slabDrops(stoneType.getPillarSlab()));
-            }
-            if (stoneType.getCrackedPillar() != null) {
-                addDrop(stoneType.getCrackedPillar());
-                addDrop(stoneType.getCrackedPillarSlab(), slabDrops(stoneType.getCrackedPillarSlab()));
-            }
-            if (stoneType.getPavement() != null) {
-                addDrop(stoneType.getPavement());
-                addDrop(stoneType.getPavementStairs());
-                addDrop(stoneType.getPavementSlab(), slabDrops(stoneType.getPavementSlab()));
-            }
-            if (stoneType.getCrackedPavement() != null) {
-                addDrop(stoneType.getCrackedPavement());
-                addDrop(stoneType.getCrackedPavementStairs());
-                addDrop(stoneType.getCrackedPavementSlab(), slabDrops(stoneType.getCrackedPavementSlab()));
-            }
-            if (stoneType.getFancyBricks() != null) {
-                addDrop(stoneType.getFancyBricks());
-                addDrop(stoneType.getFancyBricksStairs());
-                addDrop(stoneType.getFancyBricksSlab(), slabDrops(stoneType.getFancyBricksSlab()));
-                addDrop(stoneType.getFancyBricksWall());
-            }
-            if (stoneType.getCrackedFancyBricks() != null) {
-                addDrop(stoneType.getCrackedFancyBricks());
-                addDrop(stoneType.getCrackedFancyBricksStairs());
-                addDrop(stoneType.getCrackedFancyBricksSlab(), slabDrops(stoneType.getCrackedFancyBricksSlab()));
-                addDrop(stoneType.getCrackedFancyBricksWall());
-            }
-        }
+        generateStoneTypeLootTables();
 
         for (ModOreType oreType : ModOreType.values()) {
             if (!oreType.isVanillaAddition()) {
@@ -254,6 +147,79 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
             }
             if (oreType.getChalkOre() != null) {
                 addDrop(oreType.getChalkOre(), oreDrops(oreType.getChalkOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+        }
+    }
+
+    /**
+     * Generate the Loot-Tables for all ModStoneTypes
+     */
+    private void generateStoneTypeLootTables () {
+        for(ModStoneType stoneType : ModStoneType.values()) {
+            generateStoneBlockFamilyLootTables(stoneType.getStoneFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCobbledFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getMossyCobbledFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getOvergrownCobbledFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCobbledBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getMossyCobbledBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getOvergrownCobbledBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getMossyBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedMossyBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getOvergrownBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedOvergrownBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getGoldOrnamentedBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedGoldOrnamentedBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getTilesFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedTilesFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getMossyTilesFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedMossyTilesFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getOvergrownTilesFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedOvergrownTilesFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getGoldOrnamentedTilesFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedGoldOrnamentedTilesFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getPavementFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedPavementFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getFancyBricksFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedFancyBricksFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getMossyFancyBricksFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedMossyFancyBricksFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getOvergrownFancyBricksFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedOvergrownFancyBricksFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getGoldOrnamentedFancyBricksFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedGoldOrnamentedFancyBricksFamily());
+
+            if (stoneType.getSmooth() != null) {
+                addDrop(stoneType.getSmooth());
+                addDrop(stoneType.getSmoothSlab(), slabDrops(stoneType.getSmoothSlab()));
+            }
+            if (stoneType.getCrackedSmooth() != null) {
+                addDrop(stoneType.getCrackedSmooth());
+                addDrop(stoneType.getCrackedSmoothSlab(), slabDrops(stoneType.getCrackedSmoothSlab()));
+            }
+            if (stoneType.getPillar() != null) {
+                addDrop(stoneType.getPillar());
+                addDrop(stoneType.getPillarSlab(), slabDrops(stoneType.getPillarSlab()));
+            }
+            if (stoneType.getCrackedPillar() != null) {
+                addDrop(stoneType.getCrackedPillar());
+                addDrop(stoneType.getCrackedPillarSlab(), slabDrops(stoneType.getCrackedPillarSlab()));
+            }
+        }
+    }
+
+    /**
+     * Generates the Loot-Tables for a Stone-BlockFamily
+     * @param family the blockFamily for which the loot-tables should be generated
+     */
+    private void generateStoneBlockFamilyLootTables(@NotNull BlockFamily family) {
+        addDrop(family.getBaseBlock());
+        for(Block block : family.getVariants().values()) {
+            if(block instanceof SlabBlock) {
+                addDrop(block, slabDrops(block));
+            } else {
+                addDrop(block);
             }
         }
     }

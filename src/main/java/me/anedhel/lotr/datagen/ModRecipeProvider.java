@@ -10,6 +10,7 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
@@ -175,483 +176,234 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	 */
 	private void createModStoneTypeRecipes(RecipeExporter exporter) {
 		for(ModStoneType stoneType : ModStoneType.values()) {
-			if(stoneType.getStone() != null) {
-				if(stoneType.getStoneStairs() != null) {
-					createStairRecipe(stoneType.getStone(), stoneType.getStoneStairs(), exporter);
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-					                        stoneType.getStoneStairs(), stoneType.getStone(), 1);
-				}
-				if(stoneType.getStoneSlab() != null) {
-					offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-					                stoneType.getStoneSlab(), stoneType.getStone());
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-					                        stoneType.getStoneSlab(), stoneType.getStone(), 2);
-				}
-				if(stoneType.getStoneWall() != null) {
-					offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-					                stoneType.getStoneWall(), stoneType.getStone());
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-					                        stoneType.getStoneWall(), stoneType.getStone(), 1);
-				}
-				if(stoneType.getStoneButton() != null) {
-					createButtonRecipe(stoneType.getStone(), stoneType.getStoneButton(), exporter);
-					offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
-							stoneType.getStoneButton(), stoneType.getStone(), 1);
-				}
-				if(stoneType.getStonePressurePlate() != null) {
-					offerPressurePlateRecipe(exporter, stoneType.getStonePressurePlate(),
-					                         stoneType.getStone());
-					offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
-							stoneType.getStonePressurePlate(), stoneType.getStone());
-				}
-				if(stoneType.getCobbled() != null) {
-					createCobbledStoneTypeRecipe(stoneType.getStone(), stoneType.getCobbled(),
-					                             exporter);
-					if(stoneType.getCobbledStairs() != null) {
-						createStairRecipe(stoneType.getCobbled(), stoneType.getCobbledStairs(),
-						                  exporter);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                        stoneType.getCobbledStairs(),
-						                        stoneType.getCobbled(), 1);
-					}
-					if(stoneType.getCobbledSlab() != null) {
-						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                stoneType.getCobbledSlab(), stoneType.getCobbled());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                        stoneType.getCobbledSlab(), stoneType.getCobbled(),
-						                        2);
-					}
-					if(stoneType.getCobbledWall() != null) {
-						offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                stoneType.getCobbledWall(), stoneType.getCobbled());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                        stoneType.getCobbledWall(), stoneType.getCobbled(),
-						                        1);
-					}
-					if(stoneType.getCobbledButton() != null) {
-						createButtonRecipe(stoneType.getCobbled(), stoneType.getCobbledButton(),
-						                   exporter);
-						offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
-								stoneType.getCobbledButton(), stoneType.getCobbled());
-					}
-					if(stoneType.getCobbledPressurePlate() != null) {
-						offerPressurePlateRecipe(exporter, stoneType.getCobbledPressurePlate(),
-						                         stoneType.getCobbled());
-						offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
-								stoneType.getCobbledPressurePlate(), stoneType.getCobbled());
-					}
-					if (stoneType.getMossyCobbled() != null) {
-						createMossyRecipe(stoneType.getCobbled(), stoneType.getMossyCobbled(), exporter);
-						if (stoneType.getMossyCobbledStairs() != null) {
-							createStairRecipe(stoneType.getMossyCobbled(), stoneType.getMossyCobbledStairs(), exporter);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getMossyCobbledStairs(), stoneType.getMossyCobbled(), 1);
-						}
-						if (stoneType.getMossyCobbledSlab() != null) {
-							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getMossyCobbledSlab(), stoneType.getMossyCobbled());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getMossyCobbledSlab(), stoneType.getMossyCobbled(), 2);
-						}
-						if (stoneType.getMossyCobbledWall() != null) {
-							offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getMossyCobbledWall(), stoneType.getMossyCobbled());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getMossyCobbledWall(), stoneType.getMossyCobbled(), 1);
-						}
-						if (stoneType.getMossyCobbledButton() != null) {
-							createButtonRecipe(stoneType.getMossyCobbled(), stoneType.getMossyCobbledButton(), exporter);
-							offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
-									stoneType.getMossyCobbledButton(), stoneType.getMossyCobbled());
-						}
-						if (stoneType.getMossyCobbledPressurePlate() != null) {
-							offerPressurePlateRecipe(exporter, stoneType.getMossyCobbledPressurePlate(), stoneType.getMossyCobbled());
-							offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
-									stoneType.getMossyCobbledPressurePlate(), stoneType.getMossyCobbled());
-						}
-					}
-					if (stoneType.getOvergrownCobbled() != null) {
-						createMossyRecipe(stoneType.getMossyCobbled(), stoneType.getOvergrownCobbled(), exporter);
-						createOvergrownRecipe(stoneType.getCobbled(), stoneType.getOvergrownCobbled(), exporter);
-						if (stoneType.getOvergrownCobbledStairs() != null) {
-							createStairRecipe(stoneType.getOvergrownCobbled(), stoneType.getOvergrownCobbledStairs(), exporter);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getOvergrownCobbledStairs(), stoneType.getOvergrownCobbled(), 1);
-						}
-						if (stoneType.getOvergrownCobbledSlab() != null) {
-							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getOvergrownCobbledSlab(), stoneType.getOvergrownCobbled());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getOvergrownCobbledSlab(), stoneType.getOvergrownCobbled(), 2);
-						}
-						if (stoneType.getOvergrownCobbledWall() != null) {
-							offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getOvergrownCobbledWall(), stoneType.getOvergrownCobbled());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getOvergrownCobbledWall(), stoneType.getOvergrownCobbled(), 1);
-						}
-						if (stoneType.getOvergrownCobbledButton() != null) {
-							createButtonRecipe(stoneType.getOvergrownCobbled(), stoneType.getOvergrownCobbledButton(), exporter);
-							offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
-									stoneType.getOvergrownCobbledButton(), stoneType.getOvergrownCobbled());
-						}
-						if (stoneType.getOvergrownCobbledPressurePlate() != null) {
-							offerPressurePlateRecipe(exporter, stoneType.getOvergrownCobbledPressurePlate(), stoneType.getOvergrownCobbled());
-							offerStonecuttingRecipe(exporter, RecipeCategory.REDSTONE,
-									stoneType.getOvergrownCobbledPressurePlate(), stoneType.getOvergrownCobbled());
-						}
-					}
-				}
-				if (stoneType.getSmooth() != null) {
-					CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getStone()),
-							RecipeCategory.BUILDING_BLOCKS, stoneType.getSmooth().asItem(),
+			createStoneBlockFamilyRecipes(exporter, stoneType.getStoneFamily());
+
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCobbledFamily());
+			createMossyRecipe(stoneType.getCobbledVariant("base"),
+					stoneType.getMossyCobbledVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getMossyCobbledFamily());
+			createMossyRecipe(stoneType.getMossyCobbledVariant("base"),
+					stoneType.getOvergrownCobbledVariant("base"), exporter);
+			createOvergrownRecipe(stoneType.getCobbledVariant("base"),
+					stoneType.getOvergrownCobbledVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getOvergrownCobbledFamily());
+
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCobbledBrickFamily(),
+					stoneType.getCobbledVariant("base"));
+			createMossyRecipe(stoneType.getCobbledBrickVariant("base"),
+					stoneType.getMossyCobbledBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getMossyCobbledBrickFamily(),
+					stoneType.getMossyCobbledVariant("base"));
+			createMossyRecipe(stoneType.getMossyCobbledBrickVariant("base"),
+					stoneType.getOvergrownCobbledBrickVariant("base"), exporter);
+			createOvergrownRecipe(stoneType.getCobbledBrickVariant("base"),
+					stoneType.getOvergrownCobbledBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getOvergrownCobbledBrickFamily(),
+					stoneType.getOvergrownCobbledVariant("base"));
+
+			createBricksRecipe(stoneType.getStoneVariant("base"), stoneType.getBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getBrickFamily(),
+					stoneType.getStoneVariant("base"));
+			createMossyRecipe(stoneType.getBrickVariant("base"),
+					stoneType.getMossyBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getMossyBrickFamily());
+			createMossyRecipe(stoneType.getMossyBrickVariant("base"),
+					stoneType.getOvergrownBrickVariant("base"), exporter);
+			createOvergrownRecipe(stoneType.getBrickVariant("base"),
+					stoneType.getOvergrownBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getOvergrownBrickFamily());
+			createOrnamentedRecipe(stoneType.getBrickVariant("base"), Items.GOLD_INGOT,
+					stoneType.getGoldOrnamentedBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getGoldOrnamentedBrickFamily());
+
+			CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getBrickVariant("base")),
+							RecipeCategory.BUILDING_BLOCKS,stoneType.getCrackedBrickVariant("base").asItem(),
 							0.1f, 200)
-							.criterion("has_stone", VanillaRecipeProvider
-									.conditionsFromItem(stoneType.getStone())).offerTo(exporter);
-					if (stoneType.getSmoothSlab() != null) {
-						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getSmoothSlab(), stoneType.getSmooth());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getSmoothSlab(), stoneType.getSmooth(), 1);
-					}
-					if (stoneType.getCrackedSmooth() != null) {
-						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getSmooth()),
-								RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedSmooth().asItem(),
+					.criterion("has_stone_bricks", VanillaRecipeProvider
+							.conditionsFromItem(stoneType.getBrickVariant("base"))).offerTo(exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedBrickFamily());
+			createMossyRecipe(stoneType.getCrackedBrickVariant("base"),
+					stoneType.getCrackedMossyBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedMossyBrickFamily());
+			createMossyRecipe(stoneType.getCrackedMossyBrickVariant("base"),
+					stoneType.getCrackedOvergrownBrickVariant("base"), exporter);
+			createOvergrownRecipe(stoneType.getCrackedBrickVariant("base"),
+					stoneType.getCrackedOvergrownBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedOvergrownBrickFamily());
+			createOrnamentedRecipe(stoneType.getCrackedBrickVariant("base"), Items.GOLD_INGOT,
+					stoneType.getCrackedGoldOrnamentedBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedGoldOrnamentedBrickFamily());
+
+			createBricksRecipe(stoneType.getBrickVariant("base"), stoneType.getTilesVariant("base"), exporter);
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getTilesVariant("base"),
+					stoneType.getBrickVariant("base"));
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getTilesVariant("base"),
+					stoneType.getStoneVariant("base"));
+			createStoneBlockFamilyRecipes(exporter, stoneType.getTilesFamily(), stoneType.getBrickVariant("base"),
+					stoneType.getStoneVariant("base"));
+			createMossyRecipe(stoneType.getTilesVariant("base"), stoneType.getMossyTilesVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getMossyTilesFamily());
+			createMossyRecipe(stoneType.getMossyTilesVariant("base"), stoneType.getOvergrownTilesVariant("base"),
+					exporter);
+			createOvergrownRecipe(stoneType.getTilesVariant("base"), stoneType.getOvergrownTilesVariant("base"),
+					exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getOvergrownTilesFamily());
+			createOrnamentedRecipe(stoneType.getTilesVariant("base"), Items.GOLD_INGOT,
+					stoneType.getGoldOrnamentedTilesVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getGoldOrnamentedTilesFamily());
+
+			CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getTilesVariant("base")),
+							RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedTilesVariant("base").asItem(),
+							0.1f, 200)
+					.criterion("has_tiles", VanillaRecipeProvider
+							.conditionsFromItem(stoneType.getTilesVariant("base"))).offerTo(exporter);
+			createBricksRecipe(stoneType.getCrackedBrickVariant("base"), stoneType.getCrackedTilesVariant("base"), exporter);
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getCrackedTilesVariant("base"), stoneType.getCrackedBrickVariant("base"));
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedTilesFamily(),
+					stoneType.getCrackedBrickVariant("base"));
+			createMossyRecipe(stoneType.getCrackedTilesVariant("base"), stoneType.getCrackedMossyTilesVariant("base"),
+					exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedMossyTilesFamily());
+			createMossyRecipe(stoneType.getCrackedMossyTilesVariant("base"),
+					stoneType.getCrackedOvergrownTilesVariant("base"), exporter);
+			createOvergrownRecipe(stoneType.getCrackedTilesVariant("base"),
+					stoneType.getCrackedOvergrownTilesVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedOvergrownTilesFamily());
+			createOrnamentedRecipe(stoneType.getCrackedTilesVariant("base"), Items.GOLD_INGOT,
+					stoneType.getCrackedGoldOrnamentedTilesVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedGoldOrnamentedTilesFamily());
+
+			ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, stoneType.getPavementVariant("base"), 2)
+					.pattern("#").pattern("#").input('#', stoneType.getTilesVariant("base"))
+					.criterion(hasItem(stoneType.getTilesVariant("base")), conditionsFromItem(stoneType.getTilesVariant("base")))
+					.offerTo(exporter, new Identifier(getRecipeName(stoneType.getPavementVariant("base"))));
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getPavementVariant("base"), stoneType.getTilesVariant("base"));
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getPavementVariant("base"), stoneType.getBrickVariant("base"));
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getPavementVariant("base"), stoneType.getStoneVariant("base"));
+			createStoneBlockFamilyRecipes(exporter, stoneType.getPavementFamily(),
+					stoneType.getTilesVariant("base"), stoneType.getBrickVariant("base"),
+					stoneType.getStoneVariant("base"));
+
+			CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getPavementVariant("base")),
+							RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPavementVariant("base").asItem(),
+							0.1f, 200)
+					.criterion("has_pavement", VanillaRecipeProvider
+							.conditionsFromItem(stoneType.getPavementVariant("base"))).offerTo(exporter);
+			ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPavementVariant("base")
+							, 2)
+					.pattern("#").pattern("#").input('#', stoneType.getCrackedTilesVariant("base"))
+					.criterion(hasItem(stoneType.getPavementVariant("base")),
+							conditionsFromItem(stoneType.getPavementVariant("base")))
+					.offerTo(exporter,
+							new Identifier(getRecipeName(stoneType.getCrackedPavementVariant("base")) + "_crafting"));
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getCrackedPavementVariant("base"), stoneType.getCrackedTilesVariant("base"));
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getCrackedPavementVariant("base"), stoneType.getCrackedBrickVariant("base"));
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedPavementFamily(),
+					stoneType.getCrackedTilesVariant("base"), stoneType.getCrackedBrickVariant("base"));
+
+			createBricksRecipe(stoneType.getTilesVariant("base"), stoneType.getFancyBrickVariant("base"), exporter);
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getFancyBrickVariant("base"), stoneType.getTilesVariant("base"));
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getFancyBrickVariant("base"), stoneType.getBrickVariant("base"));
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getFancyBrickVariant("base"), stoneType.getStoneVariant("base"));
+			createStoneBlockFamilyRecipes(exporter, stoneType.getFancyBricksFamily(),
+					stoneType.getTilesVariant("base"), stoneType.getBrickVariant("base"),
+					stoneType.getStoneVariant("base"));
+			createMossyRecipe(stoneType.getFancyBrickVariant("base"), stoneType.getMossyFancyBrickVariant("base"),
+					exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getMossyFancyBricksFamily());
+			createMossyRecipe(stoneType.getMossyFancyBrickVariant("base"),
+					stoneType.getOvergrownFancyBrickVariant("base"), exporter);
+			createOvergrownRecipe(stoneType.getFancyBrickVariant("base"),
+					stoneType.getOvergrownFancyBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getOvergrownFancyBricksFamily());
+			createOrnamentedRecipe(stoneType.getFancyBrickVariant("base"), Items.GOLD_INGOT,
+					stoneType.getGoldOrnamentedFancyBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getGoldOrnamentedFancyBricksFamily());
+
+			CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getFancyBrickVariant("base")),
+							RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedFancyBrickVariant("base").asItem(),
+							0.1f, 200)
+					.criterion("has_fancy_bricks", VanillaRecipeProvider
+							.conditionsFromItem(stoneType.getFancyBrickVariant("base"))).offerTo(exporter);
+			createBricksRecipe(stoneType.getCrackedTilesVariant("base"), stoneType.getCrackedFancyBrickVariant("base"),
+					exporter);
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getCrackedFancyBrickVariant("base"), stoneType.getCrackedTilesVariant("base"));
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					stoneType.getCrackedFancyBrickVariant("base"), stoneType.getCrackedBrickVariant("base"));
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedFancyBricksFamily(),
+					stoneType.getCrackedTilesVariant("base"), stoneType.getCrackedBrickVariant("base"));
+			createMossyRecipe(stoneType.getCrackedFancyBrickVariant("base"),
+					stoneType.getCrackedMossyFancyBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedMossyFancyBricksFamily());
+			createMossyRecipe(stoneType.getCrackedMossyFancyBrickVariant("base"),
+					stoneType.getCrackedOvergrownFancyBrickVariant("base"), exporter);
+			createOvergrownRecipe(stoneType.getCrackedFancyBrickVariant("base"),
+					stoneType.getCrackedOvergrownFancyBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedOvergrownFancyBricksFamily());
+			createOrnamentedRecipe(stoneType.getCrackedFancyBrickVariant("base"), Items.GOLD_INGOT,
+					stoneType.getCrackedGoldOrnamentedFancyBrickVariant("base"), exporter);
+			createStoneBlockFamilyRecipes(exporter, stoneType.getCrackedGoldOrnamentedFancyBricksFamily());
+
+			if (stoneType.getSmooth() != null) {
+				CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getStoneVariant("base")),
+								RecipeCategory.BUILDING_BLOCKS, stoneType.getSmooth().asItem(),
 								0.1f, 200)
-								.criterion("has_smooth_stone", VanillaRecipeProvider
-										.conditionsFromItem(stoneType.getSmooth())).offerTo(exporter);
-						if (stoneType.getCrackedSmoothSlab() != null) {
-							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedSmoothSlab(), stoneType.getCrackedSmooth());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedSmoothSlab(), stoneType.getCrackedSmooth(), 2);
-						}
+						.criterion("has_stone", VanillaRecipeProvider
+								.conditionsFromItem(stoneType.getStoneVariant("base"))).offerTo(exporter);
+				if (stoneType.getSmoothSlab() != null) {
+					offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+							stoneType.getSmoothSlab(), stoneType.getSmooth());
+					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+							stoneType.getSmoothSlab(), stoneType.getSmooth(), 1);
+				}
+				if (stoneType.getCrackedSmooth() != null) {
+					CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getSmooth()),
+									RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedSmooth().asItem(),
+									0.1f, 200)
+							.criterion("has_smooth_stone", VanillaRecipeProvider
+									.conditionsFromItem(stoneType.getSmooth())).offerTo(exporter);
+					if (stoneType.getCrackedSmoothSlab() != null) {
+						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedSmoothSlab(), stoneType.getCrackedSmooth());
+						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+								stoneType.getCrackedSmoothSlab(), stoneType.getCrackedSmooth(), 2);
 					}
 				}
-				if(stoneType.getBrick() != null) {
-					createBricksRecipe(stoneType.getStone(), stoneType.getBrick(), exporter);
+			}
+
+			if (stoneType.getPillar() != null) {
+				createPillarRecipe(stoneType.getStoneVariant("base"), stoneType.getPillar(), exporter);
+				offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+						stoneType.getPillar(), stoneType.getStoneVariant("base"));
+				if (stoneType.getPillarSlab() != null) {
+					offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+							stoneType.getPillarSlab(), stoneType.getPillar());
 					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-					                        stoneType.getBrick(), stoneType.getStone());
-					if(stoneType.getBrickStairs() != null) {
-						createStairRecipe(stoneType.getBrick(), stoneType.getBrickStairs(),
-						                  exporter);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                        stoneType.getBrickStairs(), stoneType.getStone(),
-						                        1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                        stoneType.getBrickStairs(), stoneType.getBrick(),
-						                        1);
-					}
-					if(stoneType.getBrickSlab() != null) {
-						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                stoneType.getBrickSlab(), stoneType.getBrick());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                        stoneType.getBrickSlab(), stoneType.getStone(), 2);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                        stoneType.getBrickSlab(), stoneType.getBrick(), 2);
-					}
-					if(stoneType.getBrickWall() != null) {
-						offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                stoneType.getBrickWall(), stoneType.getBrick());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                        stoneType.getBrickWall(), stoneType.getStone(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-						                        stoneType.getBrickWall(), stoneType.getBrick(), 1);
-					}
-					if (stoneType.getChiseledBrick() != null) {
-						createChiseledRecipe(stoneType.getBrickSlab(), stoneType.getChiseledBrick(), exporter);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getChiseledBrick(), stoneType.getBrick());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getChiseledBrick(), stoneType.getStone());
-					}
-					if (stoneType.getCrackedBrick() != null) {
-						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getBrick()),
-								RecipeCategory.BUILDING_BLOCKS,stoneType.getCrackedBrick().asItem(),
-								0.1f, 200)
-								.criterion("has_stone_bricks", VanillaRecipeProvider
-										.conditionsFromItem(stoneType.getBrick())).offerTo(exporter);
-						if (stoneType.getCrackedBrickStairs() != null) {
-							createStairRecipe(stoneType.getCrackedBrick(), stoneType.getCrackedBrickStairs(), exporter);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedBrickStairs(), stoneType.getCrackedBrick(), 1);
-						}
-						if (stoneType.getCrackedBrickSlab() != null) {
-							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedBrickSlab(), stoneType.getCrackedBrick());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedBrickSlab(), stoneType.getCrackedBrick(), 2);
-						}
-						if (stoneType.getCrackedBrickWall() != null) {
-							offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedBrickWall(), stoneType.getCrackedBrick());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedBrickWall(), stoneType.getCrackedBrick(), 1);
-						}
-					}
+							stoneType.getPillarSlab(), stoneType.getPillar(), 2);
+					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+							stoneType.getPillarSlab(), stoneType.getStoneVariant("base"), 2);
 				}
-				if (stoneType.getTiles() != null) {
-					createBricksRecipe(stoneType.getBrick(), stoneType.getTiles(), exporter);
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getTiles(), stoneType.getBrick());
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getTiles(), stoneType.getStone());
-					if (stoneType.getTilesStairs() != null) {
-						createStairRecipe(stoneType.getTiles(), stoneType.getTilesStairs(), exporter);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesStairs(), stoneType.getTiles(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesStairs(), stoneType.getBrick(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesStairs(), stoneType.getStone(), 1);
-					}
-					if (stoneType.getTilesSlab() != null) {
+				if (stoneType.getCrackedPillar() != null) {
+					CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getPillar()),
+									RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPillar().asItem(),
+									0.1f, 200)
+							.criterion("has_pillar", VanillaRecipeProvider
+									.conditionsFromItem(stoneType.getPillar())).offerTo(exporter);
+					if (stoneType.getCrackedPillarSlab() != null) {
 						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesSlab(), stoneType.getTiles());
+								stoneType.getCrackedPillarSlab(), stoneType.getCrackedPillar());
 						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesSlab(), stoneType.getBrick(), 2);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesSlab(), stoneType.getTiles(), 2);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesSlab(), stoneType.getStone(), 2);
-					}
-					if (stoneType.getTilesWall() != null) {
-						offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesWall(), stoneType.getTiles());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesWall(), stoneType.getBrick(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesWall(), stoneType.getTiles(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getTilesWall(), stoneType.getStone(), 1);
-					}
-					if (stoneType.getCrackedTiles() != null) {
-						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getTiles()),
-								RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedTiles().asItem(),
-								0.1f, 200)
-								.criterion("has_tiles", VanillaRecipeProvider
-										.conditionsFromItem(stoneType.getTiles())).offerTo(exporter);
-						createBricksRecipe(stoneType.getCrackedBrick(), stoneType.getCrackedTiles(), exporter);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCrackedTiles(), stoneType.getCrackedBrick());
-						if(stoneType.getCrackedTilesStairs() != null) {
-							createStairRecipe(stoneType.getCrackedTiles(), stoneType.getCrackedTilesStairs(), exporter);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedTilesStairs(), stoneType.getCrackedTiles(), 1);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedTilesStairs(), stoneType.getCrackedBrick(), 1);
-						}
-						if (stoneType.getCrackedTilesSlab() != null) {
-							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedTilesSlab(), stoneType.getCrackedTiles());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedTilesSlab(), stoneType.getCrackedBrick(), 2);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedTilesSlab(), stoneType.getCrackedTiles(), 2);
-						}
-						if (stoneType.getCrackedTilesWall() != null) {
-							offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedTilesWall(), stoneType.getCrackedTiles());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedTilesWall(), stoneType.getCrackedBrick(), 1);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedTilesWall(), stoneType.getCrackedTiles(), 1);
-						}
-					}
-				}
-				if (stoneType.getCobbledBrick() != null) {
-					createBricksRecipe(stoneType.getCobbled(), stoneType.getCobbledBrick(), exporter);
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getCobbledBrick(), stoneType.getCobbled());
-					if (stoneType.getCobbledBrickStairs() != null) {
-						createStairRecipe(stoneType.getCobbledBrick(), stoneType.getCobbledBrickStairs(), exporter);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCobbledBrickStairs(), stoneType.getCobbledBrick(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCobbledBrickStairs(), stoneType.getCobbled(), 1);
-					}
-					if (stoneType.getCobbledBrickSlab() != null) {
-						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCobbledBrickSlab(), stoneType.getCobbledBrick());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCobbledBrickSlab(), stoneType.getCobbled(), 2);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCobbledBrickSlab(), stoneType.getCobbledBrick(), 2);
-					}
-					if (stoneType.getCobbledBrickWall() != null) {
-						offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCobbledBrickWall(), stoneType.getCobbledBrick());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCobbledBrickWall(), stoneType.getCobbledBrick(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCobbledBrickWall(), stoneType.getCobbled(), 1);
-					}
-				}
-				if (stoneType.getPillar() != null) {
-					createPillarRecipe(stoneType.getStone(), stoneType.getPillar(), exporter);
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getPillar(), stoneType.getStone());
-					if (stoneType.getPillarSlab() != null) {
-						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPillarSlab(), stoneType.getPillar());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPillarSlab(), stoneType.getPillar(), 2);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPillarSlab(), stoneType.getStone(), 2);
-					}
-					if (stoneType.getCrackedPillar() != null) {
-						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getPillar()),
-								RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPillar().asItem(),
-								0.1f, 200)
-								.criterion("has_pillar", VanillaRecipeProvider
-										.conditionsFromItem(stoneType.getPillar())).offerTo(exporter);
-						if (stoneType.getCrackedPillarSlab() != null) {
-							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedPillarSlab(), stoneType.getCrackedPillar());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedPillarSlab(), stoneType.getCrackedPillar(), 2);
-						}					}
-				}
-				if (stoneType.getPavement() != null) {
-					ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, stoneType.getPavement(), 2)
-							.pattern("#").pattern("#").input('#', stoneType.getTiles())
-							.criterion(hasItem(stoneType.getTiles()), conditionsFromItem(stoneType.getTiles()))
-							.offerTo(exporter, new Identifier(getRecipeName(stoneType.getPavement())));
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getPavement(), stoneType.getTiles());
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getPavement(), stoneType.getBrick());
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getPavement(), stoneType.getStone());
-					if (stoneType.getPavementStairs() != null) {
-						createStairRecipe(stoneType.getPavement(), stoneType.getPavementStairs(), exporter);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPavementStairs(), stoneType.getPavement(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPavementStairs(), stoneType.getTiles(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPavementStairs(), stoneType.getBrick(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPavementStairs(), stoneType.getStone(), 1);
-					}
-					if (stoneType.getPavementSlab() != null) {
-						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getPavementSlab(), stoneType.getPavement());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPavementSlab(), stoneType.getPavement(), 2);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPavementSlab(), stoneType.getTiles(), 2);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPavementSlab(), stoneType.getBrick(), 2);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getPavementSlab(), stoneType.getStone(), 2);
-					}
-					if (stoneType.getCrackedPavement() != null) {
-						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getPavement()),
-								RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPavement().asItem(),
-								0.1f, 200)
-								.criterion("has_pavement", VanillaRecipeProvider
-										.conditionsFromItem(stoneType.getPavement())).offerTo(exporter);
-						ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPavement(), 2)
-								.pattern("#").pattern("#").input('#', stoneType.getCrackedTiles())
-								.criterion(hasItem(stoneType.getPavement()), conditionsFromItem(stoneType.getPavement()))
-								.offerTo(exporter,
-										new Identifier(getRecipeName(stoneType.getCrackedPavement()) + "_crafting"));
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCrackedPavement(), stoneType.getCrackedTiles());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCrackedPavement(), stoneType.getCrackedBrick());
-						if (stoneType.getCrackedPavementStairs() != null) {
-							createStairRecipe(stoneType.getCrackedPavement(), stoneType.getCrackedPavementStairs(), exporter);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedPavementStairs(), stoneType.getCrackedPavement(), 1);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedPavementStairs(), stoneType.getCrackedTiles(), 1);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedPavementStairs(), stoneType.getCrackedBrick(), 1);
-						}
-						if (stoneType.getCrackedPavementSlab() != null) {
-							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedPavementSlab(), stoneType.getCrackedPavement());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedPavementSlab(), stoneType.getCrackedPavement(), 2);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedPavementSlab(), stoneType.getCrackedTiles(), 2);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedPavementSlab(), stoneType.getCrackedBrick(), 2);
-						}
-					}
-				}
-				if (stoneType.getFancyBricks() != null) {
-					createBricksRecipe(stoneType.getTiles(), stoneType.getFancyBricks(), exporter);
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getFancyBricks(), stoneType.getTiles());
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getFancyBricks(), stoneType.getBrick());
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getFancyBricks(), stoneType.getStone());
-					if (stoneType.getFancyBricksStairs() != null) {
-						createStairRecipe(stoneType.getFancyBricks(), stoneType.getFancyBricksStairs(), exporter);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksStairs(), stoneType.getFancyBricks(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksStairs(), stoneType.getTiles(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksStairs(), stoneType.getBrick(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksStairs(), stoneType.getStone(), 1);
-					}
-					if (stoneType.getFancyBricksSlab() != null) {
-						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksSlab(), stoneType.getFancyBricks());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksSlab(), stoneType.getTiles(), 2);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksSlab(), stoneType.getBrick(), 2);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksSlab(), stoneType.getStone(), 2);
-					}
-					if (stoneType.getFancyBricksWall() != null) {
-						offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksWall(), stoneType.getFancyBricks());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksWall(), stoneType.getTiles(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksWall(), stoneType.getBrick(), 1);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getFancyBricksWall(), stoneType.getStone(), 1);
-					}
-					if (stoneType.getCrackedFancyBricks() != null) {
-						CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getFancyBricks()),
-								RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedFancyBricks().asItem(),
-								0.1f, 200)
-								.criterion("has_fancy_bricks", VanillaRecipeProvider
-										.conditionsFromItem(stoneType.getFancyBricks())).offerTo(exporter);
-						createBricksRecipe(stoneType.getCrackedTiles(), stoneType.getCrackedFancyBricks(), exporter);
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCrackedFancyBricks(), stoneType.getCrackedTiles());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCrackedFancyBricks(), stoneType.getCrackedBrick());
-						if (stoneType.getCrackedFancyBricksStairs() != null) {
-							createStairRecipe(stoneType.getCrackedFancyBricks(), stoneType.getCrackedFancyBricksStairs(), exporter);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedFancyBricksStairs(), stoneType.getCrackedFancyBricks(), 1);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedFancyBricksStairs(), stoneType.getCrackedTiles(), 1);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedFancyBricksStairs(), stoneType.getCrackedBrick(), 1);
-						}
-						if (stoneType.getCrackedFancyBricksSlab() != null) {
-							offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedFancyBricksSlab(), stoneType.getCrackedFancyBricks());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedFancyBricksSlab(), stoneType.getCrackedFancyBricks(), 2);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedFancyBricksSlab(), stoneType.getCrackedTiles(), 2);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedFancyBricksSlab(), stoneType.getCrackedBrick(), 2);
-						}
-						if (stoneType.getCrackedFancyBricksWall() != null) {
-							offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedFancyBricksWall(), stoneType.getCrackedFancyBricks());
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedFancyBricksWall(), stoneType.getCrackedFancyBricks(), 1);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedFancyBricksWall(), stoneType.getCrackedTiles(), 1);
-							offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-									stoneType.getCrackedFancyBricksWall(), stoneType.getCrackedBrick(), 1);
-						}
+								stoneType.getCrackedPillarSlab(), stoneType.getCrackedPillar(), 2);
 					}
 				}
 			}
@@ -756,6 +508,69 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	}
 
 	/**
+	 * Generates all CT-Recipes for the given family, as well as all Stonecutter-Recipes for the family also from the
+	 * given baseBlocks
+	 * @param exporter the recipe exporter
+	 * @param family the blockFamily for which Crafting Recipes should be generated
+	 * @param baseBlocks the blocks from which the blockFamily should be craftable in the stonecutter
+	 */
+	private void createStoneBlockFamilyRecipes(RecipeExporter exporter, BlockFamily family, Block... baseBlocks) {
+		createStairRecipe(family.getBaseBlock(), family.getVariant(BlockFamily.Variant.STAIRS), exporter);
+		offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+				family.getVariant(BlockFamily.Variant.STAIRS), family.getBaseBlock());
+		for (Block block : baseBlocks) {
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					family.getVariant(BlockFamily.Variant.STAIRS), block);
+		}
+		offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, family.getVariant(BlockFamily.Variant.SLAB),
+				family.getBaseBlock());
+		offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+				family.getVariant(BlockFamily.Variant.SLAB), family.getBaseBlock(), 2);
+		for (Block block : baseBlocks) {
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					family.getVariant(BlockFamily.Variant.SLAB), block, 2);
+		}
+		if (family.getVariant(BlockFamily.Variant.WALL) != null) {
+			offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, family.getVariant(BlockFamily.Variant.WALL),
+					family.getBaseBlock());
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					family.getVariant(BlockFamily.Variant.WALL), family.getBaseBlock());
+			for (Block block : baseBlocks) {
+				offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+						family.getVariant(BlockFamily.Variant.WALL), block);
+			}
+		}
+		if (family.getVariant(BlockFamily.Variant.BUTTON) != null) {
+			createButtonRecipe(family.getBaseBlock(), family.getVariant(BlockFamily.Variant.BUTTON), exporter);
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					family.getVariant(BlockFamily.Variant.BUTTON), family.getBaseBlock());
+			for (Block block : baseBlocks) {
+				offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+						family.getVariant(BlockFamily.Variant.BUTTON), block);
+			}
+		}
+		if (family.getVariant(BlockFamily.Variant.PRESSURE_PLATE) != null) {
+			offerPressurePlateRecipe(exporter, family.getVariant(BlockFamily.Variant.PRESSURE_PLATE),
+					family.getBaseBlock());
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					family.getVariant(BlockFamily.Variant.PRESSURE_PLATE), family.getBaseBlock());
+			for (Block block : baseBlocks) {
+				offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+						family.getVariant(BlockFamily.Variant.PRESSURE_PLATE), block);
+			}
+		}
+		if (family.getVariant(BlockFamily.Variant.CHISELED) != null) {
+			createChiseledRecipe(family.getBaseBlock(), family.getVariant(BlockFamily.Variant.CHISELED), exporter);
+			offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+					family.getVariant(BlockFamily.Variant.CHISELED), family.getBaseBlock());
+			for (Block block : baseBlocks) {
+				offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
+						family.getVariant(BlockFamily.Variant.CHISELED), block);
+			}
+		}
+	}
+
+	/**
 	 * This Method creates a BrickRecipe for the given input-stone which will be turned into 4 of
 	 * the given output-stone
 	 *
@@ -825,6 +640,18 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				 .input(Items.VINE)
 				 .criterion(hasItem(input), conditionsFromItem(input))
 				 .offerTo(exporter, new Identifier(getRecipeName(output) + "_doublevines"));
+	 }
+
+	 private void createOrnamentedRecipe(Block inputBlock, Item inputItem, Block output, RecipeExporter exporter) {
+		 ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
+				 .pattern("OOO")
+				 .pattern("O#O")
+				 .pattern("OOO")
+				 .input('#', inputBlock)
+				 .input('O', inputItem)
+				 .criterion(hasItem(inputItem), conditionsFromItem(inputItem))
+				 .criterion(hasItem(inputBlock), conditionsFromItem(inputBlock))
+				 .offerTo(exporter, new Identifier(getRecipeName(output)));
 	 }
 
 	/**
