@@ -30,8 +30,6 @@ public class ModModels {
 			TextureKey.BOTTOM, TextureKey.TOP, TextureKey.SIDE, TextureKey.LAYER1);
 	public static final Model SLAB_TOP_ALL_OVERLAY = block("slab_top_all_overlay",
 			"_top", TextureKey.BOTTOM, TextureKey.TOP, TextureKey.SIDE, TextureKey.LAYER1);
-	public static final Model DOUBLE_SLAB_ALL_OVERLAY = block("cube_all_overlay",
-			"_double", TextureKey.BOTTOM, TextureKey.TOP, TextureKey.SIDE, TextureKey.LAYER1);
 	public static final Model WALL_POST_ALL_OVERLAY = block("wall_post_all_overlay",
 			"_post", TextureKey.WALL, TextureKey.LAYER1);
 	public static final Model WALL_SIDE_ALL_OVERLAY = block("wall_side_all_overlay",
@@ -50,6 +48,19 @@ public class ModModels {
 			"", TextureKey.TEXTURE, TextureKey.LAYER1);
 	public static final Model PRESSURE_PLATE_DOWN_ALL_OVERLAY = block("pressure_plate_down_all_overlay",
 			"_down", TextureKey.TEXTURE, TextureKey.LAYER1);
+
+	public static final Model PILLAR_OVERLAY = block("pillar_overlay", TextureKey.END, TextureKey.SIDE,
+			TextureKey.LAYER1, ModTextureKeys.END_OVERLAY);
+	public static final Model PILLAR_TOP_OVERLAY = block("pillar_overlay", "_top", TextureKey.END, TextureKey.SIDE,
+			TextureKey.LAYER1, ModTextureKeys.END_OVERLAY);
+	public static final Model PILLAR_MIDDLE_OVERLAY = block("pillar_overlay", "_middle", TextureKey.END, TextureKey.SIDE,
+			TextureKey.LAYER1, ModTextureKeys.END_OVERLAY);
+	public static final Model PILLAR_BASE_OVERLAY = block("pillar_overlay", "_bottom", TextureKey.END, TextureKey.SIDE,
+			TextureKey.LAYER1, ModTextureKeys.END_OVERLAY);
+	public static final Model PILLAR_SLAB_OVERLAY = block("pillar_slab_overlay", TextureKey.END, TextureKey.SIDE,
+			TextureKey.LAYER1, ModTextureKeys.END_OVERLAY);
+	public static final Model PILLAR_SLAB_TOP_OVERLAY = block("pillar_slab_top_overlay", "_top", TextureKey.END,
+			TextureKey.SIDE, TextureKey.LAYER1, ModTextureKeys.END_OVERLAY);
 
 	private static Model block(String parent, TextureKey ... requiredTextureKeys) {
 		return block(new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent), requiredTextureKeys);

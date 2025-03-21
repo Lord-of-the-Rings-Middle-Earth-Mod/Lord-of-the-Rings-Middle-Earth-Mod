@@ -112,15 +112,15 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
                     stoneType.getCrackedOvergrownBrickVariant("slab"),
                     stoneType.getCrackedOvergrownBrickVariant("wall"));
             BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                    stoneType.getGoldOrnamentedBrickVariant("base"),
-                    stoneType.getGoldOrnamentedBrickVariant("stairs"),
-                    stoneType.getGoldOrnamentedBrickVariant("slab"),
-                    stoneType.getGoldOrnamentedBrickVariant("wall"));
+                    stoneType.getGoldBrickVariant("base"),
+                    stoneType.getGoldBrickVariant("stairs"),
+                    stoneType.getGoldBrickVariant("slab"),
+                    stoneType.getGoldBrickVariant("wall"));
             BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                    stoneType.getCrackedGoldOrnamentedBrickVariant("base"),
-                    stoneType.getCrackedGoldOrnamentedBrickVariant("stairs"),
-                    stoneType.getCrackedGoldOrnamentedBrickVariant("slab"),
-                    stoneType.getCrackedGoldOrnamentedBrickVariant("wall"));
+                    stoneType.getCrackedGoldBrickVariant("base"),
+                    stoneType.getCrackedGoldBrickVariant("stairs"),
+                    stoneType.getCrackedGoldBrickVariant("slab"),
+                    stoneType.getCrackedGoldBrickVariant("wall"));
             BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
                     stoneType.getMossyTilesVariant("base"),
                     stoneType.getMossyTilesVariant("stairs"),
@@ -142,15 +142,15 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
                     stoneType.getCrackedOvergrownTilesVariant("slab"),
                     stoneType.getCrackedOvergrownTilesVariant("wall"));
             BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                    stoneType.getGoldOrnamentedTilesVariant("base"),
-                    stoneType.getGoldOrnamentedTilesVariant("stairs"),
-                    stoneType.getGoldOrnamentedTilesVariant("slab"),
-                    stoneType.getGoldOrnamentedTilesVariant("wall"));
+                    stoneType.getGoldTilesVariant("base"),
+                    stoneType.getGoldTilesVariant("stairs"),
+                    stoneType.getGoldTilesVariant("slab"),
+                    stoneType.getGoldTilesVariant("wall"));
             BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                    stoneType.getCrackedGoldOrnamentedTilesVariant("base"),
-                    stoneType.getCrackedGoldOrnamentedTilesVariant("stairs"),
-                    stoneType.getCrackedGoldOrnamentedTilesVariant("slab"),
-                    stoneType.getCrackedGoldOrnamentedTilesVariant("wall"));
+                    stoneType.getCrackedGoldTilesVariant("base"),
+                    stoneType.getCrackedGoldTilesVariant("stairs"),
+                    stoneType.getCrackedGoldTilesVariant("slab"),
+                    stoneType.getCrackedGoldTilesVariant("wall"));
             BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
                     stoneType.getMossyFancyBrickVariant("base"),
                     stoneType.getMossyFancyBrickVariant("stairs"),
@@ -172,15 +172,22 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
                     stoneType.getCrackedOvergrownFancyBrickVariant("slab"),
                     stoneType.getCrackedOvergrownFancyBrickVariant("wall"));
             BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                    stoneType.getGoldOrnamentedFancyBrickVariant("base"),
-                    stoneType.getGoldOrnamentedFancyBrickVariant("stairs"),
-                    stoneType.getGoldOrnamentedFancyBrickVariant("slab"),
-                    stoneType.getGoldOrnamentedFancyBrickVariant("wall"));
+                    stoneType.getGoldFancyBrickVariant("base"),
+                    stoneType.getGoldFancyBrickVariant("stairs"),
+                    stoneType.getGoldFancyBrickVariant("slab"),
+                    stoneType.getGoldFancyBrickVariant("wall"));
             BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
-                    stoneType.getCrackedGoldOrnamentedFancyBrickVariant("base"),
-                    stoneType.getCrackedGoldOrnamentedFancyBrickVariant("stairs"),
-                    stoneType.getCrackedGoldOrnamentedFancyBrickVariant("slab"),
-                    stoneType.getCrackedGoldOrnamentedFancyBrickVariant("wall"));
+                    stoneType.getCrackedGoldFancyBrickVariant("base"),
+                    stoneType.getCrackedGoldFancyBrickVariant("stairs"),
+                    stoneType.getCrackedGoldFancyBrickVariant("slab"),
+                    stoneType.getCrackedGoldFancyBrickVariant("wall"));
+            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+                    stoneType.getMossyPillar(), stoneType.getMossyPillarSlab(),
+                    stoneType.getCrackedMossyPillar(), stoneType.getCrackedMossyPillarSlab(),
+                    stoneType.getOvergrownPillar(), stoneType.getOvergrownPillarSlab(),
+                    stoneType.getCrackedOvergrownPillar(), stoneType.getCrackedOvergrownPillarSlab(),
+                    stoneType.getGoldPillar(), stoneType.getGoldPillarSlab(),
+                    stoneType.getCrackedGoldPillar(), stoneType.getCrackedGoldPillarSlab());
         }
 
         TerraformBoatClientHelper.registerModelLayers(ModBoats.PINE_BOAT_ID, false);

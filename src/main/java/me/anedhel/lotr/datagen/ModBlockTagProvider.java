@@ -68,16 +68,16 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             configureStoneBlockFamilyTags(stoneType.getCrackedMossyBrickFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getOvergrownBrickFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getCrackedOvergrownBrickFamily(), pickaxeTag, wallTag);
-            configureStoneBlockFamilyTags(stoneType.getGoldOrnamentedBrickFamily(), pickaxeTag, wallTag);
-            configureStoneBlockFamilyTags(stoneType.getCrackedGoldOrnamentedBrickFamily(), pickaxeTag, wallTag);
+            configureStoneBlockFamilyTags(stoneType.getGoldBrickFamily(), pickaxeTag, wallTag);
+            configureStoneBlockFamilyTags(stoneType.getCrackedGoldBrickFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getTilesFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getCrackedTilesFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getMossyTilesFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getCrackedMossyTilesFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getOvergrownTilesFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getCrackedOvergrownTilesFamily(), pickaxeTag, wallTag);
-            configureStoneBlockFamilyTags(stoneType.getGoldOrnamentedTilesFamily(), pickaxeTag, wallTag);
-            configureStoneBlockFamilyTags(stoneType.getCrackedGoldOrnamentedTilesFamily(), pickaxeTag, wallTag);
+            configureStoneBlockFamilyTags(stoneType.getGoldTilesFamily(), pickaxeTag, wallTag);
+            configureStoneBlockFamilyTags(stoneType.getCrackedGoldTilesFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getPavementFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getCrackedPavementFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getFancyBricksFamily(), pickaxeTag, wallTag);
@@ -86,8 +86,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             configureStoneBlockFamilyTags(stoneType.getCrackedMossyFancyBricksFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getOvergrownFancyBricksFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getCrackedOvergrownFancyBricksFamily(), pickaxeTag, wallTag);
-            configureStoneBlockFamilyTags(stoneType.getGoldOrnamentedFancyBricksFamily(), pickaxeTag, wallTag);
-            configureStoneBlockFamilyTags(stoneType.getCrackedGoldOrnamentedFancyBricksFamily(), pickaxeTag, wallTag);
+            configureStoneBlockFamilyTags(stoneType.getGoldFancyBricksFamily(), pickaxeTag, wallTag);
+            configureStoneBlockFamilyTags(stoneType.getCrackedGoldFancyBricksFamily(), pickaxeTag, wallTag);
 
             if (stoneType.getSmooth() != null) {
                 pickaxeTag.add(stoneType.getSmooth());
@@ -104,6 +104,30 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             if (stoneType.getCrackedPillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedPillar());
                 pickaxeTag.add(stoneType.getCrackedPillarSlab());
+            }
+            if (stoneType.getMossyPillar() != null) {
+                pickaxeTag.add(stoneType.getMossyPillar());
+                pickaxeTag.add(stoneType.getMossyPillarSlab());
+            }
+            if (stoneType.getCrackedMossyPillar() != null) {
+                pickaxeTag.add(stoneType.getCrackedMossyPillar());
+                pickaxeTag.add(stoneType.getCrackedMossyPillarSlab());
+            }
+            if (stoneType.getOvergrownPillar() != null) {
+                pickaxeTag.add(stoneType.getOvergrownPillar());
+                pickaxeTag.add(stoneType.getOvergrownPillarSlab());
+            }
+            if (stoneType.getCrackedOvergrownPillar() != null) {
+                pickaxeTag.add(stoneType.getCrackedOvergrownPillar());
+                pickaxeTag.add(stoneType.getCrackedOvergrownPillarSlab());
+            }
+            if (stoneType.getGoldPillar() != null) {
+                pickaxeTag.add(stoneType.getGoldPillar());
+                pickaxeTag.add(stoneType.getGoldPillarSlab());
+            }
+            if (stoneType.getCrackedGoldPillar() != null) {
+                pickaxeTag.add(stoneType.getCrackedGoldPillar());
+                pickaxeTag.add(stoneType.getCrackedGoldPillarSlab());
             }
         }
     }

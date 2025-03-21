@@ -169,16 +169,16 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
             generateStoneBlockFamilyLootTables(stoneType.getCrackedMossyBrickFamily());
             generateStoneBlockFamilyLootTables(stoneType.getOvergrownBrickFamily());
             generateStoneBlockFamilyLootTables(stoneType.getCrackedOvergrownBrickFamily());
-            generateStoneBlockFamilyLootTables(stoneType.getGoldOrnamentedBrickFamily());
-            generateStoneBlockFamilyLootTables(stoneType.getCrackedGoldOrnamentedBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getGoldBrickFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedGoldBrickFamily());
             generateStoneBlockFamilyLootTables(stoneType.getTilesFamily());
             generateStoneBlockFamilyLootTables(stoneType.getCrackedTilesFamily());
             generateStoneBlockFamilyLootTables(stoneType.getMossyTilesFamily());
             generateStoneBlockFamilyLootTables(stoneType.getCrackedMossyTilesFamily());
             generateStoneBlockFamilyLootTables(stoneType.getOvergrownTilesFamily());
             generateStoneBlockFamilyLootTables(stoneType.getCrackedOvergrownTilesFamily());
-            generateStoneBlockFamilyLootTables(stoneType.getGoldOrnamentedTilesFamily());
-            generateStoneBlockFamilyLootTables(stoneType.getCrackedGoldOrnamentedTilesFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getGoldTilesFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedGoldTilesFamily());
             generateStoneBlockFamilyLootTables(stoneType.getPavementFamily());
             generateStoneBlockFamilyLootTables(stoneType.getCrackedPavementFamily());
             generateStoneBlockFamilyLootTables(stoneType.getFancyBricksFamily());
@@ -187,8 +187,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
             generateStoneBlockFamilyLootTables(stoneType.getCrackedMossyFancyBricksFamily());
             generateStoneBlockFamilyLootTables(stoneType.getOvergrownFancyBricksFamily());
             generateStoneBlockFamilyLootTables(stoneType.getCrackedOvergrownFancyBricksFamily());
-            generateStoneBlockFamilyLootTables(stoneType.getGoldOrnamentedFancyBricksFamily());
-            generateStoneBlockFamilyLootTables(stoneType.getCrackedGoldOrnamentedFancyBricksFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getGoldFancyBricksFamily());
+            generateStoneBlockFamilyLootTables(stoneType.getCrackedGoldFancyBricksFamily());
 
             if (stoneType.getSmooth() != null) {
                 addDrop(stoneType.getSmooth());
@@ -205,6 +205,30 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
             if (stoneType.getCrackedPillar() != null) {
                 addDrop(stoneType.getCrackedPillar());
                 addDrop(stoneType.getCrackedPillarSlab(), slabDrops(stoneType.getCrackedPillarSlab()));
+            }
+            if (stoneType.getMossyPillar() != null) {
+                addDrop(stoneType.getMossyPillar());
+                addDrop(stoneType.getMossyPillarSlab(), slabDrops(stoneType.getMossyPillarSlab()));
+            }
+            if (stoneType.getCrackedMossyPillar() != null) {
+                addDrop(stoneType.getCrackedMossyPillar());
+                addDrop(stoneType.getCrackedMossyPillarSlab(), slabDrops(stoneType.getCrackedMossyPillarSlab()));
+            }
+            if (stoneType.getOvergrownPillar() != null) {
+                addDrop(stoneType.getOvergrownPillar());
+                addDrop(stoneType.getOvergrownPillarSlab(), slabDrops(stoneType.getOvergrownPillarSlab()));
+            }
+            if (stoneType.getCrackedOvergrownPillar() != null) {
+                addDrop(stoneType.getCrackedOvergrownPillar());
+                addDrop(stoneType.getCrackedOvergrownPillarSlab(), slabDrops(stoneType.getCrackedOvergrownPillarSlab()));
+            }
+            if (stoneType.getGoldPillar() != null) {
+                addDrop(stoneType.getGoldPillar());
+                addDrop(stoneType.getGoldPillarSlab(), slabDrops(stoneType.getGoldPillarSlab()));
+            }
+            if (stoneType.getCrackedGoldPillar() != null) {
+                addDrop(stoneType.getCrackedGoldPillar());
+                addDrop(stoneType.getCrackedGoldPillarSlab(), slabDrops(stoneType.getCrackedGoldPillarSlab()));
             }
         }
     }

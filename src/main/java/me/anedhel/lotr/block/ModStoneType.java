@@ -17,20 +17,26 @@ public enum ModStoneType {
             ModStoneBlocks.BLUESLATE_BRICK_FAMILY, ModStoneBlocks.CRACKED_BLUESLATE_BRICK_FAMILY,
             ModStoneBlocks.MOSSY_BLUESLATE_BRICK_FAMILY, ModStoneBlocks.CRACKED_MOSSY_BLUESLATE_BRICK_FAMILY,
             ModStoneBlocks.OVERGROWN_BLUESLATE_BRICK_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_BLUESLATE_BRICK_FAMILY,
-            ModStoneBlocks.GOLD_ORNAMENTED_BLUESLATE_BRICK_FAMILY, ModStoneBlocks.CRACKED_GOLD_ORNAMENTED_BLUESLATE_BRICK_FAMILY,
+            ModStoneBlocks.GOLD_BLUESLATE_BRICK_FAMILY, ModStoneBlocks.CRACKED_GOLD_BLUESLATE_BRICK_FAMILY,
             ModStoneBlocks.BLUESLATE_TILES_FAMILY, ModStoneBlocks.CRACKED_BLUESLATE_TILES_FAMILY,
             ModStoneBlocks.MOSSY_BLUESLATE_TILES_FAMILY, ModStoneBlocks.CRACKED_MOSSY_BLUESLATE_TILES_FAMILY,
             ModStoneBlocks.OVERGROWN_BLUESLATE_TILES_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_BLUESLATE_TILES_FAMILY,
-            ModStoneBlocks.GOLD_ORNAMENTED_BLUESLATE_TILES_FAMILY, ModStoneBlocks.CRACKED_GOLD_ORNAMENTED_BLUESLATE_TILES_FAMILY,
+            ModStoneBlocks.GOLD_BLUESLATE_TILES_FAMILY, ModStoneBlocks.CRACKED_GOLD_BLUESLATE_TILES_FAMILY,
             ModStoneBlocks.BLUESLATE_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_BLUESLATE_PAVEMENT_FAMILY,
             ModStoneBlocks.FANCY_BLUESLATE_BRICKS_FAMILY, ModStoneBlocks.CRACKED_FANCY_BLUESLATE_BRICKS_FAMILY,
             ModStoneBlocks.MOSSY_FANCY_BLUESLATE_BRICKS_FAMILY, ModStoneBlocks.CRACKED_MOSSY_FANCY_BLUESLATE_BRICKS_FAMILY,
             ModStoneBlocks.OVERGROWN_FANCY_BLUESLATE_BRICKS_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_FANCY_BLUESLATE_BRICKS_FAMILY,
-            ModStoneBlocks.GOLD_ORNAMENTED_FANCY_BLUESLATE_BRICKS_FAMILY, ModStoneBlocks.CRACKED_GOLD_ORNAMENTED_FANCY_BLUESLATE_BRICKS_FAMILY,
+            ModStoneBlocks.GOLD_FANCY_BLUESLATE_BRICKS_FAMILY, ModStoneBlocks.CRACKED_GOLD_FANCY_BLUESLATE_BRICKS_FAMILY,
             ModStoneBlocks.SMOOTH_BLUESLATE, ModStoneBlocks.SMOOTH_BLUESLATE_SLAB,
             ModStoneBlocks.CRACKED_SMOOTH_BLUESLATE, ModStoneBlocks.CRACKED_SMOOTH_BLUESLATE_SLAB,
             ModStoneBlocks.BLUESLATE_PILLAR, ModStoneBlocks.BLUESLATE_PILLAR_SLAB,
             ModStoneBlocks.CRACKED_BLUESLATE_PILLAR, ModStoneBlocks.CRACKED_BLUESLATE_PILLAR_SLAB,
+            ModStoneBlocks.MOSSY_BLUESLATE_PILLAR, ModStoneBlocks.MOSSY_BLUESLATE_PILLAR_SLAB,
+            ModStoneBlocks.CRACKED_MOSSY_BLUESLATE_PILLAR, ModStoneBlocks.CRACKED_MOSSY_BLUESLATE_PILLAR_SLAB,
+            ModStoneBlocks.OVERGROWN_BLUESLATE_PILLAR, ModStoneBlocks.OVERGROWN_BLUESLATE_PILLAR_SLAB,
+            ModStoneBlocks.CRACKED_OVERGROWN_BLUESLATE_PILLAR, ModStoneBlocks.CRACKED_OVERGROWN_BLUESLATE_PILLAR_SLAB,
+            ModStoneBlocks.GOLD_BLUESLATE_PILLAR, ModStoneBlocks.GOLD_BLUESLATE_PILLAR_SLAB,
+            ModStoneBlocks.CRACKED_GOLD_BLUESLATE_PILLAR, ModStoneBlocks.CRACKED_GOLD_BLUESLATE_PILLAR_SLAB,
             false);
 
     //CHALK(ModStoneBlocks.CHALK_FAMILY, ModStoneBlocks.COBBLED_CHALK_FAMILY, ModStoneBlocks.CHALK_BRICK_FAMILY, false);
@@ -187,6 +193,21 @@ public enum ModStoneType {
     private final Block crackedPillar;
     private final Block crackedPillarSlab;
 
+    private final Block mossyPillar;
+    private final Block mossyPillarSlab;
+    private final Block crackedMossyPillar;
+    private final Block crackedMossyPillarSlab;
+
+    private final Block overgrownPillar;
+    private final Block overgrownPillarSlab;
+    private final Block crackedOvergrownPillar;
+    private final Block crackedOvergrownPillarSlab;
+
+    private final Block goldOrnamentedPillar;
+    private final Block goldOrnamentedPillarSlab;
+    private final Block crackedGoldOrnamentedPillar;
+    private final Block crackedGoldOrnamentedPillarSlab;
+
     private final Block pavement;
     private final Block pavementStairs;
     private final Block pavementSlab;
@@ -260,6 +281,9 @@ public enum ModStoneType {
             BlockFamily goldOrnamentedFancyBricksFamily, BlockFamily crackedGoldOrnamentedFancyBricksFamily,
             Block smooth, Block smoothSlab, Block crackedSmooth, Block crackedSmoothSlab,
             Block pillar, Block pillarSlab, Block crackedPillar, Block crackedPillarSlab,
+            Block mossyPillar, Block mossyPillarSlab, Block crackedMossyPillar, Block crackedMossyPillarSlab,
+            Block overgrownPillar, Block overgrownPillarSlab, Block crackedOvergrownPillar, Block crackedOvergrownPillarSlab,
+            Block goldOrnamentedPillar, Block goldOrnamentedPillarSlab, Block crackedGoldOrnamentedPillar, Block crackedGoldOrnamentedPillarSlab,
             boolean vanillaAddition) {
         this.stone = stoneFamily.getBaseBlock();
         this.stoneStairs = stoneFamily.getVariant(BlockFamily.Variant.STAIRS);
@@ -413,6 +437,21 @@ public enum ModStoneType {
         this.crackedPillar = crackedPillar;
         this.crackedPillarSlab = crackedPillarSlab;
 
+        this.mossyPillar = mossyPillar;
+        this.mossyPillarSlab = mossyPillarSlab;
+        this.crackedMossyPillar = crackedMossyPillar;
+        this.crackedMossyPillarSlab = crackedMossyPillarSlab;
+
+        this.overgrownPillar = overgrownPillar;
+        this.overgrownPillarSlab = overgrownPillarSlab;
+        this.crackedOvergrownPillar = crackedOvergrownPillar;
+        this.crackedOvergrownPillarSlab = crackedOvergrownPillarSlab;
+
+        this.goldOrnamentedPillar = goldOrnamentedPillar;
+        this.goldOrnamentedPillarSlab = goldOrnamentedPillarSlab;
+        this.crackedGoldOrnamentedPillar = crackedGoldOrnamentedPillar;
+        this.crackedGoldOrnamentedPillarSlab = crackedGoldOrnamentedPillarSlab;
+
         this.pavement = pavementFamily.getBaseBlock();
         this.pavementStairs = pavementFamily.getVariant(BlockFamily.Variant.STAIRS);
         this.pavementSlab = pavementFamily.getVariant(BlockFamily.Variant.SLAB);
@@ -532,6 +571,42 @@ public enum ModStoneType {
             itemGroupList.add(new ItemStack(crackedPillar));
             if(crackedPillarSlab != null) {
                 itemGroupList.add(new ItemStack(crackedPillarSlab));
+            }
+        }
+        if(mossyPillar != null) {
+            itemGroupList.add(new ItemStack(mossyPillar));
+            if(mossyPillarSlab != null) {
+                itemGroupList.add(new ItemStack(mossyPillarSlab));
+            }
+        }
+        if(crackedMossyPillar != null) {
+            itemGroupList.add(new ItemStack(crackedMossyPillar));
+            if(crackedMossyPillarSlab != null) {
+                itemGroupList.add(new ItemStack(crackedMossyPillarSlab));
+            }
+        }
+        if(overgrownPillar != null) {
+            itemGroupList.add(new ItemStack(overgrownPillar));
+            if(overgrownPillarSlab != null) {
+                itemGroupList.add(new ItemStack(overgrownPillarSlab));
+            }
+        }
+        if(crackedOvergrownPillar != null) {
+            itemGroupList.add(new ItemStack(crackedOvergrownPillar));
+            if(crackedOvergrownPillarSlab != null) {
+                itemGroupList.add(new ItemStack(crackedOvergrownPillarSlab));
+            }
+        }
+        if(goldOrnamentedPillar != null) {
+            itemGroupList.add(new ItemStack(goldOrnamentedPillar));
+            if(goldOrnamentedPillarSlab != null) {
+                itemGroupList.add(new ItemStack(goldOrnamentedPillarSlab));
+            }
+        }
+        if(crackedGoldOrnamentedPillar != null) {
+            itemGroupList.add(new ItemStack(crackedGoldOrnamentedPillar));
+            if(crackedGoldOrnamentedPillarSlab != null) {
+                itemGroupList.add(new ItemStack(crackedGoldOrnamentedPillarSlab));
             }
         }
         return itemGroupList;
@@ -952,7 +1027,7 @@ public enum ModStoneType {
 	    }
     }
 
-    public BlockFamily getGoldOrnamentedBrickFamily() {
+    public BlockFamily getGoldBrickFamily() {
         return goldOrnamentedBrickFamily;
     }
 
@@ -961,7 +1036,7 @@ public enum ModStoneType {
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
      * @return the Block, that is the given variant of the goldOrnamentedBrick
      */
-    public Block getGoldOrnamentedBrickVariant(String variant) {
+    public Block getGoldBrickVariant(String variant) {
 	    switch (variant) {
 		    case "base" -> {
 				return goldOrnamentedBrick;
@@ -981,7 +1056,7 @@ public enum ModStoneType {
 	    }
     }
 
-    public BlockFamily getCrackedGoldOrnamentedBrickFamily() {
+    public BlockFamily getCrackedGoldBrickFamily() {
         return crackedGoldOrnamentedBrickFamily;
     }
 
@@ -990,7 +1065,7 @@ public enum ModStoneType {
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
      * @return the Block, that is the given variant of the crackedGoldOrnamentedBrick
      */
-    public Block getCrackedGoldOrnamentedBrickVariant(String variant) {
+    public Block getCrackedGoldBrickVariant(String variant) {
 	    switch (variant) {
 		    case "base" -> {
 				return crackedGoldOrnamentedBrick;
@@ -1184,7 +1259,7 @@ public enum ModStoneType {
         }
     }
 
-    public BlockFamily getGoldOrnamentedTilesFamily() {
+    public BlockFamily getGoldTilesFamily() {
         return goldOrnamentedTilesFamily;
     }
 
@@ -1193,7 +1268,7 @@ public enum ModStoneType {
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
      * @return the Block, that is the given variant of the goldOrnamentedTiles
      */
-    public Block getGoldOrnamentedTilesVariant(String variant) {
+    public Block getGoldTilesVariant(String variant) {
         switch (variant) {
             case "base" -> {
                 return goldOrnamentedTiles;
@@ -1213,7 +1288,7 @@ public enum ModStoneType {
         }
     }
 
-    public BlockFamily getCrackedGoldOrnamentedTilesFamily() {
+    public BlockFamily getCrackedGoldTilesFamily() {
         return crackedGoldOrnamentedTilesFamily;
     }
 
@@ -1222,7 +1297,7 @@ public enum ModStoneType {
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
      * @return the Block, that is the given variant of the crackedGoldOrnamentedTiles
      */
-    public Block getCrackedGoldOrnamentedTilesVariant(String variant) {
+    public Block getCrackedGoldTilesVariant(String variant) {
         switch (variant) {
             case "base" -> {
                 return crackedGoldOrnamentedTiles;
@@ -1468,7 +1543,7 @@ public enum ModStoneType {
         }
     }
 
-    public BlockFamily getGoldOrnamentedFancyBricksFamily() {
+    public BlockFamily getGoldFancyBricksFamily() {
         return goldOrnamentedFancyBricksFamily;
     }
 
@@ -1477,7 +1552,7 @@ public enum ModStoneType {
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
      * @return the Block, that is the given variant of the goldOrnamentedFancyBrick
      */
-    public Block getGoldOrnamentedFancyBrickVariant(String variant) {
+    public Block getGoldFancyBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
                 return goldOrnamentedFancyBricks;
@@ -1497,7 +1572,7 @@ public enum ModStoneType {
         }
     }
 
-    public BlockFamily getCrackedGoldOrnamentedFancyBricksFamily() {
+    public BlockFamily getCrackedGoldFancyBricksFamily() {
         return crackedGoldOrnamentedFancyBricksFamily;
     }
 
@@ -1506,7 +1581,7 @@ public enum ModStoneType {
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
      * @return the Block, that is the given variant of the crackedGoldOrnamentedFancyBrick
      */
-    public Block getCrackedGoldOrnamentedFancyBrickVariant(String variant) {
+    public Block getCrackedGoldFancyBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
                 return crackedGoldOrnamentedFancyBricks;
@@ -1556,6 +1631,54 @@ public enum ModStoneType {
 
     public Block getCrackedPillarSlab() {
         return crackedPillarSlab;
+    }
+
+    public Block getMossyPillar() {
+        return mossyPillar;
+    }
+
+    public Block getMossyPillarSlab() {
+        return mossyPillarSlab;
+    }
+
+    public Block getCrackedMossyPillar() {
+        return crackedMossyPillar;
+    }
+
+    public Block getCrackedMossyPillarSlab() {
+        return crackedMossyPillarSlab;
+    }
+
+    public Block getOvergrownPillar() {
+        return overgrownPillar;
+    }
+
+    public Block getOvergrownPillarSlab() {
+        return overgrownPillarSlab;
+    }
+
+    public Block getCrackedOvergrownPillar() {
+        return crackedOvergrownPillar;
+    }
+
+    public Block getCrackedOvergrownPillarSlab() {
+        return crackedOvergrownPillarSlab;
+    }
+
+    public Block getGoldPillar() {
+        return goldOrnamentedPillar;
+    }
+
+    public Block getGoldPillarSlab() {
+        return goldOrnamentedPillarSlab;
+    }
+
+    public Block getCrackedGoldPillar() {
+        return crackedGoldOrnamentedPillar;
+    }
+
+    public Block getCrackedGoldPillarSlab() {
+        return crackedGoldOrnamentedPillarSlab;
     }
 
     public boolean isVanillaAddition() {
