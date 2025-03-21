@@ -132,17 +132,17 @@ public enum ModStoneType {
     private final Block crackedOvergrownBrickWall;
     private final BlockFamily crackedOvergrownBrickFamily;
 
-    private final Block goldOrnamentedBrick;
-    private final Block goldOrnamentedBrickStairs;
-    private final Block goldOrnamentedBrickSlab;
-    private final Block goldOrnamentedBrickWall;
-    private final Block chiseledGoldOrnamentedBrick;
-    private final BlockFamily goldOrnamentedBrickFamily;
-    private final Block crackedGoldOrnamentedBrick;
-    private final Block crackedGoldOrnamentedBrickStairs;
-    private final Block crackedGoldOrnamentedBrickSlab;
-    private final Block crackedGoldOrnamentedBrickWall;
-    private final BlockFamily crackedGoldOrnamentedBrickFamily;
+    private final Block goldBrick;
+    private final Block goldBrickStairs;
+    private final Block goldBrickSlab;
+    private final Block goldBrickWall;
+    private final Block chiseledGoldBrick;
+    private final BlockFamily goldBrickFamily;
+    private final Block crackedGoldBrick;
+    private final Block crackedGoldBrickStairs;
+    private final Block crackedGoldBrickSlab;
+    private final Block crackedGoldBrickWall;
+    private final BlockFamily crackedGoldBrickFamily;
 
     private final Block tiles;
     private final Block tilesStairs;
@@ -177,16 +177,16 @@ public enum ModStoneType {
     private final Block crackedOvergrownTilesWall;
     private final BlockFamily crackedOvergrownTilesFamily;
 
-    private final Block goldOrnamentedTiles;
-    private final Block goldOrnamentedTilesStairs;
-    private final Block goldOrnamentedTilesSlab;
-    private final Block goldOrnamentedTilesWall;
-    private final BlockFamily goldOrnamentedTilesFamily;
-    private final Block crackedGoldOrnamentedTiles;
-    private final Block crackedGoldOrnamentedTilesStairs;
-    private final Block crackedGoldOrnamentedTilesSlab;
-    private final Block crackedGoldOrnamentedTilesWall;
-    private final BlockFamily crackedGoldOrnamentedTilesFamily;
+    private final Block goldTiles;
+    private final Block goldTilesStairs;
+    private final Block goldTilesSlab;
+    private final Block goldTilesWall;
+    private final BlockFamily goldTilesFamily;
+    private final Block crackedGoldTiles;
+    private final Block crackedGoldTilesStairs;
+    private final Block crackedGoldTilesSlab;
+    private final Block crackedGoldTilesWall;
+    private final BlockFamily crackedGoldTilesFamily;
 
     private final Block pillar;
     private final Block pillarSlab;
@@ -203,10 +203,10 @@ public enum ModStoneType {
     private final Block crackedOvergrownPillar;
     private final Block crackedOvergrownPillarSlab;
 
-    private final Block goldOrnamentedPillar;
-    private final Block goldOrnamentedPillarSlab;
-    private final Block crackedGoldOrnamentedPillar;
-    private final Block crackedGoldOrnamentedPillarSlab;
+    private final Block goldPillar;
+    private final Block goldPillarSlab;
+    private final Block crackedGoldPillar;
+    private final Block crackedGoldPillarSlab;
 
     private final Block pavement;
     private final Block pavementStairs;
@@ -250,16 +250,16 @@ public enum ModStoneType {
     private final Block crackedOvergrownFancyBricksWall;
     private final BlockFamily crackedOvergrownFancyBricksFamily;
 
-    private final Block goldOrnamentedFancyBricks;
-    private final Block goldOrnamentedFancyBrickStairs;
-    private final Block goldOrnamentedFancyBrickSlab;
-    private final Block goldOrnamentedFancyBrickWall;
-    private final BlockFamily goldOrnamentedFancyBricksFamily;
-    private final Block crackedGoldOrnamentedFancyBricks;
-    private final Block crackedGoldOrnamentedFancyBricksStairs;
-    private final Block crackedGoldOrnamentedFancyBricksSlab;
-    private final Block crackedGoldOrnamentedFancyBricksWall;
-    private final BlockFamily crackedGoldOrnamentedFancyBricksFamily;
+    private final Block goldFancyBricks;
+    private final Block goldFancyBrickStairs;
+    private final Block goldFancyBrickSlab;
+    private final Block goldFancyBrickWall;
+    private final BlockFamily goldFancyBricksFamily;
+    private final Block crackedGoldFancyBricks;
+    private final Block crackedGoldFancyBricksStairs;
+    private final Block crackedGoldFancyBricksSlab;
+    private final Block crackedGoldFancyBricksWall;
+    private final BlockFamily crackedGoldFancyBricksFamily;
 
     private final boolean vanillaAddition;
 
@@ -269,21 +269,21 @@ public enum ModStoneType {
             BlockFamily brickFamily, BlockFamily crackedBrickFamily,
             BlockFamily mossyBrickFamily, BlockFamily crackedMossyBrickFamily,
             BlockFamily overgrownBrickFamily, BlockFamily crackedOvergrownBrickFamily,
-            BlockFamily goldOrnamentedBrickFamily, BlockFamily crackedGoldOrnamentedBrickFamily,
+            BlockFamily goldBrickFamily, BlockFamily crackedGoldBrickFamily,
             BlockFamily tilesFamily, BlockFamily crackedTilesFamily,
             BlockFamily mossyTilesFamily, BlockFamily crackedMossyTilesFamily,
             BlockFamily overgrownTilesFamily, BlockFamily crackedOvergrownTilesFamily,
-            BlockFamily goldOrnamentedTilesFamily, BlockFamily crackedGoldOrnamentedTilesFamily,
+            BlockFamily goldTilesFamily, BlockFamily crackedGoldTilesFamily,
             BlockFamily pavementFamily, BlockFamily crackedPavementFamily,
             BlockFamily fancyBricksFamily, BlockFamily crackedFancyBricksFamily,
             BlockFamily mossyFancyBricksFamily, BlockFamily crackedMossyFancyBricksFamily,
             BlockFamily overgrownFancyBricksFamily, BlockFamily crackedOvergrownFancyBricksFamily,
-            BlockFamily goldOrnamentedFancyBricksFamily, BlockFamily crackedGoldOrnamentedFancyBricksFamily,
+            BlockFamily goldFancyBricksFamily, BlockFamily crackedGoldFancyBricksFamily,
             Block smooth, Block smoothSlab, Block crackedSmooth, Block crackedSmoothSlab,
             Block pillar, Block pillarSlab, Block crackedPillar, Block crackedPillarSlab,
             Block mossyPillar, Block mossyPillarSlab, Block crackedMossyPillar, Block crackedMossyPillarSlab,
             Block overgrownPillar, Block overgrownPillarSlab, Block crackedOvergrownPillar, Block crackedOvergrownPillarSlab,
-            Block goldOrnamentedPillar, Block goldOrnamentedPillarSlab, Block crackedGoldOrnamentedPillar, Block crackedGoldOrnamentedPillarSlab,
+            Block goldPillar, Block goldPillarSlab, Block crackedGoldPillar, Block crackedGoldPillarSlab,
             boolean vanillaAddition) {
         this.stone = stoneFamily.getBaseBlock();
         this.stoneStairs = stoneFamily.getVariant(BlockFamily.Variant.STAIRS);
@@ -376,17 +376,17 @@ public enum ModStoneType {
         this.crackedOvergrownBrickWall = crackedOvergrownBrickFamily.getVariant(BlockFamily.Variant.WALL);
         this.crackedOvergrownBrickFamily = crackedOvergrownBrickFamily;
 
-        this.goldOrnamentedBrick = goldOrnamentedBrickFamily.getBaseBlock();
-        this.goldOrnamentedBrickStairs = goldOrnamentedBrickFamily.getVariant(BlockFamily.Variant.STAIRS);
-        this.goldOrnamentedBrickSlab = goldOrnamentedBrickFamily.getVariant(BlockFamily.Variant.SLAB);
-        this.goldOrnamentedBrickWall = goldOrnamentedBrickFamily.getVariant(BlockFamily.Variant.WALL);
-        this.chiseledGoldOrnamentedBrick = goldOrnamentedBrickFamily.getVariant(BlockFamily.Variant.CHISELED);
-        this.goldOrnamentedBrickFamily = goldOrnamentedBrickFamily;
-        this.crackedGoldOrnamentedBrick = crackedGoldOrnamentedBrickFamily.getBaseBlock();
-        this.crackedGoldOrnamentedBrickStairs = crackedGoldOrnamentedBrickFamily.getVariant(BlockFamily.Variant.STAIRS);
-        this.crackedGoldOrnamentedBrickSlab = crackedGoldOrnamentedBrickFamily.getVariant(BlockFamily.Variant.SLAB);
-        this.crackedGoldOrnamentedBrickWall = crackedGoldOrnamentedBrickFamily.getVariant(BlockFamily.Variant.WALL);
-        this.crackedGoldOrnamentedBrickFamily = crackedGoldOrnamentedBrickFamily;
+        this.goldBrick = goldBrickFamily.getBaseBlock();
+        this.goldBrickStairs = goldBrickFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.goldBrickSlab = goldBrickFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.goldBrickWall = goldBrickFamily.getVariant(BlockFamily.Variant.WALL);
+        this.chiseledGoldBrick = goldBrickFamily.getVariant(BlockFamily.Variant.CHISELED);
+        this.goldBrickFamily = goldBrickFamily;
+        this.crackedGoldBrick = crackedGoldBrickFamily.getBaseBlock();
+        this.crackedGoldBrickStairs = crackedGoldBrickFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.crackedGoldBrickSlab = crackedGoldBrickFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.crackedGoldBrickWall = crackedGoldBrickFamily.getVariant(BlockFamily.Variant.WALL);
+        this.crackedGoldBrickFamily = crackedGoldBrickFamily;
 
         this.tiles = tilesFamily.getBaseBlock();
         this.tilesStairs = tilesFamily.getVariant(BlockFamily.Variant.STAIRS);
@@ -421,16 +421,16 @@ public enum ModStoneType {
         this.crackedOvergrownTilesWall = crackedOvergrownTilesFamily.getVariant(BlockFamily.Variant.WALL);
         this.crackedOvergrownTilesFamily = crackedOvergrownTilesFamily;
 
-        this.goldOrnamentedTiles = goldOrnamentedTilesFamily.getBaseBlock();
-        this.goldOrnamentedTilesStairs = goldOrnamentedTilesFamily.getVariant(BlockFamily.Variant.STAIRS);
-        this.goldOrnamentedTilesSlab = goldOrnamentedTilesFamily.getVariant(BlockFamily.Variant.SLAB);
-        this.goldOrnamentedTilesWall = goldOrnamentedTilesFamily.getVariant(BlockFamily.Variant.WALL);
-        this.goldOrnamentedTilesFamily = goldOrnamentedTilesFamily;
-        this.crackedGoldOrnamentedTiles = crackedGoldOrnamentedTilesFamily.getBaseBlock();
-        this.crackedGoldOrnamentedTilesStairs = crackedGoldOrnamentedTilesFamily.getVariant(BlockFamily.Variant.STAIRS);
-        this.crackedGoldOrnamentedTilesSlab = crackedGoldOrnamentedTilesFamily.getVariant(BlockFamily.Variant.SLAB);
-        this.crackedGoldOrnamentedTilesWall = crackedGoldOrnamentedTilesFamily.getVariant(BlockFamily.Variant.WALL);
-        this.crackedGoldOrnamentedTilesFamily = crackedGoldOrnamentedTilesFamily;
+        this.goldTiles = goldTilesFamily.getBaseBlock();
+        this.goldTilesStairs = goldTilesFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.goldTilesSlab = goldTilesFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.goldTilesWall = goldTilesFamily.getVariant(BlockFamily.Variant.WALL);
+        this.goldTilesFamily = goldTilesFamily;
+        this.crackedGoldTiles = crackedGoldTilesFamily.getBaseBlock();
+        this.crackedGoldTilesStairs = crackedGoldTilesFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.crackedGoldTilesSlab = crackedGoldTilesFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.crackedGoldTilesWall = crackedGoldTilesFamily.getVariant(BlockFamily.Variant.WALL);
+        this.crackedGoldTilesFamily = crackedGoldTilesFamily;
 
         this.pillar = pillar;
         this.pillarSlab = pillarSlab;
@@ -447,10 +447,10 @@ public enum ModStoneType {
         this.crackedOvergrownPillar = crackedOvergrownPillar;
         this.crackedOvergrownPillarSlab = crackedOvergrownPillarSlab;
 
-        this.goldOrnamentedPillar = goldOrnamentedPillar;
-        this.goldOrnamentedPillarSlab = goldOrnamentedPillarSlab;
-        this.crackedGoldOrnamentedPillar = crackedGoldOrnamentedPillar;
-        this.crackedGoldOrnamentedPillarSlab = crackedGoldOrnamentedPillarSlab;
+        this.goldPillar = goldPillar;
+        this.goldPillarSlab = goldPillarSlab;
+        this.crackedGoldPillar = crackedGoldPillar;
+        this.crackedGoldPillarSlab = crackedGoldPillarSlab;
 
         this.pavement = pavementFamily.getBaseBlock();
         this.pavementStairs = pavementFamily.getVariant(BlockFamily.Variant.STAIRS);
@@ -494,16 +494,16 @@ public enum ModStoneType {
         this.crackedOvergrownFancyBricksWall = crackedOvergrownFancyBricksFamily.getVariant(BlockFamily.Variant.WALL);
         this.crackedOvergrownFancyBricksFamily = crackedOvergrownFancyBricksFamily;
 
-        this.goldOrnamentedFancyBricks = goldOrnamentedFancyBricksFamily.getBaseBlock();
-        this.goldOrnamentedFancyBrickStairs = goldOrnamentedFancyBricksFamily.getVariant(BlockFamily.Variant.STAIRS);
-        this.goldOrnamentedFancyBrickSlab = goldOrnamentedFancyBricksFamily.getVariant(BlockFamily.Variant.SLAB);
-        this.goldOrnamentedFancyBrickWall = goldOrnamentedFancyBricksFamily.getVariant(BlockFamily.Variant.WALL);
-        this.goldOrnamentedFancyBricksFamily = goldOrnamentedFancyBricksFamily;
-        this.crackedGoldOrnamentedFancyBricks = crackedGoldOrnamentedFancyBricksFamily.getBaseBlock();
-        this.crackedGoldOrnamentedFancyBricksStairs = crackedGoldOrnamentedFancyBricksFamily.getVariant(BlockFamily.Variant.STAIRS);
-        this.crackedGoldOrnamentedFancyBricksSlab = crackedGoldOrnamentedFancyBricksFamily.getVariant(BlockFamily.Variant.SLAB);
-        this.crackedGoldOrnamentedFancyBricksWall = crackedGoldOrnamentedFancyBricksFamily.getVariant(BlockFamily.Variant.WALL);
-        this.crackedGoldOrnamentedFancyBricksFamily = crackedGoldOrnamentedFancyBricksFamily;
+        this.goldFancyBricks = goldFancyBricksFamily.getBaseBlock();
+        this.goldFancyBrickStairs = goldFancyBricksFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.goldFancyBrickSlab = goldFancyBricksFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.goldFancyBrickWall = goldFancyBricksFamily.getVariant(BlockFamily.Variant.WALL);
+        this.goldFancyBricksFamily = goldFancyBricksFamily;
+        this.crackedGoldFancyBricks = crackedGoldFancyBricksFamily.getBaseBlock();
+        this.crackedGoldFancyBricksStairs = crackedGoldFancyBricksFamily.getVariant(BlockFamily.Variant.STAIRS);
+        this.crackedGoldFancyBricksSlab = crackedGoldFancyBricksFamily.getVariant(BlockFamily.Variant.SLAB);
+        this.crackedGoldFancyBricksWall = crackedGoldFancyBricksFamily.getVariant(BlockFamily.Variant.WALL);
+        this.crackedGoldFancyBricksFamily = crackedGoldFancyBricksFamily;
 
         this.vanillaAddition = vanillaAddition;
     }
@@ -524,24 +524,24 @@ public enum ModStoneType {
         itemGroupList.addAll(blockFamilyList(crackedMossyBrickFamily));
         itemGroupList.addAll(blockFamilyList(overgrownBrickFamily));
         itemGroupList.addAll(blockFamilyList(crackedOvergrownBrickFamily));
-        itemGroupList.addAll(blockFamilyList(goldOrnamentedBrickFamily));
-        itemGroupList.addAll(blockFamilyList(crackedGoldOrnamentedBrickFamily));
+        itemGroupList.addAll(blockFamilyList(goldBrickFamily));
+        itemGroupList.addAll(blockFamilyList(crackedGoldBrickFamily));
         itemGroupList.addAll(blockFamilyList(tilesFamily));
         itemGroupList.addAll(blockFamilyList(crackedTilesFamily));
         itemGroupList.addAll(blockFamilyList(mossyTilesFamily));
         itemGroupList.addAll(blockFamilyList(crackedMossyTilesFamily));
         itemGroupList.addAll(blockFamilyList(overgrownTilesFamily));
         itemGroupList.addAll(blockFamilyList(crackedOvergrownTilesFamily));
-        itemGroupList.addAll(blockFamilyList(goldOrnamentedTilesFamily));
-        itemGroupList.addAll(blockFamilyList(crackedGoldOrnamentedTilesFamily));
+        itemGroupList.addAll(blockFamilyList(goldTilesFamily));
+        itemGroupList.addAll(blockFamilyList(crackedGoldTilesFamily));
         itemGroupList.addAll(blockFamilyList(fancyBricksFamily));
         itemGroupList.addAll(blockFamilyList(crackedFancyBricksFamily));
         itemGroupList.addAll(blockFamilyList(mossyFancyBricksFamily));
         itemGroupList.addAll(blockFamilyList(crackedMossyFancyBricksFamily));
         itemGroupList.addAll(blockFamilyList(overgrownFancyBricksFamily));
         itemGroupList.addAll(blockFamilyList(crackedOvergrownFancyBricksFamily));
-        itemGroupList.addAll(blockFamilyList(goldOrnamentedFancyBricksFamily));
-        itemGroupList.addAll(blockFamilyList(crackedGoldOrnamentedFancyBricksFamily));
+        itemGroupList.addAll(blockFamilyList(goldFancyBricksFamily));
+        itemGroupList.addAll(blockFamilyList(crackedGoldFancyBricksFamily));
         itemGroupList.addAll(blockFamilyList(pavementFamily));
         itemGroupList.addAll(blockFamilyList(crackedPavementFamily));
 
@@ -597,16 +597,16 @@ public enum ModStoneType {
                 itemGroupList.add(new ItemStack(crackedOvergrownPillarSlab));
             }
         }
-        if(goldOrnamentedPillar != null) {
-            itemGroupList.add(new ItemStack(goldOrnamentedPillar));
-            if(goldOrnamentedPillarSlab != null) {
-                itemGroupList.add(new ItemStack(goldOrnamentedPillarSlab));
+        if(goldPillar != null) {
+            itemGroupList.add(new ItemStack(goldPillar));
+            if(goldPillarSlab != null) {
+                itemGroupList.add(new ItemStack(goldPillarSlab));
             }
         }
-        if(crackedGoldOrnamentedPillar != null) {
-            itemGroupList.add(new ItemStack(crackedGoldOrnamentedPillar));
-            if(crackedGoldOrnamentedPillarSlab != null) {
-                itemGroupList.add(new ItemStack(crackedGoldOrnamentedPillarSlab));
+        if(crackedGoldPillar != null) {
+            itemGroupList.add(new ItemStack(crackedGoldPillar));
+            if(crackedGoldPillarSlab != null) {
+                itemGroupList.add(new ItemStack(crackedGoldPillarSlab));
             }
         }
         return itemGroupList;
@@ -1028,27 +1028,27 @@ public enum ModStoneType {
     }
 
     public BlockFamily getGoldBrickFamily() {
-        return goldOrnamentedBrickFamily;
+        return goldBrickFamily;
     }
 
     /**
-     * Returns the given variant of the goldOrnamentedBrick
+     * Returns the given variant of the goldBrick
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
-     * @return the Block, that is the given variant of the goldOrnamentedBrick
+     * @return the Block, that is the given variant of the goldBrick
      */
     public Block getGoldBrickVariant(String variant) {
 	    switch (variant) {
 		    case "base" -> {
-				return goldOrnamentedBrick;
+				return goldBrick;
 		    }
 		    case "stairs" -> {
-				return goldOrnamentedBrickStairs;
+				return goldBrickStairs;
 		    }
 		    case "slab" -> {
-				return goldOrnamentedBrickSlab;
+				return goldBrickSlab;
 		    }
 		    case "wall" -> {
-				return goldOrnamentedBrickWall;
+				return goldBrickWall;
 		    }
 		    default -> {
 			    return null;
@@ -1057,27 +1057,27 @@ public enum ModStoneType {
     }
 
     public BlockFamily getCrackedGoldBrickFamily() {
-        return crackedGoldOrnamentedBrickFamily;
+        return crackedGoldBrickFamily;
     }
 
     /**
-     * Returns the given variant of the crackedGoldOrnamentedBrick
+     * Returns the given variant of the crackedGoldBrick
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
-     * @return the Block, that is the given variant of the crackedGoldOrnamentedBrick
+     * @return the Block, that is the given variant of the crackedGoldBrick
      */
     public Block getCrackedGoldBrickVariant(String variant) {
 	    switch (variant) {
 		    case "base" -> {
-				return crackedGoldOrnamentedBrick;
+				return crackedGoldBrick;
 		    }
 		    case "stairs" -> {
-				return crackedGoldOrnamentedBrickStairs;
+				return crackedGoldBrickStairs;
 		    }
 		    case "slab" -> {
-				return crackedGoldOrnamentedBrickSlab;
+				return crackedGoldBrickSlab;
 		    }
 		    case "wall" -> {
-				return crackedGoldOrnamentedBrickWall;
+				return crackedGoldBrickWall;
 		    }
 		    default -> {
 			    return null;
@@ -1260,27 +1260,27 @@ public enum ModStoneType {
     }
 
     public BlockFamily getGoldTilesFamily() {
-        return goldOrnamentedTilesFamily;
+        return goldTilesFamily;
     }
 
     /**
-     * Returns the given variant of the goldOrnamentedTiles
+     * Returns the given variant of the goldTiles
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
-     * @return the Block, that is the given variant of the goldOrnamentedTiles
+     * @return the Block, that is the given variant of the goldTiles
      */
     public Block getGoldTilesVariant(String variant) {
         switch (variant) {
             case "base" -> {
-                return goldOrnamentedTiles;
+                return goldTiles;
             }
             case "stairs" -> {
-                return goldOrnamentedTilesStairs;
+                return goldTilesStairs;
             }
             case "slab" -> {
-                return goldOrnamentedTilesSlab;
+                return goldTilesSlab;
             }
             case "wall" -> {
-                return goldOrnamentedTilesWall;
+                return goldTilesWall;
             }
             default -> {
                 return null;
@@ -1289,27 +1289,27 @@ public enum ModStoneType {
     }
 
     public BlockFamily getCrackedGoldTilesFamily() {
-        return crackedGoldOrnamentedTilesFamily;
+        return crackedGoldTilesFamily;
     }
 
     /**
-     * Returns the given variant of the crackedGoldOrnamentedTiles
+     * Returns the given variant of the crackedGoldTiles
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
-     * @return the Block, that is the given variant of the crackedGoldOrnamentedTiles
+     * @return the Block, that is the given variant of the crackedGoldTiles
      */
     public Block getCrackedGoldTilesVariant(String variant) {
         switch (variant) {
             case "base" -> {
-                return crackedGoldOrnamentedTiles;
+                return crackedGoldTiles;
             }
             case "stairs" -> {
-                return crackedGoldOrnamentedTilesStairs;
+                return crackedGoldTilesStairs;
             }
             case "slab" -> {
-                return crackedGoldOrnamentedTilesSlab;
+                return crackedGoldTilesSlab;
             }
             case "wall" -> {
-                return crackedGoldOrnamentedTilesWall;
+                return crackedGoldTilesWall;
             }
             default -> {
                 return null;
@@ -1544,27 +1544,27 @@ public enum ModStoneType {
     }
 
     public BlockFamily getGoldFancyBricksFamily() {
-        return goldOrnamentedFancyBricksFamily;
+        return goldFancyBricksFamily;
     }
 
     /**
-     * Returns the given variant of the goldOrnamentedFancyBrick
+     * Returns the given variant of the goldFancyBrick
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
-     * @return the Block, that is the given variant of the goldOrnamentedFancyBrick
+     * @return the Block, that is the given variant of the goldFancyBrick
      */
     public Block getGoldFancyBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
-                return goldOrnamentedFancyBricks;
+                return goldFancyBricks;
             }
             case "stairs" -> {
-                return goldOrnamentedFancyBrickStairs;
+                return goldFancyBrickStairs;
             }
             case "slab" -> {
-                return goldOrnamentedFancyBrickSlab;
+                return goldFancyBrickSlab;
             }
             case "wall" -> {
-                return goldOrnamentedFancyBrickWall;
+                return goldFancyBrickWall;
             }
             default -> {
                 return null;
@@ -1573,27 +1573,27 @@ public enum ModStoneType {
     }
 
     public BlockFamily getCrackedGoldFancyBricksFamily() {
-        return crackedGoldOrnamentedFancyBricksFamily;
+        return crackedGoldFancyBricksFamily;
     }
 
     /**
-     * Returns the given variant of the crackedGoldOrnamentedFancyBrick
+     * Returns the given variant of the crackedGoldFancyBrick
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
-     * @return the Block, that is the given variant of the crackedGoldOrnamentedFancyBrick
+     * @return the Block, that is the given variant of the crackedGoldFancyBrick
      */
     public Block getCrackedGoldFancyBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
-                return crackedGoldOrnamentedFancyBricks;
+                return crackedGoldFancyBricks;
             }
             case "stairs" -> {
-                return crackedGoldOrnamentedFancyBricksStairs;
+                return crackedGoldFancyBricksStairs;
             }
             case "slab" -> {
-                return crackedGoldOrnamentedFancyBricksSlab;
+                return crackedGoldFancyBricksSlab;
             }
             case "wall" -> {
-                return crackedGoldOrnamentedFancyBricksWall;
+                return crackedGoldFancyBricksWall;
             }
             default -> {
                 return null;
@@ -1666,19 +1666,19 @@ public enum ModStoneType {
     }
 
     public Block getGoldPillar() {
-        return goldOrnamentedPillar;
+        return goldPillar;
     }
 
     public Block getGoldPillarSlab() {
-        return goldOrnamentedPillarSlab;
+        return goldPillarSlab;
     }
 
     public Block getCrackedGoldPillar() {
-        return crackedGoldOrnamentedPillar;
+        return crackedGoldPillar;
     }
 
     public Block getCrackedGoldPillarSlab() {
-        return crackedGoldOrnamentedPillarSlab;
+        return crackedGoldPillarSlab;
     }
 
     public boolean isVanillaAddition() {
