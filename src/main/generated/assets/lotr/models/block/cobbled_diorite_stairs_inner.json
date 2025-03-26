@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "lotr:block/cobbled_diorite",
-    "side": "lotr:block/cobbled_diorite",
-    "top": "lotr:block/cobbled_diorite"
-  }
-}

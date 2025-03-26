@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lotr:block/mossy_gold_blueslate_pavement_slab"
+    },
+    "type=double": {
+      "model": "lotr:block/mossy_gold_blueslate_pavement_slab_double"
+    },
+    "type=top": {
+      "model": "lotr:block/mossy_gold_blueslate_pavement_slab_top"
+    }
+  }
+}

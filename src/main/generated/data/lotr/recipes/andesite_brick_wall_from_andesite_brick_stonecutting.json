@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "lotr:andesite_brick"
-  },
-  "result": "lotr:andesite_brick_wall"
-}

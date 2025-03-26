@@ -20,17 +20,17 @@ public class ModItemGroups {
             FabricItemGroup.builder()
                     .displayName(Text.translatableWithFallback("itemgroup.lotr_stone", "LotR Stones"))
                     .icon(() -> new ItemStack(ModStoneBlocks.BLUESLATE)).entries(((displayContext, entries) -> {
-                        entries.addAll(ModStoneType.ANDESITE.getItemGroupList());
-                        entries.addAll(ModStoneType.POLISHED_ANDESITE.getItemGroupList());
+                        //entries.addAll(ModStoneType.ANDESITE.getItemGroupList());
+                        //entries.addAll(ModStoneType.POLISHED_ANDESITE.getItemGroupList());
 
-                        entries.addAll(ModStoneType.DIORITE.getItemGroupList());
-                        entries.addAll(ModStoneType.POLISHED_DIORITE.getItemGroupList());
+                        //entries.addAll(ModStoneType.DIORITE.getItemGroupList());
+                        //entries.addAll(ModStoneType.POLISHED_DIORITE.getItemGroupList());
 
-                        entries.addAll(ModStoneType.GRANITE.getItemGroupList());
-                        entries.addAll(ModStoneType.POLISHED_GRANITE.getItemGroupList());
+                        //entries.addAll(ModStoneType.GRANITE.getItemGroupList());
+                        //entries.addAll(ModStoneType.POLISHED_GRANITE.getItemGroupList());
 
                         entries.addAll(ModStoneType.BLUESLATE.getItemGroupList());
-                        entries.addAll(ModStoneType.CHALK.getItemGroupList());
+                        //entries.addAll(ModStoneType.CHALK.getItemGroupList());
                     })).build());
 
     public static final ItemGroup LOTR_WOOD = Registry.register(Registries.ITEM_GROUP,
@@ -43,7 +43,7 @@ public class ModItemGroups {
     public static final ItemGroup LOTR_BLOCKS = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_blocks"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_blocks", "LotR Blocks"))
-                    .icon(() -> new ItemStack(ModStoneBlocks.CHALK)).entries((displayContext, entries) -> {
+                    .icon(() -> new ItemStack(ModStoneBlocks.BLUESLATE)).entries((displayContext, entries) -> {
                         entries.addAll(ModOreType.TIN_ORE.getItemGroupList());
                         entries.add(ModBlocks.RAW_TIN_BLOCK);
                         entries.add(ModBlocks.TIN_BLOCK);

@@ -1,0 +1,7 @@
+{
+  "parent": "lotr:block/wall_inventory_all_overlay",
+  "textures": {
+    "layer1": "lotr:block/cracked_silver_fancy_bricks_overlay",
+    "wall": "lotr:block/cracked_fancy_blueslate_bricks"
+  }
+}

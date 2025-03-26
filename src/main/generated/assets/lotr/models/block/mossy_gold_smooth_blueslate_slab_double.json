@@ -1,0 +1,11 @@
+{
+  "parent": "lotr:block/smooth_two_overlay",
+  "textures": {
+    "end": "lotr:block/smooth_blueslate",
+    "end_layer1": "lotr:block/gold_smooth_overlay",
+    "end_layer2": "lotr:block/mossy_overlay_one",
+    "layer1": "lotr:block/gold_smooth_slab_overlay",
+    "layer2": "lotr:block/mossy_overlay_one",
+    "side": "lotr:block/smooth_blueslate_slab_side"
+  }
+}

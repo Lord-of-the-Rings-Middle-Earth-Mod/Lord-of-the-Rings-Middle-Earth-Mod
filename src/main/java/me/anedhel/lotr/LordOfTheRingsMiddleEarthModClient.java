@@ -19,6 +19,7 @@ package me.anedhel.lotr;
 import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import com.terraformersmc.terraform.sign.SpriteIdentifierRegistry;
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.block.ModWoodBlocks;
 import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.entity.ModBoats;
@@ -30,9 +31,11 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
+import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.util.SpriteIdentifier;
+import net.minecraft.data.family.BlockFamily;
 
 public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer {
     /**
@@ -65,6 +68,8 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
             BlockRenderLayerMap.INSTANCE.putBlock(woodType.getPlanksDoor(), RenderLayer.getCutout());
         }
 
+        registerStoneTypeCutoutLayers();
+
         TerraformBoatClientHelper.registerModelLayers(ModBoats.PINE_BOAT_ID, false);
 
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModWoodBlocks.PINE_SIGN_TEXTURE));
@@ -72,5 +77,185 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
 
         EntityRendererRegistry.register(ModEntities.HOBBIT, HobbitRenderer::new);
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.HOBBIT, HobbitModel::getTexturedModelData);
+    }
+
+    private void registerStoneTypeCutoutLayers() {
+        for (ModStoneType stoneType : ModStoneType.values()) {
+            registerStoneFamilyOverlays(stoneType.getMossyStoneFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownStoneFamily());
+
+            registerStoneFamilyOverlays(stoneType.getMossyCobbledFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownCobbledFamily());
+
+            registerStoneFamilyOverlays(stoneType.getMossyCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getBronzeCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedBronzeCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getMossyBronzeCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyBronzeCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownBronzeCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownBronzeCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getSilverCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedSilverCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getMossySilverCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossySilverCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownSilverCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownSilverCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getGoldCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedGoldCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getMossyGoldCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyGoldCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownGoldCobbledBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownGoldCobbledBrickFamily());
+
+            registerStoneFamilyOverlays(stoneType.getMossyBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getBronzeBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedBronzeBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getMossyBronzeBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyBronzeBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownBronzeBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownBronzeBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getSilverBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedSilverBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getMossySilverBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossySilverBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownSilverBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownSilverBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getGoldBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedGoldBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getMossyGoldBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyGoldBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownGoldBrickFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownGoldBrickFamily());
+
+            registerStoneFamilyOverlays(stoneType.getMossyTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getBronzeTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedBronzeTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getMossyBronzeTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyBronzeTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownBronzeTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownBronzeTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getSilverTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedSilverTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getMossySilverTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossySilverTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownSilverTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownSilverTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getGoldTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedGoldTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getMossyGoldTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyGoldTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownGoldTilesFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownGoldTilesFamily());
+
+            registerStoneFamilyOverlays(stoneType.getMossyPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getBronzePavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedBronzePavementFamily());
+            registerStoneFamilyOverlays(stoneType.getMossyBronzePavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyBronzePavementFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownBronzePavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownBronzePavementFamily());
+            registerStoneFamilyOverlays(stoneType.getSilverPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedSilverPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getMossySilverPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossySilverPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownSilverPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownSilverPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getGoldPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedGoldPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getMossyGoldPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyGoldPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownGoldPavementFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownGoldPavementFamily());
+
+            registerStoneFamilyOverlays(stoneType.getMossyFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getBronzeFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedBronzeFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getMossyBronzeFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyBronzeFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownBronzeFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownBronzeFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getSilverFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedSilverFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getMossySilverFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossySilverFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownSilverFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownSilverFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getGoldFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedGoldFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getMossyGoldFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedMossyGoldFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getOvergrownGoldFancyBricksFamily());
+            registerStoneFamilyOverlays(stoneType.getCrackedOvergrownGoldFancyBricksFamily());
+
+            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+                    stoneType.getMossySmooth(), stoneType.getMossySmoothSlab(),
+                    stoneType.getCrackedMossySmooth(), stoneType.getCrackedMossySmoothSlab(),
+                    stoneType.getOvergrownSmooth(), stoneType.getOvergrownSmoothSlab(),
+                    stoneType.getCrackedOvergrownSmooth(), stoneType.getCrackedOvergrownSmoothSlab(),
+                    stoneType.getBronzeSmooth(), stoneType.getBronzeSmoothSlab(),
+                    stoneType.getCrackedBronzeSmooth(), stoneType.getCrackedBronzeSmoothSlab(),
+                    stoneType.getMossyBronzeSmooth(), stoneType.getMossyBronzeSmoothSlab(),
+                    stoneType.getCrackedMossyBronzeSmooth(), stoneType.getCrackedMossyBronzeSmoothSlab(),
+                    stoneType.getOvergrownBronzeSmooth(), stoneType.getOvergrownBronzeSmoothSlab(),
+                    stoneType.getCrackedOvergrownBronzeSmooth(), stoneType.getCrackedOvergrownBronzeSmoothSlab(),
+                    stoneType.getSilverSmooth(), stoneType.getSilverSmoothSlab(),
+                    stoneType.getCrackedSilverSmooth(), stoneType.getCrackedSilverSmoothSlab(),
+                    stoneType.getMossySilverSmooth(), stoneType.getMossySilverSmoothSlab(),
+                    stoneType.getCrackedMossySilverSmooth(), stoneType.getCrackedMossySilverSmoothSlab(),
+                    stoneType.getOvergrownSilverSmooth(), stoneType.getOvergrownSilverSmoothSlab(),
+                    stoneType.getCrackedOvergrownSilverSmooth(), stoneType.getCrackedOvergrownSilverSmoothSlab(),
+                    stoneType.getGoldSmooth(), stoneType.getGoldSmoothSlab(),
+                    stoneType.getCrackedGoldSmooth(), stoneType.getCrackedGoldSmoothSlab(),
+                    stoneType.getMossyGoldSmooth(), stoneType.getMossyGoldSmoothSlab(),
+                    stoneType.getCrackedMossyGoldSmooth(), stoneType.getCrackedMossyGoldSmoothSlab(),
+                    stoneType.getOvergrownGoldSmooth(), stoneType.getOvergrownGoldSmoothSlab(),
+                    stoneType.getCrackedOvergrownGoldSmooth(), stoneType.getCrackedOvergrownGoldSmoothSlab());
+
+            BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+                    stoneType.getMossyPillar(), stoneType.getMossyPillarSlab(),
+                    stoneType.getCrackedMossyPillar(), stoneType.getCrackedMossyPillarSlab(),
+                    stoneType.getOvergrownPillar(), stoneType.getOvergrownPillarSlab(),
+                    stoneType.getCrackedOvergrownPillar(), stoneType.getCrackedOvergrownPillarSlab(),
+                    stoneType.getBronzePillar(), stoneType.getBronzePillarSlab(),
+                    stoneType.getCrackedBronzePillar(), stoneType.getCrackedBronzePillarSlab(),
+                    stoneType.getMossyBronzePillar(), stoneType.getMossyBronzePillarSlab(),
+                    stoneType.getCrackedMossyBronzePillar(), stoneType.getCrackedMossyBronzePillarSlab(),
+                    stoneType.getOvergrownBronzePillar(), stoneType.getOvergrownBronzePillarSlab(),
+                    stoneType.getCrackedOvergrownBronzePillar(), stoneType.getCrackedOvergrownBronzePillarSlab(),
+                    stoneType.getSilverPillar(), stoneType.getSilverPillarSlab(),
+                    stoneType.getCrackedSilverPillar(), stoneType.getCrackedSilverPillarSlab(),
+                    stoneType.getMossySilverPillar(), stoneType.getMossySilverPillarSlab(),
+                    stoneType.getCrackedMossySilverPillar(), stoneType.getCrackedMossySilverPillarSlab(),
+                    stoneType.getOvergrownSilverPillar(), stoneType.getOvergrownSilverPillarSlab(),
+                    stoneType.getCrackedOvergrownSilverPillar(), stoneType.getCrackedOvergrownSilverPillarSlab(),
+                    stoneType.getGoldPillar(), stoneType.getGoldPillarSlab(),
+                    stoneType.getCrackedGoldPillar(), stoneType.getCrackedGoldPillarSlab(),
+                    stoneType.getMossyGoldPillar(), stoneType.getMossyGoldPillarSlab(),
+                    stoneType.getCrackedMossyGoldPillar(), stoneType.getCrackedMossyGoldPillarSlab(),
+                    stoneType.getOvergrownGoldPillar(), stoneType.getOvergrownGoldPillarSlab(),
+                    stoneType.getCrackedOvergrownGoldPillar(), stoneType.getCrackedOvergrownGoldPillarSlab());
+        }
+    }
+
+    private void registerStoneFamilyOverlays(BlockFamily stoneFamily) {
+        BlockRenderLayerMap.INSTANCE.putBlock(stoneFamily.getBaseBlock(), RenderLayer.getCutout());
+        for (Block variant : stoneFamily.getVariants().values()) {
+            BlockRenderLayerMap.INSTANCE.putBlock(variant, RenderLayer.getCutout());
+        }
     }
 }

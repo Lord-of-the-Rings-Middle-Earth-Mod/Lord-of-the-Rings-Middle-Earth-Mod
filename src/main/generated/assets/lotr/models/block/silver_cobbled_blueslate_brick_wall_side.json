@@ -1,0 +1,7 @@
+{
+  "parent": "lotr:block/wall_side_all_overlay",
+  "textures": {
+    "layer1": "lotr:block/silver_brick_overlay",
+    "wall": "lotr:block/cobbled_blueslate_bricks"
+  }
+}

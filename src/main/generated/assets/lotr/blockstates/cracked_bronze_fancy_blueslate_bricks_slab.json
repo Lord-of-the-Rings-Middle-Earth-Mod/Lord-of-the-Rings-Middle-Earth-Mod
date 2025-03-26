@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lotr:block/cracked_bronze_fancy_blueslate_bricks_slab"
+    },
+    "type=double": {
+      "model": "lotr:block/cracked_bronze_fancy_blueslate_bricks_slab_double"
+    },
+    "type=top": {
+      "model": "lotr:block/cracked_bronze_fancy_blueslate_bricks_slab_top"
+    }
+  }
+}

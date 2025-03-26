@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "lotr:block/granite_brick",
-    "side": "lotr:block/granite_brick",
-    "top": "lotr:block/granite_brick"
-  }
-}
