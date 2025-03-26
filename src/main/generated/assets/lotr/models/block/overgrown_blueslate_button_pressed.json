@@ -1,0 +1,7 @@
+{
+  "parent": "lotr:block/button_pressed_all_overlay",
+  "textures": {
+    "layer1": "lotr:block/overgrown_overlay",
+    "texture": "lotr:block/blueslate"
+  }
+}

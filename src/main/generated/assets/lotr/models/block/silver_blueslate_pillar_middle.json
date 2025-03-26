@@ -1,0 +1,9 @@
+{
+  "parent": "lotr:block/pillar_overlay",
+  "textures": {
+    "end": "lotr:block/blueslate_pillar_end",
+    "end_layer1": "lotr:block/silver_pillar_end_overlay",
+    "layer1": "lotr:block/silver_pillar_side_middle_overlay",
+    "side": "lotr:block/blueslate_pillar_side_middle"
+  }
+}

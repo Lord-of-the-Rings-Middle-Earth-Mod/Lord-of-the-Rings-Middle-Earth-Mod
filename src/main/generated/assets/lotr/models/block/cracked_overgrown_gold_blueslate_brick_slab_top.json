@@ -1,0 +1,10 @@
+{
+  "parent": "lotr:block/slab_top_all_two_overlay",
+  "textures": {
+    "bottom": "lotr:block/cracked_blueslate_brick",
+    "layer1": "lotr:block/cracked_gold_brick_overlay",
+    "layer2": "lotr:block/overgrown_overlay",
+    "side": "lotr:block/cracked_blueslate_brick",
+    "top": "lotr:block/cracked_blueslate_brick"
+  }
+}

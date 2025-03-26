@@ -1,0 +1,11 @@
+{
+  "parent": "lotr:block/pillar_two_overlay",
+  "textures": {
+    "end": "lotr:block/cracked_blueslate_pillar_end",
+    "end_layer1": "lotr:block/cracked_gold_pillar_end_overlay",
+    "end_layer2": "lotr:block/mossy_overlay_two",
+    "layer1": "lotr:block/cracked_gold_pillar_side_base_overlay",
+    "layer2": "lotr:block/mossy_overlay_two",
+    "side": "lotr:block/cracked_blueslate_pillar_side_base"
+  }
+}

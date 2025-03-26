@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lotr:block/overgrown_silver_blueslate_tiles_slab"
+    },
+    "type=double": {
+      "model": "lotr:block/overgrown_silver_blueslate_tiles_slab_double"
+    },
+    "type=top": {
+      "model": "lotr:block/overgrown_silver_blueslate_tiles_slab_top"
+    }
+  }
+}

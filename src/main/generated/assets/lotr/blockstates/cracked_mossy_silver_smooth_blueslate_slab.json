@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lotr:block/cracked_mossy_silver_smooth_blueslate_slab"
+    },
+    "type=double": {
+      "model": "lotr:block/cracked_mossy_silver_smooth_blueslate_slab_double"
+    },
+    "type=top": {
+      "model": "lotr:block/cracked_mossy_silver_smooth_blueslate_slab_top"
+    }
+  }
+}

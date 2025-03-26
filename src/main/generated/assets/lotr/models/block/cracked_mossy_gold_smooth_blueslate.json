@@ -1,0 +1,8 @@
+{
+  "parent": "lotr:block/cube_all_two_overlay",
+  "textures": {
+    "all": "lotr:block/cracked_smooth_blueslate",
+    "layer1": "lotr:block/cracked_gold_smooth_overlay",
+    "layer2": "lotr:block/mossy_overlay_one"
+  }
+}
