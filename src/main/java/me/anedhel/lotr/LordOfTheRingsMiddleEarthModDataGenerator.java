@@ -37,6 +37,7 @@ public class LordOfTheRingsMiddleEarthModDataGenerator implements DataGeneratorE
 		pack.addProvider(ModLootTableProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModWorldGenerator::new);
+		pack.addProvider(ModEnUsLangProvider::new);
 	}
 
 	@Override

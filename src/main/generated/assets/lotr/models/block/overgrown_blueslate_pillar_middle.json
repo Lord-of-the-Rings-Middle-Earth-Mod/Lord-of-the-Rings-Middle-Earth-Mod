@@ -2,7 +2,7 @@
   "parent": "lotr:block/pillar_overlay",
   "textures": {
     "end": "lotr:block/blueslate_pillar_end",
-    "end_overlay": "lotr:block/overgrown_overlay",
+    "end_layer1": "lotr:block/overgrown_overlay",
     "layer1": "lotr:block/overgrown_overlay",
     "side": "lotr:block/blueslate_pillar_side_middle"
   }

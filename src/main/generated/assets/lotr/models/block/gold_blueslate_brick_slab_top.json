@@ -2,7 +2,7 @@
   "parent": "lotr:block/slab_top_all_overlay",
   "textures": {
     "bottom": "lotr:block/blueslate_brick",
-    "layer1": "lotr:block/gold_ornamented_brick_overlay",
+    "layer1": "lotr:block/gold_brick_overlay",
     "side": "lotr:block/blueslate_brick",
     "top": "lotr:block/blueslate_brick"
   }

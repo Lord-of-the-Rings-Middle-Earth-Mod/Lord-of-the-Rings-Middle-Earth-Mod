@@ -2,7 +2,7 @@
   "parent": "lotr:block/pillar_slab_overlay",
   "textures": {
     "end": "lotr:block/cracked_blueslate_pillar_end",
-    "end_overlay": "lotr:block/mossy_overlay_two",
+    "end_layer1": "lotr:block/mossy_overlay_two",
     "layer1": "lotr:block/mossy_overlay_two",
     "side": "lotr:block/cracked_blueslate_pillar_side_single"
   }

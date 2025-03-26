@@ -125,7 +125,9 @@ public enum ModStoneType {
             ModStoneBlocks.MOSSY_GOLD_BLUESLATE_PILLAR, ModStoneBlocks.MOSSY_GOLD_BLUESLATE_PILLAR_SLAB,
             ModStoneBlocks.CRACKED_MOSSY_GOLD_BLUESLATE_PILLAR, ModStoneBlocks.CRACKED_MOSSY_GOLD_BLUESLATE_PILLAR_SLAB,
             ModStoneBlocks.OVERGROWN_GOLD_BLUESLATE_PILLAR, ModStoneBlocks.OVERGROWN_GOLD_BLUESLATE_PILLAR_SLAB,
-            ModStoneBlocks.CRACKED_OVERGROWN_GOLD_BLUESLATE_PILLAR, ModStoneBlocks.CRACKED_OVERGROWN_GOLD_BLUESLATE_PILLAR_SLAB);
+            ModStoneBlocks.CRACKED_OVERGROWN_GOLD_BLUESLATE_PILLAR,
+            ModStoneBlocks.CRACKED_OVERGROWN_GOLD_BLUESLATE_PILLAR_SLAB,
+            "Blueslate");
 
     private final Block stone;
     private final Block stoneStairs;
@@ -932,6 +934,8 @@ public enum ModStoneType {
     private final Block crackedOvergrownGoldFancyBricksWall;
     private final BlockFamily crackedOvergrownGoldFancyBricksFamily;
 
+    private final String name;
+
     ModStoneType(BlockFamily stoneFamily, BlockFamily mossyStoneFamily, BlockFamily overgrownStoneFamily,
             BlockFamily cobbledFamily, BlockFamily mossyCobbledFamily, BlockFamily overgrownCobbledFamily,
             BlockFamily cobbledBrickFamily, BlockFamily mossyCobbledBrickFamily, BlockFamily overgrownCobbledBrickFamily,
@@ -1013,7 +1017,9 @@ public enum ModStoneType {
             Block overgrownSilverPillar, Block overgrownSilverPillarSlab, Block crackedOvergrownSilverPillar, Block crackedOvergrownSilverPillarSlab,
             Block goldPillar, Block goldPillarSlab, Block crackedGoldPillar, Block crackedGoldPillarSlab,
             Block mossyGoldPillar, Block mossyGoldPillarSlab, Block crackedMossyGoldPillar, Block crackedMossyGoldPillarSlab,
-            Block overgrownGoldPillar, Block overgrownGoldPillarSlab, Block crackedOvergrownGoldPillar, Block crackedOvergrownGoldPillarSlab) {
+            Block overgrownGoldPillar, Block overgrownGoldPillarSlab, Block crackedOvergrownGoldPillar,
+            Block crackedOvergrownGoldPillarSlab,
+            String name) {
         this.stone = stoneFamily.getBaseBlock();
         this.stoneStairs = stoneFamily.getVariant(BlockFamily.Variant.STAIRS);
         this.stoneSlab = stoneFamily.getVariant(BlockFamily.Variant.SLAB);
@@ -1818,6 +1824,8 @@ public enum ModStoneType {
         this.crackedOvergrownGoldFancyBricksSlab = crackedOvergrownGoldFancyBricksFamily.getVariant(BlockFamily.Variant.SLAB);
         this.crackedOvergrownGoldFancyBricksWall = crackedOvergrownGoldFancyBricksFamily.getVariant(BlockFamily.Variant.WALL);
         this.crackedOvergrownGoldFancyBricksFamily = crackedOvergrownGoldFancyBricksFamily;
+
+        this.name = name;
     }
 
     public @NotNull List<ItemStack> getItemGroupList() {
@@ -2768,6 +2776,294 @@ public enum ModStoneType {
             }
             case "wall" -> {
                 return crackedOvergrownBronzeCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getSilverCobbledBrickFamily() {
+        return silverCobbledBrickFamily;
+    }
+
+    public Block getSilverCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return silverCobbledBrick;
+            }
+            case "stairs" -> {
+                return silverCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return silverCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return silverCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getCrackedSilverCobbledBrickFamily() {
+        return crackedSilverCobbledBrickFamily;
+    }
+
+    public Block getCrackedSilverCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return crackedSilverCobbledBrick;
+            }
+            case "stairs" -> {
+                return crackedSilverCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return crackedSilverCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return crackedSilverCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getMossySilverCobbledBrickFamily() {
+        return mossySilverCobbledBrickFamily;
+    }
+
+    public Block getMossySilverCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return mossySilverCobbledBrick;
+            }
+            case "stairs" -> {
+                return mossySilverCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return mossySilverCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return mossySilverCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getCrackedMossySilverCobbledBrickFamily() {
+        return crackedMossySilverCobbledBrickFamily;
+    }
+
+    public Block getCrackedMossySilverCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return crackedMossySilverCobbledBrick;
+            }
+            case "stairs" -> {
+                return crackedMossySilverCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return crackedMossySilverCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return crackedMossySilverCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getOvergrownSilverCobbledBrickFamily() {
+        return overgrownSilverCobbledBrickFamily;
+    }
+
+    public Block getOvergrownSilverCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return overgrownSilverCobbledBrick;
+            }
+            case "stairs" -> {
+                return overgrownSilverCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return overgrownSilverCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return overgrownSilverCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getCrackedOvergrownSilverCobbledBrickFamily() {
+        return crackedOvergrownSilverCobbledBrickFamily;
+    }
+
+    public Block getCrackedOvergrownSilverCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return crackedOvergrownSilverCobbledBrick;
+            }
+            case "stairs" -> {
+                return crackedOvergrownSilverCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return crackedOvergrownSilverCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return crackedOvergrownSilverCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getGoldCobbledBrickFamily() {
+        return goldCobbledBrickFamily;
+    }
+
+    public Block getGoldCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return goldCobbledBrick;
+            }
+            case "stairs" -> {
+                return goldCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return goldCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return goldCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getCrackedGoldCobbledBrickFamily() {
+        return crackedGoldCobbledBrickFamily;
+    }
+
+    public Block getCrackedGoldCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return crackedGoldCobbledBrick;
+            }
+            case "stairs" -> {
+                return crackedGoldCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return crackedGoldCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return crackedGoldCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getMossyGoldCobbledBrickFamily() {
+        return mossyGoldCobbledBrickFamily;
+    }
+
+    public Block getMossyGoldCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return mossyGoldCobbledBrick;
+            }
+            case "stairs" -> {
+                return mossyGoldCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return mossyGoldCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return mossyGoldCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getCrackedMossyGoldCobbledBrickFamily() {
+        return crackedMossyGoldCobbledBrickFamily;
+    }
+
+    public Block getCrackedMossyGoldCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return crackedMossyGoldCobbledBrick;
+            }
+            case "stairs" -> {
+                return crackedMossyGoldCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return crackedMossyGoldCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return crackedMossyGoldCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getOvergrownGoldCobbledBrickFamily() {
+        return overgrownGoldCobbledBrickFamily;
+    }
+
+    public Block getOvergrownGoldCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return overgrownGoldCobbledBrick;
+            }
+            case "stairs" -> {
+                return overgrownGoldCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return overgrownGoldCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return overgrownGoldCobbledBrickWall;
+            }
+            default -> {
+                return null;
+            }
+        }
+    }
+
+    public BlockFamily getCrackedOvergrownGoldCobbledBrickFamily() {
+        return crackedOvergrownGoldCobbledBrickFamily;
+    }
+
+    public Block getCrackedOvergrownGoldCobbledBrickVariant(String variant) {
+        switch (variant) {
+            case "base" -> {
+                return crackedOvergrownGoldCobbledBrick;
+            }
+            case "stairs" -> {
+                return crackedOvergrownGoldCobbledBrickStairs;
+            }
+            case "slab" -> {
+                return crackedOvergrownGoldCobbledBrickSlab;
+            }
+            case "wall" -> {
+                return crackedOvergrownGoldCobbledBrickWall;
             }
             default -> {
                 return null;
@@ -5869,5 +6165,9 @@ public enum ModStoneType {
 
     public Block getCrackedOvergrownGoldPillarSlab() {
         return crackedOvergrownGoldPillarSlab;
+    }
+
+    public String getName() {
+        return name;
     }
 }
