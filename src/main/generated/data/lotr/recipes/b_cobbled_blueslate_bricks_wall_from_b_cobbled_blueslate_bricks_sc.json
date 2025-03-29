@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:bronze_cobbled_blueslate_bricks"
+  },
+  "result": "lotr:bronze_cobbled_blueslate_brick_wall"
+}

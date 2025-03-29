@@ -195,6 +195,86 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					stoneType.getOvergrownPillar(), stoneType.getOvergrownPillarSlab(), StoneTypeVariants.OVERGROWN_STONE,
 					stoneType.getName().toLowerCase());
 
+			generateStoneTypeVariantStoneCuttingRecipes(exporter, stoneType.getCobbledFamily(),
+					stoneType.getCobbledBrickFamily(), null, null, null, null, null,
+					StoneTypeVariants.STONE, "cobbled_" + stoneType.getName().toLowerCase());
+			generateStoneTypeVariantStoneCuttingRecipes(exporter, stoneType.getMossyCobbledFamily(),
+					stoneType.getMossyCobbledBrickFamily(), null, null, null, null, null,
+					StoneTypeVariants.MOSSY_STONE, "cobbled_" + stoneType.getName().toLowerCase());
+			generateStoneTypeVariantStoneCuttingRecipes(exporter, stoneType.getOvergrownCobbledFamily(),
+					stoneType.getOvergrownCobbledBrickFamily(), null, null, null, null, null,
+					StoneTypeVariants.OVERGROWN_STONE, "cobbled_" + stoneType.getName().toLowerCase());
+
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedMossyCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_MOSSY_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedOvergrownCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_OVERGROWN_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+
+			createBlockFamilyStoneCutting(exporter, stoneType.getBronzeCobbledBrickFamily(),
+					StoneTypeVariants.BRONZE_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getMossyBronzeCobbledBrickFamily(),
+					StoneTypeVariants.MOSSY_BRONZE_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getOvergrownBronzeCobbledBrickFamily(),
+					StoneTypeVariants.OVERGROWN_BRONZE_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedBronzeCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_BRONZE_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedMossyBronzeCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedOvergrownBronzeCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+
+			createBlockFamilyStoneCutting(exporter, stoneType.getSilverCobbledBrickFamily(),
+					StoneTypeVariants.SILVER_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getMossySilverCobbledBrickFamily(),
+					StoneTypeVariants.MOSSY_SILVER_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getOvergrownSilverCobbledBrickFamily(),
+					StoneTypeVariants.OVERGROWN_SILVER_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+
+			createBlockFamilyStoneCutting(exporter, stoneType.getGoldCobbledBrickFamily(),
+					StoneTypeVariants.GOLD_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getMossyGoldCobbledBrickFamily(),
+					StoneTypeVariants.MOSSY_GOLD_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getOvergrownGoldCobbledBrickFamily(),
+					StoneTypeVariants.OVERGROWN_GOLD_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedGoldCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_GOLD_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedMossyGoldCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedOvergrownGoldCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedSilverCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_SILVER_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedMossySilverCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+			createBlockFamilyStoneCutting(exporter, stoneType.getCrackedOvergrownSilverCobbledBrickFamily(),
+					StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getName().toLowerCase());
+
 			generateStoneTypeVariantStoneCuttingRecipes(exporter, null,
 					stoneType.getCrackedBrickFamily(), stoneType.getCrackedTilesFamily(),
 					stoneType.getCrackedFancyBricksFamily(), stoneType.getCrackedPavementFamily(),
@@ -748,8 +828,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 	}
 
-	//ToDo: Make null checks for stone(Ornamented Variants) and null checks for tiles, fancyBricks, pavement pillar
-	// and pillarSlab for Cobbled
 	private void generateStoneTypeVariantStoneCuttingRecipes(RecipeExporter exporter,
 			BlockFamily stone, BlockFamily bricks,
 			BlockFamily tiles, BlockFamily fancyBricks, BlockFamily pavement, Block pillar, Block pillarSlab,
@@ -759,21 +837,25 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		}
 		createBlockFamilyStoneCutting(exporter, bricks, variant, name + "_bricks", name,
 				stone != null ? stone.getBaseBlock() : null);
-		createBlockFamilyStoneCutting(exporter, tiles, variant, name + "_tiles", name,
-				stone != null ? stone.getBaseBlock() : null, bricks.getBaseBlock());
-		createBlockFamilyStoneCutting(exporter, fancyBricks, variant, name + "_fancy_bricks", name,
-				stone != null ? stone.getBaseBlock() : null, bricks.getBaseBlock(), tiles.getBaseBlock());
-		createBlockFamilyStoneCutting(exporter, pavement, variant, name + "_pavement", name,
-				stone != null ? stone.getBaseBlock() : null, bricks.getBaseBlock(), tiles.getBaseBlock());
-
-		if(pillar != null && stone != null) {
-			offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS, stone.getBaseBlock(), pillar, 1,
-					createModRecipeName(name + "_pillar", name, variant, "_sc"), exporter);
-			offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS, stone.getBaseBlock(), pillarSlab, 1,
-					createModRecipeName(name + "_pillar_slab", name, variant, "_sc"), exporter);
+		if(tiles != null && fancyBricks != null && pavement != null) {
+			createBlockFamilyStoneCutting(exporter, tiles, variant, name + "_tiles", name,
+					stone != null ? stone.getBaseBlock() : null, bricks.getBaseBlock());
+			createBlockFamilyStoneCutting(exporter, fancyBricks, variant, name + "_fancy_bricks", name,
+					stone != null ? stone.getBaseBlock() : null, bricks.getBaseBlock(), tiles.getBaseBlock());
+			createBlockFamilyStoneCutting(exporter, pavement, variant, name + "_pavement", name,
+					stone != null ? stone.getBaseBlock() : null, bricks.getBaseBlock(), tiles.getBaseBlock());
 		}
-		offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS, pillar, pillarSlab, 2,
-				createModRecipeName(name + "_pillar_slab", name + "_pillar", variant, "_sc"), exporter);
+
+		if(pillar != null) {
+			if(stone != null) {
+				offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS, stone.getBaseBlock(), pillar, 1,
+						createModRecipeName(name + "_pillar", name, variant, "_sc"), exporter);
+				offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS, stone.getBaseBlock(), pillarSlab, 1,
+						createModRecipeName(name + "_pillar_slab", name, variant, "_sc"), exporter);
+			}
+			offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS, pillar, pillarSlab, 2,
+					createModRecipeName(name + "_pillar_slab", name + "_pillar", variant, "_sc"), exporter);
+		}
 	}
 
 	private void createBlockFamilyStoneCutting (RecipeExporter exporter, BlockFamily family,
@@ -781,7 +863,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		List<Block> filteredBaseBlocks =
 				Arrays.stream(baseBlocks).filter(baseBlock -> baseBlock != null).collect(Collectors.toList());
 		for(Block block : filteredBaseBlocks) {
-			String inputName = definedInputName(variant, filteredBaseBlocks, block);
+			String inputName = defineInputName(variant, filteredBaseBlocks, block);
 			offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS,
 					block, family.getBaseBlock(), 1,
 					createModRecipeName(familyName, stoneTypeName + inputName, variant, "_sc"), exporter);
@@ -791,7 +873,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					family.getBaseBlock(), family.getVariant(BlockFamily.Variant.CHISELED), 1,
 					createModRecipeName(stoneTypeName + "_chiseled_bricks", familyName, variant, "_sc"), exporter);
 			for(Block block : filteredBaseBlocks) {
-				String inputName = definedInputName(variant, filteredBaseBlocks, block);
+				String inputName = defineInputName(variant, filteredBaseBlocks, block);
 				offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS,
 						block, family.getVariant(BlockFamily.Variant.CHISELED), 1,
 						createModRecipeName(stoneTypeName + "_chiseled_bricks", stoneTypeName + inputName, variant, "_sc"), exporter);
@@ -802,7 +884,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					family.getBaseBlock(), family.getVariant(BlockFamily.Variant.STAIRS), 1,
 					createModRecipeName(familyName + "_stairs", familyName, variant, "_sc"), exporter);
 			for(Block block : filteredBaseBlocks) {
-				String inputName = definedInputName(variant, filteredBaseBlocks, block);
+				String inputName = defineInputName(variant, filteredBaseBlocks, block);
 				offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS,
 						block, family.getVariant(BlockFamily.Variant.STAIRS), 1,
 						createModRecipeName(familyName + "_stairs", stoneTypeName + inputName, variant, "_sc"), exporter);
@@ -813,7 +895,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					family.getBaseBlock(), family.getVariant(BlockFamily.Variant.SLAB), 2,
 					createModRecipeName(familyName + "_slab", familyName, variant, "_sc"), exporter);
 			for(Block block : filteredBaseBlocks) {
-				String inputName = definedInputName(variant, filteredBaseBlocks, block);
+				String inputName = defineInputName(variant, filteredBaseBlocks, block);
 				offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS,
 						block, family.getVariant(BlockFamily.Variant.SLAB), 2,
 						createModRecipeName(familyName + "_slab", stoneTypeName + inputName, variant, "_sc"), exporter);
@@ -824,7 +906,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					family.getBaseBlock(), family.getVariant(BlockFamily.Variant.WALL), 1,
 					createModRecipeName(familyName + "_wall", familyName, variant, "_sc"), exporter);
 			for(Block block : filteredBaseBlocks) {
-				String inputName = definedInputName(variant, filteredBaseBlocks, block);
+				String inputName = defineInputName(variant, filteredBaseBlocks, block);
 				offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS,
 						block, family.getVariant(BlockFamily.Variant.WALL), 1,
 						createModRecipeName(familyName + "_wall", stoneTypeName + inputName, variant, "_sc"), exporter);
@@ -835,7 +917,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					family.getBaseBlock(), family.getVariant(BlockFamily.Variant.BUTTON), 1,
 					createModRecipeName(familyName + "_button", familyName, variant, "_sc"), exporter);
 			for(Block block : filteredBaseBlocks) {
-				String inputName = definedInputName(variant, filteredBaseBlocks, block);
+				String inputName = defineInputName(variant, filteredBaseBlocks, block);
 				offerModStoneCuttingRecipe(RecipeCategory.REDSTONE,
 						block, family.getVariant(BlockFamily.Variant.BUTTON), 1,
 						createModRecipeName(familyName + "_button", stoneTypeName + inputName, variant, "_sc"), exporter);
@@ -846,7 +928,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					family.getBaseBlock(), family.getVariant(BlockFamily.Variant.PRESSURE_PLATE), 1,
 					createModRecipeName(familyName + "_pressure_plate", familyName, variant, "_sc"), exporter);
 			for(Block block : filteredBaseBlocks) {
-				String inputName = definedInputName(variant, filteredBaseBlocks, block);
+				String inputName = defineInputName(variant, filteredBaseBlocks, block);
 				offerModStoneCuttingRecipe(RecipeCategory.REDSTONE,
 						block, family.getVariant(BlockFamily.Variant.PRESSURE_PLATE), 1,
 						createModRecipeName(familyName + "_pressure_plate", stoneTypeName + inputName, variant, "_sc"), exporter);
@@ -854,9 +936,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		}
 	}
 
-	private String definedInputName(StoneTypeVariants variant, List<Block> filteredBaseBlocks, Block block) {
+	private String defineInputName(StoneTypeVariants variant, List<Block> filteredBaseBlocks, Block block) {
 		int blockIndex = filteredBaseBlocks.indexOf(block);
-		String inputName = "";
+		String inputName;
 		if(!StoneTypeVariants.isOrnamented(variant) && !StoneTypeVariants.isCracked(variant)) {
 			inputName = blockIndex == 0 ? "" : blockIndex == 1 ? "_bricks" : "_tiles";
 		} else {

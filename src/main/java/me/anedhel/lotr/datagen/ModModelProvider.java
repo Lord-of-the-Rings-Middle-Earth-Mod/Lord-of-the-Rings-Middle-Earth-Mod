@@ -1144,7 +1144,7 @@ public class ModModelProvider extends FabricModelProvider {
      */
     private void registerCubeAllOverlayBlockFamilyModel(BlockStateModelGenerator blockStateModelGenerator,
             Block baseBlock, BlockFamily overlayFamily, String... textures) {
-        TextureMap overlayTextureMap = new TextureMap();
+        TextureMap overlayTextureMap;
         if(textures.length == 2) {
             overlayTextureMap = createCubeAllOverlayTextureMap(baseBlock, textures[0], textures[1]);
             twoOverlayBlock(overlayFamily.getBaseBlock(), overlayTextureMap, blockStateModelGenerator);
