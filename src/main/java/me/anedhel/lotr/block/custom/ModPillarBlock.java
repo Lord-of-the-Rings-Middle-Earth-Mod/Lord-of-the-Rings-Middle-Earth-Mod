@@ -1,5 +1,6 @@
 package me.anedhel.lotr.block.custom;
 
+import me.anedhel.lotr.datagen.ModBlockTagProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.ItemPlacementContext;
@@ -36,8 +37,8 @@ public class ModPillarBlock extends Block {
 	}
 
 	private BlockState getUpdatedState(WorldAccess world, BlockPos pos) {
-		boolean hasAbove = world.getBlockState(pos.up()).isOf(this);
-		boolean hasBelow = world.getBlockState(pos.down()).isOf(this);
+		boolean hasAbove = world.getBlockState(pos.up()).isIn(ModBlockTagProvider.PILLARS);
+		boolean hasBelow = world.getBlockState(pos.down()).isIn(ModBlockTagProvider.PILLARS);
 
 		if (hasAbove && hasBelow) {
 			return this.getDefaultState().with(PILLAR_TYPE, ModPillarType.MIDDLE);
