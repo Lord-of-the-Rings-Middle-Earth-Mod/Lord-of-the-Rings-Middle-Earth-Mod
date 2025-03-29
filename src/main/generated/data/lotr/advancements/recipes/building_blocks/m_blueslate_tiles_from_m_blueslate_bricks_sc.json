@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mossy_blueslate_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:mossy_blueslate_brick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:m_blueslate_tiles_from_m_blueslate_bricks_sc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mossy_blueslate_brick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:m_blueslate_tiles_from_m_blueslate_bricks_sc"
+    ]
+  },
+  "sends_telemetry_event": false
+}

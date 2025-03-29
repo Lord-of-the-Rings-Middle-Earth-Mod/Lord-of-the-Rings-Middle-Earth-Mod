@@ -4,7 +4,7 @@
   "group": "planks",
   "ingredients": [
     {
-      "tag": "lotr:pine_log"
+      "tag": "lotr:block.lotr.pine_log"
     }
   ],
   "result": {

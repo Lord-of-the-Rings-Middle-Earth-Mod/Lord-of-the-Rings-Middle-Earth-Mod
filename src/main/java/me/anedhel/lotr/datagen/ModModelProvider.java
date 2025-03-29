@@ -30,8 +30,6 @@ import java.util.Optional;
  */
 public class ModModelProvider extends FabricModelProvider {
 
-	private static BlockStateModelGenerator blockStateModelGenerator;
-
 	public ModModelProvider(FabricDataOutput output) {
         super(output);
     }

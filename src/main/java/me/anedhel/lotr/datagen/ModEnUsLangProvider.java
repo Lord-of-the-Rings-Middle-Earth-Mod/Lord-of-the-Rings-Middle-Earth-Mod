@@ -321,6 +321,9 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		if(family.getVariant(BlockFamily.Variant.WALL) != null) {
 			translationBuilder.add(family.getVariant(BlockFamily.Variant.WALL).getTranslationKey(), name + "Wall");
 		}
+		if(family.getVariant(BlockFamily.Variant.CHISELED) != null) {
+			translationBuilder.add(family.getVariant(BlockFamily.Variant.CHISELED).getTranslationKey(), "Chiseled " + name);
+		}
 		if(family.getVariant(BlockFamily.Variant.BUTTON) != null) {
 			translationBuilder.add(family.getVariant(BlockFamily.Variant.BUTTON).getTranslationKey(), name + "Button");
 		}

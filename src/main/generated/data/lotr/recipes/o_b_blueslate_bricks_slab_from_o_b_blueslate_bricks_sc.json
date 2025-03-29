@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "lotr:overgrown_bronze_blueslate_brick"
+  },
+  "result": "lotr:overgrown_bronze_blueslate_brick_slab"
+}

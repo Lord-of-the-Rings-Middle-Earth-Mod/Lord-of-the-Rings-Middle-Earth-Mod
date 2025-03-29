@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "lotr:overgrown_cobbled_blueslate"
-  },
-  "result": "lotr:overgrown_cobbled_blueslate_brick_wall"
-}

@@ -3094,6 +3094,9 @@ public enum ModStoneType {
 		    case "wall" -> {
 				return brickWall;
 		    }
+            case "chiseled" -> {
+                return chiseledBrick;
+            }
 		    default -> {
 			    return null;
 		    }
