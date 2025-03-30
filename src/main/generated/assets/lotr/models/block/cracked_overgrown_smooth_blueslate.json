@@ -2,6 +2,6 @@
   "parent": "lotr:block/cube_all_overlay",
   "textures": {
     "all": "lotr:block/cracked_smooth_blueslate",
-    "layer1": "lotr:block/overgrown_overlay"
+    "layer1": "lotr:block/overlays/overgrown_overlay"
   }
 }

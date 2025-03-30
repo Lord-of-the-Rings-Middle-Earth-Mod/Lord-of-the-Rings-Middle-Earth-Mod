@@ -2,7 +2,7 @@
   "parent": "lotr:block/cube_all_two_overlay",
   "textures": {
     "all": "lotr:block/smooth_blueslate",
-    "layer1": "lotr:block/bronze_smooth_overlay",
-    "layer2": "lotr:block/mossy_overlay_one"
+    "layer1": "lotr:block/overlays/bronze_smooth_overlay",
+    "layer2": "lotr:block/overlays/mossy_overlay_one"
   }
 }

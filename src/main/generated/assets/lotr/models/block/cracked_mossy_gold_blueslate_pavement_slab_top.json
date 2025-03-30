@@ -2,10 +2,10 @@
   "parent": "lotr:block/pavement_slab_top_two_overlay",
   "textures": {
     "bottom": "lotr:block/cracked_blueslate_tiles",
-    "layer1": "lotr:block/cracked_gold_tiles_overlay",
-    "layer2": "lotr:block/mossy_overlay_two",
+    "layer1": "lotr:block/overlays/cracked_gold_tiles_overlay",
+    "layer2": "lotr:block/overlays/mossy_overlay_two",
     "side": "lotr:block/cracked_blueslate_tiles",
     "top": "lotr:block/cracked_blueslate_pavement",
-    "top_layer1": "lotr:block/cracked_gold_pavement_overlay"
+    "top_layer1": "lotr:block/overlays/cracked_gold_pavement_overlay"
   }
 }

@@ -2,8 +2,8 @@
   "parent": "lotr:block/inner_stairs_all_two_overlay",
   "textures": {
     "bottom": "lotr:block/cobbled_blueslate_bricks",
-    "layer1": "lotr:block/silver_brick_overlay",
-    "layer2": "lotr:block/overgrown_overlay",
+    "layer1": "lotr:block/overlays/silver_brick_overlay",
+    "layer2": "lotr:block/overlays/overgrown_overlay",
     "side": "lotr:block/cobbled_blueslate_bricks",
     "top": "lotr:block/cobbled_blueslate_bricks"
   }

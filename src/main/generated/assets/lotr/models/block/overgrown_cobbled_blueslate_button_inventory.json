@@ -1,7 +1,7 @@
 {
   "parent": "lotr:block/button_inventory_all_overlay",
   "textures": {
-    "all": "lotr:block/cobbled_blueslate",
-    "layer1": "lotr:block/overgrown_overlay"
+    "layer1": "lotr:block/overlays/overgrown_overlay",
+    "texture": "lotr:block/cobbled_blueslate"
   }
 }

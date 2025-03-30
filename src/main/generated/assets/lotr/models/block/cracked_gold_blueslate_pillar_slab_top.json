@@ -2,8 +2,8 @@
   "parent": "lotr:block/pillar_slab_top_overlay",
   "textures": {
     "end": "lotr:block/cracked_blueslate_pillar_end",
-    "end_layer1": "lotr:block/cracked_gold_pillar_end_overlay",
-    "layer1": "lotr:block/cracked_gold_pillar_side_single_overlay",
+    "end_layer1": "lotr:block/overlays/cracked_gold_pillar_end_overlay",
+    "layer1": "lotr:block/overlays/cracked_gold_pillar_side_single_overlay",
     "side": "lotr:block/cracked_blueslate_pillar_side_single"
   }
 }

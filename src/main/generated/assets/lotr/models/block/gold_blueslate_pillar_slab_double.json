@@ -2,8 +2,8 @@
   "parent": "lotr:block/pillar_overlay",
   "textures": {
     "end": "lotr:block/blueslate_pillar_end",
-    "end_layer1": "lotr:block/gold_pillar_end_overlay",
-    "layer1": "lotr:block/gold_pillar_side_single_overlay",
+    "end_layer1": "lotr:block/overlays/gold_pillar_end_overlay",
+    "layer1": "lotr:block/overlays/gold_pillar_side_single_overlay",
     "side": "lotr:block/blueslate_pillar_side_single"
   }
 }

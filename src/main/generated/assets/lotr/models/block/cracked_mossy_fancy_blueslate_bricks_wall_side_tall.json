@@ -1,7 +1,7 @@
 {
   "parent": "lotr:block/wall_side_tall_all_overlay",
   "textures": {
-    "layer1": "lotr:block/mossy_overlay_two",
+    "layer1": "lotr:block/overlays/mossy_overlay_two",
     "wall": "lotr:block/cracked_fancy_blueslate_bricks"
   }
 }

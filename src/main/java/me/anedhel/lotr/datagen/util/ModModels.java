@@ -69,7 +69,7 @@ public class ModModels {
 	public static final Model BUTTON_PRESSED_ALL_OVERLAY = block("button_pressed_all_overlay",
 			"_pressed", TextureKey.TEXTURE, TextureKey.LAYER1);
 	public static final Model BUTTON_INVENTORY_ALL_OVERLAY = block("button_inventory_all_overlay",
-			"_inventory", TextureKey.ALL, TextureKey.LAYER1);
+			"_inventory", TextureKey.TEXTURE, TextureKey.LAYER1);
 	public static final Model PRESSURE_PLATE_UP_ALL_OVERLAY = block("pressure_plate_up_all_overlay",
 			"", TextureKey.TEXTURE, TextureKey.LAYER1);
 	public static final Model PRESSURE_PLATE_DOWN_ALL_OVERLAY = block("pressure_plate_down_all_overlay",

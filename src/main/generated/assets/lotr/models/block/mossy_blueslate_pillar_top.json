@@ -2,8 +2,8 @@
   "parent": "lotr:block/pillar_overlay",
   "textures": {
     "end": "lotr:block/blueslate_pillar_end",
-    "end_layer1": "lotr:block/mossy_overlay_two",
-    "layer1": "lotr:block/mossy_overlay_two",
+    "end_layer1": "lotr:block/overlays/mossy_overlay_two",
+    "layer1": "lotr:block/overlays/mossy_overlay_two",
     "side": "lotr:block/blueslate_pillar_side_top"
   }
 }

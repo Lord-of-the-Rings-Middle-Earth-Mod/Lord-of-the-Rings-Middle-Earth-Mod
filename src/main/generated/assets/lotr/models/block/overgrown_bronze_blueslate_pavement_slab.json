@@ -2,10 +2,10 @@
   "parent": "lotr:block/pavement_slab_two_overlay",
   "textures": {
     "bottom": "lotr:block/blueslate_tiles",
-    "layer1": "lotr:block/bronze_tiles_overlay",
-    "layer2": "lotr:block/overgrown_overlay",
+    "layer1": "lotr:block/overlays/bronze_tiles_overlay",
+    "layer2": "lotr:block/overlays/overgrown_overlay",
     "side": "lotr:block/blueslate_tiles",
     "top": "lotr:block/blueslate_pavement",
-    "top_layer1": "lotr:block/bronze_pavement_overlay"
+    "top_layer1": "lotr:block/overlays/bronze_pavement_overlay"
   }
 }
