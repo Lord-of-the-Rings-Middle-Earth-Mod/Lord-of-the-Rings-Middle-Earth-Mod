@@ -25,6 +25,7 @@ import net.minecraft.util.Identifier;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
@@ -782,7 +783,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	private void createBlockFamilyStoneCutting (RecipeExporter exporter, BlockFamily family,
 			StoneTypeVariants variant, String familyName, String stoneTypeName, Block... baseBlocks) {
 		List<Block> filteredBaseBlocks =
-				Arrays.stream(baseBlocks).filter(baseBlock -> baseBlock != null).collect(Collectors.toList());
+				Arrays.stream(baseBlocks).filter(Objects::nonNull).collect(Collectors.toList());
 		for(Block block : filteredBaseBlocks) {
 			String inputName = defineInputName(variant, filteredBaseBlocks, block);
 			offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS,
@@ -857,6 +858,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		}
 	}
 
+	/**
+	 * Defines the input name based on the stone type variant and the block's position in the list.
+	 *
+	 * @param variant The stone type variant.
+	 * @param filteredBaseBlocks The list of base blocks.
+	 * @param block The block for which the input name is being defined.
+	 * @return The input name as a string.
+	 */
 	private String defineInputName(StoneTypeVariants variant, List<Block> filteredBaseBlocks, Block block) {
 		int blockIndex = filteredBaseBlocks.indexOf(block);
 		String inputName;
@@ -868,6 +877,20 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		return inputName;
 	}
 
+	/**
+	 * Generates crafting recipes for different variants of a stone type.
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param stone The base stone block family.
+	 * @param brick The brick block family.
+	 * @param tiles The tiles block family.
+	 * @param fancyBricks The fancy bricks block family.
+	 * @param pavement The pavement block family.
+	 * @param pillar The pillar block.
+	 * @param pillarSlab The pillar slab block.
+	 * @param variant The stone type variant.
+	 * @param name The name of the stone type.
+	 */
 	private void generateStoneTypeCraftingRecipes(RecipeExporter exporter, BlockFamily stone, BlockFamily brick,
 			BlockFamily tiles, BlockFamily fancyBricks, BlockFamily pavement, Block pillar, Block pillarSlab,
 			StoneTypeVariants variant, String name) {
@@ -903,6 +926,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		}
 	}
 
+	/**
+	 * Creates crafting recipes for a block family.
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param family The block family to create recipes for.
+	 * @param variant The stone type variant.
+	 * @param familyName The name of the block family.
+	 * @param stoneTypeName The name of the stone type.
+	 */
 	private void createBlockFamilyCrafting(RecipeExporter exporter, BlockFamily family,
 			StoneTypeVariants variant, String familyName, String stoneTypeName) {
 		if(family.getVariant(BlockFamily.Variant.CHISELED) != null) {
@@ -933,6 +965,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		}
 	}
 
+	/**
+	 * Creates a chiseled block recipe. The difference between this and the vanilla method, is that the
+	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
 	private void createModChiseledRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1).pattern("#")
 				.pattern("#").input('#', input)
@@ -940,13 +981,32 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.offerTo(exporter, recipePath);
 	}
 
+	/**
+	 * Creates a crafting recipe for stairs from the given input block. The difference between this and the vanilla method, is that the
+	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block (stairs) for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
 	private void createModStairRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
-		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4).pattern("#  ")
-				.pattern("## ").pattern("###").input('#', input)
+		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4).pattern("  #")
+				.pattern(" ##").pattern("###").input('#', input)
 				.criterion(hasItem(input), conditionsFromItem(input))
 				.offerTo(exporter, recipePath);
 	}
 
+	/**
+	 * Creates a crafting recipe for slabs from the given input block.
+	 * The difference between this and the vanilla method is that the
+	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block (slabs) for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
 	private void createModSlabRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 6).pattern("###")
 				.input('#', input)
@@ -954,6 +1014,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.offerTo(exporter, recipePath);
 	}
 
+	/**
+	 * Creates a crafting recipe for walls from the given input block.
+	 * The difference between this and the vanilla method is that the
+	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block (walls) for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
 	private void createModWallRecipe(RecipeExporter exporter, Block input, Block output, String recipePath){
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 6).pattern("###")
 				.pattern("###").input('#', input)
@@ -961,6 +1031,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.offerTo(exporter, recipePath);
 	}
 
+	/**
+	 * Creates a crafting recipe for a button from the given input block.
+	 * The difference between this and the vanilla method is that the
+	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block (button) for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
 	private void createModButtonRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.REDSTONE, output, 1).pattern(" # ")
 				.input('#', input)
@@ -968,6 +1048,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.offerTo(exporter, recipePath);
 	}
 
+	/**
+	 * Creates a crafting recipe for a pressure plate from the given input block.
+	 * The difference between this and the vanilla method is that the
+	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block (pressure plate) for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
 	private void createModPressurePlateRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1).pattern("##")
 				.input('#', input)
@@ -975,6 +1065,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.offerTo(exporter, recipePath);
 	}
 
+	/**
+	 * Creates a crafting recipe for bricks from the given input block.
+	 * The difference between this and the vanilla method is that the
+	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block (bricks) for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
 	private void createModBricksRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 4).pattern("##")
 		                       .pattern("##").input('#', input)
@@ -982,6 +1082,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                       .offerTo(exporter, recipePath);
 	}
 
+	/**
+	 * Creates a crafting recipe for pavement blocks from the given input block.
+	 * The difference between this and the vanilla method is that the
+	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block (pavement) for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
 	private void createModPavementRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 2).pattern("#")
 				.pattern("#").input('#', input)
@@ -989,6 +1099,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				.offerTo(exporter, recipePath);
 	}
 
+	/**
+	 * Creates a pillar recipe for the given input and output blocks. The difference between this and the vanilla method, is that the
+	 * 	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
 	private void createModPillarRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 3).pattern("#")
 		                       .pattern("#").pattern("#").input('#', input)
@@ -1048,8 +1167,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	}
 
 	/**
-	 * Offers a stonecutting recipe to the exporter. The difference between this and the vanilla method, is that a name
-	 * can be defined.
+	 * Offers a stonecutting recipe to the exporter. The difference between this and the vanilla method, is that the
+	 * .json-filename can be defined.
 	 *
 	 * @param category The category of the recipe.
 	 * @param input The input block for the stonecutting recipe.

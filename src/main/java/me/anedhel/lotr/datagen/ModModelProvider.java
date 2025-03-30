@@ -1288,14 +1288,14 @@ public class ModModelProvider extends FabricModelProvider {
                 .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture))
                 .put(TextureKey.BOTTOM, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture));
         if(overlays.length == 1 && !ornamented) {
-            textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[0]));
+            textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[0]));
         } else if(overlays.length == 2 && ornamented) {
-            textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[0]));
-            textureMap.put(ModTextureKeys.TOP_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[1]));
+            textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[0]));
+            textureMap.put(ModTextureKeys.TOP_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[1]));
         } else if(overlays.length == 3 && ornamented) {
-            textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[0]));
-            textureMap.put(ModTextureKeys.TOP_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[1]));
-            textureMap.put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[2]));
+            textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[0]));
+            textureMap.put(ModTextureKeys.TOP_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[1]));
+            textureMap.put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[2]));
         }
         return textureMap;
     }
@@ -1319,18 +1319,18 @@ public class ModModelProvider extends FabricModelProvider {
             Block smoothStone, Block smoothStoneSlab,
             Block overlaySmoothStone, Block overlaySmoothStoneSlab, boolean ornamented, String... overlays) {
         TextureMap textureMap = TextureMap.all(smoothStone);
-        textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[0]));
+        textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[0]));
 
         TextureMap textureMapSlab = TextureMap.sideEnd(TextureMap.getSubId(smoothStoneSlab, "_side"),
                 textureMap.getTexture(TextureKey.TOP));
         if(ornamented) {
             textureMapSlab.put(ModTextureKeys.END_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                    "block/" + overlays[0]));
+                    "block/overlays" + overlays[0]));
             textureMapSlab.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                    "block/" + overlays[1]));
+                    "block/overlays" + overlays[1]));
         } else {
             textureMapSlab.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                    "block/" + overlays[0]));
+                    "block/overlays" + overlays[0]));
         }
 
         Identifier identifier = ModModels.SMOOTH_SLAB_OVERLAY.upload(overlaySmoothStoneSlab, textureMapSlab,
@@ -1351,17 +1351,17 @@ public class ModModelProvider extends FabricModelProvider {
             Block smoothStone, Block smoothStoneSlab,
             Block overlaySmoothStone, Block overlaySmoothStoneSlab, String... overlays) {
         TextureMap textureMap = TextureMap.all(smoothStone);
-        textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[0]));
-        textureMap.put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[2]));
+        textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[0]));
+        textureMap.put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[2]));
 
         TextureMap textureMapSlab = TextureMap.sideEnd(TextureMap.getSubId(smoothStoneSlab, "_side"),
                 textureMap.getTexture(TextureKey.TOP));
         textureMapSlab.put(ModTextureKeys.END_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                "block/" + overlays[0]));
+                "block/overlays" + overlays[0]));
         textureMapSlab.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                "block/" + overlays[1]));
+                "block/overlays" + overlays[1]));
         textureMapSlab.put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                "block/" + overlays[2]));
+                "block/overlays" + overlays[2]));
 
         Identifier identifier = ModModels.SMOOTH_SLAB_TWO_OVERLAY.upload(overlaySmoothStoneSlab, textureMapSlab,
                 blockStateModelGenerator.modelCollector);
@@ -1474,22 +1474,22 @@ public class ModModelProvider extends FabricModelProvider {
         if(overlays.length == 1) {
             if (ornamented) {
                 textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                        "block/" + overlays[0] + "_side" + position + "_overlay"));
+                        "block/overlays" + overlays[0] + "_side" + position + "_overlay"));
                 textureMap.put(ModTextureKeys.END_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                        "block/" + overlays[0] + "_end" + "_overlay"));
+                        "block/overlays" + overlays[0] + "_end" + "_overlay"));
             } else {
-                textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[0]));
+                textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[0]));
                 textureMap.put(ModTextureKeys.END_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                        "block/" + overlays[0]));
+                        "block/overlays" + overlays[0]));
             }
         } else if(overlays.length == 2) {
             textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                            "block/" + overlays[0] + "_side" + position + "_overlay"))
-                    .put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[1]))
+                            "block/overlays" + overlays[0] + "_side" + position + "_overlay"))
+                    .put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[1]))
                     .put(ModTextureKeys.END_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                            "block/" + overlays[0] + "_end" + "_overlay"))
+                            "block/overlays" + overlays[0] + "_end" + "_overlay"))
                     .put(ModTextureKeys.END_LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
-                            "block/" + overlays[1]));
+                            "block/overlays" + overlays[1]));
         }
         return textureMap;
     }
@@ -1518,11 +1518,11 @@ public class ModModelProvider extends FabricModelProvider {
         TextureMap textureMap = new TextureMap().put(TextureKey.ALL, TextureMap.getId(baseBlock));
         if(overlays.length == 1) {
             textureMap
-                    .put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[0]));
+                    .put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[0]));
         } else if(overlays.length == 2) {
             textureMap
-                    .put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[0]))
-                    .put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + overlays[1]));
+                    .put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[0]))
+                    .put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays" + overlays[1]));
         }
         return textureMap;
     }
