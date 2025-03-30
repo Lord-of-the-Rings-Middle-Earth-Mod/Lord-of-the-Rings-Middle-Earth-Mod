@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_silver_blueslate_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:silver_blueslate_brick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:s_blueslate_bricks_wall_from_s_blueslate_bricks_ct"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_silver_blueslate_brick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:s_blueslate_bricks_wall_from_s_blueslate_bricks_ct"
+    ]
+  },
+  "sends_telemetry_event": false
+}

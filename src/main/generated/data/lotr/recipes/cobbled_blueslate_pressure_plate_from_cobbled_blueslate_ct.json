@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cobbled_blueslate"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "lotr:cobbled_blueslate_pressure_plate"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mossy_gold_blueslate_brick": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:mossy_gold_blueslate_brick"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:m_g_blueslate_bricks_slab_from_m_g_blueslate_bricks_ct"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mossy_gold_blueslate_brick"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:m_g_blueslate_bricks_slab_from_m_g_blueslate_bricks_ct"
+    ]
+  },
+  "sends_telemetry_event": false
+}

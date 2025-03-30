@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:overgrown_silver_blueslate_tiles"
+    }
+  },
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "result": {
+    "count": 2,
+    "item": "lotr:overgrown_silver_blueslate_pavement"
+  },
+  "show_notification": true
+}
