@@ -134,19 +134,11 @@ When contributing code follow the following Workflows steps to ensure the integr
 4. Work on the issue until you finished, you are finished, if all acceptance criteria (ACs) are met. *Test what you have implemented in a [developers test]() to ensure it also works as intended.*
 5. Open a Pull Request from the branch to the develop branch. The Pull Request should be named `IssueNumber - IssueName` and will be reviewed by a maintainer.
 6. Link the Pull Request to the Issue and move the Issue into *In Review*
-7. The Pull Request will be checked by maintainers and
+7. The Pull Request will be checked by contributors and
    * Merged and closed if no changes are requested
    * Reopened, aka moved back into *In Progress* with you as Assignee, should changes be requested. The Reviewers will comment what they think is missing/needs change within the issue.
 
 If the Pull Requests was approved and merged by Maintainers, Testers will test the addition to the code with a compiled and compacted mod. Should they notice a mistake the issue will be reopened and moved into *To Do* again. We would prefer to have you fix the found issue, but understand it is not always possible. 
-
-What is to be considered are the following points:
-- Proper Commenting
-  - JavaDoc at every Class describing shortly what the class is used for
-    - Exceptions are the Main Classes: LordOfTheRingsMiddleEarthMod, LordOfTheRingsMiddleEarthModClient, LordOfTheRingsMiddleEarthModDataGenerator
-  - JavaDoc at every Method describing shortly what the method is used for, as well as listing parameters and output
-    - Exceptions are Constructors, Getter, Setter, ToString, Equals and Hash Methods
-- Sun Coding Convention for Java is to be used
 
 ### Releases
 Releases are planned and released by maintainers only.
@@ -154,5 +146,4 @@ During each release following actions are to be taken:
 - The version is increased following [Semantic Versioning](https://semver.org/).
 - The changelog is checked for sufficiency. Any additions and changes noticeable to players and server owners need to be listed.
 - The release-branch is merged into the master-branch and a release is created on GitHub with a matching tag.
-- The changelog of the release is published on [discord](https://discord.com/channels/1237739289689985138/1241277621766197268) following the format provided and using discohook.
 - The milestone of the release is closed and the actions properly documented in the release Issue, which is than also closed.
