@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cracked_fancy_blueslate_bricks"
+    },
+    "O": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "O#O",
+    "OOO"
+  ],
+  "result": {
+    "item": "lotr:cracked_gold_fancy_blueslate_bricks"
+  },
+  "show_notification": true
+}

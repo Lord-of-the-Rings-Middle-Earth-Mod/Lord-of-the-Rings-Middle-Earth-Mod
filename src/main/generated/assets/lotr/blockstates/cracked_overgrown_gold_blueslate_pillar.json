@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "pillar_type=base": {
+      "model": "lotr:block/cracked_overgrown_gold_blueslate_pillar_base"
+    },
+    "pillar_type=middle": {
+      "model": "lotr:block/cracked_overgrown_gold_blueslate_pillar_middle"
+    },
+    "pillar_type=single": {
+      "model": "lotr:block/cracked_overgrown_gold_blueslate_pillar"
+    },
+    "pillar_type=top": {
+      "model": "lotr:block/cracked_overgrown_gold_blueslate_pillar_top"
+    }
+  }
+}

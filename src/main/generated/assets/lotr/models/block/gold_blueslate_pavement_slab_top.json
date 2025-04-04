@@ -1,0 +1,10 @@
+{
+  "parent": "lotr:block/pavement_slab_top_overlay",
+  "textures": {
+    "bottom": "lotr:block/blueslate_tiles",
+    "layer1": "lotr:block/gold_tiles_overlay",
+    "side": "lotr:block/blueslate_tiles",
+    "top": "lotr:block/blueslate_pavement",
+    "top_layer1": "lotr:block/gold_pavement_overlay"
+  }
+}

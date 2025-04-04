@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "lotr:overgrown_cobbled_blueslate"
+    }
+  },
+  "pattern": [
+    " # "
+  ],
+  "result": {
+    "item": "lotr:overgrown_cobbled_blueslate_button"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "lotr:block/smooth_overlay",
+  "textures": {
+    "end": "lotr:block/smooth_blueslate",
+    "end_layer1": "lotr:block/overgrown_overlay",
+    "layer1": "lotr:block/overgrown_overlay",
+    "side": "lotr:block/smooth_blueslate_slab_side"
+  }
+}

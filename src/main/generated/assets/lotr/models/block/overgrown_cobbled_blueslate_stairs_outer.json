@@ -1,0 +1,9 @@
+{
+  "parent": "lotr:block/outer_stairs_all_overlay",
+  "textures": {
+    "bottom": "lotr:block/cobbled_blueslate",
+    "layer1": "lotr:block/overgrown_overlay",
+    "side": "lotr:block/cobbled_blueslate",
+    "top": "lotr:block/cobbled_blueslate"
+  }
+}

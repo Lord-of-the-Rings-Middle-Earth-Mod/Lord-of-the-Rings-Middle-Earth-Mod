@@ -1,0 +1,9 @@
+{
+  "parent": "lotr:block/inner_stairs_all_overlay",
+  "textures": {
+    "bottom": "lotr:block/cracked_cobbled_blueslate_bricks",
+    "layer1": "lotr:block/cracked_bronze_brick_overlay",
+    "side": "lotr:block/cracked_cobbled_blueslate_bricks",
+    "top": "lotr:block/cracked_cobbled_blueslate_bricks"
+  }
+}

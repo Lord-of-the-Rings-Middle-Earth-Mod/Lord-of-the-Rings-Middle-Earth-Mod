@@ -1,0 +1,9 @@
+{
+  "parent": "lotr:block/inner_stairs_all_overlay",
+  "textures": {
+    "bottom": "lotr:block/blueslate_tiles",
+    "layer1": "lotr:block/gold_tiles_overlay",
+    "side": "lotr:block/blueslate_tiles",
+    "top": "lotr:block/blueslate_tiles"
+  }
+}

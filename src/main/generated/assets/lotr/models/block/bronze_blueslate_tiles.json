@@ -1,0 +1,7 @@
+{
+  "parent": "lotr:block/cube_all_overlay",
+  "textures": {
+    "all": "lotr:block/blueslate_tiles",
+    "layer1": "lotr:block/bronze_tiles_overlay"
+  }
+}

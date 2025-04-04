@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "lotr:cobbled_diorite"
-  },
-  "result": "lotr:cobbled_diorite_slab"
-}

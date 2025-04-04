@@ -1,0 +1,71 @@
+name: Bug Report
+description: Create a bug report issue, so we can work on resolving the issue.
+projects:
+  - "LotR Mod Issue Board"
+title: "[Bug Report] "
+type: "Bug"
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you for submitting a bug report! Please fill out the following information to help us resolve the issue.
+      Please be aware, that we might not fix it right away, we need to priorities critical bugs first.  
+      When filling out the form, please provide as much information as possible.
+      We need to be able to reproduce the bug in order to fix it.  
+      If you don´t know how to fill out the form properly check out <https://www.chiark.greenend.org.uk/~sgtatham/bugs.html> for more information."
+  - type: dropdown
+    id: launcher
+    attributes:
+      label: "Launcher used"
+      description: "Which launcher where you using when encountering the bug?"
+      multiple: true
+      options:
+        - "Vanilla Launcher with Fabric"
+    validations:
+      required: true
+  - type: input
+    id: mod_version
+    attributes:
+      label: "Mod Versions"
+      description: "Which version of the mod were you using when encountering the bug?"
+      placeholder: "Example: 1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: "Single- or Multiplayer"
+      description: "Is the bug occurring in single player or multiplayer?"
+      multiple: true
+      options:
+        - "Single Player"
+        - "Multiplayer"
+    validations:
+        required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "Please describe the bug in detail."
+      placeholder: "Example: When I try to place a block, the game crashes."
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Steps to Reproduce"
+      description: "Please provide a step-by-step guide on how to reproduce the bug."
+      placeholder: "Example:1. Start the mod with launcher xyz  2. Connect to world/server  3. Jump arround  4. Place a block  5. Game crashes"
+    validations:
+      required: true
+  - type: textarea
+    id: server_config
+    attributes:
+      label: "Server Config"
+      description: "If you the bug occurs on a server, please provide which configurations where made for the server."
+      placeholder: "Example: server.properties"
+  - type: textarea
+    id: further_information
+    attributes:
+      label: "Further Information"
+      description: "If you have any further information you wish to provide."
+      placeholder: "I have already a solution for a fix."

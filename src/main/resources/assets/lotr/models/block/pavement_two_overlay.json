@@ -1,0 +1,41 @@
+{
+	"parent": "minecraft:block/cube",
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"texture": "#side", "cullface": "north"},
+				"east": {"texture": "#side", "cullface": "east"},
+				"south": {"texture": "#side", "cullface": "south"},
+				"west": {"texture": "#side", "cullface": "west"},
+				"up": {"texture": "#top", "cullface": "up"},
+				"down": {"texture": "#side", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"texture": "#layer1", "cullface": "north"},
+				"east": {"texture": "#layer1", "cullface": "east"},
+				"south": {"texture": "#layer1", "cullface": "south"},
+				"west": {"texture": "#layer1", "cullface": "west"},
+				"up": {"texture": "#top_layer1", "cullface": "up"},
+				"down": {"texture": "#layer1", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"texture": "#layer2", "cullface": "north"},
+				"east": {"texture": "#layer2", "cullface": "east"},
+				"south": {"texture": "#layer2", "cullface": "south"},
+				"west": {"texture": "#layer2", "cullface": "west"},
+				"up": {"texture": "#layer2", "cullface": "up"},
+				"down": {"texture": "#layer2", "cullface": "down"}
+			}
+		}
+	]
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "lotr:block/stairs_all_two_overlay",
+  "textures": {
+    "bottom": "lotr:block/cracked_blueslate_tiles",
+    "layer1": "lotr:block/cracked_gold_tiles_overlay",
+    "layer2": "lotr:block/mossy_overlay_two",
+    "side": "lotr:block/cracked_blueslate_tiles",
+    "top": "lotr:block/cracked_blueslate_tiles"
+  }
+}

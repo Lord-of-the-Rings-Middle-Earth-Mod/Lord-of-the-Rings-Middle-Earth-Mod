@@ -25,17 +25,13 @@ import me.anedhel.lotr.entity.custom.HobbitEntity;
 import me.anedhel.lotr.item.ModItemGroups;
 import me.anedhel.lotr.item.ModItems;
 import me.anedhel.lotr.world.gen.ModWorldGeneration;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.api.ModInitializer;
-
-import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
-
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
-
+import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
 import net.minecraft.block.ComposterBlock;
 import net.minecraft.util.Identifier;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -44,9 +40,18 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 	public static final String MOD_ID = "lotr";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	public static final String COPYRIGHT = """
+		LotR ME Mod Copyright (C) 2024
+		Authors are found in the CONTRIBUTORS-File.
+		This program comes with ABSOLUTELY NO WARRANTY.
+		This is free software under the GNU General public License. You are welcome to redistribute it
+		under certain conditions, described in the LICENSE-File.
+		""";
+
 	@Override
 	public void onInitialize() {
 		LOGGER.info("The Lord of the Rings Mod starts to initialise.");
+		LOGGER.info(COPYRIGHT); //Logging the Copyright notice as defined in the GNU General Public License
 		ModItemGroups.registerModItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
@@ -58,7 +63,7 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 
 		initModWoodTypes();
 
-		addCropsToComposer();
+		addCropsToComposter();
 
 		CustomPortalBuilder.beginPortal().frameBlock(ModBlocks.BRONZE_BLOCK).lightWithItem(ModItems.TIN_INGOT)
 		                   .destDimID(new Identifier(MOD_ID, "arda")).tintColor(0xc76efa).registerPortal();
@@ -68,7 +73,7 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 	/**
 	 * In this Method compostable ModCrops and ModFlowers are defined
 	 */
-	private void addCropsToComposer() {
+	private void addCropsToComposter() {
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.WILD_BEETROOT, 0.4f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.WILD_CARROT, 0.4f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModBlocks.WILD_POTATO, 0.4f);
