@@ -99,7 +99,7 @@ Within those applications we are looking for the following:
 - Activity within the Community, especially within the chats
 
 ### Contributors
-A list of all Contributors can be found [here](CONTRIBUTORS.md).
+A list of all Contributors can be found [here](CONTRIBUTORS.md#contributors).
 Contributors are able to perform Code-Reviews and are also involved in the decision-making process to a certain extent.
 Contributors can be active in all areas of the Mod where we look for [contributions](#how-to-contribute), and are not limited to code contributions.
 
@@ -121,6 +121,7 @@ After the 3 months of triage access, the Maintainers will make a final decision 
 ### Maintainers
 The *LotR ME Mod* has the following Maintainers:
 - Ano_Jedt
+- bakbar
 
 Maintainers are chosen from the Contributors by the Lead-Maintainers.
 The selection is based on the performance of the Contributor and the need for Maintainers.
