@@ -129,5 +129,3 @@ In order to become a maintainer a unanimously vote of all Lead-Maintainers is ne
 ### Lead-Maintainers
 The *LotR ME Mod* has the following Lead-Maintainers:
 - Anedhel/Moritz (Lead Maintainer)
-
-And you can find a list of Contributors [here](CONTRIBUTORS.md).
