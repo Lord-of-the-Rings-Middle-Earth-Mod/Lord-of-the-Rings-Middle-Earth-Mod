@@ -24,6 +24,7 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -597,34 +598,125 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					stoneType.getCrackedOvergrownGoldPillar(), stoneType.getCrackedOvergrownGoldPillarSlab(),
 					StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, stoneType.getName().toLowerCase());
 
-			//ToDo: Detailing Crafting Recipes and Smooth Recipes
+			//Detailing (Cracked, Mossy, Overgrown, Ornamented)
+			createOvergrownBlockFamilyCrafting(exporter, stoneType.getStoneFamily(), stoneType.getMossyStoneFamily(),
+					stoneType.getOvergrownStoneFamily(), StoneTypeVariants.OVERGROWN_STONE, stoneType.getName().toLowerCase());
+			createOvergrownBlockFamilyCrafting(exporter, stoneType.getCobbledFamily(), stoneType.getMossyCobbledFamily(),
+					stoneType.getOvergrownCobbledFamily(), StoneTypeVariants.OVERGROWN_STONE,
+					"cobbled_" + stoneType.getName().toLowerCase());
 
-			if (stoneType.getSmooth() != null) {
-				CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getStoneVariant("base")),
-								RecipeCategory.BUILDING_BLOCKS, stoneType.getSmooth().asItem(),
-								0.1f, 200)
-						.criterion("has_stone", VanillaRecipeProvider
-								.conditionsFromItem(stoneType.getStoneVariant("base"))).offerTo(exporter);
-				if (stoneType.getSmoothSlab() != null) {
-					offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getSmoothSlab(), stoneType.getSmooth());
-					offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-							stoneType.getSmoothSlab(), stoneType.getSmooth(), 1);
-				}
-				if (stoneType.getCrackedSmooth() != null) {
-					CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getSmooth()),
-									RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedSmooth().asItem(),
-									0.1f, 200)
-							.criterion("has_smooth_stone", VanillaRecipeProvider
-									.conditionsFromItem(stoneType.getSmooth())).offerTo(exporter);
-					if (stoneType.getCrackedSmoothSlab() != null) {
-						offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCrackedSmoothSlab(), stoneType.getCrackedSmooth());
-						offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS,
-								stoneType.getCrackedSmoothSlab(), stoneType.getCrackedSmooth(), 2);
-					}
-				}
-			}
+			generateStoneTypeDecorationCrafting(exporter, "cobbled_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getCobbledBrickFamily(), stoneType.getMossyCobbledBrickFamily(), stoneType.getOvergrownCobbledBrickFamily(),
+					stoneType.getBronzeCobbledBrickFamily(), stoneType.getMossyBronzeCobbledBrickFamily(),
+					stoneType.getOvergrownBronzeCobbledBrickFamily(),
+					stoneType.getSilverCobbledBrickFamily(), stoneType.getMossySilverCobbledBrickFamily(),
+					stoneType.getOvergrownSilverCobbledBrickFamily(),
+					stoneType.getGoldCobbledBrickFamily(), stoneType.getMossyGoldCobbledBrickFamily(),
+					stoneType.getOvergrownGoldCobbledBrickFamily(),
+					stoneType.getCrackedCobbledBrickFamily(), stoneType.getCrackedMossyCobbledBrickFamily(),
+					stoneType.getCrackedOvergrownCobbledBrickFamily(),
+					stoneType.getCrackedBronzeCobbledBrickFamily(), stoneType.getCrackedMossyBronzeCobbledBrickFamily(),
+					stoneType.getCrackedOvergrownBronzeCobbledBrickFamily(),
+					stoneType.getCrackedSilverCobbledBrickFamily(), stoneType.getCrackedMossySilverCobbledBrickFamily(),
+					stoneType.getCrackedOvergrownSilverCobbledBrickFamily(),
+					stoneType.getCrackedGoldCobbledBrickFamily(), stoneType.getCrackedMossyGoldCobbledBrickFamily(),
+					stoneType.getCrackedOvergrownGoldCobbledBrickFamily());
+
+			generateStoneTypeDecorationCrafting(exporter, stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getBrickFamily(), stoneType.getMossyBrickFamily(), stoneType.getOvergrownBrickFamily(),
+					stoneType.getBronzeBrickFamily(), stoneType.getMossyBronzeBrickFamily(),
+					stoneType.getOvergrownBronzeBrickFamily(),
+					stoneType.getSilverBrickFamily(), stoneType.getMossySilverBrickFamily(),
+					stoneType.getOvergrownSilverBrickFamily(),
+					stoneType.getGoldBrickFamily(), stoneType.getMossyGoldBrickFamily(),
+					stoneType.getOvergrownGoldBrickFamily(),
+					stoneType.getCrackedBrickFamily(), stoneType.getCrackedMossyBrickFamily(),
+					stoneType.getCrackedOvergrownBrickFamily(),
+					stoneType.getCrackedBronzeBrickFamily(), stoneType.getCrackedMossyBronzeBrickFamily(),
+					stoneType.getCrackedOvergrownBronzeBrickFamily(),
+					stoneType.getCrackedSilverBrickFamily(), stoneType.getCrackedMossySilverBrickFamily(),
+					stoneType.getCrackedOvergrownSilverBrickFamily(),
+					stoneType.getCrackedGoldBrickFamily(), stoneType.getCrackedMossyGoldBrickFamily(),
+					stoneType.getCrackedOvergrownGoldBrickFamily());
+
+			generateStoneTypeDecorationCrafting(exporter, stoneType.getName().toLowerCase() + "_tiles",
+					stoneType.getTilesFamily(), stoneType.getMossyTilesFamily(), stoneType.getOvergrownTilesFamily(),
+					stoneType.getBronzeTilesFamily(), stoneType.getMossyBronzeTilesFamily(),
+					stoneType.getOvergrownBronzeTilesFamily(),
+					stoneType.getSilverTilesFamily(), stoneType.getMossySilverTilesFamily(),
+					stoneType.getOvergrownSilverTilesFamily(),
+					stoneType.getGoldTilesFamily(), stoneType.getMossyGoldTilesFamily(),
+					stoneType.getOvergrownGoldTilesFamily(),
+					stoneType.getCrackedTilesFamily(), stoneType.getCrackedMossyTilesFamily(),
+					stoneType.getCrackedOvergrownTilesFamily(),
+					stoneType.getCrackedBronzeTilesFamily(), stoneType.getCrackedMossyBronzeTilesFamily(),
+					stoneType.getCrackedOvergrownBronzeTilesFamily(),
+					stoneType.getCrackedSilverTilesFamily(), stoneType.getCrackedMossySilverTilesFamily(),
+					stoneType.getCrackedOvergrownSilverTilesFamily(),
+					stoneType.getCrackedGoldTilesFamily(), stoneType.getCrackedMossyGoldTilesFamily(),
+					stoneType.getCrackedOvergrownGoldTilesFamily());
+
+			generateStoneTypeDecorationCrafting(exporter, stoneType.getName().toLowerCase() + "_pavement",
+					stoneType.getPavementFamily(), stoneType.getMossyPavementFamily(), stoneType.getOvergrownPavementFamily(),
+					stoneType.getBronzePavementFamily(), stoneType.getMossyBronzePavementFamily(),
+					stoneType.getOvergrownBronzePavementFamily(),
+					stoneType.getSilverPavementFamily(), stoneType.getMossySilverPavementFamily(),
+					stoneType.getOvergrownSilverPavementFamily(),
+					stoneType.getGoldPavementFamily(), stoneType.getMossyGoldPavementFamily(),
+					stoneType.getOvergrownGoldPavementFamily(),
+					stoneType.getCrackedPavementFamily(), stoneType.getCrackedMossyPavementFamily(),
+					stoneType.getCrackedOvergrownPavementFamily(),
+					stoneType.getCrackedBronzePavementFamily(), stoneType.getCrackedMossyBronzePavementFamily(),
+					stoneType.getCrackedOvergrownBronzePavementFamily(),
+					stoneType.getCrackedSilverPavementFamily(), stoneType.getCrackedMossySilverPavementFamily(),
+					stoneType.getCrackedOvergrownSilverPavementFamily(),
+					stoneType.getCrackedGoldPavementFamily(), stoneType.getCrackedMossyGoldPavementFamily(),
+					stoneType.getCrackedOvergrownGoldPavementFamily());
+
+			generateStoneTypeDecorationCrafting(exporter, "fancy_" + stoneType.getName().toLowerCase() + "_bricks",
+					stoneType.getFancyBricksFamily(), stoneType.getMossyFancyBricksFamily(),
+					stoneType.getOvergrownFancyBricksFamily(),
+					stoneType.getBronzeFancyBricksFamily(), stoneType.getMossyBronzeFancyBricksFamily(),
+					stoneType.getOvergrownBronzeFancyBricksFamily(),
+					stoneType.getSilverFancyBricksFamily(), stoneType.getMossySilverFancyBricksFamily(),
+					stoneType.getOvergrownSilverFancyBricksFamily(),
+					stoneType.getGoldFancyBricksFamily(), stoneType.getMossyGoldFancyBricksFamily(),
+					stoneType.getOvergrownGoldFancyBricksFamily(),
+					stoneType.getCrackedFancyBricksFamily(), stoneType.getCrackedMossyFancyBricksFamily(),
+					stoneType.getCrackedOvergrownFancyBricksFamily(),
+					stoneType.getCrackedBronzeFancyBricksFamily(), stoneType.getCrackedMossyBronzeFancyBricksFamily(),
+					stoneType.getCrackedOvergrownBronzeFancyBricksFamily(),
+					stoneType.getCrackedSilverFancyBricksFamily(), stoneType.getCrackedMossySilverFancyBricksFamily(),
+					stoneType.getCrackedOvergrownSilverFancyBricksFamily(),
+					stoneType.getCrackedGoldFancyBricksFamily(), stoneType.getCrackedMossyGoldFancyBricksFamily(),
+					stoneType.getCrackedOvergrownGoldFancyBricksFamily());
+
+			createBlockDecorating(exporter, stoneType.getPillarBlocks(), stoneType.getName().toLowerCase(), "_pillar");
+			createBlockDecorating(exporter, stoneType.getPillarSlabs(), stoneType.getName().toLowerCase(),
+					"_pillar_slab");
+
+			CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getStoneVariant("base")),
+							RecipeCategory.BUILDING_BLOCKS, stoneType.getSmooth().asItem(),
+							0.1f, 200)
+					.criterion("has_stone", VanillaRecipeProvider
+							.conditionsFromItem(stoneType.getStoneVariant("base"))).offerTo(exporter,
+							stoneType.getName().toLowerCase() + "_smooth_stone_smelting");
+			CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(stoneType.getSmooth()),
+					RecipeCategory.BUILDING_BLOCKS, stoneType.getCrackedSmooth().asItem(),
+					0.1f, 200)
+					.criterion("has_smooth", VanillaRecipeProvider
+							.conditionsFromItem(stoneType.getSmooth())).offerTo(exporter,
+							stoneType.getName().toLowerCase() + "_cracked_smooth_stone_smelting");
+
+			createBlockDecorating(exporter, stoneType.getSmoothStone(), stoneType.getName().toLowerCase(),
+					"_smooth_stone");
+			createBlockDecorating(exporter, stoneType.getSmoothStoneSlabs(), stoneType.getName().toLowerCase(),
+					"smooth_stone_slab");
+
+			generateSmoothCrafting(exporter, stoneType.getSmoothStone(), stoneType.getSmoothStoneSlabs(),
+					stoneType.getName().toLowerCase());
+			generateSmoothStoneCutting(exporter, stoneType.getSmoothStone(), stoneType.getSmoothStoneSlabs(),
+					stoneType.getName().toLowerCase());
 		}
 	}
 
@@ -966,6 +1058,556 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	}
 
 	/**
+	 * Generates decoration crafting recipes for different variants of a stone type.
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param familyName The name of the stone type family.
+	 * @param base The base block family.
+	 * @param mossy The mossy block family.
+	 * @param overgrown The overgrown block family.
+	 * @param bronze The bronze block family.
+	 * @param mossyBronze The mossy bronze block family.
+	 * @param overgrownBronze The overgrown bronze block family.
+	 * @param silver The silver block family.
+	 * @param mossySilver The mossy silver block family.
+	 * @param overgrownSilver The overgrown silver block family.
+	 * @param gold The gold block family.
+	 * @param mossyGold The mossy gold block family.
+	 * @param overgrownGold The overgrown gold block family.
+	 * @param cracked The cracked block family.
+	 * @param mossyCracked The mossy cracked block family.
+	 * @param overgrownCracked The overgrown cracked block family.
+	 * @param crackedBronze The cracked bronze block family.
+	 * @param crackedMossyBronze The cracked mossy bronze block family.
+	 * @param crackedOvergrownBronze The cracked overgrown bronze block family.
+	 * @param crackedSilver The cracked silver block family.
+	 * @param crackedMossySilver The cracked mossy silver block family.
+	 * @param crackedOvergrownSilver The cracked overgrown silver block family.
+	 * @param crackedGold The cracked gold block family.
+	 * @param crackedMossyGold The cracked mossy gold block family.
+	 * @param crackedOvergrownGold The cracked overgrown gold block family.
+	 */
+	private void generateStoneTypeDecorationCrafting(RecipeExporter exporter, String familyName,
+			BlockFamily base, BlockFamily mossy, BlockFamily overgrown,
+			BlockFamily bronze, BlockFamily mossyBronze, BlockFamily overgrownBronze,
+			BlockFamily silver, BlockFamily mossySilver, BlockFamily overgrownSilver,
+			BlockFamily gold, BlockFamily mossyGold, BlockFamily overgrownGold,
+			BlockFamily cracked, BlockFamily mossyCracked, BlockFamily overgrownCracked,
+			BlockFamily crackedBronze, BlockFamily crackedMossyBronze, BlockFamily crackedOvergrownBronze,
+			BlockFamily crackedSilver, BlockFamily crackedMossySilver, BlockFamily crackedOvergrownSilver,
+			BlockFamily crackedGold, BlockFamily crackedMossyGold, BlockFamily crackedOvergrownGold) {
+		createOvergrownBlockFamilyCrafting(exporter, base, mossy, overgrown, StoneTypeVariants.OVERGROWN_STONE, familyName);
+		createOvergrownBlockFamilyCrafting(exporter, bronze, mossyBronze, overgrownBronze,
+				StoneTypeVariants.OVERGROWN_BRONZE_STONE, familyName);
+		createOvergrownBlockFamilyCrafting(exporter, silver, mossySilver, overgrownSilver,
+				StoneTypeVariants.OVERGROWN_SILVER_STONE, familyName);
+		createOvergrownBlockFamilyCrafting(exporter, gold, mossyGold, overgrownGold,
+				StoneTypeVariants.OVERGROWN_GOLD_STONE, familyName);
+		createOvergrownBlockFamilyCrafting(exporter, cracked, mossyCracked, overgrownCracked,
+				StoneTypeVariants.CRACKED_OVERGROWN_STONE, familyName);
+		createOvergrownBlockFamilyCrafting(exporter, crackedBronze, crackedMossyBronze, crackedOvergrownBronze,
+				StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, familyName);
+		createOvergrownBlockFamilyCrafting(exporter, crackedSilver, crackedMossySilver, crackedOvergrownSilver,
+				StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, familyName);
+		createOvergrownBlockFamilyCrafting(exporter, crackedGold, crackedMossyGold, crackedOvergrownGold,
+				StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, familyName);
+
+		createCrackedBlockFamilyCracking(exporter, base, cracked, StoneTypeVariants.CRACKED_STONE, familyName);
+		createCrackedBlockFamilyCracking(exporter, mossy, mossyCracked, StoneTypeVariants.CRACKED_MOSSY_STONE,
+				familyName);
+		createCrackedBlockFamilyCracking(exporter, overgrown, overgrownCracked, StoneTypeVariants.CRACKED_OVERGROWN_STONE,
+				familyName);
+		createCrackedBlockFamilyCracking(exporter, bronze, crackedBronze, StoneTypeVariants.CRACKED_BRONZE_STONE,
+				familyName);
+		createCrackedBlockFamilyCracking(exporter, mossyBronze, crackedMossyBronze, StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE,
+				familyName);
+		createCrackedBlockFamilyCracking(exporter, overgrownBronze, crackedOvergrownBronze,
+				StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, familyName);
+		createCrackedBlockFamilyCracking(exporter, silver, crackedSilver, StoneTypeVariants.CRACKED_SILVER_STONE,
+				familyName);
+		createCrackedBlockFamilyCracking(exporter, mossySilver, crackedMossySilver, StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE,
+				familyName);
+		createCrackedBlockFamilyCracking(exporter, overgrownSilver, crackedOvergrownSilver,
+				StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, familyName);
+		createCrackedBlockFamilyCracking(exporter, gold, crackedGold, StoneTypeVariants.CRACKED_GOLD_STONE,
+				familyName);
+		createCrackedBlockFamilyCracking(exporter, mossyGold, crackedMossyGold, StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE,
+				familyName);
+		createCrackedBlockFamilyCracking(exporter, overgrownGold, crackedOvergrownGold,
+				StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, familyName);
+
+		createBlockFamilyOrnamentCrafting(exporter, base, bronze, ModItems.BRONZE_INGOT,
+				StoneTypeVariants.BRONZE_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, mossy, mossyBronze, ModItems.BRONZE_INGOT,
+				StoneTypeVariants.MOSSY_BRONZE_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, overgrown, overgrownBronze, ModItems.BRONZE_INGOT,
+				StoneTypeVariants.OVERGROWN_BRONZE_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, cracked, crackedBronze, ModItems.BRONZE_INGOT,
+				StoneTypeVariants.CRACKED_BRONZE_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, mossyCracked, crackedMossyBronze, ModItems.BRONZE_INGOT,
+				StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, overgrownCracked, crackedOvergrownBronze, ModItems.BRONZE_INGOT,
+				StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, familyName);
+
+		createBlockFamilyOrnamentCrafting(exporter, base, silver, Items.DIAMOND,
+				StoneTypeVariants.SILVER_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, mossy, mossySilver, Items.DIAMOND,
+				StoneTypeVariants.MOSSY_SILVER_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, overgrown, overgrownSilver, Items.DIAMOND,
+				StoneTypeVariants.OVERGROWN_SILVER_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, cracked, crackedSilver, Items.DIAMOND,
+				StoneTypeVariants.CRACKED_SILVER_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, mossyCracked, crackedMossySilver, Items.DIAMOND,
+				StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, overgrownCracked, crackedOvergrownSilver, Items.DIAMOND,
+				StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, familyName);
+
+		createBlockFamilyOrnamentCrafting(exporter, base, gold, Items.GOLD_INGOT,
+				StoneTypeVariants.GOLD_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, mossy, mossyGold, Items.GOLD_INGOT,
+				StoneTypeVariants.MOSSY_GOLD_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, overgrown, overgrownGold, Items.GOLD_INGOT,
+				StoneTypeVariants.OVERGROWN_GOLD_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, cracked, crackedGold, Items.GOLD_INGOT,
+				StoneTypeVariants.CRACKED_GOLD_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, mossyCracked, crackedMossyGold, Items.GOLD_INGOT,
+				StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE, familyName);
+		createBlockFamilyOrnamentCrafting(exporter, overgrownCracked, crackedOvergrownGold, Items.GOLD_INGOT,
+				StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, familyName);
+	}
+
+	/**
+	 * Creates crafting recipes for a mossy block family.
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param normal The normal block family.
+	 * @param mossy The mossy block family.
+	 * @param normalVariant The stone type variant for the normal blocks.
+	 * @param mossyVariant The stone type variant for the mossy blocks.
+	 * @param familyName The name of the block family.
+	 */
+	private void createMossyBlockFamilyCrafting(RecipeExporter exporter, BlockFamily normal, BlockFamily mossy,
+			StoneTypeVariants normalVariant, StoneTypeVariants mossyVariant, String familyName) {
+		createModMossyRecipe(exporter, normal.getBaseBlock(), mossy.getBaseBlock(),
+				createModStoneRecipeName(familyName, familyName, normalVariant, mossyVariant, "_ct"));
+		if(mossy.getVariant(BlockFamily.Variant.STAIRS) != null) {
+			createModMossyRecipe(exporter, normal.getVariant(BlockFamily.Variant.STAIRS),
+					mossy.getVariant(BlockFamily.Variant.STAIRS),
+					createModStoneRecipeName(familyName + "_stairs", familyName + "_stairs", normalVariant,
+							mossyVariant, "_ct"));
+		}
+		if(mossy.getVariant(BlockFamily.Variant.SLAB) != null) {
+			createModMossyRecipe(exporter, normal.getVariant(BlockFamily.Variant.SLAB),
+					mossy.getVariant(BlockFamily.Variant.SLAB),
+					createModStoneRecipeName(familyName + "_slab", familyName + "_slab", normalVariant,
+							mossyVariant, "_ct"));
+		}
+		if(mossy.getVariant(BlockFamily.Variant.WALL) != null) {
+			createModMossyRecipe(exporter, normal.getVariant(BlockFamily.Variant.WALL),
+					mossy.getVariant(BlockFamily.Variant.WALL),
+					createModStoneRecipeName(familyName + "_wall", familyName + "_wall", normalVariant,
+							mossyVariant, "_ct"));
+		}
+		if(mossy.getVariant(BlockFamily.Variant.BUTTON) != null) {
+			createModMossyRecipe(exporter, normal.getVariant(BlockFamily.Variant.BUTTON),
+					mossy.getVariant(BlockFamily.Variant.BUTTON),
+					createModStoneRecipeName(familyName + "_button", familyName + "_button", normalVariant,
+							mossyVariant, "_ct"));
+		}
+		if(mossy.getVariant(BlockFamily.Variant.PRESSURE_PLATE) != null) {
+			createModMossyRecipe(exporter, normal.getVariant(BlockFamily.Variant.PRESSURE_PLATE),
+					mossy.getVariant(BlockFamily.Variant.PRESSURE_PLATE),
+					createModStoneRecipeName(familyName + "_pressure_plate", familyName + "_pressure_plate", normalVariant,
+							mossyVariant, "_ct"));
+		}
+	}
+
+	/**
+	 * Creates crafting recipes for overgrown block families.
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param normal The normal block family.
+	 * @param mossy The mossy block family.
+	 * @param overgrown The overgrown block family.
+	 * @param variant The stone type variant.
+	 * @param familyName The name of the block family.
+	 */
+	private void createOvergrownBlockFamilyCrafting(RecipeExporter exporter, BlockFamily normal, BlockFamily mossy,
+			BlockFamily overgrown, StoneTypeVariants variant, String familyName) {
+		createMossyBlockFamilyCrafting(exporter, normal, mossy, StoneTypeVariants.getBaseFromMossyOrOvergrown(variant),
+				StoneTypeVariants.getMossyFromOvergrown(variant), familyName);
+		createMossyBlockFamilyCrafting(exporter, mossy, overgrown, StoneTypeVariants.getMossyFromOvergrown(variant),
+				variant, familyName);
+
+		createModOvergrownRecipe(exporter, normal.getBaseBlock(), overgrown.getBaseBlock(),
+				createModStoneRecipeName(familyName, familyName, variant,
+						StoneTypeVariants.getBaseFromMossyOrOvergrown(variant), "_ct"));
+		if(overgrown.getVariant(BlockFamily.Variant.STAIRS) != null) {
+			createModOvergrownRecipe(exporter, normal.getVariant(BlockFamily.Variant.STAIRS),
+					overgrown.getVariant(BlockFamily.Variant.STAIRS),
+					createModStoneRecipeName(familyName + "_stairs", familyName + "_stairs", variant,
+							StoneTypeVariants.getBaseFromMossyOrOvergrown(variant), "_ct"));
+		}
+		if(overgrown.getVariant(BlockFamily.Variant.SLAB) != null) {
+			createModOvergrownRecipe(exporter, normal.getVariant(BlockFamily.Variant.SLAB),
+					overgrown.getVariant(BlockFamily.Variant.SLAB),
+					createModStoneRecipeName(familyName + "_slab", familyName + "_slab", variant,
+							StoneTypeVariants.getBaseFromMossyOrOvergrown(variant), "_ct"));
+		}
+		if(overgrown.getVariant(BlockFamily.Variant.WALL) != null) {
+			createModOvergrownRecipe(exporter, normal.getVariant(BlockFamily.Variant.WALL),
+					overgrown.getVariant(BlockFamily.Variant.WALL),
+					createModStoneRecipeName(familyName + "_wall", familyName + "_wall", variant,
+							StoneTypeVariants.getBaseFromMossyOrOvergrown(variant), "_ct"));
+		}
+		if(overgrown.getVariant(BlockFamily.Variant.BUTTON) != null) {
+			createModOvergrownRecipe(exporter, normal.getVariant(BlockFamily.Variant.BUTTON),
+					overgrown.getVariant(BlockFamily.Variant.BUTTON),
+					createModStoneRecipeName(familyName + "_button", familyName + "_button", variant,
+							StoneTypeVariants.getBaseFromMossyOrOvergrown(variant), "_ct"));
+		}
+		if(overgrown.getVariant(BlockFamily.Variant.PRESSURE_PLATE) != null) {
+			createModOvergrownRecipe(exporter, normal.getVariant(BlockFamily.Variant.PRESSURE_PLATE),
+					overgrown.getVariant(BlockFamily.Variant.PRESSURE_PLATE),
+					createModStoneRecipeName(familyName + "_pressure_plate", familyName + "_pressure_plate", variant,
+							StoneTypeVariants.getBaseFromMossyOrOvergrown(variant), "_ct"));
+		}
+	}
+
+	/**
+	 * Creates crafting recipes for cracked variants of a block family.
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param normal The normal block family.
+	 * @param cracked The cracked block family.
+	 * @param variant The stone type variant.
+	 * @param familyName The name of the block family.
+	 */
+	private void createCrackedBlockFamilyCracking(RecipeExporter exporter, BlockFamily normal, BlockFamily cracked,
+			StoneTypeVariants variant, String familyName) {
+		createModCrackedRecipe(exporter, normal.getBaseBlock(), cracked.getBaseBlock(),
+				createModStoneRecipeName(familyName, familyName, variant,
+						StoneTypeVariants.getBaseFromCracked(variant), "_ct"));
+		if(cracked.getVariant(BlockFamily.Variant.STAIRS) != null) {
+			createModCrackedRecipe(exporter, normal.getVariant(BlockFamily.Variant.STAIRS),
+					cracked.getVariant(BlockFamily.Variant.STAIRS),
+					createModStoneRecipeName(familyName + "_stairs", familyName + "_stairs", variant,
+							StoneTypeVariants.getBaseFromCracked(variant), "_ct"));
+		}
+		if(cracked.getVariant(BlockFamily.Variant.SLAB) != null) {
+			createModCrackedRecipe(exporter, normal.getVariant(BlockFamily.Variant.SLAB),
+					cracked.getVariant(BlockFamily.Variant.SLAB),
+					createModStoneRecipeName(familyName + "_slab", familyName + "_slab", variant,
+							StoneTypeVariants.getBaseFromCracked(variant), "_ct"));
+		}
+		if(cracked.getVariant(BlockFamily.Variant.WALL) != null) {
+			createModCrackedRecipe(exporter, normal.getVariant(BlockFamily.Variant.WALL),
+					cracked.getVariant(BlockFamily.Variant.WALL),
+					createModStoneRecipeName(familyName + "_wall", familyName + "_wall", variant,
+							StoneTypeVariants.getBaseFromCracked(variant), "_ct"));
+		}
+	}
+
+	/**
+	 * Creates crafting recipes to ornament a block family
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param normal The normal block family.
+	 * @param ornamented The ornamented block family.
+	 * @param ornament The item used as an ornament.
+	 * @param variant The stone type variant.
+	 * @param familyName The name of the block family.
+	 */
+	private void createBlockFamilyOrnamentCrafting(RecipeExporter exporter, BlockFamily normal, BlockFamily ornamented,
+			Item ornament, StoneTypeVariants variant, String familyName) {
+		createModOrnamentedRecipe(exporter, normal.getBaseBlock(), ornament, ornamented.getBaseBlock(),
+				createModStoneRecipeName(familyName, familyName, variant, StoneTypeVariants.getBaseFromOrnamented(variant), "_ct"));
+		if(ornamented.getVariant(BlockFamily.Variant.STAIRS) != null) {
+			createModOrnamentedRecipe(exporter, normal.getVariant(BlockFamily.Variant.STAIRS), ornament, ornamented.getVariant(BlockFamily.Variant.STAIRS),
+					createModStoneRecipeName(familyName + "_stairs", familyName + "_stairs", variant, StoneTypeVariants.getBaseFromOrnamented(variant), "_ct"));
+		}
+		if(ornamented.getVariant(BlockFamily.Variant.SLAB) != null) {
+			createModOrnamentedRecipe(exporter, normal.getVariant(BlockFamily.Variant.SLAB), ornament, ornamented.getVariant(BlockFamily.Variant.SLAB),
+					createModStoneRecipeName(familyName + "_slab", familyName + "_slab", variant, StoneTypeVariants.getBaseFromOrnamented(variant), "_ct"));
+		}
+		if(ornamented.getVariant(BlockFamily.Variant.WALL) != null) {
+			createModOrnamentedRecipe(exporter, normal.getVariant(BlockFamily.Variant.WALL), ornament, ornamented.getVariant(BlockFamily.Variant.WALL),
+					createModStoneRecipeName(familyName + "_wall", familyName + "_wall", variant, StoneTypeVariants.getBaseFromOrnamented(variant), "_ct"));
+		}
+	}
+
+	/**
+	 * Creates crafting recipes for decorating pillars with various stone type variants.
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param blocks A map of stone type variants to their corresponding pillar blocks.
+	 * @param stoneTypeName The name of the stone type.
+	 */
+	private void createBlockDecorating(RecipeExporter exporter, HashMap<StoneTypeVariants, Block> blocks,
+			String stoneTypeName, String blockName) {
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.STONE), blocks.get(StoneTypeVariants.CRACKED_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_STONE, StoneTypeVariants.STONE, "_ct"));
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_STONE, StoneTypeVariants.MOSSY_STONE, "_ct"));
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.OVERGROWN_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_STONE, StoneTypeVariants.OVERGROWN_STONE, "_ct"));
+
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.BRONZE_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_BRONZE_STONE, StoneTypeVariants.BRONZE_STONE, "_ct"));
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_BRONZE_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE, StoneTypeVariants.MOSSY_BRONZE_STONE, "_ct"));
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.OVERGROWN_BRONZE_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, StoneTypeVariants.OVERGROWN_BRONZE_STONE, "_ct"));
+
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.SILVER_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_SILVER_STONE, StoneTypeVariants.SILVER_STONE, "_ct"));
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_SILVER_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, StoneTypeVariants.MOSSY_SILVER_STONE, "_ct"));
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.OVERGROWN_SILVER_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, StoneTypeVariants.OVERGROWN_SILVER_STONE, "_ct"));
+
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.GOLD_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_GOLD_STONE, StoneTypeVariants.GOLD_STONE, "_ct"));
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_GOLD_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE, StoneTypeVariants.MOSSY_GOLD_STONE, "_ct"));
+		createModCrackedRecipe(exporter, blocks.get(StoneTypeVariants.OVERGROWN_GOLD_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, "cracked_" + stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, StoneTypeVariants.OVERGROWN_GOLD_STONE, "_ct"));
+
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.STONE), blocks.get(StoneTypeVariants.MOSSY_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.MOSSY_STONE, StoneTypeVariants.STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.BRONZE_STONE),
+				blocks.get(StoneTypeVariants.MOSSY_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.MOSSY_BRONZE_STONE, StoneTypeVariants.BRONZE_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.SILVER_STONE),
+				blocks.get(StoneTypeVariants.MOSSY_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.MOSSY_SILVER_STONE, StoneTypeVariants.SILVER_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.GOLD_STONE),
+				blocks.get(StoneTypeVariants.MOSSY_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.MOSSY_GOLD_STONE, StoneTypeVariants.GOLD_STONE, "_ct"));
+
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_STONE, StoneTypeVariants.CRACKED_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_BRONZE_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE, StoneTypeVariants.CRACKED_BRONZE_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_SILVER_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, StoneTypeVariants.CRACKED_SILVER_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_GOLD_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE, StoneTypeVariants.CRACKED_GOLD_STONE, "_ct"));
+
+		createModOvergrownRecipe(exporter, blocks.get(StoneTypeVariants.STONE),
+				blocks.get(StoneTypeVariants.OVERGROWN_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_STONE, StoneTypeVariants.STONE, "_ct"));
+		createModOvergrownRecipe(exporter, blocks.get(StoneTypeVariants.BRONZE_STONE),
+				blocks.get(StoneTypeVariants.OVERGROWN_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_BRONZE_STONE, StoneTypeVariants.BRONZE_STONE, "_ct"));
+		createModOvergrownRecipe(exporter, blocks.get(StoneTypeVariants.SILVER_STONE),
+				blocks.get(StoneTypeVariants.OVERGROWN_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_SILVER_STONE, StoneTypeVariants.SILVER_STONE, "_ct"));
+		createModOvergrownRecipe(exporter, blocks.get(StoneTypeVariants.GOLD_STONE),
+				blocks.get(StoneTypeVariants.OVERGROWN_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_GOLD_STONE, StoneTypeVariants.GOLD_STONE, "_ct"));
+
+		createModOvergrownRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_STONE, StoneTypeVariants.CRACKED_STONE, "_ct"));
+		createModOvergrownRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_BRONZE_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, StoneTypeVariants.CRACKED_BRONZE_STONE, "_ct"));
+		createModOvergrownRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_SILVER_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, StoneTypeVariants.CRACKED_SILVER_STONE, "_ct"));
+		createModOvergrownRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_GOLD_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, StoneTypeVariants.CRACKED_GOLD_STONE, "_ct"));
+
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_STONE),
+				blocks.get(StoneTypeVariants.OVERGROWN_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_STONE, StoneTypeVariants.MOSSY_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_BRONZE_STONE),
+				blocks.get(StoneTypeVariants.OVERGROWN_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_BRONZE_STONE, StoneTypeVariants.MOSSY_BRONZE_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_SILVER_STONE),
+				blocks.get(StoneTypeVariants.OVERGROWN_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_SILVER_STONE, StoneTypeVariants.MOSSY_SILVER_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_GOLD_STONE),
+				blocks.get(StoneTypeVariants.OVERGROWN_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_GOLD_STONE, StoneTypeVariants.MOSSY_GOLD_STONE, "_ct"));
+
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_MOSSY_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_STONE, StoneTypeVariants.CRACKED_MOSSY_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, "_ct"));
+		createModMossyRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE),
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE, "_ct"));
+
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.STONE), ModItems.BRONZE_INGOT,
+				blocks.get(StoneTypeVariants.BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.BRONZE_STONE, StoneTypeVariants.STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_STONE), ModItems.BRONZE_INGOT,
+				blocks.get(StoneTypeVariants.MOSSY_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.MOSSY_BRONZE_STONE, StoneTypeVariants.MOSSY_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.OVERGROWN_STONE), ModItems.BRONZE_INGOT,
+				blocks.get(StoneTypeVariants.OVERGROWN_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_BRONZE_STONE, StoneTypeVariants.OVERGROWN_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_STONE), ModItems.BRONZE_INGOT,
+				blocks.get(StoneTypeVariants.CRACKED_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_BRONZE_STONE, StoneTypeVariants.CRACKED_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_MOSSY_STONE), ModItems.BRONZE_INGOT,
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE, StoneTypeVariants.CRACKED_MOSSY_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_STONE), ModItems.BRONZE_INGOT,
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, StoneTypeVariants.CRACKED_OVERGROWN_STONE, "_ct"));
+
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.STONE), Items.DIAMOND,
+				blocks.get(StoneTypeVariants.SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.SILVER_STONE, StoneTypeVariants.STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_STONE), Items.DIAMOND,
+				blocks.get(StoneTypeVariants.MOSSY_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.MOSSY_SILVER_STONE, StoneTypeVariants.MOSSY_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.OVERGROWN_STONE), Items.DIAMOND,
+				blocks.get(StoneTypeVariants.OVERGROWN_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_SILVER_STONE, StoneTypeVariants.OVERGROWN_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_STONE), Items.DIAMOND,
+				blocks.get(StoneTypeVariants.CRACKED_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_SILVER_STONE, StoneTypeVariants.CRACKED_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_MOSSY_STONE), Items.DIAMOND,
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, StoneTypeVariants.CRACKED_MOSSY_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_STONE), Items.DIAMOND,
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, StoneTypeVariants.CRACKED_OVERGROWN_STONE, "_ct"));
+
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.STONE), Items.GOLD_INGOT,
+				blocks.get(StoneTypeVariants.GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.GOLD_STONE, StoneTypeVariants.STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_STONE), Items.GOLD_INGOT,
+				blocks.get(StoneTypeVariants.MOSSY_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.MOSSY_GOLD_STONE, StoneTypeVariants.MOSSY_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.OVERGROWN_STONE), Items.GOLD_INGOT,
+				blocks.get(StoneTypeVariants.OVERGROWN_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.OVERGROWN_GOLD_STONE, StoneTypeVariants.OVERGROWN_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_STONE), Items.GOLD_INGOT,
+				blocks.get(StoneTypeVariants.CRACKED_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_GOLD_STONE, StoneTypeVariants.CRACKED_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_MOSSY_STONE), Items.GOLD_INGOT,
+				blocks.get(StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE, StoneTypeVariants.CRACKED_MOSSY_STONE, "_ct"));
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_STONE), Items.GOLD_INGOT,
+				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE),
+				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
+						StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, StoneTypeVariants.CRACKED_OVERGROWN_STONE, "_ct"));
+	}
+
+	/**
+	 * Generates crafting recipes for smooth stone slabs.
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param blocks A map of stone type variants to their corresponding blocks.
+	 * @param slabs A map of stone type variants to their corresponding slab blocks.
+	 * @param stoneTypeName The name of the stone type.
+	 */
+	private void generateSmoothCrafting(RecipeExporter exporter, HashMap<StoneTypeVariants, Block> blocks,
+			HashMap<StoneTypeVariants, Block> slabs, String stoneTypeName) {
+		blocks.forEach((key, value) -> {
+			createModSlabRecipe(exporter, value, slabs.get(key),
+					createModStoneRecipeName("smooth_" + stoneTypeName + "_slab",
+							"smooth_" + stoneTypeName, key, "_ct"));
+		});
+	}
+
+	/**
+	 * Generates stone cutting recipes for smooth stone slabs.
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param blocks A map of stone type variants to their corresponding blocks.
+	 * @param slabs A map of stone type variants to their corresponding slab blocks.
+	 * @param stoneTypeName The name of the stone type.
+	 */
+	private void generateSmoothStoneCutting(RecipeExporter exporter, HashMap<StoneTypeVariants, Block> blocks,
+			HashMap<StoneTypeVariants, Block> slabs, String stoneTypeName) {
+		blocks.forEach((key, value) -> {
+			offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS, value, slabs.get(key), 2,
+					createModStoneRecipeName("smooth_" + stoneTypeName + "_slab",
+							"smooth_" + stoneTypeName, key, "_sc"), exporter);
+		});
+	}
+
+	/**
 	 * Creates a chiseled block recipe. The difference between this and the vanilla method, is that the
 	 * .json-filename can be defined.
 	 *
@@ -1116,54 +1758,79 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	}
 
 	/**
-	* Creates a shapeless crafting recipe for a mossy variant of a block.
-	*
-	* @param input The base block to be combined with a vine to create the mossy variant.
-	* @param output The resulting mossy block.
-	* @param exporter The exporter to which the recipe will be offered.
-	*/
-	private void createMossyRecipe(Block input, Block output, RecipeExporter exporter) {
-	 ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
-	         .input(input)
-	         .input(Items.VINE)
-	         .criterion(hasItem(input), conditionsFromItem(input))
-	         .offerTo(exporter, new Identifier(getRecipeName(output) + "_crafting"));
+	 * Creates a crafting recipe for a mossy block from the given input block.
+	 * The difference between this and the vanilla method is that the
+	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block (mossy block) for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
+	private void createModMossyRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
+		ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
+		     .input(input)
+		     .input(Items.VINE)
+		     .criterion(hasItem(input), conditionsFromItem(input))
+		     .offerTo(exporter, recipePath);
 	}
 
 	/**
-	* Creates a shapeless crafting recipe for an overgrown variant of a block.
-	*
-	* @param input The base block to be combined with vines to create the overgrown variant.
-	* @param output The resulting overgrown block.
-	* @param exporter The exporter to which the recipe will be offered.
-	*/
-	private void createOvergrownRecipe(Block input, Block output, RecipeExporter exporter) {
-	ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
-	    .input(input)
-	    .input(Items.VINE)
-	    .input(Items.VINE)
-	    .criterion(hasItem(input), conditionsFromItem(input))
-	    .offerTo(exporter, new Identifier(getRecipeName(output) + "_doublevines"));
+	 * Creates a crafting recipe for an overgrown block.
+	 * The .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block (overgrown) for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
+	private void createModOvergrownRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
+		ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
+		    .input(input)
+		    .input(Items.VINE)
+		    .input(Items.VINE)
+		    .criterion(hasItem(input), conditionsFromItem(input))
+		    .offerTo(exporter, recipePath);
 	}
 
 	/**
-	* Creates a crafting recipe for an ornamented block.
-	*
-	* @param inputBlock The base block to be ornamented.
-	* @param inputItem The item used for ornamentation.
-	* @param output The resulting ornamented block.
-	* @param exporter The exporter to which the recipe will be offered.
-	*/
-	private void createOrnamentedRecipe(Block inputBlock, Item inputItem, Block output, RecipeExporter exporter) {
-	 ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
-	         .pattern("OOO")
-	         .pattern("O#O")
-	         .pattern("OOO")
-	         .input('#', inputBlock)
-	         .input('O', inputItem)
-	         .criterion(hasItem(inputItem), conditionsFromItem(inputItem))
-	         .criterion(hasItem(inputBlock), conditionsFromItem(inputBlock))
-	         .offerTo(exporter, new Identifier(getRecipeName(output) + "_crafting"));
+	 * Creates a smelting recipe for a cracked block variant.
+	 * The difference between this and the vanilla method is that the
+	 * .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param input The input block for the recipe.
+	 * @param output The output block (cracked variant) for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
+	private void createModCrackedRecipe(RecipeExporter exporter, Block input, Block output, String recipePath) {
+		CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(input), RecipeCategory.BUILDING_BLOCKS, output,
+						0.1f, 200)
+				.criterion(hasItem(input), conditionsFromItem(input))
+				.offerTo(exporter, recipePath);
+	}
+
+	/**
+	 * Creates a crafting recipe for an ornamented block.
+	 * The .json-filename can be defined.
+	 *
+	 * @param exporter The exporter to offer the recipe to.
+	 * @param inputBlock The input block for the recipe.
+	 * @param inputItem The item used as an ornament.
+	 * @param output The output block for the recipe.
+	 * @param recipePath The path for the recipe.
+	 */
+	private void createModOrnamentedRecipe(RecipeExporter exporter, Block inputBlock, Item inputItem, Block output,
+			String recipePath) {
+		 ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
+         .pattern("OOO")
+         .pattern("O#O")
+         .pattern("OOO")
+         .input('#', inputBlock)
+         .input('O', inputItem)
+         .criterion(hasItem(inputItem), conditionsFromItem(inputItem))
+         .criterion(hasItem(inputBlock), conditionsFromItem(inputBlock))
+         .offerTo(exporter, recipePath);
 	}
 
 	/**
@@ -1196,6 +1863,23 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	private String createModStoneRecipeName(String outputName, String inputName, StoneTypeVariants variant, String recipeType) {
 		String outputPath = StoneTypeVariants.getRecipePath(variant, outputName);
 		String inputPath = StoneTypeVariants.getRecipePath(variant, inputName);
+		return outputPath + "_from_" + inputPath + recipeType;
+	}
+
+	/**
+	 * Creates a stone cutting recipe name based on various attributes.
+	 *
+	 * @param outputName The name of the output block.
+	 * @param inputName The name of the input block.
+	 * @param outputVariant The variant of the output block.
+	 * @param inputVariant The variant of the input block.
+	 * @param recipeType The type of recipe ("_sc" for stonecutting, "_ct" for crafting grid, "_f" for furnace).
+	 * @return The generated stone cutting recipe name.
+	 */
+	private String createModStoneRecipeName(String outputName, String inputName, StoneTypeVariants outputVariant,
+			StoneTypeVariants inputVariant, String recipeType) {
+		String outputPath = StoneTypeVariants.getRecipePath(outputVariant, outputName);
+		String inputPath = StoneTypeVariants.getRecipePath(inputVariant, inputName);
 		return outputPath + "_from_" + inputPath + recipeType;
 	}
 

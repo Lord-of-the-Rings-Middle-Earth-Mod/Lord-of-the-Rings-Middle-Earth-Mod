@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cracked_bronze_blueslate_pavement": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:cracked_bronze_blueslate_pavement"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:c_o_b_blueslate_pavement_from_c_b_blueslate_pavement_ct"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cracked_bronze_blueslate_pavement"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:c_o_b_blueslate_pavement_from_c_b_blueslate_pavement_ct"
+    ]
+  },
+  "sends_telemetry_event": false
+}

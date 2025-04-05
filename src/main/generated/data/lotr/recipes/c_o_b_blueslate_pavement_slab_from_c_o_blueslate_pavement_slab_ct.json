@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cracked_overgrown_blueslate_pavement_slab"
+    },
+    "O": {
+      "item": "lotr:bronze_ingot"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "O#O",
+    "OOO"
+  ],
+  "result": {
+    "item": "lotr:cracked_overgrown_bronze_blueslate_pavement_slab"
+  },
+  "show_notification": true
+}

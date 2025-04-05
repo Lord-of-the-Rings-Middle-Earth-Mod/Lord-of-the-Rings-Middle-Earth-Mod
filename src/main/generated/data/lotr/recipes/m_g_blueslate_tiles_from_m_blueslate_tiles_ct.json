@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:mossy_blueslate_tiles"
+    },
+    "O": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "O#O",
+    "OOO"
+  ],
+  "result": {
+    "item": "lotr:mossy_gold_blueslate_tiles"
+  },
+  "show_notification": true
+}

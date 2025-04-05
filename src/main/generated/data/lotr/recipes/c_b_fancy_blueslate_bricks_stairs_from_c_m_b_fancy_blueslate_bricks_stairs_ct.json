@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "lotr:cracked_bronze_fancy_blueslate_bricks_stairs"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "lotr:cracked_mossy_bronze_fancy_blueslate_bricks_stairs"
+  }
+}

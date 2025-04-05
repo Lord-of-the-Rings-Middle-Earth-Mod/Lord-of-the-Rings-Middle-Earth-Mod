@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:mossy_fancy_blueslate_bricks_slab"
+    },
+    "O": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "O#O",
+    "OOO"
+  ],
+  "result": {
+    "item": "lotr:mossy_silver_fancy_blueslate_bricks_slab"
+  },
+  "show_notification": true
+}

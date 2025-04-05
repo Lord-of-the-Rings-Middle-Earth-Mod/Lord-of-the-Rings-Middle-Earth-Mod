@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "lotr:cracked_bronze_smooth_blueslate"
+  },
+  "result": "lotr:cracked_bronze_smooth_blueslate_slab"
+}

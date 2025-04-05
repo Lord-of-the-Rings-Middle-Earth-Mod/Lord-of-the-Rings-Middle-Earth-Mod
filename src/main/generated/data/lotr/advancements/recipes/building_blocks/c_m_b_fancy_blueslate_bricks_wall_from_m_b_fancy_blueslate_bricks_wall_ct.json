@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mossy_bronze_fancy_blueslate_bricks_wall": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:mossy_bronze_fancy_blueslate_bricks_wall"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:c_m_b_fancy_blueslate_bricks_wall_from_m_b_fancy_blueslate_bricks_wall_ct"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mossy_bronze_fancy_blueslate_bricks_wall"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:c_m_b_fancy_blueslate_bricks_wall_from_m_b_fancy_blueslate_bricks_wall_ct"
+    ]
+  },
+  "sends_telemetry_event": false
+}

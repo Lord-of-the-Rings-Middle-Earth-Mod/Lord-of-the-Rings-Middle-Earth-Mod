@@ -3,7 +3,9 @@ package me.anedhel.lotr.item;
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.block.*;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -20,17 +22,7 @@ public class ModItemGroups {
             FabricItemGroup.builder()
                     .displayName(Text.translatableWithFallback("itemgroup.lotr_stone", "LotR Stones"))
                     .icon(() -> new ItemStack(ModStoneBlocks.BLUESLATE)).entries(((displayContext, entries) -> {
-                        //entries.addAll(ModStoneType.ANDESITE.getItemGroupList());
-                        //entries.addAll(ModStoneType.POLISHED_ANDESITE.getItemGroupList());
-
-                        //entries.addAll(ModStoneType.DIORITE.getItemGroupList());
-                        //entries.addAll(ModStoneType.POLISHED_DIORITE.getItemGroupList());
-
-                        //entries.addAll(ModStoneType.GRANITE.getItemGroupList());
-                        //entries.addAll(ModStoneType.POLISHED_GRANITE.getItemGroupList());
-
-                        entries.addAll(ModStoneType.BLUESLATE.getItemGroupList());
-                        //entries.addAll(ModStoneType.CHALK.getItemGroupList());
+                        entries.addAll(ModStoneType.BLUESLATE.getLotRStoneItemGroupList());
                     })).build());
 
     public static final ItemGroup LOTR_WOOD = Registry.register(Registries.ITEM_GROUP,
@@ -124,5 +116,11 @@ public class ModItemGroups {
      */
     public static void registerModItemGroups () {
         LordOfTheRingsMiddleEarthMod.LOGGER.info("Registering Mod ItemGroups for " + LordOfTheRingsMiddleEarthMod.MOD_ID);
+
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(content -> {
+            for(ModStoneType stoneType : ModStoneType.values()) {
+                content.addAll(stoneType.getRedstoneItemGroupList());
+            }
+        });
     }
 }

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "lotr:gold_blueslate_brick_wall"
+    },
+    {
+      "item": "minecraft:vine"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "lotr:overgrown_gold_blueslate_brick_wall"
+  }
+}

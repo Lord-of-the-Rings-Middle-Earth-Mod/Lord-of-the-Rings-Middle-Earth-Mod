@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cracked_overgrown_blueslate_brick_stairs"
+    },
+    "O": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "O#O",
+    "OOO"
+  ],
+  "result": {
+    "item": "lotr:cracked_overgrown_silver_blueslate_brick_stairs"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cracked_blueslate_tiles_stairs"
+    },
+    "O": {
+      "item": "lotr:bronze_ingot"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "O#O",
+    "OOO"
+  ],
+  "result": {
+    "item": "lotr:cracked_bronze_blueslate_tiles_stairs"
+  },
+  "show_notification": true
+}

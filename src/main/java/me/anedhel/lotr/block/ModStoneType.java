@@ -1,11 +1,13 @@
 package me.anedhel.lotr.block;
 
+import me.anedhel.lotr.block.custom.StoneTypeVariants;
 import net.minecraft.block.Block;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public enum ModStoneType {
@@ -1828,7 +1830,12 @@ public enum ModStoneType {
         this.name = name;
     }
 
-    public @NotNull List<ItemStack> getItemGroupList() {
+    /**
+     * Returns a list of all the blocks for the LotR Stone Itemgroup
+     *
+     * @return a list of all the blocks
+     */
+    public @NotNull List<ItemStack> getLotRStoneItemGroupList() {
         List<ItemStack> itemGroupList = new ArrayList<>();
 
         itemGroupList.addAll(blockFamilyList(stoneFamily));
@@ -2252,6 +2259,30 @@ public enum ModStoneType {
     }
 
     /**
+     * Returns a list of all the redstone-related blocks for the LotR Redstone Itemgroup.
+     *
+     * @return a list of all the redstone-related blocks
+     */
+    public @NotNull List<ItemStack> getRedstoneItemGroupList() {
+        List<ItemStack> itemGroupList = new ArrayList<>();
+
+        itemGroupList.add(new ItemStack(stoneButton));
+        itemGroupList.add(new ItemStack(stonePressurePlate));
+        itemGroupList.add(new ItemStack(mossyStoneButton));
+        itemGroupList.add(new ItemStack(mossyStonePressurePlate));
+		itemGroupList.add(new ItemStack(overgrownStoneButton));
+		itemGroupList.add(new ItemStack(overgrownStonePressurePlate));
+        itemGroupList.add(new ItemStack(cobbledButton));
+        itemGroupList.add(new ItemStack(cobbledPressurePlate));
+        itemGroupList.add(new ItemStack(mossyCobbledButton));
+        itemGroupList.add(new ItemStack(mossyCobbledPressurePlate));
+        itemGroupList.add(new ItemStack(overgrownCobbledButton));
+        itemGroupList.add(new ItemStack(overgrownCobbledPressurePlate));
+
+        return itemGroupList;
+    }
+
+    /**
      * This Method is used to add all variants of a Block Family to a List for the itemGroupList
      * @param family The Block Family which is to be put into a list
      * @return A List of ItemStack Objects containing all variants of the BlockFamily
@@ -2263,6 +2294,154 @@ public enum ModStoneType {
             familyList.add(new ItemStack(block));
         }
         return familyList;
+    }
+
+    /**
+     * Returns a map of all pillar blocks associated with their respective stone type variants.
+     *
+     * @return a map where the keys are StoneTypeVariants and the values are the corresponding pillar blocks
+     */
+    public HashMap<StoneTypeVariants, Block> getPillarBlocks() {
+        HashMap pillarBlocks = new HashMap();
+
+        pillarBlocks.put(StoneTypeVariants.STONE, pillar);
+        pillarBlocks.put(StoneTypeVariants.MOSSY_STONE, mossyPillar);
+        pillarBlocks.put(StoneTypeVariants.OVERGROWN_STONE, overgrownPillar);
+        pillarBlocks.put(StoneTypeVariants.BRONZE_STONE, bronzePillar);
+        pillarBlocks.put(StoneTypeVariants.MOSSY_BRONZE_STONE, mossyBronzePillar);
+        pillarBlocks.put(StoneTypeVariants.OVERGROWN_BRONZE_STONE, overgrownBronzePillar);
+        pillarBlocks.put(StoneTypeVariants.SILVER_STONE, silverPillar);
+        pillarBlocks.put(StoneTypeVariants.MOSSY_SILVER_STONE, mossySilverPillar);
+        pillarBlocks.put(StoneTypeVariants.OVERGROWN_SILVER_STONE, overgrownSilverPillar);
+        pillarBlocks.put(StoneTypeVariants.GOLD_STONE, goldPillar);
+        pillarBlocks.put(StoneTypeVariants.MOSSY_GOLD_STONE, mossyGoldPillar);
+        pillarBlocks.put(StoneTypeVariants.OVERGROWN_GOLD_STONE, overgrownGoldPillar);
+
+        pillarBlocks.put(StoneTypeVariants.CRACKED_STONE, crackedPillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_MOSSY_STONE, crackedMossyPillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_OVERGROWN_STONE, crackedOvergrownPillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_BRONZE_STONE, crackedBronzePillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE, crackedMossyBronzePillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, crackedOvergrownBronzePillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_SILVER_STONE, crackedSilverPillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, crackedMossySilverPillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, crackedOvergrownSilverPillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_GOLD_STONE, crackedGoldPillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE, crackedMossyGoldPillar);
+        pillarBlocks.put(StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, crackedOvergrownGoldPillar);
+
+        return pillarBlocks;
+    }
+
+    /**
+     * Returns a map of all pillar slab blocks associated with their respective stone type variants.
+     *
+     * @return a map where the keys are StoneTypeVariants and the values are the corresponding pillar slab blocks
+     */
+    public HashMap<StoneTypeVariants, Block> getPillarSlabs() {
+        HashMap pillarSlabs = new HashMap();
+
+        pillarSlabs.put(StoneTypeVariants.STONE, pillarSlab);
+        pillarSlabs.put(StoneTypeVariants.MOSSY_STONE, mossyPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.OVERGROWN_STONE, overgrownPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.BRONZE_STONE, bronzePillarSlab);
+        pillarSlabs.put(StoneTypeVariants.MOSSY_BRONZE_STONE, mossyBronzePillarSlab);
+        pillarSlabs.put(StoneTypeVariants.OVERGROWN_BRONZE_STONE, overgrownBronzePillarSlab);
+        pillarSlabs.put(StoneTypeVariants.SILVER_STONE, silverPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.MOSSY_SILVER_STONE, mossySilverPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.OVERGROWN_SILVER_STONE, overgrownSilverPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.GOLD_STONE, goldPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.MOSSY_GOLD_STONE, mossyGoldPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.OVERGROWN_GOLD_STONE, overgrownGoldPillarSlab);
+
+        pillarSlabs.put(StoneTypeVariants.CRACKED_STONE, crackedPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_MOSSY_STONE, crackedMossyPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_OVERGROWN_STONE, crackedOvergrownPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_BRONZE_STONE, crackedBronzePillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE, crackedMossyBronzePillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, crackedOvergrownBronzePillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_SILVER_STONE, crackedSilverPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, crackedMossySilverPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, crackedOvergrownSilverPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_GOLD_STONE, crackedGoldPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE, crackedMossyGoldPillarSlab);
+        pillarSlabs.put(StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, crackedOvergrownGoldPillarSlab);
+
+        return pillarSlabs;
+    }
+
+    /**
+     * Returns a map of all smooth stone blocks associated with their respective stone type variants.
+     *
+     * @return a map where the keys are StoneTypeVariants and the values are the corresponding smooth stone blocks
+     */
+    public HashMap<StoneTypeVariants, Block> getSmoothStone() {
+        HashMap smoothStones = new HashMap();
+
+        smoothStones.put(StoneTypeVariants.STONE, smooth);
+        smoothStones.put(StoneTypeVariants.MOSSY_STONE, mossySmooth);
+        smoothStones.put(StoneTypeVariants.OVERGROWN_STONE, overgrownSmooth);
+        smoothStones.put(StoneTypeVariants.BRONZE_STONE, bronzeSmooth);
+        smoothStones.put(StoneTypeVariants.MOSSY_BRONZE_STONE, mossyBronzeSmooth);
+        smoothStones.put(StoneTypeVariants.OVERGROWN_BRONZE_STONE, overgrownBronzeSmooth);
+        smoothStones.put(StoneTypeVariants.SILVER_STONE, silverSmooth);
+        smoothStones.put(StoneTypeVariants.MOSSY_SILVER_STONE, mossySilverSmooth);
+        smoothStones.put(StoneTypeVariants.OVERGROWN_SILVER_STONE, overgrownSilverSmooth);
+        smoothStones.put(StoneTypeVariants.GOLD_STONE, goldSmooth);
+        smoothStones.put(StoneTypeVariants.MOSSY_GOLD_STONE, mossyGoldSmooth);
+        smoothStones.put(StoneTypeVariants.OVERGROWN_GOLD_STONE, overgrownGoldSmooth);
+
+        smoothStones.put(StoneTypeVariants.CRACKED_STONE, crackedSmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_MOSSY_STONE, crackedMossySmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_OVERGROWN_STONE, crackedOvergrownSmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_BRONZE_STONE, crackedBronzeSmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE, crackedMossyBronzeSmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, crackedOvergrownBronzeSmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_SILVER_STONE, crackedSilverSmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, crackedMossySilverSmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, crackedOvergrownSilverSmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_GOLD_STONE, crackedGoldSmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE, crackedMossyGoldSmooth);
+        smoothStones.put(StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, crackedOvergrownGoldSmooth);
+
+        return smoothStones;
+    }
+
+    /**
+     * Returns a map of all smooth stone slab blocks associated with their respective stone type variants.
+     *
+     * @return a map where the keys are StoneTypeVariants and the values are the corresponding smooth stone slab blocks
+     */
+    public HashMap<StoneTypeVariants, Block> getSmoothStoneSlabs() {
+        HashMap<StoneTypeVariants, Block> smoothStoneSlabs = new HashMap();
+
+        smoothStoneSlabs.put(StoneTypeVariants.STONE, smoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.MOSSY_STONE, mossySmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.OVERGROWN_STONE, overgrownSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.BRONZE_STONE, bronzeSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.MOSSY_BRONZE_STONE, mossyBronzeSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.OVERGROWN_BRONZE_STONE, overgrownBronzeSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.SILVER_STONE, silverSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.MOSSY_SILVER_STONE, mossySilverSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.OVERGROWN_SILVER_STONE, overgrownSilverSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.GOLD_STONE, goldSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.MOSSY_GOLD_STONE, mossyGoldSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.OVERGROWN_GOLD_STONE, overgrownGoldSmoothSlab);
+
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_STONE, crackedSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_MOSSY_STONE, crackedMossySmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_OVERGROWN_STONE, crackedOvergrownSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_BRONZE_STONE, crackedBronzeSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_MOSSY_BRONZE_STONE, crackedMossyBronzeSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, crackedOvergrownBronzeSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_SILVER_STONE, crackedSilverSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, crackedMossySilverSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, crackedOvergrownSilverSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_GOLD_STONE, crackedGoldSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE, crackedMossyGoldSmoothSlab);
+        smoothStoneSlabs.put(StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE, crackedOvergrownGoldSmoothSlab);
+
+        return smoothStoneSlabs;
     }
 
     public BlockFamily getStoneFamily() {
@@ -2304,6 +2483,11 @@ public enum ModStoneType {
         return mossyStoneFamily;
     }
 
+    /**
+     * Returns the given variant of the mossyStone
+     * @param variant the variantBlock to be returned (base, stairs, slab, wall, button or pressure_plate)
+     * @return the Block, that is the given variant of the mossyStone
+     */
     public Block getMossyStoneVariant(String variant) {
 	    switch (variant) {
 		    case "base" -> {
@@ -2334,6 +2518,12 @@ public enum ModStoneType {
         return overgrownStoneFamily;
     }
 
+    /**
+     * Returns the given variant of the overgrownStone.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, wall, button, or pressure_plate)
+     * @return the Block that is the given variant of the overgrownStone, or null if the variant is not recognized
+     */
     public Block getOvergrownStoneVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2643,6 +2833,12 @@ public enum ModStoneType {
         return bronzeCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the bronzeCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the bronzeCobbledBrick, or null if the variant is not recognized
+     */
     public Block getBronzeCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2667,6 +2863,12 @@ public enum ModStoneType {
         return crackedBronzeCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the crackedBronzeCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the crackedBronzeCobbledBrick, or null if the variant is not recognized
+     */
     public Block getCrackedBronzeCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2691,6 +2893,12 @@ public enum ModStoneType {
         return mossyBronzeCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the mossyBronzeCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the mossyBronzeCobbledBrick, or null if the variant is not recognized
+     */
     public Block getMossyBronzeCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2715,6 +2923,12 @@ public enum ModStoneType {
         return crackedMossyBronzeCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the crackedMossyBronzeCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the crackedMossyBronzeCobbledBrick, or null if the variant is not recognized
+     */
     public Block getCrackedMossyBronzeCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2739,6 +2953,12 @@ public enum ModStoneType {
         return overgrownBronzeCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the overgrownBronzeCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the overgrownBronzeCobbledBrick, or null if the variant is not recognized
+     */
     public Block getOvergrownBronzeCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2763,6 +2983,12 @@ public enum ModStoneType {
         return crackedOvergrownBronzeCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the crackedOvergrownBronzeCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the crackedOvergrownBronzeCobbledBrick, or null if the variant is not recognized
+     */
     public Block getCrackedOvergrownBronzeCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2787,6 +3013,12 @@ public enum ModStoneType {
         return silverCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the silverCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the silverCobbledBrick, or null if the variant is not recognized
+     */
     public Block getSilverCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2811,6 +3043,12 @@ public enum ModStoneType {
         return crackedSilverCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the crackedSilverCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the crackedSilverCobbledBrick, or null if the variant is not recognized
+     */
     public Block getCrackedSilverCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2835,6 +3073,12 @@ public enum ModStoneType {
         return mossySilverCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the mossySilverCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the mossySilverCobbledBrick, or null if the variant is not recognized
+     */
     public Block getMossySilverCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2859,6 +3103,12 @@ public enum ModStoneType {
         return crackedMossySilverCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the crackedMossySilverCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the crackedMossySilverCobbledBrick, or null if the variant is not recognized
+     */
     public Block getCrackedMossySilverCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2883,6 +3133,12 @@ public enum ModStoneType {
         return overgrownSilverCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the overgrownSilverCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the overgrownSilverCobbledBrick, or null if the variant is not recognized
+     */
     public Block getOvergrownSilverCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2907,6 +3163,12 @@ public enum ModStoneType {
         return crackedOvergrownSilverCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the crackedOvergrownSilverCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the crackedOvergrownSilverCobbledBrick, or null if the variant is not recognized
+     */
     public Block getCrackedOvergrownSilverCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2931,6 +3193,12 @@ public enum ModStoneType {
         return goldCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the goldCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the goldCobbledBrick, or null if the variant is not recognized
+     */
     public Block getGoldCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2955,6 +3223,12 @@ public enum ModStoneType {
         return crackedGoldCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the crackedGoldCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the crackedGoldCobbledBrick, or null if the variant is not recognized
+     */
     public Block getCrackedGoldCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -2979,6 +3253,12 @@ public enum ModStoneType {
         return mossyGoldCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the mossyGoldCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the mossyGoldCobbledBrick, or null if the variant is not recognized
+     */
     public Block getMossyGoldCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -3003,6 +3283,12 @@ public enum ModStoneType {
         return crackedMossyGoldCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the crackedMossyGoldCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the crackedMossyGoldCobbledBrick, or null if the variant is not recognized
+     */
     public Block getCrackedMossyGoldCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -3027,6 +3313,12 @@ public enum ModStoneType {
         return overgrownGoldCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the overgrownGoldCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the overgrownGoldCobbledBrick, or null if the variant is not recognized
+     */
     public Block getOvergrownGoldCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {
@@ -3051,6 +3343,12 @@ public enum ModStoneType {
         return crackedOvergrownGoldCobbledBrickFamily;
     }
 
+    /**
+     * Returns the given variant of the crackedOvergrownGoldCobbledBrick.
+     *
+     * @param variant the variantBlock to be returned (base, stairs, slab, or wall)
+     * @return the Block that is the given variant of the crackedOvergrownGoldCobbledBrick, or null if the variant is not recognized
+     */
     public Block getCrackedOvergrownGoldCobbledBrickVariant(String variant) {
         switch (variant) {
             case "base" -> {

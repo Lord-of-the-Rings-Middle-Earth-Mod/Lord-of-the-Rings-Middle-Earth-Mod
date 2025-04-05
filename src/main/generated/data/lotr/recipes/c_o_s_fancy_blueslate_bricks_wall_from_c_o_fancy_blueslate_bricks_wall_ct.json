@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cracked_overgrown_fancy_blueslate_bricks_wall"
+    },
+    "O": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "O#O",
+    "OOO"
+  ],
+  "result": {
+    "item": "lotr:cracked_overgrown_silver_fancy_blueslate_bricks_wall"
+  },
+  "show_notification": true
+}

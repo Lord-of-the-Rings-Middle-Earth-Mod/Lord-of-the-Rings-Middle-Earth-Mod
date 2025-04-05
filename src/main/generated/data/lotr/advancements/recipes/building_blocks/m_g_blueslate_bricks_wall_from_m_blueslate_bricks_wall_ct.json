@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gold_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:gold_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_mossy_blueslate_brick_wall": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:mossy_blueslate_brick_wall"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:m_g_blueslate_bricks_wall_from_m_blueslate_bricks_wall_ct"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gold_ingot",
+      "has_mossy_blueslate_brick_wall"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:m_g_blueslate_bricks_wall_from_m_blueslate_bricks_wall_ct"
+    ]
+  },
+  "sends_telemetry_event": false
+}

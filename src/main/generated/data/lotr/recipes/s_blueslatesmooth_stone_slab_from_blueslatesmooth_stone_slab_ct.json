@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:smooth_blueslate_slab"
+    },
+    "O": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "OOO",
+    "O#O",
+    "OOO"
+  ],
+  "result": {
+    "item": "lotr:silver_smooth_blueslate_slab"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_blueslate_pressure_plate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:blueslate_pressure_plate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:blueslate_pressure_plate_from_m_blueslate_pressure_plate_ct"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_blueslate_pressure_plate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:blueslate_pressure_plate_from_m_blueslate_pressure_plate_ct"
+    ]
+  },
+  "sends_telemetry_event": false
+}
