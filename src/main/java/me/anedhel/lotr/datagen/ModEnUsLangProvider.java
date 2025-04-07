@@ -5,12 +5,21 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.data.family.BlockFamily;
 
+/**
+ * Provides translations for the mod in the en_us language-file.
+ */
 public class ModEnUsLangProvider extends FabricLanguageProvider {
 
 	public ModEnUsLangProvider(FabricDataOutput dataOutput) {
 		super(dataOutput);
 	}
 
+	/**
+	 * Generates translations for the Lord of the Rings Mod.
+	 * It is called when the Datageneration is started.
+	 *
+	 * @param translationBuilder The builder used to add translations.
+	 */
 	@Override
 	public void generateTranslations(TranslationBuilder translationBuilder) {
 		translationBuilder.add("itemgroup.lotr_blocks", "LOTR Blocks");

@@ -35,7 +35,8 @@ public class ModModelProvider extends FabricModelProvider {
     }
 
     /**
-     * This Method is used to generate all BlockStateModels
+     * This Method is used to generate all BlockStateModels.
+     * It is called when the DataGen is started.
      * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
      */
     @Override
@@ -1179,6 +1180,14 @@ public class ModModelProvider extends FabricModelProvider {
 
     }
 
+    /**
+     * Registers the pavement block family models with the given textures.
+     *
+     * @param blockStateModelGenerator the block state model generator
+     * @param blockFamily the block family to register
+     * @param topTexture the texture for the top of the block
+     * @param sideTexture the texture for the side of the block
+     */
     private void registerPavement (BlockStateModelGenerator blockStateModelGenerator,
             BlockFamily blockFamily,
             String topTexture,
@@ -1212,6 +1221,15 @@ public class ModModelProvider extends FabricModelProvider {
                 slabModelId, slabTopModelId, doubleSlabModelId));
     }
 
+    /**
+     * Registers the models for a block family with one overlay texture.
+     *
+     * @param blockStateModelGenerator the block state model generator
+     * @param blockFamily the block family to register
+     * @param sideTexture the texture for the side of the block
+     * @param topTexture the texture for the top of the block
+     * @param overlays the overlay textures, if more than one overlay is provided, the first one is used as the primary overlay
+     */
     private void registerOneOverlayPavement (BlockStateModelGenerator blockStateModelGenerator,
             BlockFamily blockFamily, String sideTexture, String topTexture, String... overlays) {
         TextureMap textureMap = createPavementTextureMap(topTexture, sideTexture, overlays.length > 1, overlays);
@@ -1246,6 +1264,15 @@ public class ModModelProvider extends FabricModelProvider {
                 slabModelId, slabTopModelId, doubleSlabModelId));
     }
 
+    /**
+     * Registers the models for a block family with two overlay textures.
+     *
+     * @param blockStateModelGenerator the block state model generator
+     * @param blockFamily the block family to register
+     * @param sideTexture the texture for the side of the block
+     * @param topTexture the texture for the top of the block
+     * @param overlays the overlay textures, if more than one overlay is provided, the first one is used as the primary overlay
+     */
     private void registerTwoOverlayPavement (BlockStateModelGenerator blockStateModelGenerator,
             BlockFamily blockFamily, String sideTexture, String topTexture, String... overlays) {
         TextureMap textureMap = createPavementTextureMap(topTexture, sideTexture, true, overlays);
@@ -1281,6 +1308,15 @@ public class ModModelProvider extends FabricModelProvider {
                         slabModelId, slabTopModelId, doubleSlabModelId));
     }
 
+    /**
+     * Creates a TextureMap for pavement blocks with optional overlays.
+     *
+     * @param topTexture The texture for the top of the block.
+     * @param sideTexture The texture for the sides of the block.
+     * @param ornamented Indicates if the block is ornamented.
+     * @param overlays The overlay textures.
+     * @return The created TextureMap.
+     */
     private TextureMap createPavementTextureMap(String topTexture, String sideTexture, boolean ornamented,
             String... overlays) {
         TextureMap textureMap = new TextureMap()
@@ -1306,6 +1342,13 @@ public class ModModelProvider extends FabricModelProvider {
         return textureMap;
     }
 
+    /**
+     * Registers the models for smooth stone and smooth stone slabs.
+     *
+     * @param blockStateModelGenerator The BlockStateModelGenerator.
+     * @param smoothStone The smooth stone block.
+     * @param smoothStoneSlab The smooth stone slab.
+     */
     private void registerSmoothStone(BlockStateModelGenerator blockStateModelGenerator, Block smoothStone, Block smoothStoneSlab) {
         TextureMap textureMap = TextureMap.all(smoothStone);
         TextureMap textureMap2 = TextureMap.sideEnd(TextureMap.getSubId(smoothStoneSlab, "_side"),
@@ -1321,6 +1364,17 @@ public class ModModelProvider extends FabricModelProvider {
                 Models.CUBE_ALL.upload(smoothStone, textureMap, blockStateModelGenerator.modelCollector)));
     }
 
+    /**
+     * Registers the models for smooth stone with one overlay and smooth stone slabs with one overlay.
+     *
+     * @param blockStateModelGenerator The BlockStateModelGenerator.
+     * @param smoothStone The smooth stone block.
+     * @param smoothStoneSlab The smooth stone slab.
+     * @param overlaySmoothStone The smooth stone block with overlay.
+     * @param overlaySmoothStoneSlab The smooth stone slab with overlay.
+     * @param ornamented Indicates if the block is ornamented.
+     * @param overlays The overlay textures.
+     */
     private void registerOneOverlaySmoothStone(BlockStateModelGenerator blockStateModelGenerator,
             Block smoothStone, Block smoothStoneSlab,
             Block overlaySmoothStone, Block overlaySmoothStoneSlab, boolean ornamented, String... overlays) {
@@ -1354,6 +1408,16 @@ public class ModModelProvider extends FabricModelProvider {
                         blockStateModelGenerator.modelCollector)));
     }
 
+    /**
+     * Registers the models for smooth stone with two overlays and smooth stone slabs with two overlays.
+     *
+     * @param blockStateModelGenerator The BlockStateModelGenerator.
+     * @param smoothStone The smooth stone block.
+     * @param smoothStoneSlab The smooth stone slab.
+     * @param overlaySmoothStone The smooth stone block with overlays.
+     * @param overlaySmoothStoneSlab The smooth stone slab with overlays.
+     * @param overlays The overlay textures.
+     */
     private void registerTwoOverlaySmoothStone(BlockStateModelGenerator blockStateModelGenerator,
             Block smoothStone, Block smoothStoneSlab,
             Block overlaySmoothStone, Block overlaySmoothStoneSlab, String... overlays) {
@@ -1383,6 +1447,15 @@ public class ModModelProvider extends FabricModelProvider {
                         blockStateModelGenerator.modelCollector)));
     }
 
+    /**
+     * Registers the models for pillar blocks and pillar slabs.
+     *
+     * @param blockStateModelGenerator The BlockStateModelGenerator.
+     * @param pillar The pillar block.
+     * @param pillarSlab The pillar slab.
+     * @param topTexture The texture for the top of the block.
+     * @param sideTexture The texture for the sides of the block.
+     */
     private void registerPillarBlock(BlockStateModelGenerator blockStateModelGenerator, Block pillar,
             Block pillarSlab, String topTexture, String sideTexture) {
         TextureMap singlePillarTM = new TextureMap()
@@ -1424,6 +1497,17 @@ public class ModModelProvider extends FabricModelProvider {
                 slabIdentifier, slabTopIdentifier, doubleSlabIdentifier));
     }
 
+    /**
+     * Registers the models for pillar blocks with one overlay and pillar slabs with one overlay.
+     *
+     * @param blockStateModelGenerator The BlockStateModelGenerator.
+     * @param pillar The pillar block.
+     * @param pillarSlab The pillar slab.
+     * @param topTexture The texture for the top of the block.
+     * @param sideTexture The texture for the sides of the block.
+     * @param ornamented Indicates if the block is ornamented.
+     * @param overlays The overlay textures.
+     */
     private void registerOneOverlayPillarBlock(BlockStateModelGenerator blockStateModelGenerator, Block pillar,
             Block pillarSlab, String topTexture, String sideTexture, boolean ornamented, String overlays) {
         TextureMap singlePillarTM = createPillarTextureMap(topTexture, sideTexture, "_single", ornamented, overlays);
@@ -1448,6 +1532,17 @@ public class ModModelProvider extends FabricModelProvider {
                 slabId, slabTopId, doubleSlabId));
     }
 
+    /**
+     * Registers the models for pillar blocks with two overlays and pillar slabs with two overlays.
+     *
+     * @param blockStateModelGenerator The BlockStateModelGenerator.
+     * @param pillar The pillar block.
+     * @param pillarSlab The pillar slab.
+     * @param topTexture The texture for the top of the block.
+     * @param sideTexture The texture for the sides of the block.
+     * @param layer1 The first overlay texture.
+     * @param layer2 The second overlay texture.
+     */
     private void registerTwoOverlayPillarBlock(BlockStateModelGenerator blockStateModelGenerator, Block pillar,
             Block pillarSlab, String topTexture, String sideTexture, String layer1, String layer2) {
         TextureMap singlePillarTM = createPillarTextureMap(topTexture, sideTexture, "_single", true, layer1, layer2);
@@ -1472,6 +1567,16 @@ public class ModModelProvider extends FabricModelProvider {
                 slabId, slabTopId, doubleSlabId));
     }
 
+    /**
+     * Creates a TextureMap for pillars with optional overlays.
+     *
+     * @param topTexture The texture for the top of the block.
+     * @param sideTexture The texture for the sides of the block.
+     * @param position The position of the texture (e.g. "_single", "_base").
+     * @param ornamented Indicates if the block is ornamented.
+     * @param overlays The overlay textures.
+     * @return The created TextureMap.
+     */
     private TextureMap createPillarTextureMap(String topTexture, String sideTexture, String position,
             boolean ornamented, String... overlays) {
         TextureMap textureMap = new TextureMap()
@@ -1502,6 +1607,16 @@ public class ModModelProvider extends FabricModelProvider {
         return textureMap;
     }
 
+    /**
+     * Creates a BlockStateSupplier for a pillar block with different variants.
+     *
+     * @param pillar The pillar block.
+     * @param singlePillarIdentifier The identifier for the single pillar model.
+     * @param topPillarIdentifier The identifier for the top pillar model.
+     * @param middlePillarIdentifier The identifier for the middle pillar model.
+     * @param basePillarIdentifier The identifier for the base pillar model.
+     * @return A BlockStateSupplier for the pillar block.
+     */
     private BlockStateSupplier createPillarBlockState(Block pillar, Identifier singlePillarIdentifier, Identifier topPillarIdentifier,
             Identifier middlePillarIdentifier, Identifier basePillarIdentifier) {
         return VariantsBlockStateSupplier.create(pillar).coordinate(BlockStateVariantMap.create(ModPillarBlock.PILLAR_TYPE)
@@ -1535,6 +1650,13 @@ public class ModModelProvider extends FabricModelProvider {
         return textureMap;
     }
 
+    /**
+     * Registers a block with a single overlay texture.
+     *
+     * @param block The block to register.
+     * @param textureMap The texture map containing the overlay texture.
+     * @param blockStateModelGenerator The block state model generator.
+     */
     private static void oneOverlayBlock(Block block, TextureMap textureMap,
             BlockStateModelGenerator blockStateModelGenerator) {
         Identifier modelId = ModModels.CUBE_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
@@ -1542,6 +1664,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(block, modelId);
     }
 
+    /**
+     * Registers a block with two overlay textures.
+     *
+     * @param block The block to register.
+     * @param textureMap The texture map containing the overlay textures.
+     * @param blockStateModelGenerator The block state model generator.
+     */
     private static void twoOverlayBlock(Block block, TextureMap textureMap, BlockStateModelGenerator blockStateModelGenerator) {
         Identifier modelId = ModModels.CUBE_ALL_TWO_OVERLAY.upload(block, textureMap,
                 blockStateModelGenerator.modelCollector);
@@ -1549,6 +1678,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(block, modelId);
     }
 
+    /**
+     * Registers a block with one overlay texture for stairs.
+     *
+     * @param block The block to register.
+     * @param textureMap The texture map containing the overlay texture.
+     * @param blockStateModelGenerator The block state model generator.
+     */
     private static void oneOverlayStairs(Block block, TextureMap textureMap,
             BlockStateModelGenerator blockStateModelGenerator) {
         Identifier innerModelId = ModModels.INNER_STAIRS_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
@@ -1558,6 +1694,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(block, regularModelId);
     }
 
+    /**
+     * Registers a block with two overlay textures for stairs.
+     *
+     * @param block The block to register.
+     * @param textureMap The texture map containing the overlay textures.
+     * @param blockStateModelGenerator The block state model generator.
+     */
     private static void twoOverlayStairs(Block block, TextureMap textureMap, BlockStateModelGenerator blockStateModelGenerator) {
         Identifier innerModelId = ModModels.INNER_STAIRS_ALL_TWO_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
         Identifier regularModelId = ModModels.STAIRS_ALL_TWO_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
@@ -1566,6 +1709,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(block, regularModelId);
     }
 
+    /**
+     * Registers a block with one overlay texture for slabs.
+     *
+     * @param block The block to register.
+     * @param textureMap The texture map containing the overlay texture.
+     * @param blockStateModelGenerator The block state model generator.
+     */
     private static void oneOverlaySlab(Block block, TextureMap textureMap,
             BlockStateModelGenerator blockStateModelGenerator) {
         Identifier slabModelId =  ModModels.SLAB_ALL_OVERLAY.upload(block, textureMap,
@@ -1578,6 +1728,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(block, slabModelId);
     }
 
+    /**
+     * Registers a block with two overlay textures for slabs.
+     *
+     * @param block The block to register.
+     * @param textureMap The texture map containing the overlay textures.
+     * @param blockStateModelGenerator The block state model generator.
+     */
     private static void twoOverlaySlab(Block block, TextureMap textureMap,
             BlockStateModelGenerator blockStateModelGenerator) {
         Identifier slabModelId =  ModModels.SLAB_ALL_TWO_OVERLAY.upload(block, textureMap,
@@ -1590,6 +1747,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(block, slabModelId);
     }
 
+    /**
+     * Registers a block with one overlay texture for walls.
+     *
+     * @param block The block to register.
+     * @param textureMap The texture map containing the overlay texture.
+     * @param blockStateModelGenerator The block state model generator.
+     */
     private static void oneOverlayWall(Block block, TextureMap textureMap,
             BlockStateModelGenerator blockStateModelGenerator) {
 	    Identifier wallPostModelId = ModModels.WALL_POST_ALL_OVERLAY.upload(block, textureMap,
@@ -1604,6 +1768,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(block, wallInventoryModelId);
     }
 
+    /**
+     * Registers a block with two overlay textures for walls.
+     *
+     * @param block The block to register.
+     * @param textureMap The texture map containing the overlay textures.
+     * @param blockStateModelGenerator The block state model generator.
+     */
     private static void twoOverlayWall(Block block, TextureMap textureMap,
             BlockStateModelGenerator blockStateModelGenerator) {
         Identifier wallPostModelId = ModModels.WALL_POST_ALL_TWO_OVERLAY.upload(block, textureMap,
@@ -1618,6 +1789,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(block, wallInventoryModelId);
     }
 
+    /**
+     * Registers a block with one overlay texture for buttons.
+     *
+     * @param block The block to register.
+     * @param textureMap The texture map containing the overlay texture.
+     * @param blockStateModelGenerator The block state model generator.
+     */
     private static void oneOverlayButton(Block block, TextureMap textureMap,
             BlockStateModelGenerator blockStateModelGenerator) {
         Identifier buttonModelId = ModModels.BUTTON_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
@@ -1627,6 +1805,13 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerParentedItemModel(block, buttonInventoryModelId);
     }
 
+    /**
+     * Registers a block with one overlay texture for pressure plates.
+     *
+     * @param block The block to register.
+     * @param textureMap The texture map containing the overlay texture.
+     * @param blockStateModelGenerator The block state model generator.
+     */
     private static void oneOverlayPressurePlate(Block block, TextureMap textureMap,
             BlockStateModelGenerator blockStateModelGenerator) {
         Identifier pressurePlateUpModelId =  ModModels.PRESSURE_PLATE_UP_ALL_OVERLAY.upload(block, textureMap,

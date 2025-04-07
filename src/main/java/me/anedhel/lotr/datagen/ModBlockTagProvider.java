@@ -546,7 +546,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     }
 
     /**
-     * Configures the tags for the goven blockFamily
+     * Configures the tags for the given blockFamily
      * @param family the blockFamily for which the tags should be configured
      * @param pickaxeTag the pickaxe tag for all blocks
      * @param wallTag the wall tag for the wall block

@@ -7,6 +7,10 @@ import net.minecraft.util.Identifier;
 
 import java.util.Optional;
 
+/**
+ * This class contains all the models added by this mod.
+ * It is an extension of the Models class from Minecraft.
+ */
 public class ModModels {
 
 	public static final Model PILLAR = block(new Identifier("minecraft", "block/cube_column"),
@@ -136,19 +140,51 @@ public class ModModels {
 	public static final Model DOUBLE_SMOOTH_TWO_OVERLAY = block("smooth_two_overlay",
 			TextureKey.END, TextureKey.SIDE, TextureKey.LAYER1, ModTextureKeys.END_LAYER1, TextureKey.LAYER2, ModTextureKeys.END_LAYER2);
 
+	/**
+	 * Creates a block model with the specified parent and required texture keys.
+	 * This method calls the block method with the parent identifier constructed from the mod ID and the provided parent string.
+	 *
+	 * @param parent The parent model identifier as a string.
+	 * @param requiredTextureKeys The texture keys required for the model.
+	 * @return A new Model instance.
+	 */
 	private static Model block(String parent, TextureKey ... requiredTextureKeys) {
 		return block(new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent), requiredTextureKeys);
 	}
 
+	/**
+	 * Creates a block model with the specified parent, variant, and required texture keys.
+	 * This method calls the block method with the parent identifier constructed from the mod ID and the provided parent string.
+	 *
+	 * @param parent The parent model identifier as a string.
+	 * @param variant The variant of the model.
+	 * @param requiredTextureKeys The texture keys required for the model.
+	 * @return A new Model instance.
+	 */
 	private static Model block(String parent, String variant, TextureKey... requiredTextureKeys) {
 		return block(new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent), variant, requiredTextureKeys);
 	}
 
+	/**
+	 * Creates a block model with the specified parent and required texture keys.
+	 *
+	 * @param parent The parent model identifier.
+	 * @param requiredTextureKeys The texture keys required for the model.
+	 * @return A new Model instance.
+	 */
 	private static Model block(Identifier parent, TextureKey ... requiredTextureKeys) {
 		return new Model(Optional.of(parent),
 				Optional.empty(), requiredTextureKeys);
 	}
 
+	/**
+	 * Creates a block model with the specified parent, variant, and required texture keys.
+	 *
+	 * @param parent The parent model identifier.
+	 * @param variant The variant of the model.
+	 * @param requiredTextureKeys The texture keys required for the model.
+	 * @return A new Model instance.
+	 */
 	private static Model block(Identifier parent, String variant, TextureKey... requiredTextureKeys) {
 		return new Model(Optional.of(parent) ,Optional.of(variant), requiredTextureKeys);
 	}

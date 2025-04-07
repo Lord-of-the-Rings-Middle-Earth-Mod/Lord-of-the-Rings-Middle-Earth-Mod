@@ -2026,6 +2026,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
 	}
 
+	/**
+	 * Converts the name of a block into a tag format.
+	 * The tag format is a lowercase string with spaces replaced by underscores.
+	 *
+	 * @param block The block whose name is to be converted.
+	 * @return The tag format of the block name.
+	 */
 	private String turnBlockIntoTag(Block block) {
 		return block.getName().getString().replace(' ', '_').toLowerCase();
 	}

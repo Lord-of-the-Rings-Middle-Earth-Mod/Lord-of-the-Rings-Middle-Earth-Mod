@@ -26,7 +26,16 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 
+/**
+ * The entry point for the data generator.
+ */
 public class LordOfTheRingsMiddleEarthModDataGenerator implements DataGeneratorEntrypoint {
+
+	/**
+	 * Initializes the data generator with various data providers.
+	 *
+	 * @param fabricDataGenerator the Fabric data generator
+	 */
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
@@ -40,6 +49,11 @@ public class LordOfTheRingsMiddleEarthModDataGenerator implements DataGeneratorE
 		pack.addProvider(ModEnUsLangProvider::new);
 	}
 
+	/**
+	 * Builds the registry with various mod-specific features.
+	 *
+	 * @param registryBuilder the registry builder
+	 */
 	@Override
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::boostrap);

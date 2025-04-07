@@ -37,7 +37,11 @@ import net.minecraft.client.render.TexturedRenderLayers;
 import net.minecraft.client.util.SpriteIdentifier;
 import net.minecraft.data.family.BlockFamily;
 
+/**
+ * The client-side entry point for the Lord of the Rings Middle Earth mod.
+ */
 public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer {
+
     /**
      * Runs the mod initializer on the client environment.
      */
@@ -79,6 +83,9 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
         EntityModelLayerRegistry.registerModelLayer(ModModelLayers.HOBBIT, HobbitModel::getTexturedModelData);
     }
 
+    /**
+     * Registers all stone type cutout layers.
+     */
     private void registerStoneTypeCutoutLayers() {
         for (ModStoneType stoneType : ModStoneType.values()) {
             registerStoneFamilyOverlays(stoneType.getMossyStoneFamily());
@@ -252,6 +259,12 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
         }
     }
 
+    /**
+     * Registers the base block and its variants from the given stone family
+     * to the BlockRenderLayerMap with the Cutout render layer.
+     *
+     * @param stoneFamily the BlockFamily containing the base block and its variants
+     */
     private void registerStoneFamilyOverlays(BlockFamily stoneFamily) {
         BlockRenderLayerMap.INSTANCE.putBlock(stoneFamily.getBaseBlock(), RenderLayer.getCutout());
         for (Block variant : stoneFamily.getVariants().values()) {
