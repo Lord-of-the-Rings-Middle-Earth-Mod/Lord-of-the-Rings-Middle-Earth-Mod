@@ -88,6 +88,9 @@ public class ModModelProvider extends FabricModelProvider {
 
     /**
      * This Method is used to generate all the Models for the given GearType
+     *
+     * The Method will be more relevant as soon as more gearTypes are added
+     *
      * @param gearType The ModGearType the models should be generated for.
      * @param itemModelGenerator an ItemModelGenerator provided by minecraft
      */
@@ -134,6 +137,10 @@ public class ModModelProvider extends FabricModelProvider {
     /**
      * This Method is used to generate all the models for the given stone type.
      * It only works for blocks completely added by the mod, adding Models for additions made based on vanilla blocks does not work with this method.
+     *
+     * The warning, that <code>getTranslationKey</code> may produce <code>NullPointerException</code>, can be
+     * ignored, as the TranslationKeys are always set when registering the Block.
+     *
      * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
      */
     private void generateModStoneTypeModels(BlockStateModelGenerator blockStateModelGenerator) {

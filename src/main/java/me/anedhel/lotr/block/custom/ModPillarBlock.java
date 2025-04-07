@@ -40,6 +40,9 @@ public class ModPillarBlock extends Block {
 	 * Called when a neighbor block´s blockstate is changed.
 	 * This method is used to update the block state of this block based on the state of its neighbors.
 	 *
+	 * The override of the depricated Method will be fixed when the deprecated method is removed from vanilla
+	 * Minecraft, until than we keep using this one.
+	 *
 	 * @param state the state of this block
 	 * @param direction the direction from this block to the neighbor
 	 * @param neighborState the state of the updated neighbor block

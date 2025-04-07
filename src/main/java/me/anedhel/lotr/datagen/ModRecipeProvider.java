@@ -126,6 +126,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	/**
 	 * This Method is used to generate all Crafting Recipes for the given GearType
 	 *
+	 * This Method becomes more relevant, when more gearTypes are added
+	 *
 	 * @param gearType The ModGearType that all craftingRecipes are to be generated for
 	 * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one
 	 * 		is provided in the parameters of the method you edit.
@@ -759,6 +761,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	/**
 	 * This Method is used to create all smelting recipes for all ModOreTypes, that should have a
 	 * smelting recipe
+	 *
+	 * The <code>switch</code> expression will have more <code>case</code> statements in the future, therefor the
+	 * warning can be ignored.
 	 *
 	 * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one
 	 * 		is provided in the parameters of the method you edit.
