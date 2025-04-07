@@ -13,6 +13,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
+/**
+ * This class is used to register all the different stone blocks in the mod.
+ * It uses the Fabric API to register blocks and block items.
+ * The blocks are registered with a unique identifier and are added to the game.
+ */
 public class ModStoneBlocks {
 
     public static final Block BLUESLATE = registerBlock("blueslate",

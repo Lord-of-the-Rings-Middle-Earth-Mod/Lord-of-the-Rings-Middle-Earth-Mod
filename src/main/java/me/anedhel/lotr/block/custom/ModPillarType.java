@@ -2,6 +2,10 @@ package me.anedhel.lotr.block.custom;
 
 import net.minecraft.util.StringIdentifiable;
 
+/**
+ * Enum representing the different types of pillars in the mod.
+ * Each type has a unique string identifier.
+ */
 public enum ModPillarType implements StringIdentifiable {
 	SINGLE("single"),
 	BASE("base"),

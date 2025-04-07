@@ -1,5 +1,9 @@
 package me.anedhel.lotr.block.custom;
 
+/**
+ * Enum representing different variants of stone types.
+ * Each variant has a unique recipe path for crafting.
+ */
 public enum StoneTypeVariants {
 	STONE,
 	MOSSY_STONE,
@@ -26,6 +30,14 @@ public enum StoneTypeVariants {
 	CRACKED_MOSSY_GOLD_STONE,
 	CRACKED_OVERGROWN_GOLD_STONE;
 
+	/**
+	 * Returns the recipe path for the given stone type variant.
+	 * The recipe path is used for crafting the stone type.
+	 *
+	 * @param variant the stone type variant
+	 * @param name the name of the stone type
+	 * @return the recipe path for the stone type variant
+	 */
 	public static String getRecipePath(StoneTypeVariants variant, String name) {
 		switch(variant) {
 			case STONE -> {
