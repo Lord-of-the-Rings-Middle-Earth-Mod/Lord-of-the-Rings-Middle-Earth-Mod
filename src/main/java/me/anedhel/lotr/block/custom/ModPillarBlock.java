@@ -46,7 +46,7 @@ public class ModPillarBlock extends Block {
 	 * @param world the world
 	 * @param pos the position of this block
 	 * @param neighborPos the position of the neighbor block
-	 * @return
+	 * @return the updated block state
 	 */
 	@Override
 	public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
