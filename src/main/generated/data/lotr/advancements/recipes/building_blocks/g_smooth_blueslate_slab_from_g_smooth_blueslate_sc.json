@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_gold_smooth_blueslate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:gold_smooth_blueslate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:g_smooth_blueslate_slab_from_g_smooth_blueslate_sc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_gold_smooth_blueslate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:g_smooth_blueslate_slab_from_g_smooth_blueslate_sc"
+    ]
+  },
+  "sends_telemetry_event": false
+}

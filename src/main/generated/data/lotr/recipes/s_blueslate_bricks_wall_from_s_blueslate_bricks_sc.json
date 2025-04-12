@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:silver_blueslate_brick"
+  },
+  "result": "lotr:silver_blueslate_brick_wall"
+}

@@ -10,8 +10,11 @@ import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.CompletableFuture;
@@ -20,6 +23,9 @@ import java.util.concurrent.CompletableFuture;
  * This class is used to add custom BlockTags and edit existing ones.
  */
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
+
+    public static final TagKey<Block> PILLARS = TagKey.of(RegistryKeys.BLOCK, Identifier.of("c",
+            "pillars"));
 
     public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
@@ -54,6 +60,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         for (ModStoneType stoneType : ModStoneType.values()) {
             FabricTagBuilder pickaxeTag = getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE);
             FabricTagBuilder wallTag = getOrCreateTagBuilder(BlockTags.WALLS);
+            FabricTagBuilder pillarTag = getOrCreateTagBuilder(PILLARS);
 
             configureStoneBlockFamilyTags(stoneType.getStoneFamily(), pickaxeTag, wallTag);
             configureStoneBlockFamilyTags(stoneType.getMossyStoneFamily(), pickaxeTag, wallTag);
@@ -263,98 +270,123 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             if (stoneType.getPillar() != null) {
                 pickaxeTag.add(stoneType.getPillar());
                 pickaxeTag.add(stoneType.getPillarSlab());
+                pillarTag.add(stoneType.getPillar());
+
             }
             if (stoneType.getCrackedPillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedPillar());
                 pickaxeTag.add(stoneType.getCrackedPillarSlab());
+                pillarTag.add(stoneType.getCrackedPillar());
             }
             if (stoneType.getMossyPillar() != null) {
                 pickaxeTag.add(stoneType.getMossyPillar());
                 pickaxeTag.add(stoneType.getMossyPillarSlab());
+                pillarTag.add(stoneType.getMossyPillar());
             }
             if (stoneType.getCrackedMossyPillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedMossyPillar());
                 pickaxeTag.add(stoneType.getCrackedMossyPillarSlab());
+                pillarTag.add(stoneType.getCrackedMossyPillar());
             }
             if (stoneType.getOvergrownPillar() != null) {
                 pickaxeTag.add(stoneType.getOvergrownPillar());
                 pickaxeTag.add(stoneType.getOvergrownPillarSlab());
+                pillarTag.add(stoneType.getOvergrownPillar());
             }
             if (stoneType.getCrackedOvergrownPillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedOvergrownPillar());
                 pickaxeTag.add(stoneType.getCrackedOvergrownPillarSlab());
+                pillarTag.add(stoneType.getCrackedOvergrownPillar());
             }
             if (stoneType.getBronzePillar() != null) {
                 pickaxeTag.add(stoneType.getBronzePillar());
                 pickaxeTag.add(stoneType.getBronzePillarSlab());
+                pillarTag.add(stoneType.getBronzePillar());
             }
             if (stoneType.getCrackedBronzePillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedBronzePillar());
                 pickaxeTag.add(stoneType.getCrackedBronzePillarSlab());
+                pillarTag.add(stoneType.getCrackedBronzePillar());
             }
             if (stoneType.getMossyBronzePillar() != null) {
                 pickaxeTag.add(stoneType.getMossyBronzePillar());
                 pickaxeTag.add(stoneType.getBronzePillarSlab());
+                pillarTag.add(stoneType.getMossyBronzePillar());
             }
             if (stoneType.getCrackedMossyBronzePillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedMossyBronzePillar());
                 pickaxeTag.add(stoneType.getCrackedMossyBronzePillarSlab());
+                pillarTag.add(stoneType.getCrackedMossyBronzePillar());
             }
             if (stoneType.getOvergrownBronzePillar() != null) {
                 pickaxeTag.add(stoneType.getOvergrownBronzePillar());
                 pickaxeTag.add(stoneType.getOvergrownBronzePillarSlab());
+                pillarTag.add(stoneType.getOvergrownBronzePillar());
             }
             if (stoneType.getCrackedOvergrownBronzePillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedOvergrownBronzePillar());
                 pickaxeTag.add(stoneType.getCrackedOvergrownBronzePillarSlab());
+                pillarTag.add(stoneType.getCrackedOvergrownBronzePillar());
             }
             if (stoneType.getSilverPillar() != null) {
                 pickaxeTag.add(stoneType.getSilverPillar());
                 pickaxeTag.add(stoneType.getSilverPillarSlab());
+                pillarTag.add(stoneType.getSilverPillar());
             }
             if (stoneType.getCrackedSilverPillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedSilverPillar());
                 pickaxeTag.add(stoneType.getCrackedSilverPillarSlab());
+                pillarTag.add(stoneType.getCrackedSilverPillar());
             }
             if (stoneType.getMossySilverPillar() != null) {
                 pickaxeTag.add(stoneType.getMossySilverPillar());
                 pickaxeTag.add(stoneType.getSilverPillarSlab());
+                pillarTag.add(stoneType.getMossySilverPillar());
             }
             if (stoneType.getCrackedMossySilverPillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedMossySilverPillar());
                 pickaxeTag.add(stoneType.getCrackedMossySilverPillarSlab());
+                pillarTag.add(stoneType.getCrackedMossySilverPillar());
             }
             if (stoneType.getOvergrownSilverPillar() != null) {
                 pickaxeTag.add(stoneType.getOvergrownSilverPillar());
                 pickaxeTag.add(stoneType.getOvergrownSilverPillarSlab());
+                pillarTag.add(stoneType.getOvergrownSilverPillar());
             }
             if (stoneType.getCrackedOvergrownSilverPillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedOvergrownSilverPillar());
                 pickaxeTag.add(stoneType.getCrackedOvergrownSilverPillarSlab());
+                pillarTag.add(stoneType.getCrackedOvergrownSilverPillar());
             }
             if (stoneType.getGoldPillar() != null) {
                 pickaxeTag.add(stoneType.getGoldPillar());
                 pickaxeTag.add(stoneType.getGoldPillarSlab());
+                pillarTag.add(stoneType.getGoldPillar());
             }
             if (stoneType.getCrackedGoldPillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedGoldPillar());
                 pickaxeTag.add(stoneType.getCrackedGoldPillarSlab());
+                pillarTag.add(stoneType.getCrackedGoldPillar());
             }
             if (stoneType.getMossyGoldPillar() != null) {
                 pickaxeTag.add(stoneType.getMossyGoldPillar());
                 pickaxeTag.add(stoneType.getGoldPillarSlab());
+                pillarTag.add(stoneType.getMossyGoldPillar());
             }
             if (stoneType.getCrackedMossyGoldPillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedMossyGoldPillar());
                 pickaxeTag.add(stoneType.getCrackedMossyGoldPillarSlab());
+                pillarTag.add(stoneType.getCrackedMossyGoldPillar());
             }
             if (stoneType.getOvergrownGoldPillar() != null) {
                 pickaxeTag.add(stoneType.getOvergrownGoldPillar());
                 pickaxeTag.add(stoneType.getOvergrownGoldPillarSlab());
+                pillarTag.add(stoneType.getOvergrownGoldPillar());
             }
             if (stoneType.getCrackedOvergrownGoldPillar() != null) {
                 pickaxeTag.add(stoneType.getCrackedOvergrownGoldPillar());
                 pickaxeTag.add(stoneType.getCrackedOvergrownGoldPillarSlab());
+                pillarTag.add(stoneType.getCrackedOvergrownGoldPillar());
             }
         }
     }
@@ -514,7 +546,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     }
 
     /**
-     * Configures the tags for the goven blockFamily
+     * Configures the tags for the given blockFamily
      * @param family the blockFamily for which the tags should be configured
      * @param pickaxeTag the pickaxe tag for all blocks
      * @param wallTag the wall tag for the wall block

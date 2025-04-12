@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "lotr:blueslate_pillar",
+    "lotr:cracked_blueslate_pillar",
+    "lotr:mossy_blueslate_pillar",
+    "lotr:cracked_mossy_blueslate_pillar",
+    "lotr:overgrown_blueslate_pillar",
+    "lotr:cracked_overgrown_blueslate_pillar",
+    "lotr:bronze_blueslate_pillar",
+    "lotr:cracked_bronze_blueslate_pillar",
+    "lotr:mossy_bronze_blueslate_pillar",
+    "lotr:cracked_mossy_bronze_blueslate_pillar",
+    "lotr:overgrown_bronze_blueslate_pillar",
+    "lotr:cracked_overgrown_bronze_blueslate_pillar",
+    "lotr:silver_blueslate_pillar",
+    "lotr:cracked_silver_blueslate_pillar",
+    "lotr:mossy_silver_blueslate_pillar",
+    "lotr:cracked_mossy_silver_blueslate_pillar",
+    "lotr:overgrown_silver_blueslate_pillar",
+    "lotr:cracked_overgrown_silver_blueslate_pillar",
+    "lotr:gold_blueslate_pillar",
+    "lotr:cracked_gold_blueslate_pillar",
+    "lotr:mossy_gold_blueslate_pillar",
+    "lotr:cracked_mossy_gold_blueslate_pillar",
+    "lotr:overgrown_gold_blueslate_pillar",
+    "lotr:cracked_overgrown_gold_blueslate_pillar"
+  ]
+}

@@ -2,6 +2,6 @@
   "parent": "lotr:block/cube_all_overlay",
   "textures": {
     "all": "lotr:block/smooth_blueslate",
-    "layer1": "lotr:block/gold_smooth_overlay"
+    "layer1": "lotr:block/overlays/gold_smooth_overlay"
   }
 }

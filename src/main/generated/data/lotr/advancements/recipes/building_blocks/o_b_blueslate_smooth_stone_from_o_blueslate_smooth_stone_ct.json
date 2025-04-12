@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_bronze_ingot": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:bronze_ingot"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_overgrown_smooth_blueslate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:overgrown_smooth_blueslate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:o_b_blueslate_smooth_stone_from_o_blueslate_smooth_stone_ct"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_bronze_ingot",
+      "has_overgrown_smooth_blueslate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:o_b_blueslate_smooth_stone_from_o_blueslate_smooth_stone_ct"
+    ]
+  },
+  "sends_telemetry_event": false
+}

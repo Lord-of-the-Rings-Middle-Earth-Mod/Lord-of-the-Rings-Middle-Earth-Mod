@@ -41,7 +41,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     }
 
     /**
-     * This method is used to add all LootTables
+     * This method is used to add all LootTables.
+     * It´s called when the DataGen is started.
      */
     @Override
     public void generate() {

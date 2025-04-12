@@ -2,8 +2,8 @@
   "parent": "lotr:block/slab_top_all_two_overlay",
   "textures": {
     "bottom": "lotr:block/fancy_blueslate_bricks",
-    "layer1": "lotr:block/gold_fancy_bricks_overlay",
-    "layer2": "lotr:block/mossy_overlay_two",
+    "layer1": "lotr:block/overlays/gold_fancy_bricks_overlay",
+    "layer2": "lotr:block/overlays/mossy_overlay_two",
     "side": "lotr:block/fancy_blueslate_bricks",
     "top": "lotr:block/fancy_blueslate_bricks"
   }

@@ -5,12 +5,21 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.data.family.BlockFamily;
 
+/**
+ * Provides translations for the mod in the en_us language-file.
+ */
 public class ModEnUsLangProvider extends FabricLanguageProvider {
 
 	public ModEnUsLangProvider(FabricDataOutput dataOutput) {
 		super(dataOutput);
 	}
 
+	/**
+	 * Generates translations for the Lord of the Rings Mod.
+	 * It is called when the Datageneration is started.
+	 *
+	 * @param translationBuilder The builder used to add translations.
+	 */
 	@Override
 	public void generateTranslations(TranslationBuilder translationBuilder) {
 		translationBuilder.add("itemgroup.lotr_blocks", "LOTR Blocks");
@@ -313,19 +322,24 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 			String name) {
 		translationBuilder.add(family.getBaseBlock().getTranslationKey(), name);
 		if(family.getVariant(BlockFamily.Variant.STAIRS) != null) {
-			translationBuilder.add(family.getVariant(BlockFamily.Variant.STAIRS).getTranslationKey(), name + "Stairs");
+			translationBuilder.add(family.getVariant(BlockFamily.Variant.STAIRS).getTranslationKey(), name + " Stairs");
 		}
 		if(family.getVariant(BlockFamily.Variant.SLAB) != null) {
-			translationBuilder.add(family.getVariant(BlockFamily.Variant.SLAB).getTranslationKey(), name + "Slab");
+			translationBuilder.add(family.getVariant(BlockFamily.Variant.SLAB).getTranslationKey(), name + " Slab");
 		}
 		if(family.getVariant(BlockFamily.Variant.WALL) != null) {
-			translationBuilder.add(family.getVariant(BlockFamily.Variant.WALL).getTranslationKey(), name + "Wall");
+			translationBuilder.add(family.getVariant(BlockFamily.Variant.WALL).getTranslationKey(), name + " Wall");
+		}
+		if(family.getVariant(BlockFamily.Variant.CHISELED) != null) {
+			translationBuilder.add(family.getVariant(BlockFamily.Variant.CHISELED).getTranslationKey(),
+					" Chiseled " + name);
 		}
 		if(family.getVariant(BlockFamily.Variant.BUTTON) != null) {
-			translationBuilder.add(family.getVariant(BlockFamily.Variant.BUTTON).getTranslationKey(), name + "Button");
+			translationBuilder.add(family.getVariant(BlockFamily.Variant.BUTTON).getTranslationKey(), name + " Button");
 		}
 		if(family.getVariant(BlockFamily.Variant.PRESSURE_PLATE) != null) {
-			translationBuilder.add(family.getVariant(BlockFamily.Variant.PRESSURE_PLATE).getTranslationKey(), name + "PressurePlate");
+			translationBuilder.add(family.getVariant(BlockFamily.Variant.PRESSURE_PLATE).getTranslationKey(), name +
+					" Pressure Plate");
 		}
 	}
 

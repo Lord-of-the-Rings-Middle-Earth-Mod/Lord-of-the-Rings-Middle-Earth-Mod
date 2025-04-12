@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mossy_cobbled_blueslate_wall": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:mossy_cobbled_blueslate_wall"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:m_cobbled_blueslate_wall_from_o_cobbled_blueslate_wall_ct"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mossy_cobbled_blueslate_wall"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:m_cobbled_blueslate_wall_from_o_cobbled_blueslate_wall_ct"
+    ]
+  },
+  "sends_telemetry_event": false
+}

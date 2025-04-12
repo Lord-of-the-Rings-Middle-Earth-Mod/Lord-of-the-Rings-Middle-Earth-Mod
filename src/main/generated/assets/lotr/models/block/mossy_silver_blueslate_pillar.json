@@ -2,10 +2,10 @@
   "parent": "lotr:block/pillar_two_overlay",
   "textures": {
     "end": "lotr:block/blueslate_pillar_end",
-    "end_layer1": "lotr:block/silver_pillar_end_overlay",
-    "end_layer2": "lotr:block/mossy_overlay_two",
-    "layer1": "lotr:block/silver_pillar_side_single_overlay",
-    "layer2": "lotr:block/mossy_overlay_two",
+    "end_layer1": "lotr:block/overlays/silver_pillar_end_overlay",
+    "end_layer2": "lotr:block/overlays/mossy_overlay_two",
+    "layer1": "lotr:block/overlays/silver_pillar_side_single_overlay",
+    "layer2": "lotr:block/overlays/mossy_overlay_two",
     "side": "lotr:block/blueslate_pillar_side_single"
   }
 }

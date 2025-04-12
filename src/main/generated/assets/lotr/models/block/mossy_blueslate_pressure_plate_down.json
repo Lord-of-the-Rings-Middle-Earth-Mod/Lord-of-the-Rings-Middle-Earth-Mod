@@ -1,7 +1,7 @@
 {
   "parent": "lotr:block/pressure_plate_down_all_overlay",
   "textures": {
-    "layer1": "lotr:block/mossy_overlay_one",
+    "layer1": "lotr:block/overlays/mossy_overlay_one",
     "texture": "lotr:block/blueslate"
   }
 }

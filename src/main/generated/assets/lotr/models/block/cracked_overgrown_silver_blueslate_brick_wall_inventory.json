@@ -1,8 +1,8 @@
 {
   "parent": "lotr:block/wall_inventory_all_two_overlay",
   "textures": {
-    "layer1": "lotr:block/cracked_silver_brick_overlay",
-    "layer2": "lotr:block/overgrown_overlay",
+    "layer1": "lotr:block/overlays/cracked_silver_brick_overlay",
+    "layer2": "lotr:block/overlays/overgrown_overlay",
     "wall": "lotr:block/cracked_blueslate_brick"
   }
 }

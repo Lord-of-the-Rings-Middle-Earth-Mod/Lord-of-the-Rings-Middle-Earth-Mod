@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cracked_mossy_gold_blueslate_pavement": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:cracked_mossy_gold_blueslate_pavement"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:c_m_g_blueslate_pavement_slab_from_c_m_g_blueslate_pavement_sc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cracked_mossy_gold_blueslate_pavement"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:c_m_g_blueslate_pavement_slab_from_c_m_g_blueslate_pavement_sc"
+    ]
+  },
+  "sends_telemetry_event": false
+}

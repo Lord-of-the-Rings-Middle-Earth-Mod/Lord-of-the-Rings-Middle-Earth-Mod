@@ -40,4 +40,4 @@ replay_*.log
 *.jfr
 
 # generated
-.chache/
+.cache/

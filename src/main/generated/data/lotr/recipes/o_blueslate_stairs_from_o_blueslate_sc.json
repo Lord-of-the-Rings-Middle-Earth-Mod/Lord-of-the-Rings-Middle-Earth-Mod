@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:overgrown_blueslate"
+  },
+  "result": "lotr:overgrown_blueslate_stairs"
+}

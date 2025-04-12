@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_overgrown_blueslate": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:overgrown_blueslate"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:o_blueslate_pavement_from_o_blueslate_sc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_overgrown_blueslate"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:o_blueslate_pavement_from_o_blueslate_sc"
+    ]
+  },
+  "sends_telemetry_event": false
+}

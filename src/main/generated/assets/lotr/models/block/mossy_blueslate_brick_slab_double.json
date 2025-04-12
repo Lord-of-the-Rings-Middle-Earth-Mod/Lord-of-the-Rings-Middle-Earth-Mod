@@ -2,6 +2,6 @@
   "parent": "lotr:block/cube_all_overlay",
   "textures": {
     "all": "lotr:block/blueslate_brick",
-    "layer1": "lotr:block/mossy_overlay_two"
+    "layer1": "lotr:block/overlays/mossy_overlay_two"
   }
 }

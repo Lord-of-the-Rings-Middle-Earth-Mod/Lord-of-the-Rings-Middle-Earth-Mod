@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "lotr:mossy_bronze_blueslate_pavement"
+  },
+  "result": "lotr:mossy_bronze_blueslate_pavement_slab"
+}
