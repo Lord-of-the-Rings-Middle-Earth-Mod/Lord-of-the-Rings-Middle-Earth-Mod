@@ -1276,7 +1276,7 @@ public enum ModStoneType {
      * @return a map where the keys are StoneTypeVariants and the values are the corresponding pillar blocks
      */
     public HashMap<StoneTypeVariants, Block> getPillarBlocks() {
-        HashMap pillarBlocks = new HashMap();
+        HashMap<StoneTypeVariants, Block> pillarBlocks = new HashMap<>();
 
         pillarBlocks.put(StoneTypeVariants.STONE, pillar);
         pillarBlocks.put(StoneTypeVariants.MOSSY_STONE, mossyPillar);
@@ -1313,7 +1313,7 @@ public enum ModStoneType {
      * @return a map where the keys are StoneTypeVariants and the values are the corresponding pillar slab blocks
      */
     public HashMap<StoneTypeVariants, Block> getPillarSlabs() {
-        HashMap pillarSlabs = new HashMap();
+        HashMap<StoneTypeVariants, Block> pillarSlabs = new HashMap<>();
 
         pillarSlabs.put(StoneTypeVariants.STONE, pillarSlab);
         pillarSlabs.put(StoneTypeVariants.MOSSY_STONE, mossyPillarSlab);
@@ -1350,7 +1350,7 @@ public enum ModStoneType {
      * @return a map where the keys are StoneTypeVariants and the values are the corresponding smooth stone blocks
      */
     public HashMap<StoneTypeVariants, Block> getSmoothStone() {
-        HashMap smoothStones = new HashMap();
+        HashMap<StoneTypeVariants, Block> smoothStones = new HashMap<>();
 
         smoothStones.put(StoneTypeVariants.STONE, smooth);
         smoothStones.put(StoneTypeVariants.MOSSY_STONE, mossySmooth);
@@ -1387,7 +1387,7 @@ public enum ModStoneType {
      * @return a map where the keys are StoneTypeVariants and the values are the corresponding smooth stone slab blocks
      */
     public HashMap<StoneTypeVariants, Block> getSmoothStoneSlabs() {
-        HashMap<StoneTypeVariants, Block> smoothStoneSlabs = new HashMap();
+        HashMap<StoneTypeVariants, Block> smoothStoneSlabs = new HashMap<>();
 
         smoothStoneSlabs.put(StoneTypeVariants.STONE, smoothSlab);
         smoothStoneSlabs.put(StoneTypeVariants.MOSSY_STONE, mossySmoothSlab);

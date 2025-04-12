@@ -23,10 +23,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -1588,11 +1585,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	 */
 	private void generateSmoothCrafting(RecipeExporter exporter, HashMap<StoneTypeVariants, Block> blocks,
 			HashMap<StoneTypeVariants, Block> slabs, String stoneTypeName) {
-		blocks.forEach((key, value) -> {
+		for(Map.Entry<StoneTypeVariants, Block> entry : blocks.entrySet()) {
+			StoneTypeVariants key = entry.getKey();
+			Block value = entry.getValue();
 			createModSlabRecipe(exporter, value, slabs.get(key),
-					createModStoneRecipeName("smooth_" + stoneTypeName + "_slab",
-							"smooth_" + stoneTypeName, key, "_ct"));
-		});
+					createModStoneRecipeName("smooth_" + stoneTypeName + "_slab", "smooth_" + stoneTypeName, key,
+							"_ct"));
+		}
 	}
 
 	/**
@@ -1605,11 +1604,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	 */
 	private void generateSmoothStoneCutting(RecipeExporter exporter, HashMap<StoneTypeVariants, Block> blocks,
 			HashMap<StoneTypeVariants, Block> slabs, String stoneTypeName) {
-		blocks.forEach((key, value) -> {
+		for(Map.Entry<StoneTypeVariants, Block> entry : blocks.entrySet()) {
+			StoneTypeVariants key = entry.getKey();
+			Block value = entry.getValue();
 			offerModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS, value, slabs.get(key), 2,
-					createModStoneRecipeName("smooth_" + stoneTypeName + "_slab",
-							"smooth_" + stoneTypeName, key, "_sc"), exporter);
-		});
+					createModStoneRecipeName("smooth_" + stoneTypeName + "_slab", "smooth_" + stoneTypeName, key,
+							"_sc"), exporter);
+		}
 	}
 
 	/**
@@ -1866,9 +1867,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	 * @return The generated stone cutting recipe name.
 	 */
 	private String createModStoneRecipeName(String outputName, String inputName, StoneTypeVariants variant, String recipeType) {
-		String outputPath = StoneTypeVariants.getRecipePath(variant, outputName);
-		String inputPath = StoneTypeVariants.getRecipePath(variant, inputName);
-		return outputPath + "_from_" + inputPath + recipeType;
+		return createModStoneRecipeName(outputName, inputName, variant, variant, recipeType);
 	}
 
 	/**
