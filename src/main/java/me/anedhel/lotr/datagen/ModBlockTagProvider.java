@@ -1,3 +1,20 @@
+/*
+ * Copyright (c)
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * lord-of-the-rings-middle-earth is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * lord-of-the-rings-middle-earth is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
@@ -17,6 +34,8 @@ import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -47,10 +66,19 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.TIN_BLOCK)
                 .add(ModBlocks.BRONZE_BLOCK);
 
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(ModBlocks.TOMATO_CRATE);
+
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.RAW_TIN_BLOCK)
                 .add(ModBlocks.TIN_BLOCK)
                 .add(ModBlocks.BRONZE_BLOCK);
+
+        HashMap<Block, Block> smallFlowers = new HashMap<>();
+        smallFlowers.put(ModBlocks.WILD_TOMATO, ModBlocks.POTTED_WILD_TOMATO);
+
+        configureSmallFlowers(smallFlowers);
+
+        getOrCreateTagBuilder(BlockTags.CROPS).add(ModBlocks.TOMATO_CROP);
     }
 
     /**
@@ -542,6 +570,19 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                     toolLevelTag.add(oreType.getChalkOre());
                 }
             }
+        }
+    }
+
+    /**
+     * This Method configures all tags for small flowers and their potted variants
+     *
+     * @param flowers a hashMap consistent of the flower and the potted flower
+     */
+    private void configureSmallFlowers(Map<Block, Block> flowers) {
+        for(Block key : flowers.keySet()) {
+            getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS).add(key);
+            getOrCreateTagBuilder(BlockTags.FLOWERS).add(key);
+            getOrCreateTagBuilder(BlockTags.FLOWER_POTS).add(flowers.get(key));
         }
     }
 
