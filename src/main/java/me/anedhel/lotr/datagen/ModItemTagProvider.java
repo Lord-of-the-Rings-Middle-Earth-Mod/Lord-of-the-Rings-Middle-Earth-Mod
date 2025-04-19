@@ -19,6 +19,7 @@ package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.item.ModGearType;
+import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;

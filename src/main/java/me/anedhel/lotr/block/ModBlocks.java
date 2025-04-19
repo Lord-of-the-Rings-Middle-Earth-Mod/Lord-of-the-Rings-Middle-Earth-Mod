@@ -21,6 +21,7 @@ import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.block.custom.crops.CornCropBlock;
 import me.anedhel.lotr.block.custom.crops.LettuceCropBlock;
 import me.anedhel.lotr.block.custom.crops.TomatoCropBlock;
+import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
@@ -46,13 +47,6 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.RAW_COPPER_BLOCK)));
     public static final Block BRONZE_BLOCK = registerBlock("bronze_block",
             new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK)));
-
-    public static final Block TOMATO_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "tomato_crop"),
-            new TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
-    public static final Block LETTUCE_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lettuce_crop"),
-            new LettuceCropBlock(FabricBlockSettings.copyOf(Blocks.BEETROOTS)));
-    public static final Block CORN_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "corn_crop"),
-            new CornCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
     public static final Block WILD_BEETROOT = registerBlock("wild_beetroot",
             new FlowerBlock(StatusEffects.SATURATION, 10, FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()));
@@ -90,6 +84,13 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.COMPOSTER)));
     public static final Block CORN_CRATE = registerBlock("corn_crate",
             new Block(FabricBlockSettings.copyOf(Blocks.COMPOSTER)));
+
+    public static final Block TOMATO_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "tomato_crop"),
+            new TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
+    public static final Block LETTUCE_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lettuce_crop"),
+            new LettuceCropBlock(FabricBlockSettings.copyOf(Blocks.BEETROOTS)));
+    public static final Block CORN_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "corn_crop"),
+            new CornCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
 
     /**
      * This Method is used to register a Block with minecraft and also register the Item for the block
