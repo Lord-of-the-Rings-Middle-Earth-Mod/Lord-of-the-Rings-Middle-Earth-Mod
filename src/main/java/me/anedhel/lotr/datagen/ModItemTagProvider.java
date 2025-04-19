@@ -124,6 +124,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         }
     }
 
+    private void configureModCrops() {
+        getOrCreateTagBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS)
+                .add(ModItems.TOMATO_SEEDS);
+    }
+
     private String turnBlockIntoTag (Block block) {
         return block.getName().getString().replace(' ', '_').toLowerCase();
     }
