@@ -809,6 +809,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	 * 		is provided in the parameters of the method you edit.
 	 */
 	private void createCrateRecipe(Item item, Block crate, RecipeExporter exporter) {
+		//Possible change for the future: 8 cropDrops and wooden Planks/Log as alternative
 		ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, crate, 1).pattern("###")
 		                       .pattern("###").pattern("###").input('#', item)
 		                       .criterion(hasItem(item), conditionsFromItem(item))
