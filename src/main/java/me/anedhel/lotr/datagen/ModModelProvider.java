@@ -56,6 +56,12 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_TOMATO, ModBlocks.POTTED_WILD_TOMATO, BlockStateModelGenerator.TintType.NOT_TINTED);
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.WILD_CORN, BlockStateModelGenerator.TintType.NOT_TINTED);
 
+        TextureMap tomatoMap = new TextureMap()
+                .put(TextureKey.BOTTOM, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/crate_bottom"))
+                .put(TextureKey.TOP, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/tomato_crate_top"))
+                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/tomato_crate_side"));
+        blockStateModelGenerator.registerSingleton(ModBlocks.TOMATO_CRATE, tomatoMap, Models.CUBE_COLUMN);
+
         generateModStoneTypeModels(blockStateModelGenerator);
         generateModWoodTypesBlockModels(blockStateModelGenerator);
         generateModOreTypeModels(blockStateModelGenerator);
