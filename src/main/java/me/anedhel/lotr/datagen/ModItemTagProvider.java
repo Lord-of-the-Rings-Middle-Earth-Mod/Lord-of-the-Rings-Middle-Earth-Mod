@@ -125,11 +125,22 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         }
     }
 
+    /**
+     * Configures all required tags for mod-specific crops.
+     * Adds the mod's crop seeds to the `VILLAGER_PLANTABLE_SEEDS` tag.
+     */
     private void configureModCrops() {
         getOrCreateTagBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS)
                 .add(ModItems.TOMATO_SEEDS);
     }
 
+    /**
+     * Converts a given block into a tag-friendly string.
+     * The block's name is transformed to lowercase and spaces are replaced with underscores.
+     *
+     * @param block The block to be converted.
+     * @return A string representation of the block's name suitable for use as a tag.
+     */
     private String turnBlockIntoTag (Block block) {
         return block.getName().getString().replace(' ', '_').toLowerCase();
     }

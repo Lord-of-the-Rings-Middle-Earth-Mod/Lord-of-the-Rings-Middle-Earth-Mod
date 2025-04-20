@@ -787,6 +787,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		}
 	}
 
+	/**
+	 * Creates cooking recipes for a given raw and cooked food item.
+	 *
+	 * This method generates recipes for smoking, campfire cooking, and smelting
+	 * the specified raw food item into the cooked food item.
+	 *
+	 * @param exporter  The exporter to which the recipes are offered.
+	 * @param rawItem   The raw food item to be cooked.
+	 * @param cookedItem The resulting cooked food item.
+	 */
 	private void createCookedFoodRecipes(RecipeExporter exporter, Item rawItem, Item cookedItem) {
 		offerFoodCookingRecipe(exporter, "smooking", RecipeSerializer.SMOKING, 100, rawItem,
 		                       cookedItem, 0.35f);

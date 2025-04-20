@@ -12,3 +12,9 @@ ___
   + Recipe Generation
 + Added the common Tag c:pillar, that is used for the connected Pillar Texture within this mod
 + Added Blueslate as stoneType
++ Added Tomatoes and Baked Tomatoes as food items, with the following properties:
+  + Tomatoes: 1.5 hunger, 0.6 saturation
+  + Baked Tomatoes: 2.5 hunger, 0.8 saturation
++ Tomato Crates have been added as a storage block for Tomatoes
++ Added Wild-Tomato as pottable plants, that drop Tomatoes
++ Added Tomato Crops grown from Tomato Seeds

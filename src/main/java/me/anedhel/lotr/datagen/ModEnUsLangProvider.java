@@ -515,6 +515,11 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 				" Pillar Slab");
 	}
 
+	/**
+	 * Generates translations for mod-specific crops and related items.
+	 *
+	 * @param translationBuilder The builder used to add translations.
+	 */
 	private void generateModCrops(TranslationBuilder translationBuilder) {
 		translationBuilder.add(ModBlocks.TOMATO_CROP, "Tomato Crop");
 		translationBuilder.add(ModBlocks.WILD_TOMATO, "Wild Tomato");
