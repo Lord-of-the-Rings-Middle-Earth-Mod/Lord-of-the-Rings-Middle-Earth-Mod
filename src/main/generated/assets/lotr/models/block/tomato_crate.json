@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "lotr:block/crate_bottom",
+    "side": "lotr:block/tomato_crate_side",
+    "top": "lotr:block/tomato_crate_top"
+  }
+}
