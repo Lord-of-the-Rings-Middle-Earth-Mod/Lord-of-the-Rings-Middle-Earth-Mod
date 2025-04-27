@@ -23,15 +23,15 @@ import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.block.ModWoodType;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
+import net.fabricmc.fabric.impl.tag.convention.TagRegistration;
 import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.data.family.BlockFamily;
-import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
-import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -43,8 +43,7 @@ import java.util.concurrent.CompletableFuture;
  */
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
-    public static final TagKey<Block> PILLARS = TagKey.of(RegistryKeys.BLOCK, Identifier.of("c",
-            "pillars"));
+    public static final TagKey<Block> PILLARS = TagRegistration.BLOCK_TAG_REGISTRATION.registerCommon("pillar");
 
     public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
@@ -517,6 +516,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     private void configureModOreTypes() {
         for (ModOreType oreType : ModOreType.values()) {
             FabricTagBuilder pickaxeTag = getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE);
+            FabricTagBuilder oreTag = getOrCreateTagBuilder(ConventionalBlockTags.ORES);
             FabricTagBuilder toolLevelTag;
             switch (oreType.getMiningLevel()) {
                 case MiningLevels.STONE -> toolLevelTag = getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL);
@@ -525,34 +525,37 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 default -> toolLevelTag = null;
             }
 
-            if (!oreType.isVanillaAddition()) {
-                if (oreType.getStoneOre() != null) {
-                    pickaxeTag.add(oreType.getStoneOre());
-                    if (toolLevelTag != null) {
-                        toolLevelTag.add(oreType.getStoneOre());
-                    }
+            if(oreType.getStoneOre() != null) {
+                pickaxeTag.add(oreType.getStoneOre());
+                oreTag.add(oreType.getStoneOre());
+                if(toolLevelTag != null) {
+                    toolLevelTag.add(oreType.getStoneOre());
                 }
-                if (oreType.getDeepslateOre() != null) {
-                    pickaxeTag.add(oreType.getDeepslateOre());
-                    if (toolLevelTag != null) {
-                        toolLevelTag.add(oreType.getDeepslateOre());
-                    }
+            }
+            if(oreType.getDeepslateOre() != null) {
+                pickaxeTag.add(oreType.getDeepslateOre());
+                oreTag.add(oreType.getDeepslateOre());
+                if(toolLevelTag != null) {
+                    toolLevelTag.add(oreType.getDeepslateOre());
                 }
             }
             if (oreType.getAndesiteOre() != null) {
                 pickaxeTag.add(oreType.getAndesiteOre());
+                oreTag.add(oreType.getAndesiteOre());
                 if (toolLevelTag != null) {
                     toolLevelTag.add(oreType.getAndesiteOre());
                 }
             }
             if (oreType.getDioriteOre() != null) {
                 pickaxeTag.add(oreType.getDioriteOre());
+                oreTag.add(oreType.getDioriteOre());
                 if (toolLevelTag != null) {
                     toolLevelTag.add(oreType.getDioriteOre());
                 }
             }
             if (oreType.getGraniteOre() != null) {
                 pickaxeTag.add(oreType.getGraniteOre());
+                oreTag.add(oreType.getGraniteOre());
                 if (toolLevelTag != null) {
                     toolLevelTag.add(oreType.getGraniteOre());
                 }
@@ -560,12 +563,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
             if (oreType.getBlueslateOre() != null) {
                 pickaxeTag.add(oreType.getBlueslateOre());
+                oreTag.add(oreType.getBlueslateOre());
                 if (toolLevelTag != null) {
                     toolLevelTag.add(oreType.getBlueslateOre());
                 }
             }
             if (oreType.getChalkOre() != null) {
                 pickaxeTag.add(oreType.getChalkOre());
+                oreTag.add(oreType.getChalkOre());
                 if (toolLevelTag != null) {
                     toolLevelTag.add(oreType.getChalkOre());
                 }

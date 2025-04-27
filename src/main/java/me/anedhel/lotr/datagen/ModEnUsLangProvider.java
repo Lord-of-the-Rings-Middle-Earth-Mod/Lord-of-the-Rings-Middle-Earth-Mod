@@ -18,7 +18,9 @@
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
+import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModStoneType;
+import me.anedhel.lotr.datagen.util.DataGenUtils;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -53,6 +55,7 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add("itemgroup.lotr_transport", "LOTR Transport");
 
 		generateStoneTypeTranslations(translationBuilder);
+		generateOreTypeTranslations(translationBuilder);
 		generateModCrops(translationBuilder);
 	}
 
@@ -516,6 +519,51 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 	}
 
 	/**
+	 * Generates translations for all ore types defined in the mod. This method iterates through all `ModOreType`
+	 * values
+	 * and adds translations for various ore variants (e.g., stone, deepslate, andesite, etc.) and their drops.
+	 *
+	 * @param translationBuilder The builder used to add translations.
+	 */
+	private void generateOreTypeTranslations(TranslationBuilder translationBuilder) {
+		for(ModOreType oreType : ModOreType.values()) {
+			String name = oreType.getStoneOre().getTranslationKey()
+					.transform(translationKey -> generateNameFromTranslationKey(translationKey));
+			if(oreType.getStoneOre() != null) {
+				translationBuilder.add(oreType.getStoneOre(), name);
+			}
+			if(oreType.getDeepslateOre() != null) {
+				translationBuilder.add(oreType.getDeepslateOre(), "Deepslate " + name);
+			}
+			if(oreType.getAndesiteOre() != null) {
+				translationBuilder.add(oreType.getAndesiteOre(), "Andesite " + name);
+			}
+			if(oreType.getDioriteOre() != null) {
+				translationBuilder.add(oreType.getDioriteOre(), "Diorite " + name);
+			}
+			if(oreType.getGraniteOre() != null) {
+				translationBuilder.add(oreType.getGraniteOre(), "Granite " + name);
+			}
+
+			if(oreType.getBlueslateOre() != null) {
+				translationBuilder.add(oreType.getBlueslateOre(), "Blueslate " + name);
+			}
+			if(oreType.getChalkOre() != null) {
+				translationBuilder.add(oreType.getChalkOre(), "Chalk " + name);
+			}
+
+			if(oreType.getOreDrop() != null) {
+				translationBuilder.add(oreType.getOreDrop(), oreType.getOreDrop().getTranslationKey()
+						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+			}
+			if(oreType.getOreDropBlock() != null) {
+				translationBuilder.add(oreType.getOreDropBlock(), oreType.getOreDropBlock().getTranslationKey()
+						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+			}
+		}
+	}
+
+	/**
 	 * Generates translations for mod-specific crops and related items.
 	 *
 	 * @param translationBuilder The builder used to add translations.
@@ -528,5 +576,16 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModItems.TOMATO_SEEDS, "Tomato Seeds");
 		translationBuilder.add(ModItems.BAKED_TOMATO, "Baked Tomato");
 		translationBuilder.add(ModItems.TOMATO, "Tomato");
+	}
+
+	/**
+	 * Generates a human-readable name from a given translation key.
+	 *
+	 * @param translationKey The translation key to be converted.
+	 * @return A human-readable name with words capitalized.
+	 */
+	private String generateNameFromTranslationKey(String translationKey) {
+		String name = translationKey.replace("_", " ");
+		return DataGenUtils.capitaliseWords(name);
 	}
 }
