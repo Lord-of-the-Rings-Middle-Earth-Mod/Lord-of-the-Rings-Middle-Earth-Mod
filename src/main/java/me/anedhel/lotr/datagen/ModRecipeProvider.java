@@ -787,6 +787,16 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		}
 	}
 
+	/**
+	 * Creates cooking recipes for a given raw and cooked food item.
+	 *
+	 * This method generates recipes for smoking, campfire cooking, and smelting
+	 * the specified raw food item into the cooked food item.
+	 *
+	 * @param exporter  The exporter to which the recipes are offered.
+	 * @param rawItem   The raw food item to be cooked.
+	 * @param cookedItem The resulting cooked food item.
+	 */
 	private void createCookedFoodRecipes(RecipeExporter exporter, Item rawItem, Item cookedItem) {
 		offerFoodCookingRecipe(exporter, "smooking", RecipeSerializer.SMOKING, 100, rawItem,
 		                       cookedItem, 0.35f);
@@ -809,6 +819,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	 * 		is provided in the parameters of the method you edit.
 	 */
 	private void createCrateRecipe(Item item, Block crate, RecipeExporter exporter) {
+		//Possible change for the future: 8 cropDrops and wooden Planks/Log as alternative
 		ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, crate, 1).pattern("###")
 		                       .pattern("###").pattern("###").input('#', item)
 		                       .criterion(hasItem(item), conditionsFromItem(item))

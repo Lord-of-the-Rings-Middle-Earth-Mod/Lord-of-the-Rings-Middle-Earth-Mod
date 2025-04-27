@@ -1,6 +1,25 @@
+/*
+ * Copyright (c)
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * lord-of-the-rings-middle-earth is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * lord-of-the-rings-middle-earth is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package me.anedhel.lotr.datagen;
 
+import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModStoneType;
+import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.data.family.BlockFamily;
@@ -34,6 +53,7 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add("itemgroup.lotr_transport", "LOTR Transport");
 
 		generateStoneTypeTranslations(translationBuilder);
+		generateModCrops(translationBuilder);
 	}
 
 	/**
@@ -493,5 +513,20 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(stoneType.getCrackedOvergrownGoldPillar(), "Cracked Overgrown Gold  " + name + " Pillar");
 		translationBuilder.add(stoneType.getCrackedOvergrownGoldPillarSlab(), "Cracked Overgrown Gold " + name +
 				" Pillar Slab");
+	}
+
+	/**
+	 * Generates translations for mod-specific crops and related items.
+	 *
+	 * @param translationBuilder The builder used to add translations.
+	 */
+	private void generateModCrops(TranslationBuilder translationBuilder) {
+		translationBuilder.add(ModBlocks.TOMATO_CROP, "Tomato Crop");
+		translationBuilder.add(ModBlocks.WILD_TOMATO, "Wild Tomato");
+		translationBuilder.add(ModBlocks.POTTED_WILD_TOMATO, "Wild Tomato");
+		translationBuilder.add(ModBlocks.TOMATO_CRATE, "Tomato Crate");
+		translationBuilder.add(ModItems.TOMATO_SEEDS, "Tomato Seeds");
+		translationBuilder.add(ModItems.BAKED_TOMATO, "Baked Tomato");
+		translationBuilder.add(ModItems.TOMATO, "Tomato");
 	}
 }

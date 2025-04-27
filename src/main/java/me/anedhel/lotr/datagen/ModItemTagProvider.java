@@ -1,7 +1,25 @@
+/*
+ * Copyright (c)
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * lord-of-the-rings-middle-earth is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * lord-of-the-rings-middle-earth is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.item.ModGearType;
+import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
@@ -107,6 +125,22 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         }
     }
 
+    /**
+     * Configures all required tags for mod-specific crops.
+     * Adds the mod's crop seeds to the `VILLAGER_PLANTABLE_SEEDS` tag.
+     */
+    private void configureModCrops() {
+        getOrCreateTagBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS)
+                .add(ModItems.TOMATO_SEEDS);
+    }
+
+    /**
+     * Converts a given block into a tag-friendly string.
+     * The block's name is transformed to lowercase and spaces are replaced with underscores.
+     *
+     * @param block The block to be converted.
+     * @return A string representation of the block's name suitable for use as a tag.
+     */
     private String turnBlockIntoTag (Block block) {
         return block.getName().getString().replace(' ', '_').toLowerCase();
     }
