@@ -35,7 +35,8 @@ import java.util.Objects;
 public enum ModOreType {
 
     TIN_ORE(ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE, null, null, null, null, null, ModItems.RAW_TIN,
-            ModBlocks.RAW_TIN_BLOCK, UniformLootNumberProvider.create(2.0f, 5.0f), MiningLevels.STONE);
+		    ModBlocks.RAW_TIN_BLOCK, UniformLootNumberProvider.create(2.0f, 5.0f), MiningLevels.STONE,
+		    ModItems.TIN_INGOT, ModBlocks.TIN_BLOCK);
 
     private final Block stoneOre;
     private final Block deepslateOre;
@@ -48,12 +49,16 @@ public enum ModOreType {
 
     private final Item oreDrop;
     private final Block oreDropBlock;
+
     private final UniformLootNumberProvider dropRange;
     private final int miningLevel;
 
+	private final Item smeltingItem;
+	private final Block smeltingBlock;
+
     ModOreType(Block stoneOre, Block deepslateOre, Block andesiteOre, Block dioriteOre, Block graniteOre,
             Block blueslateOre, Block chalkOre, Item oreDrop, Block oreDropBlock, UniformLootNumberProvider dropRange,
-            int miningLevel) {
+		    int miningLevel, Item smeltingItem, Block smeltingBlock) {
         this.stoneOre = stoneOre;
         this.deepslateOre = deepslateOre;
         this.andesiteOre = andesiteOre;
@@ -65,40 +70,62 @@ public enum ModOreType {
         this.oreDropBlock = oreDropBlock;
         this.dropRange = dropRange;
         this.miningLevel = miningLevel;
+	    this.smeltingItem = smeltingItem;
+	    this.smeltingBlock = smeltingBlock;
     }
 
     /**
      * Retrieves a list of `ItemStack` objects representing the ores associated with this ore type.
-     * <p>
-     * The list includes all non-null ores, such as stone, deepslate, and other variants, unless the ore is a vanilla
-     * addition. Vanilla additions are excluded from the list.
      *
      * @return A list of `ItemStack` objects for the ores in this ore type.
      */
-    public List<ItemStack> getItemGroupList() {
-        List<ItemStack> oreItemGroupList = new ArrayList<>();
+    public List<ItemStack> getBlockItemGroupList() {
+	    List<ItemStack> blockItemGroupList = new ArrayList<>();
         if(stoneOre != null) {
-            oreItemGroupList.add(new ItemStack(stoneOre));
+	        blockItemGroupList.add(new ItemStack(stoneOre));
         }
         if(deepslateOre != null) {
-            oreItemGroupList.add(new ItemStack(deepslateOre));
+	        blockItemGroupList.add(new ItemStack(deepslateOre));
         }
         if (andesiteOre != null) {
-            oreItemGroupList.add(new ItemStack(andesiteOre));
+	        blockItemGroupList.add(new ItemStack(andesiteOre));
         }
         if (dioriteOre != null) {
-            oreItemGroupList.add(new ItemStack(dioriteOre));
+	        blockItemGroupList.add(new ItemStack(dioriteOre));
         }
         if (graniteOre != null) {
-            oreItemGroupList.add(new ItemStack(graniteOre));
+	        blockItemGroupList.add(new ItemStack(graniteOre));
         }
         if (blueslateOre != null) {
-            oreItemGroupList.add(new ItemStack(blueslateOre));
+	        blockItemGroupList.add(new ItemStack(blueslateOre));
         }
         if (chalkOre != null) {
-            oreItemGroupList.add(new ItemStack(chalkOre));
+	        blockItemGroupList.add(new ItemStack(chalkOre));
         }
-        return oreItemGroupList;
+
+	    if(oreDropBlock != null) {
+		    blockItemGroupList.add(new ItemStack(oreDropBlock));
+        }
+	    if(smeltingBlock != null) {
+		    blockItemGroupList.add(new ItemStack(smeltingBlock));
+	    }
+	    return blockItemGroupList;
+    }
+
+	/**
+	 * Retrieves a list of `ItemStack` objects representing the ingredients associated with this ore type.
+	 *
+	 * @return A list of `ItemStack` objects for the ingredients in this ore type.
+	 */
+	public List<ItemStack> getIngredientsItemGroupList() {
+		List<ItemStack> ingredientsItemGroupList = new ArrayList<>();
+		if(oreDrop != null) {
+			ingredientsItemGroupList.add(new ItemStack(oreDrop));
+		}
+		if(smeltingItem != null) {
+			ingredientsItemGroupList.add(new ItemStack(smeltingItem));
+		}
+		return ingredientsItemGroupList;
     }
 
     /**
@@ -162,4 +189,12 @@ public enum ModOreType {
     public int getMiningLevel() {
         return miningLevel;
     }
+
+	public Item getSmeltingItem() {
+		return smeltingItem;
+	}
+
+	public Block getSmeltingBlock() {
+		return smeltingBlock;
+	}
 }

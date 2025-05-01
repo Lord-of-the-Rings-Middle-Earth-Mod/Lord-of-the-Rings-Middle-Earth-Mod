@@ -3,7 +3,7 @@
   "category": "blocks",
   "cookingtime": 800,
   "experience": 5.6,
-  "group": "tin_block",
+	"group": "_ore",
   "ingredient": {
     "item": "lotr:raw_tin_block"
   },

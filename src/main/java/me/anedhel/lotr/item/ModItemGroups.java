@@ -1,3 +1,20 @@
+/*
+ * Copyright (c)
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * lord-of-the-rings-middle-earth is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * lord-of-the-rings-middle-earth is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package me.anedhel.lotr.item;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
@@ -13,7 +30,9 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 /**
- * This class is used to manage all ItemGroups the Mod uses and adds
+ * This class is used to manage all ItemGroups the Mod uses and adds.
+ *
+ * The warnings, that the ItemGroups are not used, can be ignored.
  */
 public class ModItemGroups {
 
@@ -38,9 +57,7 @@ public class ModItemGroups {
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_blocks"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_blocks", "LotR Blocks"))
                     .icon(() -> new ItemStack(ModStoneBlocks.BLUESLATE)).entries((displayContext, entries) -> {
-                        entries.addAll(ModOreType.TIN_ORE.getItemGroupList());
-                        entries.add(ModBlocks.RAW_TIN_BLOCK);
-                        entries.add(ModBlocks.TIN_BLOCK);
+                        entries.addAll(ModOreType.TIN_ORE.getBlockItemGroupList());
                         entries.add(ModBlocks.BRONZE_BLOCK);
                     }).build());
 
@@ -80,8 +97,7 @@ public class ModItemGroups {
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_ingredients"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_ingredients", "LotR Ingredients"))
                     .icon(() -> new ItemStack(ModItems.TIN_INGOT)).entries((displayContext, entries) -> {
-                        entries.add(ModItems.RAW_TIN);
-                        entries.add(ModItems.TIN_INGOT);
+                        entries.addAll(ModOreType.TIN_ORE.getIngredientsItemGroupList());
                         entries.add(ModItems.BRONZE_INGOT);
                     }).build());
 

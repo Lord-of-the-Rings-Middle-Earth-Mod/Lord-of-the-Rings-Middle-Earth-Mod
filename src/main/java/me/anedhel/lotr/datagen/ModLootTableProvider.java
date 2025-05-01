@@ -102,8 +102,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CARROT_CRATE);
         addDrop(ModBlocks.BEETROOT_CRATE);
 
-        addDrop(ModBlocks.RAW_TIN_BLOCK);
-        addDrop(ModBlocks.TIN_BLOCK);
         addDrop(ModBlocks.BRONZE_BLOCK);
 
         for (ModWoodType woodType : ModWoodType.values()) {
@@ -140,33 +138,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         }
 
         generateStoneTypeLootTables();
-
-        for (ModOreType oreType : ModOreType.values()) {
-            if (!oreType.isVanillaAddition()) {
-                if (oreType.getStoneOre() != null) {
-                    addDrop(oreType.getStoneOre(), oreDrops(oreType.getStoneOre(), oreType.getOreDrop(), oreType.getDropRange()));
-                }
-                if (oreType.getDeepslateOre() != null) {
-                    addDrop(oreType.getDeepslateOre(), oreDrops(oreType.getDeepslateOre(), oreType.getOreDrop(), oreType.getDropRange()));
-                }
-            }
-            if (oreType.getAndesiteOre() != null) {
-                addDrop(oreType.getAndesiteOre(), oreDrops(oreType.getAndesiteOre(), oreType.getOreDrop(), oreType.getDropRange()));
-            }
-            if (oreType.getDioriteOre() != null) {
-                addDrop(oreType.getDioriteOre(), oreDrops(oreType.getDioriteOre(), oreType.getOreDrop(), oreType.getDropRange()));
-            }
-            if (oreType.getGraniteOre() != null) {
-                addDrop(oreType.getGraniteOre(), oreDrops(oreType.getGraniteOre(), oreType.getOreDrop(), oreType.getDropRange()));
-            }
-
-            if (oreType.getBlueslateOre() != null) {
-                addDrop(oreType.getBlueslateOre(), oreDrops(oreType.getBlueslateOre(), oreType.getOreDrop(), oreType.getDropRange()));
-            }
-            if (oreType.getChalkOre() != null) {
-                addDrop(oreType.getChalkOre(), oreDrops(oreType.getChalkOre(), oreType.getOreDrop(), oreType.getDropRange()));
-            }
-        }
+        generateOreTypeLootTables();
     }
 
     /**
@@ -495,6 +467,49 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                 addDrop(block, slabDrops(block));
             } else {
                 addDrop(block);
+            }
+        }
+    }
+
+    /**
+     * This method generates the Loot-Tables for all ModOreTypes.
+     */
+    private void generateOreTypeLootTables() {
+        for(ModOreType oreType : ModOreType.values()) {
+            if(oreType.getStoneOre() != null) {
+                addDrop(oreType.getStoneOre(),
+                        oreDrops(oreType.getStoneOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+            if(oreType.getDeepslateOre() != null) {
+                addDrop(oreType.getDeepslateOre(),
+                        oreDrops(oreType.getDeepslateOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+            if(oreType.getAndesiteOre() != null) {
+                addDrop(oreType.getAndesiteOre(),
+                        oreDrops(oreType.getAndesiteOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+            if(oreType.getDioriteOre() != null) {
+                addDrop(oreType.getDioriteOre(),
+                        oreDrops(oreType.getDioriteOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+            if(oreType.getGraniteOre() != null) {
+                addDrop(oreType.getGraniteOre(),
+                        oreDrops(oreType.getGraniteOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+
+            if(oreType.getBlueslateOre() != null) {
+                addDrop(oreType.getBlueslateOre(),
+                        oreDrops(oreType.getBlueslateOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+            if(oreType.getChalkOre() != null) {
+                addDrop(oreType.getChalkOre(),
+                        oreDrops(oreType.getChalkOre(), oreType.getOreDrop(), oreType.getDropRange()));
+            }
+            if(oreType.getOreDropBlock() != null) {
+                addDrop(oreType.getOreDropBlock());
+            }
+            if(oreType.getSmeltingBlock() != null) {
+                addDrop(oreType.getSmeltingBlock());
             }
         }
     }

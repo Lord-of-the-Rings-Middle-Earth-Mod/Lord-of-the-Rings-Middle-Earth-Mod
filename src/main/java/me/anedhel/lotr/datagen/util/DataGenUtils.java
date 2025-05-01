@@ -34,7 +34,7 @@ public class DataGenUtils {
 	 * @return The converted name.
 	 */
 	public static String capitaliseWords(String translationKey) {
-		Matcher matcher = FIRST_LETTER_PATTERN.matcher(translationKey);
+		Matcher matcher = FIRST_LETTER_PATTERN.matcher(translationKey.substring(translationKey.indexOf("lotr.") + 5));
 		StringBuilder result = new StringBuilder();
 
 		while(matcher.find()) {

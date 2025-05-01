@@ -560,6 +560,14 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 				translationBuilder.add(oreType.getOreDropBlock(), oreType.getOreDropBlock().getTranslationKey()
 						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
 			}
+			if(oreType.getSmeltingItem() != null) {
+				translationBuilder.add(oreType.getSmeltingItem(), oreType.getSmeltingItem().getTranslationKey()
+						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+			}
+			if(oreType.getSmeltingBlock() != null) {
+				translationBuilder.add(oreType.getSmeltingBlock(), oreType.getSmeltingBlock().getTranslationKey()
+						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+			}
 		}
 	}
 

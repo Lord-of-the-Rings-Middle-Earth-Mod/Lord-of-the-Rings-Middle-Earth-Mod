@@ -1,3 +1,20 @@
+/*
+ * Copyright (c)
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * lord-of-the-rings-middle-earth is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * lord-of-the-rings-middle-earth is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.block.ModBlocks;
@@ -31,8 +48,6 @@ import java.util.stream.Collectors;
  */
 public class ModRecipeProvider extends FabricRecipeProvider {
 
-	private static final List<ItemConvertible> TIN_BLOCK_SMELTABLES = List.of(
-			ModBlocks.RAW_TIN_BLOCK);
 	private static final List<ItemConvertible> IRON_BLOCK_SMELTABLES = List.of(
 			Blocks.RAW_IRON_BLOCK);
 	private static final List<ItemConvertible> GOLD_BLOCK_SMELTABLES = List.of(
@@ -51,10 +66,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	 */
 	@Override
 	public void generate(RecipeExporter exporter) {
-		offerSmelting(exporter, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK,
-		              5.6f, 1600, "tin_block");
-		offerBlasting(exporter, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK,
-		              5.6f, 800, "tin_block");
 		offerSmelting(exporter, IRON_BLOCK_SMELTABLES, RecipeCategory.MISC, Blocks.IRON_BLOCK,
                       5.6f,
 		              1600, "iron_block");
@@ -85,12 +96,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				                          getRecipeName(ModItems.BRONZE_INGOT) + "_crafting"));
 
 		offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS,
-                                         ModItems.RAW_TIN,
-		                                 RecipeCategory.MISC, ModBlocks.RAW_TIN_BLOCK);
-		offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS,
-		                                 ModItems.TIN_INGOT, RecipeCategory.MISC,
-		                                 ModBlocks.TIN_BLOCK);
-		offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS,
 		                                 ModItems.BRONZE_INGOT, RecipeCategory.MISC,
 		                                 ModBlocks.BRONZE_BLOCK);
 
@@ -115,14 +120,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		createCrateRecipe(Items.BEETROOT, ModBlocks.BEETROOT_CRATE, exporter);
 
 		createModGearTypeRecipes(ModGearType.BRONZE, exporter);
+		createModOreTypeRecipes(exporter);
 		createModStoneTypeRecipes(exporter);
 		createModWoodTypesRecipes(exporter);
-		createOreSmeltingRecipes(exporter);
 	}
 
 	/**
 	 * This Method is used to generate all Crafting Recipes for the given GearType
-	 *
+	 * </p>
 	 * This Method becomes more relevant, when more gearTypes are added
 	 *
 	 * @param gearType The ModGearType that all craftingRecipes are to be generated for
@@ -168,6 +173,39 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			}
 			if(hoe != null) {
 				createHoeRecipe(material, hoe, exporter);
+			}
+		}
+	}
+
+	/**
+	 * Generates crafting recipes for all ModOreType instances.
+	 * <p>
+	 * This includes the raw ores as well as the smelted ingots
+	 *
+	 * @param exporter The RecipeExporter instance used to register the recipes.
+	 */
+	private void createModOreTypeRecipes(RecipeExporter exporter) {
+		for(ModOreType oreType : ModOreType.values()) {
+			String smeltingGroup = oreType.name().substring(oreType.name().lastIndexOf('_')).toLowerCase();
+			if(oreType.getSmeltingItem() != null) {
+				offerSmelting(exporter, oreType.getSmeltables(), RecipeCategory.MISC, oreType.getSmeltingItem(), 0.7f,
+						200, smeltingGroup);
+				offerBlasting(exporter, oreType.getSmeltables(), RecipeCategory.MISC, oreType.getSmeltingItem(), 0.7f,
+						100, smeltingGroup);
+			}
+			if(oreType.getOreDrop() != null) {
+				offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, oreType.getOreDrop(),
+						RecipeCategory.MISC, oreType.getOreDropBlock());
+			}
+			if(oreType.getSmeltingItem() != null) {
+				offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, oreType.getSmeltingItem(),
+						RecipeCategory.MISC, oreType.getSmeltingBlock());
+			}
+			if(oreType.getOreDropBlock() != null) {
+				offerSmelting(exporter, List.of(oreType.getOreDropBlock()), RecipeCategory.MISC,
+						oreType.getSmeltingBlock(), 5.6f, 1600, smeltingGroup);
+				offerBlasting(exporter, List.of(oreType.getOreDropBlock()), RecipeCategory.MISC,
+						oreType.getSmeltingBlock(), 5.6f, 800, smeltingGroup);
 			}
 		}
 	}
@@ -756,40 +794,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	}
 
 	/**
-	 * This Method is used to create all smelting recipes for all ModOreTypes, that should have a
-	 * smelting recipe
-	 *
-	 * The <code>switch</code> expression will have more <code>case</code> statements in the future, therefor the
-	 * warning can be ignored.
-	 *
-	 * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one
-	 * 		is provided in the parameters of the method you edit.
-	 */
-	private void createOreSmeltingRecipes(RecipeExporter exporter) {
-		for(ModOreType oreType : ModOreType.values()) {
-			ItemConvertible smeltedDrop;
-			String smeltingGroup = switch(oreType) {
-				case TIN_ORE -> {
-					smeltedDrop = ModItems.TIN_INGOT;
-					yield "tin";
-				}
-				default -> {
-					smeltedDrop = null;
-					yield "";
-				}
-			};
-			if(smeltedDrop != null) {
-				offerSmelting(exporter, oreType.getSmeltables(), RecipeCategory.MISC, smeltedDrop,
-				              0.7f, 200, smeltingGroup);
-				offerBlasting(exporter, oreType.getSmeltables(), RecipeCategory.MISC, smeltedDrop,
-				              0.7f, 100, smeltingGroup);
-			}
-		}
-	}
-
-	/**
 	 * Creates cooking recipes for a given raw and cooked food item.
-	 *
+	 * </p>
 	 * This method generates recipes for smoking, campfire cooking, and smelting
 	 * the specified raw food item into the cooked food item.
 	 *

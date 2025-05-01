@@ -18,3 +18,7 @@ ___
 + Tomato Crates have been added as a storage block for Tomatoes
 + Added Wild-Tomato as pottable plants, that drop Tomatoes
 + Added Tomato Crops grown from Tomato Seeds
++ Added Tin
+  + Tin Ore for Stone and Deepslate
+  + Raw Tin and Raw Tin Block
+  + Tin Ingot and Tin Block

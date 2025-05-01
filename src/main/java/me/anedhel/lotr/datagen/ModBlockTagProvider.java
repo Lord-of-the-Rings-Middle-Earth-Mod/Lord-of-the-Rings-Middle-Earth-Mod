@@ -61,15 +61,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         configureModOreTypes();
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
-                .add(ModBlocks.RAW_TIN_BLOCK)
-                .add(ModBlocks.TIN_BLOCK)
                 .add(ModBlocks.BRONZE_BLOCK);
 
         getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(ModBlocks.TOMATO_CRATE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
-                .add(ModBlocks.RAW_TIN_BLOCK)
-                .add(ModBlocks.TIN_BLOCK)
                 .add(ModBlocks.BRONZE_BLOCK);
 
         HashMap<Block, Block> smallFlowers = new HashMap<>();
@@ -573,6 +569,19 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 oreTag.add(oreType.getChalkOre());
                 if (toolLevelTag != null) {
                     toolLevelTag.add(oreType.getChalkOre());
+                }
+            }
+
+            if(oreType.getOreDropBlock() != null) {
+                pickaxeTag.add(oreType.getOreDropBlock());
+                if(toolLevelTag != null) {
+                    toolLevelTag.add(oreType.getOreDropBlock());
+                }
+            }
+            if(oreType.getSmeltingBlock() != null) {
+                pickaxeTag.add(oreType.getSmeltingBlock());
+                if(toolLevelTag != null) {
+                    toolLevelTag.add(oreType.getSmeltingBlock());
                 }
             }
         }
