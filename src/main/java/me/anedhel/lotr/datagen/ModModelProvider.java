@@ -1,3 +1,20 @@
+/*
+ * Copyright (c)
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * lord-of-the-rings-middle-earth is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * lord-of-the-rings-middle-earth is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package me.anedhel.lotr.datagen;
 
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
@@ -41,8 +58,6 @@ public class ModModelProvider extends FabricModelProvider {
      */
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_TIN_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.TIN_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.BRONZE_BLOCK);
 
         blockStateModelGenerator.registerCrop(ModBlocks.TOMATO_CROP, TomatoCropBlock.AGE, 0, 1, 2, 3, 4, 5);
@@ -62,9 +77,9 @@ public class ModModelProvider extends FabricModelProvider {
                 .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/tomato_crate_side"));
         blockStateModelGenerator.registerSingleton(ModBlocks.TOMATO_CRATE, tomatoMap, Models.CUBE_BOTTOM_TOP);
 
-        generateModStoneTypeModels(blockStateModelGenerator);
+        generateModStoneTypeBlockModels(blockStateModelGenerator);
         generateModWoodTypesBlockModels(blockStateModelGenerator);
-        generateModOreTypeModels(blockStateModelGenerator);
+        generateModOreTypeBlockModels(blockStateModelGenerator);
     }
 
     /**
@@ -73,8 +88,6 @@ public class ModModelProvider extends FabricModelProvider {
      */
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.RAW_TIN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.TIN_INGOT, Models.GENERATED);
         itemModelGenerator.register(ModItems.BRONZE_INGOT, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
@@ -88,13 +101,13 @@ public class ModModelProvider extends FabricModelProvider {
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
 
         generateModGearTypeModels(ModGearType.BRONZE, itemModelGenerator);
-
+        generateModOreTypeItemModels(itemModelGenerator);
         generateModWoodTypesItemModels(itemModelGenerator);
     }
 
     /**
      * This Method is used to generate all the Models for the given GearType
-     *
+     * </p>
      * The Method will be more relevant as soon as more gearTypes are added
      *
      * @param gearType The ModGearType the models should be generated for.
@@ -143,13 +156,13 @@ public class ModModelProvider extends FabricModelProvider {
     /**
      * This Method is used to generate all the models for the given stone type.
      * It only works for blocks completely added by the mod, adding Models for additions made based on vanilla blocks does not work with this method.
-     *
+     * </p>
      * The warning, that <code>getTranslationKey</code> may produce <code>NullPointerException</code>, can be
      * ignored, as the TranslationKeys are always set when registering the Block.
      *
      * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
      */
-    private void generateModStoneTypeModels(BlockStateModelGenerator blockStateModelGenerator) {
+    private void generateModStoneTypeBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         for (ModStoneType stoneType : ModStoneType.values()) {
             BlockStateModelGenerator.BlockTexturePool stonePool =
                     blockStateModelGenerator.registerCubeAllModelTexturePool(stoneType.getStoneVariant("base"));
@@ -1119,15 +1132,18 @@ public class ModModelProvider extends FabricModelProvider {
         }
     }
 
-    private void generateModOreTypeModels(BlockStateModelGenerator blockStateModelGenerator) {
+    /**
+     * This method generates the models for all ores added by the mod.
+     *
+     * @param blockStateModelGenerator the blockStateModelGenerator provided by minecraft
+     */
+    private void generateModOreTypeBlockModels(BlockStateModelGenerator blockStateModelGenerator) {
         for (ModOreType oreType : ModOreType.values()) {
-            if (!oreType.isVanillaAddition()) {
-                if (oreType.getStoneOre() != null) {
-                    blockStateModelGenerator.registerSimpleCubeAll(oreType.getStoneOre());
-                }
-                if (oreType.getDeepslateOre() != null) {
-                    blockStateModelGenerator.registerSimpleCubeAll(oreType.getDeepslateOre());
-                }
+            if(oreType.getStoneOre() != null) {
+                blockStateModelGenerator.registerSimpleCubeAll(oreType.getStoneOre());
+            }
+            if(oreType.getDeepslateOre() != null) {
+                blockStateModelGenerator.registerSimpleCubeAll(oreType.getDeepslateOre());
             }
             if (oreType.getAndesiteOre() != null) {
                 blockStateModelGenerator.registerSimpleCubeAll(oreType.getAndesiteOre());
@@ -1144,6 +1160,28 @@ public class ModModelProvider extends FabricModelProvider {
             }
             if (oreType.getChalkOre() != null) {
                 blockStateModelGenerator.registerSimpleCubeAll(oreType.getChalkOre());
+            }
+            if(oreType.getOreDropBlock() != null) {
+                blockStateModelGenerator.registerSimpleCubeAll(oreType.getOreDropBlock());
+            }
+            if(oreType.getSmeltingBlock() != null) {
+                blockStateModelGenerator.registerSimpleCubeAll(oreType.getSmeltingBlock());
+            }
+        }
+    }
+
+    /**
+     * Generates item models for all ore types added by the mod.
+     *
+     * @param itemModelGenerator the ItemModelGenerator provided by Minecraft
+     */
+    private void generateModOreTypeItemModels(ItemModelGenerator itemModelGenerator) {
+        for(ModOreType oreType : ModOreType.values()) {
+            if(oreType.getOreDrop() != null) {
+                itemModelGenerator.register(oreType.getOreDrop(), Models.GENERATED);
+            }
+            if(oreType.getSmeltingItem() != null) {
+                itemModelGenerator.register(oreType.getSmeltingItem(), Models.GENERATED);
             }
         }
     }
@@ -1641,7 +1679,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     /**
      * This Method is used to generate the Overlay Texture Map for the Block and the given overlays
-     *
+     * </p>
      * For the overlays´s, that are not explicitly named by a block, the following should be used:
      * mossy_overlay_one: base, cobbled, smooth, smooth slab
      * mossy_overlay_two: bricks, tiles, fancy bricks, pavement, pillar

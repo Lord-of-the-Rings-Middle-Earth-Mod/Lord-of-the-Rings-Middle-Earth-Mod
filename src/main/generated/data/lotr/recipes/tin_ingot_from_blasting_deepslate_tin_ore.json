@@ -3,7 +3,7 @@
   "category": "misc",
   "cookingtime": 100,
   "experience": 0.7,
-  "group": "tin",
+	"group": "_ore",
   "ingredient": {
     "item": "lotr:deepslate_tin_ore"
   },

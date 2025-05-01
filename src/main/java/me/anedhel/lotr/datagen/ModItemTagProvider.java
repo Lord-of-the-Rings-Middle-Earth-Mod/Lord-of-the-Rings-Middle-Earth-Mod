@@ -17,11 +17,13 @@
 
 package me.anedhel.lotr.datagen;
 
+import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.fabricmc.fabric.api.tag.convention.v1.ConventionalItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
@@ -41,6 +43,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     protected void configure(RegistryWrapper.WrapperLookup arg) {
         configureGear(ModGearType.BRONZE);
         configureModWoodTypes();
+	    configureModOreTypes();
+	    configureModCrops();
     }
 
     /**
@@ -125,9 +129,24 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         }
     }
 
+	/**
+	 * Configures all required tags for mod-specific ore types.
+	 */
+	private void configureModOreTypes() {
+		FabricTagBuilder rawOreTag = getOrCreateTagBuilder(ConventionalItemTags.RAW_ORES);
+		FabricTagBuilder ingotTag = getOrCreateTagBuilder(ConventionalItemTags.INGOTS);
+		for(ModOreType oreType : ModOreType.values()) {
+			if(oreType.getOreDrop() != null) {
+				rawOreTag.add(oreType.getOreDrop());
+			}
+			if(oreType.getSmeltingItem() != null) {
+				ingotTag.add(oreType.getSmeltingItem());
+			}
+		}
+	}
+
     /**
      * Configures all required tags for mod-specific crops.
-     * Adds the mod's crop seeds to the `VILLAGER_PLANTABLE_SEEDS` tag.
      */
     private void configureModCrops() {
         getOrCreateTagBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS)
