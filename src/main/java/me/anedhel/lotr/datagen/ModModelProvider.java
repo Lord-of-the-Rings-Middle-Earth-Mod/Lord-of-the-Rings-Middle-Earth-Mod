@@ -37,7 +37,6 @@ import net.minecraft.block.Block;
 import net.minecraft.data.client.*;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 
 import java.util.Optional;
@@ -100,56 +99,45 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HOBBIT_SPAWN_EGG,
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
 
-        generateModGearTypeModels(ModGearType.BRONZE, itemModelGenerator);
+        generateModGearTypeModels(itemModelGenerator);
         generateModOreTypeItemModels(itemModelGenerator);
         generateModWoodTypesItemModels(itemModelGenerator);
     }
 
     /**
-     * This Method is used to generate all the Models for the given GearType
-     * </p>
-     * The Method will be more relevant as soon as more gearTypes are added
+     * This Method is used to generate all the Models for all ModGearTypes
      *
-     * @param gearType The ModGearType the models should be generated for.
      * @param itemModelGenerator an ItemModelGenerator provided by minecraft
      */
-    private void generateModGearTypeModels(ModGearType gearType, ItemModelGenerator itemModelGenerator) {
-        Item helmet = gearType.getHelmet();
-        Item chestplate = gearType.getChestplate();
-        Item leggings = gearType.getLeggings();
-        Item boots = gearType.getBoots();
-        Item sword = gearType.getSword();
-        Item axe = gearType.getAxe();
-        Item pickaxe = gearType.getPickaxe();
-        Item shovel = gearType.getShovel();
-        Item hoe = gearType.getHoe();
-
-        if (helmet != null) {
-            itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_HELMET);
-        }
-        if (chestplate != null) {
-            itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_CHESTPLATE);
-        }
-        if (leggings != null) {
-            itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_LEGGINGS);
-        }
-        if (boots != null) {
-            itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_BOOTS);
-        }
-        if (sword != null) {
-            itemModelGenerator.register(ModItems.BRONZE_SWORD, Models.HANDHELD);
-        }
-        if (axe != null) {
-            itemModelGenerator.register(ModItems.BRONZE_AXE, Models.HANDHELD);
-        }
-        if (pickaxe != null) {
-            itemModelGenerator.register(ModItems.BRONZE_PICKAXE, Models.HANDHELD);
-        }
-        if (shovel != null) {
-            itemModelGenerator.register(ModItems.BRONZE_SHOVEL, Models.HANDHELD);
-        }
-        if (hoe != null) {
-            itemModelGenerator.register(ModItems.BRONZE_HOE, Models.HANDHELD);
+    private void generateModGearTypeModels(ItemModelGenerator itemModelGenerator) {
+        for(ModGearType gearType : ModGearType.values()) {
+            if(gearType.getHelmet() != null) {
+                itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_HELMET);
+            }
+            if(gearType.getChestplate() != null) {
+                itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_CHESTPLATE);
+            }
+            if(gearType.getLeggings() != null) {
+                itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_LEGGINGS);
+            }
+            if(gearType.getBoots() != null) {
+                itemModelGenerator.registerArmor((ArmorItem) ModItems.BRONZE_BOOTS);
+            }
+            if(gearType.getSword() != null) {
+                itemModelGenerator.register(ModItems.BRONZE_SWORD, Models.HANDHELD);
+            }
+            if(gearType.getAxe() != null) {
+                itemModelGenerator.register(ModItems.BRONZE_AXE, Models.HANDHELD);
+            }
+            if(gearType.getPickaxe() != null) {
+                itemModelGenerator.register(ModItems.BRONZE_PICKAXE, Models.HANDHELD);
+            }
+            if(gearType.getShovel() != null) {
+                itemModelGenerator.register(ModItems.BRONZE_SHOVEL, Models.HANDHELD);
+            }
+            if(gearType.getHoe() != null) {
+                itemModelGenerator.register(ModItems.BRONZE_HOE, Models.HANDHELD);
+            }
         }
     }
 

@@ -1,0 +1,10 @@
+{
+	"replace": false,
+	"values": [
+		"lotr:bronze_sword",
+		"lotr:bronze_axe",
+		"lotr:bronze_pickaxe",
+		"lotr:bronze_shovel",
+		"lotr:bronze_hoe"
+	]
+}
