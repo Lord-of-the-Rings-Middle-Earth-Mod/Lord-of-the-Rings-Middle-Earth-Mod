@@ -98,7 +98,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_ingredients", "LotR Ingredients"))
                     .icon(() -> new ItemStack(ModItems.TIN_INGOT)).entries((displayContext, entries) -> {
                         entries.addAll(ModOreType.TIN_ORE.getIngredientsItemGroupList());
-                        entries.add(ModItems.BRONZE_INGOT);
+			            entries.add(ModGearType.BRONZE.getMaterial());
                     }).build());
 
     public static final ItemGroup LOTR_TOOLS = Registry.register(Registries.ITEM_GROUP,

@@ -17,6 +17,7 @@
 
 package me.anedhel.lotr.datagen;
 
+import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModStoneType;
@@ -92,9 +93,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                                     conditionsFromItem(ModItems.TIN_INGOT))
 		                          .criterion(hasItem(Items.COPPER_INGOT),
 		                                     conditionsFromItem(Items.COPPER_INGOT))
-		                          .offerTo(exporter, new Identifier(
-				                          getRecipeName(ModItems.BRONZE_INGOT) + "_crafting"));
-
+		                          .offerTo(exporter, new Identifier(getRecipeName(ModItems.BRONZE_INGOT) + "_ct"));
+		ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BRONZE_BLOCK)
+				.input(ModBlocks.TIN_BLOCK).input(Blocks.COPPER_BLOCK)
+				.criterion(hasItem(ModBlocks.TIN_BLOCK), conditionsFromItem(ModBlocks.TIN_BLOCK))
+				.criterion(hasItem(Blocks.COPPER_BLOCK), conditionsFromItem(Blocks.COPPER_BLOCK)).offerTo(exporter,
+						new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "bronze_block_from_tin_and_copper"));
 		offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS,
 		                                 ModItems.BRONZE_INGOT, RecipeCategory.MISC,
 		                                 ModBlocks.BRONZE_BLOCK);
@@ -119,60 +123,46 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		createCrateRecipe(Items.CARROT, ModBlocks.CARROT_CRATE, exporter);
 		createCrateRecipe(Items.BEETROOT, ModBlocks.BEETROOT_CRATE, exporter);
 
-		createModGearTypeRecipes(ModGearType.BRONZE, exporter);
+		createModGearTypeRecipes(exporter);
 		createModOreTypeRecipes(exporter);
 		createModStoneTypeRecipes(exporter);
 		createModWoodTypesRecipes(exporter);
 	}
 
 	/**
-	 * This Method is used to generate all Crafting Recipes for the given GearType
-	 * </p>
-	 * This Method becomes more relevant, when more gearTypes are added
+	 * This Method is used to generate all Crafting Recipes for all ModGearTypes
 	 *
-	 * @param gearType The ModGearType that all craftingRecipes are to be generated for
 	 * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one
 	 * 		is provided in the parameters of the method you edit.
 	 */
-	private void createModGearTypeRecipes(ModGearType gearType, RecipeExporter exporter) {
-		Item material = gearType.getMaterial();
-		Item helmet = gearType.getHelmet();
-		Item chestplate = gearType.getChestplate();
-		Item leggings = gearType.getLeggings();
-		Item boots = gearType.getBoots();
-		Item sword = gearType.getSword();
-		Item axe = gearType.getAxe();
-		Item pickaxe = gearType.getPickaxe();
-		Item shovel = gearType.getShovel();
-		Item hoe = gearType.getHoe();
-
-		if(!gearType.isVanillaAddition()) {
-			if(helmet != null) {
-				createHelmetRecipe(material, helmet, exporter);
+	private void createModGearTypeRecipes(RecipeExporter exporter) {
+		for(ModGearType gearType : ModGearType.values()) {
+			if(gearType.getHelmet() != null) {
+				createHelmetRecipe(gearType.getMaterial(), gearType.getHelmet(), exporter);
 			}
-			if(chestplate != null) {
-				createChestplateRecipe(material, chestplate, exporter);
+			if(gearType.getChestplate() != null) {
+				createChestplateRecipe(gearType.getMaterial(), gearType.getChestplate(), exporter);
 			}
-			if(leggings != null) {
-				createLegginsRecipe(material, leggings, exporter);
+			if(gearType.getLeggings() != null) {
+				createLegginsRecipe(gearType.getMaterial(), gearType.getLeggings(), exporter);
 			}
-			if(boots != null) {
-				createBootsRecipe(material, boots, exporter);
+			if(gearType.getBoots() != null) {
+				createBootsRecipe(gearType.getMaterial(), gearType.getBoots(), exporter);
 			}
-			if(sword != null) {
-				createSwordRecipe(material, sword, exporter);
+			if(gearType.getSword() != null) {
+				createSwordRecipe(gearType.getMaterial(), gearType.getSword(), exporter);
 			}
-			if(axe != null) {
-				createAxeRecipe(material, axe, exporter);
+			if(gearType.getAxe() != null) {
+				createAxeRecipe(gearType.getMaterial(), gearType.getAxe(), exporter);
 			}
-			if(pickaxe != null) {
-				createPickaxeRecipe(material, pickaxe, exporter);
+			if(gearType.getPickaxe() != null) {
+				createPickaxeRecipe(gearType.getMaterial(), gearType.getPickaxe(), exporter);
 			}
-			if(shovel != null) {
-				createShovelRecipe(material, shovel, exporter);
+			if(gearType.getShovel() != null) {
+				createShovelRecipe(gearType.getMaterial(), gearType.getShovel(), exporter);
 			}
-			if(hoe != null) {
-				createHoeRecipe(material, hoe, exporter);
+			if(gearType.getHoe() != null) {
+				createHoeRecipe(gearType.getMaterial(), gearType.getHoe(), exporter);
 			}
 		}
 	}

@@ -22,3 +22,6 @@ ___
   + Tin Ore for Stone and Deepslate
   + Raw Tin and Raw Tin Block
   + Tin Ingot and Tin Block
++ Added Bronze
+  + Bronze Ingot and Bronze Block
+  + Bronze Tools and Armor, that is trimmable

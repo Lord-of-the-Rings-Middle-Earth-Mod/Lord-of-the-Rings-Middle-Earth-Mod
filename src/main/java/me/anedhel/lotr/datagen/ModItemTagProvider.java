@@ -25,7 +25,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalItemTags;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
@@ -34,6 +33,10 @@ import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * This class is responsible for generating item tags for the mod. It extends the FabricTagProvider.ItemTagProvider
+ * class and overrides the configure method to set up the tags.
+ */
 public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     public ModItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
         super(output, completableFuture);
@@ -41,58 +44,51 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
-        configureGear(ModGearType.BRONZE);
+	    configureGear();
         configureModWoodTypes();
 	    configureModOreTypes();
 	    configureModCrops();
     }
 
-    /**
-     * This Method configures all required Tags for the given GearType
-     * @param gearType The ModGearType, that the Tags should be configured for
-     */
-    private void configureGear(ModGearType gearType) {
-        Item helmet = gearType.getHelmet();
-        Item chestplate = gearType.getChestplate();
-        Item leggings = gearType.getLeggings();
-        Item boots = gearType.getBoots();
-        /*Item sword = gearType.getSword();
-        Item axe = gearType.getAxe();
-        Item pickaxe = gearType.getPickaxe();
-        Item shovel = gearType.getShovel();
-        Item hoe = gearType.getHoe();*/
+	/**
+	 * Configures all required tags for mod-specific gear types.
+	 */
+	private void configureGear() {
+		for(ModGearType gearType : ModGearType.values()) {
+			FabricTagBuilder trimTag = getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR);
+			FabricTagBuilder swordTag = getOrCreateTagBuilder(ItemTags.SWORDS);
+			FabricTagBuilder axeTag = getOrCreateTagBuilder(ItemTags.AXES);
+			FabricTagBuilder pickaxeTag = getOrCreateTagBuilder(ItemTags.PICKAXES);
+			FabricTagBuilder shovelTag = getOrCreateTagBuilder(ItemTags.SHOVELS);
+			FabricTagBuilder hoeTag = getOrCreateTagBuilder(ItemTags.HOES);
+			FabricTagBuilder toolTag = getOrCreateTagBuilder(ItemTags.TOOLS);
 
-        FabricTagBuilder trimTag = getOrCreateTagBuilder(ItemTags.TRIMMABLE_ARMOR);
-
-        if (!gearType.isVanillaAddition()) {
-            if (helmet != null){
-                trimTag.add(helmet);
-            }
-            if (chestplate != null){
-                trimTag.add(chestplate);
-            }
-            if (leggings != null){
-                trimTag.add(leggings);
-            }
-            if (boots != null){
-                trimTag.add(boots);
-            }
-            /*if (sword != null){
-
-            }
-            if (axe != null){
-
-            }
-            if (pickaxe != null){
-
-            }
-            if (shovel != null){
-
-            }
-            if (hoe != null){
-
-            }*/
-        }
+			if(gearType.getHelmet() != null && gearType.getChestplate() != null && gearType.getLeggings() != null
+					&& gearType.getBoots() != null) {
+				trimTag.add(gearType.getHelmet(), gearType.getChestplate(), gearType.getLeggings(),
+						gearType.getBoots());
+			}
+			if(gearType.getSword() != null) {
+				toolTag.add(gearType.getSword());
+				swordTag.add(gearType.getSword());
+			}
+			if(gearType.getAxe() != null) {
+				toolTag.add(gearType.getAxe());
+				axeTag.add(gearType.getAxe());
+			}
+			if(gearType.getPickaxe() != null) {
+				toolTag.add(gearType.getPickaxe());
+				pickaxeTag.add(gearType.getPickaxe());
+			}
+			if(gearType.getShovel() != null) {
+				toolTag.add(gearType.getShovel());
+				shovelTag.add(gearType.getShovel());
+			}
+			if(gearType.getHoe() != null) {
+				toolTag.add(gearType.getHoe());
+				hoeTag.add(gearType.getHoe());
+			}
+		}
     }
 
     /**
