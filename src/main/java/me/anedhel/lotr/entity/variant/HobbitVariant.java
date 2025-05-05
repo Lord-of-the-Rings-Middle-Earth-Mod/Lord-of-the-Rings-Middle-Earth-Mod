@@ -15,17 +15,32 @@
  *  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package me.anedhel.lotr.entity.client;
+package me.anedhel.lotr.entity.variant;
 
-import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
-import net.minecraft.client.render.entity.model.EntityModelLayer;
-import net.minecraft.util.Identifier;
+import java.util.Arrays;
+import java.util.Comparator;
 
 /**
- * This class contains the model layers for the mod.
+ * Enum representing different variants of Hobbit entities.
  */
-public class ModModelLayers {
+public enum HobbitVariant {
+	HOBBIT_1(0),
+	HOBBIT_2(1),
+	HOBBIT_3(2);
 
-    public static final EntityModelLayer HOBBIT = new EntityModelLayer(new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "hobbit"), "main");
+	private static final HobbitVariant[] BY_ID = Arrays.stream(values())
+			.sorted(Comparator.comparingInt(HobbitVariant::getId)).toArray(HobbitVariant[]::new);
+	private final int id;
 
+	HobbitVariant(int id) {
+		this.id = id;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public static HobbitVariant byId(int id) {
+		return BY_ID[id % BY_ID.length];
+	}
 }

@@ -21,6 +21,7 @@ import me.anedhel.lotr.block.ModBlocks;
 import me.anedhel.lotr.block.ModOreType;
 import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.datagen.util.DataGenUtils;
+import me.anedhel.lotr.entity.ModEntities;
 import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -44,6 +45,26 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 	 */
 	@Override
 	public void generateTranslations(TranslationBuilder translationBuilder) {
+		generateItemGroupTranslations(translationBuilder);
+
+		translationBuilder.add(ModItems.BRONZE_INGOT, "Bronze Ingot");
+		translationBuilder.add(ModBlocks.BRONZE_BLOCK, "Bronze Block");
+
+		generateStoneTypeTranslations(translationBuilder);
+		generateOreTypeTranslations(translationBuilder);
+		generateGearTypeTranslations(translationBuilder);
+		generateModCrops(translationBuilder);
+
+		generateNPCTranslations(translationBuilder);
+	}
+
+	/**
+	 * Generates translations for item groups in the mod.
+	 *
+	 * @param translationBuilder The builder used to add translations. Each item group is assigned a human-readable
+	 * 		name.
+	 */
+	private void generateItemGroupTranslations(TranslationBuilder translationBuilder) {
 		translationBuilder.add("itemgroup.lotr_blocks", "LOTR Blocks");
 		translationBuilder.add("itemgroup.lotr_food", "LOTR Food");
 		translationBuilder.add("itemgroup.lotr_plants", "LOTR Plants");
@@ -54,14 +75,17 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add("itemgroup.lotr_stone", "LOTR Stone");
 		translationBuilder.add("itemgroup.lotr_wood", "LOTR Wood");
 		translationBuilder.add("itemgroup.lotr_transport", "LOTR Transport");
+	}
 
-		translationBuilder.add(ModItems.BRONZE_INGOT, "Bronze Ingot");
-		translationBuilder.add(ModBlocks.BRONZE_BLOCK, "Bronze Block");
-
-		generateStoneTypeTranslations(translationBuilder);
-		generateOreTypeTranslations(translationBuilder);
-		generateGearTypeTranslations(translationBuilder);
-		generateModCrops(translationBuilder);
+	/**
+	 * Generates translations for mod-specific entities.
+	 *
+	 * @param translationBuilder The builder used to add translations.
+	 *                           This includes translations for spawn eggs and entities.
+	 */
+	private void generateNPCTranslations(TranslationBuilder translationBuilder) {
+		translationBuilder.add(ModItems.HOBBIT_SPAWN_EGG, "Hobbit Spawn Egg");
+		translationBuilder.add(ModEntities.HOBBIT, "Hobbit");
 	}
 
 	/**
