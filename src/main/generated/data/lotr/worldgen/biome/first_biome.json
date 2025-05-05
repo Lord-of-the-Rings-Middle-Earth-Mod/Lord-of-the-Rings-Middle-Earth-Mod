@@ -99,7 +99,7 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:pig",
+	      "type": "lotr:hobbit",
         "maxCount": 5,
         "minCount": 3,
         "weight": 2

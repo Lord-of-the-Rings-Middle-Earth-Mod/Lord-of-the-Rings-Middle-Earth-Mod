@@ -35,7 +35,7 @@ import net.minecraft.util.Identifier;
 public class ModItems {
 
     public static final Item HOBBIT_SPAWN_EGG = registerItem("hobbit_spawn_egg",
-            new SpawnEggItem(ModEntities.HOBBIT, 0xa86518, 0x3b260f, new FabricItemSettings()));
+		    new SpawnEggItem(ModEntities.HOBBIT, 0x008000, 0xcccc00, new FabricItemSettings()));
 
     public static final Item PINE_SIGN = registerItem("pine_sign",
             new SignItem(new FabricItemSettings().maxCount(16), ModWoodBlocks.STANDING_PINE_SIGN, ModWoodBlocks.WALL_PINE_SIGN));

@@ -1,10 +1,27 @@
+/*
+ * Copyright (c)
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * lord-of-the-rings-middle-earth is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * lord-of-the-rings-middle-earth is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 // Made with Blockbench 4.10.2
 // Exported for Minecraft version 1.17+ for Yarn
 // Paste this class into your mod and generate all required imports
 
 package me.anedhel.lotr.entity.client;
 
-import me.anedhel.lotr.entity.animation.ModAnimations;
+import me.anedhel.lotr.entity.client.animation.ModHobbitAnimations;
 import me.anedhel.lotr.entity.custom.HobbitEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
@@ -12,6 +29,11 @@ import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.math.MathHelper;
 
+/**
+ * HobbitModel class for rendering Hobbit entities in Minecraft.
+ *
+ * @param <T> The type of HobbitEntity this model is for.
+ */
 public class HobbitModel<T extends HobbitEntity> extends SinglePartEntityModel<T> {
 
 	private final ModelPart Hobbit_Textured;
@@ -21,6 +43,14 @@ public class HobbitModel<T extends HobbitEntity> extends SinglePartEntityModel<T
 		this.Hobbit_Textured = root.getChild("Hobbit_Textured");
 		head = Hobbit_Textured.getChild("Hobbit_Slim").getChild("Head");
 	}
+
+	/**
+	 * Generates the textured model data for the Hobbit entity.
+	 * This method defines the structure and hierarchy of the model parts,
+	 * including their transformations, UV mappings, and cuboids.
+	 *
+	 * @return TexturedModelData The textured model data for the Hobbit entity.
+	 */
 	public static TexturedModelData getTexturedModelData() {
 		ModelData modelData = new ModelData();
 		ModelPartData modelPartData = modelData.getRoot();
@@ -65,10 +95,18 @@ public class HobbitModel<T extends HobbitEntity> extends SinglePartEntityModel<T
 		this.getPart().traverse().forEach(ModelPart::resetTransform);
 		this.setHeadAngles(netHeadYaw, headPitch);
 
-		this.animateMovement(ModAnimations.HOBBIT_WALKING, limbSwing, limbSwingAmount, 2f, 2.5f);
-		this.updateAnimation(entity.idleAnimationState, ModAnimations.HOBBIT_IDLE, ageInTicks, 1f);
+		this.animateMovement(ModHobbitAnimations.HOBBIT_WALKING, limbSwing, limbSwingAmount, 2f, 2.5f);
+		this.updateAnimation(entity.idleAnimationState, ModHobbitAnimations.HOBBIT_IDLE, ageInTicks, 1f);
 	}
 
+	/**
+	 * Sets the angles for the Hobbit's head.
+	 * This method clamps the yaw and pitch values to ensure the head movement
+	 * stays within a realistic range, then applies the transformations.
+	 *
+	 * @param headYaw  The yaw (horizontal rotation) of the head in degrees.
+	 * @param headPitch The pitch (vertical rotation) of the head in degrees.
+	 */
 	private void setHeadAngles(float headYaw, float headPitch) {
 		headYaw = MathHelper.clamp(headYaw, -30.0F, 30.0F);
 		headPitch = MathHelper.clamp(headPitch, -25.0F, 45.0F);

@@ -25,3 +25,6 @@ ___
 + Added Bronze
   + Bronze Ingot and Bronze Block
   + Bronze Tools and Armor, that is trimmable
++ Added Hobbits
+  + Spawn Eggs for Hobbits
+  + 3 different Hobbit Variants
