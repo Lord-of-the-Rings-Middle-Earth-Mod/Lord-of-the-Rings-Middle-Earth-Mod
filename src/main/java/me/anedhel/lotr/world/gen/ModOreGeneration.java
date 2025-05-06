@@ -22,15 +22,13 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.world.gen.GenerationStep;
 
+/**
+ * This class is responsible for generating ores in the world. It uses Fabric API's BiomeModifications to add features
+ * to all biomes.
+ */
 public class ModOreGeneration {
     public static void generateOres() {
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES,
+        BiomeModifications.addFeature(BiomeSelectors.all(), GenerationStep.Feature.UNDERGROUND_ORES,
                 ModPlacedFeatures.TIN_ORE);
-
-        /*BiomeModifications.addFeature(BiomeSelectors.foundInTheNether(),
-                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures);
-
-        BiomeModifications.addFeature(BiomeSelectors.foundInTheEnd(),
-                GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures);*/
     }
 }
