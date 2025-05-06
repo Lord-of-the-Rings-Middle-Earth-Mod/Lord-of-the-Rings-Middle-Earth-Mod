@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024-2024
+ * Copyright (c) 2024-
  * Authors/Developers are listed in the CONTRIBUTING.md
  *
  * lord-of-the-rings-middle-earth is free software: you can redistribute it and/or modify
@@ -12,7 +12,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <https://www.gnu.org/licenses/>.
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
  */
 package me.anedhel.lotr;
 
@@ -73,14 +73,12 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
         }
 
         registerStoneTypeCutoutLayers();
+        registerModEntities();
 
         TerraformBoatClientHelper.registerModelLayers(ModBoats.PINE_BOAT_ID, false);
 
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModWoodBlocks.PINE_SIGN_TEXTURE));
         SpriteIdentifierRegistry.INSTANCE.addIdentifier(new SpriteIdentifier(TexturedRenderLayers.SIGNS_ATLAS_TEXTURE, ModWoodBlocks.PINE_HANGING_SIGN_TEXTURE));
-
-        EntityRendererRegistry.register(ModEntities.HOBBIT, HobbitRenderer::new);
-        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.HOBBIT, HobbitModel::getTexturedModelData);
     }
 
     /**
@@ -270,5 +268,13 @@ public class LordOfTheRingsMiddleEarthModClient implements ClientModInitializer 
         for (Block variant : stoneFamily.getVariants().values()) {
             BlockRenderLayerMap.INSTANCE.putBlock(variant, RenderLayer.getCutout());
         }
+    }
+
+    /**
+     * Registers all ModEntity renderers and model layers.
+     */
+    private void registerModEntities() {
+        EntityRendererRegistry.register(ModEntities.HOBBIT, HobbitRenderer::new);
+        EntityModelLayerRegistry.registerModelLayer(ModModelLayers.HOBBIT, HobbitModel::getTexturedModelData);
     }
 }

@@ -31,6 +31,9 @@ import net.minecraft.world.dimension.DimensionTypes;
 
 import java.util.OptionalLong;
 
+/**
+ * This class is used to register the dimensions of the mod.
+ */
 public class ModDimensions {
     public static final RegistryKey<DimensionOptions> ARDA_KEY = RegistryKey.of(RegistryKeys.DIMENSION,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "arda"));
