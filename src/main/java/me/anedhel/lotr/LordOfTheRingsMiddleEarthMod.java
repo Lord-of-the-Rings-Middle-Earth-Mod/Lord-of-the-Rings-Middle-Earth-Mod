@@ -66,7 +66,8 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 		addCropsToComposter();
 
 		CustomPortalBuilder.beginPortal().frameBlock(ModBlocks.BRONZE_BLOCK).lightWithItem(ModItems.TIN_INGOT)
-				.destDimID(new Identifier(MOD_ID, "arda")).tintColor(0x00cc00).flatPortal().registerPortal();
+				.destDimID(new Identifier(MOD_ID, "arda")).tintColor(0x00cc00).flatPortal()
+				.setPortalSearchYRange(64, 256).registerPortal();
 		LOGGER.info("The Lord of the Rings Mod is loaded.");
 	}
 
