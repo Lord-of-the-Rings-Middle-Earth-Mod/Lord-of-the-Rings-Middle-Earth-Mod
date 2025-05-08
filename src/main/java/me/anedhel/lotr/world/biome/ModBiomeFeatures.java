@@ -47,6 +47,7 @@ public class ModBiomeFeatures {
 	 */
 	public static void addArdaOres(GenerationSettings.LookupBackedBuilder builder) {
 		DefaultBiomeFeatures.addDefaultOres(builder, false);
-		builder.feature(GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.TIN_ORE);
+		/*builder.feature(GenerationStep.Feature.UNDERGROUND_ORES, ModPlacedFeatures.TIN_ORE);*/ //Causes a crash for
+		// some reason
 	}
 }
