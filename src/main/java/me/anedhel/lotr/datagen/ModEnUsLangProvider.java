@@ -659,6 +659,13 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModItems.TOMATO_SEEDS, "Tomato Seeds");
 		translationBuilder.add(ModItems.BAKED_TOMATO, "Baked Tomato");
 		translationBuilder.add(ModItems.TOMATO, "Tomato");
+
+		translationBuilder.add(ModBlocks.CORN_CROP, "Corn Crop");
+		translationBuilder.add(ModBlocks.WILD_CORN, "Wild Corn");
+		translationBuilder.add(ModBlocks.CORN_CRATE, "Corn Crate");
+		translationBuilder.add(ModItems.CORN_SEEDS, "Corn Seeds");
+		translationBuilder.add(ModItems.COOKED_CORN, "Cooked Corn");
+		translationBuilder.add(ModItems.CORN, "Corn");
 	}
 
 	/**

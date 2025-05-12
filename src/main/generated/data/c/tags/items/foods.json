@@ -1,0 +1,9 @@
+{
+	"replace": false,
+	"values": [
+		"lotr:tomato",
+		"lotr:baked_tomato",
+		"lotr:corn",
+		"lotr:cooked_corn"
+	]
+}

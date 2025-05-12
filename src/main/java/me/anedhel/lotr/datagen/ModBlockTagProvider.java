@@ -34,6 +34,7 @@ import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
@@ -63,17 +64,20 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.BRONZE_BLOCK);
 
-        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(ModBlocks.TOMATO_CRATE);
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE).add(ModBlocks.TOMATO_CRATE).add(ModBlocks.CORN_CRATE);
 
         getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.BRONZE_BLOCK);
 
         HashMap<Block, Block> smallFlowers = new HashMap<>();
         smallFlowers.put(ModBlocks.WILD_TOMATO, ModBlocks.POTTED_WILD_TOMATO);
-
         configureSmallFlowers(smallFlowers);
 
-        getOrCreateTagBuilder(BlockTags.CROPS).add(ModBlocks.TOMATO_CROP);
+        ArrayList<Block> tallFlowers = new ArrayList<>();
+        tallFlowers.add(ModBlocks.WILD_CORN);
+        configureTallFlowers(tallFlowers);
+
+        getOrCreateTagBuilder(BlockTags.CROPS).add(ModBlocks.TOMATO_CROP).add(ModBlocks.CORN_CROP);
     }
 
     /**
@@ -597,6 +601,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
             getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS).add(key);
             getOrCreateTagBuilder(BlockTags.FLOWERS).add(key);
             getOrCreateTagBuilder(BlockTags.FLOWER_POTS).add(flowers.get(key));
+        }
+    }
+
+    /**
+     * This Method configures all tags for tall flowers
+     *
+     * @param flowers an ArrayList consistent of tall flowers
+     */
+    private void configureTallFlowers(ArrayList<Block> flowers) {
+        for(Block key : flowers) {
+            getOrCreateTagBuilder(BlockTags.TALL_FLOWERS).add(key);
+            getOrCreateTagBuilder(BlockTags.FLOWERS).add(key);
         }
     }
 

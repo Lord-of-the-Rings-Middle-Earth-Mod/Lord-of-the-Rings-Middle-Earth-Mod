@@ -76,6 +76,12 @@ public class ModModelProvider extends FabricModelProvider {
                 .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/tomato_crate_side"));
         blockStateModelGenerator.registerSingleton(ModBlocks.TOMATO_CRATE, tomatoMap, Models.CUBE_BOTTOM_TOP);
 
+        TextureMap cornMap = new TextureMap().put(TextureKey.BOTTOM,
+                        new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/crate_bottom"))
+                .put(TextureKey.TOP, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/corn_crate_top"))
+                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/corn_crate_side"));
+        blockStateModelGenerator.registerSingleton(ModBlocks.CORN_CRATE, cornMap, Models.CUBE_BOTTOM_TOP);
+
         generateModStoneTypeBlockModels(blockStateModelGenerator);
         generateModWoodTypesBlockModels(blockStateModelGenerator);
         generateModOreTypeBlockModels(blockStateModelGenerator);
