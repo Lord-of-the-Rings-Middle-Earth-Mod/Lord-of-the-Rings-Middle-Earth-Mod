@@ -5,6 +5,11 @@ This Mod is an open Source Project and as such welcoming anyone who is wishing t
 
 Before you interact with the community please read our [Community Standards and Rules](CODE_OF_CONDUCT.md) and make sure you understand them.
 
+> [!Important]
+> As of the current situation this is not a Lord of the Rings Mod, but by the name.
+> We do not yet have approval by Middle-Earth Enterprises to use any name or content from Tolkien's works, that is
+> under copyright. We have contacted Middle-Earth Enterprises regarding this and are awaiting a response on this topic.
+
 ## License
 The code of the Mod is licensed under the [GNU General Public License Version 3](LICENSE_GPL) while textures, models, sounds and translations are licensed under [CC BY-NC-SA 4.0](LICENSE_CC-BY-NC-SA)
 
