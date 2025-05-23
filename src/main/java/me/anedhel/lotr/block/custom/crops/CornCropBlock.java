@@ -1,3 +1,20 @@
+/*
+ * Copyright (c)
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * lord-of-the-rings-middle-earth is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * lord-of-the-rings-middle-earth is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License
+ *  along with this program. If not, see <https://www.gnu.org/licenses/>.
+ */
+
 package me.anedhel.lotr.block.custom.crops;
 
 import me.anedhel.lotr.item.ModItems;
@@ -13,6 +30,9 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 
+/**
+ * Custom crop block representing corn, extending the base CropBlock class.
+ */
 public class CornCropBlock extends CropBlock {
 
     public static final int FIRST_STAGE_MAX_AGE = 7;
@@ -39,6 +59,14 @@ public class CornCropBlock extends CropBlock {
         return AGE_TO_SHAPE[this.getAge(state)];
     }
 
+    /**
+     * Handles the random growth tick for the crop block.
+     *
+     * @param state The current block state of the crop.
+     * @param world The server world where the crop block is located.
+     * @param pos The position of the crop block.
+     * @param random A random number generator used to determine growth chances.
+     */
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (world.getBaseLightLevel(pos, 0) >= 9) {
@@ -58,6 +86,13 @@ public class CornCropBlock extends CropBlock {
         }
     }
 
+    /**
+     * Applies growth to the crop block at the specified position.
+     *
+     * @param world The world where the crop block is located.
+     * @param pos The position of the crop block.
+     * @param state The current block state of the crop.
+     */
     @Override
     public void applyGrowth(World world, BlockPos pos, BlockState state) {
         int nextAge = this.getAge(state) + this.getGrowthAmount(world);
@@ -73,6 +108,15 @@ public class CornCropBlock extends CropBlock {
         }
     }
 
+    /**
+     * Determines whether this block can be placed at the specified position.
+     *
+     * @param state The current block state.
+     * @param world The world view where the block is being placed.
+     * @param pos The position where the block is being placed.
+     * @return True if the block can be placed, either on valid ground or on top of another `CornCropBlock` at age 7;
+     * 		otherwise, false.
+     */
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         return super.canPlaceAt(state, world, pos) || (world.getBlockState(pos.down(1)).isOf(this) &&

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "lotr:tomato_crop"
+    "lotr:tomato_crop",
+    "lotr:corn_crop"
   ]
 }

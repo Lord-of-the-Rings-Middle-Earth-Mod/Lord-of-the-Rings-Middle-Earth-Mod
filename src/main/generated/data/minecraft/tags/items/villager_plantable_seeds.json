@@ -1,6 +1,7 @@
 {
-	"replace": false,
-	"values": [
-		"lotr:tomato_seeds"
-	]
+  "replace": false,
+  "values": [
+    "lotr:tomato_seeds",
+    "lotr:corn_seeds"
+  ]
 }

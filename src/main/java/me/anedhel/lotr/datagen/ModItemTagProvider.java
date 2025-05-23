@@ -44,10 +44,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {
+	    getOrCreateTagBuilder(ConventionalItemTags.FOODS).add(ModItems.TOMATO).add(ModItems.BAKED_TOMATO)
+			    .add(ModItems.CORN).add(ModItems.COOKED_CORN);
+
+	    getOrCreateTagBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS).add(ModItems.TOMATO_SEEDS).add(ModItems.CORN_SEEDS);
+
 	    configureGear();
         configureModWoodTypes();
 	    configureModOreTypes();
-	    configureModCrops();
     }
 
 	/**
@@ -140,14 +144,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 			}
 		}
 	}
-
-    /**
-     * Configures all required tags for mod-specific crops.
-     */
-    private void configureModCrops() {
-        getOrCreateTagBuilder(ItemTags.VILLAGER_PLANTABLE_SEEDS)
-                .add(ModItems.TOMATO_SEEDS);
-    }
 
     /**
      * Converts a given block into a tag-friendly string.
