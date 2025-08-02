@@ -13,12 +13,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_diamond": {
+    "has_silver_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:diamond"
+              "lotr:silver_ingot"
             ]
           }
         ]
@@ -35,7 +35,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_diamond",
+      "has_silver_ingot",
       "has_cracked_mossy_cobbled_blueslate_brick_stairs"
     ]
   ],

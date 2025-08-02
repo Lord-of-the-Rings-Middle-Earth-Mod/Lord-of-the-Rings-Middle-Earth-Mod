@@ -58,6 +58,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_blocks", "LotR Blocks"))
                     .icon(() -> new ItemStack(ModStoneBlocks.BLUESLATE)).entries((displayContext, entries) -> {
                         entries.addAll(ModOreType.TIN_ORE.getBlockItemGroupList());
+                        entries.addAll(ModOreType.SILVER_ORE.getBlockItemGroupList());
                         entries.add(ModBlocks.BRONZE_BLOCK);
                     }).build());
 
@@ -98,6 +99,7 @@ public class ModItemGroups {
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_ingredients", "LotR Ingredients"))
                     .icon(() -> new ItemStack(ModItems.TIN_INGOT)).entries((displayContext, entries) -> {
                         entries.addAll(ModOreType.TIN_ORE.getIngredientsItemGroupList());
+                        entries.addAll(ModOreType.SILVER_ORE.getIngredientsItemGroupList());
 			            entries.add(ModGearType.BRONZE.getMaterial());
                     }).build());
 

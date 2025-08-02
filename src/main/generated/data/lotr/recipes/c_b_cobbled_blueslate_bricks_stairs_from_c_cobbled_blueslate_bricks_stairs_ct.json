@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    "OOO",
+    " O ",
     "O#O",
-    "OOO"
+    " O "
   ],
   "result": {
     "item": "lotr:cracked_bronze_cobbled_blueslate_brick_stairs"

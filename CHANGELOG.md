@@ -28,3 +28,7 @@ ___
 + Added Hobbits
   + Spawn Eggs for Hobbits
   + 3 different Hobbit Variants
++ Added Silver
+  + Silver Ore for Stone and Deepslate
+  + Raw Silver and Raw Silver Block
+  + Silver Nuggets, Silver Ingot and Silver Block

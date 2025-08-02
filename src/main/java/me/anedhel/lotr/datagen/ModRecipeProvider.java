@@ -187,6 +187,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, oreType.getOreDrop(),
 						RecipeCategory.MISC, oreType.getOreDropBlock());
 			}
+			if(oreType.getNugget() != null) {
+				createReversibleCompactingRecipe(exporter, oreType.getSmeltingItem(), oreType.getNugget());
+			}
 			if(oreType.getSmeltingItem() != null) {
 				offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, oreType.getSmeltingItem(),
 						RecipeCategory.MISC, oreType.getSmeltingBlock());
@@ -1158,17 +1161,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		createBlockFamilyOrnamentCrafting(exporter, overgrownCracked, crackedOvergrownBronze, ModItems.BRONZE_INGOT,
 				StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, familyName);
 
-		createBlockFamilyOrnamentCrafting(exporter, base, silver, Items.DIAMOND,
+		createBlockFamilyOrnamentCrafting(exporter, base, silver, ModItems.SILVER_INGOT,
 				StoneTypeVariants.SILVER_STONE, familyName);
-		createBlockFamilyOrnamentCrafting(exporter, mossy, mossySilver, Items.DIAMOND,
+		createBlockFamilyOrnamentCrafting(exporter, mossy, mossySilver, ModItems.SILVER_INGOT,
 				StoneTypeVariants.MOSSY_SILVER_STONE, familyName);
-		createBlockFamilyOrnamentCrafting(exporter, overgrown, overgrownSilver, Items.DIAMOND,
+		createBlockFamilyOrnamentCrafting(exporter, overgrown, overgrownSilver, ModItems.SILVER_INGOT,
 				StoneTypeVariants.OVERGROWN_SILVER_STONE, familyName);
-		createBlockFamilyOrnamentCrafting(exporter, cracked, crackedSilver, Items.DIAMOND,
+		createBlockFamilyOrnamentCrafting(exporter, cracked, crackedSilver, ModItems.SILVER_INGOT,
 				StoneTypeVariants.CRACKED_SILVER_STONE, familyName);
-		createBlockFamilyOrnamentCrafting(exporter, mossyCracked, crackedMossySilver, Items.DIAMOND,
+		createBlockFamilyOrnamentCrafting(exporter, mossyCracked, crackedMossySilver, ModItems.SILVER_INGOT,
 				StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, familyName);
-		createBlockFamilyOrnamentCrafting(exporter, overgrownCracked, crackedOvergrownSilver, Items.DIAMOND,
+		createBlockFamilyOrnamentCrafting(exporter, overgrownCracked, crackedOvergrownSilver, ModItems.SILVER_INGOT,
 				StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, familyName);
 
 		createBlockFamilyOrnamentCrafting(exporter, base, gold, Items.GOLD_INGOT,
@@ -1531,27 +1534,28 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
 						StoneTypeVariants.CRACKED_OVERGROWN_BRONZE_STONE, StoneTypeVariants.CRACKED_OVERGROWN_STONE, "_ct"));
 
-		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.STONE), Items.DIAMOND,
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.STONE), ModItems.SILVER_INGOT,
 				blocks.get(StoneTypeVariants.SILVER_STONE),
 				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
 						StoneTypeVariants.SILVER_STONE, StoneTypeVariants.STONE, "_ct"));
-		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_STONE), Items.DIAMOND,
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.MOSSY_STONE), ModItems.SILVER_INGOT,
 				blocks.get(StoneTypeVariants.MOSSY_SILVER_STONE),
 				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
 						StoneTypeVariants.MOSSY_SILVER_STONE, StoneTypeVariants.MOSSY_STONE, "_ct"));
-		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.OVERGROWN_STONE), Items.DIAMOND,
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.OVERGROWN_STONE), ModItems.SILVER_INGOT,
 				blocks.get(StoneTypeVariants.OVERGROWN_SILVER_STONE),
 				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
 						StoneTypeVariants.OVERGROWN_SILVER_STONE, StoneTypeVariants.OVERGROWN_STONE, "_ct"));
-		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_STONE), Items.DIAMOND,
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_STONE), ModItems.SILVER_INGOT,
 				blocks.get(StoneTypeVariants.CRACKED_SILVER_STONE),
 				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
 						StoneTypeVariants.CRACKED_SILVER_STONE, StoneTypeVariants.CRACKED_STONE, "_ct"));
-		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_MOSSY_STONE), Items.DIAMOND,
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_MOSSY_STONE), ModItems.SILVER_INGOT,
 				blocks.get(StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE),
 				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
 						StoneTypeVariants.CRACKED_MOSSY_SILVER_STONE, StoneTypeVariants.CRACKED_MOSSY_STONE, "_ct"));
-		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_STONE), Items.DIAMOND,
+		createModOrnamentedRecipe(exporter, blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_STONE),
+				ModItems.SILVER_INGOT,
 				blocks.get(StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE),
 				createModStoneRecipeName(stoneTypeName + blockName, stoneTypeName + blockName,
 						StoneTypeVariants.CRACKED_OVERGROWN_SILVER_STONE, StoneTypeVariants.CRACKED_OVERGROWN_STONE, "_ct"));
@@ -1835,10 +1839,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	 */
 	private void createModOrnamentedRecipe(RecipeExporter exporter, Block inputBlock, Item inputItem, Block output,
 			String recipePath) {
-		 ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1)
-         .pattern("OOO")
-         .pattern("O#O")
-         .pattern("OOO")
+		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1).pattern(" O ").pattern("O#O")
+				.pattern(" O ")
          .input('#', inputBlock)
          .input('O', inputItem)
          .criterion(hasItem(inputItem), conditionsFromItem(inputItem))
@@ -2035,6 +2037,25 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                       .pattern("# #").input('#', input)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
 		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+	}
+
+	/**
+	 * Creates a reversible compacting recipe for the given compact item and item. The main intention is to avoid
+	 * recipeName conflicts with the vanilla compacting recipes.
+	 *
+	 * @param exporter The exporter to offer the recipes to.
+	 * @param compactItem The item that represents the compacted version.
+	 * @param item The item that can be compacted.
+	 */
+	private void createReversibleCompactingRecipe(RecipeExporter exporter, ItemConvertible compactItem,
+			ItemConvertible item) {
+		ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, compactItem, 1).pattern("###").pattern("###").pattern(
+				"###")
+				.input('#', item).criterion(hasItem(item), conditionsFromItem(item))
+				.offerTo(exporter, new Identifier(compactItem + "_from_" + item));
+		ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, item, 9).input(compactItem)
+				.criterion(hasItem(compactItem), conditionsFromItem(compactItem))
+				.offerTo(exporter, new Identifier(item + "_from_" + compactItem));
 	}
 
 	/**

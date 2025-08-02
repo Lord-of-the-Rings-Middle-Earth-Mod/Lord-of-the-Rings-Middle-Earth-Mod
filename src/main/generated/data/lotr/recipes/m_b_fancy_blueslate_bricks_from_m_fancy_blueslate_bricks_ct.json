@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    "OOO",
+    " O ",
     "O#O",
-    "OOO"
+    " O "
   ],
   "result": {
     "item": "lotr:mossy_bronze_fancy_blueslate_bricks"

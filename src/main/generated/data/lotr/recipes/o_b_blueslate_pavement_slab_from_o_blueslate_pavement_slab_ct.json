@@ -10,9 +10,9 @@
     }
   },
   "pattern": [
-    "OOO",
+    " O ",
     "O#O",
-    "OOO"
+    " O "
   ],
   "result": {
     "item": "lotr:overgrown_bronze_blueslate_pavement_slab"

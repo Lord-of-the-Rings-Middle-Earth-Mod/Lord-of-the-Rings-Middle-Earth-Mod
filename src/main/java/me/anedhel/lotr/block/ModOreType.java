@@ -35,8 +35,11 @@ import java.util.Objects;
 public enum ModOreType {
 
     TIN_ORE(ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE, null, null, null, null, null, ModItems.RAW_TIN,
-		    ModBlocks.RAW_TIN_BLOCK, UniformLootNumberProvider.create(2.0f, 5.0f), MiningLevels.STONE,
-		    ModItems.TIN_INGOT, ModBlocks.TIN_BLOCK);
+		    ModBlocks.RAW_TIN_BLOCK, UniformLootNumberProvider.create(2.0f, 5.0f), MiningLevels.STONE, null,
+		    ModItems.TIN_INGOT, ModBlocks.TIN_BLOCK),
+	SILVER_ORE(ModBlocks.SILVER_ORE, ModBlocks.DEEPSLATE_SILVER_ORE, null, null, null, null, null, ModItems.RAW_SILVER,
+			ModBlocks.RAW_SILVER_BLOCK, UniformLootNumberProvider.create(2.0f, 5.0f), MiningLevels.STONE,
+			ModItems.SILVER_NUGGET, ModItems.SILVER_INGOT, ModBlocks.SILVER_BLOCK);
 
     private final Block stoneOre;
     private final Block deepslateOre;
@@ -53,12 +56,13 @@ public enum ModOreType {
     private final UniformLootNumberProvider dropRange;
     private final int miningLevel;
 
+	private final Item nugget;
 	private final Item smeltingItem;
 	private final Block smeltingBlock;
 
     ModOreType(Block stoneOre, Block deepslateOre, Block andesiteOre, Block dioriteOre, Block graniteOre,
             Block blueslateOre, Block chalkOre, Item oreDrop, Block oreDropBlock, UniformLootNumberProvider dropRange,
-		    int miningLevel, Item smeltingItem, Block smeltingBlock) {
+		    int miningLevel, Item nugget, Item smeltingItem, Block smeltingBlock) {
         this.stoneOre = stoneOre;
         this.deepslateOre = deepslateOre;
         this.andesiteOre = andesiteOre;
@@ -70,6 +74,7 @@ public enum ModOreType {
         this.oreDropBlock = oreDropBlock;
         this.dropRange = dropRange;
         this.miningLevel = miningLevel;
+	    this.nugget = nugget;
 	    this.smeltingItem = smeltingItem;
 	    this.smeltingBlock = smeltingBlock;
     }
@@ -121,6 +126,9 @@ public enum ModOreType {
 		List<ItemStack> ingredientsItemGroupList = new ArrayList<>();
 		if(oreDrop != null) {
 			ingredientsItemGroupList.add(new ItemStack(oreDrop));
+		}
+		if(nugget != null) {
+			ingredientsItemGroupList.add(new ItemStack(nugget));
 		}
 		if(smeltingItem != null) {
 			ingredientsItemGroupList.add(new ItemStack(smeltingItem));
@@ -189,6 +197,10 @@ public enum ModOreType {
     public int getMiningLevel() {
         return miningLevel;
     }
+
+	public Item getNugget() {
+		return nugget;
+	}
 
 	public Item getSmeltingItem() {
 		return smeltingItem;

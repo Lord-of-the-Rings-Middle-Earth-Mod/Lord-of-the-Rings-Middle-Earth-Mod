@@ -6,13 +6,13 @@
       "item": "lotr:cracked_blueslate_tiles_stairs"
     },
     "O": {
-      "item": "minecraft:diamond"
+      "item": "lotr:silver_ingot"
     }
   },
   "pattern": [
-    "OOO",
+    " O ",
     "O#O",
-    "OOO"
+    " O "
   ],
   "result": {
     "item": "lotr:cracked_silver_blueslate_tiles_stairs"
