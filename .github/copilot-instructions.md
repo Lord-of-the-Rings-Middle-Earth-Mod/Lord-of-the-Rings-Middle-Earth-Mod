@@ -34,6 +34,14 @@ When network access is available:
 - **Build Artifacts**: Built mod JAR appears in `build/libs/lotr-middle-earth-{version}.jar`
 - **No Unit Tests**: This project currently has no unit test infrastructure
 
+### Code Quality Checks (Available without build)
+- **JSON Validation**: Validate all JSON files with `python3 -m json.tool path/to/file.json`
+- **Java Syntax**: Basic syntax validation available, though dependencies will be missing
+- **Key Files to Always Check**:
+  - `src/main/resources/fabric.mod.json` -- Must be valid JSON with correct mod metadata
+  - `src/main/resources/lotr-middle-earth.mixins.json` -- Must match actual mixin class names  
+  - Language files in `assets/lotr/lang/` -- Must be valid JSON with consistent keys
+
 ### Running the Mod
 - **Development Client**: `./gradlew runClient` -- NEVER CANCEL: Takes 2-3 minutes to launch. Set timeout to 5+ minutes.
 - **Development Server**: `./gradlew runServer` -- For server-side testing
@@ -77,6 +85,12 @@ When network access is available:
 - Add mixins to `mixin/` package and register in `lotr-middle-earth.mixins.json`
 - Update `fabric.mod.json` if adding new entry points
 
+### Development Priorities and Status
+- **Current Status**: Early development stage with basic mod structure and placeholder content
+- **Active Development**: Localization system is most complete feature (9 languages supported)
+- **Focus Areas**: Based on ROADMAP.md, priority is Arda dimension, world generation, factions, and biomes
+- **Translation Status**: German (de_DE) has started translation; others use English placeholders
+
 ### Localization Workflow  
 - Base language files are in main `src/main/resources/assets/lotr/lang/en_us.json`
 - Translated versions maintained in separate language directories
@@ -119,3 +133,32 @@ When network access is available:
 - **Java Issues**: Verify Java 17 is installed and JAVA_HOME is set
 - **Permission Denied**: Run `chmod +x ./gradlew`
 - **Mixin Errors**: Check mixin configuration in lotr-middle-earth.mixins.json matches actual class names
+
+## Validation Commands (Work Without Network Access)
+
+### File Structure Validation
+```bash
+# Check all JSON files are valid
+find . -name "*.json" -exec python3 -m json.tool {} \; >/dev/null && echo "All JSON files valid"
+
+# Count source files
+find src -name "*.java" | wc -l  # Should show 4 Java files
+
+# List language files  
+find . -path "*/lang/*.json" | sort  # Shows all 11 language variants
+
+# Check mod metadata
+grep -E "(mod_version|minecraft_version|loader_version)" gradle.properties
+```
+
+### Content Validation
+```bash  
+# Verify main class exists and has correct package
+grep "package me.anedhel.lotrmiddleearth" src/main/java/me/anedhel/lotrmiddleearth/LordOfTheRingsMiddleEarthMod.java
+
+# Check mod ID consistency
+grep -r '"lotr"' src/main/resources/ gradle.properties
+
+# Validate language key consistency across locales
+grep -h '"itemgroup\.' */src/main/resources/assets/lotr/lang/*.json | sort | uniq -c
+```
