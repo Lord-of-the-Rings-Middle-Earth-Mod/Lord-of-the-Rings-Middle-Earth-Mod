@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+
+issue_templates:
+  - name: Bug Report
+    description: Create a bug report issue, so we can work on resolving the issue.
+    file: bug_report.yml
+    labels: ["bug"]
+    title: "[Bug Report] "
