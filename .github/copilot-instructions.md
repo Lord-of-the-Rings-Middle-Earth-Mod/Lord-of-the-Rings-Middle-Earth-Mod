@@ -90,7 +90,7 @@ When network access is available:
 - Always work from fresh clone or pull latest changes from the `develop` branch
 - Edit Java files in `src/main/java/me/anedhel/lotrmiddleearth/`
 - **NEVER manually edit** `src/main/resources/assets/lotr/lang/en_us.json` - this file is data-generated
-- **ALWAYS update CHANGELOG.md** in the section for the next release (currently 0.1.0) when making changes
+- **ALWAYS update CHANGELOG.md** in the "0.1.0 (Next Release)" section when making changes
 - Run data generation with `./gradlew runDatagen` after code changes
 - Test changes with `./gradlew runClient`
 
@@ -100,7 +100,7 @@ When network access is available:
 - Add mixins to `mixin/` package and register in `lotr-middle-earth.mixins.json`
 - Update `fabric.mod.json` if adding new entry points
 - Consider existing packages: `block/`, `datagen/`, `entity/`, `item/`, `world/` for appropriate placement
-- **Always update CHANGELOG.md** with new features in the next release section (currently 0.1.0)
+- **Always update CHANGELOG.md** with new features in the "0.1.0 (Next Release)" section
 
 ### Development Priorities and Status
 - **Primary Development Branch**: `develop` - Always use this branch, not `master`
@@ -125,7 +125,7 @@ When network access is available:
 ├── gradle.properties           # Version definitions
 ├── gradlew                     # Gradle wrapper script
 ├── settings.gradle             # Gradle settings
-├── CHANGELOG.md                # Release changelog - ALWAYS UPDATE for changes
+├── CHANGELOG.md                # Release changelog - ALWAYS UPDATE for changes (maintained in develop branch)
 ├── src/main/                   # Primary source code
 │   ├── generated/              # Auto-generated content (blocks, items, etc.)
 │   ├── java/me/anedhel/lotrmiddleearth/ # Java source with core packages
