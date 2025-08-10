@@ -768,7 +768,8 @@ public class ModModelProvider extends FabricModelProvider {
                 }
                 if(stoneType.getCrackedBronzePillar() != null) {
                     registerOneOverlayPillarBlock(blockStateModelGenerator, stoneType.getCrackedBronzePillar(),
-                            stoneType.getCrackedBronzePillarSlab(), topTexture, sideTexture, true, "bronze_pillar");
+                            stoneType.getCrackedBronzePillarSlab(), topTexture, sideTexture, true,
+                            "cracked_bronze_pillar");
                     if(stoneType.getCrackedMossyBronzePillar() != null) {
                         registerTwoOverlayPillarBlock(blockStateModelGenerator, stoneType.getCrackedMossyBronzePillar(),
                                 stoneType.getCrackedMossyBronzePillarSlab(), topTexture, sideTexture,
@@ -783,7 +784,8 @@ public class ModModelProvider extends FabricModelProvider {
                 }
                 if(stoneType.getCrackedSilverPillar() != null) {
                     registerOneOverlayPillarBlock(blockStateModelGenerator, stoneType.getCrackedSilverPillar(),
-                            stoneType.getCrackedSilverPillarSlab(), topTexture, sideTexture, true, "silver_pillar");
+                            stoneType.getCrackedSilverPillarSlab(), topTexture, sideTexture, true,
+                            "cracked_silver_pillar");
                     if(stoneType.getCrackedMossySilverPillar() != null) {
                         registerTwoOverlayPillarBlock(blockStateModelGenerator, stoneType.getCrackedMossySilverPillar(),
                                 stoneType.getCrackedMossySilverPillarSlab(), topTexture, sideTexture,
