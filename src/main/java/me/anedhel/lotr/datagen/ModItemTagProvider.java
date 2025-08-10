@@ -134,10 +134,14 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 	 */
 	private void configureModOreTypes() {
 		FabricTagBuilder rawOreTag = getOrCreateTagBuilder(ConventionalItemTags.RAW_ORES);
+		FabricTagBuilder nuggetTag = getOrCreateTagBuilder(ConventionalItemTags.NUGGETS);
 		FabricTagBuilder ingotTag = getOrCreateTagBuilder(ConventionalItemTags.INGOTS);
 		for(ModOreType oreType : ModOreType.values()) {
 			if(oreType.getOreDrop() != null) {
 				rawOreTag.add(oreType.getOreDrop());
+			}
+			if(oreType.getNugget() != null) {
+				nuggetTag.add(oreType.getNugget());
 			}
 			if(oreType.getSmeltingItem() != null) {
 				ingotTag.add(oreType.getSmeltingItem());

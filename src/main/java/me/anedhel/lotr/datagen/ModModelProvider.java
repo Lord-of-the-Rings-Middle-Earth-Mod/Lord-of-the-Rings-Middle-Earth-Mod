@@ -1174,6 +1174,9 @@ public class ModModelProvider extends FabricModelProvider {
             if(oreType.getOreDrop() != null) {
                 itemModelGenerator.register(oreType.getOreDrop(), Models.GENERATED);
             }
+            if(oreType.getNugget() != null) {
+                itemModelGenerator.register(oreType.getNugget(), Models.GENERATED);
+            }
             if(oreType.getSmeltingItem() != null) {
                 itemModelGenerator.register(oreType.getSmeltingItem(), Models.GENERATED);
             }

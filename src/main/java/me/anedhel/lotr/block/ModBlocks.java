@@ -47,6 +47,15 @@ public class ModBlocks {
     public static final Block BRONZE_BLOCK = registerBlock("bronze_block",
             new Block(FabricBlockSettings.copyOf(Blocks.COPPER_BLOCK)));
 
+    public static final Block SILVER_ORE = registerBlock("silver_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE)));
+    public static final Block DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore",
+            new Block(FabricBlockSettings.copyOf(Blocks.DEEPSLATE_IRON_ORE)));
+    public static final Block RAW_SILVER_BLOCK = registerBlock("raw_silver_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.RAW_IRON_BLOCK)));
+    public static final Block SILVER_BLOCK = registerBlock("silver_block",
+            new Block(FabricBlockSettings.copyOf(Blocks.IRON_BLOCK)));
+
     public static final Block WILD_BEETROOT = registerBlock("wild_beetroot",
             new FlowerBlock(StatusEffects.SATURATION, 10, FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()));
     public static final Block POTTED_WILD_BEETROOT = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_beetroot"),

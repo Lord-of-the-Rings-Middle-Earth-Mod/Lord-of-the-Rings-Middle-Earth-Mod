@@ -1,6 +1,7 @@
 {
 	"replace": false,
 	"values": [
-		"lotr:raw_tin"
+		"lotr:raw_tin",
+		"lotr:raw_silver"
 	]
 }

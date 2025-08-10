@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_diamond": {
+    "has_silver_ingot": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:diamond"
+              "lotr:silver_ingot"
             ]
           }
         ]
@@ -35,7 +35,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_diamond",
+      "has_silver_ingot",
       "has_smooth_blueslate"
     ]
   ],

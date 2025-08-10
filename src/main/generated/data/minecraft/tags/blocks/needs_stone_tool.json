@@ -5,6 +5,10 @@
     "lotr:deepslate_tin_ore",
     "lotr:raw_tin_block",
     "lotr:tin_block",
+	  "lotr:silver_ore",
+	  "lotr:deepslate_silver_ore",
+	  "lotr:raw_silver_block",
+	  "lotr:silver_block",
     "lotr:bronze_block"
   ]
 }

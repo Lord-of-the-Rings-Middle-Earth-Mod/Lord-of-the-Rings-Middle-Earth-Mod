@@ -6,13 +6,13 @@
       "item": "lotr:cracked_overgrown_smooth_blueslate"
     },
     "O": {
-      "item": "minecraft:diamond"
+      "item": "lotr:silver_ingot"
     }
   },
   "pattern": [
-    "OOO",
+    " O ",
     "O#O",
-    "OOO"
+    " O "
   ],
   "result": {
     "item": "lotr:cracked_overgrown_silver_smooth_blueslate"
