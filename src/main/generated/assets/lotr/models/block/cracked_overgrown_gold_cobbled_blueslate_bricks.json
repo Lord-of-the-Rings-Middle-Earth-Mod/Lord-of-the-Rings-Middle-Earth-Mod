@@ -2,7 +2,7 @@
   "parent": "lotr:block/cube_all_two_overlay",
   "textures": {
     "all": "lotr:block/cracked_cobbled_blueslate_bricks",
-    "layer1": "lotr:block/overlays/cracked_gold_brick_overlay",
+	  "layer1": "lotr:block/overlays/cracked_gold_cobbled_brick_overlay",
     "layer2": "lotr:block/overlays/overgrown_overlay"
   }
 }

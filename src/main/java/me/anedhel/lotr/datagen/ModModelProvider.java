@@ -233,50 +233,50 @@ public class ModModelProvider extends FabricModelProvider {
                 }
                 if (stoneType.getBronzeCobbledBrickVariant("base") != null) {
                     registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCobbledBrickVariant("base"),
-                            stoneType.getBronzeCobbledBrickFamily(), "bronze_brick_overlay");
+                            stoneType.getBronzeCobbledBrickFamily(), "bronze_cobbled_brick_overlay");
                     if(stoneType.getMossyBronzeCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCobbledBrickVariant("base"),
-                                stoneType.getMossyBronzeCobbledBrickFamily(),
-                                "bronze_brick_overlay", "mossy_overlay_three");
+                                stoneType.getMossyBronzeCobbledBrickFamily(), "bronze_cobbled_brick_overlay",
+                                "mossy_overlay_three");
                     }
                     if(stoneType.getOvergrownBronzeCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCobbledBrickVariant("base"),
-                                stoneType.getOvergrownBronzeCobbledBrickFamily(),
-                                "bronze_brick_overlay", "overgrown_overlay");
+                                stoneType.getOvergrownBronzeCobbledBrickFamily(), "bronze_cobbled_brick_overlay",
+                                "overgrown_overlay");
                     }
                 }
                 if(stoneType.getSilverCobbledBrickVariant("base") != null) {
                     registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCobbledBrickVariant("base"),
-                            stoneType.getSilverCobbledBrickFamily(), "silver_brick_overlay");
+                            stoneType.getSilverCobbledBrickFamily(), "silver_cobbled_brick_overlay");
                     if(stoneType.getMossySilverCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCobbledBrickVariant("base"),
-                                stoneType.getMossySilverCobbledBrickFamily(),
-                                "silver_brick_overlay", "mossy_overlay_three");
+                                stoneType.getMossySilverCobbledBrickFamily(), "silver_cobbled_brick_overlay",
+                                "mossy_overlay_three");
                     }
                     if(stoneType.getOvergrownSilverCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCobbledBrickVariant("base"),
-                                stoneType.getOvergrownSilverCobbledBrickFamily(),
-                                "silver_brick_overlay", "overgrown_overlay");
+                                stoneType.getOvergrownSilverCobbledBrickFamily(), "silver_cobbled_brick_overlay",
+                                "overgrown_overlay");
                     }
                 }
                 if(stoneType.getGoldCobbledBrickVariant("base") != null) {
                     registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCobbledBrickVariant("base"),
-                            stoneType.getGoldCobbledBrickFamily(), "gold_brick_overlay");
+                            stoneType.getGoldCobbledBrickFamily(), "gold_cobbled_brick_overlay");
                     if(stoneType.getMossyGoldCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCobbledBrickVariant("base"),
-                                stoneType.getMossyGoldCobbledBrickFamily(),
-                                "gold_brick_overlay", "mossy_overlay_three");
+                                stoneType.getMossyGoldCobbledBrickFamily(), "gold_cobbled_brick_overlay",
+                                "mossy_overlay_three");
                     }
                     if(stoneType.getOvergrownGoldCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCobbledBrickVariant("base"),
-                                stoneType.getOvergrownGoldCobbledBrickFamily(),
-                                "gold_brick_overlay", "overgrown_overlay");
+                                stoneType.getOvergrownGoldCobbledBrickFamily(), "gold_cobbled_brick_overlay",
+                                "overgrown_overlay");
                     }
                 }
             }
@@ -292,50 +292,50 @@ public class ModModelProvider extends FabricModelProvider {
                 }
                 if (stoneType.getCrackedBronzeCobbledBrickVariant("base") != null) {
                     registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCrackedCobbledBrickVariant("base"),
-                            stoneType.getCrackedBronzeCobbledBrickFamily(), "cracked_bronze_brick_overlay");
+                            stoneType.getCrackedBronzeCobbledBrickFamily(), "cracked_bronze_cobbled_brick_overlay");
                     if(stoneType.getCrackedMossyBronzeCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCrackedCobbledBrickVariant("base"),
                                 stoneType.getCrackedMossyBronzeCobbledBrickFamily(),
-                                "cracked_bronze_brick_overlay", "mossy_overlay_three");
+                                "cracked_bronze_cobbled_brick_overlay", "mossy_overlay_three");
                     }
                     if(stoneType.getCrackedOvergrownBronzeCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCrackedCobbledBrickVariant("base"),
                                 stoneType.getCrackedOvergrownBronzeCobbledBrickFamily(),
-                                "cracked_bronze_brick_overlay", "overgrown_overlay");
+                                "cracked_bronze_cobbled_brick_overlay", "overgrown_overlay");
                     }
                 }
                 if(stoneType.getCrackedSilverCobbledBrickVariant("base") != null) {
                     registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCrackedCobbledBrickVariant("base"),
-                            stoneType.getCrackedSilverCobbledBrickFamily(), "cracked_silver_brick_overlay");
+                            stoneType.getCrackedSilverCobbledBrickFamily(), "cracked_silver_cobbled_brick_overlay");
                     if(stoneType.getCrackedMossySilverCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCrackedCobbledBrickVariant("base"),
                                 stoneType.getCrackedMossySilverCobbledBrickFamily(),
-                                "cracked_silver_brick_overlay", "mossy_overlay_three");
+                                "cracked_silver_cobbled_brick_overlay", "mossy_overlay_three");
                     }
                     if(stoneType.getCrackedOvergrownSilverCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCrackedCobbledBrickVariant("base"),
                                 stoneType.getCrackedOvergrownSilverCobbledBrickFamily(),
-                                "cracked_silver_brick_overlay", "overgrown_overlay");
+                                "cracked_silver_cobbled_brick_overlay", "overgrown_overlay");
                     }
                 }
                 if(stoneType.getCrackedGoldCobbledBrickVariant("base") != null) {
                     registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, stoneType.getCrackedCobbledBrickVariant("base"),
-                            stoneType.getCrackedGoldCobbledBrickFamily(), "cracked_gold_brick_overlay");
+                            stoneType.getCrackedGoldCobbledBrickFamily(), "cracked_gold_cobbled_brick_overlay");
                     if(stoneType.getCrackedMossyGoldCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCrackedCobbledBrickVariant("base"),
-                                stoneType.getCrackedMossyGoldCobbledBrickFamily(),
-                                "cracked_gold_brick_overlay", "mossy_overlay_three");
+                                stoneType.getCrackedMossyGoldCobbledBrickFamily(), "cracked_gold_cobbled_brick_overlay",
+                                "mossy_overlay_three");
                     }
                     if(stoneType.getCrackedOvergrownGoldCobbledBrickVariant("base") != null) {
                         registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator,
                                 stoneType.getCrackedCobbledBrickVariant("base"),
                                 stoneType.getCrackedOvergrownGoldCobbledBrickFamily(),
-                                "cracked_gold_brick_overlay", "overgrown_overlay");
+                                "cracked_gold_cobbled_brick_overlay", "overgrown_overlay");
                     }
                 }
             }

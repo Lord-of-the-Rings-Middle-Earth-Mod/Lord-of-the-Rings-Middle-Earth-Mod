@@ -2,7 +2,7 @@
   "parent": "lotr:block/stairs_all_overlay",
   "textures": {
     "bottom": "lotr:block/cobbled_blueslate_bricks",
-    "layer1": "lotr:block/overlays/gold_brick_overlay",
+	  "layer1": "lotr:block/overlays/gold_cobbled_brick_overlay",
     "side": "lotr:block/cobbled_blueslate_bricks",
     "top": "lotr:block/cobbled_blueslate_bricks"
   }
