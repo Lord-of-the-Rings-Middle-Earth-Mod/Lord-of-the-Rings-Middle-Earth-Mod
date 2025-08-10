@@ -1,5 +1,5 @@
 # Lord of the Rings Middle Earth Mod
-Lord of the Rings Middle Earth Mod is a Minecraft Fabric mod targeting version 1.20.1, inspired by Mevans' work. The mod creates a comprehensive Middle Earth experience with custom dimensions, biomes, factions, and world generation.
+Lord of the Rings Middle Earth Mod is a Minecraft Fabric mod targeting version 1.20.2, inspired by Mevans' work. The mod creates a comprehensive Middle Earth experience with custom dimensions, biomes, factions, and world generation.
 
 **IMPORTANT**: The primary development branch is `develop`, not `master`. Always work from and target the `develop` branch for active development.
 
@@ -56,16 +56,16 @@ When network access is available:
 ### Running the Mod
 - **Development Client**: `./gradlew runClient` -- NEVER CANCEL: Takes 2-3 minutes to launch. Set timeout to 5+ minutes.
 - **Development Server**: `./gradlew runServer` -- For server-side testing
-- **Production**: Use built JAR from `build/libs/` in Minecraft 1.20.1 with Fabric Loader 0.15.11+ and Fabric API 0.92.1+
+- **Production**: Use built JAR from `build/libs/` in Minecraft 1.20.2 with Fabric Loader 0.15.11+ and Fabric API 0.91.6+
 
 ## Repository Structure and Navigation
 
 ### Key Source Files
-- **Main Mod Class**: `src/main/java/me/anedhel/lotrmiddleearth/LordOfTheRingsMiddleEarthMod.java`
-- **Client Entry**: `src/main/java/me/anedhel/lotrmiddleearth/LordOfTheRingsMiddleEarthModClient.java`
-- **Data Generation**: `src/main/java/me/anedhel/lotrmiddleearth/LordOfTheRingsMiddleEarthModDataGenerator.java`
-- **Core Packages**: `block/`, `datagen/`, `entity/`, `item/`, `mixin/`, `world/` under `src/main/java/me/anedhel/lotrmiddleearth/`
-- **Mixin Example**: `src/main/java/me/anedhel/lotrmiddleearth/mixin/ExampleMixin.java`
+- **Main Mod Class**: `src/main/java/me/anedhel/lotr/LordOfTheRingsMiddleEarthMod.java`
+- **Client Entry**: `src/main/java/me/anedhel/lotr/LordOfTheRingsMiddleEarthModClient.java`
+- **Data Generation**: `src/main/java/me/anedhel/lotr/LordOfTheRingsMiddleEarthModDataGenerator.java`
+- **Core Packages**: `block/`, `datagen/`, `entity/`, `item/`, `mixin/`, `world/` under `src/main/java/me/anedhel/lotr/`
+- **Mixin Example**: `src/main/java/me/anedhel/lotr/mixin/ExampleMixin.java`
 
 ### Configuration Files
 - **Mod Metadata**: `src/main/resources/fabric.mod.json` -- Core mod configuration
@@ -88,14 +88,14 @@ When network access is available:
 
 ### Making Changes
 - Always work from fresh clone or pull latest changes from the `develop` branch
-- Edit Java files in `src/main/java/me/anedhel/lotrmiddleearth/`
+- Edit Java files in `src/main/java/me/anedhel/lotr/`
 - **NEVER manually edit** `src/main/resources/assets/lotr/lang/en_us.json` - this file is data-generated
 - **ALWAYS update CHANGELOG.md** in the "0.1.0 (Next Release)" section when making changes
 - Run data generation with `./gradlew runDatagen` after code changes
 - Test changes with `./gradlew runClient`
 
 ### Adding New Features
-- Follow existing package structure: `me.anedhel.lotrmiddleearth`
+- Follow existing package structure: `me.anedhel.lotr`
 - Use Fabric API patterns and annotations
 - Add mixins to `mixin/` package and register in `lotr-middle-earth.mixins.json`
 - Update `fabric.mod.json` if adding new entry points
@@ -128,7 +128,7 @@ When network access is available:
 ├── CHANGELOG.md                # Release changelog - ALWAYS UPDATE for changes (maintained in develop branch)
 ├── src/main/                   # Primary source code
 │   ├── generated/              # Auto-generated content (blocks, items, etc.)
-│   ├── java/me/anedhel/lotrmiddleearth/ # Java source with core packages
+│   ├── java/me/anedhel/lotr/ # Java source with core packages
 │   │   ├── block/              # Block definitions and registration
 │   │   ├── datagen/            # Data generation for recipes, models, etc.
 │   │   ├── entity/             # Custom entities
@@ -144,11 +144,11 @@ When network access is available:
 
 ### Key File Contents
 - **Mod ID**: "lotr" (defined in LordOfTheRingsMiddleEarthMod.java)
-- **Minecraft Version**: 1.20.1
+- **Minecraft Version**: 1.20.2
 - **Fabric Loader**: 0.15.11+
-- **Fabric API**: 0.92.1+1.20.1
+- **Fabric API**: 0.91.6+1.20.2
 - **Java Version**: 17
-- **Main Package**: me.anedhel.lotrmiddleearth
+- **Main Package**: me.anedhel.lotr
 
 ### Build Time Expectations
 - **Initial Build**: 3-5 minutes (downloads dependencies)
@@ -182,7 +182,7 @@ grep -E "(mod_version|minecraft_version|loader_version)" gradle.properties
 ### Content Validation
 ```bash  
 # Verify main class exists and has correct package
-grep "package me.anedhel.lotrmiddleearth" src/main/java/me/anedhel/lotrmiddleearth/LordOfTheRingsMiddleEarthMod.java
+grep "package me.anedhel.lotr" src/main/java/me/anedhel/lotr/LordOfTheRingsMiddleEarthMod.java
 
 # Check mod ID consistency
 grep -r '"lotr"' src/main/resources/ gradle.properties
