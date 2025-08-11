@@ -63,5 +63,28 @@ public class ModLangProvider extends FabricLanguageProvider {
         translationBuilder.add(ModBlocks.CHALK_PAVEMENT_WALL, "Chalk Pavement Wall");
         translationBuilder.add(ModBlocks.COBBLED_CHALK_WALL, "Cobbled Chalk Wall");
         translationBuilder.add(ModBlocks.COBBLED_CHALK_BRICKS_WALL, "Cobbled Chalk Bricks Wall");
+        
+        // Cracked variants derived blocks
+        translationBuilder.add(ModBlocks.CRACKED_CHALK_BRICK_SLAB, "Cracked Chalk Brick Slab");
+        translationBuilder.add(ModBlocks.CRACKED_CHALK_BRICK_STAIRS, "Cracked Chalk Brick Stairs");
+        translationBuilder.add(ModBlocks.CRACKED_CHALK_BRICK_WALL, "Cracked Chalk Brick Wall");
+        
+        translationBuilder.add(ModBlocks.CRACKED_CHALK_PAVEMENT_SLAB, "Cracked Chalk Pavement Slab");
+        translationBuilder.add(ModBlocks.CRACKED_CHALK_PAVEMENT_STAIRS, "Cracked Chalk Pavement Stairs");
+        translationBuilder.add(ModBlocks.CRACKED_CHALK_PAVEMENT_WALL, "Cracked Chalk Pavement Wall");
+        
+        translationBuilder.add(ModBlocks.CRACKED_CHALK_TILES_SLAB, "Cracked Chalk Tiles Slab");
+        translationBuilder.add(ModBlocks.CRACKED_CHALK_TILES_STAIRS, "Cracked Chalk Tiles Stairs");
+        
+        translationBuilder.add(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_SLAB, "Cracked Cobbled Chalk Bricks Slab");
+        translationBuilder.add(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_STAIRS, "Cracked Cobbled Chalk Bricks Stairs");
+        translationBuilder.add(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_WALL, "Cracked Cobbled Chalk Bricks Wall");
+        
+        translationBuilder.add(ModBlocks.CRACKED_FANCY_CHALK_BRICKS_SLAB, "Cracked Fancy Chalk Bricks Slab");
+        translationBuilder.add(ModBlocks.CRACKED_FANCY_CHALK_BRICKS_STAIRS, "Cracked Fancy Chalk Bricks Stairs");
+        translationBuilder.add(ModBlocks.CRACKED_FANCY_CHALK_BRICKS_WALL, "Cracked Fancy Chalk Bricks Wall");
+        
+        translationBuilder.add(ModBlocks.CRACKED_SMOOTH_CHALK_SLAB, "Cracked Smooth Chalk Slab");
+        translationBuilder.add(ModBlocks.CRACKED_SMOOTH_CHALK_STAIRS, "Cracked Smooth Chalk Stairs");
     }
 }

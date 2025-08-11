@@ -70,12 +70,28 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion(hasItem(ModBlocks.CHALK), conditionsFromItem(ModBlocks.CHALK))
                 .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.CHALK_STAIRS)));
         
-        // Wall recipes
-        ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.CHALK_WALL, 6)
-                .pattern("XXX")
-                .pattern("XXX")
-                .input('X', ModBlocks.CHALK)
-                .criterion(hasItem(ModBlocks.CHALK), conditionsFromItem(ModBlocks.CHALK))
-                .offerTo(exporter, new Identifier(getRecipeName(ModBlocks.CHALK_WALL)));
+        
+        // Additional stonecutter recipes for cracked variants
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_CHALK_BRICK_SLAB, ModBlocks.CRACKED_CHALK_BRICK, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_CHALK_BRICK_STAIRS, ModBlocks.CRACKED_CHALK_BRICK);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_CHALK_BRICK_WALL, ModBlocks.CRACKED_CHALK_BRICK);
+        
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_CHALK_PAVEMENT_SLAB, ModBlocks.CRACKED_CHALK_PAVEMENT, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_CHALK_PAVEMENT_STAIRS, ModBlocks.CRACKED_CHALK_PAVEMENT);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_CHALK_PAVEMENT_WALL, ModBlocks.CRACKED_CHALK_PAVEMENT);
+        
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_CHALK_TILES_SLAB, ModBlocks.CRACKED_CHALK_TILES, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_CHALK_TILES_STAIRS, ModBlocks.CRACKED_CHALK_TILES);
+        
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_SLAB, ModBlocks.CRACKED_COBBLED_CHALK_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_STAIRS, ModBlocks.CRACKED_COBBLED_CHALK_BRICKS);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_WALL, ModBlocks.CRACKED_COBBLED_CHALK_BRICKS);
+        
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_FANCY_CHALK_BRICKS_SLAB, ModBlocks.CRACKED_FANCY_CHALK_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_FANCY_CHALK_BRICKS_STAIRS, ModBlocks.CRACKED_FANCY_CHALK_BRICKS);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_FANCY_CHALK_BRICKS_WALL, ModBlocks.CRACKED_FANCY_CHALK_BRICKS);
+        
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_SMOOTH_CHALK_SLAB, ModBlocks.CRACKED_SMOOTH_CHALK, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CRACKED_SMOOTH_CHALK_STAIRS, ModBlocks.CRACKED_SMOOTH_CHALK);
     }
 }

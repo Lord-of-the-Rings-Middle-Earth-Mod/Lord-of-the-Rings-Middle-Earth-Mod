@@ -60,5 +60,28 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CHALK_PAVEMENT_WALL);
         addDrop(ModBlocks.COBBLED_CHALK_WALL);
         addDrop(ModBlocks.COBBLED_CHALK_BRICKS_WALL);
+        
+        // Cracked variants derived blocks
+        addDrop(ModBlocks.CRACKED_CHALK_BRICK_SLAB, slabDrops(ModBlocks.CRACKED_CHALK_BRICK_SLAB));
+        addDrop(ModBlocks.CRACKED_CHALK_BRICK_STAIRS);
+        addDrop(ModBlocks.CRACKED_CHALK_BRICK_WALL);
+        
+        addDrop(ModBlocks.CRACKED_CHALK_PAVEMENT_SLAB, slabDrops(ModBlocks.CRACKED_CHALK_PAVEMENT_SLAB));
+        addDrop(ModBlocks.CRACKED_CHALK_PAVEMENT_STAIRS);
+        addDrop(ModBlocks.CRACKED_CHALK_PAVEMENT_WALL);
+        
+        addDrop(ModBlocks.CRACKED_CHALK_TILES_SLAB, slabDrops(ModBlocks.CRACKED_CHALK_TILES_SLAB));
+        addDrop(ModBlocks.CRACKED_CHALK_TILES_STAIRS);
+        
+        addDrop(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_SLAB, slabDrops(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_SLAB));
+        addDrop(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_STAIRS);
+        addDrop(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_WALL);
+        
+        addDrop(ModBlocks.CRACKED_FANCY_CHALK_BRICKS_SLAB, slabDrops(ModBlocks.CRACKED_FANCY_CHALK_BRICKS_SLAB));
+        addDrop(ModBlocks.CRACKED_FANCY_CHALK_BRICKS_STAIRS);
+        addDrop(ModBlocks.CRACKED_FANCY_CHALK_BRICKS_WALL);
+        
+        addDrop(ModBlocks.CRACKED_SMOOTH_CHALK_SLAB, slabDrops(ModBlocks.CRACKED_SMOOTH_CHALK_SLAB));
+        addDrop(ModBlocks.CRACKED_SMOOTH_CHALK_STAIRS);
     }
 }

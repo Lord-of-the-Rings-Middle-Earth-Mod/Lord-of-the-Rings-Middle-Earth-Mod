@@ -59,11 +59,33 @@ public class ModItemGroups {
                         
                         // Cracked variants
                         entries.add(ModBlocks.CRACKED_CHALK_BRICK);
+                        entries.add(ModBlocks.CRACKED_CHALK_BRICK_SLAB);
+                        entries.add(ModBlocks.CRACKED_CHALK_BRICK_STAIRS);
+                        entries.add(ModBlocks.CRACKED_CHALK_BRICK_WALL);
+                        
                         entries.add(ModBlocks.CRACKED_CHALK_PAVEMENT);
+                        entries.add(ModBlocks.CRACKED_CHALK_PAVEMENT_SLAB);
+                        entries.add(ModBlocks.CRACKED_CHALK_PAVEMENT_STAIRS);
+                        entries.add(ModBlocks.CRACKED_CHALK_PAVEMENT_WALL);
+                        
                         entries.add(ModBlocks.CRACKED_CHALK_TILES);
+                        entries.add(ModBlocks.CRACKED_CHALK_TILES_SLAB);
+                        entries.add(ModBlocks.CRACKED_CHALK_TILES_STAIRS);
+                        
                         entries.add(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS);
+                        entries.add(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_SLAB);
+                        entries.add(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_STAIRS);
+                        entries.add(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_WALL);
+                        
                         entries.add(ModBlocks.CRACKED_FANCY_CHALK_BRICKS);
+                        entries.add(ModBlocks.CRACKED_FANCY_CHALK_BRICKS_SLAB);
+                        entries.add(ModBlocks.CRACKED_FANCY_CHALK_BRICKS_STAIRS);
+                        entries.add(ModBlocks.CRACKED_FANCY_CHALK_BRICKS_WALL);
+                        
                         entries.add(ModBlocks.CRACKED_SMOOTH_CHALK);
+                        entries.add(ModBlocks.CRACKED_SMOOTH_CHALK_SLAB);
+                        entries.add(ModBlocks.CRACKED_SMOOTH_CHALK_STAIRS);
+                        
                         entries.add(ModBlocks.CRACKED_CHALK_PILLAR);
                         
                     }).build());

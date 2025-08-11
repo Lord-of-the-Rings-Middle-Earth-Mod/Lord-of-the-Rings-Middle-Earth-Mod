@@ -46,6 +46,14 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSlabStairsWall(ModBlocks.COBBLED_CHALK_BRICKS, ModBlocks.COBBLED_CHALK_BRICKS_SLAB, ModBlocks.COBBLED_CHALK_BRICKS_STAIRS, ModBlocks.COBBLED_CHALK_BRICKS_WALL);
         blockStateModelGenerator.registerSlabStairs(ModBlocks.SMOOTH_CHALK, ModBlocks.SMOOTH_CHALK_SLAB, ModBlocks.SMOOTH_CHALK_STAIRS);
         blockStateModelGenerator.registerSlabStairs(ModBlocks.FANCY_CHALK_BRICKS, ModBlocks.FANCY_CHALK_BRICKS_SLAB, ModBlocks.FANCY_CHALK_BRICKS_STAIRS);
+        
+        // Cracked variants derived blocks
+        blockStateModelGenerator.registerSlabStairsWall(ModBlocks.CRACKED_CHALK_BRICK, ModBlocks.CRACKED_CHALK_BRICK_SLAB, ModBlocks.CRACKED_CHALK_BRICK_STAIRS, ModBlocks.CRACKED_CHALK_BRICK_WALL);
+        blockStateModelGenerator.registerSlabStairsWall(ModBlocks.CRACKED_CHALK_PAVEMENT, ModBlocks.CRACKED_CHALK_PAVEMENT_SLAB, ModBlocks.CRACKED_CHALK_PAVEMENT_STAIRS, ModBlocks.CRACKED_CHALK_PAVEMENT_WALL);
+        blockStateModelGenerator.registerSlabStairs(ModBlocks.CRACKED_CHALK_TILES, ModBlocks.CRACKED_CHALK_TILES_SLAB, ModBlocks.CRACKED_CHALK_TILES_STAIRS);
+        blockStateModelGenerator.registerSlabStairsWall(ModBlocks.CRACKED_COBBLED_CHALK_BRICKS, ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_SLAB, ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_STAIRS, ModBlocks.CRACKED_COBBLED_CHALK_BRICKS_WALL);
+        blockStateModelGenerator.registerSlabStairsWall(ModBlocks.CRACKED_FANCY_CHALK_BRICKS, ModBlocks.CRACKED_FANCY_CHALK_BRICKS_SLAB, ModBlocks.CRACKED_FANCY_CHALK_BRICKS_STAIRS, ModBlocks.CRACKED_FANCY_CHALK_BRICKS_WALL);
+        blockStateModelGenerator.registerSlabStairs(ModBlocks.CRACKED_SMOOTH_CHALK, ModBlocks.CRACKED_SMOOTH_CHALK_SLAB, ModBlocks.CRACKED_SMOOTH_CHALK_STAIRS);
     }
 
     @Override

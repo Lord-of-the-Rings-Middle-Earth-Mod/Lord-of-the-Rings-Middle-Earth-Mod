@@ -101,6 +101,45 @@ public class ModBlocks {
     public static final Block COBBLED_CHALK_BRICKS_WALL = registerBlock("cobbled_chalk_bricks_wall",
             new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL).sounds(BlockSoundGroup.STONE)));
 
+    // Cracked derived blocks
+    public static final Block CRACKED_CHALK_BRICK_SLAB = registerBlock("cracked_chalk_brick_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_SLAB).sounds(BlockSoundGroup.STONE)));
+    public static final Block CRACKED_CHALK_BRICK_STAIRS = registerBlock("cracked_chalk_brick_stairs",
+            new StairsBlock(CRACKED_CHALK_BRICK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS).sounds(BlockSoundGroup.STONE)));
+    public static final Block CRACKED_CHALK_BRICK_WALL = registerBlock("cracked_chalk_brick_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL).sounds(BlockSoundGroup.STONE)));
+    
+    public static final Block CRACKED_CHALK_PAVEMENT_SLAB = registerBlock("cracked_chalk_pavement_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB).sounds(BlockSoundGroup.STONE)));
+    public static final Block CRACKED_CHALK_PAVEMENT_STAIRS = registerBlock("cracked_chalk_pavement_stairs",
+            new StairsBlock(CRACKED_CHALK_PAVEMENT.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS).sounds(BlockSoundGroup.STONE)));
+    public static final Block CRACKED_CHALK_PAVEMENT_WALL = registerBlock("cracked_chalk_pavement_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL).sounds(BlockSoundGroup.STONE)));
+    
+    public static final Block CRACKED_CHALK_TILES_SLAB = registerBlock("cracked_chalk_tiles_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB).sounds(BlockSoundGroup.STONE)));
+    public static final Block CRACKED_CHALK_TILES_STAIRS = registerBlock("cracked_chalk_tiles_stairs",
+            new StairsBlock(CRACKED_CHALK_TILES.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS).sounds(BlockSoundGroup.STONE)));
+            
+    public static final Block CRACKED_COBBLED_CHALK_BRICKS_SLAB = registerBlock("cracked_cobbled_chalk_bricks_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_SLAB).sounds(BlockSoundGroup.STONE)));
+    public static final Block CRACKED_COBBLED_CHALK_BRICKS_STAIRS = registerBlock("cracked_cobbled_chalk_bricks_stairs",
+            new StairsBlock(CRACKED_COBBLED_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS).sounds(BlockSoundGroup.STONE)));
+    public static final Block CRACKED_COBBLED_CHALK_BRICKS_WALL = registerBlock("cracked_cobbled_chalk_bricks_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL).sounds(BlockSoundGroup.STONE)));
+            
+    public static final Block CRACKED_FANCY_CHALK_BRICKS_SLAB = registerBlock("cracked_fancy_chalk_bricks_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_SLAB).sounds(BlockSoundGroup.STONE)));
+    public static final Block CRACKED_FANCY_CHALK_BRICKS_STAIRS = registerBlock("cracked_fancy_chalk_bricks_stairs",
+            new StairsBlock(CRACKED_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_BRICK_STAIRS).sounds(BlockSoundGroup.STONE)));
+    public static final Block CRACKED_FANCY_CHALK_BRICKS_WALL = registerBlock("cracked_fancy_chalk_bricks_wall",
+            new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL).sounds(BlockSoundGroup.STONE)));
+            
+    public static final Block CRACKED_SMOOTH_CHALK_SLAB = registerBlock("cracked_smooth_chalk_slab",
+            new SlabBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE_SLAB).sounds(BlockSoundGroup.STONE)));
+    public static final Block CRACKED_SMOOTH_CHALK_STAIRS = registerBlock("cracked_smooth_chalk_stairs",
+            new StairsBlock(CRACKED_SMOOTH_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS).sounds(BlockSoundGroup.STONE)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name), block);
