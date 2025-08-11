@@ -1,0 +1,38 @@
+{
+	"parent": "minecraft:block/pressure_plate_down",
+	"elements": [
+		{   "from": [ 1, 0, 1 ],
+			"to": [ 15, 0.5, 15 ],
+			"faces": {
+				"down":  { "uv": [ 1,    1, 15, 15 ], "texture": "#texture", "cullface": "down" },
+				"up":    { "uv": [ 1,    1, 15, 15 ], "texture": "#texture" },
+				"north": { "uv": [ 1, 15, 15, 15.5 ], "texture": "#texture" },
+				"south": { "uv": [ 1, 15, 15, 15.5 ], "texture": "#texture" },
+				"west":  { "uv": [ 1, 15, 15, 15.5 ], "texture": "#texture" },
+				"east":  { "uv": [ 1, 15, 15, 15.5 ], "texture": "#texture" }
+			}
+		},
+		{   "from": [ 1, 0, 1 ],
+			"to": [ 15, 0.5, 15 ],
+			"faces": {
+				"down":  { "uv": [ 1,    1, 15, 15 ], "texture": "#layer1", "cullface": "down" },
+				"up":    { "uv": [ 1,    1, 15, 15 ], "texture": "#layer1" },
+				"north": { "uv": [ 1, 15, 15, 15.5 ], "texture": "#layer1" },
+				"south": { "uv": [ 1, 15, 15, 15.5 ], "texture": "#layer1" },
+				"west":  { "uv": [ 1, 15, 15, 15.5 ], "texture": "#layer1" },
+				"east":  { "uv": [ 1, 15, 15, 15.5 ], "texture": "#layer1" }
+			}
+		},
+		{   "from": [ 1, 0, 1 ],
+			"to": [ 15, 0.5, 15 ],
+			"faces": {
+				"down":  { "uv": [ 1,    1, 15, 15 ], "texture": "#layer2", "cullface": "down" },
+				"up":    { "uv": [ 1,    1, 15, 15 ], "texture": "#layer2" },
+				"north": { "uv": [ 1, 15, 15, 15.5 ], "texture": "#layer2" },
+				"south": { "uv": [ 1, 15, 15, 15.5 ], "texture": "#layer2" },
+				"west":  { "uv": [ 1, 15, 15, 15.5 ], "texture": "#layer2" },
+				"east":  { "uv": [ 1, 15, 15, 15.5 ], "texture": "#layer2" }
+			}
+		}
+	]
+}
