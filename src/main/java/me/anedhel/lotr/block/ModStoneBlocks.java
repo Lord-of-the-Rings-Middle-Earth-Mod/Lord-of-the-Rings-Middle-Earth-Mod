@@ -2021,6 +2021,48 @@ public class ModStoneBlocks {
 			.pressurePlate(CHALK_PRESSURE_PLATE)
 			.group("stone").unlockCriterionName("has_stone").build();
 
+	public static final Block MOSSY_CHALK = registerBlock("mossy_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_CHALK_STAIRS = registerBlock("mossy_chalk_stairs",
+			new StairsBlock(MOSSY_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block MOSSY_CHALK_SLAB = registerBlock("mossy_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_CHALK_WALL = registerBlock("mossy_chalk_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block MOSSY_CHALK_BUTTON = registerBlock("mossy_chalk_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block MOSSY_CHALK_PRESSURE_PLATE = registerBlock("mossy_chalk_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily MOSSY_CHALK_FAMILY = BlockFamilies.register(MOSSY_CHALK)
+			.stairs(MOSSY_CHALK_STAIRS)
+			.slab(MOSSY_CHALK_SLAB)
+			.wall(MOSSY_CHALK_WALL)
+			.button(MOSSY_CHALK_BUTTON)
+			.pressurePlate(MOSSY_CHALK_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_stone").build();
+
+	public static final Block OVERGROWN_CHALK = registerBlock("overgrown_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_CHALK_STAIRS = registerBlock("overgrown_chalk_stairs",
+			new StairsBlock(OVERGROWN_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block OVERGROWN_CHALK_SLAB = registerBlock("overgrown_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_CHALK_WALL = registerBlock("overgrown_chalk_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block OVERGROWN_CHALK_BUTTON = registerBlock("overgrown_chalk_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block OVERGROWN_CHALK_PRESSURE_PLATE = registerBlock("overgrown_chalk_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily OVERGROWN_CHALK_FAMILY = BlockFamilies.register(OVERGROWN_CHALK)
+			.stairs(OVERGROWN_CHALK_STAIRS)
+			.slab(OVERGROWN_CHALK_SLAB)
+			.wall(OVERGROWN_CHALK_WALL)
+			.button(OVERGROWN_CHALK_BUTTON)
+			.pressurePlate(OVERGROWN_CHALK_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_stone").build();
+
 	public static final Block COBBLED_CHALK = registerBlock("cobbled_chalk",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block COBBLED_CHALK_STAIRS = registerBlock("cobbled_chalk_stairs",
@@ -2041,6 +2083,50 @@ public class ModStoneBlocks {
 			.button(COBBLED_CHALK_BUTTON)
 			.pressurePlate(COBBLED_CHALK_PRESSURE_PLATE)
 			.group("stone").unlockCriterionName("has_cobbled_stone").build();
+
+	public static final Block MOSSY_COBBLED_CHALK = registerBlock("mossy_cobbled_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_COBBLED_CHALK_STAIRS = registerBlock("mossy_cobbled_chalk_stairs",
+			new StairsBlock(MOSSY_COBBLED_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block MOSSY_COBBLED_CHALK_SLAB = registerBlock("mossy_cobbled_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_COBBLED_CHALK_WALL = registerBlock("mossy_cobbled_chalk_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block MOSSY_COBBLED_CHALK_BUTTON = registerBlock("mossy_cobbled_chalk_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block MOSSY_COBBLED_CHALK_PRESSURE_PLATE = registerBlock("mossy_cobbled_chalk_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily MOSSY_COBBLED_CHALK_FAMILY = BlockFamilies.register(MOSSY_COBBLED_CHALK)
+			.stairs(MOSSY_COBBLED_CHALK_STAIRS)
+			.slab(MOSSY_COBBLED_CHALK_SLAB)
+			.wall(MOSSY_COBBLED_CHALK_WALL)
+			.button(MOSSY_COBBLED_CHALK_BUTTON)
+			.pressurePlate(MOSSY_COBBLED_CHALK_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_mossy_cobbled_stone").build();
+
+	public static final Block OVERGROWN_COBBLED_CHALK = registerBlock("overgrown_cobbled_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_COBBLED_CHALK_STAIRS = registerBlock("overgrown_cobbled_chalk_stairs",
+			new StairsBlock(OVERGROWN_COBBLED_CHALK.getDefaultState(),
+					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block OVERGROWN_COBBLED_CHALK_SLAB = registerBlock("overgrown_cobbled_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_COBBLED_CHALK_WALL = registerBlock("overgrown_cobbled_chalk_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block OVERGROWN_COBBLED_CHALK_BUTTON = registerBlock("overgrown_cobbled_chalk_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block OVERGROWN_COBBLED_CHALK_PRESSURE_PLATE = registerBlock(
+			"overgrown_cobbled_chalk_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily OVERGROWN_COBBLED_CHALK_FAMILY = BlockFamilies.register(OVERGROWN_COBBLED_CHALK)
+			.stairs(OVERGROWN_COBBLED_CHALK_STAIRS)
+			.slab(OVERGROWN_COBBLED_CHALK_SLAB)
+			.wall(OVERGROWN_COBBLED_CHALK_WALL)
+			.button(OVERGROWN_COBBLED_CHALK_BUTTON)
+			.pressurePlate(OVERGROWN_COBBLED_CHALK_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_overgrown_cobbled_stone").build();
 
 	public static final Block COBBLED_CHALK_BRICKS = registerBlock("cobbled_chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
@@ -2068,6 +2154,64 @@ public class ModStoneBlocks {
 			.slab(CRACKED_COBBLED_CHALK_BRICKS_SLAB)
 			.wall(CRACKED_COBBLED_CHALK_BRICKS_WALL)
 			.group("stone").unlockCriterionName("has_cracked_cobbled_brick").build();
+
+	public static final Block MOSSY_COBBLED_CHALK_BRICKS = registerBlock("mossy_cobbled_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+	public static final Block MOSSY_COBBLED_CHALK_BRICK_STAIRS = registerBlock("mossy_cobbled_chalk_brick_stairs",
+			new StairsBlock(MOSSY_COBBLED_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
+	public static final Block MOSSY_COBBLED_CHALK_BRICK_SLAB = registerBlock("mossy_cobbled_chalk_brick_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
+	public static final Block MOSSY_COBBLED_CHALK_BRICK_WALL = registerBlock("mossy_cobbled_chalk_brick_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
+	public static final BlockFamily MOSSY_COBBLED_CHALK_BRICK_FAMILY =
+			BlockFamilies.register(MOSSY_COBBLED_CHALK_BRICKS)
+					.stairs(MOSSY_COBBLED_CHALK_BRICK_STAIRS)
+					.slab(MOSSY_COBBLED_CHALK_BRICK_SLAB)
+					.wall(MOSSY_COBBLED_CHALK_BRICK_WALL)
+					.group("stone").unlockCriterionName("has_mossy_cobbled_brick").build();
+	public static final Block CRACKED_MOSSY_COBBLED_CHALK_BRICKS = registerBlock("cracked_mossy_cobbled_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+	public static final Block CRACKED_MOSSY_COBBLED_CHALK_BRICK_STAIRS = registerBlock("cracked_mossy_cobbled_chalk_brick_stairs",
+			new StairsBlock(CRACKED_MOSSY_COBBLED_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
+	public static final Block CRACKED_MOSSY_COBBLED_CHALK_BRICK_SLAB = registerBlock("cracked_mossy_cobbled_chalk_brick_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
+	public static final Block CRACKED_MOSSY_COBBLED_CHALK_BRICK_WALL = registerBlock("cracked_mossy_cobbled_chalk_brick_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
+	public static final BlockFamily CRACKED_MOSSY_COBBLED_CHALK_BRICK_FAMILY =
+			BlockFamilies.register(CRACKED_MOSSY_COBBLED_CHALK_BRICKS)
+					.stairs(CRACKED_MOSSY_COBBLED_CHALK_BRICK_STAIRS)
+					.slab(CRACKED_MOSSY_COBBLED_CHALK_BRICK_SLAB)
+					.wall(CRACKED_MOSSY_COBBLED_CHALK_BRICK_WALL)
+					.group("stone").unlockCriterionName("has_cracked_mossy_cobbled_brick").build();
+
+	public static final Block OVERGROWN_COBBLED_CHALK_BRICKS = registerBlock("overgrown_cobbled_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+	public static final Block OVERGROWN_COBBLED_CHALK_BRICK_STAIRS = registerBlock("overgrown_cobbled_chalk_brick_stairs",
+			new StairsBlock(OVERGROWN_COBBLED_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
+	public static final Block OVERGROWN_COBBLED_CHALK_BRICK_SLAB = registerBlock("overgrown_cobbled_chalk_brick_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
+	public static final Block OVERGROWN_COBBLED_CHALK_BRICK_WALL = registerBlock("overgrown_cobbled_chalk_brick_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
+	public static final BlockFamily OVERGROWN_COBBLED_CHALK_BRICK_FAMILY =
+			BlockFamilies.register(OVERGROWN_COBBLED_CHALK_BRICKS)
+					.stairs(OVERGROWN_COBBLED_CHALK_BRICK_STAIRS)
+					.slab(OVERGROWN_COBBLED_CHALK_BRICK_SLAB)
+					.wall(OVERGROWN_COBBLED_CHALK_BRICK_WALL)
+					.group("stone").unlockCriterionName("has_overgrown_cobbled_brick").build();
+	public static final Block CRACKED_OVERGROWN_COBBLED_CHALK_BRICKS = registerBlock("cracked_overgrown_cobbled_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+	public static final Block CRACKED_OVERGROWN_COBBLED_CHALK_BRICK_STAIRS = registerBlock("cracked_overgrown_cobbled_chalk_brick_stairs",
+			new StairsBlock(CRACKED_OVERGROWN_COBBLED_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
+	public static final Block CRACKED_OVERGROWN_COBBLED_CHALK_BRICK_SLAB = registerBlock("cracked_overgrown_cobbled_chalk_brick_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
+	public static final Block CRACKED_OVERGROWN_COBBLED_CHALK_BRICK_WALL = registerBlock("cracked_overgrown_cobbled_chalk_brick_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
+	public static final BlockFamily CRACKED_OVERGROWN_COBBLED_CHALK_BRICK_FAMILY =
+			BlockFamilies.register(CRACKED_OVERGROWN_COBBLED_CHALK_BRICKS)
+					.stairs(CRACKED_OVERGROWN_COBBLED_CHALK_BRICK_STAIRS)
+					.slab(CRACKED_OVERGROWN_COBBLED_CHALK_BRICK_SLAB)
+					.wall(CRACKED_OVERGROWN_COBBLED_CHALK_BRICK_WALL)
+					.group("stone").unlockCriterionName("has_cracked_overgrown_cobbled_brick").build();
 
 	public static final Block SMOOTH_CHALK = registerBlock("smooth_chalk",
 			new Block(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE)));
