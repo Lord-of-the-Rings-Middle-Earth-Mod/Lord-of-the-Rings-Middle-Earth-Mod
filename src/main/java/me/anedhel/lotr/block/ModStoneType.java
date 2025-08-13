@@ -171,9 +171,15 @@ public enum ModStoneType {
             ModStoneBlocks.CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_CHALK_PAVEMENT_FAMILY,
             ModStoneBlocks.MOSSY_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_MOSSY_CHALK_PAVEMENT_FAMILY,
             ModStoneBlocks.OVERGROWN_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_CHALK_PAVEMENT_FAMILY,
-            null, null, null, null, null, null, // Bronze pavement families (not implemented yet)
-            null, null, null, null, null, null, // Silver pavement families (not implemented yet)
-            null, null, null, null, null, null, // Gold pavement families (not implemented yet)
+            ModStoneBlocks.BRONZE_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_BRONZE_CHALK_PAVEMENT_FAMILY,
+            ModStoneBlocks.MOSSY_BRONZE_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_MOSSY_BRONZE_CHALK_PAVEMENT_FAMILY,
+            ModStoneBlocks.OVERGROWN_BRONZE_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_BRONZE_CHALK_PAVEMENT_FAMILY,
+            ModStoneBlocks.SILVER_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_SILVER_CHALK_PAVEMENT_FAMILY,
+            ModStoneBlocks.MOSSY_SILVER_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_MOSSY_SILVER_CHALK_PAVEMENT_FAMILY,
+            ModStoneBlocks.OVERGROWN_SILVER_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_SILVER_CHALK_PAVEMENT_FAMILY,
+            ModStoneBlocks.GOLD_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_GOLD_CHALK_PAVEMENT_FAMILY,
+            ModStoneBlocks.MOSSY_GOLD_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_MOSSY_GOLD_CHALK_PAVEMENT_FAMILY,
+            ModStoneBlocks.OVERGROWN_GOLD_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_GOLD_CHALK_PAVEMENT_FAMILY,
             ModStoneBlocks.FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_FANCY_CHALK_BRICKS_FAMILY,
             ModStoneBlocks.MOSSY_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_MOSSY_FANCY_CHALK_BRICKS_FAMILY,
             ModStoneBlocks.OVERGROWN_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_FANCY_CHALK_BRICKS_FAMILY,
