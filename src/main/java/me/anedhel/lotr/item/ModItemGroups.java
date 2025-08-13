@@ -43,6 +43,7 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModStoneBlocks.BLUESLATE)).entries(((displayContext, entries) -> {
                         //There will be more lines in this lambda statement hence we don´t use an expression
                         entries.addAll(ModStoneType.BLUESLATE.getLotRStoneItemGroupList());
+                        entries.addAll(ModStoneType.CHALK.getLotRStoneItemGroupList());
                     })).build());
 
     public static final ItemGroup LOTR_WOOD = Registry.register(Registries.ITEM_GROUP,
