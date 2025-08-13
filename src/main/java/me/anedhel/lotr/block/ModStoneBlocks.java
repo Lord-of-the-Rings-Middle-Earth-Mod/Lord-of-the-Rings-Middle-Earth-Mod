@@ -3567,6 +3567,158 @@ public class ModStoneBlocks {
 			.slab(CRACKED_OVERGROWN_GOLD_CHALK_PAVEMENT_SLAB)
 			.group("stone").unlockCriterionName("has_cracked_overgrown_gold_pavement").build();
 
+	// ORNAMENTED SMOOTH CHALK BLOCKS
+	public static final Block BRONZE_SMOOTH_CHALK = registerBlock("bronze_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block BRONZE_SMOOTH_CHALK_SLAB = registerBlock("bronze_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_BRONZE_SMOOTH_CHALK = registerBlock("cracked_bronze_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_BRONZE_SMOOTH_CHALK_SLAB = registerBlock("cracked_bronze_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_BRONZE_SMOOTH_CHALK = registerBlock("mossy_bronze_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_BRONZE_SMOOTH_CHALK_SLAB = registerBlock("mossy_bronze_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_MOSSY_BRONZE_SMOOTH_CHALK = registerBlock("cracked_mossy_bronze_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_MOSSY_BRONZE_SMOOTH_CHALK_SLAB = registerBlock("cracked_mossy_bronze_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_BRONZE_SMOOTH_CHALK = registerBlock("overgrown_bronze_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_BRONZE_SMOOTH_CHALK_SLAB = registerBlock("overgrown_bronze_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_OVERGROWN_BRONZE_SMOOTH_CHALK = registerBlock("cracked_overgrown_bronze_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_OVERGROWN_BRONZE_SMOOTH_CHALK_SLAB = registerBlock("cracked_overgrown_bronze_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+
+	public static final Block SILVER_SMOOTH_CHALK = registerBlock("silver_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block SILVER_SMOOTH_CHALK_SLAB = registerBlock("silver_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_SILVER_SMOOTH_CHALK = registerBlock("cracked_silver_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_SILVER_SMOOTH_CHALK_SLAB = registerBlock("cracked_silver_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_SILVER_SMOOTH_CHALK = registerBlock("mossy_silver_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_SILVER_SMOOTH_CHALK_SLAB = registerBlock("mossy_silver_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_MOSSY_SILVER_SMOOTH_CHALK = registerBlock("cracked_mossy_silver_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_MOSSY_SILVER_SMOOTH_CHALK_SLAB = registerBlock("cracked_mossy_silver_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_SILVER_SMOOTH_CHALK = registerBlock("overgrown_silver_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_SILVER_SMOOTH_CHALK_SLAB = registerBlock("overgrown_silver_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_OVERGROWN_SILVER_SMOOTH_CHALK = registerBlock("cracked_overgrown_silver_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_OVERGROWN_SILVER_SMOOTH_CHALK_SLAB = registerBlock("cracked_overgrown_silver_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+
+	public static final Block GOLD_SMOOTH_CHALK = registerBlock("gold_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block GOLD_SMOOTH_CHALK_SLAB = registerBlock("gold_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_GOLD_SMOOTH_CHALK = registerBlock("cracked_gold_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_GOLD_SMOOTH_CHALK_SLAB = registerBlock("cracked_gold_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_GOLD_SMOOTH_CHALK = registerBlock("mossy_gold_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_GOLD_SMOOTH_CHALK_SLAB = registerBlock("mossy_gold_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_MOSSY_GOLD_SMOOTH_CHALK = registerBlock("cracked_mossy_gold_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_MOSSY_GOLD_SMOOTH_CHALK_SLAB = registerBlock("cracked_mossy_gold_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_GOLD_SMOOTH_CHALK = registerBlock("overgrown_gold_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_GOLD_SMOOTH_CHALK_SLAB = registerBlock("overgrown_gold_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_OVERGROWN_GOLD_SMOOTH_CHALK = registerBlock("cracked_overgrown_gold_smooth_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_OVERGROWN_GOLD_SMOOTH_CHALK_SLAB = registerBlock("cracked_overgrown_gold_smooth_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+
+	// ORNAMENTED CHALK PILLAR BLOCKS
+	public static final Block BRONZE_CHALK_PILLAR = registerBlock("bronze_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block BRONZE_CHALK_PILLAR_SLAB = registerBlock("bronze_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_BRONZE_CHALK_PILLAR = registerBlock("cracked_bronze_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_BRONZE_CHALK_PILLAR_SLAB = registerBlock("cracked_bronze_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_BRONZE_CHALK_PILLAR = registerBlock("mossy_bronze_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_BRONZE_CHALK_PILLAR_SLAB = registerBlock("mossy_bronze_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_MOSSY_BRONZE_CHALK_PILLAR = registerBlock("cracked_mossy_bronze_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_MOSSY_BRONZE_CHALK_PILLAR_SLAB = registerBlock("cracked_mossy_bronze_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_BRONZE_CHALK_PILLAR = registerBlock("overgrown_bronze_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_BRONZE_CHALK_PILLAR_SLAB = registerBlock("overgrown_bronze_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_OVERGROWN_BRONZE_CHALK_PILLAR = registerBlock("cracked_overgrown_bronze_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_OVERGROWN_BRONZE_CHALK_PILLAR_SLAB = registerBlock("cracked_overgrown_bronze_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+
+	public static final Block SILVER_CHALK_PILLAR = registerBlock("silver_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block SILVER_CHALK_PILLAR_SLAB = registerBlock("silver_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_SILVER_CHALK_PILLAR = registerBlock("cracked_silver_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_SILVER_CHALK_PILLAR_SLAB = registerBlock("cracked_silver_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_SILVER_CHALK_PILLAR = registerBlock("mossy_silver_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_SILVER_CHALK_PILLAR_SLAB = registerBlock("mossy_silver_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_MOSSY_SILVER_CHALK_PILLAR = registerBlock("cracked_mossy_silver_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_MOSSY_SILVER_CHALK_PILLAR_SLAB = registerBlock("cracked_mossy_silver_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_SILVER_CHALK_PILLAR = registerBlock("overgrown_silver_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_SILVER_CHALK_PILLAR_SLAB = registerBlock("overgrown_silver_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_OVERGROWN_SILVER_CHALK_PILLAR = registerBlock("cracked_overgrown_silver_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_OVERGROWN_SILVER_CHALK_PILLAR_SLAB = registerBlock("cracked_overgrown_silver_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+
+	public static final Block GOLD_CHALK_PILLAR = registerBlock("gold_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block GOLD_CHALK_PILLAR_SLAB = registerBlock("gold_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_GOLD_CHALK_PILLAR = registerBlock("cracked_gold_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_GOLD_CHALK_PILLAR_SLAB = registerBlock("cracked_gold_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_GOLD_CHALK_PILLAR = registerBlock("mossy_gold_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_GOLD_CHALK_PILLAR_SLAB = registerBlock("mossy_gold_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_MOSSY_GOLD_CHALK_PILLAR = registerBlock("cracked_mossy_gold_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_MOSSY_GOLD_CHALK_PILLAR_SLAB = registerBlock("cracked_mossy_gold_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_GOLD_CHALK_PILLAR = registerBlock("overgrown_gold_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_GOLD_CHALK_PILLAR_SLAB = registerBlock("overgrown_gold_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_OVERGROWN_GOLD_CHALK_PILLAR = registerBlock("cracked_overgrown_gold_chalk_pillar",
+			new ModPillarBlock(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_OVERGROWN_GOLD_CHALK_PILLAR_SLAB = registerBlock("cracked_overgrown_gold_chalk_pillar_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+
     /**
      * This Method is used to register a Block with minecraft and also register the Item for the block
      * @param name the name of the Block
