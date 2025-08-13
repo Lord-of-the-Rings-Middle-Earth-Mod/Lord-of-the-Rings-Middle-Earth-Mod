@@ -134,49 +134,55 @@ public enum ModStoneType {
             ModStoneBlocks.CRACKED_OVERGROWN_GOLD_BLUESLATE_PILLAR,
             ModStoneBlocks.CRACKED_OVERGROWN_GOLD_BLUESLATE_PILLAR_SLAB,
             "Blueslate"),
-    CHALK(ModStoneBlocks.CHALK_FAMILY, null, null,
-            ModStoneBlocks.COBBLED_CHALK_FAMILY, null, null,
-            ModStoneBlocks.COBBLED_CHALK_BRICKS_FAMILY, null, null,
-            ModStoneBlocks.CRACKED_COBBLED_CHALK_BRICKS_FAMILY, null, null,
-            null, null, null, null, null, null,
-            null, null, null, null, null, null,
-            null, null, null, null, null, null,
+    CHALK(ModStoneBlocks.CHALK_FAMILY, ModStoneBlocks.MOSSY_CHALK_FAMILY, ModStoneBlocks.OVERGROWN_CHALK_FAMILY,
+            ModStoneBlocks.COBBLED_CHALK_FAMILY, ModStoneBlocks.MOSSY_COBBLED_CHALK_FAMILY, ModStoneBlocks.OVERGROWN_COBBLED_CHALK_FAMILY,
+            ModStoneBlocks.COBBLED_CHALK_BRICKS_FAMILY, ModStoneBlocks.MOSSY_COBBLED_CHALK_BRICK_FAMILY, ModStoneBlocks.OVERGROWN_COBBLED_CHALK_BRICK_FAMILY,
+            ModStoneBlocks.CRACKED_COBBLED_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_MOSSY_COBBLED_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_COBBLED_CHALK_BRICK_FAMILY,
+            null, null, null, null, null, null, // Bronze cobbled brick families (not implemented yet)
+            null, null, null, null, null, null, // Silver cobbled brick families (not implemented yet)  
+            null, null, null, null, null, null, // Gold cobbled brick families (not implemented yet)
             ModStoneBlocks.CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_CHALK_BRICK_FAMILY,
-            null, null, null, null,
-            null, null, null, null, null, null,
-            null, null, null, null, null, null,
-            null, null, null, null, null, null,
+            ModStoneBlocks.MOSSY_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_MOSSY_CHALK_BRICK_FAMILY,
+            ModStoneBlocks.OVERGROWN_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_CHALK_BRICK_FAMILY,
+            null, null, null, null, null, null, // Bronze brick families (not implemented yet)
+            null, null, null, null, null, null, // Silver brick families (not implemented yet)
+            null, null, null, null, null, null, // Gold brick families (not implemented yet)
             ModStoneBlocks.CHALK_TILES_FAMILY, ModStoneBlocks.CRACKED_CHALK_TILES_FAMILY,
-            null, null, null, null,
-            null, null, null, null, null, null,
-            null, null, null, null, null, null,
-            null, null, null, null, null, null,
+            ModStoneBlocks.MOSSY_CHALK_TILES_FAMILY, ModStoneBlocks.CRACKED_MOSSY_CHALK_TILES_FAMILY,
+            ModStoneBlocks.OVERGROWN_CHALK_TILES_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_CHALK_TILES_FAMILY,
+            null, null, null, null, null, null, // Bronze tiles families (not implemented yet)
+            null, null, null, null, null, null, // Silver tiles families (not implemented yet)
+            null, null, null, null, null, null, // Gold tiles families (not implemented yet)
             ModStoneBlocks.CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_CHALK_PAVEMENT_FAMILY,
-            null, null, null, null,
-            null, null, null, null, null, null,
-            null, null, null, null, null, null,
-            null, null, null, null, null, null,
+            ModStoneBlocks.MOSSY_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_MOSSY_CHALK_PAVEMENT_FAMILY,
+            ModStoneBlocks.OVERGROWN_CHALK_PAVEMENT_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_CHALK_PAVEMENT_FAMILY,
+            null, null, null, null, null, null, // Bronze pavement families (not implemented yet)
+            null, null, null, null, null, null, // Silver pavement families (not implemented yet)
+            null, null, null, null, null, null, // Gold pavement families (not implemented yet)
             ModStoneBlocks.FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_FANCY_CHALK_BRICKS_FAMILY,
-            null, null, null, null,
-            null, null, null, null, null, null,
-            null, null, null, null, null, null,
-            null, null, null, null, null, null,
+            ModStoneBlocks.MOSSY_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_MOSSY_FANCY_CHALK_BRICKS_FAMILY,
+            ModStoneBlocks.OVERGROWN_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_FANCY_CHALK_BRICKS_FAMILY,
+            null, null, null, null, null, null, // Bronze fancy brick families (not implemented yet)
+            null, null, null, null, null, null, // Silver fancy brick families (not implemented yet)
+            null, null, null, null, null, null, // Gold fancy brick families (not implemented yet)
             ModStoneBlocks.SMOOTH_CHALK, ModStoneBlocks.SMOOTH_CHALK_SLAB,
             ModStoneBlocks.CRACKED_SMOOTH_CHALK, ModStoneBlocks.CRACKED_SMOOTH_CHALK_SLAB,
-            null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null,
+            ModStoneBlocks.MOSSY_SMOOTH_CHALK, ModStoneBlocks.MOSSY_SMOOTH_CHALK_SLAB,
+            ModStoneBlocks.CRACKED_MOSSY_SMOOTH_CHALK, ModStoneBlocks.CRACKED_MOSSY_SMOOTH_CHALK_SLAB,
+            ModStoneBlocks.OVERGROWN_SMOOTH_CHALK, ModStoneBlocks.OVERGROWN_SMOOTH_CHALK_SLAB,
+            ModStoneBlocks.CRACKED_OVERGROWN_SMOOTH_CHALK, ModStoneBlocks.CRACKED_OVERGROWN_SMOOTH_CHALK_SLAB,
+            null, null, null, null, null, null, null, null, // Bronze smooth blocks (not implemented yet)
+            null, null, null, null, null, null, null, null, // Silver smooth blocks (not implemented yet)
+            null, null, null, null, null, null, null, null, // Gold smooth blocks (not implemented yet)
             ModStoneBlocks.CHALK_PILLAR, ModStoneBlocks.CHALK_PILLAR_SLAB,
             ModStoneBlocks.CRACKED_CHALK_PILLAR, ModStoneBlocks.CRACKED_CHALK_PILLAR_SLAB,
-            null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null,
-            null, null, null, null, null, null, null, null,
-            null, null,
+            ModStoneBlocks.MOSSY_CHALK_PILLAR, ModStoneBlocks.MOSSY_CHALK_PILLAR_SLAB,
+            ModStoneBlocks.CRACKED_MOSSY_CHALK_PILLAR, ModStoneBlocks.CRACKED_MOSSY_CHALK_PILLAR_SLAB,
+            ModStoneBlocks.OVERGROWN_CHALK_PILLAR, ModStoneBlocks.OVERGROWN_CHALK_PILLAR_SLAB,
+            ModStoneBlocks.CRACKED_OVERGROWN_CHALK_PILLAR, ModStoneBlocks.CRACKED_OVERGROWN_CHALK_PILLAR_SLAB,
+            null, null, null, null, null, null, null, null, // Bronze pillar blocks (not implemented yet)
+            null, null, null, null, null, null, null, null, // Silver pillar blocks (not implemented yet)
+            null, null, null, null, null, null, null, null, // Gold pillar blocks (not implemented yet)
             "Chalk");
 
     private final BlockFamily stoneFamily;
