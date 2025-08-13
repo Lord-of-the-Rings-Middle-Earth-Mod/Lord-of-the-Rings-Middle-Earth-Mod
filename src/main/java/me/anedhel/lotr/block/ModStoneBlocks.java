@@ -2305,6 +2305,45 @@ public class ModStoneBlocks {
 			.wall(FANCY_CHALK_BRICKS_WALL)
 			.group("stone").unlockCriterionName("has_fancy_bricks").build();
 
+	// Example bronze ornamented variants - pattern for remaining metal ornaments
+	public static final Block BRONZE_COBBLED_CHALK_BRICKS = registerBlock("bronze_cobbled_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
+	public static final Block BRONZE_COBBLED_CHALK_BRICK_STAIRS = registerBlock("bronze_cobbled_chalk_brick_stairs",
+			new StairsBlock(BRONZE_COBBLED_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
+	public static final Block BRONZE_COBBLED_CHALK_BRICK_SLAB = registerBlock("bronze_cobbled_chalk_brick_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
+	public static final Block BRONZE_COBBLED_CHALK_BRICK_WALL = registerBlock("bronze_cobbled_chalk_brick_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
+	public static final BlockFamily BRONZE_COBBLED_CHALK_BRICK_FAMILY =
+			BlockFamilies.register(BRONZE_COBBLED_CHALK_BRICKS)
+					.stairs(BRONZE_COBBLED_CHALK_BRICK_STAIRS)
+					.slab(BRONZE_COBBLED_CHALK_BRICK_SLAB)
+					.wall(BRONZE_COBBLED_CHALK_BRICK_WALL)
+					.group("stone").unlockCriterionName("has_bronze_cobbled_brick").build();
+
+	// Example mossy variants for tiles and pavement
+	public static final Block MOSSY_CHALK_TILES = registerBlock("mossy_chalk_tiles",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_CHALK_TILES_STAIRS = registerBlock("mossy_chalk_tiles_stairs",
+			new StairsBlock(MOSSY_CHALK_TILES.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block MOSSY_CHALK_TILES_SLAB = registerBlock("mossy_chalk_tiles_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final BlockFamily MOSSY_CHALK_TILES_FAMILY = BlockFamilies.register(MOSSY_CHALK_TILES)
+			.stairs(MOSSY_CHALK_TILES_STAIRS)
+			.slab(MOSSY_CHALK_TILES_SLAB)
+			.group("stone").unlockCriterionName("has_mossy_tiles").build();
+
+	public static final Block MOSSY_CHALK_PAVEMENT = registerBlock("mossy_chalk_pavement",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_CHALK_PAVEMENT_STAIRS = registerBlock("mossy_chalk_pavement_stairs",
+			new StairsBlock(MOSSY_CHALK_PAVEMENT.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block MOSSY_CHALK_PAVEMENT_SLAB = registerBlock("mossy_chalk_pavement_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final BlockFamily MOSSY_CHALK_PAVEMENT_FAMILY = BlockFamilies.register(MOSSY_CHALK_PAVEMENT)
+			.stairs(MOSSY_CHALK_PAVEMENT_STAIRS)
+			.slab(MOSSY_CHALK_PAVEMENT_SLAB)
+			.group("stone").unlockCriterionName("has_mossy_pavement").build();
+
     /**
      * This Method is used to register a Block with minecraft and also register the Item for the block
      * @param name the name of the Block
