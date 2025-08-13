@@ -147,8 +147,12 @@ public enum ModStoneType {
             ModStoneBlocks.BRONZE_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_BRONZE_CHALK_BRICK_FAMILY,
             ModStoneBlocks.MOSSY_BRONZE_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_MOSSY_BRONZE_CHALK_BRICK_FAMILY,
             ModStoneBlocks.OVERGROWN_BRONZE_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_BRONZE_CHALK_BRICK_FAMILY,
-            null, null, null, null, null, null, // Silver brick families (not implemented yet)
-            null, null, null, null, null, null, // Gold brick families (not implemented yet)
+            ModStoneBlocks.SILVER_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_SILVER_CHALK_BRICK_FAMILY,
+            ModStoneBlocks.MOSSY_SILVER_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_MOSSY_SILVER_CHALK_BRICK_FAMILY,
+            ModStoneBlocks.OVERGROWN_SILVER_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_SILVER_CHALK_BRICK_FAMILY,
+            ModStoneBlocks.GOLD_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_GOLD_CHALK_BRICK_FAMILY,
+            ModStoneBlocks.MOSSY_GOLD_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_MOSSY_GOLD_CHALK_BRICK_FAMILY,
+            ModStoneBlocks.OVERGROWN_GOLD_CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_GOLD_CHALK_BRICK_FAMILY,
             ModStoneBlocks.CHALK_TILES_FAMILY, ModStoneBlocks.CRACKED_CHALK_TILES_FAMILY,
             ModStoneBlocks.MOSSY_CHALK_TILES_FAMILY, ModStoneBlocks.CRACKED_MOSSY_CHALK_TILES_FAMILY,
             ModStoneBlocks.OVERGROWN_CHALK_TILES_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_CHALK_TILES_FAMILY,
