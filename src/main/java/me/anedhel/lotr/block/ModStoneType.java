@@ -133,7 +133,26 @@ public enum ModStoneType {
             ModStoneBlocks.OVERGROWN_GOLD_BLUESLATE_PILLAR, ModStoneBlocks.OVERGROWN_GOLD_BLUESLATE_PILLAR_SLAB,
             ModStoneBlocks.CRACKED_OVERGROWN_GOLD_BLUESLATE_PILLAR,
             ModStoneBlocks.CRACKED_OVERGROWN_GOLD_BLUESLATE_PILLAR_SLAB,
-            "Blueslate");
+            "Blueslate"),
+    CHALK(ModStoneBlocks.CHALK_FAMILY, ModStoneBlocks.MOSSY_CHALK_FAMILY, ModStoneBlocks.OVERGROWN_CHALK_FAMILY,
+            ModStoneBlocks.COBBLED_CHALK_FAMILY, ModStoneBlocks.MOSSY_COBBLED_CHALK_FAMILY,
+            ModStoneBlocks.OVERGROWN_COBBLED_CHALK_FAMILY,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            ModStoneBlocks.CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_CHALK_BRICK_FAMILY,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            ModStoneBlocks.SMOOTH_CHALK, ModStoneBlocks.SMOOTH_CHALK_SLAB,
+            ModStoneBlocks.CRACKED_SMOOTH_CHALK, ModStoneBlocks.CRACKED_SMOOTH_CHALK_SLAB,
+            ModStoneBlocks.MOSSY_SMOOTH_CHALK, ModStoneBlocks.MOSSY_SMOOTH_CHALK_SLAB,
+            ModStoneBlocks.CRACKED_MOSSY_SMOOTH_CHALK, ModStoneBlocks.CRACKED_MOSSY_SMOOTH_CHALK_SLAB,
+            ModStoneBlocks.OVERGROWN_SMOOTH_CHALK, ModStoneBlocks.OVERGROWN_SMOOTH_CHALK_SLAB,
+            ModStoneBlocks.CRACKED_OVERGROWN_SMOOTH_CHALK, ModStoneBlocks.CRACKED_OVERGROWN_SMOOTH_CHALK_SLAB,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            ModStoneBlocks.CHALK_PILLAR, ModStoneBlocks.CHALK_PILLAR_SLAB,
+            null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null,
+            "Chalk");
 
     private final BlockFamily stoneFamily;
 
