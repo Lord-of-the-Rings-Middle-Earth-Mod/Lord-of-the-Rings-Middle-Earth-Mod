@@ -2581,6 +2581,261 @@ public class ModStoneBlocks {
 			.wall(CRACKED_OVERGROWN_FANCY_CHALK_BRICKS_WALL)
 			.group("stone").unlockCriterionName("has_cracked_overgrown_fancy_bricks").build();
 
+	// Bronze Fancy Chalk Bricks
+	public static final Block BRONZE_FANCY_CHALK_BRICKS = registerBlock("bronze_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block BRONZE_FANCY_CHALK_BRICKS_STAIRS = registerBlock("bronze_fancy_chalk_bricks_stairs",
+			new StairsBlock(BRONZE_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block BRONZE_FANCY_CHALK_BRICKS_SLAB = registerBlock("bronze_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block BRONZE_FANCY_CHALK_BRICKS_WALL = registerBlock("bronze_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily BRONZE_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(BRONZE_FANCY_CHALK_BRICKS)
+			.stairs(BRONZE_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(BRONZE_FANCY_CHALK_BRICKS_SLAB)
+			.wall(BRONZE_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_bronze_fancy_bricks").build();
+	public static final Block CRACKED_BRONZE_FANCY_CHALK_BRICKS = registerBlock("cracked_bronze_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_BRONZE_FANCY_CHALK_BRICKS_STAIRS = registerBlock(
+			"cracked_bronze_fancy_chalk_bricks_stairs",
+			new StairsBlock(CRACKED_BRONZE_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block CRACKED_BRONZE_FANCY_CHALK_BRICKS_SLAB = registerBlock("cracked_bronze_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_BRONZE_FANCY_CHALK_BRICKS_WALL = registerBlock("cracked_bronze_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily CRACKED_BRONZE_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(CRACKED_BRONZE_FANCY_CHALK_BRICKS)
+			.stairs(CRACKED_BRONZE_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(CRACKED_BRONZE_FANCY_CHALK_BRICKS_SLAB)
+			.wall(CRACKED_BRONZE_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_bronze_fancy_bricks").build();
+
+	public static final Block MOSSY_BRONZE_FANCY_CHALK_BRICKS = registerBlock("mossy_bronze_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_BRONZE_FANCY_CHALK_BRICKS_STAIRS = registerBlock("mossy_bronze_fancy_chalk_bricks_stairs",
+			new StairsBlock(MOSSY_BRONZE_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block MOSSY_BRONZE_FANCY_CHALK_BRICKS_SLAB = registerBlock("mossy_bronze_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_BRONZE_FANCY_CHALK_BRICKS_WALL = registerBlock("mossy_bronze_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily MOSSY_BRONZE_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(MOSSY_BRONZE_FANCY_CHALK_BRICKS)
+			.stairs(MOSSY_BRONZE_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(MOSSY_BRONZE_FANCY_CHALK_BRICKS_SLAB)
+			.wall(MOSSY_BRONZE_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_bronze_fancy_bricks").build();
+	public static final Block CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS = registerBlock("cracked_mossy_bronze_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS_STAIRS = registerBlock(
+			"cracked_mossy_bronze_fancy_chalk_bricks_stairs",
+			new StairsBlock(CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS_SLAB = registerBlock("cracked_mossy_bronze_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS_WALL = registerBlock("cracked_mossy_bronze_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS)
+			.stairs(CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS_SLAB)
+			.wall(CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_bronze_fancy_bricks").build();
+
+	public static final Block OVERGROWN_BRONZE_FANCY_CHALK_BRICKS = registerBlock("overgrown_bronze_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_STAIRS = registerBlock("overgrown_bronze_fancy_chalk_bricks_stairs",
+			new StairsBlock(OVERGROWN_BRONZE_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_SLAB = registerBlock("overgrown_bronze_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_WALL = registerBlock("overgrown_bronze_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(OVERGROWN_BRONZE_FANCY_CHALK_BRICKS)
+			.stairs(OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_SLAB)
+			.wall(OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_bronze_fancy_bricks").build();
+	public static final Block CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS = registerBlock("cracked_overgrown_bronze_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_STAIRS = registerBlock(
+			"cracked_overgrown_bronze_fancy_chalk_bricks_stairs",
+			new StairsBlock(CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_SLAB = registerBlock("cracked_overgrown_bronze_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_WALL = registerBlock("cracked_overgrown_bronze_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS)
+			.stairs(CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_SLAB)
+			.wall(CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_bronze_fancy_bricks").build();
+
+	// Silver Fancy Chalk Bricks
+	public static final Block SILVER_FANCY_CHALK_BRICKS = registerBlock("silver_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block SILVER_FANCY_CHALK_BRICKS_STAIRS = registerBlock("silver_fancy_chalk_bricks_stairs",
+			new StairsBlock(SILVER_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block SILVER_FANCY_CHALK_BRICKS_SLAB = registerBlock("silver_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block SILVER_FANCY_CHALK_BRICKS_WALL = registerBlock("silver_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily SILVER_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(SILVER_FANCY_CHALK_BRICKS)
+			.stairs(SILVER_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(SILVER_FANCY_CHALK_BRICKS_SLAB)
+			.wall(SILVER_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_silver_fancy_bricks").build();
+	public static final Block CRACKED_SILVER_FANCY_CHALK_BRICKS = registerBlock("cracked_silver_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_SILVER_FANCY_CHALK_BRICKS_STAIRS = registerBlock(
+			"cracked_silver_fancy_chalk_bricks_stairs",
+			new StairsBlock(CRACKED_SILVER_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block CRACKED_SILVER_FANCY_CHALK_BRICKS_SLAB = registerBlock("cracked_silver_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_SILVER_FANCY_CHALK_BRICKS_WALL = registerBlock("cracked_silver_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily CRACKED_SILVER_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(CRACKED_SILVER_FANCY_CHALK_BRICKS)
+			.stairs(CRACKED_SILVER_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(CRACKED_SILVER_FANCY_CHALK_BRICKS_SLAB)
+			.wall(CRACKED_SILVER_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_silver_fancy_bricks").build();
+
+	public static final Block MOSSY_SILVER_FANCY_CHALK_BRICKS = registerBlock("mossy_silver_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_SILVER_FANCY_CHALK_BRICKS_STAIRS = registerBlock("mossy_silver_fancy_chalk_bricks_stairs",
+			new StairsBlock(MOSSY_SILVER_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block MOSSY_SILVER_FANCY_CHALK_BRICKS_SLAB = registerBlock("mossy_silver_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_SILVER_FANCY_CHALK_BRICKS_WALL = registerBlock("mossy_silver_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily MOSSY_SILVER_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(MOSSY_SILVER_FANCY_CHALK_BRICKS)
+			.stairs(MOSSY_SILVER_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(MOSSY_SILVER_FANCY_CHALK_BRICKS_SLAB)
+			.wall(MOSSY_SILVER_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_silver_fancy_bricks").build();
+	public static final Block CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS = registerBlock("cracked_mossy_silver_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS_STAIRS = registerBlock(
+			"cracked_mossy_silver_fancy_chalk_bricks_stairs",
+			new StairsBlock(CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS_SLAB = registerBlock("cracked_mossy_silver_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS_WALL = registerBlock("cracked_mossy_silver_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS)
+			.stairs(CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS_SLAB)
+			.wall(CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_silver_fancy_bricks").build();
+
+	public static final Block OVERGROWN_SILVER_FANCY_CHALK_BRICKS = registerBlock("overgrown_silver_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_SILVER_FANCY_CHALK_BRICKS_STAIRS = registerBlock("overgrown_silver_fancy_chalk_bricks_stairs",
+			new StairsBlock(OVERGROWN_SILVER_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block OVERGROWN_SILVER_FANCY_CHALK_BRICKS_SLAB = registerBlock("overgrown_silver_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_SILVER_FANCY_CHALK_BRICKS_WALL = registerBlock("overgrown_silver_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily OVERGROWN_SILVER_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(OVERGROWN_SILVER_FANCY_CHALK_BRICKS)
+			.stairs(OVERGROWN_SILVER_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(OVERGROWN_SILVER_FANCY_CHALK_BRICKS_SLAB)
+			.wall(OVERGROWN_SILVER_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_silver_fancy_bricks").build();
+	public static final Block CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS = registerBlock("cracked_overgrown_silver_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS_STAIRS = registerBlock(
+			"cracked_overgrown_silver_fancy_chalk_bricks_stairs",
+			new StairsBlock(CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS_SLAB = registerBlock("cracked_overgrown_silver_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS_WALL = registerBlock("cracked_overgrown_silver_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS)
+			.stairs(CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS_SLAB)
+			.wall(CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_silver_fancy_bricks").build();
+
+	// Gold Fancy Chalk Bricks
+	public static final Block GOLD_FANCY_CHALK_BRICKS = registerBlock("gold_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block GOLD_FANCY_CHALK_BRICKS_STAIRS = registerBlock("gold_fancy_chalk_bricks_stairs",
+			new StairsBlock(GOLD_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block GOLD_FANCY_CHALK_BRICKS_SLAB = registerBlock("gold_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block GOLD_FANCY_CHALK_BRICKS_WALL = registerBlock("gold_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily GOLD_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(GOLD_FANCY_CHALK_BRICKS)
+			.stairs(GOLD_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(GOLD_FANCY_CHALK_BRICKS_SLAB)
+			.wall(GOLD_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_gold_fancy_bricks").build();
+	public static final Block CRACKED_GOLD_FANCY_CHALK_BRICKS = registerBlock("cracked_gold_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_GOLD_FANCY_CHALK_BRICKS_STAIRS = registerBlock(
+			"cracked_gold_fancy_chalk_bricks_stairs",
+			new StairsBlock(CRACKED_GOLD_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block CRACKED_GOLD_FANCY_CHALK_BRICKS_SLAB = registerBlock("cracked_gold_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_GOLD_FANCY_CHALK_BRICKS_WALL = registerBlock("cracked_gold_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily CRACKED_GOLD_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(CRACKED_GOLD_FANCY_CHALK_BRICKS)
+			.stairs(CRACKED_GOLD_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(CRACKED_GOLD_FANCY_CHALK_BRICKS_SLAB)
+			.wall(CRACKED_GOLD_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_gold_fancy_bricks").build();
+
+	public static final Block MOSSY_GOLD_FANCY_CHALK_BRICKS = registerBlock("mossy_gold_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_GOLD_FANCY_CHALK_BRICKS_STAIRS = registerBlock("mossy_gold_fancy_chalk_bricks_stairs",
+			new StairsBlock(MOSSY_GOLD_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block MOSSY_GOLD_FANCY_CHALK_BRICKS_SLAB = registerBlock("mossy_gold_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_GOLD_FANCY_CHALK_BRICKS_WALL = registerBlock("mossy_gold_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily MOSSY_GOLD_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(MOSSY_GOLD_FANCY_CHALK_BRICKS)
+			.stairs(MOSSY_GOLD_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(MOSSY_GOLD_FANCY_CHALK_BRICKS_SLAB)
+			.wall(MOSSY_GOLD_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_gold_fancy_bricks").build();
+	public static final Block CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS = registerBlock("cracked_mossy_gold_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS_STAIRS = registerBlock(
+			"cracked_mossy_gold_fancy_chalk_bricks_stairs",
+			new StairsBlock(CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS_SLAB = registerBlock("cracked_mossy_gold_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS_WALL = registerBlock("cracked_mossy_gold_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS)
+			.stairs(CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS_SLAB)
+			.wall(CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_gold_fancy_bricks").build();
+
+	public static final Block OVERGROWN_GOLD_FANCY_CHALK_BRICKS = registerBlock("overgrown_gold_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_GOLD_FANCY_CHALK_BRICKS_STAIRS = registerBlock("overgrown_gold_fancy_chalk_bricks_stairs",
+			new StairsBlock(OVERGROWN_GOLD_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block OVERGROWN_GOLD_FANCY_CHALK_BRICKS_SLAB = registerBlock("overgrown_gold_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_GOLD_FANCY_CHALK_BRICKS_WALL = registerBlock("overgrown_gold_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily OVERGROWN_GOLD_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(OVERGROWN_GOLD_FANCY_CHALK_BRICKS)
+			.stairs(OVERGROWN_GOLD_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(OVERGROWN_GOLD_FANCY_CHALK_BRICKS_SLAB)
+			.wall(OVERGROWN_GOLD_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_gold_fancy_bricks").build();
+	public static final Block CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS = registerBlock("cracked_overgrown_gold_fancy_chalk_bricks",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS_STAIRS = registerBlock(
+			"cracked_overgrown_gold_fancy_chalk_bricks_stairs",
+			new StairsBlock(CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS_SLAB = registerBlock("cracked_overgrown_gold_fancy_chalk_bricks_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS_WALL = registerBlock("cracked_overgrown_gold_fancy_chalk_bricks_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final BlockFamily CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS)
+			.stairs(CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS_STAIRS)
+			.slab(CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS_SLAB)
+			.wall(CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_gold_fancy_bricks").build();
+
 	// BRONZE ORNAMENTED CHALK VARIANTS
 
 	// Bronze Chalk Brick

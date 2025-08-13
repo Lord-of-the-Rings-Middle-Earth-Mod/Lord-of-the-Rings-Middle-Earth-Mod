@@ -183,9 +183,15 @@ public enum ModStoneType {
             ModStoneBlocks.FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_FANCY_CHALK_BRICKS_FAMILY,
             ModStoneBlocks.MOSSY_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_MOSSY_FANCY_CHALK_BRICKS_FAMILY,
             ModStoneBlocks.OVERGROWN_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_FANCY_CHALK_BRICKS_FAMILY,
-            null, null, null, null, null, null, // Bronze fancy brick families (not implemented yet)
-            null, null, null, null, null, null, // Silver fancy brick families (not implemented yet)
-            null, null, null, null, null, null, // Gold fancy brick families (not implemented yet)
+            ModStoneBlocks.BRONZE_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_BRONZE_FANCY_CHALK_BRICKS_FAMILY,
+            ModStoneBlocks.MOSSY_BRONZE_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_MOSSY_BRONZE_FANCY_CHALK_BRICKS_FAMILY,
+            ModStoneBlocks.OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_BRONZE_FANCY_CHALK_BRICKS_FAMILY,
+            ModStoneBlocks.SILVER_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_SILVER_FANCY_CHALK_BRICKS_FAMILY,
+            ModStoneBlocks.MOSSY_SILVER_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_MOSSY_SILVER_FANCY_CHALK_BRICKS_FAMILY,
+            ModStoneBlocks.OVERGROWN_SILVER_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_SILVER_FANCY_CHALK_BRICKS_FAMILY,
+            ModStoneBlocks.GOLD_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_GOLD_FANCY_CHALK_BRICKS_FAMILY,
+            ModStoneBlocks.MOSSY_GOLD_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_MOSSY_GOLD_FANCY_CHALK_BRICKS_FAMILY,
+            ModStoneBlocks.OVERGROWN_GOLD_FANCY_CHALK_BRICKS_FAMILY, ModStoneBlocks.CRACKED_OVERGROWN_GOLD_FANCY_CHALK_BRICKS_FAMILY,
             ModStoneBlocks.SMOOTH_CHALK, ModStoneBlocks.SMOOTH_CHALK_SLAB,
             ModStoneBlocks.CRACKED_SMOOTH_CHALK, ModStoneBlocks.CRACKED_SMOOTH_CHALK_SLAB,
             ModStoneBlocks.MOSSY_SMOOTH_CHALK, ModStoneBlocks.MOSSY_SMOOTH_CHALK_SLAB,
