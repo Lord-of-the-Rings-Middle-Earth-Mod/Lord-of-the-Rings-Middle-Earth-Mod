@@ -12,6 +12,16 @@ ___
   + Recipe Generation
 + Added the common Tag c:pillar, that is used for the connected Pillar Texture within this mod
 + Added Blueslate as stoneType
++ Added Chalk as stoneType with complete block variants:
+  + Chalk base blocks with stairs, slabs, walls, buttons, and pressure plates
+  + Chalk brick blocks with chiseled variant
+  + Cobbled chalk blocks and cobbled chalk brick blocks
+  + Smooth chalk blocks (no walls)
+  + Chalk tile blocks
+  + Chalk pavement blocks
+  + Fancy chalk brick blocks
+  + Chalk pillar blocks with connected textures
+  + All cracked variants for each block type
 + Added Tomatoes and Baked Tomatoes as food items, with the following properties:
   + Tomatoes: 1.5 hunger, 0.6 saturation
   + Baked Tomatoes: 2.5 hunger, 0.8 saturation
