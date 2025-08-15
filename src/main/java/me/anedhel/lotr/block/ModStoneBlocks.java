@@ -3071,6 +3071,136 @@ public class ModStoneBlocks {
 			.wall(MOSSY_BRONZE_FANCY_CHALK_BRICKS_WALL)
 			.group("stone").unlockCriterionName("has_mossy_bronze_fancy_bricks").build();
 
+	// Additional Missing Families to reach blueslate parity
+	// Missing mossy and overgrown bronze combinations
+	public static final Block MOSSY_BRONZE_CHALK = registerBlock("mossy_bronze_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_BRONZE_CHALK_STAIRS = registerBlock("mossy_bronze_chalk_stairs",
+			new StairsBlock(MOSSY_BRONZE_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block MOSSY_BRONZE_CHALK_SLAB = registerBlock("mossy_bronze_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_BRONZE_CHALK_WALL = registerBlock("mossy_bronze_chalk_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block MOSSY_BRONZE_CHALK_BUTTON = registerBlock("mossy_bronze_chalk_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block MOSSY_BRONZE_CHALK_PRESSURE_PLATE = registerBlock("mossy_bronze_chalk_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily MOSSY_BRONZE_CHALK_FAMILY = BlockFamilies.register(MOSSY_BRONZE_CHALK)
+			.stairs(MOSSY_BRONZE_CHALK_STAIRS)
+			.slab(MOSSY_BRONZE_CHALK_SLAB)
+			.wall(MOSSY_BRONZE_CHALK_WALL)
+			.button(MOSSY_BRONZE_CHALK_BUTTON)
+			.pressurePlate(MOSSY_BRONZE_CHALK_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_mossy_bronze_stone").build();
+
+	public static final Block OVERGROWN_BRONZE_CHALK = registerBlock("overgrown_bronze_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_BRONZE_CHALK_STAIRS = registerBlock("overgrown_bronze_chalk_stairs",
+			new StairsBlock(OVERGROWN_BRONZE_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block OVERGROWN_BRONZE_CHALK_SLAB = registerBlock("overgrown_bronze_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_BRONZE_CHALK_WALL = registerBlock("overgrown_bronze_chalk_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block OVERGROWN_BRONZE_CHALK_BUTTON = registerBlock("overgrown_bronze_chalk_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block OVERGROWN_BRONZE_CHALK_PRESSURE_PLATE = registerBlock("overgrown_bronze_chalk_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily OVERGROWN_BRONZE_CHALK_FAMILY = BlockFamilies.register(OVERGROWN_BRONZE_CHALK)
+			.stairs(OVERGROWN_BRONZE_CHALK_STAIRS)
+			.slab(OVERGROWN_BRONZE_CHALK_SLAB)
+			.wall(OVERGROWN_BRONZE_CHALK_WALL)
+			.button(OVERGROWN_BRONZE_CHALK_BUTTON)
+			.pressurePlate(OVERGROWN_BRONZE_CHALK_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_overgrown_bronze_stone").build();
+
+	// Missing mossy and overgrown silver combinations  
+	public static final Block MOSSY_SILVER_CHALK = registerBlock("mossy_silver_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_SILVER_CHALK_STAIRS = registerBlock("mossy_silver_chalk_stairs",
+			new StairsBlock(MOSSY_SILVER_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block MOSSY_SILVER_CHALK_SLAB = registerBlock("mossy_silver_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_SILVER_CHALK_WALL = registerBlock("mossy_silver_chalk_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block MOSSY_SILVER_CHALK_BUTTON = registerBlock("mossy_silver_chalk_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block MOSSY_SILVER_CHALK_PRESSURE_PLATE = registerBlock("mossy_silver_chalk_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily MOSSY_SILVER_CHALK_FAMILY = BlockFamilies.register(MOSSY_SILVER_CHALK)
+			.stairs(MOSSY_SILVER_CHALK_STAIRS)
+			.slab(MOSSY_SILVER_CHALK_SLAB)
+			.wall(MOSSY_SILVER_CHALK_WALL)
+			.button(MOSSY_SILVER_CHALK_BUTTON)
+			.pressurePlate(MOSSY_SILVER_CHALK_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_mossy_silver_stone").build();
+
+	public static final Block OVERGROWN_SILVER_CHALK = registerBlock("overgrown_silver_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_SILVER_CHALK_STAIRS = registerBlock("overgrown_silver_chalk_stairs",
+			new StairsBlock(OVERGROWN_SILVER_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block OVERGROWN_SILVER_CHALK_SLAB = registerBlock("overgrown_silver_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_SILVER_CHALK_WALL = registerBlock("overgrown_silver_chalk_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block OVERGROWN_SILVER_CHALK_BUTTON = registerBlock("overgrown_silver_chalk_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block OVERGROWN_SILVER_CHALK_PRESSURE_PLATE = registerBlock("overgrown_silver_chalk_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily OVERGROWN_SILVER_CHALK_FAMILY = BlockFamilies.register(OVERGROWN_SILVER_CHALK)
+			.stairs(OVERGROWN_SILVER_CHALK_STAIRS)
+			.slab(OVERGROWN_SILVER_CHALK_SLAB)
+			.wall(OVERGROWN_SILVER_CHALK_WALL)
+			.button(OVERGROWN_SILVER_CHALK_BUTTON)
+			.pressurePlate(OVERGROWN_SILVER_CHALK_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_overgrown_silver_stone").build();
+
+	// Missing mossy and overgrown gold combinations  
+	public static final Block MOSSY_GOLD_CHALK = registerBlock("mossy_gold_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block MOSSY_GOLD_CHALK_STAIRS = registerBlock("mossy_gold_chalk_stairs",
+			new StairsBlock(MOSSY_GOLD_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block MOSSY_GOLD_CHALK_SLAB = registerBlock("mossy_gold_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block MOSSY_GOLD_CHALK_WALL = registerBlock("mossy_gold_chalk_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block MOSSY_GOLD_CHALK_BUTTON = registerBlock("mossy_gold_chalk_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block MOSSY_GOLD_CHALK_PRESSURE_PLATE = registerBlock("mossy_gold_chalk_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily MOSSY_GOLD_CHALK_FAMILY = BlockFamilies.register(MOSSY_GOLD_CHALK)
+			.stairs(MOSSY_GOLD_CHALK_STAIRS)
+			.slab(MOSSY_GOLD_CHALK_SLAB)
+			.wall(MOSSY_GOLD_CHALK_WALL)
+			.button(MOSSY_GOLD_CHALK_BUTTON)
+			.pressurePlate(MOSSY_GOLD_CHALK_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_mossy_gold_stone").build();
+
+	public static final Block OVERGROWN_GOLD_CHALK = registerBlock("overgrown_gold_chalk",
+			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
+	public static final Block OVERGROWN_GOLD_CHALK_STAIRS = registerBlock("overgrown_gold_chalk_stairs",
+			new StairsBlock(OVERGROWN_GOLD_CHALK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block OVERGROWN_GOLD_CHALK_SLAB = registerBlock("overgrown_gold_chalk_slab",
+			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
+	public static final Block OVERGROWN_GOLD_CHALK_WALL = registerBlock("overgrown_gold_chalk_wall",
+			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
+	public static final Block OVERGROWN_GOLD_CHALK_BUTTON = registerBlock("overgrown_gold_chalk_button",
+			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+	public static final Block OVERGROWN_GOLD_CHALK_PRESSURE_PLATE = registerBlock("overgrown_gold_chalk_pressure_plate",
+			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+	public static final BlockFamily OVERGROWN_GOLD_CHALK_FAMILY = BlockFamilies.register(OVERGROWN_GOLD_CHALK)
+			.stairs(OVERGROWN_GOLD_CHALK_STAIRS)
+			.slab(OVERGROWN_GOLD_CHALK_SLAB)
+			.wall(OVERGROWN_GOLD_CHALK_WALL)
+			.button(OVERGROWN_GOLD_CHALK_BUTTON)
+			.pressurePlate(OVERGROWN_GOLD_CHALK_PRESSURE_PLATE)
+			.group("stone").unlockCriterionName("has_overgrown_gold_stone").build();
+
     /**
      * This Method is used to register a Block with minecraft and also register the Item for the block
      * @param name the name of the Block
