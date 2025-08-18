@@ -147,8 +147,8 @@ public enum ModStoneType {
             null, null, null, // cracked silver cobbled brick family placeholders
             null, null, null, // gold cobbled brick family placeholders
             null, null, null, // cracked gold cobbled brick family placeholders
-            ModStoneBlocks.CHALK_BRICK_FAMILY, null, // brick families
-            null, null, // mossy brick families 
+            ModStoneBlocks.CHALK_BRICK_FAMILY, ModStoneBlocks.CRACKED_CHALK_BRICK_FAMILY, // brick families
+            ModStoneBlocks.MOSSY_CHALK_BRICK_FAMILY, null, // mossy brick families 
             null, null, // overgrown brick families
             null, null, // bronze brick families
             null, null, // mossy bronze brick families
