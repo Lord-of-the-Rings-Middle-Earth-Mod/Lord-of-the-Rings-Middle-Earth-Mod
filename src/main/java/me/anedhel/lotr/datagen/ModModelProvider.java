@@ -71,15 +71,15 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.WILD_CORN, BlockStateModelGenerator.TintType.NOT_TINTED);
 
         TextureMap tomatoMap = new TextureMap()
-                .put(TextureKey.BOTTOM, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/crate_bottom"))
-                .put(TextureKey.TOP, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/tomato_crate_top"))
-                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/tomato_crate_side"));
+                .put(TextureKey.BOTTOM, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/crate_bottom"))
+                .put(TextureKey.TOP, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/tomato_crate_top"))
+                .put(TextureKey.SIDE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/tomato_crate_side"));
         blockStateModelGenerator.registerSingleton(ModBlocks.TOMATO_CRATE, tomatoMap, Models.CUBE_BOTTOM_TOP);
 
         TextureMap cornMap = new TextureMap().put(TextureKey.BOTTOM,
-                        new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/crate_bottom"))
-                .put(TextureKey.TOP, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/corn_crate_top"))
-                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/corn_crate_side"));
+                        Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/crate_bottom"))
+                .put(TextureKey.TOP, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/corn_crate_top"))
+                .put(TextureKey.SIDE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/corn_crate_side"));
         blockStateModelGenerator.registerSingleton(ModBlocks.CORN_CRATE, cornMap, Models.CUBE_BOTTOM_TOP);
 
         generateModStoneTypeBlockModels(blockStateModelGenerator);
@@ -103,7 +103,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.HANGING_PINE_SIGN, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.HOBBIT_SPAWN_EGG,
-                new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
+                new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 
         generateModGearTypeModels(itemModelGenerator);
         generateModOreTypeItemModels(itemModelGenerator);
@@ -1370,23 +1370,23 @@ public class ModModelProvider extends FabricModelProvider {
     private TextureMap createPavementTextureMap(String topTexture, String sideTexture, boolean ornamented,
             String... overlays) {
         TextureMap textureMap = new TextureMap()
-                .put(TextureKey.TOP, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
-                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture))
-                .put(TextureKey.BOTTOM, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture));
+                .put(TextureKey.TOP, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture))
+                .put(TextureKey.BOTTOM, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture));
         if(overlays.length == 1 && !ornamented) {
-            textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+            textureMap.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                     "block/overlays/" + overlays[0]));
         } else if(overlays.length == 2 && ornamented) {
-            textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+            textureMap.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                     "block/overlays/" + overlays[0]));
-            textureMap.put(ModTextureKeys.TOP_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block"
+            textureMap.put(ModTextureKeys.TOP_LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block"
                     + "/overlays/" + overlays[1]));
         } else if(overlays.length == 3 && ornamented) {
-            textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+            textureMap.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                     "block/overlays/" + overlays[0]));
-            textureMap.put(ModTextureKeys.TOP_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block"
+            textureMap.put(ModTextureKeys.TOP_LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block"
                     + "/overlays/" + overlays[1]));
-            textureMap.put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+            textureMap.put(TextureKey.LAYER2, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                     "block/overlays/" + overlays[2]));
         }
         return textureMap;
@@ -1429,18 +1429,18 @@ public class ModModelProvider extends FabricModelProvider {
             Block smoothStone, Block smoothStoneSlab,
             Block overlaySmoothStone, Block overlaySmoothStoneSlab, boolean ornamented, String... overlays) {
         TextureMap textureMap = TextureMap.all(smoothStone);
-        textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+        textureMap.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                 "block/overlays/" + overlays[0]));
 
         TextureMap textureMapSlab = TextureMap.sideEnd(TextureMap.getSubId(smoothStoneSlab, "_side"),
                 textureMap.getTexture(TextureKey.TOP));
         if(ornamented) {
-            textureMapSlab.put(ModTextureKeys.END_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+            textureMapSlab.put(ModTextureKeys.END_LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                     "block/overlays/" + overlays[0]));
-            textureMapSlab.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+            textureMapSlab.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                     "block/overlays/" + overlays[1]));
         } else {
-            textureMapSlab.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+            textureMapSlab.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                     "block/overlays/" + overlays[0]));
         }
 
@@ -1472,16 +1472,16 @@ public class ModModelProvider extends FabricModelProvider {
             Block smoothStone, Block smoothStoneSlab,
             Block overlaySmoothStone, Block overlaySmoothStoneSlab, String... overlays) {
         TextureMap textureMap = TextureMap.all(smoothStone);
-        textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[0]));
-        textureMap.put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[2]));
+        textureMap.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[0]));
+        textureMap.put(TextureKey.LAYER2, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[2]));
 
         TextureMap textureMapSlab = TextureMap.sideEnd(TextureMap.getSubId(smoothStoneSlab, "_side"),
                 textureMap.getTexture(TextureKey.TOP));
-        textureMapSlab.put(ModTextureKeys.END_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+        textureMapSlab.put(ModTextureKeys.END_LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                 "block/overlays/" + overlays[0]));
-        textureMapSlab.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+        textureMapSlab.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                 "block/overlays/" + overlays[1]));
-        textureMapSlab.put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+        textureMapSlab.put(TextureKey.LAYER2, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                 "block/overlays/" + overlays[2]));
 
         Identifier identifier = ModModels.SMOOTH_SLAB_TWO_OVERLAY.upload(overlaySmoothStoneSlab, textureMapSlab,
@@ -1509,20 +1509,20 @@ public class ModModelProvider extends FabricModelProvider {
     private void registerPillarBlock(BlockStateModelGenerator blockStateModelGenerator, Block pillar,
             Block pillarSlab, String topTexture, String sideTexture) {
         TextureMap singlePillarTM = new TextureMap()
-                .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
-                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
+                .put(TextureKey.END, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
                         "_single"));
         TextureMap basePillarTM = new TextureMap()
-                .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
-                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
+                .put(TextureKey.END, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
                         "_base"));
         TextureMap middlePillarTM = new TextureMap()
-                .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
-                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
+                .put(TextureKey.END, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
                         "_middle"));
         TextureMap topPillarTM = new TextureMap()
-                .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
-                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
+                .put(TextureKey.END, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
                         "_top"));
         Identifier singlePillarIdentifier = ModModels.PILLAR.upload(pillar, singlePillarTM,
                 blockStateModelGenerator.modelCollector);
@@ -1536,8 +1536,8 @@ public class ModModelProvider extends FabricModelProvider {
                 middlePillarIdentifier, basePillarIdentifier));
 
         TextureMap slabTM = new TextureMap()
-                .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
-                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
+                .put(TextureKey.END, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
                         "_single"));
         Identifier slabIdentifier = Models.SLAB.upload(pillarSlab, slabTM, blockStateModelGenerator.modelCollector);
         Identifier slabTopIdentifier = Models.SLAB_TOP.upload(pillarSlab, slabTM, blockStateModelGenerator.modelCollector);
@@ -1630,28 +1630,28 @@ public class ModModelProvider extends FabricModelProvider {
     private TextureMap createPillarTextureMap(String topTexture, String sideTexture, String position,
             boolean ornamented, String... overlays) {
         TextureMap textureMap = new TextureMap()
-                .put(TextureKey.END, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
-                .put(TextureKey.SIDE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
+                .put(TextureKey.END, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + topTexture))
+                .put(TextureKey.SIDE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + sideTexture +
                         position));
         if(overlays.length == 1) {
             if (ornamented) {
-                textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+                textureMap.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                         "block/overlays/" + overlays[0] + "_side" + position + "_overlay"));
-                textureMap.put(ModTextureKeys.END_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+                textureMap.put(ModTextureKeys.END_LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                         "block/overlays/" + overlays[0] + "_end" + "_overlay"));
             } else {
-                textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays"
+                textureMap.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays"
                         + "/" + overlays[0]));
-                textureMap.put(ModTextureKeys.END_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+                textureMap.put(ModTextureKeys.END_LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                         "block/overlays/" + overlays[0]));
             }
         } else if(overlays.length == 2) {
-            textureMap.put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+            textureMap.put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                             "block/overlays/" + overlays[0] + "_side" + position + "_overlay"))
-                    .put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[1]))
-                    .put(ModTextureKeys.END_LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+                    .put(TextureKey.LAYER2, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[1]))
+                    .put(ModTextureKeys.END_LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                             "block/overlays/" + overlays[0] + "_end" + "_overlay"))
-                    .put(ModTextureKeys.END_LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID,
+                    .put(ModTextureKeys.END_LAYER2, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID,
                             "block/overlays/" + overlays[1]));
         }
         return textureMap;
@@ -1691,11 +1691,11 @@ public class ModModelProvider extends FabricModelProvider {
         TextureMap textureMap = new TextureMap().put(TextureKey.ALL, TextureMap.getId(baseBlock));
         if(overlays.length == 1) {
             textureMap
-                    .put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[0]));
+                    .put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[0]));
         } else if(overlays.length == 2) {
             textureMap
-                    .put(TextureKey.LAYER1, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[0]))
-                    .put(TextureKey.LAYER2, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[1]));
+                    .put(TextureKey.LAYER1, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[0]))
+                    .put(TextureKey.LAYER2, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/overlays/" + overlays[1]));
         }
         return textureMap;
     }

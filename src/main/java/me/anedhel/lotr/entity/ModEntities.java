@@ -33,7 +33,7 @@ import net.minecraft.util.Identifier;
 public class ModEntities {
 
     public static final EntityType<HobbitEntity> HOBBIT = Registry.register(Registries.ENTITY_TYPE,
-            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "hobbit"),
+            Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "hobbit"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, HobbitEntity::new)
                     .dimensions(EntityDimensions.fixed(1f, 1f)).build());
 

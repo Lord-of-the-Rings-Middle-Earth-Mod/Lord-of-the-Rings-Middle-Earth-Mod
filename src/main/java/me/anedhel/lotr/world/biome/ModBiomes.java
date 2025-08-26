@@ -37,14 +37,14 @@ import net.minecraft.world.gen.feature.VegetationPlacedFeatures;
 public class ModBiomes {
 
     public static final RegistryKey<Biome> SHIRE = RegistryKey.of(RegistryKeys.BIOME,
-            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "shire"));
+            Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "shire"));
 
     /**
      * Registers all biomes for the mod using the provided `Registerable` context.
      *
      * @param context The `Registerable` context used to register biomes.
      */
-    public static void boostrap (Registerable<Biome> context) {
+    public static void bootstrap (Registerable<Biome> context) {
         context.register(SHIRE, shire(context));
     }
 

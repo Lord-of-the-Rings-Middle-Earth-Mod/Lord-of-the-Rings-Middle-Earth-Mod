@@ -93,12 +93,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                                     conditionsFromItem(ModItems.TIN_INGOT))
 		                          .criterion(hasItem(Items.COPPER_INGOT),
 		                                     conditionsFromItem(Items.COPPER_INGOT))
-		                          .offerTo(exporter, new Identifier(getRecipeName(ModItems.BRONZE_INGOT) + "_ct"));
+		                          .offerTo(exporter, Identifier.of(getRecipeName(ModItems.BRONZE_INGOT) + "_ct"));
 		ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.BRONZE_BLOCK)
 				.input(ModBlocks.TIN_BLOCK).input(Blocks.COPPER_BLOCK)
 				.criterion(hasItem(ModBlocks.TIN_BLOCK), conditionsFromItem(ModBlocks.TIN_BLOCK))
 				.criterion(hasItem(Blocks.COPPER_BLOCK), conditionsFromItem(Blocks.COPPER_BLOCK)).offerTo(exporter,
-						new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "bronze_block_from_tin_and_copper"));
+						Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "bronze_block_from_tin_and_copper"));
 		offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS,
 		                                 ModItems.BRONZE_INGOT, RecipeCategory.MISC,
 		                                 ModBlocks.BRONZE_BLOCK);
@@ -108,13 +108,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                                                            conditionsFromItem(
 				                                                            ModItems.TOMATO))
 		                          .offerTo(exporter,
-		                                   new Identifier(getRecipeName(ModItems.TOMATO_SEEDS)));
+		                                   Identifier.of(getRecipeName(ModItems.TOMATO_SEEDS)));
 
 		ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.CORN_SEEDS, 1)
 		                          .input(ModItems.CORN).criterion(hasItem(ModItems.CORN),
 		                                                          conditionsFromItem(ModItems.CORN))
 		                          .offerTo(exporter,
-		                                   new Identifier(getRecipeName(ModItems.CORN_SEEDS)));
+		                                   Identifier.of(getRecipeName(ModItems.CORN_SEEDS)));
 
 		createCrateRecipe(ModItems.TOMATO, ModBlocks.TOMATO_CRATE, exporter);
 		createCrateRecipe(ModItems.LETTUCE, ModBlocks.LETTUCE_CRATE, exporter);
@@ -769,7 +769,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					                     woodType.getStrippedLog());
 					if(woodType.getPlanks() != null) {
 						offerPlanksRecipe(exporter, woodType.getPlanks(),
-						                  TagKey.of(RegistryKeys.ITEM, new Identifier("lotr",
+						                  TagKey.of(RegistryKeys.ITEM, Identifier.of("lotr",
 						                                                              turnBlockIntoTag(
 								                                                              woodType.getLog()))),
 						                  4);
@@ -822,11 +822,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, crate, 1).pattern("###")
 		                       .pattern("###").pattern("###").input('#', item)
 		                       .criterion(hasItem(item), conditionsFromItem(item))
-		                       .offerTo(exporter, new Identifier(getRecipeName(item) + "_crate"));
+		                       .offerTo(exporter, Identifier.of(getRecipeName(item) + "_crate"));
 
 		ShapelessRecipeJsonBuilder.create(RecipeCategory.FOOD, item, 9).input(crate)
 		                          .criterion(hasItem(crate), conditionsFromItem(crate))
-		                          .offerTo(exporter, new Identifier(getRecipeName(item)));
+		                          .offerTo(exporter, Identifier.of(getRecipeName(item)));
 
 	}
 
@@ -1909,7 +1909,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                       .pattern("#").pattern("S").input('#', input).input('S', Items.STICK)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
 		                       .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+		                       .offerTo(exporter, Identifier.of(getRecipeName(output)));
 	}
 
 	/**
@@ -1926,7 +1926,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                       .input('S', Items.STICK)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
 		                       .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+		                       .offerTo(exporter, Identifier.of(getRecipeName(output)));
 	}
 
 	/**
@@ -1943,7 +1943,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                       .input('S', Items.STICK)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
 		                       .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+		                       .offerTo(exporter, Identifier.of(getRecipeName(output)));
 	}
 
 	/**
@@ -1959,7 +1959,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                       .pattern("S").pattern("S").input('#', input).input('S', Items.STICK)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
 		                       .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+		                       .offerTo(exporter, Identifier.of(getRecipeName(output)));
 	}
 
 	/**
@@ -1976,7 +1976,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		                       .input('S', Items.STICK)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
 		                       .criterion(hasItem(Items.STICK), conditionsFromItem(Items.STICK))
-		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+		                       .offerTo(exporter, Identifier.of(getRecipeName(output)));
 	}
 
 	/**
@@ -1991,7 +1991,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1).pattern("###")
 		                       .pattern("# #").input('#', input)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
-		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+		                       .offerTo(exporter, Identifier.of(getRecipeName(output)));
 	}
 
 	/**
@@ -2006,7 +2006,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1).pattern("# #")
 		                       .pattern("###").pattern("###").input('#', input)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
-		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+		                       .offerTo(exporter, Identifier.of(getRecipeName(output)));
 	}
 
 	/**
@@ -2021,7 +2021,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1).pattern("###")
 		                       .pattern("# #").pattern("# #").input('#', input)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
-		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+		                       .offerTo(exporter, Identifier.of(getRecipeName(output)));
 	}
 
 	/**
@@ -2036,7 +2036,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1).pattern("# #")
 		                       .pattern("# #").input('#', input)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
-		                       .offerTo(exporter, new Identifier(getRecipeName(output)));
+		                       .offerTo(exporter, Identifier.of(getRecipeName(output)));
 	}
 
 	/**
@@ -2052,10 +2052,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, compactItem, 1).pattern("###").pattern("###").pattern(
 				"###")
 				.input('#', item).criterion(hasItem(item), conditionsFromItem(item))
-				.offerTo(exporter, new Identifier(compactItem + "_from_" + item));
+				.offerTo(exporter, Identifier.of(compactItem + "_from_" + item));
 		ShapelessRecipeJsonBuilder.create(RecipeCategory.MISC, item, 9).input(compactItem)
 				.criterion(hasItem(compactItem), conditionsFromItem(compactItem))
-				.offerTo(exporter, new Identifier(item + "_from_" + compactItem));
+				.offerTo(exporter, Identifier.of(item + "_from_" + compactItem));
 	}
 
 	/**

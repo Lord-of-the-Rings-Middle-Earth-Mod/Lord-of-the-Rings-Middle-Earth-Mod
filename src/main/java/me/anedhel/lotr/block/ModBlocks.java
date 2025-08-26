@@ -58,19 +58,19 @@ public class ModBlocks {
 
     public static final Block WILD_BEETROOT = registerBlock("wild_beetroot",
             new FlowerBlock(StatusEffects.SATURATION, 10, FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()));
-    public static final Block POTTED_WILD_BEETROOT = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_beetroot"),
+    public static final Block POTTED_WILD_BEETROOT = Registry.register(Registries.BLOCK, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_beetroot"),
             new FlowerPotBlock(WILD_BEETROOT, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
     public static final Block WILD_CARROT = registerBlock("wild_carrot",
             new FlowerBlock(StatusEffects.SATURATION, 10, FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()));
-    public static final Block POTTED_WILD_CARROT = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_carrot"),
+    public static final Block POTTED_WILD_CARROT = Registry.register(Registries.BLOCK, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_carrot"),
             new FlowerPotBlock(WILD_CARROT, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
     public static final Block WILD_POTATO = registerBlock("wild_potato",
             new FlowerBlock(StatusEffects.SATURATION, 10, FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()));
-    public static final Block POTTED_WILD_POTATO = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_potato"),
+    public static final Block POTTED_WILD_POTATO = Registry.register(Registries.BLOCK, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_potato"),
             new FlowerPotBlock(WILD_POTATO, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
     public static final Block WILD_LETTUCE = registerBlock("wild_lettuce",
             new FlowerBlock(StatusEffects.SATURATION, 10, FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()));
-    public static final Block POTTED_WILD_LETTUCE = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_lettuce"),
+    public static final Block POTTED_WILD_LETTUCE = Registry.register(Registries.BLOCK, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_lettuce"),
             new FlowerPotBlock(WILD_LETTUCE, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
 
     public static final Block POTATO_CRATE = registerBlock("potato_crate",
@@ -81,23 +81,23 @@ public class ModBlocks {
             new Block(FabricBlockSettings.copyOf(Blocks.COMPOSTER)));
 
     public static final Block LETTUCE_CROP = Registry.register(Registries.BLOCK,
-            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lettuce_crop"),
+            Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "lettuce_crop"),
             new LettuceCropBlock(FabricBlockSettings.copyOf(Blocks.BEETROOTS)));
     public static final Block LETTUCE_CRATE = registerBlock("lettuce_crate",
             new Block(FabricBlockSettings.copyOf(Blocks.COMPOSTER)));
 
 
-    public static final Block TOMATO_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "tomato_crop"),
+    public static final Block TOMATO_CROP = Registry.register(Registries.BLOCK, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "tomato_crop"),
             new TomatoCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
     public static final Block TOMATO_CRATE = registerBlock("tomato_crate",
             new Block(FabricBlockSettings.copyOf(Blocks.COMPOSTER)));
     public static final Block WILD_TOMATO = registerBlock("wild_tomato", new FlowerBlock(StatusEffects.SATURATION, 10,
             FabricBlockSettings.copyOf(Blocks.ALLIUM).nonOpaque().noCollision()));
     public static final Block POTTED_WILD_TOMATO = Registry.register(Registries.BLOCK,
-            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_tomato"),
+            Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "potted_wild_tomato"),
             new FlowerPotBlock(WILD_TOMATO, FabricBlockSettings.copyOf(Blocks.POTTED_ALLIUM).nonOpaque()));
 
-    public static final Block CORN_CROP = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "corn_crop"),
+    public static final Block CORN_CROP = Registry.register(Registries.BLOCK, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "corn_crop"),
             new CornCropBlock(FabricBlockSettings.copyOf(Blocks.WHEAT)));
     public static final Block CORN_CRATE = registerBlock("corn_crate",
             new Block(FabricBlockSettings.copyOf(Blocks.COMPOSTER)));
@@ -114,7 +114,7 @@ public class ModBlocks {
     private static Block registerBlock (String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK,
-                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
+                Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
                 block);
     }
 
@@ -126,7 +126,7 @@ public class ModBlocks {
      */
     private static Item registerBlockItem (String name, Block block) {
         return Registry.register(Registries.ITEM,
-                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
+                Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
     }
 

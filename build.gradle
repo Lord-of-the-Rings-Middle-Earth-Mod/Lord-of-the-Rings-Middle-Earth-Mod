@@ -39,8 +39,8 @@ dependencies {
 	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
 	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:7.0.1"
 
-	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta64.5-1.20.2'
-	include 'net.kyrptonaught:customportalapi:0.0.1-beta64.5-1.20.2'
+	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta64.5-1.21.8'
+	include 'net.kyrptonaught:customportalapi:0.0.1-beta64.5-1.21.8'
 }
 
 processResources {
@@ -52,7 +52,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
+	it.options.release = 21
 }
 
 java {
@@ -61,8 +61,8 @@ java {
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {

@@ -83,21 +83,21 @@ public class ModWoodBlocks {
     /*
     Sign Textures
      */
-    public static final Identifier PINE_SIGN_TEXTURE = new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "entity/signs/pine");
-    public static final Identifier PINE_HANGING_SIGN_TEXTURE = new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "entity/signs/hanging/pine");
-    public static final Identifier PINE_HANGING_GUI_SIGN_TEXTURE = new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "textures/gui/hanging_sign/pine");
+    public static final Identifier PINE_SIGN_TEXTURE = Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "entity/signs/pine");
+    public static final Identifier PINE_HANGING_SIGN_TEXTURE = Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "entity/signs/hanging/pine");
+    public static final Identifier PINE_HANGING_GUI_SIGN_TEXTURE = Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "textures/gui/hanging_sign/pine");
 
     /*
     Signs
      */
-    public static final Block STANDING_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_standing_sign"),
+    public static final Block STANDING_PINE_SIGN = Registry.register(Registries.BLOCK, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_standing_sign"),
             new TerraformSignBlock(PINE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
-    public static final Block WALL_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_wall_sign"),
+    public static final Block WALL_PINE_SIGN = Registry.register(Registries.BLOCK, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_wall_sign"),
             new TerraformSignBlock(PINE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
-    public static final Block HANGING_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_hanging_sign"),
+    public static final Block HANGING_PINE_SIGN = Registry.register(Registries.BLOCK, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_hanging_sign"),
             new TerraformHangingSignBlock(PINE_HANGING_SIGN_TEXTURE, PINE_HANGING_GUI_SIGN_TEXTURE,
                     FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
-    public static final Block WALL_HANGING_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_wall_hanging_sign"),
+    public static final Block WALL_HANGING_PINE_SIGN = Registry.register(Registries.BLOCK, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_wall_hanging_sign"),
             new TerraformHangingSignBlock(PINE_HANGING_SIGN_TEXTURE, PINE_HANGING_GUI_SIGN_TEXTURE,
                     FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
 
@@ -143,7 +143,7 @@ public class ModWoodBlocks {
     private static Block registerBlock (String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK,
-                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
+                Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
                 block);
     }
 
@@ -155,7 +155,7 @@ public class ModWoodBlocks {
      */
     private static Item registerBlockItem (String name, Block block) {
         return Registry.register(Registries.ITEM,
-                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
+                Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
     }
 

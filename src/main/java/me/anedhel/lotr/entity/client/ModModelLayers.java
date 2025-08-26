@@ -26,6 +26,6 @@ import net.minecraft.util.Identifier;
  */
 public class ModModelLayers {
 
-    public static final EntityModelLayer HOBBIT = new EntityModelLayer(new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "hobbit"), "main");
+    public static final EntityModelLayer HOBBIT = new EntityModelLayer(Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "hobbit"), "main");
 
 }

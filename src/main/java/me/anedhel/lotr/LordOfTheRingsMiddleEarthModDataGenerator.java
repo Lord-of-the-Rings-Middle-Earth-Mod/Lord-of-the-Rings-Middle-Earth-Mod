@@ -56,9 +56,9 @@ public class LordOfTheRingsMiddleEarthModDataGenerator implements DataGeneratorE
 	 */
 	@Override
 	public void buildRegistry(RegistryBuilder registryBuilder) {
-		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::boostrap);
-		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::boostrap);
-		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::boostrap);
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.DIMENSION_TYPE, ModDimensions::bootstrapType);
 	}
 }
