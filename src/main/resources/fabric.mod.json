@@ -29,8 +29,8 @@
 		"lotr-middle-earth.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.21.0",
+		"fabricloader": ">=0.16.5",
+		"minecraft": "~1.21.2",
 		"java": ">=21",
 		"fabric-api": "*"
 	},
