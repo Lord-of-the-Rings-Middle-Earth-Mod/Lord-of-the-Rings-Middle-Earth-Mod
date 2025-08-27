@@ -17,6 +17,7 @@
 
 package me.anedhel.lotr.block.custom.crops;
 
+import com.mojang.serialization.MapCodec;
 import me.anedhel.lotr.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.item.ItemConvertible;
@@ -52,6 +53,15 @@ public class CornCropBlock extends CropBlock {
 
     public CornCropBlock(Settings settings) {
         super(settings);
+    }
+
+    /**
+     * Returns the codec for this block. Currently unused in Minecraft 1.20.3/1.20.4.
+     * As per Fabric migration guide, returning null is acceptable until this is needed.
+     */
+    @Override
+    protected MapCodec<? extends Block> getCodec() {
+        return null;
     }
 
     @Override

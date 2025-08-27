@@ -1,5 +1,6 @@
 package me.anedhel.lotr.block.custom.crops;
 
+import com.mojang.serialization.MapCodec;
 import me.anedhel.lotr.item.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -16,6 +17,15 @@ public class LettuceCropBlock extends CropBlock {
 
     public LettuceCropBlock(Settings settings) {
         super(settings);
+    }
+
+    /**
+     * Returns the codec for this block. Currently unused in Minecraft 1.20.3/1.20.4.
+     * As per Fabric migration guide, returning null is acceptable until this is needed.
+     */
+    @Override
+    protected MapCodec<? extends Block> getCodec() {
+        return null;
     }
 
     @Override
