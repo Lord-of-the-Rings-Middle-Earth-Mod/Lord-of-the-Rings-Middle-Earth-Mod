@@ -51,7 +51,7 @@ public class ModConfiguredFeatures {
      *
      * @param context The registerable context used to register the configured features.
      */
-    public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
+    public static void boostrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, PINE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModWoodBlocks.PINE_LOG),
                 new StraightTrunkPlacer(5, 2, 1),
@@ -86,7 +86,7 @@ public class ModConfiguredFeatures {
      * @return The `RegistryKey` associated with the configured feature.
      */
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name));
     }
 
     /**

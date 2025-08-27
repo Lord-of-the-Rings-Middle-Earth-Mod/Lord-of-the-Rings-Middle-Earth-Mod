@@ -2008,7 +2008,7 @@ public class ModStoneBlocks {
     private static Block registerBlock (String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK,
-                Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
+                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
                 block);
     }
 
@@ -2020,7 +2020,7 @@ public class ModStoneBlocks {
      */
     private static Item registerBlockItem (String name, Block block) {
         return Registry.register(Registries.ITEM,
-                Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
+                new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
                 new BlockItem(block, new FabricItemSettings()));
     }
 

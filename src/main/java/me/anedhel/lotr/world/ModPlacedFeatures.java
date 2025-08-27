@@ -48,7 +48,7 @@ public class ModPlacedFeatures {
      *
      * @param context The registerable context for placed features.
      */
-    public static void bootstrap(Registerable<PlacedFeature> context) {
+    public static void boostrap(Registerable<PlacedFeature> context) {
         var configureFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
 
         register(context, PINE_PLACED_KEY, configureFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINE_KEY),
@@ -78,7 +78,7 @@ public class ModPlacedFeatures {
      * @return A `RegistryKey` associated with the given name and the mod's namespace.
      */
     public static RegistryKey<PlacedFeature> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name));
     }
 
     /**

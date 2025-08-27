@@ -40,11 +40,11 @@ public class HobbitRenderer extends MobEntityRenderer<HobbitEntity, HobbitModel<
     private static final Map<HobbitVariant, Identifier> LOCATION_BY_VARIANT = Util.make(
             Maps.newEnumMap(HobbitVariant.class), map -> {
                 map.put(HobbitVariant.HOBBIT_1,
-                        Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, TEXTURE_PATH + "hobbit_1.png"));
+                        new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, TEXTURE_PATH + "hobbit_1.png"));
                 map.put(HobbitVariant.HOBBIT_2,
-                        Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, TEXTURE_PATH + "hobbit_2.png"));
+                        new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, TEXTURE_PATH + "hobbit_2.png"));
                 map.put(HobbitVariant.HOBBIT_3,
-                        Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, TEXTURE_PATH + "hobbit_3.png"));
+                        new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, TEXTURE_PATH + "hobbit_3.png"));
             });
 
     public HobbitRenderer(EntityRendererFactory.Context context) {

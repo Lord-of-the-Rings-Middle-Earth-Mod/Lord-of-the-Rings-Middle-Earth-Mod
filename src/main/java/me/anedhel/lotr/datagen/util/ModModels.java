@@ -13,13 +13,13 @@ import java.util.Optional;
  */
 public class ModModels {
 
-	public static final Model PILLAR = block(Identifier.of("minecraft", "block/cube_column"),
+	public static final Model PILLAR = block(new Identifier("minecraft", "block/cube_column"),
 			TextureKey.END, TextureKey.SIDE);
-	public static final Model PILLAR_TOP = block(Identifier.of("minecraft", "block/cube_column"), "_top",
+	public static final Model PILLAR_TOP = block(new Identifier("minecraft", "block/cube_column"), "_top",
 			TextureKey.END, TextureKey.SIDE);
-	public static final Model PILLAR_MIDDLE = block(Identifier.of("minecraft", "block/cube_column"), "_middle",
+	public static final Model PILLAR_MIDDLE = block(new Identifier("minecraft", "block/cube_column"), "_middle",
 			TextureKey.END, TextureKey.SIDE);
-	public static final Model PILLAR_BASE = block(Identifier.of("minecraft", "block/cube_column"), "_bottom",
+	public static final Model PILLAR_BASE = block(new Identifier("minecraft", "block/cube_column"), "_bottom",
 			TextureKey.END, TextureKey.SIDE);
 
 	public static final Model PILLAR_OVERLAY = block("pillar_overlay", TextureKey.END, TextureKey.SIDE,
@@ -149,7 +149,7 @@ public class ModModels {
 	 * @return A new Model instance.
 	 */
 	private static Model block(String parent, TextureKey ... requiredTextureKeys) {
-		return block(Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent), requiredTextureKeys);
+		return block(new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent), requiredTextureKeys);
 	}
 
 	/**
@@ -162,7 +162,7 @@ public class ModModels {
 	 * @return A new Model instance.
 	 */
 	private static Model block(String parent, String variant, TextureKey... requiredTextureKeys) {
-		return block(Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent), variant, requiredTextureKeys);
+		return block(new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "block/" + parent), variant, requiredTextureKeys);
 	}
 
 	/**

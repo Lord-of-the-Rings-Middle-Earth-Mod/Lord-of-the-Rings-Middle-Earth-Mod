@@ -26,7 +26,7 @@ import me.anedhel.lotr.item.ModItemGroups;
 import me.anedhel.lotr.item.ModItems;
 import me.anedhel.lotr.world.gen.ModWorldGeneration;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityAttributeRegistry;
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.kyrptonaught.customportalapi.api.CustomPortalBuilder;
@@ -57,7 +57,7 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModBoats.registerBoats();
 
-		FabricEntityAttributeRegistry.register(ModEntities.HOBBIT, HobbitEntity.createHobbitAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.HOBBIT, HobbitEntity.createHobbitAttributes());
 
 		ModWorldGeneration.generateModWorldGen();
 
@@ -66,7 +66,7 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 		addCropsToComposter();
 
 		CustomPortalBuilder.beginPortal().frameBlock(ModBlocks.BRONZE_BLOCK).lightWithItem(ModItems.TIN_INGOT)
-				.destDimID(Identifier.of(MOD_ID, "arda")).tintColor(0x00cc00).flatPortal()
+				.destDimID(new Identifier(MOD_ID, "arda")).tintColor(0x00cc00).flatPortal()
 				.setPortalSearchYRange(64, 256).registerPortal();
 		LOGGER.info("The Lord of the Rings Mod is loaded.");
 	}

@@ -19,7 +19,7 @@ package me.anedhel.lotr.world.biome;
 
 import me.anedhel.lotr.entity.ModEntities;
 import me.anedhel.lotr.world.ModPlacedFeatures;
-import net.minecraft.entity.SpawnLocation;
+import net.minecraft.entity.SpawnGroup;
 import net.minecraft.world.biome.GenerationSettings;
 import net.minecraft.world.biome.SpawnSettings;
 import net.minecraft.world.gen.GenerationStep;
@@ -37,7 +37,7 @@ public class ModBiomeFeatures {
 	 */
 	public static void addShireMobs(SpawnSettings.Builder builder) {
 		DefaultBiomeFeatures.addFarmAnimals(builder);
-		builder.spawn(SpawnLocation.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.HOBBIT, 5, 2, 6));
+		builder.spawn(SpawnGroup.CREATURE, new SpawnSettings.SpawnEntry(ModEntities.HOBBIT, 5, 2, 6));
 	}
 
 	/**
