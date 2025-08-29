@@ -44,6 +44,7 @@ public class ModItemGroups {
                         //There will be more lines in this lambda statement hence we don´t use an expression
                         entries.addAll(ModStoneType.BLUESLATE.getLotRStoneItemGroupList());
                         entries.addAll(ModStoneType.CHALK.getLotRStoneItemGroupList());
+                        entries.addAll(ModStoneType.MARBLE.getLotRStoneItemGroupList());
                     })).build());
 
     public static final ItemGroup LOTR_WOOD = Registry.register(Registries.ITEM_GROUP,
