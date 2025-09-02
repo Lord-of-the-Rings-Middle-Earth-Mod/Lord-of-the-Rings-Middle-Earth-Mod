@@ -1,0 +1,92 @@
+name: Format Stone Type Issue
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  format-issue:
+    runs-on: ubuntu-latest
+    if: contains(github.event.issue.body, 'Stone Type')
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Parse issue form
+        id: parse
+        uses: peter-murray/issue-forms-body-parser@v4
+        with:
+          issue_id: ${{ github.event.issue.number }}
+          separator: '###'
+          label_marker_start: ''
+          label_marker_end: ''
+      
+      - name: Extract stone type
+        id: extract
+        run: |
+          # Parse the stone_type from the issue form output
+          STONE_TYPE=$(echo '${{ steps.parse.outputs.payload }}' | jq -r '.stone_type // empty')
+          if [ -z "$STONE_TYPE" ]; then
+            echo "No stone_type found in issue form"
+            exit 1
+          fi
+          
+          # Convert to lowercase for replacement
+          STONE_TYPE_LOWER=$(echo "$STONE_TYPE" | tr '[:upper:]' '[:lower:]')
+          # Convert to uppercase for replacement
+          STONE_TYPE_UPPER=$(echo "$STONE_TYPE" | tr '[:lower:]' '[:upper:]')
+          # Capitalize first letter for title
+          STONE_TYPE_CAPITALIZED=$(echo "$STONE_TYPE" | sed 's/^./\U&/')
+          
+          echo "stone_type=$STONE_TYPE_LOWER" >> $GITHUB_OUTPUT
+          echo "stone_type_upper=$STONE_TYPE_UPPER" >> $GITHUB_OUTPUT
+          echo "stone_type_capitalized=$STONE_TYPE_CAPITALIZED" >> $GITHUB_OUTPUT
+      
+      - name: Load and process template
+        id: template
+        run: |
+          # Read the template file
+          TEMPLATE=$(cat .github/issue-body-templates/stone-task.md)
+          
+          # Replace placeholders - use proper escaping for sed
+          STONE_TYPE="${{ steps.extract.outputs.stone_type }}"
+          STONE_TYPE_UPPER="${{ steps.extract.outputs.stone_type_upper }}"
+          
+          # Replace all occurrences of stone_type with actual value
+          TEMPLATE=$(echo "$TEMPLATE" | sed "s/stone_type/$STONE_TYPE/g")
+          # Replace all occurrences of STONE_TYPE with uppercase value
+          TEMPLATE=$(echo "$TEMPLATE" | sed "s/STONE_TYPE/$STONE_TYPE_UPPER/g")
+          
+          # Save to output with proper multiline handling
+          {
+            echo "body<<EOF"
+            echo "$TEMPLATE"
+            echo "EOF"
+          } >> $GITHUB_OUTPUT
+      
+      - name: Update issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Adding ${{ steps.extract.outputs.stone_type_capitalized }} as stone type to the Mod (Copilot Issue)`;
+            const body = `${{ steps.template.outputs.body }}`;
+            
+            await github.rest.issues.update({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              title: title,
+              body: body
+            });
+      
+      - name: Add to project
+        uses: actions/add-to-project@v0.5.0
+        continue-on-error: true
+        with:
+          project-url: https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/1
+          github-token: ${{ secrets.GITHUB_TOKEN }}
