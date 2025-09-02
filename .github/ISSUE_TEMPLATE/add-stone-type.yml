@@ -9,6 +9,6 @@ body:
     attributes:
       label: Stone Type
       description: Enter the name of the new stone type (e.g., marble)
-      placeholder: marble
+      placeholder: stone type
     validations:
       required: true
