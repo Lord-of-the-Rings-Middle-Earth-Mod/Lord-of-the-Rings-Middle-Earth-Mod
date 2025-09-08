@@ -1,0 +1,35 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_bronze_chalk_tiles": {
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"lotr:bronze_chalk_tiles"
+						]
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"has_the_recipe": {
+			"conditions": {
+				"recipe": "minecraft:b_chalk_fancy_bricks_from_b_chalktiles_sc"
+			},
+			"trigger": "minecraft:recipe_unlocked"
+		}
+	},
+	"requirements": [
+		[
+			"has_the_recipe",
+			"has_bronze_chalk_tiles"
+		]
+	],
+	"rewards": {
+		"recipes": [
+			"minecraft:b_chalk_fancy_bricks_from_b_chalktiles_sc"
+		]
+	},
+	"sends_telemetry_event": false
+}

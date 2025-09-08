@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"count": 1,
+	"ingredient": {
+		"item": "lotr:silver_cobbled_chalk_bricks"
+	},
+	"result": "lotr:silver_cobbled_chalk_brick_stairs"
+}

@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"key": {
+		"#": {
+			"item": "lotr:overgrown_silver_chalk_tiles"
+		}
+	},
+	"pattern": [
+		"##",
+		"##"
+	],
+	"result": {
+		"count": 4,
+		"item": "lotr:overgrown_silver_fancy_chalk_bricks"
+	},
+	"show_notification": true
+}

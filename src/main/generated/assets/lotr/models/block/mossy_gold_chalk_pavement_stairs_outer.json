@@ -1,0 +1,11 @@
+{
+	"parent": "lotr:block/pavement_outer_stairs_two_overlay",
+	"textures": {
+		"bottom": "lotr:block/chalk_tiles",
+		"layer1": "lotr:block/overlays/gold_tiles_overlay",
+		"layer2": "lotr:block/overlays/mossy_overlay_two",
+		"side": "lotr:block/chalk_tiles",
+		"top": "lotr:block/chalk_pavement",
+		"top_layer1": "lotr:block/overlays/gold_pavement_overlay"
+	}
+}

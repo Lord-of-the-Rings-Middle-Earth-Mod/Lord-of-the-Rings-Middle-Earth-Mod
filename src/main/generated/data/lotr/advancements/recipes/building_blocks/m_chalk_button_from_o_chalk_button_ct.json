@@ -1,0 +1,35 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_mossy_chalk_button": {
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"lotr:mossy_chalk_button"
+						]
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"has_the_recipe": {
+			"conditions": {
+				"recipe": "minecraft:m_chalk_button_from_o_chalk_button_ct"
+			},
+			"trigger": "minecraft:recipe_unlocked"
+		}
+	},
+	"requirements": [
+		[
+			"has_the_recipe",
+			"has_mossy_chalk_button"
+		]
+	],
+	"rewards": {
+		"recipes": [
+			"minecraft:m_chalk_button_from_o_chalk_button_ct"
+		]
+	},
+	"sends_telemetry_event": false
+}

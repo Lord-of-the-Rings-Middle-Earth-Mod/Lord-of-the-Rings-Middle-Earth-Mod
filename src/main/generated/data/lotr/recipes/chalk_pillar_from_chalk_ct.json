@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"key": {
+		"#": {
+			"item": "lotr:chalk"
+		}
+	},
+	"pattern": [
+		"#",
+		"#",
+		"#"
+	],
+	"result": {
+		"count": 3,
+		"item": "lotr:chalk_pillar"
+	},
+	"show_notification": true
+}

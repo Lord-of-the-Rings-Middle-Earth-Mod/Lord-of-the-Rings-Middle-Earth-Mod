@@ -1,0 +1,35 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_smooth_chalk": {
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"lotr:smooth_chalk"
+						]
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"has_the_recipe": {
+			"conditions": {
+				"recipe": "minecraft:m_chalk_smooth_stone_from_chalk_smooth_stone_ct"
+			},
+			"trigger": "minecraft:recipe_unlocked"
+		}
+	},
+	"requirements": [
+		[
+			"has_the_recipe",
+			"has_smooth_chalk"
+		]
+	],
+	"rewards": {
+		"recipes": [
+			"minecraft:m_chalk_smooth_stone_from_chalk_smooth_stone_ct"
+		]
+	},
+	"sends_telemetry_event": false
+}

@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"category": "building",
+	"key": {
+		"#": {
+			"item": "lotr:chalk_pavement_stairs"
+		},
+		"O": {
+			"item": "lotr:bronze_ingot"
+		}
+	},
+	"pattern": [
+		" O ",
+		"O#O",
+		" O "
+	],
+	"result": {
+		"item": "lotr:bronze_chalk_pavement_stairs"
+	},
+	"show_notification": true
+}

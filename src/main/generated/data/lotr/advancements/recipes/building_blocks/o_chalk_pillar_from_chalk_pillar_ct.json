@@ -1,0 +1,35 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_chalk_pillar": {
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"lotr:chalk_pillar"
+						]
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"has_the_recipe": {
+			"conditions": {
+				"recipe": "minecraft:o_chalk_pillar_from_chalk_pillar_ct"
+			},
+			"trigger": "minecraft:recipe_unlocked"
+		}
+	},
+	"requirements": [
+		[
+			"has_the_recipe",
+			"has_chalk_pillar"
+		]
+	],
+	"rewards": {
+		"recipes": [
+			"minecraft:o_chalk_pillar_from_chalk_pillar_ct"
+		]
+	},
+	"sends_telemetry_event": false
+}

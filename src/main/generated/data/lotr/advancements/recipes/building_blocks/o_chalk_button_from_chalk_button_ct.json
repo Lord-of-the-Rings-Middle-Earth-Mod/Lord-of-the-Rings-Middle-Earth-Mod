@@ -1,0 +1,35 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"has_chalk_button": {
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"lotr:chalk_button"
+						]
+					}
+				]
+			},
+			"trigger": "minecraft:inventory_changed"
+		},
+		"has_the_recipe": {
+			"conditions": {
+				"recipe": "minecraft:o_chalk_button_from_chalk_button_ct"
+			},
+			"trigger": "minecraft:recipe_unlocked"
+		}
+	},
+	"requirements": [
+		[
+			"has_the_recipe",
+			"has_chalk_button"
+		]
+	],
+	"rewards": {
+		"recipes": [
+			"minecraft:o_chalk_button_from_chalk_button_ct"
+		]
+	},
+	"sends_telemetry_event": false
+}
