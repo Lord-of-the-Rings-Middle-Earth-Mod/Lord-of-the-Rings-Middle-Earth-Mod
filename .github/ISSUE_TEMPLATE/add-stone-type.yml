@@ -13,7 +13,7 @@ body:
     validations:
       required: true
   - type: textarea
-    id: issue description
+    id: issue_description
     attributes:
       label: Task
       description: Please replace "stone_type" in the following text
