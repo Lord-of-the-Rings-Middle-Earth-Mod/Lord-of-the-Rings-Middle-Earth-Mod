@@ -1,8 +1,11 @@
 name: Add Stone Type
 description: Create a new stone type in the LotR Mod
 title: "Adding StoneType as stone type to the Mod (Copilot Issue)"
-projects: ["LotR Mod Issue Board"]
-
+projects:
+  - "LotR Mod Issue Board"
+type: "Feature"
+labels:
+- good first issue
 body:
   - type: input
     id: stone_type
