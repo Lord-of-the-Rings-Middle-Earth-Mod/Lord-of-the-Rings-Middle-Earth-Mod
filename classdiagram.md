@@ -11,28 +11,61 @@ classDiagram
     class LordOfTheRingsMiddleEarthMod {
         +String MOD_ID
         +Logger LOGGER
+        +String COPYRIGHT
         +onInitialize() void
+        -addCropsToComposter() void
+        -initModWoodTypes() void
     }
 
     class LordOfTheRingsMiddleEarthModClient {
         +onInitializeClient() void
+        -registerStoneTypeCutoutLayers() void
+        -registerStoneFamilyOverlays(BlockFamily) void
+        -registerModEntities() void
+        -registerModCropCutoutLayers() void
+        -registerModFlowerCutoutLayers() void
     }
 
     class LordOfTheRingsMiddleEarthModDataGenerator {
-        +onInitializeDataGenerator() void
-        +buildRegistry() void
+        +onInitializeDataGenerator(FabricDataGenerator) void
+        +buildRegistry(RegistryBuilder) void
     }
 
     class ModBlocks {
+        +Block TIN_ORE$
+        +Block DEEPSLATE_TIN_ORE$
+        +Block TIN_BLOCK$
+        +Block RAW_TIN_BLOCK$
+        +Block BRONZE_BLOCK$
+        +Block SILVER_ORE$
+        +Block TOMATO_CROP$
+        +Block LETTUCE_CROP$
+        +Block CORN_CROP$
         +registerModBlocks() void$
+        -registerBlock(String, Block) Block$
     }
 
     class ModItems {
+        +Item HOBBIT_SPAWN_EGG$
+        +Item PINE_SIGN$
+        +Item PINE_BOAT$
+        +Item RAW_TIN$
+        +Item TIN_INGOT$
+        +Item BRONZE_INGOT$
+        +Item RAW_SILVER$
+        +Item SILVER_INGOT$
+        +Item BRONZE_SWORD$
+        +Item BRONZE_PICKAXE$
+        +Item BRONZE_HELMET$
+        +Item TOMATO$
+        +Item LETTUCE$
+        +Item CORN$
         +registerModItems() void$
+        -registerItem(String, Item) Item$
     }
 
     class ModEntities {
-        +EntityType HOBBIT$
+        +EntityType~HobbitEntity~ HOBBIT$
     }
 
     class ModItemGroups {
@@ -40,15 +73,15 @@ classDiagram
     }
 
     %% Interface implementations
-    LordOfTheRingsMiddleEarthMod ..|> ModInitializer
-    LordOfTheRingsMiddleEarthModClient ..|> ClientModInitializer
-    LordOfTheRingsMiddleEarthModDataGenerator ..|> DataGeneratorEntrypoint
+    LordOfTheRingsMiddleEarthMod ..|> ModInitializer : implements
+    LordOfTheRingsMiddleEarthModClient ..|> ClientModInitializer : implements
+    LordOfTheRingsMiddleEarthModDataGenerator ..|> DataGeneratorEntrypoint : implements
 
     %% Main relationships
-    LordOfTheRingsMiddleEarthMod --> ModBlocks
-    LordOfTheRingsMiddleEarthMod --> ModItems
-    LordOfTheRingsMiddleEarthMod --> ModEntities
-    LordOfTheRingsMiddleEarthMod --> ModItemGroups
+    LordOfTheRingsMiddleEarthMod --> ModBlocks : uses
+    LordOfTheRingsMiddleEarthMod --> ModItems : uses
+    LordOfTheRingsMiddleEarthMod --> ModEntities : uses
+    LordOfTheRingsMiddleEarthMod --> ModItemGroups : uses
 ```
 
 ## 2. Entity System
@@ -62,9 +95,11 @@ classDiagram
     }
 
     class HobbitEntity {
+        -TrackedData~Integer~ DATA_ID_TYPE_VARIANT$
+        +createHobbitAttributes() DefaultAttributeContainer.Builder$
         +getVariant() HobbitVariant
-        +setVariant() void
-        +initialize() EntityData
+        +setVariant(HobbitVariant) void
+        +initialize(ServerWorldAccess, LocalDifficulty, SpawnReason, EntityData, NbtCompound) EntityData
     }
 
     class HobbitVariant {
@@ -81,7 +116,7 @@ classDiagram
     }
 
     class HobbitRenderer {
-        +getTexture() Identifier
+        +getTexture(HobbitEntity) Identifier
     }
 
     class ModModelLayers {
@@ -89,14 +124,14 @@ classDiagram
     }
 
     %% Inheritance
-    NPCEntity --|> PathAwareEntity
-    HobbitEntity --|> NPCEntity
+    NPCEntity --|> PathAwareEntity : extends
+    HobbitEntity --|> NPCEntity : extends
 
     %% Usage relationships
-    HobbitEntity --> HobbitVariant
-    HobbitRenderer --> HobbitEntity
-    HobbitModel --> HobbitEntity
-    HobbitRenderer --> ModModelLayers
+    HobbitEntity --> HobbitVariant : uses
+    HobbitRenderer --> HobbitEntity : renders
+    HobbitModel --> HobbitEntity : models
+    HobbitRenderer --> ModModelLayers : uses
 ```
 
 ## 3. Block System
@@ -105,18 +140,24 @@ classDiagram
 classDiagram
     direction TB
     
-    class ModBlocks {
-        +Block TIN_ORE$
-        +Block TOMATO_CROP$
-        +Block LETTUCE_CROP$
-        +Block CORN_CROP$
-        +registerModBlocks() void$
-    }
-
     class ModWoodType {
         <<enumeration>>
         PINE
+        -Block log
+        -Block wood
+        -Block strippedLog
+        -Block strippedWood
+        -BlockFamily woodFamily
+        -BlockFamily strippedWoodFamily
+        -BlockFamily planksFamily
+        -Item boatItem
+        -Item chestBoatItem
+        -Block leaves
+        -Block sapling
         +getLog() Block
+        +getWood() Block
+        +getStrippedLog() Block
+        +getStrippedWood() Block
         +getPlanks() Block
         +getLeaves() Block
         +getSapling() Block
@@ -124,8 +165,12 @@ classDiagram
 
     class ModWoodBlocks {
         +Block PINE_LOG$
+        +Block STRIPPED_PINE_LOG$
         +Block PINE_PLANKS$
         +Block PINE_LEAVES$
+        +Block PINE_SAPLING$
+        +BlockFamily PINE_WOOD_FAMILY$
+        +BlockFamily STRIPPED_PINE_FAMILY$
         +BlockFamily PINE_PLANKS_FAMILY$
     }
 
@@ -133,35 +178,39 @@ classDiagram
         <<enumeration>>
         +getMossyStoneFamily() BlockFamily
         +getOvergrownStoneFamily() BlockFamily
+        +getMossyCobbledFamily() BlockFamily
     }
 
     class TomatoCropBlock {
+        +getAgeProperty() IntProperty
         +getMaxAge() int
         +getCropItem() ItemConvertible
         +getSeedsItem() ItemConvertible
     }
 
     class LettuceCropBlock {
+        +getAgeProperty() IntProperty
         +getMaxAge() int
         +getCropItem() ItemConvertible
     }
 
     class CornCropBlock {
+        +getAgeProperty() IntProperty
         +getMaxAge() int
         +getCropItem() ItemConvertible
         +getSeedsItem() ItemConvertible
     }
 
     %% Inheritance
-    TomatoCropBlock --|> CropBlock
-    LettuceCropBlock --|> CropBlock
-    CornCropBlock --|> CropBlock
+    TomatoCropBlock --|> CropBlock : extends
+    LettuceCropBlock --|> CropBlock : extends
+    CornCropBlock --|> CropBlock : extends
 
     %% Relationships
-    ModBlocks --> TomatoCropBlock
-    ModBlocks --> LettuceCropBlock
-    ModBlocks --> CornCropBlock
-    ModWoodType --> ModWoodBlocks
+    ModBlocks --> TomatoCropBlock : contains
+    ModBlocks --> LettuceCropBlock : contains
+    ModBlocks --> CornCropBlock : contains
+    ModWoodType --> ModWoodBlocks : uses
 ```
 
 ## 4. Item System & Materials
@@ -170,51 +219,53 @@ classDiagram
 classDiagram
     direction TB
     
-    class ModItems {
-        +Item RAW_TIN$
-        +Item TIN_INGOT$
-        +Item BRONZE_SWORD$
-        +Item BRONZE_HELMET$
-        +Item TOMATO$
-        +registerModItems() void$
-    }
-
     class ModToolMaterial {
         <<enumeration>>
         BRONZE
         +getDurability() int
+        +getMiningSpeedMultiplier() float
         +getAttackDamage() float
+        +getMiningLevel() int
+        +getEnchantability() int
         +getRepairIngredient() Ingredient
     }
 
     class ModArmorMaterial {
         <<enumeration>>
         BRONZE
-        +getDurability() int
-        +getProtection() int
+        +getName() String
+        +getDurability(ArmorItem.Type) int
+        +getProtection(ArmorItem.Type) int
         +getEnchantability() int
+        +getEquipSound() SoundEvent
+        +getRepairIngredient() Ingredient
+        +getToughness() float
+        +getKnockbackResistance() float
     }
 
     class ModFoodComponents {
         +FoodComponent TOMATO$
         +FoodComponent BAKED_TOMATO$
         +FoodComponent CORN$
+        +FoodComponent COOKED_CORN$
     }
 
     class ModBoats {
         +Identifier PINE_BOAT_ID$
+        +RegistryKey~TerraformBoatType~ PINE_BOAT_KEY$
+        +Identifier PINE_CHEST_BOAT_ID$
         +registerBoats() void$
     }
 
     %% Interface implementations
-    ModToolMaterial ..|> ToolMaterial
-    ModArmorMaterial ..|> ArmorMaterial
+    ModToolMaterial ..|> ToolMaterial : implements
+    ModArmorMaterial ..|> ArmorMaterial : implements
 
     %% Usage relationships
-    ModItems --> ModToolMaterial
-    ModItems --> ModArmorMaterial
-    ModItems --> ModFoodComponents
-    ModItems --> ModBoats
+    ModItems --> ModToolMaterial : uses
+    ModItems --> ModArmorMaterial : uses
+    ModItems --> ModFoodComponents : uses
+    ModItems --> ModBoats : uses
 ```
 
 ## 5. World Generation
@@ -228,25 +279,25 @@ classDiagram
     }
 
     class ModConfiguredFeatures {
-        +bootstrap() void$
+        +boostrap(Registerable) void$
     }
 
     class ModPlacedFeatures {
-        +bootstrap() void$
+        +boostrap(Registerable) void$
     }
 
     class ModBiomes {
-        +bootstrap() void$
+        +boostrap(Registerable) void$
     }
 
     class ModDimensions {
-        +bootstrapType() void$
+        +bootstrapType(Registerable) void$
     }
 
     %% Relationships
-    ModWorldGeneration --> ModConfiguredFeatures
-    ModWorldGeneration --> ModPlacedFeatures
-    ModConfiguredFeatures --> ModPlacedFeatures
+    ModWorldGeneration --> ModConfiguredFeatures : uses
+    ModWorldGeneration --> ModPlacedFeatures : uses
+    ModConfiguredFeatures --> ModPlacedFeatures : uses
 ```
 
 ## 6. Data Generation System
@@ -255,10 +306,6 @@ classDiagram
 classDiagram
     direction TB
     
-    class LordOfTheRingsMiddleEarthModDataGenerator {
-        +onInitializeDataGenerator() void
-    }
-
     class ModModelProvider {
     }
 
@@ -281,13 +328,17 @@ classDiagram
     }
 
     %% Usage relationships
-    LordOfTheRingsMiddleEarthModDataGenerator --> ModModelProvider
-    LordOfTheRingsMiddleEarthModDataGenerator --> ModBlockTagProvider
-    LordOfTheRingsMiddleEarthModDataGenerator --> ModItemTagProvider
-    LordOfTheRingsMiddleEarthModDataGenerator --> ModLootTableProvider
-    LordOfTheRingsMiddleEarthModDataGenerator --> ModRecipeProvider
-    LordOfTheRingsMiddleEarthModDataGenerator --> ModWorldGenerator
-    LordOfTheRingsMiddleEarthModDataGenerator --> ModEnUsLangProvider
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModModelProvider : uses
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModBlockTagProvider : uses
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModItemTagProvider : uses
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModLootTableProvider : uses
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModRecipeProvider : uses
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModWorldGenerator : uses
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModEnUsLangProvider : uses
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModConfiguredFeatures : uses
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModPlacedFeatures : uses
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModBiomes : uses
+    LordOfTheRingsMiddleEarthModDataGenerator --> ModDimensions : uses
 ```
 
 ## Package Overview
