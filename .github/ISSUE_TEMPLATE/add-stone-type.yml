@@ -12,3 +12,11 @@ body:
       placeholder: stone type
     validations:
       required: true
+  - type: textarea
+    id: issue description
+    attributes:
+      label: Task
+      description: Please replace "stone_type" in the following text
+      value: "# Task:\nImplement all the stone_type blocks following the blueslate pattern.\n\n# How to do this:\n- ModStoneBlocks\n  - Register all needed stone_type blocks (588 blocks and 126 BlockFamilies)\n  - For this you can copy-paste the blueslate registrations and just change the names from blueslate to stone_type\n- ModStoneTypes\n  - Add an entry to the enum, referencing all the blockfamilies for stone_type, that were created in ModStoneBlocks\n- ModItemGroups\n  - add `entries.addAll(ModStoneType.STONE_TYPE.getLotRStoneItemGroupList());` to the LOTR_STONES ItemGroup\n- Add a line to the CHANGELOG.md that stone_type has been added as stone type similar to the already existing line for blueslate\n\nWhen those steps are done, the stone type is all added. DataGen etc. is all automatically done by iterating over the ModStoneType Enum. Each stone type should contain about 588 blocks and 126 Block Families.\n\nYou can see an extensive Tutorial on how to add a stone type in the following file: https://drive.google.com/file/d/1PPP5iPaxeeUu-IXlhVU_WspjRAf-rYF8/view?usp=sharing\n\nThis issue requires **ALL** of the above mentioned steps to be implemented **completely**. No blocks should be left out and we do not want a systematic approach to the issue, we want the final result."
+    validations:
+      required: true
