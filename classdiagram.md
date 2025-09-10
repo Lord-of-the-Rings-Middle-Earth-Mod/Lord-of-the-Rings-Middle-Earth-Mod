@@ -9,9 +9,9 @@ classDiagram
     direction TB
     
     class LordOfTheRingsMiddleEarthMod {
-        +String MOD_ID
-        +Logger LOGGER
-        +String COPYRIGHT
+        +String MOD_ID$
+        +Logger LOGGER$
+        +String COPYRIGHT$
         +onInitialize() void
         -addCropsToComposter() void
         -initModWoodTypes() void
@@ -24,6 +24,8 @@ classDiagram
         -registerModEntities() void
         -registerModCropCutoutLayers() void
         -registerModFlowerCutoutLayers() void
+        -registerWoodTypeSigns() void
+        -registerModSignSpriteIds() void
     }
 
     class LordOfTheRingsMiddleEarthModDataGenerator {
@@ -38,28 +40,62 @@ classDiagram
         +Block RAW_TIN_BLOCK$
         +Block BRONZE_BLOCK$
         +Block SILVER_ORE$
-        +Block TOMATO_CROP$
+        +Block DEEPSLATE_SILVER_ORE$
+        +Block RAW_SILVER_BLOCK$
+        +Block SILVER_BLOCK$
+        +Block WILD_BEETROOT$
+        +Block POTTED_WILD_BEETROOT$
+        +Block WILD_CARROT$
+        +Block POTTED_WILD_CARROT$
+        +Block WILD_POTATO$
+        +Block POTTED_WILD_POTATO$
+        +Block WILD_LETTUCE$
+        +Block POTTED_WILD_LETTUCE$
+        +Block WILD_TOMATO$
+        +Block POTTED_WILD_TOMATO$
+        +Block WILD_CORN$
+        +Block POTATO_CRATE$
+        +Block CARROT_CRATE$
+        +Block BEETROOT_CRATE$
         +Block LETTUCE_CROP$
+        +Block LETTUCE_CRATE$
+        +Block TOMATO_CROP$
+        +Block TOMATO_CRATE$
         +Block CORN_CROP$
+        +Block CORN_CRATE$
         +registerModBlocks() void$
         -registerBlock(String, Block) Block$
+        -registerBlockItem(String, Block) Item$
     }
 
     class ModItems {
         +Item HOBBIT_SPAWN_EGG$
         +Item PINE_SIGN$
+        +Item HANGING_PINE_SIGN$
         +Item PINE_BOAT$
+        +Item PINE_CHEST_BOAT$
         +Item RAW_TIN$
         +Item TIN_INGOT$
         +Item BRONZE_INGOT$
         +Item RAW_SILVER$
         +Item SILVER_INGOT$
+        +Item SILVER_NUGGET$
         +Item BRONZE_SWORD$
         +Item BRONZE_PICKAXE$
+        +Item BRONZE_AXE$
+        +Item BRONZE_SHOVEL$
+        +Item BRONZE_HOE$
         +Item BRONZE_HELMET$
+        +Item BRONZE_CHESTPLATE$
+        +Item BRONZE_LEGGINGS$
+        +Item BRONZE_BOOTS$
         +Item TOMATO$
+        +Item BAKED_TOMATO$
+        +Item TOMATO_SEEDS$
         +Item LETTUCE$
         +Item CORN$
+        +Item COOKED_CORN$
+        +Item CORN_SEEDS$
         +registerModItems() void$
         -registerItem(String, Item) Item$
     }
@@ -69,7 +105,15 @@ classDiagram
     }
 
     class ModItemGroups {
+        +ItemGroup LOTR_STONES$
+        +ItemGroup LOTR_WOOD$
+        +ItemGroup LOTR_ORES$
+        +ItemGroup LOTR_FOOD$
+        +ItemGroup LOTR_TOOLS_AND_UTILITIES$
+        +ItemGroup LOTR_FUNCTIONAL$
+        +ItemGroup LOTR_ENTITIES$
         +registerModItemGroups() void$
+        -addItemsToVanillaItemGroups() void$
     }
 
     %% Interface implementations
@@ -96,10 +140,21 @@ classDiagram
 
     class HobbitEntity {
         -TrackedData~Integer~ DATA_ID_TYPE_VARIANT$
+        +AnimationState idleAnimationState
+        +int idleAnimationTimeout
+        +HobbitEntity(EntityType, World)
+        #initGoals() void
         +createHobbitAttributes() DefaultAttributeContainer.Builder$
+        -setupAnimationStates() void
+        #updateLimbs(float) void
+        +tick() void
+        #initDataTracker() void
+        -getTypeVariant() int
         +getVariant() HobbitVariant
         +setVariant(HobbitVariant) void
         +initialize(ServerWorldAccess, LocalDifficulty, SpawnReason, EntityData, NbtCompound) EntityData
+        +readCustomDataFromNbt(NbtCompound) void
+        +writeCustomDataToNbt(NbtCompound) void
     }
 
     class HobbitVariant {
@@ -201,6 +256,112 @@ classDiagram
         +getSeedsItem() ItemConvertible
     }
 
+    class ModWoodBlocks {
+        +Block PINE_LOG$
+        +Block PINE_WOOD$
+        +Block PINE_WOOD_STAIRS$
+        +Block PINE_WOOD_SLAB$
+        +Block PINE_WOOD_BUTTON$
+        +Block PINE_WOOD_PRESSURE_PLATE$
+        +Block PINE_WOOD_DOOR$
+        +Block PINE_WOOD_TRAPDOOR$
+        +Block STRIPPED_PINE_LOG$
+        +Block STRIPPED_PINE_WOOD$
+        +Block STRIPPED_PINE_STAIRS$
+        +Block STRIPPED_PINE_SLAB$
+        +Block STRIPPED_PINE_WOOD_BUTTON$
+        +Block STRIPPED_PINE_WOOD_PRESSURE_PLATE$
+        +Block STRIPPED_PINE_DOOR$
+        +Block STRIPPED_PINE_TRAPDOOR$
+        +Block PINE_PLANKS$
+        +Block PINE_PLANKS_STAIRS$
+        +Block PINE_PLANKS_SLAB$
+        +Block PINE_PLANKS_FENCE$
+        +Block PINE_PLANKS_FENCE_GATE$
+        +Block PINE_PLANKS_BUTTON$
+        +Block PINE_PLANKS_PRESSURE_PLATE$
+        +Block PINE_PLANKS_DOOR$
+        +Block PINE_PLANKS_TRAPDOOR$
+        +Block PINE_LEAVES$
+        +Block PINE_SAPLINGS$
+        +Identifier PINE_SIGN_TEXTURE$
+        +Identifier PINE_HANGING_SIGN_TEXTURE$
+        +Identifier PINE_HANGING_GUI_SIGN_TEXTURE$
+        +Block STANDING_PINE_SIGN$
+        +Block WALL_PINE_SIGN$
+        +Block HANGING_PINE_SIGN$
+        +Block WALL_HANGING_PINE_SIGN$
+        +BlockFamily PINE_WOOD_FAMILY$
+        +BlockFamily STRIPPED_PINE_FAMILY$
+        +BlockFamily PINE_PLANKS_FAMILY$
+        -registerBlock(String, Block) Block$
+        -registerBlockItem(String, Block) Item$
+        +registerModWoodBlocks() void$
+    }
+
+    class ModStoneBlocks {
+        +Block BLUESLATE$
+        +Block BLUESLATE_STAIRS$
+        +Block BLUESLATE_SLAB$
+        +Block BLUESLATE_WALL$
+        +Block BLUESLATE_BUTTON$
+        +Block BLUESLATE_PRESSURE_PLATE$
+        +BlockFamily BLUESLATE_FAMILY$
+        +Block MOSSY_BLUESLATE$
+        +Block MOSSY_BLUESLATE_STAIRS$
+        +Block MOSSY_BLUESLATE_SLAB$
+        +Block MOSSY_BLUESLATE_WALL$
+        +Block MOSSY_BLUESLATE_BUTTON$
+        +Block MOSSY_BLUESLATE_PRESSURE_PLATE$
+        +BlockFamily MOSSY_BLUESLATE_FAMILY$
+        +Block OVERGROWN_BLUESLATE$
+        +Block OVERGROWN_BLUESLATE_STAIRS$
+        +Block OVERGROWN_BLUESLATE_SLAB$
+        +Block OVERGROWN_BLUESLATE_WALL$
+        +Block OVERGROWN_BLUESLATE_BUTTON$
+        +Block OVERGROWN_BLUESLATE_PRESSURE_PLATE$
+        +BlockFamily OVERGROWN_BLUESLATE_FAMILY$
+        -registerBlock(String, Block) Block$
+        -registerBlockItem(String, Block) Item$
+        +registerModStoneBlocks() void$
+    }
+
+    class ModOreType {
+        <<enumeration>>
+        TIN_ORE
+        SILVER_ORE
+        -Block stoneOre
+        -Block deepslateOre
+        -Block andesiteOre
+        -Block dioriteOre
+        -Block graniteOre
+        -Block blueslateOre
+        -Block chalkOre
+        -Item oreDrop
+        -Block oreDropBlock
+        -UniformLootNumberProvider dropRange
+        -int miningLevel
+        -Item nugget
+        -Item smeltingItem
+        -Block smeltingBlock
+        +ModOreType(Block, Block, Block, Block, Block, Block, Block, Item, Block, UniformLootNumberProvider, int, Item, Item, Block)
+        +getBlockItemGroupList() List~ItemStack~
+        +getItemItemGroupList() List~ItemStack~
+        +getStoneOre() Block
+        +getDeepslateOre() Block
+        +getOreDrop() Item
+        +getOreDropBlock() Block
+        +getDropRange() UniformLootNumberProvider
+        +getMiningLevel() int
+        +getNugget() Item
+        +getSmeltingItem() Item
+        +getSmeltingBlock() Block
+    }
+
+    class PineSaplingGenerator {
+        +getConfiguredFeatures() RegistryEntry~ConfiguredFeature~Block, ?~~$
+    }
+
     %% Inheritance
     TomatoCropBlock --|> CropBlock : extends
     LettuceCropBlock --|> CropBlock : extends
@@ -210,7 +371,11 @@ classDiagram
     ModBlocks --> TomatoCropBlock : contains
     ModBlocks --> LettuceCropBlock : contains
     ModBlocks --> CornCropBlock : contains
+    ModBlocks --> ModWoodBlocks : uses
+    ModBlocks --> ModStoneBlocks : uses
     ModWoodType --> ModWoodBlocks : uses
+    ModStoneType --> ModStoneBlocks : uses
+    PineSaplingGenerator --> ModWoodBlocks : generates
 ```
 
 ## 4. Item System & Materials
@@ -222,6 +387,13 @@ classDiagram
     class ModToolMaterial {
         <<enumeration>>
         BRONZE
+        -int miningLevel
+        -int itemDurability
+        -float miningSpeed
+        -float attackDamage
+        -int enchantability
+        -Supplier~Ingredient~ repairIngredient
+        +ModToolMaterial(int, int, float, float, int, Supplier~Ingredient~)
         +getDurability() int
         +getMiningSpeedMultiplier() float
         +getAttackDamage() float
@@ -233,6 +405,16 @@ classDiagram
     class ModArmorMaterial {
         <<enumeration>>
         BRONZE
+        -String name
+        -int durabilityMultiplier
+        -int[] protectionAmounts
+        -int enchantability
+        -SoundEvent equipSound
+        -float toughness
+        -float knockbackResistance
+        -Supplier~Ingredient~ repairIngredient
+        -int[] BASE_DURABILITY$
+        +ModArmorMaterial(String, int, int[], int, SoundEvent, float, float, Supplier~Ingredient~)
         +getName() String
         +getDurability(ArmorItem.Type) int
         +getProtection(ArmorItem.Type) int
@@ -252,9 +434,36 @@ classDiagram
 
     class ModBoats {
         +Identifier PINE_BOAT_ID$
-        +RegistryKey~TerraformBoatType~ PINE_BOAT_KEY$
         +Identifier PINE_CHEST_BOAT_ID$
+        +RegistryKey~TerraformBoatType~ PINE_BOAT_KEY$
         +registerBoats() void$
+    }
+
+    class ModGearType {
+        <<enumeration>>
+        BRONZE
+        -Item material
+        -Item helmet
+        -Item chestplate
+        -Item leggings
+        -Item boots
+        -Item sword
+        -Item axe
+        -Item pickaxe
+        -Item shovel
+        -Item hoe
+        +ModGearType(Item, Item, Item, Item, Item, Item, Item, Item, Item, Item)
+        +getGearItemGroupList() List~ItemStack~
+        +getMaterial() Item
+        +getHelmet() Item
+        +getChestplate() Item
+        +getLeggings() Item
+        +getBoots() Item
+        +getSword() Item
+        +getAxe() Item
+        +getPickaxe() Item
+        +getShovel() Item
+        +getHoe() Item
     }
 
     %% Interface implementations
@@ -266,6 +475,9 @@ classDiagram
     ModItems --> ModArmorMaterial : uses
     ModItems --> ModFoodComponents : uses
     ModItems --> ModBoats : uses
+    ModItems --> ModGearType : uses
+    ModGearType --> ModArmorMaterial : uses
+    ModGearType --> ModToolMaterial : uses
 ```
 
 ## 5. World Generation
@@ -278,11 +490,23 @@ classDiagram
         +generateModWorldGen() void$
     }
 
+    class ModOreGeneration {
+        +generateOres() void$
+    }
+
+    class ModTreeGeneration {
+        +generateTrees() void$
+    }
+
     class ModConfiguredFeatures {
+        +RegistryKey~ConfiguredFeature~ TIN_ORE_KEY$
+        +RegistryKey~ConfiguredFeature~ PINE_KEY$
         +boostrap(Registerable) void$
     }
 
     class ModPlacedFeatures {
+        +RegistryKey~PlacedFeature~ TIN_ORE$
+        +RegistryKey~PlacedFeature~ PINE_PLACED_KEY$
         +boostrap(Registerable) void$
     }
 
@@ -297,7 +521,11 @@ classDiagram
     %% Relationships
     ModWorldGeneration --> ModConfiguredFeatures : uses
     ModWorldGeneration --> ModPlacedFeatures : uses
+    ModWorldGeneration --> ModOreGeneration : uses
+    ModWorldGeneration --> ModTreeGeneration : uses
     ModConfiguredFeatures --> ModPlacedFeatures : uses
+    ModOreGeneration --> ModPlacedFeatures : uses
+    ModTreeGeneration --> ModPlacedFeatures : uses
 ```
 
 ## 6. Data Generation System
@@ -307,24 +535,66 @@ classDiagram
     direction TB
     
     class ModModelProvider {
+        +ModModelProvider(FabricDataOutput)
+        +generateBlockStateModels(BlockStateModelGenerator) void
+        +generateItemModels(ItemModelGenerator) void
+        -generateModStoneTypeBlockModels(BlockStateModelGenerator) void
+        -generateModWoodTypesBlockModels(BlockStateModelGenerator) void
+        -generateModOreTypeBlockModels(BlockStateModelGenerator) void
+        -generateModPillarTypeBlockModels(BlockStateModelGenerator) void
+        -generateGearItemModels(ItemModelGenerator, ModGearType) void
     }
 
     class ModBlockTagProvider {
+        +ModBlockTagProvider(FabricDataOutput, CompletableFuture)
+        #configure(RegistryWrapper.WrapperLookup) void
+        -generateStoneTypeBlockTags(ModStoneType) void
+        -generateWoodTypeBlockTags(ModWoodType) void
+        -generateOreTypeBlockTags(ModOreType) void
     }
 
     class ModItemTagProvider {
+        +ModItemTagProvider(FabricDataOutput, CompletableFuture, FabricTagProvider.BlockTagProvider)
+        #configure(RegistryWrapper.WrapperLookup) void
+        -generateStoneTypeItemTags(ModStoneType) void
+        -generateWoodTypeItemTags(ModWoodType) void
+        -generateOreTypeItemTags(ModOreType) void
     }
 
     class ModLootTableProvider {
+        +ModLootTableProvider(FabricDataOutput)
+        +generate(BiConsumer) void
+        -addDrop(Block) LootTable.Builder
+        -cropDrops(Block, Item, Item, LootCondition.Builder) LootTable.Builder
+        -oreDrops(Block, Item) LootTable.Builder
     }
 
     class ModRecipeProvider {
+        +ModRecipeProvider(FabricDataOutput)
+        +generate(RecipeExporter) void
+        -offerWoodTypeRecipes(RecipeExporter, ModWoodType) void
+        -offerStoneTypeRecipes(RecipeExporter, ModStoneType) void
+        -offerOreTypeRecipes(RecipeExporter, ModOreType) void
+        -offerGearTypeRecipes(RecipeExporter, ModGearType) void
+        -createSlabRecipe(RecipeCategory, ItemConvertible, Ingredient) ShapedRecipeJsonBuilder
+        -createStairsRecipe(ItemConvertible, Ingredient) ShapedRecipeJsonBuilder
     }
 
     class ModWorldGenerator {
+        +ModWorldGenerator(FabricDataOutput)
+        +buildRegistry(RegistryBuilder) void
     }
 
     class ModEnUsLangProvider {
+        +ModEnUsLangProvider(FabricDataOutput)
+        +generateTranslations(TranslationBuilder) void
+        -generateBlockTranslations(TranslationBuilder) void
+        -generateItemTranslations(TranslationBuilder) void
+        -generateEntityTranslations(TranslationBuilder) void
+        -generateSubtitleTranslations(TranslationBuilder) void
+        -generateStoneTypeTranslations(TranslationBuilder, ModStoneType) void
+        -generateWoodTypeTranslations(TranslationBuilder, ModWoodType) void
+        -generateOreTypeTranslations(TranslationBuilder, ModOreType) void
     }
 
     %% Usage relationships
