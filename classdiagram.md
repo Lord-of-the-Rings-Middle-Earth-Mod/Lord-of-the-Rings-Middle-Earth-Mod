@@ -310,60 +310,6 @@ classDiagram
     LordOfTheRingsMiddleEarthModDataGenerator --> ModPlacedFeatures : uses
     LordOfTheRingsMiddleEarthModDataGenerator --> ModBiomes : uses
     LordOfTheRingsMiddleEarthModDataGenerator --> ModDimensions : uses
-
-    %% Package Organization
-    namespace "me.anedhel.lotr" {
-        class LordOfTheRingsMiddleEarthMod
-        class LordOfTheRingsMiddleEarthModClient
-        class LordOfTheRingsMiddleEarthModDataGenerator
-    }
-
-    namespace "me.anedhel.lotr.block" {
-        class ModBlocks
-        class ModWoodType
-        class ModWoodBlocks
-        class ModStoneType
-        class TomatoCropBlock
-        class LettuceCropBlock
-        class CornCropBlock
-    }
-
-    namespace "me.anedhel.lotr.item" {
-        class ModItems
-        class ModItemGroups
-        class ModToolMaterial
-        class ModArmorMaterial
-        class ModFoodComponents
-    }
-
-    namespace "me.anedhel.lotr.entity" {
-        class ModEntities
-        class NPCEntity
-        class ModBoats
-        class HobbitEntity
-        class HobbitVariant
-        class HobbitModel
-        class HobbitRenderer
-        class ModModelLayers
-    }
-
-    namespace "me.anedhel.lotr.world" {
-        class ModWorldGeneration
-        class ModConfiguredFeatures
-        class ModPlacedFeatures
-        class ModBiomes
-        class ModDimensions
-    }
-
-    namespace "me.anedhel.lotr.datagen" {
-        class ModModelProvider
-        class ModBlockTagProvider
-        class ModItemTagProvider
-        class ModLootTableProvider
-        class ModRecipeProvider
-        class ModWorldGenerator
-        class ModEnUsLangProvider
-    }
 ```
 
 ## Package Overview
