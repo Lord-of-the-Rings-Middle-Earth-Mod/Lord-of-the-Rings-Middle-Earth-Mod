@@ -194,321 +194,321 @@ public class ModStoneBlocks {
 
 	public static final Block MOSSY_COBBLED_BLUESLATE_BRICKS = registerBlock("mossy_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block MOSSY_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_cobbled_blueslate_brick_stairs",
+	public static final Block MOSSY_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("mossy_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(MOSSY_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block MOSSY_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("mossy_cobbled_blueslate_brick_slab",
+	public static final Block MOSSY_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("mossy_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block MOSSY_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("mossy_cobbled_blueslate_brick_wall",
+	public static final Block MOSSY_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("mossy_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily MOSSY_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily MOSSY_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(MOSSY_COBBLED_BLUESLATE_BRICKS)
-					.stairs(MOSSY_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(MOSSY_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(MOSSY_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(MOSSY_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(MOSSY_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(MOSSY_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_mossy_cobbled_brick").build();
 	public static final Block CRACKED_MOSSY_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_mossy_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_MOSSY_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_mossy_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_MOSSY_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_mossy_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_MOSSY_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_MOSSY_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_mossy_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_MOSSY_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_mossy_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_MOSSY_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_mossy_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_MOSSY_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_mossy_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_MOSSY_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_MOSSY_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_MOSSY_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_MOSSY_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_MOSSY_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_MOSSY_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_MOSSY_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_MOSSY_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_MOSSY_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_mossy_cobbled_brick").build();
 
 	public static final Block OVERGROWN_COBBLED_BLUESLATE_BRICKS = registerBlock("overgrown_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block OVERGROWN_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_cobbled_blueslate_brick_stairs",
+	public static final Block OVERGROWN_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("overgrown_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(OVERGROWN_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block OVERGROWN_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_cobbled_blueslate_brick_slab",
+	public static final Block OVERGROWN_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("overgrown_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block OVERGROWN_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("overgrown_cobbled_blueslate_brick_wall",
+	public static final Block OVERGROWN_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("overgrown_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily OVERGROWN_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily OVERGROWN_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(OVERGROWN_COBBLED_BLUESLATE_BRICKS)
-					.stairs(OVERGROWN_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(OVERGROWN_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(OVERGROWN_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(OVERGROWN_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(OVERGROWN_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(OVERGROWN_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_overgrown_cobbled_brick").build();
 	public static final Block CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_overgrown_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_overgrown_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_overgrown_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_overgrown_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_overgrown_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_overgrown_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_overgrown_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_OVERGROWN_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_overgrown_cobbled_brick").build();
 
 	public static final Block BRONZE_COBBLED_BLUESLATE_BRICKS = registerBlock("bronze_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("bronze_cobbled_blueslate_brick_stairs",
+	public static final Block BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("bronze_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(BRONZE_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block BRONZE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("bronze_cobbled_blueslate_brick_slab",
+	public static final Block BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("bronze_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block BRONZE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("bronze_cobbled_blueslate_brick_wall",
+	public static final Block BRONZE_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("bronze_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily BRONZE_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily BRONZE_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(BRONZE_COBBLED_BLUESLATE_BRICKS)
-					.stairs(BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(BRONZE_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(BRONZE_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(BRONZE_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_bronze_cobbled_brick").build();
 	public static final Block CRACKED_BRONZE_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_bronze_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_bronze_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_bronze_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_BRONZE_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_BRONZE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_bronze_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_bronze_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_BRONZE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_bronze_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_BRONZE_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_bronze_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_BRONZE_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_BRONZE_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_BRONZE_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_BRONZE_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_BRONZE_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_BRONZE_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_bronze_cobbled_brick").build();
 
 	public static final Block MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS = registerBlock("mossy_bronze_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_bronze_cobbled_blueslate_brick_stairs",
+	public static final Block MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("mossy_bronze_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("mossy_bronze_cobbled_blueslate_brick_slab",
+	public static final Block MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("mossy_bronze_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("mossy_bronze_cobbled_blueslate_brick_wall",
+	public static final Block MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("mossy_bronze_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS)
-					.stairs(MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_mossy_bronze_cobbled_brick").build();
 	public static final Block CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_mossy_bronze_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_mossy_bronze_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_mossy_bronze_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_mossy_bronze_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_mossy_bronze_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_mossy_bronze_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_mossy_bronze_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_MOSSY_BRONZE_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_mossy_bronze_cobbled_brick").build();
 
 	public static final Block OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS = registerBlock("overgrown_bronze_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_bronze_cobbled_blueslate_brick_stairs",
+	public static final Block OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("overgrown_bronze_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_bronze_cobbled_blueslate_brick_slab",
+	public static final Block OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("overgrown_bronze_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("overgrown_bronze_cobbled_blueslate_brick_wall",
+	public static final Block OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("overgrown_bronze_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS)
-					.stairs(OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_overgrown_bronze_cobbled_brick").build();
 	public static final Block CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_overgrown_bronze_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_overgrown_bronze_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_overgrown_bronze_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_overgrown_bronze_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_overgrown_bronze_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_overgrown_bronze_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_overgrown_bronze_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_OVERGROWN_BRONZE_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_overgrown_bronze_cobbled_brick").build();
 
 	public static final Block SILVER_COBBLED_BLUESLATE_BRICKS = registerBlock("silver_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block SILVER_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("silver_cobbled_blueslate_brick_stairs",
+	public static final Block SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("silver_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(SILVER_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block SILVER_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("silver_cobbled_blueslate_brick_slab",
+	public static final Block SILVER_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("silver_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block SILVER_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("silver_cobbled_blueslate_brick_wall",
+	public static final Block SILVER_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("silver_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily SILVER_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily SILVER_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(SILVER_COBBLED_BLUESLATE_BRICKS)
-					.stairs(SILVER_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(SILVER_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(SILVER_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(SILVER_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(SILVER_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_silver_cobbled_brick").build();
 	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_silver_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_silver_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_silver_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_silver_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_silver_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_silver_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_silver_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_silver_cobbled_brick").build();
 
 	public static final Block MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS = registerBlock("mossy_silver_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_silver_cobbled_blueslate_brick_stairs",
+	public static final Block MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("mossy_silver_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("mossy_silver_cobbled_blueslate_brick_slab",
+	public static final Block MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("mossy_silver_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("mossy_silver_cobbled_blueslate_brick_wall",
+	public static final Block MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("mossy_silver_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS)
-					.stairs(MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_mossy_silver_cobbled_brick").build();
 	public static final Block CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_mossy_silver_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_mossy_silver_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_mossy_silver_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_mossy_silver_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_mossy_silver_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_mossy_silver_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_mossy_silver_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_MOSSY_SILVER_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_mossy_silver_cobbled_brick").build();
 
 	public static final Block OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS = registerBlock("overgrown_silver_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_silver_cobbled_blueslate_brick_stairs",
+	public static final Block OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("overgrown_silver_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_silver_cobbled_blueslate_brick_slab",
+	public static final Block OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("overgrown_silver_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("overgrown_silver_cobbled_blueslate_brick_wall",
+	public static final Block OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("overgrown_silver_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS)
-					.stairs(OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_overgrown_silver_cobbled_brick").build();
 	public static final Block CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_overgrown_silver_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_overgrown_silver_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_overgrown_silver_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_overgrown_silver_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_overgrown_silver_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_overgrown_silver_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_overgrown_silver_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_OVERGROWN_SILVER_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_overgrown_silver_cobbled_brick").build();
 
 	public static final Block GOLD_COBBLED_BLUESLATE_BRICKS = registerBlock("gold_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block GOLD_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("gold_cobbled_blueslate_brick_stairs",
+	public static final Block GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("gold_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(GOLD_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block GOLD_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("gold_cobbled_blueslate_brick_slab",
+	public static final Block GOLD_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("gold_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block GOLD_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("gold_cobbled_blueslate_brick_wall",
+	public static final Block GOLD_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("gold_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily GOLD_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily GOLD_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(GOLD_COBBLED_BLUESLATE_BRICKS)
-					.stairs(GOLD_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(GOLD_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(GOLD_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(GOLD_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(GOLD_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_gold_cobbled_brick").build();
 	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_gold_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_gold_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_gold_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_gold_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_gold_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_gold_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_gold_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_gold_cobbled_brick").build();
 
 	public static final Block MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS = registerBlock("mossy_gold_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_gold_cobbled_blueslate_brick_stairs",
+	public static final Block MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("mossy_gold_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("mossy_gold_cobbled_blueslate_brick_slab",
+	public static final Block MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("mossy_gold_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("mossy_gold_cobbled_blueslate_brick_wall",
+	public static final Block MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("mossy_gold_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS)
-					.stairs(MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_mossy_gold_cobbled_brick").build();
 	public static final Block CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_mossy_gold_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_mossy_gold_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_mossy_gold_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_mossy_gold_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_mossy_gold_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_mossy_gold_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_mossy_gold_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_MOSSY_GOLD_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_mossy_gold_cobbled_brick").build();
 
 	public static final Block OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS = registerBlock("overgrown_gold_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_gold_cobbled_blueslate_brick_stairs",
+	public static final Block OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("overgrown_gold_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_gold_cobbled_blueslate_brick_slab",
+	public static final Block OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("overgrown_gold_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("overgrown_gold_cobbled_blueslate_brick_wall",
+	public static final Block OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("overgrown_gold_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS)
-					.stairs(OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_overgrown_gold_cobbled_brick").build();
 	public static final Block CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_overgrown_gold_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_overgrown_gold_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_overgrown_gold_cobbled_blueslate_bricks_stairs",
 			new StairsBlock(CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
-	public static final Block CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_overgrown_gold_cobbled_blueslate_brick_slab",
+	public static final Block CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_overgrown_gold_cobbled_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
-	public static final Block CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_overgrown_gold_cobbled_blueslate_brick_wall",
+	public static final Block CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_overgrown_gold_cobbled_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_WALL)));
-	public static final BlockFamily CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY =
+	public static final BlockFamily CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_FAMILY =
 			BlockFamilies.register(CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS)
-					.stairs(CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS)
-					.slab(CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_SLAB)
-					.wall(CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_WALL)
+					.stairs(CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_STAIRS)
+					.slab(CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_SLAB)
+					.wall(CRACKED_OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICKS_WALL)
 					.group("stone").unlockCriterionName("has_cracked_overgrown_gold_cobbled_brick").build();
 
     public static final Block SMOOTH_BLUESLATE = registerBlock("smooth_blueslate",
@@ -630,354 +630,354 @@ public class ModStoneBlocks {
 			"cracked_overgrown_gold_smooth_blueslate_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.SMOOTH_STONE_SLAB)));
 
-    public static final Block BLUESLATE_BRICK = registerBlock("blueslate_brick",
+    public static final Block BLUESLATE_BRICKS = registerBlock("blueslate_bricks",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-    public static final Block BLUESLATE_BRICK_STAIRS = registerBlock("blueslate_brick_stairs",
-            new StairsBlock(BLUESLATE_BRICK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-    public static final Block BLUESLATE_BRICK_SLAB = registerBlock("blueslate_brick_slab",
+    public static final Block BLUESLATE_BRICKS_STAIRS = registerBlock("blueslate_bricks_stairs",
+            new StairsBlock(BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+    public static final Block BLUESLATE_BRICKS_SLAB = registerBlock("blueslate_bricks_slab",
             new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-    public static final Block BLUESLATE_BRICK_WALL = registerBlock("blueslate_brick_wall",
+    public static final Block BLUESLATE_BRICKS_WALL = registerBlock("blueslate_bricks_wall",
             new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-    public static final Block CHISELED_BLUESLATE_BRICK = registerBlock("chiseled_blueslate_brick",
+    public static final Block CHISELED_BLUESLATE_BRICKS = registerBlock("chiseled_blueslate_bricks",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-    public static final BlockFamily BLUESLATE_BRICK_FAMILY = BlockFamilies.register(BLUESLATE_BRICK)
-            .stairs(BLUESLATE_BRICK_STAIRS)
-            .slab(BLUESLATE_BRICK_SLAB)
-            .wall(BLUESLATE_BRICK_WALL)
-            .chiseled(CHISELED_BLUESLATE_BRICK)
+    public static final BlockFamily BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(BLUESLATE_BRICKS)
+            .stairs(BLUESLATE_BRICKS_STAIRS)
+            .slab(BLUESLATE_BRICKS_SLAB)
+            .wall(BLUESLATE_BRICKS_WALL)
+            .chiseled(CHISELED_BLUESLATE_BRICKS)
             .group("stone").unlockCriterionName("has_brick").build();
-	public static final Block CRACKED_BLUESLATE_BRICK = registerBlock("cracked_blueslate_brick",
+	public static final Block CRACKED_BLUESLATE_BRICKS = registerBlock("cracked_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_BLUESLATE_BRICK.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_blueslate_brick_slab",
+	public static final Block CRACKED_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_blueslate_bricks_stairs",
+			new StairsBlock(CRACKED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
+	public static final Block CRACKED_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_BLUESLATE_BRICK_WALL = registerBlock("cracked_blueslate_brick_wall",
+	public static final Block CRACKED_BLUESLATE_BRICKS_WALL = registerBlock("cracked_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_BLUESLATE_BRICK)
-			.stairs(CRACKED_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_BLUESLATE_BRICK_WALL)
+	public static final BlockFamily CRACKED_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_BLUESLATE_BRICKS)
+			.stairs(CRACKED_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_BLUESLATE_BRICKS_WALL)
 			.group("stone").unlockCriterionName("has_cracked_brick").build();
 
-	public static final Block MOSSY_BLUESLATE_BRICK = registerBlock("mossy_blueslate_brick",
+	public static final Block MOSSY_BLUESLATE_BRICKS = registerBlock("mossy_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block MOSSY_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_blueslate_brick_stairs",
-			new StairsBlock(MOSSY_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block MOSSY_BLUESLATE_BRICKS_STAIRS = registerBlock("mossy_blueslate_bricks_stairs",
+			new StairsBlock(MOSSY_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block MOSSY_BLUESLATE_BRICK_SLAB = registerBlock("mossy_blueslate_brick_slab",
+	public static final Block MOSSY_BLUESLATE_BRICKS_SLAB = registerBlock("mossy_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block MOSSY_BLUESLATE_BRICK_WALL = registerBlock("mossy_blueslate_brick_wall",
+	public static final Block MOSSY_BLUESLATE_BRICKS_WALL = registerBlock("mossy_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily MOSSY_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_BLUESLATE_BRICK)
-			.stairs(MOSSY_BLUESLATE_BRICK_STAIRS)
-			.slab(MOSSY_BLUESLATE_BRICK_SLAB)
-			.wall(MOSSY_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_mossy_blueslate_brick").build();
-	public static final Block CRACKED_MOSSY_BLUESLATE_BRICK = registerBlock("cracked_mossy_blueslate_brick",
+	public static final BlockFamily MOSSY_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(MOSSY_BLUESLATE_BRICKS)
+			.stairs(MOSSY_BLUESLATE_BRICKS_STAIRS)
+			.slab(MOSSY_BLUESLATE_BRICKS_SLAB)
+			.wall(MOSSY_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_mossy_blueslate_bricks").build();
+	public static final Block CRACKED_MOSSY_BLUESLATE_BRICKS = registerBlock("cracked_mossy_blueslate_brick",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_MOSSY_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_mossy_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_MOSSY_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_MOSSY_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_mossy_blueslate_brick_stairs",
+			new StairsBlock(CRACKED_MOSSY_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_MOSSY_BLUESLATE_BRICK_SLAB = registerBlock("cracked_mossy_blueslate_brick_slab",
+	public static final Block CRACKED_MOSSY_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_mossy_blueslate_brick_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_MOSSY_BLUESLATE_BRICK_WALL = registerBlock("cracked_mossy_blueslate_brick_wall",
+	public static final Block CRACKED_MOSSY_BLUESLATE_BRICKS_WALL = registerBlock("cracked_mossy_blueslate_brick_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_MOSSY_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_MOSSY_BLUESLATE_BRICK)
-			.stairs(CRACKED_MOSSY_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_MOSSY_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_MOSSY_BLUESLATE_BRICK_WALL)
+	public static final BlockFamily CRACKED_MOSSY_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_MOSSY_BLUESLATE_BRICKS)
+			.stairs(CRACKED_MOSSY_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_MOSSY_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_MOSSY_BLUESLATE_BRICKS_WALL)
 			.group("stone").unlockCriterionName("has_cracked_mossy_blueslate_brick").build();
 
-	public static final Block OVERGROWN_BLUESLATE_BRICK = registerBlock("overgrown_blueslate_brick",
+	public static final Block OVERGROWN_BLUESLATE_BRICKS = registerBlock("overgrown_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block OVERGROWN_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_blueslate_brick_stairs",
-			new StairsBlock(OVERGROWN_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block OVERGROWN_BLUESLATE_BRICKS_STAIRS = registerBlock("overgrown_blueslate_bricks_stairs",
+			new StairsBlock(OVERGROWN_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block OVERGROWN_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_blueslate_brick_slab",
+	public static final Block OVERGROWN_BLUESLATE_BRICKS_SLAB = registerBlock("overgrown_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block OVERGROWN_BLUESLATE_BRICK_WALL = registerBlock("overgrown_blueslate_brick_wall",
+	public static final Block OVERGROWN_BLUESLATE_BRICKS_WALL = registerBlock("overgrown_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily OVERGROWN_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_BLUESLATE_BRICK)
-			.stairs(OVERGROWN_BLUESLATE_BRICK_STAIRS)
-			.slab(OVERGROWN_BLUESLATE_BRICK_SLAB)
-			.wall(OVERGROWN_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_overgrown_blueslate_brick").build();
-	public static final Block CRACKED_OVERGROWN_BLUESLATE_BRICK = registerBlock("cracked_overgrown_blueslate_brick",
+	public static final BlockFamily OVERGROWN_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(OVERGROWN_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_BLUESLATE_BRICKS_STAIRS)
+			.slab(OVERGROWN_BLUESLATE_BRICKS_SLAB)
+			.wall(OVERGROWN_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_overgrown_blueslate_bricks").build();
+	public static final Block CRACKED_OVERGROWN_BLUESLATE_BRICKS = registerBlock("cracked_overgrown_blueslate_brick",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_OVERGROWN_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_overgrown_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_OVERGROWN_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_OVERGROWN_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_overgrown_blueslate_brick_stairs",
+			new StairsBlock(CRACKED_OVERGROWN_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_OVERGROWN_BLUESLATE_BRICK_SLAB = registerBlock("cracked_overgrown_blueslate_brick_slab",
+	public static final Block CRACKED_OVERGROWN_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_overgrown_blueslate_brick_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_OVERGROWN_BLUESLATE_BRICK_WALL = registerBlock("cracked_overgrown_blueslate_brick_wall",
+	public static final Block CRACKED_OVERGROWN_BLUESLATE_BRICKS_WALL = registerBlock("cracked_overgrown_blueslate_brick_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_OVERGROWN_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_BLUESLATE_BRICK)
-			.stairs(CRACKED_OVERGROWN_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_OVERGROWN_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_OVERGROWN_BLUESLATE_BRICK_WALL)
+	public static final BlockFamily CRACKED_OVERGROWN_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_BLUESLATE_BRICKS)
+			.stairs(CRACKED_OVERGROWN_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_OVERGROWN_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_OVERGROWN_BLUESLATE_BRICKS_WALL)
 			.group("stone").unlockCriterionName("has_cracked_overgrown_blueslate_brick").build();
 
-	public static final Block BRONZE_BLUESLATE_BRICK = registerBlock("bronze_blueslate_brick",
+	public static final Block BRONZE_BLUESLATE_BRICKS = registerBlock("bronze_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block BRONZE_BLUESLATE_BRICK_STAIRS = registerBlock("bronze_blueslate_brick_stairs",
-			new StairsBlock(BRONZE_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block BRONZE_BLUESLATE_BRICKS_STAIRS = registerBlock("bronze_blueslate_bricks_stairs",
+			new StairsBlock(BRONZE_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block BRONZE_BLUESLATE_BRICK_SLAB = registerBlock("bronze_blueslate_brick_slab",
+	public static final Block BRONZE_BLUESLATE_BRICKS_SLAB = registerBlock("bronze_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block BRONZE_BLUESLATE_BRICK_WALL = registerBlock("bronze_blueslate_brick_wall",
+	public static final Block BRONZE_BLUESLATE_BRICKS_WALL = registerBlock("bronze_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(BRONZE_BLUESLATE_BRICK)
-			.stairs(BRONZE_BLUESLATE_BRICK_STAIRS)
-			.slab(BRONZE_BLUESLATE_BRICK_SLAB)
-			.wall(BRONZE_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_bronze_blueslate_brick").build();
-	public static final Block CRACKED_BRONZE_BLUESLATE_BRICK = registerBlock("cracked_bronze_blueslate_brick",
+	public static final BlockFamily BRONZE_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(BRONZE_BLUESLATE_BRICKS)
+			.stairs(BRONZE_BLUESLATE_BRICKS_STAIRS)
+			.slab(BRONZE_BLUESLATE_BRICKS_SLAB)
+			.wall(BRONZE_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_bronze_blueslate_bricks").build();
+	public static final Block CRACKED_BRONZE_BLUESLATE_BRICKS = registerBlock("cracked_bronze_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_BRONZE_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_bronze_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_BRONZE_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_BRONZE_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_bronze_blueslate_bricks_stairs",
+			new StairsBlock(CRACKED_BRONZE_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_BRONZE_BLUESLATE_BRICK_SLAB = registerBlock("cracked_bronze_blueslate_brick_slab",
+	public static final Block CRACKED_BRONZE_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_bronze_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_BRONZE_BLUESLATE_BRICK_WALL = registerBlock("cracked_bronze_blueslate_brick_wall",
+	public static final Block CRACKED_BRONZE_BLUESLATE_BRICKS_WALL = registerBlock("cracked_bronze_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_BRONZE_BLUESLATE_BRICK)
-			.stairs(CRACKED_BRONZE_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_BRONZE_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_BRONZE_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_cracked_bronze_blueslate_brick").build();
+	public static final BlockFamily CRACKED_BRONZE_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_BRONZE_BLUESLATE_BRICKS)
+			.stairs(CRACKED_BRONZE_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_BRONZE_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_BRONZE_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_bronze_blueslate_bricks").build();
 
-	public static final Block MOSSY_BRONZE_BLUESLATE_BRICK = registerBlock("mossy_bronze_blueslate_brick",
+	public static final Block MOSSY_BRONZE_BLUESLATE_BRICKS = registerBlock("mossy_bronze_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block MOSSY_BRONZE_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_bronze_blueslate_brick_stairs",
-			new StairsBlock(MOSSY_BRONZE_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block MOSSY_BRONZE_BLUESLATE_BRICKS_STAIRS = registerBlock("mossy_bronze_blueslate_bricks_stairs",
+			new StairsBlock(MOSSY_BRONZE_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block MOSSY_BRONZE_BLUESLATE_BRICK_SLAB = registerBlock("mossy_bronze_blueslate_brick_slab",
+	public static final Block MOSSY_BRONZE_BLUESLATE_BRICKS_SLAB = registerBlock("mossy_bronze_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block MOSSY_BRONZE_BLUESLATE_BRICK_WALL = registerBlock("mossy_bronze_blueslate_brick_wall",
+	public static final Block MOSSY_BRONZE_BLUESLATE_BRICKS_WALL = registerBlock("mossy_bronze_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily MOSSY_BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_BRONZE_BLUESLATE_BRICK)
-			.stairs(MOSSY_BRONZE_BLUESLATE_BRICK_STAIRS)
-			.slab(MOSSY_BRONZE_BLUESLATE_BRICK_SLAB)
-			.wall(MOSSY_BRONZE_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_mossy_bronze_blueslate_brick").build();
-	public static final Block CRACKED_MOSSY_BRONZE_BLUESLATE_BRICK = registerBlock("cracked_mossy_bronze_blueslate_brick",
+	public static final BlockFamily MOSSY_BRONZE_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(MOSSY_BRONZE_BLUESLATE_BRICKS)
+			.stairs(MOSSY_BRONZE_BLUESLATE_BRICKS_STAIRS)
+			.slab(MOSSY_BRONZE_BLUESLATE_BRICKS_SLAB)
+			.wall(MOSSY_BRONZE_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_mossy_bronze_blueslate_bricks").build();
+	public static final Block CRACKED_MOSSY_BRONZE_BLUESLATE_BRICKS = registerBlock("cracked_mossy_bronze_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_MOSSY_BRONZE_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_mossy_bronze_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_MOSSY_BRONZE_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_MOSSY_BRONZE_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_mossy_bronze_blueslate_bricks_stairs",
+			new StairsBlock(CRACKED_MOSSY_BRONZE_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_MOSSY_BRONZE_BLUESLATE_BRICK_SLAB = registerBlock("cracked_mossy_bronze_blueslate_brick_slab",
+	public static final Block CRACKED_MOSSY_BRONZE_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_mossy_bronze_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_MOSSY_BRONZE_BLUESLATE_BRICK_WALL = registerBlock("cracked_mossy_bronze_blueslate_brick_wall",
+	public static final Block CRACKED_MOSSY_BRONZE_BLUESLATE_BRICKS_WALL = registerBlock("cracked_mossy_bronze_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_MOSSY_BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_MOSSY_BRONZE_BLUESLATE_BRICK)
-			.stairs(CRACKED_MOSSY_BRONZE_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_MOSSY_BRONZE_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_MOSSY_BRONZE_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_cracked_mossy_bronze_blueslate_brick").build();
+	public static final BlockFamily CRACKED_MOSSY_BRONZE_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_MOSSY_BRONZE_BLUESLATE_BRICKS)
+			.stairs(CRACKED_MOSSY_BRONZE_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_MOSSY_BRONZE_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_MOSSY_BRONZE_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_mossy_bronze_blueslate_bricks").build();
 
-	public static final Block OVERGROWN_BRONZE_BLUESLATE_BRICK = registerBlock("overgrown_bronze_blueslate_brick",
+	public static final Block OVERGROWN_BRONZE_BLUESLATE_BRICKS = registerBlock("overgrown_bronze_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block OVERGROWN_BRONZE_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_bronze_blueslate_brick_stairs",
-			new StairsBlock(OVERGROWN_BRONZE_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block OVERGROWN_BRONZE_BLUESLATE_BRICKS_STAIRS = registerBlock("overgrown_bronze_blueslate_bricks_stairs",
+			new StairsBlock(OVERGROWN_BRONZE_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block OVERGROWN_BRONZE_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_bronze_blueslate_brick_slab",
+	public static final Block OVERGROWN_BRONZE_BLUESLATE_BRICKS_SLAB = registerBlock("overgrown_bronze_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block OVERGROWN_BRONZE_BLUESLATE_BRICK_WALL = registerBlock("overgrown_bronze_blueslate_brick_wall",
+	public static final Block OVERGROWN_BRONZE_BLUESLATE_BRICKS_WALL = registerBlock("overgrown_bronze_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily OVERGROWN_BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_BRONZE_BLUESLATE_BRICK)
-			.stairs(OVERGROWN_BRONZE_BLUESLATE_BRICK_STAIRS)
-			.slab(OVERGROWN_BRONZE_BLUESLATE_BRICK_SLAB)
-			.wall(OVERGROWN_BRONZE_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_overgrown_bronze_blueslate_brick").build();
-	public static final Block CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICK = registerBlock("cracked_overgrown_bronze_blueslate_brick",
+	public static final BlockFamily OVERGROWN_BRONZE_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(OVERGROWN_BRONZE_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_BRONZE_BLUESLATE_BRICKS_STAIRS)
+			.slab(OVERGROWN_BRONZE_BLUESLATE_BRICKS_SLAB)
+			.wall(OVERGROWN_BRONZE_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_overgrown_bronze_blueslate_bricks").build();
+	public static final Block CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICKS = registerBlock("cracked_overgrown_bronze_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_overgrown_bronze_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_overgrown_bronze_blueslate_bricks_stairs",
+			new StairsBlock(CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICK_SLAB = registerBlock("cracked_overgrown_bronze_blueslate_brick_slab",
+	public static final Block CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_overgrown_bronze_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICK_WALL = registerBlock("cracked_overgrown_bronze_blueslate_brick_wall",
+	public static final Block CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICKS_WALL = registerBlock("cracked_overgrown_bronze_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICK)
-			.stairs(CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_cracked_overgrown_bronze_blueslate_brick").build();
+	public static final BlockFamily CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICKS)
+			.stairs(CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_OVERGROWN_BRONZE_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_overgrown_bronze_blueslate_bricks").build();
 
-	public static final Block SILVER_BLUESLATE_BRICK = registerBlock("silver_blueslate_brick",
+	public static final Block SILVER_BLUESLATE_BRICKS = registerBlock("silver_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block SILVER_BLUESLATE_BRICK_STAIRS = registerBlock("silver_blueslate_brick_stairs",
-			new StairsBlock(SILVER_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block SILVER_BLUESLATE_BRICKS_STAIRS = registerBlock("silver_blueslate_bricks_stairs",
+			new StairsBlock(SILVER_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block SILVER_BLUESLATE_BRICK_SLAB = registerBlock("silver_blueslate_brick_slab",
+	public static final Block SILVER_BLUESLATE_BRICKS_SLAB = registerBlock("silver_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block SILVER_BLUESLATE_BRICK_WALL = registerBlock("silver_blueslate_brick_wall",
+	public static final Block SILVER_BLUESLATE_BRICKS_WALL = registerBlock("silver_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(SILVER_BLUESLATE_BRICK)
-			.stairs(SILVER_BLUESLATE_BRICK_STAIRS)
-			.slab(SILVER_BLUESLATE_BRICK_SLAB)
-			.wall(SILVER_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_silver_blueslate_brick").build();
-	public static final Block CRACKED_SILVER_BLUESLATE_BRICK = registerBlock("cracked_silver_blueslate_brick",
+	public static final BlockFamily SILVER_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(SILVER_BLUESLATE_BRICKS)
+			.stairs(SILVER_BLUESLATE_BRICKS_STAIRS)
+			.slab(SILVER_BLUESLATE_BRICKS_SLAB)
+			.wall(SILVER_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_silver_blueslate_bricks").build();
+	public static final Block CRACKED_SILVER_BLUESLATE_BRICKS = registerBlock("cracked_silver_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_SILVER_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_silver_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_SILVER_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_SILVER_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_silver_blueslate_bricks_stairs",
+			new StairsBlock(CRACKED_SILVER_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_SILVER_BLUESLATE_BRICK_SLAB = registerBlock("cracked_silver_blueslate_brick_slab",
+	public static final Block CRACKED_SILVER_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_silver_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_SILVER_BLUESLATE_BRICK_WALL = registerBlock("cracked_silver_blueslate_brick_wall",
+	public static final Block CRACKED_SILVER_BLUESLATE_BRICKS_WALL = registerBlock("cracked_silver_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_SILVER_BLUESLATE_BRICK)
-			.stairs(CRACKED_SILVER_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_SILVER_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_SILVER_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_cracked_silver_blueslate_brick").build();
+	public static final BlockFamily CRACKED_SILVER_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_SILVER_BLUESLATE_BRICKS)
+			.stairs(CRACKED_SILVER_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_SILVER_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_SILVER_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_silver_blueslate_bricks").build();
 
-	public static final Block MOSSY_SILVER_BLUESLATE_BRICK = registerBlock("mossy_silver_blueslate_brick",
+	public static final Block MOSSY_SILVER_BLUESLATE_BRICKS = registerBlock("mossy_silver_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block MOSSY_SILVER_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_silver_blueslate_brick_stairs",
-			new StairsBlock(MOSSY_SILVER_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block MOSSY_SILVER_BLUESLATE_BRICKS_STAIRS = registerBlock("mossy_silver_blueslate_bricks_stairs",
+			new StairsBlock(MOSSY_SILVER_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block MOSSY_SILVER_BLUESLATE_BRICK_SLAB = registerBlock("mossy_silver_blueslate_brick_slab",
+	public static final Block MOSSY_SILVER_BLUESLATE_BRICKS_SLAB = registerBlock("mossy_silver_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block MOSSY_SILVER_BLUESLATE_BRICK_WALL = registerBlock("mossy_silver_blueslate_brick_wall",
+	public static final Block MOSSY_SILVER_BLUESLATE_BRICKS_WALL = registerBlock("mossy_silver_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily MOSSY_SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_SILVER_BLUESLATE_BRICK)
-			.stairs(MOSSY_SILVER_BLUESLATE_BRICK_STAIRS)
-			.slab(MOSSY_SILVER_BLUESLATE_BRICK_SLAB)
-			.wall(MOSSY_SILVER_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_mossy_silver_blueslate_brick").build();
-	public static final Block CRACKED_MOSSY_SILVER_BLUESLATE_BRICK = registerBlock("cracked_mossy_silver_blueslate_brick",
+	public static final BlockFamily MOSSY_SILVER_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(MOSSY_SILVER_BLUESLATE_BRICKS)
+			.stairs(MOSSY_SILVER_BLUESLATE_BRICKS_STAIRS)
+			.slab(MOSSY_SILVER_BLUESLATE_BRICKS_SLAB)
+			.wall(MOSSY_SILVER_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_mossy_silver_blueslate_bricks").build();
+	public static final Block CRACKED_MOSSY_SILVER_BLUESLATE_BRICKS = registerBlock("cracked_mossy_silver_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_MOSSY_SILVER_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_mossy_silver_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_MOSSY_SILVER_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_MOSSY_SILVER_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_mossy_silver_blueslate_bricks_stairs",
+			new StairsBlock(CRACKED_MOSSY_SILVER_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_MOSSY_SILVER_BLUESLATE_BRICK_SLAB = registerBlock("cracked_mossy_silver_blueslate_brick_slab",
+	public static final Block CRACKED_MOSSY_SILVER_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_mossy_silver_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_MOSSY_SILVER_BLUESLATE_BRICK_WALL = registerBlock("cracked_mossy_silver_blueslate_brick_wall",
+	public static final Block CRACKED_MOSSY_SILVER_BLUESLATE_BRICKS_WALL = registerBlock("cracked_mossy_silver_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_MOSSY_SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_MOSSY_SILVER_BLUESLATE_BRICK)
-			.stairs(CRACKED_MOSSY_SILVER_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_MOSSY_SILVER_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_MOSSY_SILVER_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_cracked_mossy_silver_blueslate_brick").build();
+	public static final BlockFamily CRACKED_MOSSY_SILVER_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_MOSSY_SILVER_BLUESLATE_BRICKS)
+			.stairs(CRACKED_MOSSY_SILVER_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_MOSSY_SILVER_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_MOSSY_SILVER_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_mossy_silver_blueslate_bricks").build();
 
-	public static final Block OVERGROWN_SILVER_BLUESLATE_BRICK = registerBlock("overgrown_silver_blueslate_brick",
+	public static final Block OVERGROWN_SILVER_BLUESLATE_BRICKS = registerBlock("overgrown_silver_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block OVERGROWN_SILVER_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_silver_blueslate_brick_stairs",
-			new StairsBlock(OVERGROWN_SILVER_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block OVERGROWN_SILVER_BLUESLATE_BRICKS_STAIRS = registerBlock("overgrown_silver_blueslate_bricks_stairs",
+			new StairsBlock(OVERGROWN_SILVER_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block OVERGROWN_SILVER_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_silver_blueslate_brick_slab",
+	public static final Block OVERGROWN_SILVER_BLUESLATE_BRICKS_SLAB = registerBlock("overgrown_silver_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block OVERGROWN_SILVER_BLUESLATE_BRICK_WALL = registerBlock("overgrown_silver_blueslate_brick_wall",
+	public static final Block OVERGROWN_SILVER_BLUESLATE_BRICKS_WALL = registerBlock("overgrown_silver_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily OVERGROWN_SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_SILVER_BLUESLATE_BRICK)
-			.stairs(OVERGROWN_SILVER_BLUESLATE_BRICK_STAIRS)
-			.slab(OVERGROWN_SILVER_BLUESLATE_BRICK_SLAB)
-			.wall(OVERGROWN_SILVER_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_overgrown_silver_blueslate_brick").build();
-	public static final Block CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICK = registerBlock("cracked_overgrown_silver_blueslate_brick",
+	public static final BlockFamily OVERGROWN_SILVER_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(OVERGROWN_SILVER_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_SILVER_BLUESLATE_BRICKS_STAIRS)
+			.slab(OVERGROWN_SILVER_BLUESLATE_BRICKS_SLAB)
+			.wall(OVERGROWN_SILVER_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_overgrown_silver_blueslate_bricks").build();
+	public static final Block CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICKS = registerBlock("cracked_overgrown_silver_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_overgrown_silver_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_overgrown_silver_blueslate_bricks_stairs",
+			new StairsBlock(CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICK_SLAB = registerBlock("cracked_overgrown_silver_blueslate_brick_slab",
+	public static final Block CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_overgrown_silver_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICK_WALL = registerBlock("cracked_overgrown_silver_blueslate_brick_wall",
+	public static final Block CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICKS_WALL = registerBlock("cracked_overgrown_silver_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICK)
-			.stairs(CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_cracked_overgrown_silver_blueslate_brick").build();
+	public static final BlockFamily CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICKS)
+			.stairs(CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_OVERGROWN_SILVER_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_overgrown_silver_blueslate_bricks").build();
 
-	public static final Block GOLD_BLUESLATE_BRICK = registerBlock("gold_blueslate_brick",
+	public static final Block GOLD_BLUESLATE_BRICKS = registerBlock("gold_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block GOLD_BLUESLATE_BRICK_STAIRS = registerBlock("gold_blueslate_brick_stairs",
-			new StairsBlock(GOLD_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block GOLD_BLUESLATE_BRICKS_STAIRS = registerBlock("gold_blueslate_bricks_stairs",
+			new StairsBlock(GOLD_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block GOLD_BLUESLATE_BRICK_SLAB = registerBlock("gold_blueslate_brick_slab",
+	public static final Block GOLD_BLUESLATE_BRICKS_SLAB = registerBlock("gold_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block GOLD_BLUESLATE_BRICK_WALL = registerBlock("gold_blueslate_brick_wall",
+	public static final Block GOLD_BLUESLATE_BRICKS_WALL = registerBlock("gold_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(GOLD_BLUESLATE_BRICK)
-			.stairs(GOLD_BLUESLATE_BRICK_STAIRS)
-			.slab(GOLD_BLUESLATE_BRICK_SLAB)
-			.wall(GOLD_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_gold_blueslate_brick").build();
-	public static final Block CRACKED_GOLD_BLUESLATE_BRICK = registerBlock("cracked_gold_blueslate_brick",
+	public static final BlockFamily GOLD_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(GOLD_BLUESLATE_BRICKS)
+			.stairs(GOLD_BLUESLATE_BRICKS_STAIRS)
+			.slab(GOLD_BLUESLATE_BRICKS_SLAB)
+			.wall(GOLD_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_gold_blueslate_bricks").build();
+	public static final Block CRACKED_GOLD_BLUESLATE_BRICKS = registerBlock("cracked_gold_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_GOLD_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_gold_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_GOLD_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_GOLD_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_gold_blueslate_bricks_stairs",
+			new StairsBlock(CRACKED_GOLD_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_GOLD_BLUESLATE_BRICK_SLAB = registerBlock("cracked_gold_blueslate_brick_slab",
+	public static final Block CRACKED_GOLD_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_gold_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_GOLD_BLUESLATE_BRICK_WALL = registerBlock("cracked_gold_blueslate_brick_wall",
+	public static final Block CRACKED_GOLD_BLUESLATE_BRICKS_WALL = registerBlock("cracked_gold_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_GOLD_BLUESLATE_BRICK)
-			.stairs(CRACKED_GOLD_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_GOLD_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_GOLD_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_cracked_gold_blueslate_brick").build();
+	public static final BlockFamily CRACKED_GOLD_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_GOLD_BLUESLATE_BRICKS)
+			.stairs(CRACKED_GOLD_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_GOLD_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_GOLD_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_gold_blueslate_bricks").build();
 
-	public static final Block MOSSY_GOLD_BLUESLATE_BRICK = registerBlock("mossy_gold_blueslate_brick",
+	public static final Block MOSSY_GOLD_BLUESLATE_BRICKS = registerBlock("mossy_gold_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block MOSSY_GOLD_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_gold_blueslate_brick_stairs",
-			new StairsBlock(MOSSY_GOLD_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block MOSSY_GOLD_BLUESLATE_BRICKS_STAIRS = registerBlock("mossy_gold_blueslate_bricks_stairs",
+			new StairsBlock(MOSSY_GOLD_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block MOSSY_GOLD_BLUESLATE_BRICK_SLAB = registerBlock("mossy_gold_blueslate_brick_slab",
+	public static final Block MOSSY_GOLD_BLUESLATE_BRICKS_SLAB = registerBlock("mossy_gold_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block MOSSY_GOLD_BLUESLATE_BRICK_WALL = registerBlock("mossy_gold_blueslate_brick_wall",
+	public static final Block MOSSY_GOLD_BLUESLATE_BRICKS_WALL = registerBlock("mossy_gold_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily MOSSY_GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_GOLD_BLUESLATE_BRICK)
-			.stairs(MOSSY_GOLD_BLUESLATE_BRICK_STAIRS)
-			.slab(MOSSY_GOLD_BLUESLATE_BRICK_SLAB)
-			.wall(MOSSY_GOLD_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_mossy_gold_blueslate_brick").build();
-	public static final Block CRACKED_MOSSY_GOLD_BLUESLATE_BRICK = registerBlock("cracked_mossy_gold_blueslate_brick",
+	public static final BlockFamily MOSSY_GOLD_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(MOSSY_GOLD_BLUESLATE_BRICKS)
+			.stairs(MOSSY_GOLD_BLUESLATE_BRICKS_STAIRS)
+			.slab(MOSSY_GOLD_BLUESLATE_BRICKS_SLAB)
+			.wall(MOSSY_GOLD_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_mossy_gold_blueslate_bricks").build();
+	public static final Block CRACKED_MOSSY_GOLD_BLUESLATE_BRICKS = registerBlock("cracked_mossy_gold_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_MOSSY_GOLD_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_mossy_gold_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_MOSSY_GOLD_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_MOSSY_GOLD_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_mossy_gold_blueslate_bricks_stairs",
+			new StairsBlock(CRACKED_MOSSY_GOLD_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_MOSSY_GOLD_BLUESLATE_BRICK_SLAB = registerBlock("cracked_mossy_gold_blueslate_brick_slab",
+	public static final Block CRACKED_MOSSY_GOLD_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_mossy_gold_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_MOSSY_GOLD_BLUESLATE_BRICK_WALL = registerBlock("cracked_mossy_gold_blueslate_brick_wall",
+	public static final Block CRACKED_MOSSY_GOLD_BLUESLATE_BRICKS_WALL = registerBlock("cracked_mossy_gold_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_MOSSY_GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_MOSSY_GOLD_BLUESLATE_BRICK)
-			.stairs(CRACKED_MOSSY_GOLD_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_MOSSY_GOLD_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_MOSSY_GOLD_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_cracked_mossy_gold_blueslate_brick").build();
+	public static final BlockFamily CRACKED_MOSSY_GOLD_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_MOSSY_GOLD_BLUESLATE_BRICKS)
+			.stairs(CRACKED_MOSSY_GOLD_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_MOSSY_GOLD_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_MOSSY_GOLD_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_mossy_gold_blueslate_bricks").build();
 
-	public static final Block OVERGROWN_GOLD_BLUESLATE_BRICK = registerBlock("overgrown_gold_blueslate_brick",
+	public static final Block OVERGROWN_GOLD_BLUESLATE_BRICKS = registerBlock("overgrown_gold_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block OVERGROWN_GOLD_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_gold_blueslate_brick_stairs",
-			new StairsBlock(OVERGROWN_GOLD_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block OVERGROWN_GOLD_BLUESLATE_BRICKS_STAIRS = registerBlock("overgrown_gold_blueslate_bricks_stairs",
+			new StairsBlock(OVERGROWN_GOLD_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block OVERGROWN_GOLD_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_gold_blueslate_brick_slab",
+	public static final Block OVERGROWN_GOLD_BLUESLATE_BRICKS_SLAB = registerBlock("overgrown_gold_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block OVERGROWN_GOLD_BLUESLATE_BRICK_WALL = registerBlock("overgrown_gold_blueslate_brick_wall",
+	public static final Block OVERGROWN_GOLD_BLUESLATE_BRICKS_WALL = registerBlock("overgrown_gold_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily OVERGROWN_GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_GOLD_BLUESLATE_BRICK)
-			.stairs(OVERGROWN_GOLD_BLUESLATE_BRICK_STAIRS)
-			.slab(OVERGROWN_GOLD_BLUESLATE_BRICK_SLAB)
-			.wall(OVERGROWN_GOLD_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_overgrown_gold_blueslate_brick").build();
-	public static final Block CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICK = registerBlock("cracked_overgrown_gold_blueslate_brick",
+	public static final BlockFamily OVERGROWN_GOLD_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(OVERGROWN_GOLD_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_GOLD_BLUESLATE_BRICKS_STAIRS)
+			.slab(OVERGROWN_GOLD_BLUESLATE_BRICKS_SLAB)
+			.wall(OVERGROWN_GOLD_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_overgrown_gold_blueslate_bricks").build();
+	public static final Block CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICKS = registerBlock("cracked_overgrown_gold_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_overgrown_gold_blueslate_brick_stairs",
-			new StairsBlock(CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICK.getDefaultState(),
+	public static final Block CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICKS_STAIRS = registerBlock("cracked_overgrown_gold_blueslate_bricks_stairs",
+			new StairsBlock(CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICKS.getDefaultState(),
 					FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
-	public static final Block CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICK_SLAB = registerBlock("cracked_overgrown_gold_blueslate_brick_slab",
+	public static final Block CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICKS_SLAB = registerBlock("cracked_overgrown_gold_blueslate_bricks_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
-	public static final Block CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICK_WALL = registerBlock("cracked_overgrown_gold_blueslate_brick_wall",
+	public static final Block CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICKS_WALL = registerBlock("cracked_overgrown_gold_blueslate_bricks_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
-	public static final BlockFamily CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICK)
-			.stairs(CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICK_STAIRS)
-			.slab(CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICK_SLAB)
-			.wall(CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICK_WALL)
-			.group("stone").unlockCriterionName("has_cracked_overgrown_gold_blueslate_brick").build();
+	public static final BlockFamily CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICKS_FAMILY = BlockFamilies.register(CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICKS)
+			.stairs(CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICKS_STAIRS)
+			.slab(CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICKS_SLAB)
+			.wall(CRACKED_OVERGROWN_GOLD_BLUESLATE_BRICKS_WALL)
+			.group("stone").unlockCriterionName("has_cracked_overgrown_gold_blueslate_bricks").build();
 
     public static final Block BLUESLATE_TILES = registerBlock("blueslate_tiles",
             new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
