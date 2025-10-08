@@ -127,6 +127,7 @@ After the 3 months of triage access, the Maintainers will make a final decision 
 The *LotR ME Mod* has the following Maintainers:
 - Ano_Jedt
 - bakbar
+- Anedhel
 
 Maintainers are chosen from the Contributors by the Lead-Maintainers.
 The selection is based on the performance of the Contributor and the need for Maintainers.
