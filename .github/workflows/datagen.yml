@@ -1,0 +1,103 @@
+name: DataGen
+
+on:
+  pull_request:
+    paths:
+      - 'src/main/java/me/anedhel/lotr/datagen/**'
+    types: [opened, synchronize, reopened]
+
+jobs:
+  datagen:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: wrapper
+          cache-read-only: false
+      
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+      
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v3
+      
+      - name: Run DataGen
+        run: ./gradlew runDataGen --no-daemon --stacktrace
+        
+      - name: Check for changes in generated files
+        id: verify-changed-files
+        run: |
+          # Check if there are any changes in the generated directory
+          git add src/main/generated/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected in generated files"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in generated files:"
+            git diff --cached --name-only
+          fi
+      
+      - name: Commit and push generated files
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "DataGen run for PR #${{ github.event.number }}"
+          git push
+      
+      - name: Comment on PR about changes
+        if: steps.verify-changed-files.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '🔄 DataGen completed successfully and updated generated files. The changes have been committed to this PR branch.'
+            })
+      
+      - name: Comment on PR if no changes
+        if: steps.verify-changed-files.outputs.changed == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '✅ DataGen completed successfully - no changes to generated files were needed.'
+            })
+      
+      - name: Fail if DataGen produced unexpected changes
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '❌ DataGen failed to run successfully. Please check the workflow logs and fix any issues before merging this PR.'
+            })
+            core.setFailed('DataGen execution failed')
