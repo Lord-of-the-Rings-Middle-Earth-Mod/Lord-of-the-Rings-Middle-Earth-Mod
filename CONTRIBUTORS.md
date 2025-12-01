@@ -19,8 +19,3 @@ Special thanks go to following contributors for their contributions.
 - Marja2000
   
 ### Translations
-
-# Contributors
-Contributors are those people, who regularly contribute to the Mod and show a high level of activity. Following People are Contributors:
-
-- marja2000
