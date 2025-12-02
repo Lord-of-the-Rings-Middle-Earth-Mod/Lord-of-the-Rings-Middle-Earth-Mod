@@ -24,6 +24,10 @@ name: Build JAR
 jobs:
   determine-build-type:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: read
+      actions: read
     outputs:
       should_build: ${{ steps.check.outputs.should_build }}
       build_type: ${{ steps.check.outputs.build_type }}
