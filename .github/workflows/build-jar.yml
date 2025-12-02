@@ -162,15 +162,15 @@ jobs:
 
       - name: Rename JAR file
         run: |
-          BASE=$(grep '^archives_base_name=' gradle.properties | cut -d'=' -f2)
+          ORIGINAL_BASE=$(grep '^archives_base_name=' gradle.properties | cut -d'=' -f2)
           MOD_VERSION="${{ steps.version.outputs.mod_version }}"
           JAR_NAME="${{ steps.jar_name.outputs.jar_name }}"
 
           # Find the built JAR file (excluding sources jar)
-          BUILT_JAR=$(find build/libs -name "${BASE}-${MOD_VERSION}.jar" -type f)
+          BUILT_JAR=$(find build/libs -name "${ORIGINAL_BASE}-${MOD_VERSION}.jar" -type f)
 
           if [ -f "$BUILT_JAR" ]; then
-            RENAMED_JAR="build/libs/${BASE}-${JAR_NAME}.jar"
+            RENAMED_JAR="build/libs/lotr-me-${JAR_NAME}.jar"
             cp "$BUILT_JAR" "$RENAMED_JAR"
             echo "RENAMED_JAR=$RENAMED_JAR" >> $GITHUB_ENV
             echo "JAR file renamed to: $RENAMED_JAR"
