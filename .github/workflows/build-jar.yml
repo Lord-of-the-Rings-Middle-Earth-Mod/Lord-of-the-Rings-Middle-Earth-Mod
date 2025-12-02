@@ -1,0 +1,220 @@
+name: Build JAR
+
+"on":
+  # Scenario 1: When an issue is moved to Test status on project board
+  project_card:
+    types: [moved]
+
+  # Scenario 2: When a release is published
+  release:
+    types: [published]
+
+  # Scenario 3: Manual trigger
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Build type (dev or release)'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - release
+
+jobs:
+  determine-build-type:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: read
+      actions: read
+    outputs:
+      should_build: ${{ steps.check.outputs.should_build }}
+      build_type: ${{ steps.check.outputs.build_type }}
+      branch: ${{ steps.check.outputs.branch }}
+      issue_number: ${{ steps.check.outputs.issue_number }}
+    steps:
+      - name: Determine build type and conditions
+        id: check
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const eventName = context.eventName;
+            let shouldBuild = false;
+            let buildType = 'dev';
+            let branch = 'develop';
+            let issueNumber = '';
+
+            if (eventName === 'workflow_dispatch') {
+              // Manual trigger
+              shouldBuild = true;
+              buildType = context.payload.inputs.build_type || 'dev';
+              branch = buildType === 'dev' ? 'develop' : 'master';
+              console.log('Manual trigger detected');
+            } else if (eventName === 'release') {
+              // Release published
+              shouldBuild = true;
+              buildType = 'release';
+              branch = context.payload.release.tag_name;
+              console.log(`Release published: ${branch}`);
+            } else if (eventName === 'project_card') {
+              // Project card moved
+              const card = context.payload.project_card;
+
+              // Get the column name
+              const column = await github.rest.projects.getColumn({
+                column_id: context.payload.project_card.column_id
+              });
+
+              console.log(`Card moved to column: ${column.data.name}`);
+
+              // Check if the column is "Test"
+              if (column.data.name.toLowerCase() === 'test') {
+                // Get card content to find the issue
+                if (card.content_url) {
+                  const urlParts = card.content_url.split('/');
+                  issueNumber = urlParts[urlParts.length - 1];
+                  shouldBuild = true;
+                  buildType = 'dev';
+                  branch = 'develop';
+                  console.log(`Issue #${issueNumber} moved to Test`);
+                }
+              }
+            }
+
+            core.setOutput('should_build', shouldBuild);
+            core.setOutput('build_type', buildType);
+            core.setOutput('branch', branch);
+            core.setOutput('issue_number', issueNumber);
+
+            console.log(`Should build: ${shouldBuild}`);
+            console.log(`Build type: ${buildType}`);
+            console.log(`Branch: ${branch}`);
+            console.log(`Issue number: ${issueNumber}`);
+
+  build:
+    needs: determine-build-type
+    if: needs.determine-build-type.outputs.should_build == 'true'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.determine-build-type.outputs.branch }}
+          fetch-depth: 0
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: wrapper
+          cache-read-only: false
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v3
+
+      - name: Extract version information
+        id: version
+        run: |
+          MOD_VERSION=$(grep '^mod_version=' gradle.properties | cut -d'=' -f2)
+          MC_VERSION=$(grep '^minecraft_version=' gradle.properties | cut -d'=' -f2)
+
+          echo "mod_version=$MOD_VERSION" >> $GITHUB_OUTPUT
+          echo "minecraft_version=$MC_VERSION" >> $GITHUB_OUTPUT
+
+          echo "Mod Version: $MOD_VERSION"
+          echo "Minecraft Version: $MC_VERSION"
+
+      - name: Set JAR name
+        id: jar_name
+        run: |
+          MOD_VERSION="${{ steps.version.outputs.mod_version }}"
+          MC_VERSION="${{ steps.version.outputs.minecraft_version }}"
+          BUILD_TYPE="${{ needs.determine-build-type.outputs.build_type }}"
+
+          # Remove the minecraft version suffix from mod_version if exists
+          MOD_VERSION_BASE=$(echo "$MOD_VERSION" | sed 's/-[0-9]\+\.[0-9]\+\.[0-9]\+$//')
+
+          if [ "$BUILD_TYPE" = "dev" ]; then
+            JAR_NAME="${MOD_VERSION_BASE}+${MC_VERSION}-dev"
+          else
+            JAR_NAME="${MOD_VERSION_BASE}+${MC_VERSION}"
+          fi
+
+          echo "jar_name=$JAR_NAME" >> $GITHUB_OUTPUT
+          echo "JAR name will be: $JAR_NAME"
+
+      - name: Build JAR
+        run: ./gradlew build --no-daemon --stacktrace
+
+      - name: Rename JAR file
+        run: |
+          ORIGINAL_BASE=$(grep '^archives_base_name=' gradle.properties | cut -d'=' -f2)
+          MOD_VERSION="${{ steps.version.outputs.mod_version }}"
+          JAR_NAME="${{ steps.jar_name.outputs.jar_name }}"
+
+          # Find the built JAR file (excluding sources jar)
+          BUILT_JAR=$(find build/libs -name "${ORIGINAL_BASE}-${MOD_VERSION}.jar" -type f)
+
+          if [ -f "$BUILT_JAR" ]; then
+            RENAMED_JAR="build/libs/lotr-me-${JAR_NAME}.jar"
+            cp "$BUILT_JAR" "$RENAMED_JAR"
+            echo "RENAMED_JAR=$RENAMED_JAR" >> $GITHUB_ENV
+            echo "JAR file renamed to: $RENAMED_JAR"
+          else
+            echo "ERROR: Built JAR not found"
+            exit 1
+          fi
+
+      - name: Upload JAR as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.jar_name.outputs.jar_name }}
+          path: ${{ env.RENAMED_JAR }}
+
+      - name: Attach JAR to issue
+        if: needs.determine-build-type.outputs.issue_number != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const issueNum = parseInt('${{ needs.determine-build-type.outputs.issue_number }}', 10);
+            const jarName = '${{ steps.jar_name.outputs.jar_name }}';
+
+            // Get the artifact download URL
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId
+            });
+
+            const url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+
+            // Comment on the issue with the JAR download link
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNum,
+              body: `🎉 **Test Build Ready!**\n\nA JAR file has been built for testing:\n\n**File:** \`${jarName}.jar\`\n\n📦 [Download from workflow artifacts](${url})\n\n_Built from develop branch_`
+            });
+
+      - name: Upload JAR to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.RENAMED_JAR }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
