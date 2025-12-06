@@ -157,6 +157,9 @@ jobs:
           echo "jar_name=$JAR_NAME" >> $GITHUB_OUTPUT
           echo "JAR name will be: $JAR_NAME"
 
+      - name: Run DataGen
+        run: ./gradlew runDataGen --no-daemon --stacktrace
+
       - name: Build JAR
         run: ./gradlew build --no-daemon --stacktrace
 
