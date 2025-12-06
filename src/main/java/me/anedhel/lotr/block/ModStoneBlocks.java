@@ -353,7 +353,8 @@ public class ModStoneBlocks {
 					.group("stone").unlockCriterionName("has_silver_cobbled_brick").build();
 	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_silver_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_bronze_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock(
+			"cracked_silver_cobbled_blueslate_brick_stairs",
 			new StairsBlock(CRACKED_SILVER_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
 	public static final Block CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_silver_cobbled_blueslate_brick_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
@@ -440,7 +441,8 @@ public class ModStoneBlocks {
 					.group("stone").unlockCriterionName("has_gold_cobbled_brick").build();
 	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_gold_cobbled_blueslate_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE)));
-	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_bronze_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock(
+			"cracked_gold_cobbled_blueslate_brick_stairs",
 			new StairsBlock(CRACKED_GOLD_COBBLED_BLUESLATE_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.COBBLESTONE_STAIRS)));
 	public static final Block CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_gold_cobbled_blueslate_brick_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.COBBLESTONE_SLAB)));
@@ -2636,7 +2638,8 @@ public class ModStoneBlocks {
 			.group("stone").unlockCriterionName("has_mossy_brick").build();
 	public static final Block CRACKED_MOSSY_CHALK_BRICKS = registerBlock("cracked_mossy_chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_MOSSY_CHALK_BRICK_STAIRS = registerBlock("cracked_bronze_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_MOSSY_CHALK_BRICK_STAIRS = registerBlock(
+			"cracked_mossy_chalk_brick_stairs",
 			new StairsBlock(CRACKED_MOSSY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
 	public static final Block CRACKED_MOSSY_CHALK_BRICK_SLAB = registerBlock("cracked_mossy_chalk_brick_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
@@ -2663,7 +2666,8 @@ public class ModStoneBlocks {
 			.group("stone").unlockCriterionName("has_overgrown_brick").build();
 	public static final Block CRACKED_OVERGROWN_CHALK_BRICKS = registerBlock("cracked_overgrown_chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
-	public static final Block CRACKED_OVERGROWN_CHALK_BRICK_STAIRS = registerBlock("cracked_bronze_cobbled_blueslate_brick_stairs",
+	public static final Block CRACKED_OVERGROWN_CHALK_BRICK_STAIRS = registerBlock(
+			"cracked_overgrown_chalk_brick_stairs",
 			new StairsBlock(CRACKED_OVERGROWN_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
 	public static final Block CRACKED_OVERGROWN_CHALK_BRICK_SLAB = registerBlock("cracked_overgrown_chalk_brick_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
@@ -3538,7 +3542,7 @@ public class ModStoneBlocks {
 	public static final Block CRACKED_MOSSY_FANCY_CHALK_BRICKS = registerBlock("cracked_mossy_fancy_chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block CRACKED_MOSSY_FANCY_CHALK_BRICK_STAIRS = registerBlock(
-			"cracked_bronze_cobbled_blueslate_brick_stairs",
+			"cracked_mossy_fancy_chalk_brick_stairs",
 			new StairsBlock(CRACKED_MOSSY_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
 	public static final Block CRACKED_MOSSY_FANCY_CHALK_BRICK_SLAB = registerBlock("cracked_mossy_fancy_chalk_brick_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
@@ -3566,7 +3570,7 @@ public class ModStoneBlocks {
 	public static final Block CRACKED_OVERGROWN_FANCY_CHALK_BRICKS = registerBlock("cracked_overgrown_fancy_chalk_bricks",
 			new Block(FabricBlockSettings.copyOf(Blocks.STONE)));
 	public static final Block CRACKED_OVERGROWN_FANCY_CHALK_BRICK_STAIRS = registerBlock(
-			"cracked_bronze_cobbled_blueslate_brick_stairs",
+			"cracked_overgrown_fancy_chalk_brick_stairs",
 			new StairsBlock(CRACKED_OVERGROWN_FANCY_CHALK_BRICKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS)));
 	public static final Block CRACKED_OVERGROWN_FANCY_CHALK_BRICK_SLAB = registerBlock("cracked_overgrown_fancy_chalk_brick_slab",
 			new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB)));
