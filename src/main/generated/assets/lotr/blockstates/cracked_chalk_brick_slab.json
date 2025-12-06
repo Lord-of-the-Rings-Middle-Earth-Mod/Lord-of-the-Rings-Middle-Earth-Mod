@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lotr:block/cracked_chalk_brick_slab"
+    },
+    "type=double": {
+      "model": "lotr:block/cracked_chalk_bricks"
+    },
+    "type=top": {
+      "model": "lotr:block/cracked_chalk_brick_slab_top"
+    }
+  }
+}

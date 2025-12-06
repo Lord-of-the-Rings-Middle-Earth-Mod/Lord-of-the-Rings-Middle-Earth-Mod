@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "lotr:block/cobbled_blueslate_bricks",
+    "side": "lotr:block/cobbled_blueslate_bricks",
+    "top": "lotr:block/cobbled_blueslate_bricks"
+  }
+}
