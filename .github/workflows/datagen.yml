@@ -61,11 +61,15 @@ jobs:
           fi
       
       - name: Commit and push generated files
-        if: steps.verify-changed-files.outputs.changed == 'true' && github.event_name == 'pull_request'
+        if: steps.verify-changed-files.outputs.changed == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m "DataGen run for PR #${{ github.event.number }}"
+          if [ "${{ github.event_name }}" == "pull_request" ]; then
+            git commit -m "DataGen run for PR #${{ github.event.number }}"
+          else
+            git commit -m "DataGen run (manual execution)"
+          fi
           git push
       
       - name: Comment on PR about changes
