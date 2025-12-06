@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cracked_mossy_bronze_blueslate_brick": {
+    "has_cracked_mossy_bronze_blueslate_bricks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:cracked_mossy_bronze_blueslate_brick"
+              "lotr:cracked_mossy_bronze_blueslate_bricks"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cracked_mossy_bronze_blueslate_brick"
+      "has_cracked_mossy_bronze_blueslate_bricks"
     ]
   ],
   "rewards": {

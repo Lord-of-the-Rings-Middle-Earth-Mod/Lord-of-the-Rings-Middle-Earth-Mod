@@ -1,8 +1,0 @@
-{
-	"parent": "lotr:block/wall_post_all_two_overlay",
-	"textures": {
-		"layer1": "lotr:block/overlays/bronze_fancy_bricks_overlay",
-		"layer2": "lotr:block/overlays/mossy_overlay_two",
-		"wall": "lotr:block/fancy_chalk_bricks"
-	}
-}

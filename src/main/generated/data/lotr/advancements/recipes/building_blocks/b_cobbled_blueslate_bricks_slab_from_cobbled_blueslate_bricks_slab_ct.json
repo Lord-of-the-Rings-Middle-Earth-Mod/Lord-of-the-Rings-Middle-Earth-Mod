@@ -13,12 +13,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_cobbled_blueslate_bricks_slab": {
+    "has_cobbled_blueslate_brick_slab": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:cobbled_blueslate_bricks_slab"
+              "lotr:cobbled_blueslate_brick_slab"
             ]
           }
         ]
@@ -36,7 +36,7 @@
     [
       "has_the_recipe",
       "has_bronze_ingot",
-      "has_cobbled_blueslate_bricks_slab"
+      "has_cobbled_blueslate_brick_slab"
     ]
   ],
   "rewards": {

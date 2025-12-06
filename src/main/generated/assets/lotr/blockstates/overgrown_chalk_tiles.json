@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/overgrown_chalk_tiles"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/overgrown_chalk_tiles"
+    }
+  }
 }

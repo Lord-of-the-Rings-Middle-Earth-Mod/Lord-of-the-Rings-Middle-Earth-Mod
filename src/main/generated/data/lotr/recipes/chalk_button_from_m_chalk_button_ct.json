@@ -1,15 +1,15 @@
 {
-	"type": "minecraft:crafting_shapeless",
-	"category": "building",
-	"ingredients": [
-		{
-			"item": "lotr:chalk_button"
-		},
-		{
-			"item": "minecraft:vine"
-		}
-	],
-	"result": {
-		"item": "lotr:mossy_chalk_button"
-	}
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "lotr:chalk_button"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "lotr:mossy_chalk_button"
+  }
 }

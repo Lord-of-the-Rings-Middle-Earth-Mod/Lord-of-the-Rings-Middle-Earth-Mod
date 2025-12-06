@@ -1,21 +1,21 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"category": "building",
-	"key": {
-		"#": {
-			"item": "lotr:chalk_tiles_wall"
-		},
-		"O": {
-			"item": "lotr:bronze_ingot"
-		}
-	},
-	"pattern": [
-		" O ",
-		"O#O",
-		" O "
-	],
-	"result": {
-		"item": "lotr:bronze_chalk_tiles_wall"
-	},
-	"show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:chalk_tiles_wall"
+    },
+    "O": {
+      "item": "lotr:bronze_ingot"
+    }
+  },
+  "pattern": [
+    " O ",
+    "O#O",
+    " O "
+  ],
+  "result": {
+    "item": "lotr:bronze_chalk_tiles_wall"
+  },
+  "show_notification": true
 }

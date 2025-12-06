@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cracked_silver_fancy_blueslate_bricks_wall": {
+    "has_cracked_silver_fancy_blueslate_brick_wall": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:cracked_silver_fancy_blueslate_bricks_wall"
+              "lotr:cracked_silver_fancy_blueslate_brick_wall"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_cracked_silver_fancy_blueslate_bricks_wall"
+      "has_cracked_silver_fancy_blueslate_brick_wall"
     ]
   ],
   "rewards": {

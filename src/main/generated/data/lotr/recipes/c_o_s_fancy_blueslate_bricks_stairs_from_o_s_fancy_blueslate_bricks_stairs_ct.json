@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 0.1,
   "ingredient": {
-    "item": "lotr:overgrown_silver_fancy_blueslate_bricks_stairs"
+    "item": "lotr:overgrown_silver_fancy_blueslate_brick_stairs"
   },
-  "result": "lotr:cracked_overgrown_silver_fancy_blueslate_bricks_stairs"
+  "result": "lotr:cracked_overgrown_silver_fancy_blueslate_brick_stairs"
 }

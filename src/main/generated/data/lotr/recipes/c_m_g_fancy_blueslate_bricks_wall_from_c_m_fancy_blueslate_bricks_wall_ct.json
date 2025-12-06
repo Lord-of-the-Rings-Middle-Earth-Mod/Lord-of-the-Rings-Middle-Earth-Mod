@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "lotr:cracked_mossy_fancy_blueslate_bricks_wall"
+      "item": "lotr:cracked_mossy_fancy_blueslate_brick_wall"
     },
     "O": {
       "item": "minecraft:gold_ingot"
@@ -15,7 +15,7 @@
     " O "
   ],
   "result": {
-    "item": "lotr:cracked_mossy_gold_fancy_blueslate_bricks_wall"
+    "item": "lotr:cracked_mossy_gold_fancy_blueslate_brick_wall"
   },
   "show_notification": true
 }

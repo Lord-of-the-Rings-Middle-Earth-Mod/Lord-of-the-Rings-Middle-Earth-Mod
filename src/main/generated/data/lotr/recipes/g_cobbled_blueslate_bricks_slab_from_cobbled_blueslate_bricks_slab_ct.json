@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "lotr:cobbled_blueslate_bricks_slab"
+      "item": "lotr:cobbled_blueslate_brick_slab"
     },
     "O": {
       "item": "minecraft:gold_ingot"

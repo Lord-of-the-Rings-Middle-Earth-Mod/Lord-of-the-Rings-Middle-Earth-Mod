@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "count": 2,
   "ingredient": {
-    "item": "lotr:mossy_silver_blueslate_brick"
+    "item": "lotr:mossy_silver_blueslate_bricks"
   },
   "result": "lotr:mossy_silver_blueslate_brick_slab"
 }

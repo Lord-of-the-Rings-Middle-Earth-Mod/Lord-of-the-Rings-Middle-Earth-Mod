@@ -1,8 +1,8 @@
 {
-	"type": "minecraft:stonecutting",
-	"count": 1,
-	"ingredient": {
-		"item": "lotr:chalk_tiles"
-	},
-	"result": "lotr:fancy_chalk_bricks"
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:chalk_tiles"
+  },
+  "result": "lotr:fancy_chalk_bricks"
 }

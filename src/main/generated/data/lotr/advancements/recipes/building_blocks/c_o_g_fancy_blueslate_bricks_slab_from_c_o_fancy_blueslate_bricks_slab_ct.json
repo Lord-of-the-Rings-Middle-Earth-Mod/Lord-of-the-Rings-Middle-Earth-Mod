@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_cracked_overgrown_fancy_blueslate_bricks_slab": {
+    "has_cracked_overgrown_fancy_blueslate_brick_slab": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:cracked_overgrown_fancy_blueslate_bricks_slab"
+              "lotr:cracked_overgrown_fancy_blueslate_brick_slab"
             ]
           }
         ]
@@ -36,7 +36,7 @@
     [
       "has_the_recipe",
       "has_gold_ingot",
-      "has_cracked_overgrown_fancy_blueslate_bricks_slab"
+      "has_cracked_overgrown_fancy_blueslate_brick_slab"
     ]
   ],
   "rewards": {

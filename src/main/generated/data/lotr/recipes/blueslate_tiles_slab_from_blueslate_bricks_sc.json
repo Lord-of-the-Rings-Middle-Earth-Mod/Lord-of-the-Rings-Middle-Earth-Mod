@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "count": 2,
   "ingredient": {
-    "item": "lotr:blueslate_brick"
+    "item": "lotr:blueslate_bricks"
   },
   "result": "lotr:blueslate_tiles_slab"
 }

@@ -1,6 +1,6 @@
 {
-	"parent": "minecraft:block/template_wall_post",
-	"textures": {
-		"wall": "lotr:block/chalk"
-	}
+  "parent": "minecraft:block/template_wall_post",
+  "textures": {
+    "wall": "lotr:block/chalk"
+  }
 }

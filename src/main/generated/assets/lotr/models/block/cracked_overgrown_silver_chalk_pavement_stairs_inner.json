@@ -1,11 +1,11 @@
 {
-	"parent": "lotr:block/pavement_inner_stairs_two_overlay",
-	"textures": {
-		"bottom": "lotr:block/cracked_chalk_tiles",
-		"layer1": "lotr:block/overlays/cracked_silver_tiles_overlay",
-		"layer2": "lotr:block/overlays/overgrown_overlay",
-		"side": "lotr:block/cracked_chalk_tiles",
-		"top": "lotr:block/cracked_chalk_pavement",
-		"top_layer1": "lotr:block/overlays/cracked_silver_pavement_overlay"
-	}
+  "parent": "lotr:block/pavement_inner_stairs_two_overlay",
+  "textures": {
+    "bottom": "lotr:block/cracked_chalk_tiles",
+    "layer1": "lotr:block/overlays/cracked_silver_tiles_overlay",
+    "layer2": "lotr:block/overlays/overgrown_overlay",
+    "side": "lotr:block/cracked_chalk_tiles",
+    "top": "lotr:block/cracked_chalk_pavement",
+    "top_layer1": "lotr:block/overlays/cracked_silver_pavement_overlay"
+  }
 }

@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/overgrown_bronze_fancy_chalk_bricks"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/overgrown_bronze_fancy_chalk_bricks"
+    }
+  }
 }

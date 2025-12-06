@@ -4,7 +4,7 @@
       "model": "lotr:block/cracked_blueslate_brick_slab"
     },
     "type=double": {
-      "model": "lotr:block/cracked_blueslate_brick"
+      "model": "lotr:block/cracked_blueslate_bricks"
     },
     "type=top": {
       "model": "lotr:block/cracked_blueslate_brick_slab_top"

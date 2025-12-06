@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/corn_crate"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/corn_crate"
+    }
+  }
 }

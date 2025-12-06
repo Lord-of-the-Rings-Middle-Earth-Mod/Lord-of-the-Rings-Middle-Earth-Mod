@@ -1,13 +1,13 @@
 {
-	"variants": {
-		"type=bottom": {
-			"model": "lotr:block/cracked_chalk_tiles_slab"
-		},
-		"type=double": {
-			"model": "lotr:block/cracked_chalk_tiles"
-		},
-		"type=top": {
-			"model": "lotr:block/cracked_chalk_tiles_slab_top"
-		}
-	}
+  "variants": {
+    "type=bottom": {
+      "model": "lotr:block/cracked_chalk_tiles_slab"
+    },
+    "type=double": {
+      "model": "lotr:block/cracked_chalk_tiles"
+    },
+    "type=top": {
+      "model": "lotr:block/cracked_chalk_tiles_slab_top"
+    }
+  }
 }

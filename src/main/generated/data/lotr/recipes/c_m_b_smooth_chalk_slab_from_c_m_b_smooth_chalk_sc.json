@@ -1,8 +1,8 @@
 {
-	"type": "minecraft:stonecutting",
-	"count": 2,
-	"ingredient": {
-		"item": "lotr:cracked_mossy_bronze_smooth_chalk"
-	},
-	"result": "lotr:cracked_mossy_bronze_smooth_chalk_slab"
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "lotr:cracked_mossy_bronze_smooth_chalk"
+  },
+  "result": "lotr:cracked_mossy_bronze_smooth_chalk_slab"
 }

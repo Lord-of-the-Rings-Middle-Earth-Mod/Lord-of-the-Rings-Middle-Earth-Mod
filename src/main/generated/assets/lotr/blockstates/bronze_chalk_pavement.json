@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/bronze_chalk_pavement"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/bronze_chalk_pavement"
+    }
+  }
 }

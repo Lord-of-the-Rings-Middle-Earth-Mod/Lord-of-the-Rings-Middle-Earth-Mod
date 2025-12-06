@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_overgrown_blueslate_brick": {
+    "has_overgrown_blueslate_bricks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:overgrown_blueslate_brick"
+              "lotr:overgrown_blueslate_bricks"
             ]
           }
         ]
@@ -36,7 +36,7 @@
     [
       "has_the_recipe",
       "has_silver_ingot",
-      "has_overgrown_blueslate_brick"
+      "has_overgrown_blueslate_bricks"
     ]
   ],
   "rewards": {

@@ -1,8 +1,8 @@
 {
-	"type": "minecraft:stonecutting",
-	"count": 2,
-	"ingredient": {
-		"item": "lotr:mossy_gold_chalk_pavement"
-	},
-	"result": "lotr:mossy_gold_chalk_pavement_slab"
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "lotr:mossy_gold_chalk_pavement"
+  },
+  "result": "lotr:mossy_gold_chalk_pavement_slab"
 }

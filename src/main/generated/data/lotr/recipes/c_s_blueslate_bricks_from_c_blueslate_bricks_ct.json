@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "lotr:cracked_blueslate_brick"
+      "item": "lotr:cracked_blueslate_bricks"
     },
     "O": {
       "item": "lotr:silver_ingot"
@@ -15,7 +15,7 @@
     " O "
   ],
   "result": {
-    "item": "lotr:cracked_silver_blueslate_brick"
+    "item": "lotr:cracked_silver_blueslate_bricks"
   },
   "show_notification": true
 }

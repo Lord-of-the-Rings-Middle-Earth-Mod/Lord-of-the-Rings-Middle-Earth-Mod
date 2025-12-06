@@ -1,21 +1,21 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"category": "building",
-	"key": {
-		"#": {
-			"item": "lotr:cracked_overgrown_cobbled_chalk_brick_slab"
-		},
-		"O": {
-			"item": "lotr:silver_ingot"
-		}
-	},
-	"pattern": [
-		" O ",
-		"O#O",
-		" O "
-	],
-	"result": {
-		"item": "lotr:cracked_overgrown_silver_cobbled_chalk_brick_slab"
-	},
-	"show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cracked_overgrown_cobbled_chalk_brick_slab"
+    },
+    "O": {
+      "item": "lotr:silver_ingot"
+    }
+  },
+  "pattern": [
+    " O ",
+    "O#O",
+    " O "
+  ],
+  "result": {
+    "item": "lotr:cracked_overgrown_silver_cobbled_chalk_brick_slab"
+  },
+  "show_notification": true
 }

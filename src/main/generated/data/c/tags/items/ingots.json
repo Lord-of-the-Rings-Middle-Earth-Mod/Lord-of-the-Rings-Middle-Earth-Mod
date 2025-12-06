@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-	  "lotr:tin_ingot",
-	  "lotr:silver_ingot"
+    "lotr:tin_ingot",
+    "lotr:silver_ingot"
   ]
 }

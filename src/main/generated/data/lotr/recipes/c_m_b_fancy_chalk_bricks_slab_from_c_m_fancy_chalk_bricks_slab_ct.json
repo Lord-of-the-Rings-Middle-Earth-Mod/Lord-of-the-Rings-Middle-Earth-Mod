@@ -1,21 +1,21 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"category": "building",
-	"key": {
-		"#": {
-			"item": "lotr:cracked_mossy_fancy_chalk_bricks_slab"
-		},
-		"O": {
-			"item": "lotr:bronze_ingot"
-		}
-	},
-	"pattern": [
-		" O ",
-		"O#O",
-		" O "
-	],
-	"result": {
-		"item": "lotr:cracked_mossy_bronze_fancy_chalk_bricks_slab"
-	},
-	"show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cracked_mossy_fancy_chalk_brick_slab"
+    },
+    "O": {
+      "item": "lotr:bronze_ingot"
+    }
+  },
+  "pattern": [
+    " O ",
+    "O#O",
+    " O "
+  ],
+  "result": {
+    "item": "lotr:cracked_mossy_bronze_fancy_chalk_brick_slab"
+  },
+  "show_notification": true
 }

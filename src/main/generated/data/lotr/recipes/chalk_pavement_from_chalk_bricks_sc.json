@@ -1,8 +1,8 @@
 {
-	"type": "minecraft:stonecutting",
-	"count": 1,
-	"ingredient": {
-		"item": "lotr:chalk_bricks"
-	},
-	"result": "lotr:chalk_pavement"
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:chalk_bricks"
+  },
+  "result": "lotr:chalk_pavement"
 }

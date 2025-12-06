@@ -3,7 +3,7 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "lotr:cobbled_blueslate_bricks_wall"
+      "item": "lotr:cobbled_blueslate_brick_wall"
     },
     {
       "item": "minecraft:vine"

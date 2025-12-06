@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 0.1,
   "ingredient": {
-    "item": "lotr:overgrown_blueslate_brick"
+    "item": "lotr:overgrown_blueslate_bricks"
   },
   "result": "lotr:cracked_overgrown_blueslate_brick"
 }

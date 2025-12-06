@@ -1,18 +1,18 @@
 {
-	"type": "minecraft:crafting_shapeless",
-	"category": "building",
-	"ingredients": [
-		{
-			"item": "lotr:cracked_gold_chalk_tiles_stairs"
-		},
-		{
-			"item": "minecraft:vine"
-		},
-		{
-			"item": "minecraft:vine"
-		}
-	],
-	"result": {
-		"item": "lotr:cracked_overgrown_gold_chalk_tiles_stairs"
-	}
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "lotr:cracked_gold_chalk_tiles_stairs"
+    },
+    {
+      "item": "minecraft:vine"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "lotr:cracked_overgrown_gold_chalk_tiles_stairs"
+  }
 }

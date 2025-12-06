@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "count": 1,
   "ingredient": {
-    "item": "lotr:overgrown_bronze_blueslate_brick"
+    "item": "lotr:overgrown_bronze_blueslate_bricks"
   },
   "result": "lotr:overgrown_bronze_blueslate_pavement"
 }

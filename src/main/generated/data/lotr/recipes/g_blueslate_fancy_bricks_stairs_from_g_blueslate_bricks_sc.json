@@ -2,7 +2,7 @@
   "type": "minecraft:stonecutting",
   "count": 1,
   "ingredient": {
-    "item": "lotr:gold_blueslate_brick"
+    "item": "lotr:gold_blueslate_bricks"
   },
-  "result": "lotr:gold_fancy_blueslate_bricks_stairs"
+  "result": "lotr:gold_fancy_blueslate_brick_stairs"
 }

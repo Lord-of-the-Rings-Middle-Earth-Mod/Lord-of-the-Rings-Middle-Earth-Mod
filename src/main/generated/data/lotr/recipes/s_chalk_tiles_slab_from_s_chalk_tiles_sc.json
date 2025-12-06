@@ -1,8 +1,8 @@
 {
-	"type": "minecraft:stonecutting",
-	"count": 2,
-	"ingredient": {
-		"item": "lotr:silver_chalk_tiles"
-	},
-	"result": "lotr:silver_chalk_tiles_slab"
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "lotr:silver_chalk_tiles"
+  },
+  "result": "lotr:silver_chalk_tiles_slab"
 }

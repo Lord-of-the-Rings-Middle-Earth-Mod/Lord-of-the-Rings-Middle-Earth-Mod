@@ -3,13 +3,13 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "lotr:mossy_gold_fancy_blueslate_bricks_stairs"
+      "item": "lotr:mossy_gold_fancy_blueslate_brick_stairs"
     },
     {
       "item": "minecraft:vine"
     }
   ],
   "result": {
-    "item": "lotr:overgrown_gold_fancy_blueslate_bricks_stairs"
+    "item": "lotr:overgrown_gold_fancy_blueslate_brick_stairs"
   }
 }

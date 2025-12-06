@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "lotr:mossy_fancy_blueslate_bricks_slab"
+      "item": "lotr:mossy_fancy_blueslate_brick_slab"
     },
     "O": {
       "item": "lotr:silver_ingot"
@@ -15,7 +15,7 @@
     " O "
   ],
   "result": {
-    "item": "lotr:mossy_silver_fancy_blueslate_bricks_slab"
+    "item": "lotr:mossy_silver_fancy_blueslate_brick_slab"
   },
   "show_notification": true
 }

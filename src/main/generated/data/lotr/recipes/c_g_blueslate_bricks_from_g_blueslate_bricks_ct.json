@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 0.1,
   "ingredient": {
-    "item": "lotr:gold_blueslate_brick"
+    "item": "lotr:gold_blueslate_bricks"
   },
-  "result": "lotr:cracked_gold_blueslate_brick"
+  "result": "lotr:cracked_gold_blueslate_bricks"
 }

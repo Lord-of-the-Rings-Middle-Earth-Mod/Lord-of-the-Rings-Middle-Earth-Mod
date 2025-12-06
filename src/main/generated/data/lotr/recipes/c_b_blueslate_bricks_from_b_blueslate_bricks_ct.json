@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 0.1,
   "ingredient": {
-    "item": "lotr:bronze_blueslate_brick"
+    "item": "lotr:bronze_blueslate_bricks"
   },
-  "result": "lotr:cracked_bronze_blueslate_brick"
+  "result": "lotr:cracked_bronze_blueslate_bricks"
 }

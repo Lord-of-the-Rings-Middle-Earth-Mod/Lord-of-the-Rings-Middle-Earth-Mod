@@ -1,21 +1,21 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"category": "building",
-	"key": {
-		"#": {
-			"item": "lotr:overgrown_chalk_tiles_slab"
-		},
-		"O": {
-			"item": "lotr:silver_ingot"
-		}
-	},
-	"pattern": [
-		" O ",
-		"O#O",
-		" O "
-	],
-	"result": {
-		"item": "lotr:overgrown_silver_chalk_tiles_slab"
-	},
-	"show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:overgrown_chalk_tiles_slab"
+    },
+    "O": {
+      "item": "lotr:silver_ingot"
+    }
+  },
+  "pattern": [
+    " O ",
+    "O#O",
+    " O "
+  ],
+  "result": {
+    "item": "lotr:overgrown_silver_chalk_tiles_slab"
+  },
+  "show_notification": true
 }

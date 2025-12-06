@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/cracked_overgrown_gold_chalk_tiles"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/cracked_overgrown_gold_chalk_tiles"
+    }
+  }
 }

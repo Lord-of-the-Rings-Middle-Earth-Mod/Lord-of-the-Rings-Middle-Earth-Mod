@@ -1,35 +1,35 @@
 {
-	"parent": "minecraft:recipes/root",
-	"criteria": {
-		"has_mossy_silver_chalk_pavement": {
-			"conditions": {
-				"items": [
-					{
-						"items": [
-							"lotr:mossy_silver_chalk_pavement"
-						]
-					}
-				]
-			},
-			"trigger": "minecraft:inventory_changed"
-		},
-		"has_the_recipe": {
-			"conditions": {
-				"recipe": "minecraft:m_s_chalk_pavement_stairs_from_m_s_chalk_pavement_sc"
-			},
-			"trigger": "minecraft:recipe_unlocked"
-		}
-	},
-	"requirements": [
-		[
-			"has_the_recipe",
-			"has_mossy_silver_chalk_pavement"
-		]
-	],
-	"rewards": {
-		"recipes": [
-			"minecraft:m_s_chalk_pavement_stairs_from_m_s_chalk_pavement_sc"
-		]
-	},
-	"sends_telemetry_event": false
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mossy_silver_chalk_pavement": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:mossy_silver_chalk_pavement"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:m_s_chalk_pavement_stairs_from_m_s_chalk_pavement_sc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mossy_silver_chalk_pavement"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:m_s_chalk_pavement_stairs_from_m_s_chalk_pavement_sc"
+    ]
+  },
+  "sends_telemetry_event": false
 }

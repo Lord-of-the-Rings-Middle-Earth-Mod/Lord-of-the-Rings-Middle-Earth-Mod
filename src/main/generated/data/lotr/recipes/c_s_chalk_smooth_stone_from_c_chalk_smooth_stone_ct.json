@@ -1,21 +1,21 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"category": "building",
-	"key": {
-		"#": {
-			"item": "lotr:cracked_smooth_chalk"
-		},
-		"O": {
-			"item": "lotr:silver_ingot"
-		}
-	},
-	"pattern": [
-		" O ",
-		"O#O",
-		" O "
-	],
-	"result": {
-		"item": "lotr:cracked_silver_smooth_chalk"
-	},
-	"show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cracked_smooth_chalk"
+    },
+    "O": {
+      "item": "lotr:silver_ingot"
+    }
+  },
+  "pattern": [
+    " O ",
+    "O#O",
+    " O "
+  ],
+  "result": {
+    "item": "lotr:cracked_silver_smooth_chalk"
+  },
+  "show_notification": true
 }

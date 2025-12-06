@@ -13,12 +13,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_overgrown_fancy_blueslate_bricks_slab": {
+    "has_overgrown_fancy_blueslate_brick_slab": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:overgrown_fancy_blueslate_bricks_slab"
+              "lotr:overgrown_fancy_blueslate_brick_slab"
             ]
           }
         ]
@@ -36,7 +36,7 @@
     [
       "has_the_recipe",
       "has_gold_ingot",
-      "has_overgrown_fancy_blueslate_bricks_slab"
+      "has_overgrown_fancy_blueslate_brick_slab"
     ]
   ],
   "rewards": {

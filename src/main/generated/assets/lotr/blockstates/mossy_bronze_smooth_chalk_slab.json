@@ -1,13 +1,13 @@
 {
-	"variants": {
-		"type=bottom": {
-			"model": "lotr:block/mossy_bronze_smooth_chalk_slab"
-		},
-		"type=double": {
-			"model": "lotr:block/mossy_bronze_smooth_chalk_slab_double"
-		},
-		"type=top": {
-			"model": "lotr:block/mossy_bronze_smooth_chalk_slab_top"
-		}
-	}
+  "variants": {
+    "type=bottom": {
+      "model": "lotr:block/mossy_bronze_smooth_chalk_slab"
+    },
+    "type=double": {
+      "model": "lotr:block/mossy_bronze_smooth_chalk_slab_double"
+    },
+    "type=top": {
+      "model": "lotr:block/mossy_bronze_smooth_chalk_slab_top"
+    }
+  }
 }

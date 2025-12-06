@@ -13,12 +13,12 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
-    "has_mossy_blueslate_brick": {
+    "has_mossy_blueslate_bricks": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:mossy_blueslate_brick"
+              "lotr:mossy_blueslate_bricks"
             ]
           }
         ]
@@ -36,7 +36,7 @@
     [
       "has_the_recipe",
       "has_bronze_ingot",
-      "has_mossy_blueslate_brick"
+      "has_mossy_blueslate_bricks"
     ]
   ],
   "rewards": {

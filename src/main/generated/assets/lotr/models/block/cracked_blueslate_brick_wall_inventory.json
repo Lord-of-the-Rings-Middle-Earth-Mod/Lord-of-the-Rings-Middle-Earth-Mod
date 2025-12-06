@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/wall_inventory",
   "textures": {
-    "wall": "lotr:block/cracked_blueslate_brick"
+    "wall": "lotr:block/cracked_blueslate_bricks"
   }
 }

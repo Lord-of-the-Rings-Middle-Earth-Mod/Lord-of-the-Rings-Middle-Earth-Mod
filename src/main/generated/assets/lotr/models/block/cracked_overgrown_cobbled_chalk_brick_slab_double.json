@@ -1,7 +1,7 @@
 {
-	"parent": "lotr:block/cube_all_overlay",
-	"textures": {
-		"all": "lotr:block/cracked_cobbled_chalk_bricks",
-		"layer1": "lotr:block/overlays/overgrown_overlay"
-	}
+  "parent": "lotr:block/cube_all_overlay",
+  "textures": {
+    "all": "lotr:block/cracked_cobbled_chalk_bricks",
+    "layer1": "lotr:block/overlays/overgrown_overlay"
+  }
 }

@@ -1,18 +1,18 @@
 {
-	"type": "minecraft:crafting_shapeless",
-	"category": "building",
-	"ingredients": [
-		{
-			"item": "lotr:cracked_chalk_pillar_slab"
-		},
-		{
-			"item": "minecraft:vine"
-		},
-		{
-			"item": "minecraft:vine"
-		}
-	],
-	"result": {
-		"item": "lotr:cracked_overgrown_chalk_pillar_slab"
-	}
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "lotr:cracked_chalk_pillar_slab"
+    },
+    {
+      "item": "minecraft:vine"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "lotr:cracked_overgrown_chalk_pillar_slab"
+  }
 }

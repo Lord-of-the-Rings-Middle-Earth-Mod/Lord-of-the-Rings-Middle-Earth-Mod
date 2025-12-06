@@ -1,21 +1,21 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"category": "building",
-	"key": {
-		"#": {
-			"item": "lotr:cobbled_chalk_bricks_stairs"
-		},
-		"O": {
-			"item": "lotr:silver_ingot"
-		}
-	},
-	"pattern": [
-		" O ",
-		"O#O",
-		" O "
-	],
-	"result": {
-		"item": "lotr:silver_cobbled_chalk_brick_stairs"
-	},
-	"show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cobbled_chalk_brick_stairs"
+    },
+    "O": {
+      "item": "lotr:silver_ingot"
+    }
+  },
+  "pattern": [
+    " O ",
+    "O#O",
+    " O "
+  ],
+  "result": {
+    "item": "lotr:silver_cobbled_chalk_brick_stairs"
+  },
+  "show_notification": true
 }

@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_silver_fancy_blueslate_bricks_slab": {
+    "has_silver_fancy_blueslate_brick_slab": {
       "conditions": {
         "items": [
           {
             "items": [
-              "lotr:silver_fancy_blueslate_bricks_slab"
+              "lotr:silver_fancy_blueslate_brick_slab"
             ]
           }
         ]
@@ -23,7 +23,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_silver_fancy_blueslate_bricks_slab"
+      "has_silver_fancy_blueslate_brick_slab"
     ]
   ],
   "rewards": {

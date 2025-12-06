@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/chalk_tiles"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/chalk_tiles"
+    }
+  }
 }

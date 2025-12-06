@@ -1,16 +1,16 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"category": "redstone",
-	"key": {
-		"#": {
-			"item": "lotr:mossy_chalk"
-		}
-	},
-	"pattern": [
-		" # "
-	],
-	"result": {
-		"item": "lotr:mossy_chalk_button"
-	},
-	"show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "#": {
+      "item": "lotr:mossy_chalk"
+    }
+  },
+  "pattern": [
+    " # "
+  ],
+  "result": {
+    "item": "lotr:mossy_chalk_button"
+  },
+  "show_notification": true
 }

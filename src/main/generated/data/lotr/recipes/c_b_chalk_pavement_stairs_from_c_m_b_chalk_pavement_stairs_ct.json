@@ -1,15 +1,15 @@
 {
-	"type": "minecraft:crafting_shapeless",
-	"category": "building",
-	"ingredients": [
-		{
-			"item": "lotr:cracked_bronze_chalk_pavement_stairs"
-		},
-		{
-			"item": "minecraft:vine"
-		}
-	],
-	"result": {
-		"item": "lotr:cracked_mossy_bronze_chalk_pavement_stairs"
-	}
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "lotr:cracked_bronze_chalk_pavement_stairs"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "lotr:cracked_mossy_bronze_chalk_pavement_stairs"
+  }
 }

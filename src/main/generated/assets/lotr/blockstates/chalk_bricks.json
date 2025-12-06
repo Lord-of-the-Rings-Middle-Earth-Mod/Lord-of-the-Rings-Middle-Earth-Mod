@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/chalk_bricks"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/chalk_bricks"
+    }
+  }
 }

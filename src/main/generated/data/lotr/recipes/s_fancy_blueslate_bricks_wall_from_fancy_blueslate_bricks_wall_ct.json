@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "lotr:fancy_blueslate_bricks_wall"
+      "item": "lotr:fancy_blueslate_brick_wall"
     },
     "O": {
       "item": "lotr:silver_ingot"
@@ -15,7 +15,7 @@
     " O "
   ],
   "result": {
-    "item": "lotr:silver_fancy_blueslate_bricks_wall"
+    "item": "lotr:silver_fancy_blueslate_brick_wall"
   },
   "show_notification": true
 }

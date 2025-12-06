@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "lotr:cracked_mossy_fancy_blueslate_bricks_stairs"
+      "item": "lotr:cracked_mossy_fancy_blueslate_brick_stairs"
     },
     "O": {
       "item": "lotr:bronze_ingot"
@@ -15,7 +15,7 @@
     " O "
   ],
   "result": {
-    "item": "lotr:cracked_mossy_bronze_fancy_blueslate_bricks_stairs"
+    "item": "lotr:cracked_mossy_bronze_fancy_blueslate_brick_stairs"
   },
   "show_notification": true
 }

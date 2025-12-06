@@ -3,7 +3,7 @@
   "category": "building",
   "key": {
     "#": {
-      "item": "lotr:blueslate_brick"
+      "item": "lotr:blueslate_bricks"
     },
     "O": {
       "item": "minecraft:gold_ingot"
@@ -15,7 +15,7 @@
     " O "
   ],
   "result": {
-    "item": "lotr:gold_blueslate_brick"
+    "item": "lotr:gold_blueslate_bricks"
   },
   "show_notification": true
 }

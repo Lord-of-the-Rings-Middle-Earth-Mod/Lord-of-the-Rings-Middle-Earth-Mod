@@ -1,21 +1,21 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"category": "building",
-	"key": {
-		"#": {
-			"item": "lotr:overgrown_chalk_bricks_slab"
-		},
-		"O": {
-			"item": "lotr:bronze_ingot"
-		}
-	},
-	"pattern": [
-		" O ",
-		"O#O",
-		" O "
-	],
-	"result": {
-		"item": "lotr:overgrown_bronze_chalk_bricks_slab"
-	},
-	"show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:overgrown_chalk_brick_slab"
+    },
+    "O": {
+      "item": "lotr:bronze_ingot"
+    }
+  },
+  "pattern": [
+    " O ",
+    "O#O",
+    " O "
+  ],
+  "result": {
+    "item": "lotr:overgrown_bronze_chalk_brick_slab"
+  },
+  "show_notification": true
 }

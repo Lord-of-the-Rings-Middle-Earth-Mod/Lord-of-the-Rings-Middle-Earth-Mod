@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/silver_block"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/silver_block"
+    }
+  }
 }

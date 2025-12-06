@@ -3,6 +3,6 @@
   "textures": {
     "layer1": "lotr:block/overlays/silver_brick_overlay",
     "layer2": "lotr:block/overlays/mossy_overlay_two",
-    "wall": "lotr:block/blueslate_brick"
+    "wall": "lotr:block/blueslate_bricks"
   }
 }

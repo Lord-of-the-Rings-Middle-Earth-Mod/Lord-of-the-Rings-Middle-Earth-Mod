@@ -1,8 +1,8 @@
 {
-	"type": "minecraft:stonecutting",
-	"count": 2,
-	"ingredient": {
-		"item": "lotr:overgrown_cobbled_chalk"
-	},
-	"result": "lotr:overgrown_cobbled_chalk_brick_slab"
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "lotr:overgrown_cobbled_chalk"
+  },
+  "result": "lotr:overgrown_cobbled_chalk_brick_slab"
 }

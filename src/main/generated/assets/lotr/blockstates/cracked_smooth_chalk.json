@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/cracked_smooth_chalk"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/cracked_smooth_chalk"
+    }
+  }
 }

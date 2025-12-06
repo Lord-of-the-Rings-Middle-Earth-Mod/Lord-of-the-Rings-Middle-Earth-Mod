@@ -1,16 +1,16 @@
 {
-	"type": "minecraft:crafting_shaped",
-	"category": "building",
-	"key": {
-		"#": {
-			"item": "lotr:mossy_chalk"
-		}
-	},
-	"pattern": [
-		"##"
-	],
-	"result": {
-		"item": "lotr:mossy_chalk_pressure_plate"
-	},
-	"show_notification": true
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:mossy_chalk"
+    }
+  },
+  "pattern": [
+    "##"
+  ],
+  "result": {
+    "item": "lotr:mossy_chalk_pressure_plate"
+  },
+  "show_notification": true
 }

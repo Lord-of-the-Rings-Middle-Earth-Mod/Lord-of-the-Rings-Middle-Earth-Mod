@@ -1,9 +1,9 @@
 {
-	"parent": "lotr:block/slab_top_all_overlay",
-	"textures": {
-		"bottom": "lotr:block/cracked_cobbled_chalk_bricks",
-		"layer1": "lotr:block/overlays/mossy_overlay_three",
-		"side": "lotr:block/cracked_cobbled_chalk_bricks",
-		"top": "lotr:block/cracked_cobbled_chalk_bricks"
-	}
+  "parent": "lotr:block/slab_top_all_overlay",
+  "textures": {
+    "bottom": "lotr:block/cracked_cobbled_chalk_bricks",
+    "layer1": "lotr:block/overlays/mossy_overlay_three",
+    "side": "lotr:block/cracked_cobbled_chalk_bricks",
+    "top": "lotr:block/cracked_cobbled_chalk_bricks"
+  }
 }

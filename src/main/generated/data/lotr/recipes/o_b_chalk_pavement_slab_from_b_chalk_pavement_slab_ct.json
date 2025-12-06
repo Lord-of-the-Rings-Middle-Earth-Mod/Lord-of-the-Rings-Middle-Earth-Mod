@@ -1,18 +1,18 @@
 {
-	"type": "minecraft:crafting_shapeless",
-	"category": "building",
-	"ingredients": [
-		{
-			"item": "lotr:bronze_chalk_pavement_slab"
-		},
-		{
-			"item": "minecraft:vine"
-		},
-		{
-			"item": "minecraft:vine"
-		}
-	],
-	"result": {
-		"item": "lotr:overgrown_bronze_chalk_pavement_slab"
-	}
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "lotr:bronze_chalk_pavement_slab"
+    },
+    {
+      "item": "minecraft:vine"
+    },
+    {
+      "item": "minecraft:vine"
+    }
+  ],
+  "result": {
+    "item": "lotr:overgrown_bronze_chalk_pavement_slab"
+  }
 }

@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/chalk"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/chalk"
+    }
+  }
 }

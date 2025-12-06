@@ -4,7 +4,7 @@
   "cookingtime": 200,
   "experience": 0.1,
   "ingredient": {
-    "item": "lotr:overgrown_fancy_blueslate_bricks_slab"
+    "item": "lotr:overgrown_fancy_blueslate_brick_slab"
   },
-  "result": "lotr:cracked_overgrown_fancy_blueslate_bricks_slab"
+  "result": "lotr:cracked_overgrown_fancy_blueslate_brick_slab"
 }

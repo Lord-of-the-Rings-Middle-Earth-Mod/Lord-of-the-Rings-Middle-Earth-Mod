@@ -1,8 +1,8 @@
 {
-	"type": "minecraft:stonecutting",
-	"count": 1,
-	"ingredient": {
-		"item": "lotr:cracked_overgrown_chalk_bricks"
-	},
-	"result": "lotr:cracked_overgrown_fancy_chalk_bricks_stairs"
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:cracked_overgrown_chalk_bricks"
+  },
+  "result": "lotr:cracked_overgrown_fancy_chalk_brick_stairs"
 }

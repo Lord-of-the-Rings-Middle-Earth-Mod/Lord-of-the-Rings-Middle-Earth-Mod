@@ -1,8 +1,8 @@
 {
-	"type": "minecraft:stonecutting",
-	"count": 1,
-	"ingredient": {
-		"item": "lotr:mossy_cobbled_chalk"
-	},
-	"result": "lotr:mossy_cobbled_chalk_button"
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:mossy_cobbled_chalk"
+  },
+  "result": "lotr:mossy_cobbled_chalk_button"
 }

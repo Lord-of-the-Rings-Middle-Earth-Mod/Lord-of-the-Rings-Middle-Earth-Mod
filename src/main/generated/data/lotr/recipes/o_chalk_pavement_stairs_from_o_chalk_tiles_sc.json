@@ -1,8 +1,8 @@
 {
-	"type": "minecraft:stonecutting",
-	"count": 1,
-	"ingredient": {
-		"item": "lotr:overgrown_chalk_tiles"
-	},
-	"result": "lotr:overgrown_chalk_pavement_stairs"
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:overgrown_chalk_tiles"
+  },
+  "result": "lotr:overgrown_chalk_pavement_stairs"
 }

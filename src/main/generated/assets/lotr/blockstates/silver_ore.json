@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/silver_ore"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/silver_ore"
+    }
+  }
 }

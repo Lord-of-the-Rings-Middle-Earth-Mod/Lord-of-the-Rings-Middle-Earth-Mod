@@ -1,8 +1,8 @@
 {
-	"type": "minecraft:stonecutting",
-	"count": 2,
-	"ingredient": {
-		"item": "lotr:overgrown_bronze_chalk_bricks"
-	},
-	"result": "lotr:overgrown_bronze_fancy_chalk_bricks_slab"
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "lotr:overgrown_bronze_chalk_bricks"
+  },
+  "result": "lotr:overgrown_bronze_fancy_chalk_brick_slab"
 }

@@ -3,7 +3,7 @@
   "category": "building",
   "ingredients": [
     {
-      "item": "lotr:cracked_gold_fancy_blueslate_bricks_slab"
+      "item": "lotr:cracked_gold_fancy_blueslate_brick_slab"
     },
     {
       "item": "minecraft:vine"
@@ -13,6 +13,6 @@
     }
   ],
   "result": {
-    "item": "lotr:cracked_overgrown_gold_fancy_blueslate_bricks_slab"
+    "item": "lotr:cracked_overgrown_gold_fancy_blueslate_brick_slab"
   }
 }

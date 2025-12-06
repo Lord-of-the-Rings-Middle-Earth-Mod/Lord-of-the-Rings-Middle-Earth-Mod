@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "lotr:block/overgrown_silver_smooth_chalk"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "lotr:block/overgrown_silver_smooth_chalk"
+    }
+  }
 }
