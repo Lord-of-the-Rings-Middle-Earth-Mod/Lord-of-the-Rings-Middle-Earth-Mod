@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "lotr:cobbled_blueslate"
-  },
-  "result": "lotr:cobbled_blueslate_button"
-}

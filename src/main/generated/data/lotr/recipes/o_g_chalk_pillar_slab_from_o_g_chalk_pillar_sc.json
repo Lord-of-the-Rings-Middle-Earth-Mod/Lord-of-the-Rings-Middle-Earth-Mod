@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "lotr:overgrown_gold_chalk_pillar"
-  },
-  "result": "lotr:overgrown_gold_chalk_pillar_slab"
-}

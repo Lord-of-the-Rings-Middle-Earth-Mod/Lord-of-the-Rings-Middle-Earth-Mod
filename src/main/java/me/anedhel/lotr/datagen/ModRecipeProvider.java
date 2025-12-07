@@ -34,11 +34,11 @@ import net.minecraft.data.server.recipe.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.recipe.RecipeSerializer;
+import net.minecraft.recipe.*;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
@@ -759,9 +759,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	private void createModWoodTypesRecipes(RecipeExporter exporter) {
 		for(ModWoodType woodType : ModWoodType.values()) {
 			if(!woodType.isVanillaAddition()) {
-				generateFamily(exporter, woodType.getWoodFamily());
-				generateFamily(exporter, woodType.getStrippedWoodFamily());
-				generateFamily(exporter, woodType.getPlanksFamily());
+				generateFamily(exporter, woodType.getWoodFamily(), FeatureSet.empty());
+				generateFamily(exporter, woodType.getStrippedWoodFamily(), FeatureSet.empty());
+				generateFamily(exporter, woodType.getPlanksFamily(), FeatureSet.empty());
 				if(woodType.getLog() != null && woodType.getWood() != null
 				   && woodType.getStrippedLog() != null && woodType.getStrippedWood() != null) {
 					offerBarkBlockRecipe(exporter, woodType.getWood(), woodType.getLog());
@@ -797,10 +797,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	 * @param cookedItem The resulting cooked food item.
 	 */
 	private void createCookedFoodRecipes(RecipeExporter exporter, Item rawItem, Item cookedItem) {
-		offerFoodCookingRecipe(exporter, "smooking", RecipeSerializer.SMOKING, 100, rawItem,
+		offerFoodCookingRecipe(exporter, "smooking", RecipeSerializer.SMOKING,
+				SmokingRecipe::new,100, rawItem,
 		                       cookedItem, 0.35f);
 		offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING,
-                               600,
+                               CampfireCookingRecipe::new,600,
 		                       rawItem, cookedItem, 0.35f);
 		CookingRecipeJsonBuilder.createSmelting(Ingredient.ofItems(rawItem), RecipeCategory.FOOD,
 		                                        cookedItem, 0.35f, 200).criterion("has_food",

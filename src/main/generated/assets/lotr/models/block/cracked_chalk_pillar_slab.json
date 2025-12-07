@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "lotr:block/cracked_chalk_pillar_end",
-    "side": "lotr:block/cracked_chalk_pillar_side_single",
-    "top": "lotr:block/cracked_chalk_pillar_end"
-  }
-}

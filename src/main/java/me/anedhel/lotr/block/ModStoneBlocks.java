@@ -46,10 +46,10 @@ public class ModStoneBlocks {
     public static final Block BLUESLATE_WALL = registerBlock("blueslate_wall",
             new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
     public static final Block BLUESLATE_BUTTON = registerBlock("blueslate_button",
-            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+            new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
     public static final Block BLUESLATE_PRESSURE_PLATE = registerBlock("blueslate_pressure_plate",
-            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+            new PressurePlateBlock(BlockSetType.STONE,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
     public static final BlockFamily BLUESLATE_FAMILY = BlockFamilies.register(BLUESLATE)
             .stairs(BLUESLATE_STAIRS)
             .slab(BLUESLATE_SLAB)
@@ -67,10 +67,10 @@ public class ModStoneBlocks {
 	public static final Block MOSSY_BLUESLATE_WALL = registerBlock("mossy_blueslate_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
 	public static final Block MOSSY_BLUESLATE_BUTTON = registerBlock("mossy_blueslate_button",
-			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+			new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
 	public static final Block MOSSY_BLUESLATE_PRESSURE_PLATE = registerBlock("mossy_blueslate_pressure_plate",
-			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+			new PressurePlateBlock(BlockSetType.STONE,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
 	public static final BlockFamily MOSSY_BLUESLATE_FAMILY = BlockFamilies.register(MOSSY_BLUESLATE)
 			.stairs(MOSSY_BLUESLATE_STAIRS)
 			.slab(MOSSY_BLUESLATE_SLAB)
@@ -88,10 +88,10 @@ public class ModStoneBlocks {
 	public static final Block OVERGROWN_BLUESLATE_WALL = registerBlock("overgrown_blueslate_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
 	public static final Block OVERGROWN_BLUESLATE_BUTTON = registerBlock("overgrown_blueslate_button",
-			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+			new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
 	public static final Block OVERGROWN_BLUESLATE_PRESSURE_PLATE = registerBlock("overgrown_blueslate_pressure_plate",
-			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+			new PressurePlateBlock(BlockSetType.STONE,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
 	public static final BlockFamily OVERGROWN_BLUESLATE_FAMILY = BlockFamilies.register(OVERGROWN_BLUESLATE)
 			.stairs(OVERGROWN_BLUESLATE_STAIRS)
 			.slab(OVERGROWN_BLUESLATE_SLAB)
@@ -109,10 +109,10 @@ public class ModStoneBlocks {
     public static final Block COBBLED_BLUESLATE_WALL = registerBlock("cobbled_blueslate_wall",
             new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
     public static final Block COBBLED_BLUESLATE_BUTTON = registerBlock("cobbled_blueslate_button",
-            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+            new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
     public static final Block COBBLED_BLUESLATE_PRESSURE_PLATE = registerBlock("cobbled_blueslate_pressure_plate",
-            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+            new PressurePlateBlock(BlockSetType.STONE,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
     public static final BlockFamily COBBLED_BLUESLATE_FAMILY = BlockFamilies.register(COBBLED_BLUESLATE)
             .stairs(COBBLED_BLUESLATE_STAIRS)
             .slab(COBBLED_BLUESLATE_SLAB)
@@ -130,10 +130,10 @@ public class ModStoneBlocks {
 	public static final Block MOSSY_COBBLED_BLUESLATE_WALL = registerBlock("mossy_cobbled_blueslate_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
 	public static final Block MOSSY_COBBLED_BLUESLATE_BUTTON = registerBlock("mossy_cobbled_blueslate_button",
-			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+			new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
 	public static final Block MOSSY_COBBLED_BLUESLATE_PRESSURE_PLATE = registerBlock("mossy_cobbled_blueslate_pressure_plate",
-			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+			new PressurePlateBlock(BlockSetType.STONE,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
 	public static final BlockFamily MOSSY_COBBLED_BLUESLATE_FAMILY = BlockFamilies.register(MOSSY_COBBLED_BLUESLATE)
 			.stairs(MOSSY_COBBLED_BLUESLATE_STAIRS)
 			.slab(MOSSY_COBBLED_BLUESLATE_SLAB)
@@ -152,11 +152,11 @@ public class ModStoneBlocks {
 	public static final Block OVERGROWN_COBBLED_BLUESLATE_WALL = registerBlock("overgrown_cobbled_blueslate_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
 	public static final Block OVERGROWN_COBBLED_BLUESLATE_BUTTON = registerBlock("overgrown_cobbled_blueslate_button",
-			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+			new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
 	public static final Block OVERGROWN_COBBLED_BLUESLATE_PRESSURE_PLATE = registerBlock(
 			"overgrown_cobbled_blueslate_pressure_plate",
-			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+			new PressurePlateBlock(BlockSetType.STONE,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
 	public static final BlockFamily OVERGROWN_COBBLED_BLUESLATE_FAMILY = BlockFamilies.register(OVERGROWN_COBBLED_BLUESLATE)
 			.stairs(OVERGROWN_COBBLED_BLUESLATE_STAIRS)
 			.slab(OVERGROWN_COBBLED_BLUESLATE_SLAB)
@@ -2011,10 +2011,10 @@ public class ModStoneBlocks {
     public static final Block CHALK_WALL = registerBlock("chalk_wall",
             new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
     public static final Block CHALK_BUTTON = registerBlock("chalk_button",
-            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+            new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
     public static final Block CHALK_PRESSURE_PLATE = registerBlock("chalk_pressure_plate",
-            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+            new PressurePlateBlock(BlockSetType.STONE,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
     public static final BlockFamily CHALK_FAMILY = BlockFamilies.register(CHALK)
             .stairs(CHALK_STAIRS)
             .slab(CHALK_SLAB)
@@ -2032,10 +2032,10 @@ public class ModStoneBlocks {
 	public static final Block MOSSY_CHALK_WALL = registerBlock("mossy_chalk_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
 	public static final Block MOSSY_CHALK_BUTTON = registerBlock("mossy_chalk_button",
-			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+			new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
 	public static final Block MOSSY_CHALK_PRESSURE_PLATE = registerBlock("mossy_chalk_pressure_plate",
-			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+			new PressurePlateBlock(BlockSetType.STONE,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
 	public static final BlockFamily MOSSY_CHALK_FAMILY = BlockFamilies.register(MOSSY_CHALK)
 			.stairs(MOSSY_CHALK_STAIRS)
 			.slab(MOSSY_CHALK_SLAB)
@@ -2053,10 +2053,10 @@ public class ModStoneBlocks {
 	public static final Block OVERGROWN_CHALK_WALL = registerBlock("overgrown_chalk_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
 	public static final Block OVERGROWN_CHALK_BUTTON = registerBlock("overgrown_chalk_button",
-			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+			new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
 	public static final Block OVERGROWN_CHALK_PRESSURE_PLATE = registerBlock("overgrown_chalk_pressure_plate",
-			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+			new PressurePlateBlock(BlockSetType.STONE,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
 	public static final BlockFamily OVERGROWN_CHALK_FAMILY = BlockFamilies.register(OVERGROWN_CHALK)
 			.stairs(OVERGROWN_CHALK_STAIRS)
 			.slab(OVERGROWN_CHALK_SLAB)
@@ -2074,10 +2074,10 @@ public class ModStoneBlocks {
     public static final Block COBBLED_CHALK_WALL = registerBlock("cobbled_chalk_wall",
             new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
     public static final Block COBBLED_CHALK_BUTTON = registerBlock("cobbled_chalk_button",
-            new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+            new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
     public static final Block COBBLED_CHALK_PRESSURE_PLATE = registerBlock("cobbled_chalk_pressure_plate",
-            new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+            new PressurePlateBlock(BlockSetType.STONE,
+                    FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
     public static final BlockFamily COBBLED_CHALK_FAMILY = BlockFamilies.register(COBBLED_CHALK)
             .stairs(COBBLED_CHALK_STAIRS)
             .slab(COBBLED_CHALK_SLAB)
@@ -2095,10 +2095,10 @@ public class ModStoneBlocks {
 	public static final Block MOSSY_COBBLED_CHALK_WALL = registerBlock("mossy_cobbled_chalk_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
 	public static final Block MOSSY_COBBLED_CHALK_BUTTON = registerBlock("mossy_cobbled_chalk_button",
-			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+			new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
 	public static final Block MOSSY_COBBLED_CHALK_PRESSURE_PLATE = registerBlock("mossy_cobbled_chalk_pressure_plate",
-			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+			new PressurePlateBlock(BlockSetType.STONE,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
 	public static final BlockFamily MOSSY_COBBLED_CHALK_FAMILY = BlockFamilies.register(MOSSY_COBBLED_CHALK)
 			.stairs(MOSSY_COBBLED_CHALK_STAIRS)
 			.slab(MOSSY_COBBLED_CHALK_SLAB)
@@ -2117,11 +2117,11 @@ public class ModStoneBlocks {
 	public static final Block OVERGROWN_COBBLED_CHALK_WALL = registerBlock("overgrown_cobbled_chalk_wall",
 			new WallBlock(FabricBlockSettings.copyOf(Blocks.ANDESITE_WALL)));
 	public static final Block OVERGROWN_COBBLED_CHALK_BUTTON = registerBlock("overgrown_cobbled_chalk_button",
-			new ButtonBlock(FabricBlockSettings.copyOf(Blocks.STONE_BUTTON), BlockSetType.STONE, 10, false));
+			new ButtonBlock(BlockSetType.STONE, 10, FabricBlockSettings.copyOf(Blocks.STONE_BUTTON)));
 	public static final Block OVERGROWN_COBBLED_CHALK_PRESSURE_PLATE = registerBlock(
 			"overgrown_cobbled_chalk_pressure_plate",
-			new PressurePlateBlock(PressurePlateBlock.ActivationRule.EVERYTHING,
-					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE), BlockSetType.STONE));
+			new PressurePlateBlock(BlockSetType.STONE,
+					FabricBlockSettings.copyOf(Blocks.STONE_PRESSURE_PLATE)));
 	public static final BlockFamily OVERGROWN_COBBLED_CHALK_FAMILY = BlockFamilies.register(OVERGROWN_COBBLED_CHALK)
 			.stairs(OVERGROWN_COBBLED_CHALK_STAIRS)
 			.slab(OVERGROWN_COBBLED_CHALK_SLAB)
