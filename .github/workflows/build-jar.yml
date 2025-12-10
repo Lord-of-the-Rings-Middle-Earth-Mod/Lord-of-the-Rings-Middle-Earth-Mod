@@ -98,62 +98,111 @@ jobs:
                         console.log('Warning: Issue is not open');
                       }
                       
-                      // Look for linked branch in various places:
-                      // 1. Check for development branches matching the issue number
-                      const possibleBranchPatterns = [
-                        `issue-${issueNumber}`,
-                        `issue/${issueNumber}`,
-                        `${issueNumber}`,
-                        `feature/issue-${issueNumber}`,
-                        `fix/issue-${issueNumber}`
-                      ];
-                      
+                      // Look for linked branch using multiple strategies:
+                      // Strategy 1: Use GraphQL to query for linked development branches
                       let foundBranch = null;
                       
-                      // Try to find a matching branch with exact patterns first
-                      for (const pattern of possibleBranchPatterns) {
+                      try {
+                        console.log('Strategy 1: Checking for linked branches via GraphQL API...');
+                        const graphqlQuery = `
+                          query($owner: String!, $repo: String!, $issueNumber: Int!) {
+                            repository(owner: $owner, name: $repo) {
+                              issue(number: $issueNumber) {
+                                linkedBranches(first: 10) {
+                                  nodes {
+                                    ref {
+                                      name
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        `;
+                        
+                        const graphqlResult = await github.graphql(graphqlQuery, {
+                          owner: context.repo.owner,
+                          repo: context.repo.repo,
+                          issueNumber: parseInt(issueNumber, 10)
+                        });
+                        
+                        const linkedBranches = graphqlResult?.repository?.issue?.linkedBranches?.nodes || [];
+                        if (linkedBranches.length > 0) {
+                          foundBranch = linkedBranches[0].ref.name;
+                          console.log(`✓ Found linked branch via GraphQL: ${foundBranch}`);
+                        } else {
+                          console.log('No linked branches found via GraphQL');
+                        }
+                      } catch (e) {
+                        console.log(`GraphQL query failed: ${e.message}`);
+                      }
+                      
+                      // Strategy 2: Check timeline events for connected branches
+                      if (!foundBranch) {
                         try {
-                          await github.rest.repos.getBranch({
+                          console.log('Strategy 2: Checking timeline events for connected branches...');
+                          const timeline = await github.rest.issues.listEventsForTimeline({
                             owner: context.repo.owner,
                             repo: context.repo.repo,
-                            branch: pattern
+                            issue_number: parseInt(issueNumber, 10),
+                            per_page: 100
                           });
-                          foundBranch = pattern;
-                          console.log(`Found matching branch: ${pattern}`);
-                          break;
+                          
+                          // Look for "connected" events that link branches
+                          for (const event of timeline.data) {
+                            if (event.event === 'connected' && event.source?.type === 'branch') {
+                              foundBranch = event.source.name;
+                              console.log(`✓ Found connected branch via timeline: ${foundBranch}`);
+                              break;
+                            }
+                          }
+                          
+                          if (!foundBranch) {
+                            console.log('No connected branches found in timeline');
+                          }
                         } catch (e) {
-                          // Branch doesn't exist, continue
+                          console.log(`Timeline check failed: ${e.message}`);
                         }
                       }
                       
-                      // If no exact match found, search for branches starting with issue number
-                      // This handles GitHub's default branch naming: {issue-number}-{description}
+                      // Strategy 3: Search all branches for patterns matching the issue number
+                      // This handles various naming conventions: {number}-, feature/{number}-, etc.
                       if (!foundBranch) {
                         try {
-                          console.log(`Searching for branches matching pattern: ${issueNumber}-*`);
-                          // Note: Fetches up to 100 branches. For repositories with more branches,
-                          // pagination would be needed, but this should be sufficient for most cases.
+                          console.log('Strategy 3: Searching all branches for issue number patterns...');
                           const branches = await github.rest.repos.listBranches({
                             owner: context.repo.owner,
                             repo: context.repo.repo,
                             per_page: 100
                           });
                           
-                          // Look for branches that start with the issue number followed by a hyphen
-                          // Note: If multiple branches exist with the same issue number prefix,
-                          // this will return the first match found. Typically, only one branch
-                          // should exist per issue.
-                          const issuePrefix = `${issueNumber}-`;
-                          const matchingBranch = branches.data.find(branch => 
-                            branch.name.startsWith(issuePrefix)
-                          );
+                          // Look for branches containing the issue number
+                          // Patterns: {num}-, feature/{num}-, fix/{num}-, {num}, etc.
+                          const patterns = [
+                            new RegExp(`^${issueNumber}-`),           // 122-description
+                            new RegExp(`^feature/${issueNumber}-`),   // feature/122-description
+                            new RegExp(`^fix/${issueNumber}-`),       // fix/122-description
+                            new RegExp(`^bugfix/${issueNumber}-`),    // bugfix/122-description
+                            new RegExp(`^issue[-/]${issueNumber}`),   // issue-122, issue/122
+                            new RegExp(`^${issueNumber}$`)            // exact: 122
+                          ];
                           
-                          if (matchingBranch) {
-                            foundBranch = matchingBranch.name;
-                            console.log(`Found matching branch with pattern: ${foundBranch}`);
+                          for (const branch of branches.data) {
+                            for (const pattern of patterns) {
+                              if (pattern.test(branch.name)) {
+                                foundBranch = branch.name;
+                                console.log(`✓ Found matching branch via pattern: ${foundBranch}`);
+                                break;
+                              }
+                            }
+                            if (foundBranch) break;
+                          }
+                          
+                          if (!foundBranch) {
+                            console.log('No branches found matching issue number patterns');
                           }
                         } catch (e) {
-                          console.log(`Error searching for branches: ${e.message}`);
+                          console.log(`Branch pattern search failed: ${e.message}`);
                         }
                       }
                       
