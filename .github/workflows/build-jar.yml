@@ -376,7 +376,7 @@ jobs:
             const jarName = '${{ steps.jar_name.outputs.jar_name }}';
             const branch = '${{ needs.determine-build-type.outputs.branch }}';
             const jarPath = '${{ env.RENAMED_JAR }}';
-            const tagName = `test-build-issue-${issueNum}-${Date.now()}`;
+            const tagName = `test-build-issue-${issueNum}-${context.runId}`;
             
             // Create a temporary draft release to upload the JAR
             const release = await github.rest.repos.createRelease({
@@ -391,8 +391,8 @@ jobs:
             
             console.log(`Created temporary draft release: ${release.data.id}`);
             
-            // Read the JAR file
-            const jarContent = fs.readFileSync(jarPath);
+            // Read the JAR file asynchronously
+            const jarContent = await fs.promises.readFile(jarPath);
             
             // Upload the JAR as a release asset
             const asset = await github.rest.repos.uploadReleaseAsset({
@@ -414,7 +414,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issueNum,
-              body: `🎉 **Test Build Ready!**\n\nA JAR file has been built for testing:\n\n**File:** \`${jarName}.jar\`\n\n📦 [Download JAR file](${asset.data.browser_download_url})\n\n_Built from branch: \`${branch}\`_\n\n**Note:** This is a direct JAR download link. The file is hosted in a draft release and will be automatically cleaned up.`
+              body: `🎉 **Test Build Ready!**\n\nA JAR file has been built for testing:\n\n**File:** \`${jarName}.jar\`\n\n📦 [Download JAR file](${asset.data.browser_download_url})\n\n_Built from branch: \`${branch}\`_\n\n**Note:** This is a direct JAR download link. The file is hosted in a draft release and can be manually cleaned up when no longer needed.`
             });
             
             console.log(`Posted comment to issue #${issueNum}`);
