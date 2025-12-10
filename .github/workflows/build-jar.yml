@@ -131,6 +131,8 @@ jobs:
                       if (!foundBranch) {
                         try {
                           console.log(`Searching for branches matching pattern: ${issueNumber}-*`);
+                          // Note: Fetches up to 100 branches. For repositories with more branches,
+                          // pagination would be needed, but this should be sufficient for most cases.
                           const branches = await github.rest.repos.listBranches({
                             owner: context.repo.owner,
                             repo: context.repo.repo,
@@ -138,6 +140,9 @@ jobs:
                           });
                           
                           // Look for branches that start with the issue number followed by a hyphen
+                          // Note: If multiple branches exist with the same issue number prefix,
+                          // this will return the first match found. Typically, only one branch
+                          // should exist per issue.
                           const issuePrefix = `${issueNumber}-`;
                           const matchingBranch = branches.data.find(branch => 
                             branch.name.startsWith(issuePrefix)
