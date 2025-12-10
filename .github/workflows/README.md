@@ -85,9 +85,15 @@ The workflow supports three distinct scenarios:
 #### Scenario 3: Manual Trigger
 - **Event**: `workflow_dispatch`
 - **Options**: 
-  - Dev build (uses `develop` branch, `-dev` suffix)
-  - Release build (uses `master` branch, no suffix)
-- **Branch**: Based on selection
+  - **Branch Mode**:
+    - Dev build (uses `develop` branch, `-dev` suffix)
+    - Release build (uses `master` branch, no suffix)
+  - **Issue Mode**:
+    - Select any issue number
+    - Automatically detects if issue has an associated branch
+    - Falls back to `develop` if no branch found
+    - Always builds as dev build
+- **Branch**: Based on mode and selection
 - **JAR Naming**: Based on build type selection
 
 ### Version Naming Convention
@@ -155,9 +161,21 @@ If build conditions are met, the workflow:
 #### Manual Build
 1. Go to Actions → Build JAR workflow
 2. Click "Run workflow"
-3. Select build type (dev or release)
+3. Choose trigger type:
+   - **Branch Mode**: Select build type (dev or release)
+   - **Issue Mode**: Enter issue number to build for that issue's branch
 4. Click "Run workflow" button
 5. Download JAR from workflow artifacts
+
+**Branch Detection for Issues:**
+When using Issue Mode, the workflow searches for associated branches in the following order:
+- `issue-{number}` (e.g., `issue-123`)
+- `issue/{number}` (e.g., `issue/123`)
+- `{number}` (e.g., `123`)
+- `feature/issue-{number}` (e.g., `feature/issue-123`)
+- `fix/issue-{number}` (e.g., `fix/issue-123`)
+
+If no matching branch is found, it defaults to the `develop` branch.
 
 ### Benefits
 - **Automated Testing**: Testers get builds automatically when issues move to testing

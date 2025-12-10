@@ -12,14 +12,26 @@ name: Build JAR
   # Scenario 3: Manual trigger
   workflow_dispatch:
     inputs:
-      build_type:
-        description: 'Build type (dev or release)'
+      trigger_type:
+        description: 'Run workflow for branch or issue?'
         required: true
+        default: 'branch'
+        type: choice
+        options:
+          - branch
+          - issue
+      build_type:
+        description: 'Build type (dev or release) - only used when trigger_type is "branch"'
+        required: false
         default: 'dev'
         type: choice
         options:
           - dev
           - release
+      issue_number:
+        description: 'Issue number - only used when trigger_type is "issue"'
+        required: false
+        type: string
 
 jobs:
   determine-build-type:
@@ -48,9 +60,89 @@ jobs:
             if (eventName === 'workflow_dispatch') {
               // Manual trigger
               shouldBuild = true;
-              buildType = context.payload.inputs.build_type || 'dev';
-              branch = buildType === 'dev' ? 'develop' : 'master';
-              console.log('Manual trigger detected');
+              const triggerType = context.payload.inputs.trigger_type || 'branch';
+              
+              if (triggerType === 'branch') {
+                // Branch mode - use build_type input
+                buildType = context.payload.inputs.build_type || 'dev';
+                branch = buildType === 'dev' ? 'develop' : 'master';
+                console.log(`Manual trigger detected - branch mode: ${branch}`);
+              } else if (triggerType === 'issue') {
+                // Issue mode - fetch issue and check for linked branch
+                issueNumber = context.payload.inputs.issue_number;
+                
+                if (!issueNumber) {
+                  core.setFailed('Issue number is required when trigger_type is "issue"');
+                  shouldBuild = false;
+                } else {
+                  // Validate issue number is a positive integer
+                  const issueNum = parseInt(issueNumber, 10);
+                  if (isNaN(issueNum) || issueNum <= 0 || issueNum.toString() !== issueNumber.trim()) {
+                    core.setFailed(`Invalid issue number: "${issueNumber}". Must be a positive integer.`);
+                    shouldBuild = false;
+                  } else {
+                    console.log(`Manual trigger detected - issue mode: #${issueNumber}`);
+                    
+                    try {
+                      // Fetch the issue details
+                      const issue = await github.rest.issues.get({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: parseInt(issueNumber, 10)
+                      });
+                      
+                      console.log(`Issue title: ${issue.data.title}`);
+                      
+                      // Check if issue is open
+                      if (issue.data.state !== 'open') {
+                        console.log('Warning: Issue is not open');
+                      }
+                      
+                      // Look for linked branch in various places:
+                      // 1. Check for development branches matching the issue number
+                      const possibleBranchPatterns = [
+                        `issue-${issueNumber}`,
+                        `issue/${issueNumber}`,
+                        `${issueNumber}`,
+                        `feature/issue-${issueNumber}`,
+                        `fix/issue-${issueNumber}`
+                      ];
+                      
+                      let foundBranch = null;
+                      
+                      // Try to find a matching branch
+                      for (const pattern of possibleBranchPatterns) {
+                        try {
+                          await github.rest.repos.getBranch({
+                            owner: context.repo.owner,
+                            repo: context.repo.repo,
+                            branch: pattern
+                          });
+                          foundBranch = pattern;
+                          console.log(`Found matching branch: ${pattern}`);
+                          break;
+                        } catch (e) {
+                          // Branch doesn't exist, continue
+                        }
+                      }
+                      
+                      if (foundBranch) {
+                        branch = foundBranch;
+                        console.log(`Using issue branch: ${branch}`);
+                      } else {
+                        branch = 'develop';
+                        console.log(`No issue-specific branch found, falling back to: ${branch}`);
+                      }
+                      
+                      buildType = 'dev';
+                    } catch (error) {
+                      console.error(`Error fetching issue: ${error.message}`);
+                      core.setFailed(`Failed to fetch issue #${issueNumber}: ${error.message}`);
+                      shouldBuild = false;
+                    }
+                  }
+                }
+              }
             } else if (eventName === 'release') {
               // Release published
               shouldBuild = true;
