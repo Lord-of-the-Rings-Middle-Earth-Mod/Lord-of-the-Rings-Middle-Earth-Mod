@@ -176,15 +176,18 @@ jobs:
                             per_page: 100
                           });
                           
+                          // Escape issue number for safe regex usage (defense in depth)
+                          const escapedIssueNum = issueNumber.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                          
                           // Look for branches containing the issue number
                           // Patterns: {num}-, feature/{num}-, fix/{num}-, {num}, etc.
                           const patterns = [
-                            new RegExp(`^${issueNumber}-`),           // 122-description
-                            new RegExp(`^feature/${issueNumber}-`),   // feature/122-description
-                            new RegExp(`^fix/${issueNumber}-`),       // fix/122-description
-                            new RegExp(`^bugfix/${issueNumber}-`),    // bugfix/122-description
-                            new RegExp(`^issue[-/]${issueNumber}`),   // issue-122, issue/122
-                            new RegExp(`^${issueNumber}$`)            // exact: 122
+                            new RegExp(`^${escapedIssueNum}-`),           // 122-description
+                            new RegExp(`^feature/${escapedIssueNum}-`),   // feature/122-description
+                            new RegExp(`^fix/${escapedIssueNum}-`),       // fix/122-description
+                            new RegExp(`^bugfix/${escapedIssueNum}-`),    // bugfix/122-description
+                            new RegExp(`^issue[-/]${escapedIssueNum}`),   // issue-122, issue/122
+                            new RegExp(`^${escapedIssueNum}$`)            // exact: 122
                           ];
                           
                           for (const branch of branches.data) {
