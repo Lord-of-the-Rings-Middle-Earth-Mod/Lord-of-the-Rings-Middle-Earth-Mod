@@ -110,7 +110,7 @@ jobs:
                       
                       let foundBranch = null;
                       
-                      // Try to find a matching branch
+                      // Try to find a matching branch with exact patterns first
                       for (const pattern of possibleBranchPatterns) {
                         try {
                           await github.rest.repos.getBranch({
@@ -123,6 +123,32 @@ jobs:
                           break;
                         } catch (e) {
                           // Branch doesn't exist, continue
+                        }
+                      }
+                      
+                      // If no exact match found, search for branches starting with issue number
+                      // This handles GitHub's default branch naming: {issue-number}-{description}
+                      if (!foundBranch) {
+                        try {
+                          console.log(`Searching for branches matching pattern: ${issueNumber}-*`);
+                          const branches = await github.rest.repos.listBranches({
+                            owner: context.repo.owner,
+                            repo: context.repo.repo,
+                            per_page: 100
+                          });
+                          
+                          // Look for branches that start with the issue number followed by a hyphen
+                          const issuePrefix = `${issueNumber}-`;
+                          const matchingBranch = branches.data.find(branch => 
+                            branch.name.startsWith(issuePrefix)
+                          );
+                          
+                          if (matchingBranch) {
+                            foundBranch = matchingBranch.name;
+                            console.log(`Found matching branch with pattern: ${foundBranch}`);
+                          }
+                        } catch (e) {
+                          console.log(`Error searching for branches: ${e.message}`);
                         }
                       }
                       
@@ -288,6 +314,7 @@ jobs:
             const fs = require('fs');
             const issueNum = parseInt('${{ needs.determine-build-type.outputs.issue_number }}', 10);
             const jarName = '${{ steps.jar_name.outputs.jar_name }}';
+            const branch = '${{ needs.determine-build-type.outputs.branch }}';
 
             // Get the artifact download URL
             const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
@@ -303,7 +330,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issueNum,
-              body: `🎉 **Test Build Ready!**\n\nA JAR file has been built for testing:\n\n**File:** \`${jarName}.jar\`\n\n📦 [Download from workflow artifacts](${url})\n\n_Built from develop branch_`
+              body: `🎉 **Test Build Ready!**\n\nA JAR file has been built for testing:\n\n**File:** \`${jarName}.jar\`\n\n📦 [Download from workflow artifacts](${url})\n\n_Built from branch: \`${branch}\`_`
             });
 
       - name: Upload JAR to release
