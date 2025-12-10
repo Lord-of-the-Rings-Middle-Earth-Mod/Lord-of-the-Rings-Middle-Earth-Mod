@@ -10,6 +10,9 @@ name: Build JAR
     types: [published]
 
   # Scenario 3: Manual trigger
+  # Note: The "Use workflow from" dropdown in GitHub UI determines which version of this
+  # workflow file to execute. It's recommended to run from 'develop' branch for consistency.
+  # The actual branch to BUILD from is determined automatically by the workflow logic below.
   workflow_dispatch:
     inputs:
       trigger_type:
@@ -363,7 +366,7 @@ jobs:
           name: ${{ steps.jar_name.outputs.jar_name }}
           path: ${{ env.RENAMED_JAR }}
 
-      - name: Attach JAR to issue
+      - name: Upload JAR file directly to issue
         if: needs.determine-build-type.outputs.issue_number != ''
         uses: actions/github-script@v7
         with:
@@ -372,23 +375,49 @@ jobs:
             const issueNum = parseInt('${{ needs.determine-build-type.outputs.issue_number }}', 10);
             const jarName = '${{ steps.jar_name.outputs.jar_name }}';
             const branch = '${{ needs.determine-build-type.outputs.branch }}';
-
-            // Get the artifact download URL
-            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+            const jarPath = '${{ env.RENAMED_JAR }}';
+            const tagName = `test-build-issue-${issueNum}-${context.runId}`;
+            
+            // Create a temporary draft release to upload the JAR
+            const release = await github.rest.repos.createRelease({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              run_id: context.runId
+              tag_name: tagName,
+              name: `Test Build for Issue #${issueNum}`,
+              body: `Temporary release for test build of issue #${issueNum}`,
+              draft: true,
+              prerelease: true
             });
-
-            const url = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
-
-            // Comment on the issue with the JAR download link
+            
+            console.log(`Created temporary draft release: ${release.data.id}`);
+            
+            // Read the JAR file asynchronously
+            const jarContent = await fs.promises.readFile(jarPath);
+            
+            // Upload the JAR as a release asset
+            const asset = await github.rest.repos.uploadReleaseAsset({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: release.data.id,
+              name: `${jarName}.jar`,
+              data: jarContent,
+              headers: {
+                'content-type': 'application/java-archive',
+                'content-length': jarContent.length
+              }
+            });
+            
+            console.log(`Uploaded JAR as release asset: ${asset.data.browser_download_url}`);
+            
+            // Comment on the issue with direct download link to the JAR file
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issueNum,
-              body: `🎉 **Test Build Ready!**\n\nA JAR file has been built for testing:\n\n**File:** \`${jarName}.jar\`\n\n📦 [Download from workflow artifacts](${url})\n\n_Built from branch: \`${branch}\`_`
+              body: `🎉 **Test Build Ready!**\n\nA JAR file has been built for testing:\n\n**File:** \`${jarName}.jar\`\n\n📦 [Download JAR file](${asset.data.browser_download_url})\n\n_Built from branch: \`${branch}\`_\n\n**Note:** This is a direct JAR download link. The file is hosted in a draft release and can be manually cleaned up when no longer needed.`
             });
+            
+            console.log(`Posted comment to issue #${issueNum}`);
 
       - name: Upload JAR to release
         if: github.event_name == 'release'
