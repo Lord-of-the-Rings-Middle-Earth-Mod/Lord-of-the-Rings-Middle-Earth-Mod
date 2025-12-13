@@ -22,6 +22,7 @@ import me.anedhel.lotr.block.ModWoodType;
 import me.anedhel.lotr.entity.ModBoats;
 import me.anedhel.lotr.entity.ModEntities;
 import me.anedhel.lotr.entity.custom.HobbitEntity;
+import me.anedhel.lotr.item.ModArmorMaterials;
 import me.anedhel.lotr.item.ModItemGroups;
 import me.anedhel.lotr.item.ModItems;
 import me.anedhel.lotr.world.gen.ModWorldGeneration;
@@ -53,6 +54,7 @@ public class LordOfTheRingsMiddleEarthMod implements ModInitializer {
 		LOGGER.info("The Lord of the Rings Mod starts to initialise.");
 		LOGGER.info(COPYRIGHT); //Logging the Copyright notice as defined in the GNU General Public License
 		ModItemGroups.registerModItemGroups();
+		ModArmorMaterials.initialize();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModBoats.registerBoats();

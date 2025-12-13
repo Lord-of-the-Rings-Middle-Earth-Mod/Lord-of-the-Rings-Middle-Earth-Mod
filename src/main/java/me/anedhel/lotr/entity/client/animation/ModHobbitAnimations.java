@@ -24,6 +24,7 @@ import net.minecraft.client.render.entity.animation.Transformation;
 
 /**
  * This class contains the animations for the Hobbit entity.
+ * ToDo: HOBBIT_RUNNING and HOBBIT_CHILLING need to be used still
  */
 public class ModHobbitAnimations {
     public static final Animation HOBBIT_WALKING = Animation.Builder.create(1f).looping()

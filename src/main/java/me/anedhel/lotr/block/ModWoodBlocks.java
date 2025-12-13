@@ -4,8 +4,6 @@ import com.terraformersmc.terraform.sign.block.TerraformHangingSignBlock;
 import com.terraformersmc.terraform.sign.block.TerraformSignBlock;
 import me.anedhel.lotr.LordOfTheRingsMiddleEarthMod;
 import me.anedhel.lotr.world.tree.ModSaplingGenerators;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
@@ -21,85 +19,87 @@ public class ModWoodBlocks {
     Wood Types
      */
     public static final Block PINE_LOG = registerBlock("pine_log",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).strength(4f)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_LOG).strength(4f)));
     public static final Block PINE_WOOD = registerBlock("pine_wood",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD).strength(4f)));
     public static final Block PINE_WOOD_STAIRS = registerBlock("pine_wood_stairs",
-            new StairsBlock(ModWoodBlocks.PINE_WOOD.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+            new StairsBlock(ModWoodBlocks.PINE_WOOD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_WOOD).strength(4f)));
     public static final Block PINE_WOOD_SLAB = registerBlock("pine_wood_slabs",
-            new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD).strength(4f)));
     public static final Block PINE_WOOD_BUTTON = registerBlock("pine_wood_button",
-            new ButtonBlock(BlockSetType.OAK, 10, FabricBlockSettings.copyOf(Blocks.OAK_BUTTON)));
+            new ButtonBlock(BlockSetType.OAK, 10, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)));
     public static final Block PINE_WOOD_PRESSURE_PLATE = registerBlock("pine_wood_pressure_plate",
-            new PressurePlateBlock(BlockSetType.OAK, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE)));
+            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
     public static final Block PINE_WOOD_DOOR = registerBlock("pine_wood_door",
-            new DoorBlock(BlockSetType.OAK, FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+            new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_WOOD).strength(4f)));
     public static final Block PINE_WOOD_TRAPDOOR = registerBlock("pine_wood_trapdoor",
-            new TrapdoorBlock(BlockSetType.OAK, FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+            new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_WOOD).strength(4f)));
     public static final Block STRIPPED_PINE_LOG = registerBlock("stripped_pine_log",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG).strength(4f)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_LOG).strength(4f)));
     public static final Block STRIPPED_PINE_WOOD = registerBlock("stripped_pine_wood",
-            new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
+            new PillarBlock(AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
     public static final Block STRIPPED_PINE_STAIRS = registerBlock("stripped_pine_stairs",
-            new StairsBlock(STRIPPED_PINE_WOOD.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
+            new StairsBlock(STRIPPED_PINE_WOOD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD).strength(4f)));
     public static final Block STRIPPED_PINE_SLAB = registerBlock("stripped_pine_slabs",
-            new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).strength(4f)));
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_WOOD).strength(4f)));
     public static final Block STRIPPED_PINE_WOOD_BUTTON = registerBlock("stripped_pine_wood_button",
-            new ButtonBlock(BlockSetType.OAK, 10, FabricBlockSettings.copyOf(Blocks.OAK_BUTTON)));
+            new ButtonBlock(BlockSetType.OAK, 10, AbstractBlock.Settings.copy(Blocks.OAK_BUTTON)));
     public static final Block STRIPPED_PINE_WOOD_PRESSURE_PLATE = registerBlock("stripped_pine_wood_pressure_plate",
-            new PressurePlateBlock(BlockSetType.OAK, FabricBlockSettings.copyOf(Blocks.OAK_PRESSURE_PLATE)));
+            new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_PRESSURE_PLATE)));
     public static final Block STRIPPED_PINE_DOOR = registerBlock("stripped_pine_door",
-            new DoorBlock(BlockSetType.OAK, FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD)));
+            new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.STRIPPED_OAK_WOOD)));
     public static final Block STRIPPED_PINE_TRAPDOOR = registerBlock("stripped_pine_trapdoor",
-            new TrapdoorBlock(BlockSetType.OAK, FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR)));
+            new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)));
     public static final Block PINE_PLANKS = registerBlock("pine_planks",
-            new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f)));
+            new Block(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(4f)));
     public static final Block PINE_PLANKS_STAIRS = registerBlock("pine_planks_stairs",
-            new StairsBlock(ModWoodBlocks.PINE_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_STAIRS).strength(4f)));
+            new StairsBlock(ModWoodBlocks.PINE_PLANKS.getDefaultState(), AbstractBlock.Settings.copy(Blocks.OAK_STAIRS).strength(4f)));
     public static final Block PINE_PLANKS_SLAB = registerBlock("pine_planks_slab",
-            new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f)));
+            new SlabBlock(AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(4f)));
     public static final Block PINE_PLANKS_FENCE = registerBlock("pine_planks_fence",
-            new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE)));
+            new FenceBlock(AbstractBlock.Settings.copy(Blocks.OAK_FENCE)));
     public static final Block PINE_PLANKS_FENCE_GATE = registerBlock("pine_planks_fence_gate",
-            new FenceGateBlock(WoodType.OAK, FabricBlockSettings.copyOf(Blocks.OAK_FENCE_GATE)));
+            new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_FENCE_GATE)));
     public static final Block PINE_PLANKS_BUTTON = registerBlock("pine_planks_button",
-            new ButtonBlock(BlockSetType.OAK, 10, FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f)));
+            new ButtonBlock(BlockSetType.OAK, 10, AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(4f)));
     public static final Block PINE_PLANKS_PRESSURE_PLATE = registerBlock("pine_planks_pressure_plate",
             new PressurePlateBlock(BlockSetType.OAK,
-                    FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).strength(4f)));
+                    AbstractBlock.Settings.copy(Blocks.OAK_PLANKS).strength(4f)));
     public static final Block PINE_PLANKS_DOOR = registerBlock("pine_planks_door",
-            new DoorBlock(BlockSetType.OAK, FabricBlockSettings.copyOf(Blocks.OAK_DOOR)));
+            new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_DOOR)));
     public static final Block PINE_PLANKS_TRAPDOOR = registerBlock("pine_planks_trapdoor",
-            new TrapdoorBlock(BlockSetType.OAK, FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR)));
+            new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.copy(Blocks.OAK_TRAPDOOR)));
 
     /*
     Leaves and Saplings
      */
     public static final Block PINE_LEAVES = registerBlock("pine_leaves",
-            new LeavesBlock(FabricBlockSettings.copyOf(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
+            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES).strength(4f).nonOpaque()));
     public static final Block PINE_SAPLINGS = registerBlock("pine_sapling",
-            new SaplingBlock(ModSaplingGenerators.PINE, FabricBlockSettings.copyOf(Blocks.OAK_SAPLING)));
+            new SaplingBlock(ModSaplingGenerators.PINE, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
 
     /*
     Sign Textures
      */
     public static final Identifier PINE_SIGN_TEXTURE = new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "entity/signs/pine");
     public static final Identifier PINE_HANGING_SIGN_TEXTURE = new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "entity/signs/hanging/pine");
-    public static final Identifier PINE_HANGING_GUI_SIGN_TEXTURE = new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "textures/gui/hanging_sign/pine");
+    public static final Identifier PINE_HANGING_GUI_SIGN_TEXTURE = new Identifier(LordOfTheRingsMiddleEarthMod
+    .MOD_ID, "textures/gui/hanging_sign/pine");
+
 
     /*
     Signs
      */
     public static final Block STANDING_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_standing_sign"),
-            new TerraformSignBlock(PINE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_SIGN)));
+            new TerraformSignBlock(PINE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_SIGN)));
     public static final Block WALL_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_wall_sign"),
-            new TerraformSignBlock(PINE_SIGN_TEXTURE, FabricBlockSettings.copyOf(Blocks.OAK_WALL_SIGN)));
+            new TerraformSignBlock(PINE_SIGN_TEXTURE, AbstractBlock.Settings.copy(Blocks.OAK_WALL_SIGN)));
     public static final Block HANGING_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_hanging_sign"),
             new TerraformHangingSignBlock(PINE_HANGING_SIGN_TEXTURE, PINE_HANGING_GUI_SIGN_TEXTURE,
-                    FabricBlockSettings.copyOf(Blocks.OAK_HANGING_SIGN)));
+                    AbstractBlock.Settings.copy(Blocks.OAK_HANGING_SIGN)));
     public static final Block WALL_HANGING_PINE_SIGN = Registry.register(Registries.BLOCK, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "pine_wall_hanging_sign"),
             new TerraformHangingSignBlock(PINE_HANGING_SIGN_TEXTURE, PINE_HANGING_GUI_SIGN_TEXTURE,
-                    FabricBlockSettings.copyOf(Blocks.OAK_WALL_HANGING_SIGN)));
+                    AbstractBlock.Settings.copy(Blocks.OAK_WALL_HANGING_SIGN)));
 
     /*
     Block Families
@@ -149,6 +149,8 @@ public class ModWoodBlocks {
 
     /**
      * This Method is used to register a Block Item with minecraft
+     * ToDo: Check if the return value needs to stay, or if void is sufficient
+     *
      * @param name The name of the Block
      * @param block The Block to be registered as Item
      * @return The BlockItem after it has been registered
@@ -156,7 +158,7 @@ public class ModWoodBlocks {
     private static Item registerBlockItem (String name, Block block) {
         return Registry.register(Registries.ITEM,
                 new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
+                new BlockItem(block, new Item.Settings()));
     }
 
     public static void registerModWoodBlocks () {

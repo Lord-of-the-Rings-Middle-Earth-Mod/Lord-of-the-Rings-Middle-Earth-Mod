@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "lotr:overgrown_gold_cobbled_chalk_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "lotr:overgrown_gold_cobbled_chalk_brick_wall"
+  }
+}

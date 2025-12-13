@@ -924,7 +924,7 @@ public enum ModStoneType {
     }
 
     /**
-     * Returns a list of all the blocks for the LotR Stone Itemgroup
+     * Returns a list of all the blocks for the LotR Stone Item-group
      *
      * @return a list of all the blocks
      */
@@ -1352,7 +1352,7 @@ public enum ModStoneType {
     }
 
     /**
-     * Returns a list of all the redstone-related blocks for the LotR Redstone Itemgroup.
+     * Returns a list of all the redstone-related blocks for the LotR Redstone Item-group.
      *
      * @return a list of all the redstone-related blocks
      */
@@ -2558,6 +2558,8 @@ public enum ModStoneType {
 
     /**
      * Returns the given variant of the crackedMossyBrick
+     * ToDo: Check if the Method is really never used.
+     *
      * @param variant the variantBlock to be returned (base, stairs, slab or wall)
      * @return the Block, that is the given variant of the crackedMossyBrick
      */

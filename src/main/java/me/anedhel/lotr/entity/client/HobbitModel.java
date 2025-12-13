@@ -31,6 +31,7 @@ import net.minecraft.util.math.MathHelper;
 
 /**
  * HobbitModel class for rendering Hobbit entities in Minecraft.
+ * The different parts are marked as not used, but required for the model to work properly.
  *
  * @param <T> The type of HobbitEntity this model is for.
  */

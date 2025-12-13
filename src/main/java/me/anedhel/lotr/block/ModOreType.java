@@ -81,6 +81,7 @@ public enum ModOreType {
 
     /**
      * Retrieves a list of `ItemStack` objects representing the ores associated with this ore type.
+     * ToDo: Investigate if this can be moved into a Method
      *
      * @return A list of `ItemStack` objects for the ores in this ore type.
      */
@@ -101,7 +102,7 @@ public enum ModOreType {
         if (graniteOre != null) {
 	        blockItemGroupList.add(new ItemStack(graniteOre));
         }
-        if (blueslateOre != null) {
+        if (blueslateOre != null) { //ToDo: Investigate if this can be moved into a Method
 	        blockItemGroupList.add(new ItemStack(blueslateOre));
         }
         if (chalkOre != null) {
@@ -119,6 +120,7 @@ public enum ModOreType {
 
 	/**
 	 * Retrieves a list of `ItemStack` objects representing the ingredients associated with this ore type.
+	 * ToDo: Investigate if this can be moved into a Method
 	 *
 	 * @return A list of `ItemStack` objects for the ingredients in this ore type.
 	 */

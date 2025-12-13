@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "lotr:cracked_silver_chalk_tiles"
+  },
+  "result": {
+    "count": 1,
+    "id": "lotr:cracked_silver_chalk_tiles_stairs"
+  }
+}

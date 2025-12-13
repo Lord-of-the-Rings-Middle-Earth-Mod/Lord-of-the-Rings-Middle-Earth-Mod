@@ -23,7 +23,7 @@ import me.anedhel.lotr.item.ModGearType;
 import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalItemTags;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
@@ -65,7 +65,6 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 			FabricTagBuilder pickaxeTag = getOrCreateTagBuilder(ItemTags.PICKAXES);
 			FabricTagBuilder shovelTag = getOrCreateTagBuilder(ItemTags.SHOVELS);
 			FabricTagBuilder hoeTag = getOrCreateTagBuilder(ItemTags.HOES);
-			FabricTagBuilder toolTag = getOrCreateTagBuilder(ItemTags.TOOLS);
 
 			if(gearType.getHelmet() != null && gearType.getChestplate() != null && gearType.getLeggings() != null
 					&& gearType.getBoots() != null) {
@@ -73,23 +72,18 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 						gearType.getBoots());
 			}
 			if(gearType.getSword() != null) {
-				toolTag.add(gearType.getSword());
 				swordTag.add(gearType.getSword());
 			}
 			if(gearType.getAxe() != null) {
-				toolTag.add(gearType.getAxe());
 				axeTag.add(gearType.getAxe());
 			}
 			if(gearType.getPickaxe() != null) {
-				toolTag.add(gearType.getPickaxe());
 				pickaxeTag.add(gearType.getPickaxe());
 			}
 			if(gearType.getShovel() != null) {
-				toolTag.add(gearType.getShovel());
 				shovelTag.add(gearType.getShovel());
 			}
 			if(gearType.getHoe() != null) {
-				toolTag.add(gearType.getHoe());
 				hoeTag.add(gearType.getHoe());
 			}
 		}
@@ -106,7 +100,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
             FabricTagBuilder logTag = getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, new Identifier("lotr", turnBlockIntoTag(woodType.getLog()))));
 
             if (!woodType.isVanillaAddition()) {
-                if (woodType.getLog() != null) {
+                if (woodType.getLog() != null) { //ToDo: Check if the null check is necessary
                     logsThatBurnTag.add(woodType.getLog().asItem());
                     logTag.add(woodType.getLog().asItem());
                 }
@@ -133,7 +127,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 	 * Configures all required tags for mod-specific ore types.
 	 */
 	private void configureModOreTypes() {
-		FabricTagBuilder rawOreTag = getOrCreateTagBuilder(ConventionalItemTags.RAW_ORES);
+		FabricTagBuilder rawOreTag = getOrCreateTagBuilder(ConventionalItemTags.RAW_MATERIALS);
 		FabricTagBuilder nuggetTag = getOrCreateTagBuilder(ConventionalItemTags.NUGGETS);
 		FabricTagBuilder ingotTag = getOrCreateTagBuilder(ConventionalItemTags.INGOTS);
 		for(ModOreType oreType : ModOreType.values()) {

@@ -37,11 +37,13 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.*;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.resource.featuretoggle.FeatureSet;
 import net.minecraft.util.Identifier;
 
 import java.util.*;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 
 /**
@@ -56,8 +58,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	private static final List<ItemConvertible> COPPER_BLOCK_SMELTABLES = List.of(
 			Blocks.RAW_COPPER_BLOCK);
 
-	public ModRecipeProvider(FabricDataOutput output) {
-		super(output);
+	public ModRecipeProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
+		super(output, registriesFuture);
 	}
 
 	/**
@@ -144,7 +146,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				createChestplateRecipe(gearType.getMaterial(), gearType.getChestplate(), exporter);
 			}
 			if(gearType.getLeggings() != null) {
-				createLegginsRecipe(gearType.getMaterial(), gearType.getLeggings(), exporter);
+				createLeggingsRecipe(gearType.getMaterial(), gearType.getLeggings(), exporter);
 			}
 			if(gearType.getBoots() != null) {
 				createBootsRecipe(gearType.getMaterial(), gearType.getBoots(), exporter);
@@ -797,7 +799,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	 * @param cookedItem The resulting cooked food item.
 	 */
 	private void createCookedFoodRecipes(RecipeExporter exporter, Item rawItem, Item cookedItem) {
-		offerFoodCookingRecipe(exporter, "smooking", RecipeSerializer.SMOKING,
+		offerFoodCookingRecipe(exporter, "smoking", RecipeSerializer.SMOKING,
 				SmokingRecipe::new,100, rawItem,
 		                       cookedItem, 0.35f);
 		offerFoodCookingRecipe(exporter, "campfire_cooking", RecipeSerializer.CAMPFIRE_COOKING,
@@ -1983,7 +1985,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	/**
 	 * This method creates a HelmetRecipe for the given input
 	 *
-	 * @param input Ingredient, that should be a ModArmorMaterial
+	 * @param input Ingredient, that should be a defined ArmorMaterial
 	 * @param output The helmet made from the Ingredient
 	 * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one
 	 * 		is provided in the parameters of the method you edit.
@@ -1998,7 +2000,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	/**
 	 * This method creates a ChestplateRecipe for the given input
 	 *
-	 * @param input Ingredient, that should be a ModArmorMaterial
+	 * @param input Ingredient, that should be a defined ArmorMaterial
 	 * @param output The chestplate made from the Ingredient
 	 * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one
 	 * 		is provided in the parameters of the method you edit.
@@ -2011,14 +2013,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	}
 
 	/**
-	 * This method creates a LegginsRecipe for the given input
+	 * This method creates a LeggingsRecipe for the given input
 	 *
-	 * @param input Ingredient, that should be a ModArmorMaterial
-	 * @param output The leggins made from the Ingredient
+	 * @param input Ingredient, that should be a defined ArmorMaterial
+	 * @param output The leggings made from the Ingredient
 	 * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one
 	 * 		is provided in the parameters of the method you edit.
 	 */
-	private void createLegginsRecipe(Item input, Item output, RecipeExporter exporter) {
+	private void createLeggingsRecipe(Item input, Item output, RecipeExporter exporter) {
 		ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output, 1).pattern("###")
 		                       .pattern("# #").pattern("# #").input('#', input)
 		                       .criterion(hasItem(input), conditionsFromItem(input))
@@ -2028,7 +2030,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	/**
 	 * This method creates a BootsRecipe for the given input
 	 *
-	 * @param input Ingredient, that should be a ModArmorMaterial
+	 * @param input Ingredient, that should be a defined ArmorMaterial
 	 * @param output The boots made from the Ingredient
 	 * @param exporter The exporter is an instance you offer the crafting recipe to. Usually one
 	 * 		is provided in the parameters of the method you edit.

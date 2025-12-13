@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "lotr:cracked_mossy_silver_blueslate_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "lotr:cracked_mossy_silver_blueslate_tiles_wall"
+  }
+}

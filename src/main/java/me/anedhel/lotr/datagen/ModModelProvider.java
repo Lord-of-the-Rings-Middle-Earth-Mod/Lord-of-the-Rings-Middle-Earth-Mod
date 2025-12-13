@@ -100,7 +100,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
         itemModelGenerator.register(ModItems.COOKED_CORN, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.HANGING_PINE_SIGN, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.HANGING_PINE_SIGN, Models.GENERATED);
 
         itemModelGenerator.register(ModItems.HOBBIT_SPAWN_EGG,
                 new Model(Optional.of(new Identifier("item/template_spawn_egg")), Optional.empty()));
@@ -153,6 +153,8 @@ public class ModModelProvider extends FabricModelProvider {
      * </p>
      * The warning, that <code>getTranslationKey</code> may produce <code>NullPointerException</code>, can be
      * ignored, as the TranslationKeys are always set when registering the Block.
+     * ToDo: break down the method into smaller methods to increase readability and enable the dataflow algorithm to
+     * analyze it better.
      *
      * @param blockStateModelGenerator a BlockStateModelGenerator provided by minecraft
      */
@@ -1190,7 +1192,7 @@ public class ModModelProvider extends FabricModelProvider {
      * @param blockStateModelGenerator the blockStateModelGenerator
      * @param baseBlock the base block, which texture should be used below the overlay.
      * @param overlayFamily the blockFamily that should have overlay Models
-     * @param textures the overlay textures, if it´s mossy-ornamented or overgrown-ornamented, the ornamented
+     * @param textures the overlay textures, if it's mossy-ornamented or overgrown-ornamented, the ornamented
      * textures should be the first one provided
      */
     private void registerCubeAllOverlayBlockFamilyModel(BlockStateModelGenerator blockStateModelGenerator,
@@ -1679,7 +1681,7 @@ public class ModModelProvider extends FabricModelProvider {
     /**
      * This Method is used to generate the Overlay Texture Map for the Block and the given overlays
      * </p>
-     * For the overlays´s, that are not explicitly named by a block, the following should be used:
+     * For the overlays', that are not explicitly named by a block, the following should be used:
      * mossy_overlay_one: base, cobbled, smooth, smooth slab
      * mossy_overlay_two: bricks, tiles, fancy bricks, pavement, pillar
      * overgrown_overlay: base, cobbled, smooth, smooth slab, bricks, tiles, fancy bricks, pavement

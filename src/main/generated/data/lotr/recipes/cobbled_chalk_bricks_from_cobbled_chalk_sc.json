@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "lotr:cobbled_chalk"
+  },
+  "result": {
+    "count": 1,
+    "id": "lotr:cobbled_chalk_bricks"
+  }
+}

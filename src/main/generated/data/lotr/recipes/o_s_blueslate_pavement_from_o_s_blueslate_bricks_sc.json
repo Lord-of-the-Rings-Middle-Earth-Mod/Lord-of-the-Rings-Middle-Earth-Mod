@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "lotr:overgrown_silver_blueslate_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "lotr:overgrown_silver_blueslate_pavement"
+  }
+}

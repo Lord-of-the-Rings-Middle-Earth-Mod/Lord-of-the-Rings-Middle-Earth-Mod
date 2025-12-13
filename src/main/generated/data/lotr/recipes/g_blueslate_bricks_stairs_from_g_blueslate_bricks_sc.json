@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "lotr:gold_blueslate_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "lotr:gold_blueslate_brick_stairs"
+  }
+}

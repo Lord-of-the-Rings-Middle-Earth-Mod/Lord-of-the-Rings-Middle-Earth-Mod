@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "lotr:mossy_cobbled_chalk"
+  },
+  "result": {
+    "count": 1,
+    "id": "lotr:mossy_cobbled_chalk_wall"
+  }
+}

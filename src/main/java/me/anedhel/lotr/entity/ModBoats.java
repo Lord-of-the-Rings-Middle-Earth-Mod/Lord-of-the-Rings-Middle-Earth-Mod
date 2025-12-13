@@ -4,7 +4,6 @@ import com.terraformersmc.terraform.boat.api.TerraformBoatType;
 import com.terraformersmc.terraform.boat.api.TerraformBoatTypeRegistry;
 import me.anedhel.lotr.block.ModWoodBlocks;
 import me.anedhel.lotr.item.ModItems;
-import net.minecraft.item.Item;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
@@ -20,7 +19,7 @@ public class ModBoats {
         TerraformBoatType pineBoat = new TerraformBoatType.Builder()
                 .item(ModItems.PINE_BOAT)
                 .chestItem(ModItems.PINE_CHEST_BOAT)
-                .planks(Item.fromBlock(ModWoodBlocks.PINE_PLANKS))
+                .planks(ModWoodBlocks.PINE_PLANKS.asItem())
                 .build();
 
         Registry.register(TerraformBoatTypeRegistry.INSTANCE, PINE_BOAT_KEY, pineBoat);

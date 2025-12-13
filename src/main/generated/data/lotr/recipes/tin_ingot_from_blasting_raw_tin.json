@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.7,
+  "group": "_ore",
+  "ingredient": {
+    "item": "lotr:raw_tin"
+  },
+  "result": {
+    "id": "lotr:tin_ingot"
+  }
+}

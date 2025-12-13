@@ -60,6 +60,7 @@ public enum ModGearType {
 
     /**
      * Returns a list of all items in the tool item group.
+     * ToDo: Investigate if the duplicate code can be outsourced to a method.
      *
      * @return a list of all items in the tool item group
      */
@@ -82,6 +83,8 @@ public enum ModGearType {
 
     /**
      * Returns a list of all items in the combat item group.
+     * ToDo: Investigate if the duplicate code can be outsourced to a method.
+     *
      * @return a list of all items in the combat item group
      */
     public @NotNull List<ItemStack> getCombatItemGroupList () {

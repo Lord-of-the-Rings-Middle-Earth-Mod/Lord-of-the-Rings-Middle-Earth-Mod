@@ -31,7 +31,6 @@ import net.minecraft.util.Identifier;
 
 /**
  * This class is used to manage all ItemGroups the Mod uses and adds.
- *
  * The warnings, that the ItemGroups are not used, can be ignored.
  */
 public class ModItemGroups {
@@ -41,7 +40,7 @@ public class ModItemGroups {
             FabricItemGroup.builder()
                     .displayName(Text.translatableWithFallback("itemgroup.lotr_stone", "LotR Stones"))
                     .icon(() -> new ItemStack(ModStoneBlocks.BLUESLATE)).entries(((displayContext, entries) -> {
-                        //There will be more lines in this lambda statement hence we don´t use an expression
+                        //There will be more lines in this lambda statement hence we don't use an expression
                         entries.addAll(ModStoneType.BLUESLATE.getLotRStoneItemGroupList());
                         entries.addAll(ModStoneType.CHALK.getLotRStoneItemGroupList());
                     })).build());
@@ -50,7 +49,7 @@ public class ModItemGroups {
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_wood"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_wood", "LotR Wood"))
                     .icon(() -> new ItemStack(ModWoodBlocks.PINE_LOG)).entries(((displayContext, entries) -> {
-                        //There will be more lines in this lambda statement hence we don´t use an expression
+                        //There will be more lines in this lambda statement hence we don't use an expression
                         entries.addAll(ModWoodType.PINE.getItemGroupList());
                     })).build());
 
@@ -108,7 +107,7 @@ public class ModItemGroups {
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_tools"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_tools", "LotR Tools"))
                     .icon(() -> new ItemStack(ModItems.BRONZE_AXE)).entries((displayContext, entries) -> {
-                        //There will be more lines in this lambda statement hence we don´t use an expression
+                        //There will be more lines in this lambda statement hence we don't use an expression
                         entries.addAll(ModGearType.BRONZE.getToolItemGroupList());
                     }).build());
 
@@ -116,15 +115,15 @@ public class ModItemGroups {
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_transport"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_transport", "LotR Transport"))
                     .icon(() -> new ItemStack(ModItems.PINE_BOAT)).entries(((displayContext, entries) -> {
-                        //There will be more lines in this lambda statement hence we don´t use an expression
+                        //There will be more lines in this lambda statement hence we don't use an expression
                         entries.addAll(ModWoodType.PINE.getItemGroupTransportList());
                     })).build());
 
     public static final ItemGroup LOTR_COMBAT = Registry.register(Registries.ITEM_GROUP,
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_combat"),
-            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_combat", "LotR Combar"))
+            FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_combat", "LotR Combat"))
                     .icon(() -> new ItemStack(ModItems.BRONZE_SWORD)).entries((displayContext, entries) -> {
-                        //There will be more lines in this lambda statement hence we don´t use an expression
+                        //There will be more lines in this lambda statement hence we don't use an expression
                         entries.addAll(ModGearType.BRONZE.getCombatItemGroupList());
                     }).build());
 
@@ -132,7 +131,7 @@ public class ModItemGroups {
             new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "lotr_spawning"),
             FabricItemGroup.builder().displayName(Text.translatableWithFallback("itemgroup.lotr_spawning", "LotR Spawning"))
                     .icon(() -> new ItemStack(ModItems.HOBBIT_SPAWN_EGG)).entries((displayContext, entries) -> {
-                        //There will be more lines in this lambda statement hence we don´t use an expression
+                        //There will be more lines in this lambda statement hence we don't use an expression
                         entries.add(ModItems.HOBBIT_SPAWN_EGG);
                     }).build());
 

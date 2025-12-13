@@ -13,10 +13,6 @@ public class ModWorldGenerator extends FabricDynamicRegistryProvider {
         super(output, registriesFuture);
     }
 
-    /**
-     * @param registries
-     * @param entries
-     */
     @Override
     protected void configure(RegistryWrapper.WrapperLookup registries, Entries entries) {
         entries.addAll(registries.getWrapperOrThrow(RegistryKeys.CONFIGURED_FEATURE));
@@ -25,9 +21,6 @@ public class ModWorldGenerator extends FabricDynamicRegistryProvider {
         entries.addAll(registries.getWrapperOrThrow(RegistryKeys.DIMENSION_TYPE));
     }
 
-    /**
-     * @return
-     */
     @Override
     public String getName() {
         return "World Gen";

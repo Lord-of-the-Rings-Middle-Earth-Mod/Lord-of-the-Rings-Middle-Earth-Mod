@@ -100,7 +100,7 @@ public enum ModWoodType {
         if (log != null && !vanillaAddition) {
             woodItemGroupList.add(new ItemStack(log));
         }
-        if (wood != null) {
+        if (wood != null) { //ToDo: Investigate if this can be moved into a Method
             woodItemGroupList.add(new ItemStack(wood));
         }
         if (woodStairs != null) {
@@ -136,7 +136,7 @@ public enum ModWoodType {
         if (strippedWoodButton != null) {
             woodItemGroupList.add(new ItemStack(strippedWoodButton));
         }
-        if (strippedWoodPressurePlate != null) {
+        if (strippedWoodPressurePlate != null) { //ToDo: Investigate if this can be moved into a Method
             woodItemGroupList.add(new ItemStack(strippedWoodPressurePlate));
         }
         if (strippedWoodDoor != null) {
@@ -177,7 +177,7 @@ public enum ModWoodType {
     }
 
     public List<ItemStack> getItemGroupTransportList () {
-        List<ItemStack> transportItemGroupList = new ArrayList<>();
+        List<ItemStack> transportItemGroupList = new ArrayList<>(); //ToDo: Investigate if this can be moved into a Method
 
         if (planksBoat != null) {
             transportItemGroupList.add(new ItemStack(planksBoat));
@@ -190,7 +190,7 @@ public enum ModWoodType {
     }
 
     public List<ItemStack> getItemGroupPlantList () {
-        List<ItemStack> plantItemGroupList = new ArrayList<>();
+        List<ItemStack> plantItemGroupList = new ArrayList<>(); //ToDo: Investigate if this can be moved into a Method
 
         if (leaves != null) {
             plantItemGroupList.add(new ItemStack(leaves));
@@ -330,6 +330,7 @@ public enum ModWoodType {
         return sapling;
     }
 
+    //ToDo: Check if the Method should be reworked
     public boolean isVanillaAddition() {
         return vanillaAddition;
     }

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_top",
+  "textures": {
+    "side": "lotr:block/cracked_blueslate_pillar_side_single",
+    "top": "lotr:block/cracked_blueslate_pillar_end"
+  }
+}

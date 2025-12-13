@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "lotr:cobbled_blueslate"
+  },
+  "result": {
+    "count": 1,
+    "id": "lotr:cobbled_blueslate_brick_stairs"
+  }
+}

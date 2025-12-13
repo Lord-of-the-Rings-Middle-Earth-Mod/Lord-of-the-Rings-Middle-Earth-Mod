@@ -27,24 +27,28 @@ import me.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.registry.RegistryWrapper;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
  * Provides translations for the mod in the en_us language-file.
  */
 public class ModEnUsLangProvider extends FabricLanguageProvider {
 
-	public ModEnUsLangProvider(FabricDataOutput dataOutput) {
-		super(dataOutput);
+	public ModEnUsLangProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+		super(dataOutput, registryLookup);
 	}
 
 	/**
 	 * Generates translations for the Lord of the Rings Mod.
-	 * It is called when the Datageneration is started.
+	 * It is called when the Data generation is started.
 	 *
 	 * @param translationBuilder The builder used to add translations.
 	 */
 	@Override
-	public void generateTranslations(TranslationBuilder translationBuilder) {
+	public void generateTranslations(RegistryWrapper.WrapperLookup wrapperLookup,
+			TranslationBuilder translationBuilder) {
 		generateItemGroupTranslations(translationBuilder);
 
 		translationBuilder.add(ModItems.BRONZE_INGOT, "Bronze Ingot");
@@ -69,7 +73,7 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add("itemgroup.lotr_food", "LOTR Food");
 		translationBuilder.add("itemgroup.lotr_plants", "LOTR Plants");
 		translationBuilder.add("itemgroup.lotr_ingredients", "LOTR Ingredients");
-		translationBuilder.add("itemgenroup.lotr_tools", "LOTR Tools");
+		translationBuilder.add("itemgroup.lotr_tools", "LOTR Tools");
 		translationBuilder.add("itemgroup.lotr_combat", "LOTR Combat");
 		translationBuilder.add("itemgroup.lotr_spawning", "LOTR Spawning");
 		translationBuilder.add("itemgroup.lotr_stone", "LOTR Stone");
@@ -557,8 +561,8 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 	private void generateOreTypeTranslations(TranslationBuilder translationBuilder) {
 		for(ModOreType oreType : ModOreType.values()) {
 			String name = oreType.getStoneOre().getTranslationKey()
-					.transform(translationKey -> generateNameFromTranslationKey(translationKey));
-			if(oreType.getStoneOre() != null) {
+					.transform(this::generateNameFromTranslationKey);
+			if(oreType.getStoneOre() != null) { //ToDo: Check if this null check is necessary
 				translationBuilder.add(oreType.getStoneOre(), name);
 			}
 			if(oreType.getDeepslateOre() != null) {
@@ -583,23 +587,23 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 
 			if(oreType.getOreDrop() != null) {
 				translationBuilder.add(oreType.getOreDrop(), oreType.getOreDrop().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(oreType.getOreDropBlock() != null) {
 				translationBuilder.add(oreType.getOreDropBlock(), oreType.getOreDropBlock().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(oreType.getNugget() != null) {
 				translationBuilder.add(oreType.getNugget(), oreType.getNugget().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(oreType.getSmeltingItem() != null) {
 				translationBuilder.add(oreType.getSmeltingItem(), oreType.getSmeltingItem().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(oreType.getSmeltingBlock() != null) {
 				translationBuilder.add(oreType.getSmeltingBlock(), oreType.getSmeltingBlock().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 		}
 	}
@@ -613,39 +617,39 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		for(ModGearType gearType : ModGearType.values()) {
 			if(gearType.getHelmet() != null) {
 				translationBuilder.add(gearType.getHelmet(), gearType.getHelmet().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(gearType.getChestplate() != null) {
 				translationBuilder.add(gearType.getChestplate(), gearType.getChestplate().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(gearType.getLeggings() != null) {
 				translationBuilder.add(gearType.getLeggings(), gearType.getLeggings().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(gearType.getBoots() != null) {
 				translationBuilder.add(gearType.getBoots(), gearType.getBoots().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(gearType.getSword() != null) {
 				translationBuilder.add(gearType.getSword(), gearType.getSword().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(gearType.getPickaxe() != null) {
 				translationBuilder.add(gearType.getPickaxe(), gearType.getPickaxe().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(gearType.getAxe() != null) {
 				translationBuilder.add(gearType.getAxe(), gearType.getAxe().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(gearType.getShovel() != null) {
 				translationBuilder.add(gearType.getShovel(), gearType.getShovel().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 			if(gearType.getHoe() != null) {
 				translationBuilder.add(gearType.getHoe(), gearType.getHoe().getTranslationKey()
-						.transform(translationKey -> generateNameFromTranslationKey(translationKey)));
+						.transform(this::generateNameFromTranslationKey));
 			}
 		}
 	}

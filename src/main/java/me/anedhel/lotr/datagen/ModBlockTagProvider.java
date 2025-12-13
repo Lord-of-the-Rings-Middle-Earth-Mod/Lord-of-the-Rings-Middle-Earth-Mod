@@ -23,15 +23,17 @@ import me.anedhel.lotr.block.ModStoneType;
 import me.anedhel.lotr.block.ModWoodType;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
-import net.fabricmc.fabric.impl.tag.convention.TagRegistration;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
+import net.fabricmc.fabric.api.tag.convention.v2.TagUtil;
 import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.util.Identifier;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -44,7 +46,8 @@ import java.util.concurrent.CompletableFuture;
  */
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
-    public static final TagKey<Block> PILLARS = TagRegistration.BLOCK_TAG_REGISTRATION.registerCommon("pillar");
+    public static final TagKey<Block> PILLARS = TagKey.of(RegistryKeys.BLOCK, new Identifier(TagUtil.C_TAG_NAMESPACE,
+		    "pillars"));
 
     public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
@@ -52,7 +55,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     /**
      * This Method is used to configure existing BlockTags and add new ones.
-     * @param arg This argument is provided by minecraft
+     * @param arg This argument is provided by Minecraft
      */
     @Override
     protected void configure(RegistryWrapper.WrapperLookup arg) {

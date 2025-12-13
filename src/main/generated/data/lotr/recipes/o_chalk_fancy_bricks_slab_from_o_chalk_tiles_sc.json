@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "lotr:overgrown_chalk_tiles"
+  },
+  "result": {
+    "count": 2,
+    "id": "lotr:overgrown_fancy_chalk_brick_slab"
+  }
+}

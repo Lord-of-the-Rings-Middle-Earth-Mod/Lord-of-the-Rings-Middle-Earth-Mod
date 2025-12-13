@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.7,
+  "group": "_ore",
+  "ingredient": {
+    "item": "lotr:raw_tin"
+  },
+  "result": {
+    "id": "lotr:tin_ingot"
+  }
+}

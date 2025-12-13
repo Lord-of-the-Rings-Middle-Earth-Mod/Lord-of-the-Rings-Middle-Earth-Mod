@@ -41,25 +41,27 @@ import net.minecraft.loot.condition.AnyOfLootCondition;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.entry.LeafEntry;
-import net.minecraft.loot.entry.LootPoolEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
+import net.minecraft.registry.RegistryWrapper;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.CompletableFuture;
 
 /**
  * This class is used to add all LootTables the mod provides and edit existing ones.
  */
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
-    public ModLootTableProvider(FabricDataOutput dataOutput) {
-        super(dataOutput);
+    public ModLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
+        super(dataOutput, registryLookup);
     }
 
     /**
      * This method is used to add all LootTables.
-     * It´s called when the DataGen is started.
+     * It's called when the DataGen is started.
      */
     @Override
     public void generate() {
@@ -89,9 +91,6 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
                                 .exactMatch(CornCropBlock.AGE, 7))
                         .or(BlockStatePropertyLootCondition.builder(ModBlocks.CORN_CROP).properties(StatePredicate.Builder.create()
                                 .exactMatch(CornCropBlock.AGE, 8)));
-
-        // BlockStatePropertyLootCondition.Builder builder2 = BlockStatePropertyLootCondition.builder(ModBlocks.CORN_CROP).properties(StatePredicate.Builder.create()
-        //         .exactMatch(CornCropBlock.AGE, 8));
 
         addDrop(ModBlocks.CORN_CROP, cropDrops(ModBlocks.CORN_CROP, ModItems.CORN, ModItems.CORN_SEEDS, builder2));
 
@@ -518,12 +517,12 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
      *
      * @param drop The block dropped with SilkTouch
      * @param item The item dropped without SilkTouch
-     * @param dropRange The range of how many items can drop from one ore
+     * @param dropRange The range of how many items can drop from one or
      * @return The LootTable.Builder that can be added to the addDrop()-Methods
      */
     private LootTable.Builder oreDrops(Block drop, Item item, UniformLootNumberProvider dropRange) {
-        return BlockLootTableGenerator.dropsWithSilkTouch(drop, (LootPoolEntry.Builder)this.applyExplosionDecay(drop,
-                ((LeafEntry.Builder)
+        return BlockLootTableGenerator.dropsWithSilkTouch(drop, this.applyExplosionDecay(drop,
+                ((LeafEntry.Builder<?>)
                         ItemEntry.builder(item)
                                 .apply(SetCountLootFunction
                                         .builder(dropRange)))
@@ -539,8 +538,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
      * @return The LootTable.Builder that can be added to the addDrop()-Methods
      */
     private LootTable.Builder wildFlowerDrops (Block drop, Item item, UniformLootNumberProvider dropRange) {
-        return BlockLootTableGenerator.dropsWithShears(drop, (LootPoolEntry.Builder)this.applyExplosionDecay(drop,
-                ((LeafEntry.Builder)
+        return BlockLootTableGenerator.dropsWithShears(drop, this.applyExplosionDecay(drop,
+                ((LeafEntry.Builder<?>)
                     ItemEntry.builder(item)
                         .apply(SetCountLootFunction.builder(dropRange)))));
     }

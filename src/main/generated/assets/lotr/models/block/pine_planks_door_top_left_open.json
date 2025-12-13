@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_top_left_open",
+  "textures": {
+    "bottom": "lotr:block/pine_planks_door_bottom",
+    "top": "lotr:block/pine_planks_door_top"
+  }
+}
