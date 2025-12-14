@@ -25,7 +25,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.fabricmc.fabric.api.tag.convention.v2.TagUtil;
-import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.Block;
 import net.minecraft.block.WallBlock;
 import net.minecraft.data.family.BlockFamily;
@@ -46,7 +45,7 @@ import java.util.concurrent.CompletableFuture;
  */
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
-    public static final TagKey<Block> PILLARS = TagKey.of(RegistryKeys.BLOCK, new Identifier(TagUtil.C_TAG_NAMESPACE,
+    public static final TagKey<Block> PILLARS = TagKey.of(RegistryKeys.BLOCK, Identifier.of(TagUtil.C_TAG_NAMESPACE,
 		    "pillars"));
 
     public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
@@ -520,13 +519,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         for (ModOreType oreType : ModOreType.values()) {
             FabricTagBuilder pickaxeTag = getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE);
             FabricTagBuilder oreTag = getOrCreateTagBuilder(ConventionalBlockTags.ORES);
-            FabricTagBuilder toolLevelTag;
-            switch (oreType.getMiningLevel()) {
-                case MiningLevels.STONE -> toolLevelTag = getOrCreateTagBuilder(BlockTags.NEEDS_STONE_TOOL);
-                case MiningLevels.IRON -> toolLevelTag = getOrCreateTagBuilder(BlockTags.NEEDS_IRON_TOOL);
-                case MiningLevels.DIAMOND -> toolLevelTag = getOrCreateTagBuilder(BlockTags.NEEDS_DIAMOND_TOOL);
-                default -> toolLevelTag = null;
-            }
+            FabricTagBuilder toolLevelTag = getOrCreateTagBuilder(oreType.getMiningLevel());
 
             if(oreType.getStoneOre() != null) {
                 pickaxeTag.add(oreType.getStoneOre());

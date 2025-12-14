@@ -97,7 +97,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         FabricTagBuilder planksTag = getOrCreateTagBuilder(ItemTags.PLANKS);
 
         for (ModWoodType woodType : ModWoodType.values()) {
-            FabricTagBuilder logTag = getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, new Identifier("lotr", turnBlockIntoTag(woodType.getLog()))));
+            FabricTagBuilder logTag = getOrCreateTagBuilder(TagKey.of(RegistryKeys.ITEM, Identifier.of("lotr", turnBlockIntoTag(woodType.getLog()))));
 
             if (!woodType.isVanillaAddition()) {
                 if (woodType.getLog() != null) { //ToDo: Check if the null check is necessary

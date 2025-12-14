@@ -86,7 +86,7 @@ public class ModConfiguredFeatures {
      * @return The `RegistryKey` associated with the configured feature.
      */
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, name));
     }
 
     /**

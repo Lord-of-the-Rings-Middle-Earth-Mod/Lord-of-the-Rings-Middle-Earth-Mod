@@ -18,12 +18,13 @@
 package me.anedhel.lotr.block;
 
 import me.anedhel.lotr.item.ModItems;
-import net.fabricmc.yarn.constants.MiningLevels;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.registry.tag.TagKey;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,10 +36,10 @@ import java.util.Objects;
 public enum ModOreType {
 
     TIN_ORE(ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE, null, null, null, null, null, ModItems.RAW_TIN,
-		    ModBlocks.RAW_TIN_BLOCK, UniformLootNumberProvider.create(2.0f, 5.0f), MiningLevels.STONE, null,
+		    ModBlocks.RAW_TIN_BLOCK, UniformLootNumberProvider.create(2.0f, 5.0f), BlockTags.NEEDS_STONE_TOOL, null,
 		    ModItems.TIN_INGOT, ModBlocks.TIN_BLOCK),
 	SILVER_ORE(ModBlocks.SILVER_ORE, ModBlocks.DEEPSLATE_SILVER_ORE, null, null, null, null, null, ModItems.RAW_SILVER,
-			ModBlocks.RAW_SILVER_BLOCK, UniformLootNumberProvider.create(2.0f, 5.0f), MiningLevels.STONE,
+			ModBlocks.RAW_SILVER_BLOCK, UniformLootNumberProvider.create(2.0f, 5.0f), BlockTags.NEEDS_STONE_TOOL,
 			ModItems.SILVER_NUGGET, ModItems.SILVER_INGOT, ModBlocks.SILVER_BLOCK);
 
     private final Block stoneOre;
@@ -54,7 +55,7 @@ public enum ModOreType {
     private final Block oreDropBlock;
 
     private final UniformLootNumberProvider dropRange;
-    private final int miningLevel;
+    private final TagKey<Block> miningLevel;
 
 	private final Item nugget;
 	private final Item smeltingItem;
@@ -62,7 +63,7 @@ public enum ModOreType {
 
     ModOreType(Block stoneOre, Block deepslateOre, Block andesiteOre, Block dioriteOre, Block graniteOre,
             Block blueslateOre, Block chalkOre, Item oreDrop, Block oreDropBlock, UniformLootNumberProvider dropRange,
-		    int miningLevel, Item nugget, Item smeltingItem, Block smeltingBlock) {
+		    TagKey<Block> miningLevel, Item nugget, Item smeltingItem, Block smeltingBlock) {
         this.stoneOre = stoneOre;
         this.deepslateOre = deepslateOre;
         this.andesiteOre = andesiteOre;
@@ -196,7 +197,7 @@ public enum ModOreType {
         return dropRange;
     }
 
-    public int getMiningLevel() {
+    public TagKey<Block> getMiningLevel() {
         return miningLevel;
     }
 

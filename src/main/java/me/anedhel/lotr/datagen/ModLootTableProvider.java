@@ -32,7 +32,7 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.block.TallPlantBlock;
 import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.data.family.BlockFamily;
-import net.minecraft.data.server.loottable.BlockLootTableGenerator;
+import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
@@ -45,6 +45,7 @@ import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.predicate.StatePredicate;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import org.jetbrains.annotations.NotNull;
 
@@ -477,32 +478,32 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         for(ModOreType oreType : ModOreType.values()) {
             if(oreType.getStoneOre() != null) {
                 addDrop(oreType.getStoneOre(),
-                        oreDrops(oreType.getStoneOre(), oreType.getOreDrop(), oreType.getDropRange()));
+                        multipleOreDrops(oreType.getStoneOre(), oreType.getOreDrop(), oreType.getDropRange()));
             }
             if(oreType.getDeepslateOre() != null) {
                 addDrop(oreType.getDeepslateOre(),
-                        oreDrops(oreType.getDeepslateOre(), oreType.getOreDrop(), oreType.getDropRange()));
+                        multipleOreDrops(oreType.getDeepslateOre(), oreType.getOreDrop(), oreType.getDropRange()));
             }
             if(oreType.getAndesiteOre() != null) {
                 addDrop(oreType.getAndesiteOre(),
-                        oreDrops(oreType.getAndesiteOre(), oreType.getOreDrop(), oreType.getDropRange()));
+                        multipleOreDrops(oreType.getAndesiteOre(), oreType.getOreDrop(), oreType.getDropRange()));
             }
             if(oreType.getDioriteOre() != null) {
                 addDrop(oreType.getDioriteOre(),
-                        oreDrops(oreType.getDioriteOre(), oreType.getOreDrop(), oreType.getDropRange()));
+                        multipleOreDrops(oreType.getDioriteOre(), oreType.getOreDrop(), oreType.getDropRange()));
             }
             if(oreType.getGraniteOre() != null) {
                 addDrop(oreType.getGraniteOre(),
-                        oreDrops(oreType.getGraniteOre(), oreType.getOreDrop(), oreType.getDropRange()));
+                        multipleOreDrops(oreType.getGraniteOre(), oreType.getOreDrop(), oreType.getDropRange()));
             }
 
             if(oreType.getBlueslateOre() != null) {
-                addDrop(oreType.getBlueslateOre(),
-                        oreDrops(oreType.getBlueslateOre(), oreType.getOreDrop(), oreType.getDropRange()));
+                addDrop(oreType.getBlueslateOre(), multipleOreDrops(oreType.getBlueslateOre(), oreType.getOreDrop(),
+                        oreType.getDropRange()));
             }
             if(oreType.getChalkOre() != null) {
                 addDrop(oreType.getChalkOre(),
-                        oreDrops(oreType.getChalkOre(), oreType.getOreDrop(), oreType.getDropRange()));
+                        multipleOreDrops(oreType.getChalkOre(), oreType.getOreDrop(), oreType.getDropRange()));
             }
             if(oreType.getOreDropBlock() != null) {
                 addDrop(oreType.getOreDropBlock());
@@ -514,19 +515,20 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     }
 
     /**
+     * This Method generates the LootTable for Ores that drop more than one of their items.
+     * It´s based on the copperOreDrops from the BlockLootTableGenerator.
      *
-     * @param drop The block dropped with SilkTouch
-     * @param item The item dropped without SilkTouch
-     * @param dropRange The range of how many items can drop from one or
+     * @param blockDrop The block that drops the items
+     * @param itemDrop The item that is dropped
+     * @param dropRange The range of how many items can drop from one ore block
      * @return The LootTable.Builder that can be added to the addDrop()-Methods
      */
-    private LootTable.Builder oreDrops(Block drop, Item item, UniformLootNumberProvider dropRange) {
-        return BlockLootTableGenerator.dropsWithSilkTouch(drop, this.applyExplosionDecay(drop,
-                ((LeafEntry.Builder<?>)
-                        ItemEntry.builder(item)
-                                .apply(SetCountLootFunction
-                                        .builder(dropRange)))
-                        .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
+    public LootTable.Builder multipleOreDrops(Block blockDrop, Item itemDrop, UniformLootNumberProvider dropRange) {
+        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
+        return this.dropsWithSilkTouch(blockDrop, this.applyExplosionDecay(blockDrop,
+                ((LeafEntry.Builder<?>)ItemEntry.builder(itemDrop).apply(SetCountLootFunction
+                        .builder(dropRange)))
+                        .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))));
     }
 
     /**
@@ -537,10 +539,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
      * @param dropRange The range of how many items can drop from one flower
      * @return The LootTable.Builder that can be added to the addDrop()-Methods
      */
-    private LootTable.Builder wildFlowerDrops (Block drop, Item item, UniformLootNumberProvider dropRange) {
-        return BlockLootTableGenerator.dropsWithShears(drop, this.applyExplosionDecay(drop,
-                ((LeafEntry.Builder<?>)
-                    ItemEntry.builder(item)
-                        .apply(SetCountLootFunction.builder(dropRange)))));
+    private LootTable.Builder wildFlowerDrops (Block blockDrop, Item itemDrop, UniformLootNumberProvider dropRange) {
+        RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
+        return this.dropsWithSilkTouch(blockDrop, this.applyExplosionDecay(blockDrop,
+                ((LeafEntry.Builder<?>)ItemEntry.builder(itemDrop).apply(SetCountLootFunction
+                        .builder(dropRange)))
+                        .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))));
     }
 }

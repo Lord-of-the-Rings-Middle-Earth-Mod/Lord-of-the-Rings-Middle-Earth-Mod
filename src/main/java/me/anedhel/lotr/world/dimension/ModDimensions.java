@@ -36,11 +36,11 @@ import java.util.OptionalLong;
  */
 public class ModDimensions {
     public static final RegistryKey<DimensionOptions> ARDA_KEY = RegistryKey.of(RegistryKeys.DIMENSION,
-            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "arda"));
+            Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "arda"));
     public static final RegistryKey<World> ARDA_LEVEL_KEY = RegistryKey.of(RegistryKeys.WORLD,
-            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "arda"));
+            Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "arda"));
     public static final RegistryKey<DimensionType> ARDA_DIM_TYPE = RegistryKey.of(RegistryKeys.DIMENSION_TYPE,
-            new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, "arda_type"));
+            Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, "arda_type"));
 
     public static void bootstrapType(Registerable<DimensionType> context) {
         context.register(ARDA_DIM_TYPE, new DimensionType(OptionalLong.of(24000),

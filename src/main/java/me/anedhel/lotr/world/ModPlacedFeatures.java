@@ -78,7 +78,7 @@ public class ModPlacedFeatures {
      * @return A `RegistryKey` associated with the given name and the mod's namespace.
      */
     public static RegistryKey<PlacedFeature> registerKey(String name) {
-        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, new Identifier(LordOfTheRingsMiddleEarthMod.MOD_ID, name));
+        return RegistryKey.of(RegistryKeys.PLACED_FEATURE, Identifier.of(LordOfTheRingsMiddleEarthMod.MOD_ID, name));
     }
 
     /**

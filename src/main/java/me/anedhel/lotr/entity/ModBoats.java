@@ -10,8 +10,8 @@ import net.minecraft.util.Identifier;
 
 public class ModBoats {
 
-    public static final Identifier PINE_BOAT_ID = new Identifier("lotr", "pine_boat");
-    public static final Identifier PINE_CHEST_BOAT_ID = new Identifier("lotr", "pine_chest_boat");
+    public static final Identifier PINE_BOAT_ID = Identifier.of("lotr", "pine_boat");
+    public static final Identifier PINE_CHEST_BOAT_ID = Identifier.of("lotr", "pine_chest_boat");
 
     public static final RegistryKey<TerraformBoatType> PINE_BOAT_KEY = TerraformBoatTypeRegistry.createKey(PINE_BOAT_ID);
 
