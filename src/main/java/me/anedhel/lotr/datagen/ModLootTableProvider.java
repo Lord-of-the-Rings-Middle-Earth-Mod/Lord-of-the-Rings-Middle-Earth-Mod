@@ -534,8 +534,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
     /**
      * This Method generates the drops for wildCrop Flowers.
      *
-     * @param drop The block dropped with SilkTouch
-     * @param item The item dropped without SilkTouch
+     * @param blockDrop The block dropped with SilkTouch
+     * @param itemDrop The item dropped without SilkTouch
      * @param dropRange The range of how many items can drop from one flower
      * @return The LootTable.Builder that can be added to the addDrop()-Methods
      */
