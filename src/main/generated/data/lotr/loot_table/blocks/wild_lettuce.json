@@ -13,11 +13,20 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": "minecraft:shears"
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
-              "name": "lotr:wild_tomato"
+              "name": "lotr:wild_lettuce"
             },
             {
               "type": "minecraft:item",
@@ -32,10 +41,15 @@
                   "function": "minecraft:set_count"
                 },
                 {
+                  "enchantment": "minecraft:fortune",
+                  "formula": "minecraft:ore_drops",
+                  "function": "minecraft:apply_bonus"
+                },
+                {
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "lotr:tomato"
+              "name": "lotr:lettuce"
             }
           ]
         }

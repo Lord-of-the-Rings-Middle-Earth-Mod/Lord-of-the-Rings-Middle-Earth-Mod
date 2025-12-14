@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:silver_nugget_from_silver_ingot"
+        "recipe": "minecraft:lotr.silver_nugget_from_lotr.silver_ingot"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -26,7 +26,7 @@
   ],
   "rewards": {
     "recipes": [
-      "minecraft:silver_nugget_from_silver_ingot"
+      "minecraft:lotr.silver_nugget_from_lotr.silver_ingot"
     ]
   }
 }

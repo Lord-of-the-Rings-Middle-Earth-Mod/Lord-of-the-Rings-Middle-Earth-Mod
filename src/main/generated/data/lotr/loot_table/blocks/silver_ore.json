@@ -13,11 +13,20 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "items": "minecraft:shears"
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
                   }
                 }
               ],
-              "name": "lotr:wild_carrot"
+              "name": "lotr:silver_ore"
             },
             {
               "type": "minecraft:item",
@@ -26,16 +35,21 @@
                   "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "max": 3.0,
-                    "min": 1.0
+                    "max": 5.0,
+                    "min": 2.0
                   },
                   "function": "minecraft:set_count"
+                },
+                {
+                  "enchantment": "minecraft:fortune",
+                  "formula": "minecraft:ore_drops",
+                  "function": "minecraft:apply_bonus"
                 },
                 {
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "minecraft:carrot"
+              "name": "lotr:raw_silver"
             }
           ]
         }
