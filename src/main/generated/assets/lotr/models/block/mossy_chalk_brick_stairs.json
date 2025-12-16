@@ -1,9 +1,0 @@
-{
-  "parent": "lotr:block/stairs_all_overlay",
-  "textures": {
-    "bottom": "lotr:block/chalk_bricks",
-    "layer1": "lotr:block/overlays/mossy_overlay_two",
-    "side": "lotr:block/chalk_bricks",
-    "top": "lotr:block/chalk_bricks"
-  }
-}

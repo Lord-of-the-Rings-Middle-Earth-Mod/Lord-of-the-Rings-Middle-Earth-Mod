@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.6-SNAPSHOT'
+	id 'net.fabricmc.fabric-loom-remap' version "${loom_version}"
 	id 'maven-publish'
 }
 
@@ -16,15 +16,12 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
-	maven {
-		name = 'TerraformersMC'
-		url = 'https://maven.terraformersmc.com/'
-	}
-	maven {url = "https://maven.kyrptonaught.dev"}
 }
 
 fabricApi {
-	configureDataGeneration()
+	configureDataGeneration {
+		client = true
+	}
 }
 
 dependencies {
@@ -35,24 +32,19 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-	modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:9.0.0-beta.2"
-	include "com.terraformersmc.terraform-api:terraform-wood-api-v1:9.0.0-beta.2"
-
-	modImplementation 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20.4'
-	include 'net.kyrptonaught:customportalapi:0.0.1-beta64-1.20.4'
+	
 }
 
 processResources {
 	inputs.property "version", project.version
 
 	filesMatching("fabric.mod.json") {
-		expand "version": project.version
+		expand "version": inputs.properties.version
 	}
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 17
+	it.options.release = 21
 }
 
 java {
@@ -61,13 +53,18 @@ java {
 	// If you remove this line, sources will not be generated.
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_17
-	targetCompatibility = JavaVersion.VERSION_17
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {
-	from("LICENSE") {
-		rename { "${it}_${project.base.archivesName.get()}"}
+	inputs.property "archivesName", project.base.archivesName
+
+	from("LICENSE_GPL") {
+		rename { "${it}_${inputs.properties.archivesName}"}
+	}
+	from("LICENSE_CC-BY-NC-SA") {
+		rename { "${it}_${inputs.properties.archivesName}"}
 	}
 }
 
