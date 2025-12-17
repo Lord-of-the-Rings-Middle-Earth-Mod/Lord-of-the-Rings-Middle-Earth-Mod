@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "lotr:block/chalk_bricks",
+    "side": "lotr:block/chalk_bricks",
+    "top": "lotr:block/chalk_bricks"
+  }
+}

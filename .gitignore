@@ -41,4 +41,3 @@ replay_*.log
 
 # generated
 .cache/
-src/main/generated/

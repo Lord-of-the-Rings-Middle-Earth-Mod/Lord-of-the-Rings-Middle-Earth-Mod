@@ -1,0 +1,10 @@
+{
+  "parent": "lotr:block/outer_stairs_all_two_overlay",
+  "textures": {
+    "bottom": "lotr:block/chalk_bricks",
+    "layer1": "lotr:block/overlays/gold_brick_overlay",
+    "layer2": "lotr:block/overlays/overgrown_overlay",
+    "side": "lotr:block/chalk_bricks",
+    "top": "lotr:block/chalk_bricks"
+  }
+}
