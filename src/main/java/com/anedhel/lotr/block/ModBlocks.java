@@ -26,7 +26,7 @@ public class ModBlocks {
 	public static final Block TIN_BLOCK = registerBlock("tin_block",
 			settings -> new Block(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.COPPER)));
 
-	private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> blockFactory){
+	public static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> blockFactory){
 		Block toRegister =
 				blockFactory.apply(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK,
 						Identifier.of(LotRMEMod.MOD_ID, name))));
@@ -34,7 +34,8 @@ public class ModBlocks {
 		return Registry.register(Registries.BLOCK, Identifier.of(LotRMEMod.MOD_ID, name), toRegister);
 	}
 
-	private static Block registerBlockWithoutBlockItem(String name, Function<AbstractBlock.Settings, Block> blockFactory){
+	public static Block registerBlockWithoutBlockItem(String name,
+			Function<AbstractBlock.Settings, Block> blockFactory){
 		return Registry.register(Registries.BLOCK, Identifier.of(LotRMEMod.MOD_ID, name),
 				blockFactory.apply(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(LotRMEMod.MOD_ID, name)))));
 	}

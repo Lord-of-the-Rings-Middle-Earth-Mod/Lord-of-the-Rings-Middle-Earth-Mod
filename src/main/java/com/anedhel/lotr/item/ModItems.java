@@ -18,6 +18,15 @@ public class ModItems {
 	public static final Item SILVER_INGOT = registerItem("silver_ingot",Item::new);
 	public static final Item SILVER_NUGGET = registerItem("silver_nugget",Item::new);
 
+	public static final Item TOMATO = registerItem("tomato",
+			settings -> new Item(settings.food(ModFoodComponents.TOMATO)));
+	public static final Item BAKED_TOMATO = registerItem("baked_tomato",
+			settings -> new Item(settings.food(ModFoodComponents.BAKED_TOMATO)));
+	public static final Item CORN = registerItem("corn",
+			settings -> new Item(settings.food(ModFoodComponents.CORN)));
+	public static final Item COOKED_CORN = registerItem("cooked_corn",
+			settings -> new Item(settings.food(ModFoodComponents.COOKED_CORN)));
+
 	private static Item registerItem(String name, Function<Item.Settings, Item> itemFactory) {
 		return Registry.register(Registries.ITEM, Identifier.of(LotRMEMod.MOD_ID, name), 
 				itemFactory.apply(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(LotRMEMod.MOD_ID, name)))));

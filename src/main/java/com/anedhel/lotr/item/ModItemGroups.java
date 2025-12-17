@@ -17,6 +17,17 @@ import net.minecraft.util.Identifier;
  */
 public class ModItemGroups {
 
+	public static final ItemGroup LOTR_BLOCKS = Registry.register(Registries.ITEM_GROUP,
+			Identifier.of(LotRMEMod.MOD_ID, "lotr_blocks"), FabricItemGroup.builder().displayName(
+							Text.translatableWithFallback("itemgroup.lotr_blocks", "LOTR Blocks"))
+					.icon(() -> new ItemStack(ModBlocks.TIN_BLOCK))
+					.entries(((displayContext, entries) -> {
+						entries.add(ModBlocks.RAW_TIN_BLOCK);
+						entries.add(ModBlocks.TIN_BLOCK);
+						entries.add(ModBlocks.RAW_SILVER_BLOCK);
+						entries.add(ModBlocks.SILVER_BLOCK);
+					})).build());
+
 	public static final ItemGroup LOTR_INGREDIENTS = Registry.register(Registries.ITEM_GROUP,
 			Identifier.of(LotRMEMod.MOD_ID, "lotr_ingredients"), FabricItemGroup.builder().displayName(
 					Text.translatableWithFallback("itemgroup.lotr_ingredients", "LOTR Ingredients"))
@@ -29,15 +40,15 @@ public class ModItemGroups {
 						entries.add(ModItems.SILVER_NUGGET);
 					})).build());
 
-	public static final ItemGroup LOTR_BLOCKS = Registry.register(Registries.ITEM_GROUP,
-			Identifier.of(LotRMEMod.MOD_ID, "lotr_blocks"), FabricItemGroup.builder().displayName(
-					Text.translatableWithFallback("itemgroup.lotr_blocks", "LOTR Blocks"))
-					.icon(() -> new ItemStack(ModBlocks.TIN_BLOCK))
+	public static final ItemGroup LOTR_FOOD = Registry.register(Registries.ITEM_GROUP,
+			Identifier.of(LotRMEMod.MOD_ID, "lotr_food"), FabricItemGroup.builder().displayName(
+					Text.translatableWithFallback("itemgroup.lotr_food", "LOTR Food"))
+					.icon(ModItems.COOKED_CORN::getDefaultStack)
 					.entries(((displayContext, entries) -> {
-						entries.add(ModBlocks.RAW_TIN_BLOCK);
-						entries.add(ModBlocks.TIN_BLOCK);
-						entries.add(ModBlocks.RAW_SILVER_BLOCK);
-						entries.add(ModBlocks.SILVER_BLOCK);
+						entries.add(ModItems.TOMATO);
+						entries.add(ModItems.BAKED_TOMATO);
+						entries.add(ModItems.CORN);
+						entries.add(ModItems.COOKED_CORN);
 					})).build());
 
 	public static void registerItemGroups() {
