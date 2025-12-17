@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "lotr:bronze_fancy_chalk_bricks"
-  },
-  "result": "lotr:bronze_fancy_chalk_brick_wall"
-}

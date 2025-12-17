@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "lotr:overgrown_bronze_blueslate_pavement"
-  },
-  "result": "lotr:overgrown_bronze_blueslate_pavement_stairs"
-}

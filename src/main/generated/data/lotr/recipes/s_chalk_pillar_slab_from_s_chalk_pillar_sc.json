@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "lotr:silver_chalk_pillar"
-  },
-  "result": "lotr:silver_chalk_pillar_slab"
-}

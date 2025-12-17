@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "lotr:block/blueslate",
-    "side": "lotr:block/blueslate",
-    "top": "lotr:block/blueslate"
-  }
-}

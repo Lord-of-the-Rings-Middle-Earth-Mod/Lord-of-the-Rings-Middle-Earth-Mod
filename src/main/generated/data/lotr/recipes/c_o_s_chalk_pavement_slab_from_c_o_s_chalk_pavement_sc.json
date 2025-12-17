@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "lotr:cracked_overgrown_silver_chalk_pavement"
-  },
-  "result": "lotr:cracked_overgrown_silver_chalk_pavement_slab"
-}
