@@ -1,7 +1,0 @@
-{
-  "parent": "lotr:block/wall_inventory_all_overlay",
-  "textures": {
-    "layer1": "lotr:block/overlays/silver_cobbled_brick_overlay",
-    "wall": "lotr:block/cobbled_chalk_bricks"
-  }
-}

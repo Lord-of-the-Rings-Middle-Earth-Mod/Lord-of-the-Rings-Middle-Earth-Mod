@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_column",
-  "textures": {
-    "end": "lotr:block/smooth_chalk",
-    "side": "lotr:block/smooth_chalk_slab_side"
-  }
-}

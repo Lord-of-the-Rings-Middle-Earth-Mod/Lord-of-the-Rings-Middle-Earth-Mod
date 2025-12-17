@@ -1,8 +1,0 @@
-{
-  "parent": "lotr:block/cube_all_two_overlay",
-  "textures": {
-    "all": "lotr:block/chalk_tiles",
-    "layer1": "lotr:block/overlays/gold_tiles_overlay",
-    "layer2": "lotr:block/overlays/overgrown_overlay"
-  }
-}

@@ -1,9 +1,0 @@
-{
-  "parent": "lotr:block/stairs_all_overlay",
-  "textures": {
-    "bottom": "lotr:block/cracked_fancy_chalk_bricks",
-    "layer1": "lotr:block/overlays/cracked_gold_fancy_bricks_overlay",
-    "side": "lotr:block/cracked_fancy_chalk_bricks",
-    "top": "lotr:block/cracked_fancy_chalk_bricks"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab_top",
-  "textures": {
-    "bottom": "lotr:block/smooth_chalk",
-    "side": "lotr:block/smooth_chalk_slab_side",
-    "top": "lotr:block/smooth_chalk"
-  }
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/inner_stairs",
-  "textures": {
-    "bottom": "lotr:block/cracked_blueslate_tiles",
-    "side": "lotr:block/cracked_blueslate_tiles",
-    "top": "lotr:block/cracked_blueslate_pavement"
-  }
-}
