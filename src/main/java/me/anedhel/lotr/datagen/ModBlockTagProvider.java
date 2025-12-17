@@ -624,11 +624,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
      */
     private void configureStoneBlockFamilyTags(@NotNull BlockFamily family, @NotNull FabricTagBuilder pickaxeTag,
             @NotNull FabricTagBuilder wallTag) {
-        pickaxeTag.add(family.getBaseBlock());
+        if(family.getBaseBlock() != null) {
+            pickaxeTag.add(family.getBaseBlock());
+        }
         for(Block block : family.getVariants().values()) {
-            pickaxeTag.add(block);
-            if(block instanceof WallBlock) {
-                wallTag.add(block);
+            if(block != null) {
+                pickaxeTag.add(block);
+                if(block instanceof WallBlock) {
+                    wallTag.add(block);
+                }
             }
         }
     }
