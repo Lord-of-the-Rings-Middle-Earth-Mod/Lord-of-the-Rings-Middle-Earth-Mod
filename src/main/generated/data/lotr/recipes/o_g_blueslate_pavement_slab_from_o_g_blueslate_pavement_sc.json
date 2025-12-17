@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "lotr:overgrown_gold_blueslate_pavement"
+  },
+  "result": "lotr:overgrown_gold_blueslate_pavement_slab"
+}

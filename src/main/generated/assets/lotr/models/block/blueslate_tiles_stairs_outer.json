@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/outer_stairs",
+  "textures": {
+    "bottom": "lotr:block/blueslate_tiles",
+    "side": "lotr:block/blueslate_tiles",
+    "top": "lotr:block/blueslate_tiles"
+  }
+}

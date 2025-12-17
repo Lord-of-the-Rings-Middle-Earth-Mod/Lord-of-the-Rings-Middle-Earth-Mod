@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cobbled_chalk": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:cobbled_chalk"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:cobbled_chalk_bricks_wall_from_cobbled_chalk_sc"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cobbled_chalk"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:cobbled_chalk_bricks_wall_from_cobbled_chalk_sc"
+    ]
+  }
+}

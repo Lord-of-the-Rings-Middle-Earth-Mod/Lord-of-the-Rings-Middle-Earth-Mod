@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "lotr:mossy_bronze_cobbled_blueslate_brick_slab"
+  },
+  "result": "lotr:cracked_mossy_bronze_cobbled_blueslate_brick_slab"
+}

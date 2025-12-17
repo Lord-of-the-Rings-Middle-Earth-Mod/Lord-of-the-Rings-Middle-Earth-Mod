@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:chalk_pavement"
+  },
+  "result": "lotr:chalk_pavement_stairs"
+}

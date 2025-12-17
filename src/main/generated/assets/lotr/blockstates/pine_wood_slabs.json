@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "lotr:block/pine_wood_slabs"
+    },
+    "type=double": {
+      "model": "lotr:block/pine_wood"
+    },
+    "type=top": {
+      "model": "lotr:block/pine_wood_slabs_top"
+    }
+  }
+}

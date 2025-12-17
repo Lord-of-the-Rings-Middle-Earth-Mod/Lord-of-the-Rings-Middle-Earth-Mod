@@ -1,0 +1,7 @@
+{
+  "parent": "lotr:block/cube_all_overlay",
+  "textures": {
+    "all": "lotr:block/smooth_chalk",
+    "layer1": "lotr:block/overlays/silver_smooth_overlay"
+  }
+}
