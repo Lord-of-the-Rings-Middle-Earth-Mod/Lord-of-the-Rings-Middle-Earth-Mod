@@ -1,0 +1,9 @@
+{
+	"itemgroup.lotr_ingredients": "LOTR Ingredients",
+
+	"item.lotr.raw_tin": "Raw Tin",
+	"item.lotr.tin_ingot": "Tin Ingot",
+	"item.lotr.raw_silver": "Raw Silver",
+	"item.lotr.silver_ingot": "Silver Ingot",
+	"item.lotr.silver_nugget": "Silver Nugget"
+}

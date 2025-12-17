@@ -11,7 +11,7 @@ Many of the following information is compacted to the most essential information
 | [Bug Reports and Suggestions](#bug-reports-and-suggestions)        |
 | [Translations](#translations)                                      |
 | [Textures, Models and Animations](#textures-models-and-animations) |
-| [Testing](#testing) |
+| [Testing](#testing)                                                |
 | [Code](#code)                                                      |
 
 ---
@@ -39,15 +39,15 @@ When working on an Issue please keep the following in mind:
 - Always create a Pull Request from the branch to the develop branch. The Pull Request should be named `IssueNumber - IssueName` and will be reviewed by a maintainer or Contributor.
 - Always link the Issue in the Pull Request and the Pull Request in the Issue.
 
-| Column/Status | Description |
-| --- | --- |
-| Backlog | Issues that are not yet assigned to a milestone/release and have lower priority, Maintainers will move these issues into *To Do* once they have priority. Usually those issues are listed as planned features in the Roadmap. |
-| To Do | Issues that are assigned to a milestone/release but not yet worked on. |
-| In Progress | Issues that are currently being worked on |
-| Review | Issues that are done and have a Pull Request waiting on being reviewed by a maintainer |
-| Testing | Issues that are already merged into dev and are waiting on testing (mainly animations and code) |
-| Done | Issues that are all tested and only wait on the release. |
-| Closed | Issues that are released. Issues are moved here by Maintainers when a release is completed. |
+| Column/Status | Description                                                                                                                                                                                                                   |
+|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Backlog       | Issues that are not yet assigned to a milestone/release and have lower priority, Maintainers will move these issues into *To Do* once they have priority. Usually those issues are listed as planned features in the Roadmap. |
+| To Do         | Issues that are assigned to a milestone/release but not yet worked on.                                                                                                                                                        |
+| In Progress   | Issues that are currently being worked on                                                                                                                                                                                     |
+| Review        | Issues that are done and have a Pull Request waiting on being reviewed by a maintainer                                                                                                                                        |
+| Testing       | Issues that are already merged into dev and are waiting on testing (mainly animations and code)                                                                                                                               |
+| Done          | Issues that are all tested and only wait on the release.                                                                                                                                                                      |
+| Closed        | Issues that are released. Issues are moved here by Maintainers when a release is completed.                                                                                                                                   |
 
 ---
 

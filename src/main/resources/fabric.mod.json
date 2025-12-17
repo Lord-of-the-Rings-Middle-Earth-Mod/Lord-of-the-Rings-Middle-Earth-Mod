@@ -3,7 +3,7 @@
 	"id": "lotr",
 	"version": "${version}",
 	"name": "LotR-ME-Mod",
-	"description": "This mod is meant to implement content from the Lord of the Rings Middle-Earth universe into Minecraft.",
+	"description": "This Mod adds content from Lord of the Rings to Minecraft.",
 	"authors": [
 		"Anedhel"
 	],
@@ -12,14 +12,17 @@
 		"sources": "https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/LotR-ME-Mod"
 	},
 	"license": "GPL-3.0",
-	"icon": "assets/lotr/mod_logo.png",
+	"icon": "assets/lotr/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"me.anedhel.LotRMEMod"
+			"com.anedhel.lotr.LotRMEMod"
 		],
 		"fabric-datagen": [
-			"me.anedhel.LotRMEModDataGenerator"
+			"com.anedhel.lotr.LotRMEModDataGenerator"
+		],
+		"client": [
+			"com.anedhel.lotr.LotRMEModClient"
 		]
 	},
 	"mixins": [

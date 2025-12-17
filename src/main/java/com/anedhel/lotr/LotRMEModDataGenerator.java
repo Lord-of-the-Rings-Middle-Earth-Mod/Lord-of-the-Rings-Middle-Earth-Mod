@@ -1,4 +1,4 @@
-package me.anedhel;
+package com.anedhel.lotr;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
