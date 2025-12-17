@@ -1,10 +1,11 @@
 name: DataGen
 
 on:
-  pull_request:
+  push:
+    branches:
+      - develop
     paths:
       - 'src/main/java/me/anedhel/lotr/datagen/**'
-    types: [opened, synchronize, reopened]
   
   # Manual trigger
   workflow_dispatch:
@@ -15,14 +16,12 @@ jobs:
     
     permissions:
       contents: write
-      pull-requests: write
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          ref: ${{ github.head_ref || github.ref }}
           fetch-depth: 0
       
       - name: Set up JDK 17
@@ -65,46 +64,5 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          if [ "${{ github.event_name }}" == "pull_request" ]; then
-            git commit -m "DataGen run for PR #${{ github.event.number }}"
-          else
-            git commit -m "DataGen run (manual execution)"
-          fi
+          git commit -m "DataGen: Update generated files [skip ci]"
           git push
-      
-      - name: Comment on PR about changes
-        if: steps.verify-changed-files.outputs.changed == 'true' && github.event_name == 'pull_request'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '🔄 DataGen completed successfully and updated generated files. The changes have been committed to this PR branch.'
-            })
-      
-      - name: Comment on PR if no changes
-        if: steps.verify-changed-files.outputs.changed == 'false' && github.event_name == 'pull_request'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '✅ DataGen completed successfully - no changes to generated files were needed.'
-            })
-      
-      - name: Fail if DataGen produced unexpected changes
-        if: failure() && github.event_name == 'pull_request'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '❌ DataGen failed to run successfully. Please check the workflow logs and fix any issues before merging this PR.'
-            })
-            core.setFailed('DataGen execution failed')
