@@ -122,9 +122,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                     logsThatBurnTag.add(woodType.getStrippedWood().asItem());
                     logTag.add(woodType.getStrippedWood().asItem());
                 }
-                if (woodType.getPlanks() != null) {
-                    planksTag.add(woodType.getPlanks().asItem());
-                }
+            }
+            if (woodType.getPlanks() != null) {
+                planksTag.add(woodType.getPlanks().asItem());
             }
         }
     }
