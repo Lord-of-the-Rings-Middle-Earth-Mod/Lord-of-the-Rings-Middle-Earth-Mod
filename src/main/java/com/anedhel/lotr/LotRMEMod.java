@@ -1,5 +1,6 @@
 package com.anedhel.lotr;
 
+import com.anedhel.lotr.block.ModBlocks;
 import com.anedhel.lotr.item.ModItemGroups;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -16,6 +17,7 @@ public class LotRMEMod implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("Initializing " + MOD_ID + " mod.");
 		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
 	}
 }

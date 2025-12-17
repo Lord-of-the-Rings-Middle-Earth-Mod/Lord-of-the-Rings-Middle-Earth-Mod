@@ -1,8 +1,10 @@
 package com.anedhel.lotr.item;
 
 import com.anedhel.lotr.LotRMEMod;
+import com.anedhel.lotr.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -25,6 +27,17 @@ public class ModItemGroups {
 						entries.add(ModItems.RAW_SILVER);
 						entries.add(ModItems.SILVER_INGOT);
 						entries.add(ModItems.SILVER_NUGGET);
+					})).build());
+
+	public static final ItemGroup LOTR_BLOCKS = Registry.register(Registries.ITEM_GROUP,
+			Identifier.of(LotRMEMod.MOD_ID, "lotr_blocks"), FabricItemGroup.builder().displayName(
+					Text.translatableWithFallback("itemgroup.lotr_blocks", "LOTR Blocks"))
+					.icon(() -> new ItemStack(ModBlocks.TIN_BLOCK))
+					.entries(((displayContext, entries) -> {
+						entries.add(ModBlocks.RAW_TIN_BLOCK);
+						entries.add(ModBlocks.TIN_BLOCK);
+						entries.add(ModBlocks.RAW_SILVER_BLOCK);
+						entries.add(ModBlocks.SILVER_BLOCK);
 					})).build());
 
 	public static void registerItemGroups() {

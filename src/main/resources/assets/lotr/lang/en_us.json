@@ -1,9 +1,15 @@
 {
 	"itemgroup.lotr_ingredients": "LOTR Ingredients",
+	"itemgroup.lotr_blocks": "LOTR Blocks",
 
 	"item.lotr.raw_tin": "Raw Tin",
 	"item.lotr.tin_ingot": "Tin Ingot",
 	"item.lotr.raw_silver": "Raw Silver",
 	"item.lotr.silver_ingot": "Silver Ingot",
-	"item.lotr.silver_nugget": "Silver Nugget"
+	"item.lotr.silver_nugget": "Silver Nugget",
+
+	"block.lotr.raw_tin_block": "Block of Raw Tin",
+	"block.lotr.tin_block": "Block of Tin",
+	"block.lotr.raw_silver_block": "Block of Raw Silver",
+	"block.lotr.silver_block": "Block of Silver"
 }
