@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "lotr:cracked_mossy_gold_chalk_bricks"
+  },
+  "result": "lotr:cracked_mossy_gold_fancy_chalk_brick_wall"
+}

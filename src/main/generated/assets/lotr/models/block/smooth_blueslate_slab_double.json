@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "lotr:block/smooth_blueslate",
+    "side": "lotr:block/smooth_blueslate_slab_side"
+  }
+}

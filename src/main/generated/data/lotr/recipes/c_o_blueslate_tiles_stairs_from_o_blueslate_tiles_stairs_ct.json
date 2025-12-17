@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "lotr:overgrown_blueslate_tiles_stairs"
+  },
+  "result": "lotr:cracked_overgrown_blueslate_tiles_stairs"
+}

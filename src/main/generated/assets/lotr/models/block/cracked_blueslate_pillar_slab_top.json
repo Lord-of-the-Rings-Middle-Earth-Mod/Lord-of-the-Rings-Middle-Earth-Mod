@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "lotr:block/cracked_blueslate_pillar_end",
+    "side": "lotr:block/cracked_blueslate_pillar_side_single",
+    "top": "lotr:block/cracked_blueslate_pillar_end"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cracked_bronze_chalk_tiles": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "lotr:cracked_bronze_chalk_tiles"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:c_b_chalk_pavement_from_c_b_chalk_tiles_ct"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_cracked_bronze_chalk_tiles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:c_b_chalk_pavement_from_c_b_chalk_tiles_ct"
+    ]
+  }
+}

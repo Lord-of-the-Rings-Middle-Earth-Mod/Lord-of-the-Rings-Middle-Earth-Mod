@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "pillar_type=base": {
+      "model": "lotr:block/chalk_pillar_bottom"
+    },
+    "pillar_type=middle": {
+      "model": "lotr:block/chalk_pillar_middle"
+    },
+    "pillar_type=single": {
+      "model": "lotr:block/chalk_pillar"
+    },
+    "pillar_type=top": {
+      "model": "lotr:block/chalk_pillar_top"
+    }
+  }
+}

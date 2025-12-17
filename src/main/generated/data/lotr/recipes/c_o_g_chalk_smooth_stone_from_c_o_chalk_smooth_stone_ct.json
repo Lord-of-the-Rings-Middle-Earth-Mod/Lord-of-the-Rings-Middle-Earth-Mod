@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "key": {
+    "#": {
+      "item": "lotr:cracked_overgrown_smooth_chalk"
+    },
+    "O": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    " O ",
+    "O#O",
+    " O "
+  ],
+  "result": {
+    "item": "lotr:cracked_overgrown_gold_smooth_chalk"
+  }
+}
