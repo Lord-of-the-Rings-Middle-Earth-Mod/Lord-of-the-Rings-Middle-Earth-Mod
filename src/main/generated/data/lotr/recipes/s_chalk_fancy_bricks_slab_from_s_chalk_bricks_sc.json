@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 2,
-  "ingredient": {
-    "item": "lotr:silver_chalk_bricks"
-  },
-  "result": "lotr:silver_fancy_chalk_brick_slab"
-}

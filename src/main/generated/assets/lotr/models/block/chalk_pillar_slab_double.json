@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/cube_top",
-  "textures": {
-    "side": "lotr:block/chalk_pillar_side_single",
-    "top": "lotr:block/chalk_pillar_end"
-  }
-}

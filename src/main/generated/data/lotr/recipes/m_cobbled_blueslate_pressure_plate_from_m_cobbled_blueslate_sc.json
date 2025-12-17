@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "lotr:mossy_cobbled_blueslate"
-  },
-  "result": "lotr:mossy_cobbled_blueslate_pressure_plate"
-}

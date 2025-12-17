@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 1,
-  "ingredient": {
-    "item": "lotr:blueslate"
-  },
-  "result": "lotr:chiseled_blueslate_bricks"
-}

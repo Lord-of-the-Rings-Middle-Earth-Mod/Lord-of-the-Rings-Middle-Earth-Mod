@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/stairs",
-  "textures": {
-    "bottom": "lotr:block/pine_planks",
-    "side": "lotr:block/pine_planks",
-    "top": "lotr:block/pine_planks"
-  }
-}
