@@ -8,6 +8,11 @@ import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
+/**
+ * This class is responsible for creating and registering custom item groups for the mod.
+ * The order of the itemgroups being registered is also the order they appear ingame.
+ * The order of the items within each group is determined by the order they are added in the entries method.
+ */
 public class ModItemGroups {
 
 	public static final ItemGroup LOTR_INGREDIENTS = Registry.register(Registries.ITEM_GROUP,
