@@ -17,6 +17,15 @@ import java.util.function.Function;
 
 public class ModBlocks {
 
+	public static final Block SILVER_ORE = registerBlock("silver_ore",
+			settings -> new Block(settings.strength(3.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static final Block DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore",
+			settings -> new Block(settings.strength(4.5f).requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
+	public static final Block TIN_ORE = registerBlock("tin_ore",
+			settings -> new Block(settings.strength(3.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static final Block DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore",
+			settings -> new Block(settings.strength(4.5f).requiresTool().sounds(BlockSoundGroup.DEEPSLATE)));
+
 	public static final Block RAW_SILVER_BLOCK = registerBlock("raw_silver_block",
 			settings -> new Block(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.COPPER)));
 	public static final Block SILVER_BLOCK = registerBlock("silver_block",

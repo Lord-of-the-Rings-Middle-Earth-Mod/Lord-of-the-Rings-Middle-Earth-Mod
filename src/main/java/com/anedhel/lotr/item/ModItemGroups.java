@@ -22,6 +22,10 @@ public class ModItemGroups {
 							Text.translatableWithFallback("itemgroup.lotr_blocks", "LOTR Blocks"))
 					.icon(() -> new ItemStack(ModBlocks.TIN_BLOCK))
 					.entries(((displayContext, entries) -> {
+						entries.add(ModBlocks.TIN_ORE);
+						entries.add(ModBlocks.DEEPSLATE_TIN_ORE);
+						entries.add(ModBlocks.SILVER_ORE);
+						entries.add(ModBlocks.DEEPSLATE_SILVER_ORE);
 						entries.add(ModBlocks.RAW_TIN_BLOCK);
 						entries.add(ModBlocks.TIN_BLOCK);
 						entries.add(ModBlocks.RAW_SILVER_BLOCK);
