@@ -92,11 +92,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				for(ModWoodTypes woodType : ModWoodTypes.values()) {
 					ModWoodSet woodSet = woodType.getModWoodSet();
 
-					offerBarkBlockRecipe(woodSet.getWood(), woodSet.getLog());
-					offerBarkBlockRecipe(woodSet.getStrippedWood(), woodSet.getStrippedLog());
+					offerBarkBlockRecipe(woodSet.getWoodVariant("base"), woodSet.getLog());
+					offerBarkBlockRecipe(woodSet.getStrippedWoodVariant("base"), woodSet.getStrippedLog());
 					offerPlanksRecipe(woodSet.getPlanksVariant("base"), woodSet.getLogItemTag(), 4);
 
 					generateFamily(woodSet.getPlanksFamily(), FeatureFlags.VANILLA_FEATURES);
+					generateFamily(woodSet.getWoodFamily(), FeatureFlags.VANILLA_FEATURES);
+					generateFamily(woodSet.getStrippedWoodFamily(), FeatureFlags.VANILLA_FEATURES);
 				}
 			}
 		};

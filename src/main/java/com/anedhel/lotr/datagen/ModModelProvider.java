@@ -47,9 +47,29 @@ public class ModModelProvider extends FabricModelProvider {
 	private void generateModWoodTypeBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
 			ModWoodSet woodSet = woodType.getModWoodSet();
-			blockStateModelGenerator.createLogTexturePool(woodSet.getLog()).log(woodSet.getLog()).wood(woodSet.getWood());
+			blockStateModelGenerator.createLogTexturePool(woodSet.getLog()).log(woodSet.getLog());
+			BlockStateModelGenerator.BlockTexturePool pineWoodTexturePool =
+					blockStateModelGenerator.registerCubeAllModelTexturePool(woodSet.getWoodVariant("base"));
+			pineWoodTexturePool.stairs(woodSet.getWoodVariant("stairs"));
+			pineWoodTexturePool.slab(woodSet.getWoodVariant("slab"));
+			pineWoodTexturePool.button(woodSet.getWoodVariant("button"));
+			pineWoodTexturePool.pressurePlate(woodSet.getWoodVariant("pressure_plate"));
+			pineWoodTexturePool.fence(woodSet.getWoodVariant("fence"));
+			pineWoodTexturePool.fenceGate(woodSet.getWoodVariant("fence_gate"));
+			blockStateModelGenerator.registerDoor(woodSet.getWoodVariant("door"));
+			blockStateModelGenerator.registerTrapdoor(woodSet.getWoodVariant("trapdoor"));
 
-			blockStateModelGenerator.createLogTexturePool(woodSet.getStrippedLog()).log(woodSet.getStrippedLog()).wood(woodSet.getStrippedWood());
+			blockStateModelGenerator.createLogTexturePool(woodSet.getStrippedLog()).log(woodSet.getStrippedLog());
+			BlockStateModelGenerator.BlockTexturePool strippedPineWoodTexturePool =
+					blockStateModelGenerator.registerCubeAllModelTexturePool(woodSet.getStrippedWoodVariant("base"));
+			strippedPineWoodTexturePool.stairs(woodSet.getStrippedWoodVariant("stairs"));
+			strippedPineWoodTexturePool.slab(woodSet.getStrippedWoodVariant("slab"));
+			strippedPineWoodTexturePool.button(woodSet.getStrippedWoodVariant("button"));
+			strippedPineWoodTexturePool.pressurePlate(woodSet.getStrippedWoodVariant("pressure_plate"));
+			strippedPineWoodTexturePool.fence(woodSet.getStrippedWoodVariant("fence"));
+			strippedPineWoodTexturePool.fenceGate(woodSet.getStrippedWoodVariant("fence_gate"));
+			blockStateModelGenerator.registerDoor(woodSet.getStrippedWoodVariant("door"));
+			blockStateModelGenerator.registerTrapdoor(woodSet.getStrippedWoodVariant("trapdoor"));
 
 			BlockStateModelGenerator.BlockTexturePool pinePlanksTexturePool =
 					blockStateModelGenerator.registerCubeAllModelTexturePool(woodSet.getPlanksVariant("base"));

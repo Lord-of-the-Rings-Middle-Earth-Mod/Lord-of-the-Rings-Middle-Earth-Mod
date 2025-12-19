@@ -7,58 +7,63 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.tag.TagKey;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class ModWoodSet {
 	private final Block LOG;
-	private final Block WOOD;
+	private final BlockFamily WOOD_FAMILY;
 
 	private final Block STRIPPED_LOG;
-	private final Block STRIPPED_WOOD;
+	private final BlockFamily STRIPPED_WOOD_FAMILY;
 
-	private final Block PLANKS;
-	private final Block PLANKS_STAIRS;
-	private final Block PLANKS_SLAB;
-	private final Block PLANKS_BUTTON;
-	private final Block PLANKS_PRESSURE_PLATE;
-	private final Block PLANKS_FENCE;
-	private final Block PLANKS_FENCE_GATE;
-	private final Block PLANKS_DOOR;
-	private final Block PLANKS_TRAPDOOR;
 	private final BlockFamily PLANKS_FAMILY;
 
 	private final TagKey<Block> LOG_BLOCK_TAG;
 	private final TagKey<Item> LOG_ITEM_TAG;
 
-	public ModWoodSet(Block log, Block wood, Block strippedLog, Block strippedWood,
+	public ModWoodSet(Block log, Block wood, Block woodStairs, Block woodSlab, Block woodButton,
+			Block woodPressurePlate, Block woodFence, Block woodFenceGate, Block woodDoor, Block woodTrapdoor,
+			Block strippedLog, Block strippedWood, Block strippedWoodStairs, Block strippedWoodSlab,
+			Block strippedWoodButton, Block strippedWoodPressurePlate, Block strippedWoodFence,
+			Block strippedWoodFenceGate, Block strippedWoodDoor, Block strippedWoodTrapdoor,
 			Block planks, Block planksStairs, Block planksSlab, Block planksButton, Block planksPressurePlate,
 			Block planksFence, Block planksFenceGate, Block planksDoor, Block planksTrapdoor,
 			TagKey<Block> logTag,
 			TagKey<Item> logItemTag) {
 		LOG = log;
-		WOOD = wood;
+		WOOD_FAMILY = BlockFamilies.register(wood)
+				.stairs(woodStairs)
+				.slab(woodSlab)
+				.button(woodButton)
+				.pressurePlate(woodPressurePlate)
+				.fence(woodFence)
+				.fenceGate(woodFenceGate)
+				.door(woodDoor)
+				.trapdoor(woodTrapdoor)
+				.build();
 
 		STRIPPED_LOG = strippedLog;
-		STRIPPED_WOOD = strippedWood;
+		STRIPPED_WOOD_FAMILY = BlockFamilies.register(strippedWood)
+				.stairs(strippedWoodStairs)
+				.slab(strippedWoodSlab)
+				.button(strippedWoodButton)
+				.pressurePlate(strippedWoodPressurePlate)
+				.fence(strippedWoodFence)
+				.fenceGate(strippedWoodFenceGate)
+				.door(strippedWoodDoor)
+				.trapdoor(strippedWoodTrapdoor)
+				.build();
 
-		PLANKS = planks;
-		PLANKS_STAIRS = planksStairs;
-		PLANKS_SLAB = planksSlab;
-		PLANKS_BUTTON = planksButton;
-		PLANKS_PRESSURE_PLATE = planksPressurePlate;
-		PLANKS_FENCE = planksFence;
-		PLANKS_FENCE_GATE = planksFenceGate;
-		PLANKS_DOOR = planksDoor;
-		PLANKS_TRAPDOOR = planksTrapdoor;
-		PLANKS_FAMILY = BlockFamilies.register(PLANKS)
-				.stairs(PLANKS_STAIRS)
-				.slab(PLANKS_SLAB)
-				.button(PLANKS_BUTTON)
-				.pressurePlate(PLANKS_PRESSURE_PLATE)
-				.fence(PLANKS_FENCE)
-				.fenceGate(PLANKS_FENCE_GATE)
-				.door(PLANKS_DOOR)
-				.trapdoor(PLANKS_TRAPDOOR)
+		PLANKS_FAMILY = BlockFamilies.register(planks)
+				.stairs(planksStairs)
+				.slab(planksSlab)
+				.button(planksButton)
+				.pressurePlate(planksPressurePlate)
+				.fence(planksFence)
+				.fenceGate(planksFenceGate)
+				.door(planksDoor)
+				.trapdoor(planksTrapdoor)
 				.build();
 
 		LOG_BLOCK_TAG = logTag;
@@ -66,37 +71,44 @@ public class ModWoodSet {
 	}
 
 	public List<ItemStack> getWoodItemGroupList() {
-		return List.of(
-				new ItemStack(getLog()),
-				new ItemStack(getWood()),
-				new ItemStack(getStrippedLog()),
-				new ItemStack(getStrippedWood()),
-				new ItemStack(getPlanksVariant("base")),
-				new ItemStack(getPlanksVariant("stairs")),
-				new ItemStack(getPlanksVariant("slab")),
-				new ItemStack(getPlanksVariant("button")),
-				new ItemStack(getPlanksVariant("pressure_plate")),
-				new ItemStack(getPlanksVariant("fence")),
-				new ItemStack(getPlanksVariant("fence_gate")),
-				new ItemStack(getPlanksVariant("door")),
-				new ItemStack(getPlanksVariant("trapdoor"))
-		);
+		List<ItemStack> woodItemGroupList = new LinkedList<>();
+		woodItemGroupList.add(new ItemStack(LOG));
+		woodItemGroupList.addAll(getBlockFamilyList(WOOD_FAMILY));
+		woodItemGroupList.add(new ItemStack(STRIPPED_LOG));
+		woodItemGroupList.addAll(getBlockFamilyList(STRIPPED_WOOD_FAMILY));
+		woodItemGroupList.addAll(getBlockFamilyList(PLANKS_FAMILY));
+		return woodItemGroupList;
+	}
+
+	private static List<ItemStack> getBlockFamilyList(BlockFamily family) {
+		List<ItemStack> blockFamilyList = new LinkedList<>();
+		blockFamilyList.add(new ItemStack(family.getBaseBlock()));
+		family.getVariants().values().forEach(block -> blockFamilyList.add(new ItemStack(block)));
+		return blockFamilyList;
 	}
 
 	public Block getLog() {
 		return LOG;
 	}
 
-	public Block getWood() {
-		return WOOD;
+	public BlockFamily getWoodFamily() {
+		return WOOD_FAMILY;
+	}
+
+	public Block getWoodVariant(String variant) {
+		return getBlockFromFamily(WOOD_FAMILY, variant);
 	}
 
 	public Block getStrippedLog() {
 		return STRIPPED_LOG;
 	}
 
-	public Block getStrippedWood() {
-		return STRIPPED_WOOD;
+	public BlockFamily getStrippedWoodFamily() {
+		return STRIPPED_WOOD_FAMILY;
+	}
+
+	public Block getStrippedWoodVariant(String variant) {
+		return getBlockFromFamily(STRIPPED_WOOD_FAMILY, variant);
 	}
 
 	public BlockFamily getPlanksFamily() {
@@ -104,18 +116,7 @@ public class ModWoodSet {
 	}
 
 	public Block getPlanksVariant(String variant) {
-		return switch(variant) {
-			case "base" -> PLANKS;
-			case "stairs" -> PLANKS_STAIRS;
-			case "slab" -> PLANKS_SLAB;
-			case "button" -> PLANKS_BUTTON;
-			case "pressure_plate" -> PLANKS_PRESSURE_PLATE;
-			case "fence" -> PLANKS_FENCE;
-			case "fence_gate" -> PLANKS_FENCE_GATE;
-			case "door" -> PLANKS_DOOR;
-			case "trapdoor" -> PLANKS_TRAPDOOR;
-			default -> throw new IllegalArgumentException("Unknown planks variant: " + variant);
-		};
+		return getBlockFromFamily(PLANKS_FAMILY, variant);
 	}
 
 	public TagKey<Block> getLogBlockTag() {
@@ -124,5 +125,20 @@ public class ModWoodSet {
 
 	public TagKey<Item> getLogItemTag() {
 		return LOG_ITEM_TAG;
+	}
+
+	private Block getBlockFromFamily(BlockFamily family, String variant) {
+		return switch(variant) {
+			case "base" -> family.getBaseBlock();
+			case "stairs" -> family.getVariant(BlockFamily.Variant.STAIRS);
+			case "slab" -> family.getVariant(BlockFamily.Variant.SLAB);
+			case "button" -> family.getVariant(BlockFamily.Variant.BUTTON);
+			case "pressure_plate" -> family.getVariant(BlockFamily.Variant.PRESSURE_PLATE);
+			case "fence" -> family.getVariant(BlockFamily.Variant.FENCE);
+			case "fence_gate" -> family.getVariant(BlockFamily.Variant.FENCE_GATE);
+			case "door" -> family.getVariant(BlockFamily.Variant.DOOR);
+			case "trapdoor" -> family.getVariant(BlockFamily.Variant.TRAPDOOR);
+			default -> throw new IllegalArgumentException("Unknown variant: " + variant + " of " + family.getBaseBlock().getName());
+		};
 	}
 }

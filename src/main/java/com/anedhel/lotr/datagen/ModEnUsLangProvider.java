@@ -66,14 +66,13 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 	private void generateWoodTypeTranslations(TranslationBuilder translationBuilder) {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
 			ModWoodSet woodSet = woodType.getModWoodSet();
-
-			generateBlockFamilyTranslations(translationBuilder, woodSet.getPlanksFamily());
-
 			translationBuilder.add(woodSet.getLog(), generateNameFromBlock(woodSet.getLog()));
-			translationBuilder.add(woodSet.getWood(), generateNameFromBlock(woodSet.getWood()));
+			generateBlockFamilyTranslations(translationBuilder, woodSet.getWoodFamily());
 
 			translationBuilder.add(woodSet.getStrippedLog(), generateNameFromBlock(woodSet.getStrippedLog()));
-			translationBuilder.add(woodSet.getStrippedWood(), generateNameFromBlock(woodSet.getStrippedWood()));
+			generateBlockFamilyTranslations(translationBuilder, woodSet.getStrippedWoodFamily());
+
+			generateBlockFamilyTranslations(translationBuilder, woodSet.getPlanksFamily());
 		}
 	}
 
