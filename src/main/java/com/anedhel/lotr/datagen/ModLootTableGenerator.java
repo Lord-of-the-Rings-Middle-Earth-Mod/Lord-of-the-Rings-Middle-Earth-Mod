@@ -1,10 +1,13 @@
 package com.anedhel.lotr.datagen;
 
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.block.woodtypes.ModWoodSet;
+import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
@@ -27,6 +30,8 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
 	@Override
 	public void generate() {
+		generateModWoodTypeLootTables();
+
 		addDrop(ModBlocks.RAW_TIN_BLOCK);
 		addDrop(ModBlocks.TIN_BLOCK);
 		addDrop(ModBlocks.RAW_SILVER_BLOCK);
@@ -41,6 +46,32 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 		addDrop(ModBlocks.DEEPSLATE_TIN_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_TIN_ORE,
 				ModItems.RAW_TIN, UniformLootNumberProvider.create(2.0F, 4.0F)
 		));
+	}
+
+	private void generateModWoodTypeLootTables() {
+		for(ModWoodTypes woodType : ModWoodTypes.values()) {
+			ModWoodSet woodSet = woodType.getModWoodSet();
+
+			addDrop(woodSet.getLog());
+			addDrop(woodSet.getWood());
+
+			addDrop(woodSet.getStrippedLog());
+			addDrop(woodSet.getStrippedWood());
+
+			generateWoodBlockFamilyLootTables(woodSet.getPlanksFamily());
+		}
+	}
+
+	private void generateWoodBlockFamilyLootTables(BlockFamily family) {
+		for(Block value : family.getVariants().values()) {
+			if(value == family.getVariant(BlockFamily.Variant.SLAB)){
+				addDrop(value, slabDrops(value));
+			} else if (value == family.getVariant(BlockFamily.Variant.DOOR)){
+				addDrop(value, doorDrops(value));
+			}else {
+				addDrop(value);
+			}
+		}
 	}
 
 	private LootTable.Builder multipleOreDrops(Block blockDrop, Item itemDrop, UniformLootNumberProvider dropRange) {

@@ -1,5 +1,7 @@
 package com.anedhel.lotr.datagen;
 
+import com.anedhel.lotr.block.woodtypes.ModWoodSet;
+import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
@@ -17,6 +19,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
 	@Override
 	protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+		configureModWoodTypes(wrapperLookup);
+
 		valueLookupBuilder(ConventionalItemTags.RAW_MATERIALS)
 				.add(ModItems.RAW_TIN)
 				.add(ModItems.RAW_SILVER);
@@ -26,4 +30,17 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 		valueLookupBuilder(ConventionalItemTags.NUGGETS)
 				.add(ModItems.SILVER_NUGGET);
 	}
+
+	private void configureModWoodTypes(RegistryWrapper.WrapperLookup wrapperLookup) {
+		for(ModWoodTypes woodType : ModWoodTypes.values()) {
+			ModWoodSet woodSet = woodType.getModWoodSet();
+
+			valueLookupBuilder(woodSet.getLogItemTag())
+					.add(woodSet.getLog().asItem())
+					.add(woodSet.getStrippedLog().asItem())
+					.add(woodSet.getWood().asItem())
+					.add(woodSet.getStrippedWood().asItem());
+		}
+	}
+
 }

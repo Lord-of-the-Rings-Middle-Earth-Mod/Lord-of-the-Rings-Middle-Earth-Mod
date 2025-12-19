@@ -2,6 +2,7 @@ package com.anedhel.lotr.item;
 
 import com.anedhel.lotr.LotRMEMod;
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.block.woodtypes.PineBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -22,6 +23,7 @@ public class ModItemGroups {
 							Text.translatableWithFallback("itemgroup.lotr_blocks", "LOTR Blocks"))
 					.icon(() -> new ItemStack(ModBlocks.TIN_BLOCK))
 					.entries(((displayContext, entries) -> {
+						entries.addAll(PineBlocks.PINE_SET.getWoodItemGroupList());
 						entries.add(ModBlocks.TIN_ORE);
 						entries.add(ModBlocks.DEEPSLATE_TIN_ORE);
 						entries.add(ModBlocks.SILVER_ORE);

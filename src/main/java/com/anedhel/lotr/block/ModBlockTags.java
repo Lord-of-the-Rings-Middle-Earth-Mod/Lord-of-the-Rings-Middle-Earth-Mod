@@ -11,6 +11,8 @@ public class ModBlockTags {
 
 	public static final TagKey<Block> PILLARS = createCommonTag("pillars");
 
+	public static final TagKey<Block> PINE_LOGS = createModTag("pine_logs");
+
 	private static TagKey<Block> createCommonTag(String name) {
 		return TagKey.of(RegistryKeys.BLOCK, Identifier.of(TagUtil.C_TAG_NAMESPACE, name));
 	}

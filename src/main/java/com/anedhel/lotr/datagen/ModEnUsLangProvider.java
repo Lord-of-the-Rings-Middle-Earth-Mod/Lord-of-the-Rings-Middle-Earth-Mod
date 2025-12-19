@@ -2,9 +2,14 @@ package com.anedhel.lotr.datagen;
 
 import com.anedhel.lotr.block.ModBlockTags;
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.block.woodtypes.ModWoodSet;
+import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
+import com.anedhel.lotr.datagen.util.DataGenUtils;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
+import net.minecraft.block.Block;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -27,9 +32,8 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 	@Override
 	public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup,
 			TranslationBuilder translationBuilder) {
-		translationBuilder.add("itemgroup.lotr_blocks", "LotR Blocks");
-		translationBuilder.add("itemgroup.lotr_ingredients", "LotR Ingredients");
-		translationBuilder.add("itemgroup.lotr_food", "LotR Food");
+		generateItemGroupTranslations(translationBuilder);
+		generateWoodTypeTranslations(translationBuilder);
 
 		translationBuilder.add(ModBlockTags.PILLARS, "Pillars");
 
@@ -51,5 +55,43 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModBlocks.DEEPSLATE_TIN_ORE, "Deepslate Tin Ore");
 		translationBuilder.add(ModBlocks.SILVER_ORE, "Silver Ore");
 		translationBuilder.add(ModBlocks.DEEPSLATE_SILVER_ORE, "Deepslate Silver Ore");
+	}
+
+	private void generateItemGroupTranslations(TranslationBuilder translationBuilder) {
+		translationBuilder.add("itemgroup.lotr_blocks", "LotR Blocks");
+		translationBuilder.add("itemgroup.lotr_ingredients", "LotR Ingredients");
+		translationBuilder.add("itemgroup.lotr_food", "LotR Food");
+	}
+
+	private void generateWoodTypeTranslations(TranslationBuilder translationBuilder) {
+		for(ModWoodTypes woodType : ModWoodTypes.values()) {
+			ModWoodSet woodSet = woodType.getModWoodSet();
+
+			generateBlockFamilyTranslations(translationBuilder, woodSet.getPlanksFamily());
+
+			translationBuilder.add(woodSet.getLog(), generateNameFromBlock(woodSet.getLog()));
+			translationBuilder.add(woodSet.getWood(), generateNameFromBlock(woodSet.getWood()));
+
+			translationBuilder.add(woodSet.getStrippedLog(), generateNameFromBlock(woodSet.getStrippedLog()));
+			translationBuilder.add(woodSet.getStrippedWood(), generateNameFromBlock(woodSet.getStrippedWood()));
+		}
+	}
+
+	private void generateBlockFamilyTranslations(TranslationBuilder translationBuilder, BlockFamily family) {
+		translationBuilder.add(family.getBaseBlock(),
+				generateNameFromTranslationKey(family.getBaseBlock().getTranslationKey()));
+		family.getVariants().values().forEach(block -> {
+			String name = generateNameFromTranslationKey(block.getTranslationKey());
+			translationBuilder.add(block, name);
+		});
+	}
+
+	private String generateNameFromBlock(Block block) {
+		return generateNameFromTranslationKey(block.getTranslationKey());
+	}
+
+	private String generateNameFromTranslationKey(String translationKey) {
+		String name = DataGenUtils.extractNameFromTranslationKey(translationKey).replace('_', ' ');
+		return DataGenUtils.capitalizeWords(name);
 	}
 }

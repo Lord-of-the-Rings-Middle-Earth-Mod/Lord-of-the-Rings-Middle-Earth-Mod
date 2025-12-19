@@ -1,6 +1,7 @@
 package com.anedhel.lotr.block;
 
 import com.anedhel.lotr.LotRMEMod;
+import com.anedhel.lotr.block.woodtypes.PineBlocks;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -12,7 +13,6 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
-import javax.swing.*;
 import java.util.function.Function;
 
 public class ModBlocks {
@@ -57,5 +57,11 @@ public class ModBlocks {
 
 	public static void registerModBlocks(){
 		LotRMEMod.LOGGER.info("Registering Mod Blocks for " + LotRMEMod.MOD_ID);
+		registerModWoodBlocks();
+	}
+
+	private static void registerModWoodBlocks() {
+		LotRMEMod.LOGGER.info("Registering Mod Wood Blocks for " + LotRMEMod.MOD_ID);
+		PineBlocks.registerPineBlocks();
 	}
 }

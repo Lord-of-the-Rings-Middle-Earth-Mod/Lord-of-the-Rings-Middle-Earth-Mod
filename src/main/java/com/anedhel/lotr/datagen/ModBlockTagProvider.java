@@ -1,9 +1,14 @@
 package com.anedhel.lotr.datagen;
 
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.block.woodtypes.ModWoodSet;
+import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
+import net.minecraft.block.Block;
+import net.minecraft.data.family.BlockFamily;
+import net.minecraft.data.tag.ProvidedTagBuilder;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
@@ -59,5 +64,39 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 				.add(ModBlocks.DEEPSLATE_SILVER_ORE)
 				.add(ModBlocks.RAW_SILVER_BLOCK)
 				.add(ModBlocks.SILVER_BLOCK);
+
+		configureModWoodTypes();
+	}
+
+	private void configureModWoodTypes() {
+		for(ModWoodTypes woodType : ModWoodTypes.values()) {
+			ModWoodSet woodSet = woodType.getModWoodSet();
+
+			configureWoodFamilyTags(woodSet.getPlanksFamily());
+
+			valueLookupBuilder(woodSet.getLogBlockTag())
+					.add(woodSet.getLog())
+					.add(woodSet.getWood())
+					.add(woodSet.getStrippedLog())
+					.add(woodSet.getStrippedWood());
+
+			valueLookupBuilder(BlockTags.AXE_MINEABLE)
+					.add(woodSet.getLog())
+					.add(woodSet.getWood())
+					.add(woodSet.getStrippedLog())
+					.add(woodSet.getStrippedWood());
+		}
+	}
+
+	private void configureWoodFamilyTags(BlockFamily family) {
+		ProvidedTagBuilder<Block, Block> builder = valueLookupBuilder(BlockTags.AXE_MINEABLE);
+		family.getVariants().values().forEach(block -> {
+			builder.add(block);
+		});
+		valueLookupBuilder(BlockTags.WOODEN_FENCES)
+				.add(family.getVariant(BlockFamily.Variant.FENCE));
+
+		valueLookupBuilder(BlockTags.FENCE_GATES)
+				.add(family.getVariant(BlockFamily.Variant.FENCE_GATE));
 	}
 }

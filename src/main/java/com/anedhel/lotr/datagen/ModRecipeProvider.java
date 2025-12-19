@@ -1,6 +1,8 @@
 package com.anedhel.lotr.datagen;
 
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.block.woodtypes.ModWoodSet;
+import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
@@ -14,13 +16,14 @@ import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SmokingRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.resource.featuretoggle.FeatureFlags;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-public class ModRecipeGenerator extends FabricRecipeProvider {
+public class ModRecipeProvider extends FabricRecipeProvider {
 
-	public ModRecipeGenerator(FabricDataOutput output,
+	public ModRecipeProvider(FabricDataOutput output,
 			CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
 		super(output, registriesFuture);
 	}
@@ -36,10 +39,16 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 	protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup registryLookup,
 			RecipeExporter exporter) {
 		return new RecipeGenerator(registryLookup, exporter) {
+
+			private final List<ItemConvertible> TIN_SMELTABLES = List.of(ModItems.RAW_TIN, ModBlocks.TIN_ORE,
+					ModBlocks.DEEPSLATE_TIN_ORE);
+			private final List<ItemConvertible> SILVER_SMELTABLES = List.of(ModItems.RAW_SILVER, ModBlocks.SILVER_ORE,
+					ModBlocks.DEEPSLATE_SILVER_ORE);
+
 			@Override
 			public void generate() {
-				List<ItemConvertible> TIN_SMELTABLES = List.of(ModItems.RAW_TIN, ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE);
-				List<ItemConvertible> SILVER_SMELTABLES = List.of(ModItems.RAW_SILVER, ModBlocks.SILVER_ORE, ModBlocks.DEEPSLATE_SILVER_ORE);
+				generateModWoodTypeRecipes();
+
 
 				offerSmelting(TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 200, "tin");
 				offerBlasting(TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 100, "tin");
@@ -77,6 +86,18 @@ public class ModRecipeGenerator extends FabricRecipeProvider {
 						ModItems.COOKED_CORN, 1f);
 				offerFoodCookingRecipe("campfire", RecipeSerializer.CAMPFIRE_COOKING, CampfireCookingRecipe::new, 600,
 						ModItems.CORN, ModItems.COOKED_CORN, 1f);
+			}
+
+			private void generateModWoodTypeRecipes() {
+				for(ModWoodTypes woodType : ModWoodTypes.values()) {
+					ModWoodSet woodSet = woodType.getModWoodSet();
+
+					offerBarkBlockRecipe(woodSet.getWood(), woodSet.getLog());
+					offerBarkBlockRecipe(woodSet.getStrippedWood(), woodSet.getStrippedLog());
+					offerPlanksRecipe(woodSet.getPlanksVariant("base"), woodSet.getLogItemTag(), 4);
+
+					generateFamily(woodSet.getPlanksFamily(), FeatureFlags.VANILLA_FEATURES);
+				}
 			}
 		};
 	}
