@@ -1,6 +1,10 @@
 package com.anedhel.lotr.datagen;
 
+import com.anedhel.lotr.block.ModBlockTags;
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.block.stonetypes.ModStoneSet;
+import com.anedhel.lotr.block.stonetypes.ModStoneSubSet;
+import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
 import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -23,6 +27,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
 	@Override
 	protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+		configureModWoodTypes();
+		configureModStoneTypes();
+
 		valueLookupBuilder(BlockTags.PICKAXE_MINEABLE)
 				.add(ModBlocks.TIN_ORE)
 				.add(ModBlocks.DEEPSLATE_TIN_ORE)
@@ -64,8 +71,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 				.add(ModBlocks.DEEPSLATE_SILVER_ORE)
 				.add(ModBlocks.RAW_SILVER_BLOCK)
 				.add(ModBlocks.SILVER_BLOCK);
-
-		configureModWoodTypes();
 	}
 
 	private void configureModWoodTypes() {
@@ -88,13 +93,43 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 		}
 	}
 
+	private void configureModStoneTypes() {
+		for(ModStoneTypes stoneType : ModStoneTypes.values()) {
+			ModStoneSet stoneSet = stoneType.getModStoneSet();
+			for(ModStoneSubSet subSet : stoneSet.getAllStoneSubSets()) {
+				configureStoneSubSetTags(subSet);
+			}
+			for(BlockFamily family : stoneSet.getAllBlockFamilies()) {
+				configureStoneFamilyTags(family);
+			}
+			stoneSet.getPillarSet().getAllBlockFamilies().forEach(blockFamily -> valueLookupBuilder(ModBlockTags.PILLARS)
+					.add(blockFamily.getBaseBlock()));
+			stoneSet.getFriezeSet().getAllBlockFamilies().forEach(blockFamily -> valueLookupBuilder(ModBlockTags.FRIEZES)
+					.add(blockFamily.getBaseBlock()));
+		}
+	}
+
 	private void configureWoodFamilyTags(BlockFamily family) {
-		ProvidedTagBuilder<Block, Block> builder = valueLookupBuilder(BlockTags.AXE_MINEABLE);
-		family.getVariants().values().forEach(builder::add);
+		ProvidedTagBuilder<Block, Block> axeMinableBuilder = valueLookupBuilder(BlockTags.AXE_MINEABLE);
+		family.getVariants().values().forEach(axeMinableBuilder::add);
 		valueLookupBuilder(BlockTags.WOODEN_FENCES)
 				.add(family.getVariant(BlockFamily.Variant.FENCE));
 
 		valueLookupBuilder(BlockTags.FENCE_GATES)
 				.add(family.getVariant(BlockFamily.Variant.FENCE_GATE));
+	}
+
+	private void configureStoneSubSetTags(ModStoneSubSet subSet) {
+		subSet.getAllBlockFamilies().forEach(this::configureStoneFamilyTags);
+	}
+
+	private void configureStoneFamilyTags(BlockFamily family) {
+		ProvidedTagBuilder<Block, Block> pickaxeMineableBuilder = valueLookupBuilder(BlockTags.PICKAXE_MINEABLE);
+		family.getVariants().values().forEach(pickaxeMineableBuilder::add);
+
+		if(family.getVariant(BlockFamily.Variant.WALL) != null) {
+			valueLookupBuilder(BlockTags.WALLS)
+					.add(family.getVariant(BlockFamily.Variant.WALL));
+		}
 	}
 }

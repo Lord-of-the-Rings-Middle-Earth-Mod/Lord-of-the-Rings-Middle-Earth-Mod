@@ -2,6 +2,8 @@ package com.anedhel.lotr.block.custom;
 
 import net.minecraft.util.StringIdentifiable;
 
+import java.util.Locale;
+
 public enum ModPillarType implements StringIdentifiable {
 	SINGLE("single"),
 	TOP("top"),
@@ -19,6 +21,6 @@ public enum ModPillarType implements StringIdentifiable {
 	 */
 	@Override
 	public String asString() {
-		return this.name();
+		return this.name().toLowerCase(Locale.ROOT);
 	}
 }

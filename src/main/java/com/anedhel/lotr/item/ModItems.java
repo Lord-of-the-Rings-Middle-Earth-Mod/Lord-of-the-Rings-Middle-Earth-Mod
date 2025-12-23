@@ -17,6 +17,7 @@ public class ModItems {
 	public static final Item RAW_SILVER = registerItem("raw_silver",Item::new);
 	public static final Item SILVER_INGOT = registerItem("silver_ingot",Item::new);
 	public static final Item SILVER_NUGGET = registerItem("silver_nugget",Item::new);
+	public static final Item BRONZE_INGOT = registerItem("bronze_ingot",Item::new);
 
 	public static final Item TOMATO = registerItem("tomato",
 			settings -> new Item(settings.food(ModFoodComponents.TOMATO)));

@@ -1,10 +1,13 @@
 package com.anedhel.lotr;
 
+import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
 import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
+import net.minecraft.block.Block;
 import net.minecraft.client.render.BlockRenderLayer;
+import net.minecraft.data.family.BlockFamily;
 
 public class LotRMEModClient implements ClientModInitializer {
 
@@ -14,6 +17,7 @@ public class LotRMEModClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient() {
 		registerWoodTypeCutoutLayers();
+		registerStoneTypeCutoutLayers();
 	}
 
 	private void registerWoodTypeCutoutLayers() {
@@ -22,6 +26,21 @@ public class LotRMEModClient implements ClientModInitializer {
 
 			BlockRenderLayerMap.putBlock(woodSet.getPlanksVariant("door"), BlockRenderLayer.CUTOUT);
 			BlockRenderLayerMap.putBlock(woodSet.getPlanksVariant("trapdoor"), BlockRenderLayer.CUTOUT);
+		}
+	}
+
+	private void registerStoneTypeCutoutLayers() {
+		for(ModStoneTypes stoneType : ModStoneTypes.values()) {
+			stoneType.getModStoneSet().getAllBlockFamilies().forEach(this::registerStoneFamilyOverlays);
+			stoneType.getModStoneSet().getAllStoneSubSets().forEach(subSet ->
+					subSet.getAllBlockFamilies().forEach(this::registerStoneFamilyOverlays));
+		}
+	}
+
+	private void registerStoneFamilyOverlays(BlockFamily stoneFamily) {
+		BlockRenderLayerMap.putBlock(stoneFamily.getBaseBlock(), BlockRenderLayer.CUTOUT);
+		for (Block variant : stoneFamily.getVariants().values()) {
+			BlockRenderLayerMap.putBlock(variant, BlockRenderLayer.CUTOUT);
 		}
 	}
 }

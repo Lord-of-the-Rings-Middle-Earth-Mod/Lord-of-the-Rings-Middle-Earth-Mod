@@ -1,6 +1,7 @@
 package com.anedhel.lotr.block;
 
 import com.anedhel.lotr.LotRMEMod;
+import com.anedhel.lotr.block.stonetypes.BlueslateBlocks;
 import com.anedhel.lotr.block.woodtypes.PineBlocks;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
@@ -58,10 +59,16 @@ public class ModBlocks {
 	public static void registerModBlocks(){
 		LotRMEMod.LOGGER.info("Registering Mod Blocks for " + LotRMEMod.MOD_ID);
 		registerModWoodBlocks();
+		registerModStoneBlocks();
 	}
 
 	private static void registerModWoodBlocks() {
 		LotRMEMod.LOGGER.info("Registering Mod Wood Blocks for " + LotRMEMod.MOD_ID);
 		PineBlocks.registerPineBlocks();
+	}
+
+	private static void registerModStoneBlocks() {
+		LotRMEMod.LOGGER.info("Registering Mod Stone Blocks for " + LotRMEMod.MOD_ID);
+		BlueslateBlocks.registerBlueslateBlocks();
 	}
 }

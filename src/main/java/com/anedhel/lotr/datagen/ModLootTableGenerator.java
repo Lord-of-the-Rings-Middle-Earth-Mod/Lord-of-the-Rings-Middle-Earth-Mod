@@ -1,6 +1,8 @@
 package com.anedhel.lotr.datagen;
 
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.block.stonetypes.ModStoneSet;
+import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
 import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
 import com.anedhel.lotr.item.ModItems;
@@ -31,6 +33,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 	@Override
 	public void generate() {
 		generateModWoodTypeLootTables();
+		generateModStoneTypeLootTables();
 
 		addDrop(ModBlocks.RAW_TIN_BLOCK);
 		addDrop(ModBlocks.TIN_BLOCK);
@@ -58,11 +61,19 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 			addDrop(woodSet.getStrippedLog());
 			addDrop(woodSet.getStrippedWoodVariant("base"));
 
-			generateWoodBlockFamilyLootTables(woodSet.getPlanksFamily());
+			generateBlockFamilyLootTables(woodSet.getPlanksFamily());
 		}
 	}
 
-	private void generateWoodBlockFamilyLootTables(BlockFamily family) {
+	private void generateModStoneTypeLootTables() {
+		for(ModStoneTypes stoneType: ModStoneTypes.values()) {
+			ModStoneSet stoneSet = stoneType.getModStoneSet();
+			stoneSet.getAllBlockFamilies().forEach(this::generateBlockFamilyLootTables);
+			stoneSet.getAllStoneSubSets().forEach(subSet -> subSet.getAllBlockFamilies().forEach(this::generateBlockFamilyLootTables));
+		}
+	}
+
+	private void generateBlockFamilyLootTables(BlockFamily family) {
 		for(Block value : family.getVariants().values()) {
 			if(value == family.getVariant(BlockFamily.Variant.SLAB)){
 				addDrop(value, slabDrops(value));

@@ -10,6 +10,7 @@ import net.minecraft.util.Identifier;
 public class ModBlockTags {
 
 	public static final TagKey<Block> PILLARS = createCommonTag("pillars");
+	public static final TagKey<Block> FRIEZES = createCommonTag("friezes");
 
 	public static final TagKey<Block> PINE_LOGS = createModTag("pine_logs");
 

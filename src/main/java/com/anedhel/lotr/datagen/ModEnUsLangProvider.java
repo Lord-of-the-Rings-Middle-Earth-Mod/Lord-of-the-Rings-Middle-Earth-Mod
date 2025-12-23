@@ -2,9 +2,12 @@ package com.anedhel.lotr.datagen;
 
 import com.anedhel.lotr.block.ModBlockTags;
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.block.stonetypes.ModStoneSet;
+import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
 import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
 import com.anedhel.lotr.datagen.util.DataGenUtils;
+import com.anedhel.lotr.item.ModItemTags;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
@@ -33,9 +36,9 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 	public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup,
 			TranslationBuilder translationBuilder) {
 		generateItemGroupTranslations(translationBuilder);
+		generateTagTranslations(translationBuilder);
 		generateWoodTypeTranslations(translationBuilder);
-
-		translationBuilder.add(ModBlockTags.PILLARS, "Pillars");
+		generateStoneTypeTranslations(translationBuilder);
 
 		translationBuilder.add(ModItems.TIN_INGOT, "Tin Ingot");
 		translationBuilder.add(ModItems.SILVER_INGOT, "Silver Ingot");
@@ -61,6 +64,14 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add("itemgroup.lotr_blocks", "LotR Blocks");
 		translationBuilder.add("itemgroup.lotr_ingredients", "LotR Ingredients");
 		translationBuilder.add("itemgroup.lotr_food", "LotR Food");
+		translationBuilder.add("itemgroup.lotr_stone", "LotR Stone");
+	}
+
+	private void generateTagTranslations(TranslationBuilder translationBuilder) {
+		translationBuilder.add(ModBlockTags.PILLARS, "Pillars");
+		translationBuilder.add(ModBlockTags.FRIEZES, "Friezes");
+		translationBuilder.add(ModBlockTags.PINE_LOGS, "Pine Logs");
+		translationBuilder.add(ModItemTags.PINE_LOGS, "Pine Logs");
 	}
 
 	private void generateWoodTypeTranslations(TranslationBuilder translationBuilder) {
@@ -73,6 +84,15 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 			generateBlockFamilyTranslations(translationBuilder, woodSet.getStrippedWoodFamily());
 
 			generateBlockFamilyTranslations(translationBuilder, woodSet.getPlanksFamily());
+		}
+	}
+
+	private void generateStoneTypeTranslations(TranslationBuilder translationBuilder) {
+		for(ModStoneTypes stoneType : ModStoneTypes.values()) {
+			ModStoneSet stoneSet = stoneType.getModStoneSet();
+			stoneSet.getAllBlockFamilies().forEach(family -> generateBlockFamilyTranslations(translationBuilder, family));
+
+			stoneSet.getAllStoneSubSets().forEach(subSet -> subSet.getAllBlockFamilies().forEach(family -> generateBlockFamilyTranslations(translationBuilder, family)));
 		}
 	}
 

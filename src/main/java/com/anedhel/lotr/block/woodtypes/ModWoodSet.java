@@ -1,5 +1,6 @@
 package com.anedhel.lotr.block.woodtypes;
 
+import com.anedhel.lotr.util.ModUtil;
 import net.minecraft.block.Block;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
@@ -96,7 +97,7 @@ public class ModWoodSet {
 	}
 
 	public Block getWoodVariant(String variant) {
-		return getBlockFromFamily(WOOD_FAMILY, variant);
+		return ModUtil.getBlockFromFamily(WOOD_FAMILY, variant);
 	}
 
 	public Block getStrippedLog() {
@@ -108,7 +109,7 @@ public class ModWoodSet {
 	}
 
 	public Block getStrippedWoodVariant(String variant) {
-		return getBlockFromFamily(STRIPPED_WOOD_FAMILY, variant);
+		return ModUtil.getBlockFromFamily(STRIPPED_WOOD_FAMILY, variant);
 	}
 
 	public BlockFamily getPlanksFamily() {
@@ -116,7 +117,7 @@ public class ModWoodSet {
 	}
 
 	public Block getPlanksVariant(String variant) {
-		return getBlockFromFamily(PLANKS_FAMILY, variant);
+		return ModUtil.getBlockFromFamily(PLANKS_FAMILY, variant);
 	}
 
 	public TagKey<Block> getLogBlockTag() {
@@ -125,20 +126,5 @@ public class ModWoodSet {
 
 	public TagKey<Item> getLogItemTag() {
 		return LOG_ITEM_TAG;
-	}
-
-	private Block getBlockFromFamily(BlockFamily family, String variant) {
-		return switch(variant) {
-			case "base" -> family.getBaseBlock();
-			case "stairs" -> family.getVariant(BlockFamily.Variant.STAIRS);
-			case "slab" -> family.getVariant(BlockFamily.Variant.SLAB);
-			case "button" -> family.getVariant(BlockFamily.Variant.BUTTON);
-			case "pressure_plate" -> family.getVariant(BlockFamily.Variant.PRESSURE_PLATE);
-			case "fence" -> family.getVariant(BlockFamily.Variant.FENCE);
-			case "fence_gate" -> family.getVariant(BlockFamily.Variant.FENCE_GATE);
-			case "door" -> family.getVariant(BlockFamily.Variant.DOOR);
-			case "trapdoor" -> family.getVariant(BlockFamily.Variant.TRAPDOOR);
-			default -> throw new IllegalArgumentException("Unknown variant: " + variant + " of " + family.getBaseBlock().getName());
-		};
 	}
 }
