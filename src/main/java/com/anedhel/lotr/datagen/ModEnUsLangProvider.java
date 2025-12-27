@@ -7,12 +7,14 @@ import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
 import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
 import com.anedhel.lotr.datagen.util.DataGenUtils;
+import com.anedhel.lotr.item.ModGearType;
 import com.anedhel.lotr.item.ModItemTags;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider;
 import net.minecraft.block.Block;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
@@ -37,12 +39,14 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 			TranslationBuilder translationBuilder) {
 		generateItemGroupTranslations(translationBuilder);
 		generateTagTranslations(translationBuilder);
+		generateGearTypeTranslations(translationBuilder);
 		generateWoodTypeTranslations(translationBuilder);
 		generateStoneTypeTranslations(translationBuilder);
 
 		translationBuilder.add(ModItems.TIN_INGOT, "Tin Ingot");
 		translationBuilder.add(ModItems.SILVER_INGOT, "Silver Ingot");
 		translationBuilder.add(ModItems.SILVER_NUGGET, "Silver Nugget");
+		translationBuilder.add(ModItems.BRONZE_INGOT, "Bronze Ingot");
 		translationBuilder.add(ModItems.RAW_TIN, "Raw Tin");
 		translationBuilder.add(ModItems.RAW_SILVER, "Raw Silver");
 		translationBuilder.add(ModItems.TOMATO, "Tomato");
@@ -50,10 +54,11 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModItems.CORN, "Corn");
 		translationBuilder.add(ModItems.COOKED_CORN, "Cooked Corn");
 
-		translationBuilder.add(ModBlocks.RAW_TIN_BLOCK, "Raw Tin Block");
-		translationBuilder.add(ModBlocks.TIN_BLOCK, "Tin Block");
-		translationBuilder.add(ModBlocks.RAW_SILVER_BLOCK, "Raw Silver Block");
-		translationBuilder.add(ModBlocks.SILVER_BLOCK, "Silver Block");
+		translationBuilder.add(ModBlocks.RAW_TIN_BLOCK, "Block of Raw Tin");
+		translationBuilder.add(ModBlocks.TIN_BLOCK, "Block of Tin");
+		translationBuilder.add(ModBlocks.RAW_SILVER_BLOCK, "Block of Raw Silver");
+		translationBuilder.add(ModBlocks.SILVER_BLOCK, "Block of Silver");
+		translationBuilder.add(ModBlocks.BRONZE_BLOCK, "Block of Bronze");
 		translationBuilder.add(ModBlocks.TIN_ORE, "Tin Ore");
 		translationBuilder.add(ModBlocks.DEEPSLATE_TIN_ORE, "Deepslate Tin Ore");
 		translationBuilder.add(ModBlocks.SILVER_ORE, "Silver Ore");
@@ -65,13 +70,32 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add("itemgroup.lotr_ingredients", "LotR Ingredients");
 		translationBuilder.add("itemgroup.lotr_food", "LotR Food");
 		translationBuilder.add("itemgroup.lotr_stone", "LotR Stone");
+		translationBuilder.add("itemgroup.lotr_tools", "LotR Tools");
+		translationBuilder.add("itemgroup.lotr_combat", "LotR Combat");
 	}
 
 	private void generateTagTranslations(TranslationBuilder translationBuilder) {
 		translationBuilder.add(ModBlockTags.PILLARS, "Pillars");
 		translationBuilder.add(ModBlockTags.FRIEZES, "Friezes");
 		translationBuilder.add(ModBlockTags.PINE_LOGS, "Pine Logs");
+		translationBuilder.add(ModBlockTags.INCORRECT_FOR_BRONZE_TOOL, "Incorrect for Bronze Tool");
 		translationBuilder.add(ModItemTags.PINE_LOGS, "Pine Logs");
+		translationBuilder.add(ModItemTags.BRONZE_MATERIALS, "Bronze Materials");
+	}
+
+	private void generateGearTypeTranslations(TranslationBuilder translationBuilder) {
+		for(ModGearType gearType: ModGearType.values()) {
+			translationBuilder.add(gearType.getHelmet(), generateNameFromItem(gearType.getHelmet()));
+			translationBuilder.add(gearType.getChestplate(), generateNameFromItem(gearType.getChestplate()));
+			translationBuilder.add(gearType.getLeggings(), generateNameFromItem(gearType.getLeggings()));
+			translationBuilder.add(gearType.getBoots(), generateNameFromItem(gearType.getBoots()));
+
+			translationBuilder.add(gearType.getSword(), generateNameFromItem(gearType.getSword()));
+			translationBuilder.add(gearType.getAxe(), generateNameFromItem(gearType.getAxe()));
+			translationBuilder.add(gearType.getPickaxe(), generateNameFromItem(gearType.getPickaxe()));
+			translationBuilder.add(gearType.getShovel(), generateNameFromItem(gearType.getShovel()));
+			translationBuilder.add(gearType.getHoe(), generateNameFromItem(gearType.getHoe()));
+		}
 	}
 
 	private void generateWoodTypeTranslations(TranslationBuilder translationBuilder) {
@@ -107,6 +131,10 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 
 	private String generateNameFromBlock(Block block) {
 		return generateNameFromTranslationKey(block.getTranslationKey());
+	}
+
+	private String generateNameFromItem(Item item) {
+		return generateNameFromTranslationKey(item.getTranslationKey());
 	}
 
 	private String generateNameFromTranslationKey(String translationKey) {

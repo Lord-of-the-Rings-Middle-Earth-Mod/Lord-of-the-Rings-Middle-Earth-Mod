@@ -11,6 +11,8 @@ public class ModItemTags {
 
 	public static TagKey<Item> PINE_LOGS = createModTag("pine_logs");
 
+	public static TagKey<Item> BRONZE_MATERIALS = createModTag("bronze_materials");
+
 	private static TagKey<Item> createCommonTag(String name) {
 		return TagKey.of(RegistryKeys.ITEM, Identifier.of(TagUtil.C_TAG_NAMESPACE, name));
 	}

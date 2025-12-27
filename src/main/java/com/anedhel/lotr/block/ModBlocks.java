@@ -35,6 +35,8 @@ public class ModBlocks {
 			settings -> new Block(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.COPPER)));
 	public static final Block TIN_BLOCK = registerBlock("tin_block",
 			settings -> new Block(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.COPPER)));
+	public static final Block BRONZE_BLOCK = registerBlock("bronze_block",
+			settings -> new Block(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.COPPER)));
 
 	public static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> blockFactory){
 		Block toRegister =

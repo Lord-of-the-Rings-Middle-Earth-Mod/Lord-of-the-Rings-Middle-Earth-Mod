@@ -33,6 +33,7 @@ public class ModItemGroups {
 						entries.add(ModBlocks.TIN_BLOCK);
 						entries.add(ModBlocks.RAW_SILVER_BLOCK);
 						entries.add(ModBlocks.SILVER_BLOCK);
+						entries.add(ModBlocks.BRONZE_BLOCK);
 					})).build());
 
 	public static final ItemGroup LOTR_STONE = Registry.register(Registries.ITEM_GROUP,
@@ -55,6 +56,24 @@ public class ModItemGroups {
 						entries.add(ModItems.SILVER_NUGGET);
 						entries.add(ModItems.BRONZE_INGOT);
 					})).build());
+
+	public static final ItemGroup LOTR_TOOLS = Registry.register(Registries.ITEM_GROUP,
+			Identifier.of(LotRMEMod.MOD_ID, "lotr_tools"), FabricItemGroup.builder().displayName(
+					Text.translatableWithFallback("itemgroup.lotr_tools", "LOTR Tools"))
+					.icon(ModItems.BRONZE_SWORD::getDefaultStack)
+					.entries(((displayContext, entries) -> {
+						entries.addAll(ModGearType.BRONZE.getToolItemGroupList());
+					}
+			)).build());
+
+	public static final ItemGroup LOTR_COMBAT = Registry.register(Registries.ITEM_GROUP,
+			Identifier.of(LotRMEMod.MOD_ID, "lotr_combat"), FabricItemGroup.builder().displayName(
+					Text.translatableWithFallback("itemgroup.lotr_combat", "LOTR Combat"))
+					.icon(ModItems.BRONZE_SWORD::getDefaultStack)
+					.entries(((displayContext, entries) -> {
+						entries.addAll(ModGearType.BRONZE.getArmorItemGroupList());
+					}
+			)).build());
 
 	public static final ItemGroup LOTR_FOOD = Registry.register(Registries.ITEM_GROUP,
 			Identifier.of(LotRMEMod.MOD_ID, "lotr_food"), FabricItemGroup.builder().displayName(

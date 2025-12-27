@@ -12,6 +12,7 @@ import com.anedhel.lotr.block.stonetypes.ModStoneSet;
 import com.anedhel.lotr.datagen.util.ModModels;
 import com.anedhel.lotr.datagen.util.ModTextureKeys;
 import com.anedhel.lotr.datagen.util.ModTextures;
+import com.anedhel.lotr.item.ModGearType;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -46,6 +47,8 @@ public class ModModelProvider extends FabricModelProvider {
 
 	@Override
 	public void generateItemModels(ItemModelGenerator itemModelGenerator) {
+		generateModGearTypeItemModels(itemModelGenerator);
+
 		itemModelGenerator.register(ModItems.TOMATO, Models.GENERATED);
 		itemModelGenerator.register(ModItems.BAKED_TOMATO, Models.GENERATED);
 		itemModelGenerator.register(ModItems.CORN, Models.GENERATED);
@@ -139,6 +142,27 @@ public class ModModelProvider extends FabricModelProvider {
 			generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getFancyBrickSet(),
 					ModTextures.BRONZE_FANCY_BRICKS_OVERLAY, ModTextures.SILVER_FANCY_BRICKS_OVERLAY,
 					ModTextures.GOLD_FANCY_BRICKS_OVERLAY, ModTextures.MOSSY_OVERLAY_TWO);
+		}
+	}
+
+	private void generateModGearTypeItemModels(ItemModelGenerator itemModelGenerator) {
+		for(ModGearType gearType : ModGearType.values()) {
+			itemModelGenerator.register(gearType.getMaterial(), Models.GENERATED);
+
+			itemModelGenerator.register(gearType.getSword(), Models.HANDHELD);
+			itemModelGenerator.register(gearType.getAxe(), Models.HANDHELD);
+			itemModelGenerator.register(gearType.getPickaxe(), Models.HANDHELD);
+			itemModelGenerator.register(gearType.getShovel(), Models.HANDHELD);
+			itemModelGenerator.register(gearType.getHoe(), Models.HANDHELD);
+
+			itemModelGenerator.registerArmor(gearType.getHelmet(), gearType.getArmorMaterialKey(),
+					ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
+			itemModelGenerator.registerArmor(gearType.getChestplate(), gearType.getArmorMaterialKey(),
+					ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
+			itemModelGenerator.registerArmor(gearType.getLeggings(), gearType.getArmorMaterialKey(),
+					ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
+			itemModelGenerator.registerArmor(gearType.getBoots(), gearType.getArmorMaterialKey(),
+					ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
 		}
 	}
 

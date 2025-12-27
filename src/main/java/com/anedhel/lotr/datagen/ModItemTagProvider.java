@@ -26,7 +26,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 				.add(ModItems.RAW_SILVER);
 		valueLookupBuilder(ConventionalItemTags.INGOTS)
 				.add(ModItems.TIN_INGOT)
-				.add(ModItems.SILVER_INGOT);
+				.add(ModItems.SILVER_INGOT)
+				.add(ModItems.BRONZE_INGOT);
 		valueLookupBuilder(ConventionalItemTags.NUGGETS)
 				.add(ModItems.SILVER_NUGGET);
 	}

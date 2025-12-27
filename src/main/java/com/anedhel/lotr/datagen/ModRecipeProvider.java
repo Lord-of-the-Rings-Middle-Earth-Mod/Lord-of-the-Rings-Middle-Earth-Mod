@@ -7,9 +7,11 @@ import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
 import com.anedhel.lotr.block.stonetypes.StoneTypeVariants;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
 import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
+import com.anedhel.lotr.item.ModGearType;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.recipe.*;
@@ -55,6 +57,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			public void generate() {
 				generateModWoodTypeRecipes();
 				generateModStoneTypeRecipes();
+				generateModGearTypeRecipes();
 
 				offerSmelting(TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 200, "tin");
 				offerBlasting(TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 100, "tin");
@@ -78,6 +81,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						RecipeCategory.DECORATIONS, ModBlocks.RAW_SILVER_BLOCK);
 				offerReversibleCompactingRecipes(RecipeCategory.BUILDING_BLOCKS, ModItems.SILVER_INGOT,
 						RecipeCategory.DECORATIONS, ModBlocks.SILVER_BLOCK);
+
+				generateAlloyCrafting(Items.COPPER_INGOT, ModItems.TIN_INGOT, ModItems.BRONZE_INGOT, 1);
+				offerReversibleCompactingRecipes(RecipeCategory.BUILDING_BLOCKS, ModItems.BRONZE_INGOT,
+						RecipeCategory.DECORATIONS, ModBlocks.BRONZE_BLOCK);
 
 				offerSmelting(List.of(ModItems.TOMATO), RecipeCategory.FOOD, ModItems.BAKED_TOMATO, 0.35f, 200,
 						"baked_tomato");
@@ -109,6 +116,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			}
 
 			private void generateModStoneTypeRecipes() {
+				//ToDo: Generate the stonecutting recipes too
 				for(ModStoneTypes stoneType : ModStoneTypes.values()) {
 					ModStoneSet stoneSet = stoneType.getModStoneSet();
 
@@ -119,6 +127,21 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					});
 
 					generateStoneCraftingTree(stoneSet);
+				}
+			}
+
+			private void generateModGearTypeRecipes() {
+				for(ModGearType gearType : ModGearType.values()) {
+					generateSwordRecipe(gearType.getMaterial(), gearType.getSword());
+					generateAxeRecipe(gearType.getMaterial(), gearType.getAxe());
+					generatePickaxeRecipe(gearType.getMaterial(), gearType.getPickaxe());
+					generateShovelRecipe(gearType.getMaterial(), gearType.getShovel());
+					generateHoeRecipe(gearType.getMaterial(), gearType.getHoe());
+
+					generateHelmetRecipe(gearType.getMaterial(), gearType.getHelmet());
+					generateChestplateRecipe(gearType.getMaterial(), gearType.getChestplate());
+					generateLeggingsRecipe(gearType.getMaterial(), gearType.getLeggings());
+					generateBootsRecipe(gearType.getMaterial(), gearType.getBoots());
 				}
 			}
 
@@ -494,6 +517,118 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.input('A', input)
 						.group("2x2_stone_bricks")
 						.criterion("has_stone_bricks", this.conditionsFromItem(input))
+						.offerTo(this.exporter);
+			}
+
+			private void generateAlloyCrafting(Item inputOne, Item inputTwo, Item output, int outputCount) {
+				this.createShapeless(RecipeCategory.MISC, ModItems.BRONZE_INGOT, outputCount)
+						.input(inputOne)
+						.input(inputTwo)
+						.group("bronze_alloy")
+						.criterion("has_ingot" ,this.conditionsFromItem(inputOne))
+						.criterion("has_ingot" ,this.conditionsFromItem(inputTwo))
+						.offerTo(this.exporter, getItemPath(output) + "_from_alloy_crafting");
+			}
+
+			private void generateSwordRecipe(Item material, Item sword) {
+				this.createShaped(RecipeCategory.COMBAT, sword)
+						.pattern(" X ")
+						.pattern(" X ")
+						.pattern(" # ")
+						.input('X', material)
+						.input('#', ConventionalItemTags.WOODEN_RODS)
+						.group("swords")
+						.criterion("has_material", this.conditionsFromItem(material))
+						.offerTo(this.exporter);
+			}
+
+			private void generateAxeRecipe(Item material, Item axe) {
+				this.createShaped(RecipeCategory.TOOLS, axe)
+						.pattern("XX ")
+						.pattern("X# ")
+						.pattern(" # ")
+						.input('X', material)
+						.input('#', ConventionalItemTags.WOODEN_RODS)
+						.group("axes")
+						.criterion("has_material", this.conditionsFromItem(material))
+						.offerTo(this.exporter);
+			}
+
+			private void generatePickaxeRecipe(Item material, Item pickaxe) {
+				this.createShaped(RecipeCategory.TOOLS, pickaxe)
+						.pattern("XXX")
+						.pattern(" # ")
+						.pattern(" # ")
+						.input('X', material)
+						.input('#', ConventionalItemTags.WOODEN_RODS)
+						.group("pickaxes")
+						.criterion("has_material", this.conditionsFromItem(material))
+						.offerTo(this.exporter);
+			}
+
+			private void generateShovelRecipe(Item material, Item shovel) {
+				this.createShaped(RecipeCategory.TOOLS, shovel)
+						.pattern(" X ")
+						.pattern(" # ")
+						.pattern(" # ")
+						.input('X', material)
+						.input('#', ConventionalItemTags.WOODEN_RODS)
+						.group("shovels")
+						.criterion("has_material", this.conditionsFromItem(material))
+						.offerTo(this.exporter);
+			}
+
+			private void generateHoeRecipe(Item material, Item hoe) {
+				this.createShaped(RecipeCategory.TOOLS, hoe)
+						.pattern("XX ")
+						.pattern(" # ")
+						.pattern(" # ")
+						.input('X', material)
+						.input('#', ConventionalItemTags.WOODEN_RODS)
+						.group("hoes")
+						.criterion("has_material", this.conditionsFromItem(material))
+						.offerTo(this.exporter);
+			}
+
+			private void generateHelmetRecipe(Item material, Item helmet) {
+				this.createShaped(RecipeCategory.COMBAT, helmet)
+						.pattern("XXX")
+						.pattern("X X")
+						.input('X', material)
+						.group("helmets")
+						.criterion("has_material", this.conditionsFromItem(material))
+						.offerTo(this.exporter);
+			}
+
+			private void generateChestplateRecipe(Item material, Item chestplate) {
+				this.createShaped(RecipeCategory.COMBAT, chestplate)
+						.pattern("X X")
+						.pattern("XXX")
+						.pattern("XXX")
+						.input('X', material)
+						.group("chestplates")
+						.criterion("has_material", this.conditionsFromItem(material))
+						.offerTo(this.exporter);
+			}
+
+			private void generateLeggingsRecipe(Item material, Item leggings) {
+				this.createShaped(RecipeCategory.COMBAT, leggings)
+						.pattern("XXX")
+						.pattern("X X")
+						.pattern("X X")
+						.input('X', material)
+						.group("leggings")
+						.criterion("has_material", this.conditionsFromItem(material))
+						.offerTo(this.exporter);
+			}
+
+			private void generateBootsRecipe(Item material, Item boots) {
+				this.createShaped(RecipeCategory.COMBAT, boots)
+						.pattern("X X")
+						.pattern("X X")
+						.input('X', material)
+						.group("boots")
+						.criterion("has_material", this.conditionsFromItem(material))
 						.offerTo(this.exporter);
 			}
 		};
