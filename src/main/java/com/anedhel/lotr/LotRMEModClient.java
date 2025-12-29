@@ -20,6 +20,8 @@ public class LotRMEModClient implements ClientModInitializer {
 		registerWoodTypeCutoutLayers();
 		registerStoneTypeCutoutLayers();
 		registerCropCutoutLayers();
+
+		BlockRenderLayerMap.putBlock(ModBlocks.CARPENTRY_TABLE, BlockRenderLayer.CUTOUT);
 	}
 
 	private void registerWoodTypeCutoutLayers() {

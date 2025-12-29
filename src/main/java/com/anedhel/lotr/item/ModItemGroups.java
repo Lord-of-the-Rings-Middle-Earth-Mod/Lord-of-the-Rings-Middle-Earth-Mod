@@ -25,6 +25,7 @@ public class ModItemGroups {
 					.icon(() -> new ItemStack(ModBlocks.TIN_BLOCK))
 					.entries(((displayContext, entries) -> {
 						entries.addAll(PineBlocks.PINE_SET.getWoodItemGroupList());
+						entries.add(ModBlocks.CARPENTRY_TABLE);
 						entries.add(ModBlocks.TIN_ORE);
 						entries.add(ModBlocks.DEEPSLATE_TIN_ORE);
 						entries.add(ModBlocks.SILVER_ORE);

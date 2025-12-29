@@ -25,6 +25,8 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
 
+import static net.minecraft.client.data.BlockStateModelGenerator.*;
+
 public class ModModelProvider extends FabricModelProvider {
 
 	public ModModelProvider(FabricDataOutput output) {
@@ -571,9 +573,9 @@ public class ModModelProvider extends FabricModelProvider {
 				blockStateModelGenerator.modelCollector);
 		Identifier outerStairModelId = Models.OUTER_STAIRS.upload(blockFamily.getVariant(BlockFamily.Variant.STAIRS), textureMap,
 				blockStateModelGenerator.modelCollector);
-		WeightedVariant innerVariant = BlockStateModelGenerator.createWeightedVariant(innerStairModelId);
-		WeightedVariant regularVariant = BlockStateModelGenerator.createWeightedVariant(regularStairModelId);
-		WeightedVariant outerVariant = BlockStateModelGenerator.createWeightedVariant(outerStairModelId);
+		WeightedVariant innerVariant = createWeightedVariant(innerStairModelId);
+		WeightedVariant regularVariant = createWeightedVariant(regularStairModelId);
+		WeightedVariant outerVariant = createWeightedVariant(outerStairModelId);
 
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createStairsBlockState(blockFamily.getVariant(BlockFamily.Variant.STAIRS),
@@ -586,9 +588,9 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier doubleSlabModelId = Models.CUBE_TOP.uploadWithoutVariant(blockFamily.getVariant(
 						BlockFamily.Variant.SLAB), "_double",
 				textureMap, blockStateModelGenerator.modelCollector);
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(slabModelId);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(slabTopModelId);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(doubleSlabModelId);
+		WeightedVariant slabVariant = createWeightedVariant(slabModelId);
+		WeightedVariant slabTopVariant = createWeightedVariant(slabTopModelId);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(doubleSlabModelId);
 
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSlabBlockState(blockFamily.getVariant(BlockFamily.Variant.SLAB),
@@ -620,9 +622,9 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier outerStairModelId = ModModels.PAVEMENT_OUTER_STAIRS_OVERLAY
 				.upload(blockFamily.getVariant(BlockFamily.Variant.STAIRS), textureMap,
 						blockStateModelGenerator.modelCollector);
-		WeightedVariant innerVariant = BlockStateModelGenerator.createWeightedVariant(innerStairModelId);
-		WeightedVariant regularVariant = BlockStateModelGenerator.createWeightedVariant(regularStairModelId);
-		WeightedVariant outerVariant = BlockStateModelGenerator.createWeightedVariant(outerStairModelId);
+		WeightedVariant innerVariant = createWeightedVariant(innerStairModelId);
+		WeightedVariant regularVariant = createWeightedVariant(regularStairModelId);
+		WeightedVariant outerVariant = createWeightedVariant(outerStairModelId);
 
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createStairsBlockState(blockFamily.getVariant(BlockFamily.Variant.STAIRS),
@@ -637,9 +639,9 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier doubleSlabModelId = ModModels.PAVEMENT_OVERLAY
 				.uploadWithoutVariant(blockFamily.getVariant(BlockFamily.Variant.SLAB), "_double",
 						textureMap, blockStateModelGenerator.modelCollector);
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(slabModelId);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(slabTopModelId);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(doubleSlabModelId);
+		WeightedVariant slabVariant = createWeightedVariant(slabModelId);
+		WeightedVariant slabTopVariant = createWeightedVariant(slabTopModelId);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(doubleSlabModelId);
 
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSlabBlockState(blockFamily.getVariant(BlockFamily.Variant.SLAB),
@@ -671,9 +673,9 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier outerStairModelId = ModModels.PAVEMENT_OUTER_STAIRS_TWO_OVERLAY
 				.upload(blockFamily.getVariant(BlockFamily.Variant.STAIRS), textureMap,
 						blockStateModelGenerator.modelCollector);
-		WeightedVariant innerVariant = BlockStateModelGenerator.createWeightedVariant(innerStairModelId);
-		WeightedVariant regularVariant = BlockStateModelGenerator.createWeightedVariant(regularStairModelId);
-		WeightedVariant outerVariant = BlockStateModelGenerator.createWeightedVariant(outerStairModelId);
+		WeightedVariant innerVariant = createWeightedVariant(innerStairModelId);
+		WeightedVariant regularVariant = createWeightedVariant(regularStairModelId);
+		WeightedVariant outerVariant = createWeightedVariant(outerStairModelId);
 
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createStairsBlockState(blockFamily.getVariant(BlockFamily.Variant.STAIRS),
@@ -688,9 +690,9 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier doubleSlabModelId = ModModels.PAVEMENT_TWO_OVERLAY
 				.uploadWithoutVariant(blockFamily.getVariant(BlockFamily.Variant.SLAB), "_double",
 						textureMap, blockStateModelGenerator.modelCollector);
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(slabModelId);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(slabTopModelId);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(doubleSlabModelId);
+		WeightedVariant slabVariant = createWeightedVariant(slabModelId);
+		WeightedVariant slabTopVariant = createWeightedVariant(slabTopModelId);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(doubleSlabModelId);
 
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSlabBlockState(blockFamily.getVariant(BlockFamily.Variant.SLAB),
@@ -733,14 +735,14 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier identifier2 = Models.SLAB_TOP.upload(polishedStoneSlab, textureMap2, blockStateModelGenerator.modelCollector);
 		Identifier identifier3 = Models.CUBE_COLUMN.uploadWithoutVariant(polishedStoneSlab, "_double", textureMap2,
 				blockStateModelGenerator.modelCollector);
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(identifier);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(identifier2);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(identifier3);
+		WeightedVariant slabVariant = createWeightedVariant(identifier);
+		WeightedVariant slabTopVariant = createWeightedVariant(identifier2);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(identifier3);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSlabBlockState(polishedStoneSlab, slabVariant,
 				slabTopVariant, doubleSlabVariant));
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
-				.createSingletonBlockState(polishedStone, BlockStateModelGenerator.createWeightedVariant(
+				.createSingletonBlockState(polishedStone, createWeightedVariant(
 						Models.CUBE_ALL.upload(polishedStone, textureMap, blockStateModelGenerator.modelCollector)
 				)));
 	}
@@ -784,15 +786,15 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier identifier3 = ModModels.DOUBLE_POLISHED_OVERLAY.uploadWithoutVariant(overlayPolishedStoneSlab, "_double",
 				textureMapSlab,
 				blockStateModelGenerator.modelCollector);
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(identifier);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(identifier2);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(identifier3);
+		WeightedVariant slabVariant = createWeightedVariant(identifier);
+		WeightedVariant slabTopVariant = createWeightedVariant(identifier2);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(identifier3);
 
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSlabBlockState(overlayPolishedStoneSlab, slabVariant, slabTopVariant, doubleSlabVariant));
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSingletonBlockState(overlayPolishedStone,
-				BlockStateModelGenerator.createWeightedVariant(ModModels.CUBE_ALL_OVERLAY
+				createWeightedVariant(ModModels.CUBE_ALL_OVERLAY
 						.upload(overlayPolishedStone, textureMap, blockStateModelGenerator.modelCollector))));
 	}
 
@@ -832,15 +834,15 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier identifier3 = ModModels.DOUBLE_POLISHED_TWO_OVERLAY.uploadWithoutVariant(overlayPolishedStoneSlab, "_double",
 				textureMapSlab, blockStateModelGenerator.modelCollector);
 
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(identifier);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(identifier2);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(identifier3);
+		WeightedVariant slabVariant = createWeightedVariant(identifier);
+		WeightedVariant slabTopVariant = createWeightedVariant(identifier2);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(identifier3);
 
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSlabBlockState(overlayPolishedStoneSlab, slabVariant, slabTopVariant, doubleSlabVariant));
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSingletonBlockState(overlayPolishedStone,
-				BlockStateModelGenerator.createWeightedVariant(
+				createWeightedVariant(
 						ModModels.CUBE_ALL_TWO_OVERLAY.upload(overlayPolishedStone, textureMap,
 								blockStateModelGenerator.modelCollector))));
 	}
@@ -882,9 +884,9 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier slabTopIdentifier = Models.SLAB_TOP.upload(pillarSlab, slabTM, blockStateModelGenerator.modelCollector);
 		Identifier doubleSlabIdentifier = Models.CUBE_TOP.uploadWithoutVariant(pillarSlab, "_double", slabTM,
 				blockStateModelGenerator.modelCollector);
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(slabIdentifier);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(slabTopIdentifier);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(doubleSlabIdentifier);
+		WeightedVariant slabVariant = createWeightedVariant(slabIdentifier);
+		WeightedVariant slabTopVariant = createWeightedVariant(slabTopIdentifier);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(doubleSlabIdentifier);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSlabBlockState(pillarSlab,
 				slabVariant, slabTopVariant, doubleSlabVariant));
 	}
@@ -909,9 +911,9 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier slabTopId = ModModels.PILLAR_SLAB_TOP_OVERLAY.upload(pillarSlab, slabTM, blockStateModelGenerator.modelCollector);
 		Identifier doubleSlabId = ModModels.PILLAR_OVERLAY.uploadWithoutVariant(pillarSlab, "_double", slabTM,
 				blockStateModelGenerator.modelCollector);
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(slabId);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(slabTopId);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(doubleSlabId);
+		WeightedVariant slabVariant = createWeightedVariant(slabId);
+		WeightedVariant slabTopVariant = createWeightedVariant(slabTopId);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(doubleSlabId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSlabBlockState(pillarSlab,
 				slabVariant, slabTopVariant, doubleSlabVariant));
 	}
@@ -936,9 +938,9 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier slabTopId = ModModels.PILLAR_SLAB_TOP_TWO_OVERLAY.upload(pillarSlab, slabTM, blockStateModelGenerator.modelCollector);
 		Identifier doubleSlabId = ModModels.PILLAR_TWO_OVERLAY.uploadWithoutVariant(pillarSlab, "_double", slabTM,
 				blockStateModelGenerator.modelCollector);
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(slabId);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(slabTopId);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(doubleSlabId);
+		WeightedVariant slabVariant = createWeightedVariant(slabId);
+		WeightedVariant slabTopVariant = createWeightedVariant(slabTopId);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(doubleSlabId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSlabBlockState(pillarSlab,
 				slabVariant, slabTopVariant, doubleSlabVariant));
 	}
@@ -977,10 +979,10 @@ public class ModModelProvider extends FabricModelProvider {
 
 	private VariantsBlockModelDefinitionCreator createPillarBlockState(Block pillar, Identifier singlePillarIdentifier, Identifier topPillarIdentifier,
 			Identifier middlePillarIdentifier, Identifier basePillarIdentifier) {
-		WeightedVariant singleVariant = BlockStateModelGenerator.createWeightedVariant(singlePillarIdentifier);
-		WeightedVariant topVariant = BlockStateModelGenerator.createWeightedVariant(topPillarIdentifier);
-		WeightedVariant middleVariant = BlockStateModelGenerator.createWeightedVariant(middlePillarIdentifier);
-		WeightedVariant baseVariant = BlockStateModelGenerator.createWeightedVariant(basePillarIdentifier);
+		WeightedVariant singleVariant = createWeightedVariant(singlePillarIdentifier);
+		WeightedVariant topVariant = createWeightedVariant(topPillarIdentifier);
+		WeightedVariant middleVariant = createWeightedVariant(middlePillarIdentifier);
+		WeightedVariant baseVariant = createWeightedVariant(basePillarIdentifier);
 		return VariantsBlockModelDefinitionCreator.of(pillar)
 				.with(BlockStateVariantMap.models(ModPillarBlock.PILLAR_TYPE)
 				.register(ModPillarType.SINGLE, singleVariant)
@@ -1006,7 +1008,7 @@ public class ModModelProvider extends FabricModelProvider {
 	private static void oneOverlayBlock(BlockStateModelGenerator blockStateModelGenerator,
 			Block block, TextureMap textureMap) {
 		Identifier modelId = ModModels.CUBE_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
-		WeightedVariant variant = BlockStateModelGenerator.createWeightedVariant(modelId);
+		WeightedVariant variant = createWeightedVariant(modelId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSingletonBlockState(block, variant));
 		blockStateModelGenerator.registerParentedItemModel(block, modelId);
@@ -1016,7 +1018,7 @@ public class ModModelProvider extends FabricModelProvider {
 			Block block, TextureMap textureMap) {
 		Identifier modelId = ModModels.CUBE_ALL_TWO_OVERLAY.upload(block, textureMap,
 				blockStateModelGenerator.modelCollector);
-		WeightedVariant variant = BlockStateModelGenerator.createWeightedVariant(modelId);
+		WeightedVariant variant = createWeightedVariant(modelId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSingletonBlockState(block, variant));
 		blockStateModelGenerator.registerParentedItemModel(block, modelId);
@@ -1030,9 +1032,9 @@ public class ModModelProvider extends FabricModelProvider {
 				.upload(block, textureMap, blockStateModelGenerator.modelCollector);
 		Identifier outerModelId = ModModels.OUTER_STAIRS_ALL_OVERLAY
 				.upload(block, textureMap, blockStateModelGenerator.modelCollector);
-		WeightedVariant innerVariant = BlockStateModelGenerator.createWeightedVariant(innerModelId);
-		WeightedVariant regularVariant = BlockStateModelGenerator.createWeightedVariant(regularModelId);
-		WeightedVariant outerVariant = BlockStateModelGenerator.createWeightedVariant(outerModelId);
+		WeightedVariant innerVariant = createWeightedVariant(innerModelId);
+		WeightedVariant regularVariant = createWeightedVariant(regularModelId);
+		WeightedVariant outerVariant = createWeightedVariant(outerModelId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createStairsBlockState(block, innerVariant, regularVariant, outerVariant));
 		blockStateModelGenerator.registerParentedItemModel(block, regularModelId);
@@ -1046,9 +1048,9 @@ public class ModModelProvider extends FabricModelProvider {
 				.upload(block, textureMap, blockStateModelGenerator.modelCollector);
 		Identifier outerModelId = ModModels.OUTER_STAIRS_ALL_TWO_OVERLAY
 				.upload(block, textureMap, blockStateModelGenerator.modelCollector);
-		WeightedVariant innerVariant = BlockStateModelGenerator.createWeightedVariant(innerModelId);
-		WeightedVariant regularVariant = BlockStateModelGenerator.createWeightedVariant(regularModelId);
-		WeightedVariant outerVariant = BlockStateModelGenerator.createWeightedVariant(outerModelId);
+		WeightedVariant innerVariant = createWeightedVariant(innerModelId);
+		WeightedVariant regularVariant = createWeightedVariant(regularModelId);
+		WeightedVariant outerVariant = createWeightedVariant(outerModelId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createStairsBlockState(block, innerVariant, regularVariant, outerVariant));
 		blockStateModelGenerator.registerParentedItemModel(block, regularModelId);
@@ -1062,9 +1064,9 @@ public class ModModelProvider extends FabricModelProvider {
 				blockStateModelGenerator.modelCollector);
 		Identifier doubleSlabModelId = ModModels.CUBE_ALL_OVERLAY.uploadWithoutVariant(block,"_double",
 				textureMap, blockStateModelGenerator.modelCollector);
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(slabModelId);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(slabTopModelId);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(doubleSlabModelId);
+		WeightedVariant slabVariant = createWeightedVariant(slabModelId);
+		WeightedVariant slabTopVariant = createWeightedVariant(slabTopModelId);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(doubleSlabModelId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSlabBlockState(block, slabVariant, slabTopVariant, doubleSlabVariant));
 		blockStateModelGenerator.registerParentedItemModel(block, slabModelId);
@@ -1078,9 +1080,9 @@ public class ModModelProvider extends FabricModelProvider {
 				blockStateModelGenerator.modelCollector);
 		Identifier doubleSlabModelId = ModModels.CUBE_ALL_TWO_OVERLAY.uploadWithoutVariant(block,"_double",
 				textureMap, blockStateModelGenerator.modelCollector);
-		WeightedVariant slabVariant = BlockStateModelGenerator.createWeightedVariant(slabModelId);
-		WeightedVariant slabTopVariant = BlockStateModelGenerator.createWeightedVariant(slabTopModelId);
-		WeightedVariant doubleSlabVariant = BlockStateModelGenerator.createWeightedVariant(doubleSlabModelId);
+		WeightedVariant slabVariant = createWeightedVariant(slabModelId);
+		WeightedVariant slabTopVariant = createWeightedVariant(slabTopModelId);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(doubleSlabModelId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createSlabBlockState(block, slabVariant, slabTopVariant, doubleSlabVariant));
 		blockStateModelGenerator.registerParentedItemModel(block, slabModelId);
@@ -1096,9 +1098,9 @@ public class ModModelProvider extends FabricModelProvider {
 				blockStateModelGenerator.modelCollector);
 		Identifier wallInventoryModelId = ModModels.WALL_INVENTORY_ALL_OVERLAY.upload(block, textureMap,
 				blockStateModelGenerator.modelCollector);
-		WeightedVariant wallPostVariant = BlockStateModelGenerator.createWeightedVariant(wallPostModelId);
-		WeightedVariant wallSideVariant = BlockStateModelGenerator.createWeightedVariant(wallSideModelId);
-		WeightedVariant wallSideTallVariant = BlockStateModelGenerator.createWeightedVariant(wallSideTallModelId);
+		WeightedVariant wallPostVariant = createWeightedVariant(wallPostModelId);
+		WeightedVariant wallSideVariant = createWeightedVariant(wallSideModelId);
+		WeightedVariant wallSideTallVariant = createWeightedVariant(wallSideTallModelId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createWallBlockState(block, wallPostVariant, wallSideVariant, wallSideTallVariant));
 		blockStateModelGenerator.registerParentedItemModel(block, wallInventoryModelId);
@@ -1114,9 +1116,9 @@ public class ModModelProvider extends FabricModelProvider {
 				blockStateModelGenerator.modelCollector);
 		Identifier wallInventoryModelId = ModModels.WALL_INVENTORY_ALL_TWO_OVERLAY.upload(block, textureMap,
 				blockStateModelGenerator.modelCollector);
-		WeightedVariant wallPostVariant = BlockStateModelGenerator.createWeightedVariant(wallPostModelId);
-		WeightedVariant wallSideVariant = BlockStateModelGenerator.createWeightedVariant(wallSideModelId);
-		WeightedVariant wallSideTallVariant = BlockStateModelGenerator.createWeightedVariant(wallSideTallModelId);
+		WeightedVariant wallPostVariant = createWeightedVariant(wallPostModelId);
+		WeightedVariant wallSideVariant = createWeightedVariant(wallSideModelId);
+		WeightedVariant wallSideTallVariant = createWeightedVariant(wallSideTallModelId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createWallBlockState(block, wallPostVariant, wallSideVariant, wallSideTallVariant));
 		blockStateModelGenerator.registerParentedItemModel(block, wallInventoryModelId);
@@ -1127,8 +1129,8 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier buttonModelId = ModModels.BUTTON_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
 		Identifier buttonPressedModelId = ModModels.BUTTON_PRESSED_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
 		Identifier buttonInventoryModelId = ModModels.BUTTON_INVENTORY_ALL_OVERLAY.upload(block, textureMap, blockStateModelGenerator.modelCollector);
-		WeightedVariant buttonModelVariant = BlockStateModelGenerator.createWeightedVariant(buttonModelId);
-		WeightedVariant buttonPressedModelVariant = BlockStateModelGenerator.createWeightedVariant(buttonPressedModelId);
+		WeightedVariant buttonModelVariant = createWeightedVariant(buttonModelId);
+		WeightedVariant buttonPressedModelVariant = createWeightedVariant(buttonPressedModelId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator
 				.createButtonBlockState(block, buttonModelVariant, buttonPressedModelVariant));
 		blockStateModelGenerator.registerParentedItemModel(block, buttonInventoryModelId);
@@ -1140,8 +1142,8 @@ public class ModModelProvider extends FabricModelProvider {
 			, blockStateModelGenerator.modelCollector);
 		Identifier pressurePlateDownModelId = ModModels.PRESSURE_PLATE_DOWN_ALL_OVERLAY.upload(block, textureMap
 			, blockStateModelGenerator.modelCollector);
-		WeightedVariant pressurePlateUpVariant = BlockStateModelGenerator.createWeightedVariant(pressurePlateUpModelId);
-		WeightedVariant pressurePlateDownVariant = BlockStateModelGenerator.createWeightedVariant(pressurePlateDownModelId);
+		WeightedVariant pressurePlateUpVariant = createWeightedVariant(pressurePlateUpModelId);
+		WeightedVariant pressurePlateDownVariant = createWeightedVariant(pressurePlateDownModelId);
 		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createPressurePlateBlockState(
 			block, pressurePlateUpVariant, pressurePlateDownVariant));
 		blockStateModelGenerator.registerParentedItemModel(block, pressurePlateUpModelId);

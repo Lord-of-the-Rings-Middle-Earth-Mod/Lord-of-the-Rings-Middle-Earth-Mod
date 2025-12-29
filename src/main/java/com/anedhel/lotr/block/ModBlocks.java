@@ -1,6 +1,7 @@
 package com.anedhel.lotr.block;
 
 import com.anedhel.lotr.LotRMEMod;
+import com.anedhel.lotr.block.custom.CarpentryTable;
 import com.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import com.anedhel.lotr.block.stonetypes.BlueslateBlocks;
 import com.anedhel.lotr.block.woodtypes.PineBlocks;
@@ -57,6 +58,9 @@ public class ModBlocks {
 			settings -> new Block(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.COPPER)));
 	public static final Block BRONZE_BLOCK = registerBlock("bronze_block",
 			settings -> new Block(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.COPPER)));
+
+	public static final Block CARPENTRY_TABLE = registerBlock("carpentry_table",
+			settings -> new CarpentryTable(settings.strength(2.5f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
 
 	public static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> blockFactory){
 		Block toRegister =

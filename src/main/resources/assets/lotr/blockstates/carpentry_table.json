@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=east": {
+			"model": "lotr:block/carpentry_table",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "lotr:block/carpentry_table",
+			"y": 180
+		},
+		"facing=north": {
+			"model": "lotr:block/carpentry_table"
+		},
+		"facing=west": {
+			"model": "lotr:block/carpentry_table",
+			"y": 270
+		}
+	}
+}

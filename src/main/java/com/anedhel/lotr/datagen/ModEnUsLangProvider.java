@@ -68,6 +68,8 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModBlocks.DEEPSLATE_TIN_ORE, "Deepslate Tin Ore");
 		translationBuilder.add(ModBlocks.SILVER_ORE, "Silver Ore");
 		translationBuilder.add(ModBlocks.DEEPSLATE_SILVER_ORE, "Deepslate Silver Ore");
+
+		translationBuilder.add(ModBlocks.CARPENTRY_TABLE, "Carpentry Table");
 	}
 
 	private void generateItemGroupTranslations(TranslationBuilder translationBuilder) {
