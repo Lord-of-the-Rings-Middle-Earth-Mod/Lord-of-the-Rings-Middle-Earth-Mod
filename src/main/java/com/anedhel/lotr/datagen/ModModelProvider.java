@@ -37,6 +37,7 @@ public class ModModelProvider extends FabricModelProvider {
 		generateModStoneTypeBlockStateModels(blockStateModelGenerator);
 
 		blockStateModelGenerator.registerCrop(ModBlocks.TOMATO_CROP, TomatoCropBlock.AGE, 0, 1, 2, 3, 4, 5);
+		blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_TOMATO, ModBlocks.POTTED_WILD_TOMATO, BlockStateModelGenerator.CrossType.NOT_TINTED);
 
 		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SILVER_ORE);
 		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_SILVER_ORE);

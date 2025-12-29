@@ -5,6 +5,7 @@ import com.anedhel.lotr.item.ModItemGroups;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.block.ComposterBlock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -19,5 +20,12 @@ public class LotRMEMod implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
+
+		addCompostableItems();
+	}
+
+	private void addCompostableItems() {
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.TOMATO_SEEDS, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.TOMATO, 0.65f);
 	}
 }

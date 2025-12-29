@@ -4,9 +4,9 @@ import com.anedhel.lotr.LotRMEMod;
 import com.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import com.anedhel.lotr.block.stonetypes.BlueslateBlocks;
 import com.anedhel.lotr.block.woodtypes.PineBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
+import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -23,6 +23,20 @@ public class ModBlocks {
 	public static final Block TOMATO_CROP = registerBlockWithoutBlockItem("tomato_crop",
 			settings -> new TomatoCropBlock(settings.noCollision().ticksRandomly().breakInstantly()
 					.sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY)));
+
+	public static final Block WILD_TOMATO = registerBlock("wild_tomato",
+			settings -> new FlowerBlock(StatusEffects.SATURATION, 0.5f,
+					settings.noCollision()
+							.breakInstantly()
+							.nonOpaque()
+							.sounds(BlockSoundGroup.GRASS)
+							.offset(AbstractBlock.OffsetType.XZ)
+							.pistonBehavior(PistonBehavior.DESTROY)));
+	public static final Block POTTED_WILD_TOMATO = registerBlockWithoutBlockItem("potted_wild_tomato",
+			settings -> new FlowerPotBlock(WILD_TOMATO,
+					settings.breakInstantly()
+							.nonOpaque()
+							.pistonBehavior(PistonBehavior.DESTROY)));
 
 	public static final Block SILVER_ORE = registerBlock("silver_ore",
 			settings -> new Block(settings.strength(3.0f).requiresTool().sounds(BlockSoundGroup.STONE)));

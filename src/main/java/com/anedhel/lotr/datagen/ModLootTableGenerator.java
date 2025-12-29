@@ -58,6 +58,10 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 				StatePredicate.Builder.create()
 				.exactMatch(TomatoCropBlock.AGE, TomatoCropBlock.MAX_AGE));
 		addDrop(ModBlocks.TOMATO_CROP, cropDrops(ModBlocks.TOMATO_CROP, ModItems.TOMATO, ModItems.TOMATO_SEEDS, tomatoCropBuilder));
+		addDrop(ModBlocks.WILD_TOMATO, wildFlowerDrops(
+				ModBlocks.WILD_TOMATO, ModItems.TOMATO, UniformLootNumberProvider.create(1.0F, 2.0F)
+		));
+		addDrop(ModBlocks.POTTED_WILD_TOMATO, pottedPlantDrops(ModBlocks.WILD_TOMATO));
 	}
 
 	private void generateModWoodTypeLootTables() {
@@ -104,5 +108,12 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 								.apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))
 				)
 		);
+	}
+
+	private LootTable.Builder wildFlowerDrops (Block drop, Item item, UniformLootNumberProvider dropRange) {
+		return this.dropsWithShears(drop, this.applyExplosionDecay(
+				drop, ItemEntry.builder(item).apply(SetCountLootFunction.builder(dropRange))
+		)
+				);
 	}
 }

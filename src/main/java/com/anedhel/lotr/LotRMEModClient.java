@@ -19,8 +19,7 @@ public class LotRMEModClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		registerWoodTypeCutoutLayers();
 		registerStoneTypeCutoutLayers();
-
-		BlockRenderLayerMap.putBlock(ModBlocks.TOMATO_CROP, BlockRenderLayer.CUTOUT);
+		registerCropCutoutLayers();
 	}
 
 	private void registerWoodTypeCutoutLayers() {
@@ -38,6 +37,12 @@ public class LotRMEModClient implements ClientModInitializer {
 			stoneType.getModStoneSet().getAllStoneSubSets().forEach(subSet ->
 					subSet.getAllBlockFamilies().forEach(this::registerStoneFamilyOverlays));
 		}
+	}
+
+	private void registerCropCutoutLayers() {
+		BlockRenderLayerMap.putBlock(ModBlocks.TOMATO_CROP, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.WILD_TOMATO, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.POTTED_WILD_TOMATO, BlockRenderLayer.CUTOUT);
 	}
 
 	private void registerStoneFamilyOverlays(BlockFamily stoneFamily) {

@@ -80,6 +80,7 @@ public class ModItemGroups {
 					Text.translatableWithFallback("itemgroup.lotr_plants", "LOTR Plants"))
 					.icon(ModItems.TOMATO_SEEDS::getDefaultStack)
 					.entries(((displayContext, entries) -> {
+						entries.add(ModBlocks.WILD_TOMATO);
 						entries.add(ModItems.TOMATO_SEEDS);
 					})).build());
 
