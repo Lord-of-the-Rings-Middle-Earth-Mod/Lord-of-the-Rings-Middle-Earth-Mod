@@ -2,7 +2,6 @@ package com.anedhel.lotr.block.woodtypes;
 
 import com.anedhel.lotr.util.ModUtil;
 import net.minecraft.block.Block;
-import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -23,49 +22,18 @@ public class ModWoodSet {
 	private final TagKey<Block> LOG_BLOCK_TAG;
 	private final TagKey<Item> LOG_ITEM_TAG;
 
-	public ModWoodSet(Block log, Block wood, Block woodStairs, Block woodSlab, Block woodButton,
-			Block woodPressurePlate, Block woodFence, Block woodFenceGate, Block woodDoor, Block woodTrapdoor,
-			Block strippedLog, Block strippedWood, Block strippedWoodStairs, Block strippedWoodSlab,
-			Block strippedWoodButton, Block strippedWoodPressurePlate, Block strippedWoodFence,
-			Block strippedWoodFenceGate, Block strippedWoodDoor, Block strippedWoodTrapdoor,
-			Block planks, Block planksStairs, Block planksSlab, Block planksButton, Block planksPressurePlate,
-			Block planksFence, Block planksFenceGate, Block planksDoor, Block planksTrapdoor,
+	public ModWoodSet(Block log, BlockFamily woodFamily,
+			Block strippedLog, BlockFamily strippedWoodFamily,
+			BlockFamily planksFamily,
 			TagKey<Block> logTag,
 			TagKey<Item> logItemTag) {
 		LOG = log;
-		WOOD_FAMILY = BlockFamilies.register(wood)
-				.stairs(woodStairs)
-				.slab(woodSlab)
-				.button(woodButton)
-				.pressurePlate(woodPressurePlate)
-				.fence(woodFence)
-				.fenceGate(woodFenceGate)
-				.door(woodDoor)
-				.trapdoor(woodTrapdoor)
-				.build();
+		WOOD_FAMILY = woodFamily;
 
 		STRIPPED_LOG = strippedLog;
-		STRIPPED_WOOD_FAMILY = BlockFamilies.register(strippedWood)
-				.stairs(strippedWoodStairs)
-				.slab(strippedWoodSlab)
-				.button(strippedWoodButton)
-				.pressurePlate(strippedWoodPressurePlate)
-				.fence(strippedWoodFence)
-				.fenceGate(strippedWoodFenceGate)
-				.door(strippedWoodDoor)
-				.trapdoor(strippedWoodTrapdoor)
-				.build();
+		STRIPPED_WOOD_FAMILY = strippedWoodFamily;
 
-		PLANKS_FAMILY = BlockFamilies.register(planks)
-				.stairs(planksStairs)
-				.slab(planksSlab)
-				.button(planksButton)
-				.pressurePlate(planksPressurePlate)
-				.fence(planksFence)
-				.fenceGate(planksFenceGate)
-				.door(planksDoor)
-				.trapdoor(planksTrapdoor)
-				.build();
+		PLANKS_FAMILY = planksFamily;
 
 		LOG_BLOCK_TAG = logTag;
 		LOG_ITEM_TAG = logItemTag;

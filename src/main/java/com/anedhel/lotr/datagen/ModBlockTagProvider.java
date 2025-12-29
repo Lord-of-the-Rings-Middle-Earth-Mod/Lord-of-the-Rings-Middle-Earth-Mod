@@ -77,6 +77,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
 			ModWoodSet woodSet = woodType.getModWoodSet();
 
+			configureWoodFamilyTags(woodSet.getWoodFamily());
+			configureWoodFamilyTags(woodSet.getStrippedWoodFamily());
 			configureWoodFamilyTags(woodSet.getPlanksFamily());
 
 			valueLookupBuilder(woodSet.getLogBlockTag())
@@ -87,9 +89,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
 			valueLookupBuilder(BlockTags.AXE_MINEABLE)
 					.add(woodSet.getLog())
-					.add(woodSet.getWoodFamily().getVariants().values())
-					.add(woodSet.getStrippedLog())
-					.add(woodSet.getStrippedWoodFamily().getVariants().values());
+					.add(woodSet.getStrippedLog());
 		}
 	}
 
@@ -110,8 +110,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 	}
 
 	private void configureWoodFamilyTags(BlockFamily family) {
-		ProvidedTagBuilder<Block, Block> axeMinableBuilder = valueLookupBuilder(BlockTags.AXE_MINEABLE);
+		ProvidedTagBuilder<Block, Block> axeMinableBuilder = valueLookupBuilder(BlockTags.AXE_MINEABLE)
+				.add(family.getBaseBlock());
 		family.getVariants().values().forEach(axeMinableBuilder::add);
+
 		valueLookupBuilder(BlockTags.WOODEN_FENCES)
 				.add(family.getVariant(BlockFamily.Variant.FENCE));
 

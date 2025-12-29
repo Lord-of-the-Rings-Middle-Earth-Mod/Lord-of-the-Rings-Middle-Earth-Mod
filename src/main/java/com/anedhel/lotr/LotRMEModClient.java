@@ -1,5 +1,6 @@
 package com.anedhel.lotr;
 
+import com.anedhel.lotr.block.ModBlocks;
 import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
 import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
@@ -18,6 +19,8 @@ public class LotRMEModClient implements ClientModInitializer {
 	public void onInitializeClient() {
 		registerWoodTypeCutoutLayers();
 		registerStoneTypeCutoutLayers();
+
+		BlockRenderLayerMap.putBlock(ModBlocks.TOMATO_CROP, BlockRenderLayer.CUTOUT);
 	}
 
 	private void registerWoodTypeCutoutLayers() {

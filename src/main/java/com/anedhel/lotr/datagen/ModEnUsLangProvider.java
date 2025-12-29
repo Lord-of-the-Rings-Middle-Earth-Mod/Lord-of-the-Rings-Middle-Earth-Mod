@@ -43,6 +43,9 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		generateWoodTypeTranslations(translationBuilder);
 		generateStoneTypeTranslations(translationBuilder);
 
+		translationBuilder.add(ModItems.TOMATO_SEEDS, "Tomato Seeds");
+		translationBuilder.add(ModBlocks.TOMATO_CROP, "Tomato Crop");
+
 		translationBuilder.add(ModItems.TIN_INGOT, "Tin Ingot");
 		translationBuilder.add(ModItems.SILVER_INGOT, "Silver Ingot");
 		translationBuilder.add(ModItems.SILVER_NUGGET, "Silver Nugget");
@@ -67,11 +70,12 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 
 	private void generateItemGroupTranslations(TranslationBuilder translationBuilder) {
 		translationBuilder.add("itemgroup.lotr_blocks", "LotR Blocks");
-		translationBuilder.add("itemgroup.lotr_ingredients", "LotR Ingredients");
-		translationBuilder.add("itemgroup.lotr_food", "LotR Food");
 		translationBuilder.add("itemgroup.lotr_stone", "LotR Stone");
+		translationBuilder.add("itemgroup.lotr_ingredients", "LotR Ingredients");
 		translationBuilder.add("itemgroup.lotr_tools", "LotR Tools");
 		translationBuilder.add("itemgroup.lotr_combat", "LotR Combat");
+		translationBuilder.add("itemgroup.lotr_plants", "LotR Plants");
+		translationBuilder.add("itemgroup.lotr_food", "LotR Food");
 	}
 
 	private void generateTagTranslations(TranslationBuilder translationBuilder) {

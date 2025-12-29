@@ -4,6 +4,8 @@ import com.anedhel.lotr.LotRMEMod;
 import com.anedhel.lotr.block.ModBlockTags;
 import com.anedhel.lotr.item.ModItemTags;
 import net.minecraft.block.*;
+import net.minecraft.data.family.BlockFamilies;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static com.anedhel.lotr.block.ModBlocks.registerBlock;
@@ -33,6 +35,16 @@ public class PineBlocks{
 	public static Block PINE_WOODS_TRAPDOOR = registerBlock("pine_wood_trapdoor",
 			settings -> new TrapdoorBlock(BlockSetType.OAK,
 					settings.strength(3.0f).sounds(BlockSoundGroup.WOOD).requiresTool().nonOpaque()));
+	public static BlockFamily PINE_WOOD_FAMILY = BlockFamilies.register(PINE_WOOD)
+			.stairs(PINE_WOOD_STAIRS)
+			.slab(PINE_WOOD_SLAB)
+			.button(PINE_WOOD_BUTTON)
+			.pressurePlate(PINE_WOOD_PRESSURE_PLATE)
+			.fence(PINE_WOOD_FENCE)
+			.fenceGate(PINE_WOOD_FENCE_GATE)
+			.door(PINE_WOODS_DOOR)
+			.trapdoor(PINE_WOODS_TRAPDOOR)
+			.build();
 
 	public static Block STRIPPED_PINE_LOG = registerBlock("stripped_pine_log",
 			settings -> new PillarBlock(settings.strength(2.0f).sounds(BlockSoundGroup.WOOD)));
@@ -57,6 +69,16 @@ public class PineBlocks{
 	public static Block STRIPPED_PINE_WOODS_TRAPDOOR = registerBlock("stripped_pine_wood_trapdoor",
 			settings -> new TrapdoorBlock(BlockSetType.OAK,
 					settings.strength(3.0f).sounds(BlockSoundGroup.WOOD).requiresTool().nonOpaque()));
+	public static BlockFamily STRIPPED_PINE_WOOD_FAMILY = BlockFamilies.register(STRIPPED_PINE_WOOD)
+			.stairs(STRIPPED_PINE_WOOD_STAIRS)
+			.slab(STRIPPED_PINE_WOOD_SLAB)
+			.button(STRIPPED_PINE_WOOD_BUTTON)
+			.pressurePlate(STRIPPED_PINE_WOOD_PRESSURE_PLATE)
+			.fence(STRIPPED_PINE_WOODS_FENCE)
+			.fenceGate(STRIPPED_PINE_WOODS_FENCE_GATE)
+			.door(STRIPPED_PINE_WOODS_DOOR)
+			.trapdoor(STRIPPED_PINE_WOODS_TRAPDOOR)
+			.build();
 
 	public static Block PINE_PLANKS = registerBlock("pine_planks",
 			settings -> new Block(settings.strength(2.0f).sounds(BlockSoundGroup.WOOD)));
@@ -79,16 +101,21 @@ public class PineBlocks{
 	public static Block PINE_PLANKS_TRAPDOOR = registerBlock("pine_planks_trapdoor",
 			settings -> new TrapdoorBlock(BlockSetType.OAK,
 					settings.strength(3.0f).sounds(BlockSoundGroup.WOOD).requiresTool().nonOpaque()));
+	public static BlockFamily PINE_PLANKS_FAMILY = BlockFamilies.register(PINE_PLANKS)
+			.stairs(PINE_PLANK_STAIRS)
+			.slab(PINE_PLANK_SLAB)
+			.button(PINE_PLANK_BUTTON)
+			.pressurePlate(PINE_PLANK_PRESSURE_PLATE)
+			.fence(PINE_PLANKS_FENCE)
+			.fenceGate(PINE_PLANKS_FENCE_GATE)
+			.door(PINE_PLANKS_DOOR)
+			.trapdoor(PINE_PLANKS_TRAPDOOR)
+			.build();
 
 	public static ModWoodSet PINE_SET = new ModWoodSet(
-			PINE_LOG,
-			PINE_WOOD, PINE_WOOD_STAIRS, PINE_WOOD_SLAB, PINE_WOOD_BUTTON, PINE_WOOD_PRESSURE_PLATE,
-			PINE_WOOD_FENCE, PINE_WOOD_FENCE_GATE, PINE_WOODS_DOOR, PINE_WOODS_TRAPDOOR,
-			STRIPPED_PINE_LOG,
-			STRIPPED_PINE_WOOD, STRIPPED_PINE_WOOD_STAIRS, STRIPPED_PINE_WOOD_SLAB, STRIPPED_PINE_WOOD_BUTTON, STRIPPED_PINE_WOOD_PRESSURE_PLATE,
-			STRIPPED_PINE_WOODS_FENCE, STRIPPED_PINE_WOODS_FENCE_GATE, STRIPPED_PINE_WOODS_DOOR, STRIPPED_PINE_WOODS_TRAPDOOR,
-			PINE_PLANKS, PINE_PLANK_STAIRS, PINE_PLANK_SLAB, PINE_PLANK_BUTTON, PINE_PLANK_PRESSURE_PLATE,
-			PINE_PLANKS_FENCE, PINE_PLANKS_FENCE_GATE, PINE_PLANKS_DOOR, PINE_PLANKS_TRAPDOOR,
+			PINE_LOG, PINE_WOOD_FAMILY,
+			STRIPPED_PINE_LOG, STRIPPED_PINE_WOOD_FAMILY,
+			PINE_PLANKS_FAMILY,
 			ModBlockTags.PINE_LOGS, ModItemTags.PINE_LOGS
 	);
 

@@ -60,7 +60,7 @@ public class ModItemGroups {
 	public static final ItemGroup LOTR_TOOLS = Registry.register(Registries.ITEM_GROUP,
 			Identifier.of(LotRMEMod.MOD_ID, "lotr_tools"), FabricItemGroup.builder().displayName(
 					Text.translatableWithFallback("itemgroup.lotr_tools", "LOTR Tools"))
-					.icon(ModItems.BRONZE_SWORD::getDefaultStack)
+					.icon(ModItems.BRONZE_AXE::getDefaultStack)
 					.entries(((displayContext, entries) -> {
 						entries.addAll(ModGearType.BRONZE.getToolItemGroupList());
 					}
@@ -74,6 +74,14 @@ public class ModItemGroups {
 						entries.addAll(ModGearType.BRONZE.getArmorItemGroupList());
 					}
 			)).build());
+
+	public static final ItemGroup LOTR_PLANTS = Registry.register(Registries.ITEM_GROUP,
+			Identifier.of(LotRMEMod.MOD_ID, "lotr_plants"), FabricItemGroup.builder().displayName(
+					Text.translatableWithFallback("itemgroup.lotr_plants", "LOTR Plants"))
+					.icon(ModItems.TOMATO_SEEDS::getDefaultStack)
+					.entries(((displayContext, entries) -> {
+						entries.add(ModItems.TOMATO_SEEDS);
+					})).build());
 
 	public static final ItemGroup LOTR_FOOD = Registry.register(Registries.ITEM_GROUP,
 			Identifier.of(LotRMEMod.MOD_ID, "lotr_food"), FabricItemGroup.builder().displayName(

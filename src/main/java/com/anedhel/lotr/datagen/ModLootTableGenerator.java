@@ -1,6 +1,7 @@
 package com.anedhel.lotr.datagen;
 
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import com.anedhel.lotr.block.stonetypes.ModStoneSet;
 import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
@@ -14,10 +15,12 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
+import net.minecraft.predicate.StatePredicate;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 
@@ -50,6 +53,11 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 		addDrop(ModBlocks.DEEPSLATE_TIN_ORE, multipleOreDrops(ModBlocks.DEEPSLATE_TIN_ORE,
 				ModItems.RAW_TIN, UniformLootNumberProvider.create(2.0F, 4.0F)
 		));
+
+		BlockStatePropertyLootCondition.Builder tomatoCropBuilder = BlockStatePropertyLootCondition.builder(ModBlocks.TOMATO_CROP).properties(
+				StatePredicate.Builder.create()
+				.exactMatch(TomatoCropBlock.AGE, TomatoCropBlock.MAX_AGE));
+		addDrop(ModBlocks.TOMATO_CROP, cropDrops(ModBlocks.TOMATO_CROP, ModItems.TOMATO, ModItems.TOMATO_SEEDS, tomatoCropBuilder));
 	}
 
 	private void generateModWoodTypeLootTables() {

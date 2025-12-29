@@ -1,6 +1,7 @@
 package com.anedhel.lotr.item;
 
 import com.anedhel.lotr.LotRMEMod;
+import com.anedhel.lotr.block.ModBlocks;
 import net.minecraft.item.*;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
@@ -20,6 +21,8 @@ public class ModItems {
 	public static final Item SILVER_NUGGET = registerItem("silver_nugget",Item::new);
 	public static final Item BRONZE_INGOT = registerItem("bronze_ingot",Item::new);
 
+	public static final Item TOMATO_SEEDS = registerItem("tomato_seeds",
+			settings -> new BlockItem(ModBlocks.TOMATO_CROP, settings));
 	public static final Item TOMATO = registerItem("tomato",
 			settings -> new Item(settings.food(ModFoodComponents.TOMATO)));
 	public static final Item BAKED_TOMATO = registerItem("baked_tomato",

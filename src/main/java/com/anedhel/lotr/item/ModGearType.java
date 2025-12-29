@@ -45,7 +45,6 @@ public enum ModGearType {
 
 	public List<ItemStack> getToolItemGroupList() {
 		return List.of(
-				new ItemStack(this.sword),
 				new ItemStack(this.axe),
 				new ItemStack(this.pickaxe),
 				new ItemStack(this.shovel),
@@ -58,7 +57,8 @@ public enum ModGearType {
 				new ItemStack(this.helmet),
 				new ItemStack(this.chestplate),
 				new ItemStack(this.leggings),
-				new ItemStack(this.boots)
+				new ItemStack(this.boots),
+				new ItemStack(this.sword)
 		);
 	}
 
