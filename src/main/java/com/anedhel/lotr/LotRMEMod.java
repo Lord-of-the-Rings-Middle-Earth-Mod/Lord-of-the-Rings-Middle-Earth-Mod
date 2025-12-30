@@ -3,6 +3,7 @@ package com.anedhel.lotr;
 import com.anedhel.lotr.block.ModBlocks;
 import com.anedhel.lotr.item.ModItemGroups;
 import com.anedhel.lotr.item.ModItems;
+import com.anedhel.lotr.screen.ModScreenHandlers;
 import net.fabricmc.api.ModInitializer;
 
 import net.minecraft.block.ComposterBlock;
@@ -20,6 +21,7 @@ public class LotRMEMod implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
+		ModScreenHandlers.registerScreenHandlers();
 
 		addCompostableItems();
 	}

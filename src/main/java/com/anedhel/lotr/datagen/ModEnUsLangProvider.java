@@ -70,6 +70,7 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModBlocks.DEEPSLATE_SILVER_ORE, "Deepslate Silver Ore");
 
 		translationBuilder.add(ModBlocks.CARPENTRY_TABLE, "Carpentry Table");
+		translationBuilder.add("lotr.container.carpentry_table", "Carpentry Table");
 	}
 
 	private void generateItemGroupTranslations(TranslationBuilder translationBuilder) {
