@@ -1,5 +1,7 @@
 package com.anedhel.lotr.screen.custom;
 
+import com.anedhel.lotr.recipe.CarpentryRecipe;
+import com.anedhel.lotr.recipe.CarpentryRecipeDisplay;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.Click;
@@ -8,8 +10,6 @@ import net.minecraft.client.gui.cursor.StandardCursors;
 import net.minecraft.client.gui.screen.ingame.HandledScreen;
 import net.minecraft.client.sound.PositionedSoundInstance;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.recipe.StonecuttingRecipe;
-import net.minecraft.recipe.display.CuttingRecipeDisplay;
 import net.minecraft.recipe.display.SlotDisplay;
 import net.minecraft.recipe.display.SlotDisplayContexts;
 import net.minecraft.sound.SoundEvents;
@@ -80,7 +80,7 @@ public class CarpentryTableScreen extends HandledScreen<CarpentryTableScreenHand
 			int i = this.x + 52;
 			int j = this.y + 14;
 			int k = this.scrollOffset + 12;
-			CuttingRecipeDisplay.Grouping<StonecuttingRecipe> grouping = this.handler.getAvailableRecipes();
+			CarpentryRecipeDisplay.Grouping<CarpentryRecipe> grouping = this.handler.getAvailableRecipes();
 
 			for (int l = this.scrollOffset; l < k && l < grouping.size(); l++) {
 				int m = l - this.scrollOffset;
@@ -88,7 +88,8 @@ public class CarpentryTableScreen extends HandledScreen<CarpentryTableScreenHand
 				int o = j + m / 4 * 18 + 2;
 				if (x >= n && x < n + 16 && y >= o && y < o + 18) {
 					ContextParameterMap contextParameterMap = SlotDisplayContexts.createParameters(this.client.world);
-					SlotDisplay slotDisplay = ((CuttingRecipeDisplay.GroupEntry)grouping.entries().get(l)).recipe().optionDisplay();
+					CarpentryRecipeDisplay.GroupEntry<CarpentryRecipe> entry = grouping.entries().get(l);
+					SlotDisplay slotDisplay = entry.recipe().optionDisplay();
 					context.drawItemTooltip(this.textRenderer, slotDisplay.getFirst(contextParameterMap), x, y);
 				}
 			}
@@ -119,7 +120,7 @@ public class CarpentryTableScreen extends HandledScreen<CarpentryTableScreenHand
 	}
 
 	private void renderRecipeIcons(DrawContext context, int x, int y, int scrollOffset) {
-		CuttingRecipeDisplay.Grouping<StonecuttingRecipe> grouping = this.handler.getAvailableRecipes();
+		CarpentryRecipeDisplay.Grouping<CarpentryRecipe> grouping = this.handler.getAvailableRecipes();
 		ContextParameterMap contextParameterMap = SlotDisplayContexts.createParameters(this.client.world);
 
 		for (int i = this.scrollOffset; i < scrollOffset && i < grouping.size(); i++) {
@@ -127,7 +128,8 @@ public class CarpentryTableScreen extends HandledScreen<CarpentryTableScreenHand
 			int k = x + j % 4 * 16;
 			int l = j / 4;
 			int m = y + l * 18 + 2;
-			SlotDisplay slotDisplay = ((CuttingRecipeDisplay.GroupEntry)grouping.entries().get(i)).recipe().optionDisplay();
+			CarpentryRecipeDisplay.GroupEntry<CarpentryRecipe> entry = grouping.entries().get(i);
+			SlotDisplay slotDisplay = entry.recipe().optionDisplay();
 			context.drawItem(slotDisplay.getFirst(contextParameterMap), k, m);
 		}
 	}

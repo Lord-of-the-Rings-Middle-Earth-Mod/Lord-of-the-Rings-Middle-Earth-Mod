@@ -1,5 +1,8 @@
 package com.anedhel.lotr.screen.custom;
 
+import com.anedhel.lotr.recipe.CarpentryRecipe;
+import com.anedhel.lotr.recipe.CarpentryRecipeDisplay;
+import com.anedhel.lotr.recipe.ModRecipes;
 import com.anedhel.lotr.screen.ModScreenHandlers;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,8 +13,7 @@ import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeEntry;
-import net.minecraft.recipe.StonecuttingRecipe;
-import net.minecraft.recipe.display.CuttingRecipeDisplay;
+import net.minecraft.recipe.display.SlotDisplay;
 import net.minecraft.recipe.input.SingleStackRecipeInput;
 import net.minecraft.screen.*;
 import net.minecraft.screen.slot.Slot;
@@ -19,6 +21,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.world.World;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +36,7 @@ public class CarpentryTableScreenHandler extends ScreenHandler {
 	private final ScreenHandlerContext context;
 	final Property selectedRecipe = Property.create();
 	private final World world;
-	private CuttingRecipeDisplay.Grouping<StonecuttingRecipe> availableRecipes = CuttingRecipeDisplay.Grouping.empty();
+	private CarpentryRecipeDisplay.Grouping<CarpentryRecipe> availableRecipes = CarpentryRecipeDisplay.Grouping.empty();
 	private ItemStack inputStack = ItemStack.EMPTY;
 	long lastTakeTime;
 	final Slot inputSlot;
@@ -54,7 +57,7 @@ public class CarpentryTableScreenHandler extends ScreenHandler {
 	}
 
 	public CarpentryTableScreenHandler(int syncId, PlayerInventory playerInventory, ScreenHandlerContext context) {
-		super(null, syncId);
+		super(ModScreenHandlers.CARPENTRY_TABLE_SCREEN_HANDLER, syncId);
 		this.context = context;
 		this.world = playerInventory.player.getEntityWorld();
 		this.inputSlot = this.addSlot(new Slot(this.input, INPUT_ID, 20, 33));
@@ -94,7 +97,7 @@ public class CarpentryTableScreenHandler extends ScreenHandler {
 		return this.selectedRecipe.get();
 	}
 
-	public CuttingRecipeDisplay.Grouping<StonecuttingRecipe> getAvailableRecipes() {
+	public CarpentryRecipeDisplay.Grouping<CarpentryRecipe> getAvailableRecipes() {
 		return this.availableRecipes;
 	}
 
@@ -108,7 +111,7 @@ public class CarpentryTableScreenHandler extends ScreenHandler {
 
 	@Override
 	public boolean canUse(PlayerEntity player) {
-		return canUse(this.context, player, Blocks.STONECUTTER);
+		return canUse(this.context, player, Blocks.CRAFTING_TABLE);
 	}
 
 	@Override
@@ -138,20 +141,40 @@ public class CarpentryTableScreenHandler extends ScreenHandler {
 		}
 	}
 
+	private List<RecipeEntry<CarpentryRecipe>> findMatches(ItemStack stack) {
+		List<RecipeEntry<CarpentryRecipe>> result = new ArrayList<>();
+		for (RecipeEntry<CarpentryRecipe> entry : this.world.getRecipeManager().getSynchronizedRecipes().getAllOfType(
+				ModRecipes.CARPENTRY_RECIPE_RECIPE_TYPE)) {
+			if (entry.value() instanceof CarpentryRecipe recipe && recipe.ingredient().test(stack)) {
+				result.add(entry);
+			}
+		}
+		return result;
+	}
+
 	private void updateInput(ItemStack stack) {
 		this.selectedRecipe.set(-1);
 		this.outputSlot.setStackNoCallbacks(ItemStack.EMPTY);
 		if (!stack.isEmpty()) {
-			this.availableRecipes = this.world.getRecipeManager().getStonecutterRecipes().filter(stack);
+			List<RecipeEntry<CarpentryRecipe>> matches = findMatches(stack);
+			List<CarpentryRecipeDisplay.GroupEntry<CarpentryRecipe>> entries = new ArrayList<>();
+			for (RecipeEntry<CarpentryRecipe> entry : matches) {
+				CarpentryRecipe recipe = entry.value();
+				SlotDisplay option = recipe.createResultDisplay();
+				entries.add(new CarpentryRecipeDisplay.GroupEntry<>(
+						new CarpentryRecipeDisplay.RecipeOption<>(option, Optional.of(entry))
+				));
+			}
+			this.availableRecipes = new CarpentryRecipeDisplay.Grouping<>(entries);
 		} else {
-			this.availableRecipes = CuttingRecipeDisplay.Grouping.empty();
+			this.availableRecipes = CarpentryRecipeDisplay.Grouping.empty();
 		}
 	}
 
 	void populateResult(int selectedId) {
-		Optional<RecipeEntry<StonecuttingRecipe>> optional;
+		Optional<RecipeEntry<CarpentryRecipe>> optional;
 		if (!this.availableRecipes.isEmpty() && this.isInBounds(selectedId)) {
-			CuttingRecipeDisplay.GroupEntry<StonecuttingRecipe> groupEntry = this.availableRecipes
+			CarpentryRecipeDisplay.GroupEntry<CarpentryRecipe> groupEntry = this.availableRecipes
 					.entries()
 					.get(selectedId);
 			optional = groupEntry.recipe().recipe();
@@ -207,16 +230,19 @@ public class CarpentryTableScreenHandler extends ScreenHandler {
 				if (!this.insertItem(itemStack2, 2, 38, false)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (this.world.getRecipeManager().getStonecutterRecipes().contains(itemStack2)) {
-				if (!this.insertItem(itemStack2, 0, 1, false)) {
+			} else {
+				boolean isCarpentryInput = !findMatches(itemStack2).isEmpty();
+				if (isCarpentryInput) {
+					if (!this.insertItem(itemStack2, 0, 1, false)) {
+						return ItemStack.EMPTY;
+					}
+				} else if (slot >= 2 && slot < 29) {
+					if (!this.insertItem(itemStack2, 29, 38, false)) {
+						return ItemStack.EMPTY;
+					}
+				} else if (slot >= 29 && slot < 38 && !this.insertItem(itemStack2, 2, 29, false)) {
 					return ItemStack.EMPTY;
 				}
-			} else if (slot >= 2 && slot < 29) {
-				if (!this.insertItem(itemStack2, 29, 38, false)) {
-					return ItemStack.EMPTY;
-				}
-			} else if (slot >= 29 && slot < 38 && !this.insertItem(itemStack2, 2, 29, false)) {
-				return ItemStack.EMPTY;
 			}
 
 			if (itemStack2.isEmpty()) {
