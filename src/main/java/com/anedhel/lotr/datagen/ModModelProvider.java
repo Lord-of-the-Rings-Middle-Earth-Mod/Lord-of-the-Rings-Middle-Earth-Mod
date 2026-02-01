@@ -4,6 +4,8 @@ import com.anedhel.lotr.LotRMEMod;
 import com.anedhel.lotr.block.ModBlocks;
 import com.anedhel.lotr.block.custom.ModPillarBlock;
 import com.anedhel.lotr.block.custom.ModPillarType;
+import com.anedhel.lotr.block.custom.ModFriezeBlock;
+import com.anedhel.lotr.block.custom.ModFriezeType;
 import com.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import com.anedhel.lotr.block.stonetypes.ModStoneSubSet;
 import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
@@ -123,6 +125,9 @@ public class ModModelProvider extends FabricModelProvider {
 
 			generatePillarSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getPillarSet(),
 					"bronze_pillar","silver_pillar","gold_pillar");
+
+			generateFriezeSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getFriezeSet(),
+					"bronze_frieze", "silver_frieze", "gold_frieze");
 
 			stoneSet.getFriezeSet(); //mossy two ToDo: Set up the frieze models soon
 
@@ -380,6 +385,27 @@ public class ModModelProvider extends FabricModelProvider {
 				subSet.getOvergrownCrackedGoldFamilyVariant("slab"), crackedTopTexture, crackedSideTexture,
 				gold,
 				ModTextures.OVERGROWN_OVERLAY.getTextureName());
+	}
+
+	private void generateFriezeSubSetBlockStateModels(BlockStateModelGenerator blockStateModelGenerator,
+		  ModStoneSubSet subSet, String bronze, String silver, String gold) {
+		String topTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
+				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
+				.concat("_end");
+		String northTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
+				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
+				.concat("_north");
+		String eastTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
+				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
+				.concat("_east");
+		String southTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
+				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
+				.concat("_south");
+		String westTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
+				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
+				.concat("_west");
+
+		registerPillarBlock();
 	}
 
 	private void generateCubeAllSubSetBlockStateModels(BlockStateModelGenerator blockStateModelGenerator,
@@ -990,6 +1016,42 @@ public class ModModelProvider extends FabricModelProvider {
 				.register(ModPillarType.MIDDLE, middleVariant)
 				.register(ModPillarType.BASE, baseVariant));
 	}
+
+	private void registerFriezeBlock(BlockStateModelGenerator blockStateModelGenerator, Block frieze,
+			Block friezeSlab, String topTexture, String northTexture, String eastTexture, String southTexture, String westTexture) {
+		TextureMap singleFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap northEndFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap eastEndFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap southEndFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap westEndFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		Identifier singleFriezeIdentifier = ModModels.Frieze.upload();
+	}
+
 
 	private static TextureMap createCubeAllOverlayTextureMap(Block baseBlock, String... overlays) {
 		TextureMap textureMap = new TextureMap().put(TextureKey.ALL, TextureMap.getId(baseBlock))

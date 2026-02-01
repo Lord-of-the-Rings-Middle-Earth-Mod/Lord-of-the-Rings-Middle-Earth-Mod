@@ -44,6 +44,39 @@ public class ModModels {
 	public static final Model PILLAR_SLAB_TOP_TWO_OVERLAY = block("pillar_slab_top_two_overlay", "_top", TextureKey.END,
 			TextureKey.SIDE, TextureKey.LAYER1, ModTextureKeys.END_LAYER1, TextureKey.LAYER2, ModTextureKeys.END_LAYER2);
 
+	public static final Model Frieze = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model Frieze_NorthEnd = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model Frieze_EastEnd = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeSouthEnd = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeWestEnd = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeNorthEastCorner = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeNorthWestCorner = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeSouthEastCorner = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeSouthWestCorner = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeNorthSouthMiddle = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeEastWestMiddle = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeTNorthMiddle = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeTEastMiddle = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeTSouthMiddle = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeTWestMiddle = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+	public static final Model FriezeCrossMiddle = block("frieze", TextureKey.END, TextureKey.NORTH, TextureKey.EAST,
+			TextureKey.SOUTH, TextureKey.EAST);
+
 	public static final Model CUBE_ALL_OVERLAY = block("cube_all_overlay", TextureKey.ALL,
 			TextureKey.LAYER1);
 	public static final Model STAIRS_ALL_OVERLAY = block("stairs_all_overlay",
