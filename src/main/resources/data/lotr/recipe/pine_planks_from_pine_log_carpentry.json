@@ -1,10 +1,8 @@
 {
 	"type": "lotr:carpentry",
-	"ingredient": {
-		"item": "lotr:pine_log"
-	},
+	"ingredient": "lotr:pine_log",
 	"result": {
-		"item": "lotr:pine_planks",
-		"count": 4
+		"count": 4,
+		"id": "lotr:pine_planks"
 	}
 }

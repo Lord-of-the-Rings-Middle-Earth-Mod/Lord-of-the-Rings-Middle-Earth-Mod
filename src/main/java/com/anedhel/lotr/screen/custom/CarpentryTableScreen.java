@@ -1,5 +1,6 @@
 package com.anedhel.lotr.screen.custom;
 
+import com.anedhel.lotr.LotRMEMod;
 import com.anedhel.lotr.recipe.CarpentryRecipe;
 import com.anedhel.lotr.recipe.CarpentryRecipeDisplay;
 import net.minecraft.client.MinecraftClient;

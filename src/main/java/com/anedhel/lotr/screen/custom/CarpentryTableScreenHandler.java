@@ -1,5 +1,6 @@
 package com.anedhel.lotr.screen.custom;
 
+import com.anedhel.lotr.LotRMEMod;
 import com.anedhel.lotr.recipe.CarpentryRecipe;
 import com.anedhel.lotr.recipe.CarpentryRecipeDisplay;
 import com.anedhel.lotr.recipe.ModRecipes;
@@ -138,6 +139,7 @@ public class CarpentryTableScreenHandler extends ScreenHandler {
 		if (!itemStack.isOf(this.inputStack.getItem())) {
 			this.inputStack = itemStack.copy();
 			this.updateInput(itemStack);
+			LotRMEMod.LOGGER.info("On Content Changed recipes found: " + this.availableRecipes.size());
 		}
 	}
 

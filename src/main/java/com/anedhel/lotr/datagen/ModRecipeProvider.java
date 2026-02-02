@@ -7,6 +7,7 @@ import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
 import com.anedhel.lotr.block.stonetypes.StoneTypeVariants;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
 import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
+import com.anedhel.lotr.block.woodtypes.PineBlocks;
 import com.anedhel.lotr.item.ModGearType;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -58,6 +59,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				generateModWoodTypeRecipes();
 				generateModStoneTypeRecipes();
 				generateModGearTypeRecipes();
+
+				offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PineBlocks.PINE_PLANKS, PineBlocks.PINE_LOG, 4);
 
 				offerSmelting(TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 200, "tin");
 				offerBlasting(TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 100, "tin");

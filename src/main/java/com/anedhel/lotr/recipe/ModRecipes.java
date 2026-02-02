@@ -23,5 +23,11 @@ public class ModRecipes {
 
 	public static void registerRecipes() {
 		LotRMEMod.LOGGER.info("Registering Custom Recipes for " + LotRMEMod.MOD_ID);
+		registerRecipeDisplays();
+	}
+
+	public static void registerRecipeDisplays() {
+		Registry.register(Registries.RECIPE_DISPLAY, Identifier.of(LotRMEMod.MOD_ID, "carpentry"),
+				CarpentryRecipeDisplay.SERIALIZER);
 	}
 }
