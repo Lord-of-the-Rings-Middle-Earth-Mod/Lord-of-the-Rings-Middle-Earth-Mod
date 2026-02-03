@@ -24,7 +24,6 @@ import net.minecraft.client.data.*;
 import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.Weighted;
 
 import java.util.function.Function;
 
@@ -1149,7 +1148,7 @@ public class ModModelProvider extends FabricModelProvider {
 		Identifier crossMiddleFriezeIdentifier = ModModels.FRIEZE_CROSSMIDDLE.upload(frieze, crossMiddleFriezeTM,
 				blockStateModelGenerator.modelCollector);
 
-		blockStateModelGenerator.blockStateCollector.accept(createFriezeBlockState(frieze, singleFriezeIdentifier,
+		blockStateModelGenerator.blockStateCollector.accept(createFriezeBlockState(frieze, singleFriezeIdentifier, northEndFriezeIdentifier,
 				eastEndFriezeIdentifier, southEndFriezeIdentifier, westEndFriezeIdentifier, northEastCornerFriezeIdentifier,
 				northWestCornerFriezeIdentifier, southEastCornerFriezeIdentifier, southWestCornerFriezeIdentifier,
 				tNorthMiddleFriezeIdentifier, tEastMiddleFriezeIdentifier, tSouthMiddleFriezeIdentifier, tWestMiddleFriezeIdentifier,
@@ -1172,6 +1171,10 @@ public class ModModelProvider extends FabricModelProvider {
 				slabVariant, slabTopVariant, doubleSlabVariant));
 	}
 
+	/**
+	*	private void registerOneOverlayFriezeBlock (missing)
+	 * private void registerTwoOverlayFriezeBlock	(missing)
+	**/
 	private TextureMap createFriezeTextureMap(String topTexture, String northTexture, String eastTexture,
 											  String southTexture, String westTexture, String position,
 											  boolean ornamented, String... overlays) {
@@ -1207,12 +1210,13 @@ public class ModModelProvider extends FabricModelProvider {
 	}
 
 	private VariantsBlockModelDefinitionCreator createFriezeBlockState(Block frieze, Identifier singleFriezeIdentifier,
-		Identifier eastEndFriezeIdentifier, Identifier southEndFriezeIdentifier, Identifier westEndFriezeIdentifier,
+		Identifier northEndFriezeIdentifier, Identifier eastEndFriezeIdentifier, Identifier southEndFriezeIdentifier, Identifier westEndFriezeIdentifier,
 		Identifier northEastCornerFriezeIdentifier, Identifier northWestCornerFriezeIdentifier, Identifier southEastCornerFriezeIdentifier,
 		Identifier southWestCornerFriezeIdentifier, Identifier tNorthMiddleFriezeIdentifier, Identifier tEastMiddleFriezeIdentifier,
 		Identifier tSouthMiddleFriezeIdentifier,Identifier tWestMiddleFriezeIdentifier, Identifier northSouthMiddleFriezeIdentifier,
 		Identifier eastWestMiddleFriezeIdentifier, Identifier crossMiddleFriezeIdentifier) {
 		WeightedVariant singleVariant = createWeightedVariant(singleFriezeIdentifier);
+		WeightedVariant northEndVariant = createWeightedVariant(northEndFriezeIdentifier);
 		WeightedVariant eastEndVariant = createWeightedVariant(eastEndFriezeIdentifier);
 		WeightedVariant southEndVariant = createWeightedVariant(southEndFriezeIdentifier);
 		WeightedVariant westEndVariant = createWeightedVariant(westEndFriezeIdentifier);
@@ -1230,6 +1234,7 @@ public class ModModelProvider extends FabricModelProvider {
 		return VariantsBlockModelDefinitionCreator.of(frieze)
 				.with(BlockStateVariantMap.models(ModFriezeBlock.FRIEZE_TYPE)
 				.register(ModFriezeType.SINGLE, singleVariant)
+				.register(ModFriezeType.NORTH_END, northEndVariant)
 				.register(ModFriezeType.EAST_END, eastEndVariant)
 				.register(ModFriezeType.SOUTH_END, southEndVariant)
 				.register(ModFriezeType.WEST_END, westEndVariant)
