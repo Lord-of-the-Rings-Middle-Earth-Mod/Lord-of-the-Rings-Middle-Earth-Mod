@@ -22,6 +22,17 @@ import net.minecraft.util.Util;
 
 import java.util.EnumMap;
 
+/**
+ * Defines armor materials for custom armor sets added by the mod.
+ * <p>
+ * Armor materials specify properties like defense values, enchantability,
+ * equip sound, toughness, knockback resistance, and repair materials for armor pieces.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModItems
+ * @since 0.1.0
+ */
 public class ModArmorMaterials {
 	static RegistryKey<? extends Registry<EquipmentAsset>> REGISTRY_KEY =
 			RegistryKey.ofRegistry(Identifier.ofVanilla("equipment_asset"));

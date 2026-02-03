@@ -20,6 +20,19 @@ import net.minecraft.sound.BlockSoundGroup;
 
 import static com.anedhel.lotr.block.ModBlocks.registerBlock;
 
+/**
+ * Defines and registers all pine wood blocks and their variants.
+ * <p>
+ * This class creates log blocks, wood blocks, stripped variants, planks, and all their
+ * decorative variants (stairs, slabs, buttons, etc.). All blocks are organized into
+ * block families for easier management and data generation.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModWoodSet
+ * @see ModWoodTypes
+ * @since 0.1.0
+ */
 public class PineBlocks{
 
 	public static Block PINE_LOG = registerBlock("pine_log",
@@ -129,6 +142,9 @@ public class PineBlocks{
 			ModBlockTags.PINE_LOGS, ModItemTags.PINE_LOGS
 	);
 
+	/**
+	 * Logs the registration of pine blocks for debugging purposes.
+	 */
 	public static void registerPineBlocks() {
 		LotRMEMod.LOGGER.info("Registering Pine Blocks for " + LotRMEMod.MOD_ID);
 	}

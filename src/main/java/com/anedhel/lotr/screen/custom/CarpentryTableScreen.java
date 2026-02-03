@@ -28,6 +28,19 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.context.ContextParameterMap;
 import net.minecraft.util.math.MathHelper;
 
+/**
+ * Client-side screen for the carpentry table GUI.
+ * <p>
+ * This class handles rendering the carpentry table interface, including
+ * the recipe list, scrollbar, and visual feedback. It manages user input
+ * for recipe selection and scrolling.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see CarpentryTableScreenHandler
+ * @see com.anedhel.lotr.block.custom.CarpentryTable
+ * @since 0.1.0
+ */
 public class CarpentryTableScreen extends HandledScreen<CarpentryTableScreenHandler> {
 
 	private static final Identifier SCROLLER_TEXTURE = Identifier.ofVanilla("container/stonecutter/scroller");

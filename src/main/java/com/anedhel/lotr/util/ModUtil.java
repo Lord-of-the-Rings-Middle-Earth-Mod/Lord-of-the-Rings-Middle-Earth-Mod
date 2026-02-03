@@ -13,8 +13,27 @@ package com.anedhel.lotr.util;
 import net.minecraft.block.Block;
 import net.minecraft.data.family.BlockFamily;
 
+/**
+ * Utility methods for common operations in the mod.
+ * <p>
+ * This class provides helper methods for working with block families
+ * and retrieving specific block variants.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see BlockFamily
+ * @since 0.1.0
+ */
 public class ModUtil {
 
+	/**
+	 * Retrieves a specific block variant from a block family.
+	 *
+	 * @param family the block family to search
+	 * @param variant the variant name (e.g., "stairs", "slab", "wall")
+	 * @return the block matching the variant
+	 * @throws IllegalArgumentException if the variant is unknown or not present in the family
+	 */
 	public static Block getBlockFromFamily(BlockFamily family, String variant) {
 		Block block;
 		switch (variant) {

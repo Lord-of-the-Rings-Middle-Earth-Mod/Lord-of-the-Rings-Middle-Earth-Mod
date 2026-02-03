@@ -14,6 +14,19 @@ import com.anedhel.lotr.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 
+/**
+ * Data generator initialization class for the Lord of the Rings Middle Earth Mod.
+ * <p>
+ * This class registers all data generation providers for automatic generation of
+ * tags, models, recipes, loot tables, and language files during the build process.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModBlockTagProvider
+ * @see ModItemTagProvider
+ * @see ModModelProvider
+ * @since 0.1.0
+ */
 public class LotRMEModDataGenerator implements DataGeneratorEntrypoint {
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {

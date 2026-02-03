@@ -37,6 +37,18 @@ import java.util.function.Function;
 
 import static net.minecraft.client.data.BlockStateModelGenerator.*;
 
+/**
+ * Data generator for block and item models.
+ * <p>
+ * This provider generates JSON model files for blocks and items, including
+ * block states, item models, and texture mappings. It handles complex model
+ * configurations for pillars, friezes, and ornamented stone blocks.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModLootTableGenerator
+ * @since 0.1.0
+ */
 public class ModModelProvider extends FabricModelProvider {
 
 	public ModModelProvider(FabricDataOutput output) {

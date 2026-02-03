@@ -20,6 +20,20 @@ import net.minecraft.sound.BlockSoundGroup;
 
 import static com.anedhel.lotr.block.ModBlocks.registerBlock;
 
+/**
+ * Defines and registers all blueslate stone blocks and their variants.
+ * <p>
+ * This class creates a comprehensive set of blueslate blocks including base stone,
+ * cobbled, smooth, and cracked variants, each with normal, mossy, and overgrown states.
+ * It also includes specialized subsets for polished stone, pillars, friezes, and various
+ * brick styles, all with optional metal ornamentations (bronze, silver, gold).
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModStoneSet
+ * @see ModStoneTypes
+ * @since 0.1.0
+ */
 public class BlueslateBlocks {
 
 	public static Block BLUESLATE = registerBlock("blueslate",

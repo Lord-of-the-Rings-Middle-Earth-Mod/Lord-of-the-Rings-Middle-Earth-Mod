@@ -22,6 +22,17 @@ import net.minecraft.registry.tag.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Data generator for item tags.
+ * <p>
+ * This provider generates tags for items, categorizing them by material, tool type,
+ * and custom groupings. Tags are used for recipes, repair materials, and item interactions.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModBlockTagProvider
+ * @since 0.1.0
+ */
 public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
 	public ModItemTagProvider(FabricDataOutput output,

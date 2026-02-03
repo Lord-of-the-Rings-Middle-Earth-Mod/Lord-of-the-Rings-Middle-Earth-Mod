@@ -18,12 +18,26 @@ import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 
+/**
+ * Central registry for all custom screen handlers added by the mod.
+ * <p>
+ * Screen handlers manage the server-side logic of custom GUIs,
+ * including inventory synchronization and interaction logic.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see CarpentryTableScreenHandler
+ * @since 0.1.0
+ */
 public class ModScreenHandlers {
 
 	public static final ScreenHandlerType<CarpentryTableScreenHandler> CARPENTRY_TABLE_SCREEN_HANDLER =
 			Registry.register(Registries.SCREEN_HANDLER, Identifier.of(LotRMEMod.MOD_ID, "carpentry_screen_handler"),
 					new ScreenHandlerType<>(CarpentryTableScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
 
+	/**
+	 * Logs the registration of screen handlers for debugging purposes.
+	 */
 	public static void registerScreenHandlers() {
 		LotRMEMod.LOGGER.info("Registering Screen Handlers for " + LotRMEMod.MOD_ID);
 	}

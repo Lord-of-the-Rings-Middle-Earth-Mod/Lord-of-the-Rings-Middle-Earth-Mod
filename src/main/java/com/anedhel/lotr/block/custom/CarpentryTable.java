@@ -32,6 +32,17 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jspecify.annotations.Nullable;
 
+/**
+ * Represents a carpentry table block used for crafting custom recipes.
+ * <p>
+ * This block provides a custom GUI interface for players to access carpentry recipes.
+ * It is directional and can be placed facing any horizontal direction.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see CarpentryTableScreenHandler
+ * @since 0.1.0
+ */
 public class CarpentryTable extends HorizontalFacingBlock {
 
 	public static final MapCodec<CarpentryTable> CODEC = createCodec(CarpentryTable::new);

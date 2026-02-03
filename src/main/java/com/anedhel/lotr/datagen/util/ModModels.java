@@ -17,6 +17,17 @@ import net.minecraft.util.Identifier;
 
 import java.util.Optional;
 
+/**
+ * Custom model definitions for data generation.
+ * <p>
+ * This class defines custom model templates for blocks with complex geometry
+ * like pillars, friezes, and blocks with overlay textures.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see com.anedhel.lotr.datagen.ModModelProvider
+ * @since 0.1.0
+ */
 public class ModModels {
 
 	public static final Model PILLAR = block(Identifier.of("minecraft", "block/cube_column"),

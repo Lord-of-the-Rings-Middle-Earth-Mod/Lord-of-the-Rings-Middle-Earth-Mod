@@ -20,6 +20,20 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Represents a subset of stone blocks with variations including normal, mossy, overgrown, cracked, 
+ * and metal-ornamented versions (bronze, silver, gold).
+ * <p>
+ * This class manages specialized stone types like polished stone, pillars, friezes, and various
+ * brick styles. Each subset can have up to 24 different variants combining condition states
+ * and metal ornamentations.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModStoneSet
+ * @see StoneTypeVariants
+ * @since 0.1.0
+ */
 public class ModStoneSubSet {
 
 	private final BlockFamily BASE_FAMILY;
@@ -109,6 +123,11 @@ public class ModStoneSubSet {
 		crackedFamilyMap.put(OVERGROWN_GOLD_FAMILY, OVERGROWN_CRACKED_GOLD_FAMILY);
 	}
 
+	/**
+	 * Generates a list of all stone subset items for display in item groups.
+	 *
+	 * @return a list of item stacks containing all blocks in this subset
+	 */
 	public List<ItemStack> getStoneSubSetItemGroupList() {
 		List<ItemStack> stoneSubSetItemGroupList = new LinkedList<>();
 		stoneSubSetItemGroupList.addAll(getBlockFamilyList(BASE_FAMILY));
@@ -138,6 +157,12 @@ public class ModStoneSubSet {
 		return stoneSubSetItemGroupList;
 	}
 
+	/**
+	 * Converts a block family to a list of item stacks.
+	 *
+	 * @param family the block family to convert
+	 * @return a list of item stacks for all blocks in the family
+	 */
 	public List<ItemStack> getBlockFamilyList(BlockFamily family) {
 		List<ItemStack> blockFamilyList = new LinkedList<>();
 		blockFamilyList.add(new ItemStack(family.getBaseBlock()));
@@ -145,6 +170,11 @@ public class ModStoneSubSet {
 		return blockFamilyList;
 	}
 
+	/**
+	 * Retrieves all block families in this subset.
+	 *
+	 * @return a list of all block families
+	 */
 	public List<BlockFamily> getAllBlockFamilies() {
 		return List.of(
 				BASE_FAMILY, MOSSY_FAMILY, OVERGROWN_FAMILY, CRACKED_FAMILY, MOSSY_CRACKED_FAMILY,

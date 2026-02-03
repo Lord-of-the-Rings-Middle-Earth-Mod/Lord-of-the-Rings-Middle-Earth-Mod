@@ -17,16 +17,39 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 
+/**
+ * Defines item tags used by the mod for grouping and identifying items.
+ * <p>
+ * Tags are used for various purposes including recipes, repair materials,
+ * and item categorization.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModItems
+ * @since 0.1.0
+ */
 public class ModItemTags {
 
 	public static TagKey<Item> PINE_LOGS = createModTag("pine_logs");
 
 	public static TagKey<Item> BRONZE_MATERIALS = createModTag("bronze_materials");
 
+	/**
+	 * Creates a tag in the common namespace for cross-mod compatibility.
+	 *
+	 * @param name the tag name
+	 * @return the created tag key
+	 */
 	private static TagKey<Item> createCommonTag(String name) {
 		return TagKey.of(RegistryKeys.ITEM, Identifier.of(TagUtil.C_TAG_NAMESPACE, name));
 	}
 
+	/**
+	 * Creates a tag in this mod's namespace.
+	 *
+	 * @param name the tag name
+	 * @return the created tag key
+	 */
 	private static TagKey<Item> createModTag(String name) {
 		return TagKey.of(RegistryKeys.ITEM, Identifier.of(LotRMEMod.MOD_ID, name));
 	}

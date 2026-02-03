@@ -10,6 +10,18 @@
 
 package com.anedhel.lotr.block.stonetypes;
 
+/**
+ * Enum representing all stone types available in the mod.
+ * <p>
+ * Each stone type associates a {@link ModStoneSet} containing all block variants
+ * with a display name used in translations.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModStoneSet
+ * @see BlueslateBlocks
+ * @since 0.1.0
+ */
 public enum ModStoneTypes {
 
 	BLUESLATE(BlueslateBlocks.BLUESLATE_SET, "Blueslate");

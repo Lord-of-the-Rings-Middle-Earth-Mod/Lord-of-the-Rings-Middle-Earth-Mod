@@ -23,6 +23,19 @@ import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.data.family.BlockFamily;
 
+/**
+ * Client-side initialization class for the Lord of the Rings Middle Earth Mod.
+ * <p>
+ * This class handles client-specific initialization such as registering render layers
+ * for blocks (cutout rendering for transparent blocks like doors, trapdoors, and crops)
+ * and registering screen handlers for custom GUIs.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see LotRMEMod
+ * @see CarpentryTableScreen
+ * @since 0.1.0
+ */
 public class LotRMEModClient implements ClientModInitializer {
 
 	/**
@@ -39,6 +52,9 @@ public class LotRMEModClient implements ClientModInitializer {
 		HandledScreens.register(ModScreenHandlers.CARPENTRY_TABLE_SCREEN_HANDLER, CarpentryTableScreen::new);
 	}
 
+	/**
+	 * Registers cutout render layers for wood type blocks (doors and trapdoors).
+	 */
 	private void registerWoodTypeCutoutLayers() {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
 			ModWoodSet woodSet = woodType.getModWoodSet();
@@ -48,6 +64,9 @@ public class LotRMEModClient implements ClientModInitializer {
 		}
 	}
 
+	/**
+	 * Registers cutout render layers for stone type blocks with overlay textures.
+	 */
 	private void registerStoneTypeCutoutLayers() {
 		for(ModStoneTypes stoneType : ModStoneTypes.values()) {
 			stoneType.getModStoneSet().getAllBlockFamilies().forEach(this::registerStoneFamilyOverlays);
@@ -56,12 +75,20 @@ public class LotRMEModClient implements ClientModInitializer {
 		}
 	}
 
+	/**
+	 * Registers cutout render layers for crop blocks.
+	 */
 	private void registerCropCutoutLayers() {
 		BlockRenderLayerMap.putBlock(ModBlocks.TOMATO_CROP, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.WILD_TOMATO, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.POTTED_WILD_TOMATO, BlockRenderLayer.CUTOUT);
 	}
 
+	/**
+	 * Registers cutout render layers for all blocks in a stone block family.
+	 *
+	 * @param stoneFamily the block family containing stone variants to register
+	 */
 	private void registerStoneFamilyOverlays(BlockFamily stoneFamily) {
 		BlockRenderLayerMap.putBlock(stoneFamily.getBaseBlock(), BlockRenderLayer.CUTOUT);
 		for (Block variant : stoneFamily.getVariants().values()) {

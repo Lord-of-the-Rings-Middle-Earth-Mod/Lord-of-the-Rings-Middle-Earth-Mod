@@ -22,6 +22,17 @@ import net.minecraft.recipe.display.SlotDisplay;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Represents the visual display of a carpentry recipe in the GUI.
+ * <p>
+ * This record handles serialization and rendering of carpentry recipes
+ * in the client-side GUI, including input, result, and crafting station displays.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see CarpentryRecipe
+ * @since 0.1.0
+ */
 public record CarpentryRecipeDisplay(SlotDisplay input, SlotDisplay result, SlotDisplay craftingStation) implements RecipeDisplay {
 
 	public static final MapCodec<CarpentryRecipeDisplay> CODEC = RecordCodecBuilder.mapCodec(
@@ -48,6 +59,11 @@ public record CarpentryRecipeDisplay(SlotDisplay input, SlotDisplay result, Slot
 		return SERIALIZER;
 	}
 
+	/**
+	 * Helper class for grouping recipe entries in the GUI.
+	 *
+	 * @param <T> the recipe type
+	 */
 	// Gruppierungs-Hilfstypen für Screen/Handler
 	public static final class Grouping<T extends Recipe<?>> {
 		private final List<GroupEntry<T>> entries;
@@ -73,6 +89,11 @@ public record CarpentryRecipeDisplay(SlotDisplay input, SlotDisplay result, Slot
 		}
 	}
 
+	/**
+	 * Represents a single entry in a recipe grouping.
+	 *
+	 * @param <T> the recipe type
+	 */
 	public static final class GroupEntry<T extends Recipe<?>> {
 		private final RecipeOption<T> recipe;
 
@@ -85,6 +106,11 @@ public record CarpentryRecipeDisplay(SlotDisplay input, SlotDisplay result, Slot
 		}
 	}
 
+	/**
+	 * Represents a recipe option with its display and optional recipe entry.
+	 *
+	 * @param <T> the recipe type
+	 */
 	public static final class RecipeOption<T extends Recipe<?>> {
 		private final SlotDisplay optionDisplay;
 		private final Optional<RecipeEntry<T>> recipe;
