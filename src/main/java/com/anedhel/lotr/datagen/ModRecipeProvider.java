@@ -18,6 +18,7 @@ import com.anedhel.lotr.block.stonetypes.StoneTypeVariants;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
 import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
 import com.anedhel.lotr.block.woodtypes.PineBlocks;
+import com.anedhel.lotr.datagen.util.DataGenUtils;
 import com.anedhel.lotr.item.ModGearType;
 import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
@@ -25,6 +26,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalItemTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.family.BlockFamily;
 import net.minecraft.data.recipe.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemConvertible;
@@ -37,7 +39,10 @@ import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
 /**
@@ -78,6 +83,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				generateModStoneTypeRecipes();
 				generateModGearTypeRecipes();
 
+				//ToDo: Remove wood recipe from stonecutting when the carpentry table is working
 				offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PineBlocks.PINE_PLANKS, PineBlocks.PINE_LOG, 4);
 
 				offerSmelting(TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 200, "tin");
@@ -149,11 +155,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 					stoneSet.getAllBlockFamilies().forEach(family -> generateFamily(family, FeatureFlags.VANILLA_FEATURES));
 
-					stoneSet.getAllStoneSubSets().forEach(subSet -> {
-						generateModStoneSubSetRecipes(subSet, subSet.getName());
-					});
+					stoneSet.getAllStoneSubSets().forEach(subSet -> generateModStoneSubSetRecipes(subSet, subSet.getName()));
 
 					generateStoneCraftingTree(stoneSet);
+					generateStoneCuttingRecipes(stoneSet, stoneType.getFileConformName());
 				}
 			}
 
@@ -236,6 +241,60 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						stoneSet.getTileSet().getCrackedFamilyVariant("base"), 4);
 				generatePavementRecipe(stoneSet.getTileSet().getCrackedFamilyVariant("slab"),
 						stoneSet.getPavementSet().getCrackedFamilyVariant("base"), 1);
+			}
+
+			/**
+			 * Generate the stone cutting recipes for a stone set.
+			 *
+			 * @param stoneSet the {@link ModStoneSet}
+			 * @param stoneTypeName the stone type name
+			 */
+			private void generateStoneCuttingRecipes(ModStoneSet stoneSet, String stoneTypeName) {
+				for(StoneTypeVariants variant : StoneTypeVariants.values()) {
+					Block stoneBaseBlock = stoneSet.getStoneVariantFamily(variant) != null ?
+							stoneSet.getStoneVariantFamily(variant).getBaseBlock() : null;
+					Block cobbledBaseBlock = stoneSet.getCobbledVariantFamily(variant) != null ?
+							stoneSet.getCobbledVariantFamily(variant).getBaseBlock() : null;
+
+					generateBlockFamilyStoneCutting(stoneSet.getStoneVariantFamily(variant), variant,
+							stoneTypeName);
+					generateBlockFamilyStoneCutting(stoneSet.getPillarSet().getStoneTypeVariantFamily(variant),
+							variant, stoneTypeName + "_pillar",
+							stoneBaseBlock);
+					generateBlockFamilyStoneCutting(stoneSet.getFriezeSet().getStoneTypeVariantFamily(variant),
+							variant, stoneTypeName + "_frieze",
+							stoneBaseBlock);
+					generateBlockFamilyStoneCutting(stoneSet.getPolishedSet().getStoneTypeVariantFamily(variant),
+							variant, "polished_" + stoneTypeName,
+							stoneBaseBlock);
+					generateBlockFamilyStoneCutting(stoneSet.getBrickSet().getStoneTypeVariantFamily(variant),
+							variant, stoneTypeName + "_bricks", stoneBaseBlock,
+							stoneSet.getPolishedSet().getStoneTypeVariantFamily(variant).getBaseBlock());
+					generateBlockFamilyStoneCutting(stoneSet.getFancyBrickSet().getStoneTypeVariantFamily(variant),
+							variant, "fancy_" + stoneTypeName + "_bricks",
+							stoneBaseBlock,
+							stoneSet.getPolishedSet().getStoneTypeVariantFamily(variant).getBaseBlock(),
+							stoneSet.getBrickSet().getStoneTypeVariantFamily(variant).getBaseBlock());
+
+					generateBlockFamilyStoneCutting(stoneSet.getCobbledVariantFamily(variant), variant,
+							"cobbled_" + stoneTypeName);
+					generateBlockFamilyStoneCutting(stoneSet.getCobbledBrickSet().getStoneTypeVariantFamily(variant),
+							variant, "cobbled_" + stoneTypeName + "_bricks",
+							cobbledBaseBlock);
+
+					generateBlockFamilyStoneCutting(stoneSet.getRusticBrickSet().getStoneTypeVariantFamily(variant),
+							variant, "rustic_" + stoneTypeName + "_bricks");
+					generateBlockFamilyStoneCutting(stoneSet.getTileSet().getStoneTypeVariantFamily(variant),
+							variant, stoneTypeName + "_tiles",
+							stoneSet.getRusticBrickSet().getStoneTypeVariantFamily(variant).getBaseBlock());
+					generateBlockFamilyStoneCutting(stoneSet.getPavementSet().getStoneTypeVariantFamily(variant),
+							variant, stoneTypeName + "_pavement",
+							stoneSet.getRusticBrickSet().getStoneTypeVariantFamily(variant).getBaseBlock(),
+							stoneSet.getTileSet().getStoneTypeVariantFamily(variant).getBaseBlock());
+
+					generateBlockFamilyStoneCutting(stoneSet.getSmoothVariantFamily(variant),
+							variant, "smooth" + stoneTypeName);
+				}
 			}
 
 			/**
@@ -440,6 +499,68 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						subSet.getOvergrownCrackedGoldFamilyVariant("base"),
 						createModStoneRecipeName(name, StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE,
 								StoneTypeVariants.OVERGROWN_GOLD_STONE, ""));
+			}
+
+			/**
+			 * Generate stone cutting recipes for a block family.
+			 *
+			 * @param family the {@link BlockFamily}
+			 * @param variant the {@link StoneTypeVariants}
+			 * @param familyName the family name
+			 * @param baseBlocks optional base blocks for an integrated stone cutting recipe tree
+			 */
+			private void generateBlockFamilyStoneCutting(BlockFamily family, StoneTypeVariants variant,
+					String familyName, Block... baseBlocks) {
+				if(family == null) {
+					return;
+				}
+				List<Block> filteredBaseBlocks = Arrays.stream(baseBlocks).filter(Objects::nonNull).toList();
+				for(Map.Entry<BlockFamily.Variant, Block> entry : family.getVariants().entrySet()) {
+					int count = entry.getKey() == BlockFamily.Variant.SLAB ? 2 : 1;
+					RecipeCategory category = entry.getKey() == BlockFamily.Variant.BUTTON ?
+							RecipeCategory.REDSTONE : entry.getKey() == BlockFamily.Variant.PRESSURE_PLATE ?
+							RecipeCategory.REDSTONE : RecipeCategory.BUILDING_BLOCKS;
+					String recipePath = createModStoneRecipeName(familyName,
+							familyName + "_" + entry.getKey().getName(),
+							variant, "sc");
+					generateModStoneCuttingRecipe(category, family.getBaseBlock(),
+							entry.getValue(), count, recipePath);
+				}
+				for(Block block : filteredBaseBlocks) {
+					String inputName = DataGenUtils.extractNameFromTranslationKey(block.getTranslationKey());
+					generateModStoneCuttingRecipe(RecipeCategory.BUILDING_BLOCKS, block,
+							family.getBaseBlock(), 1,
+							createModStoneRecipeName(inputName, familyName,
+									variant, "sc"));
+					for(Map.Entry<BlockFamily.Variant, Block> entry : family.getVariants().entrySet()) {
+						int count = entry.getKey() == BlockFamily.Variant.SLAB ? 2 : 1;
+						RecipeCategory category = entry.getKey() == BlockFamily.Variant.BUTTON ?
+								RecipeCategory.REDSTONE : entry.getKey() == BlockFamily.Variant.PRESSURE_PLATE ?
+								RecipeCategory.REDSTONE : RecipeCategory.BUILDING_BLOCKS;
+						String recipePath = createModStoneRecipeName(inputName, familyName + entry.getKey().getName(),
+								variant, "sc");
+						generateModStoneCuttingRecipe(category, block,
+								entry.getValue(), count, recipePath);
+					}
+				}
+			}
+
+			/**
+			 * Generates a stone cutting recipe. The difference to
+			 * {@link #offerStonecuttingRecipe(RecipeCategory, ItemConvertible, ItemConvertible, int)} is that the
+			 * .json-filename is defined by the recipePath parameter.
+			 *
+			 * @param category the {@link RecipeCategory}
+			 * @param input the input {@link Block}
+			 * @param output the output {@link Block}
+			 * @param count the output count
+			 * @param recipePath the recipe path
+			 */
+			private void generateModStoneCuttingRecipe(RecipeCategory category, Block input, Block output, int count,
+					String recipePath) {
+				StonecuttingRecipeJsonBuilder.createStonecutting(Ingredient.ofItem(input), category, output, count)
+						.criterion(hasItem(input), this.conditionsFromItem(input))
+						.offerTo(this.exporter, recipePath);
 			}
 
 			/**
@@ -835,6 +956,22 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		String outputPath = StoneTypeVariants.getRecipePath(outputVariant, baseName);
 		String inputPath = StoneTypeVariants.getRecipePath(inputVariant, baseName);
 		return outputPath + "_from_" + inputPath + "_" + recipeType;
+	}
+
+	/**
+	 * Create a mod stone recipe name.
+	 *
+	 * @param input the name of the input Block
+	 * @param output the name of the output Block
+	 * @param variant the {@link StoneTypeVariants}
+	 * @param recipeType the recipe type suffix
+	 * @return the recipe name as String
+	 */
+	protected String createModStoneRecipeName(String input, String output, StoneTypeVariants variant, String recipeType) {
+		String outputPath = StoneTypeVariants.getRecipePath(variant, output);
+		String inputPath = StoneTypeVariants.getRecipePath(variant, input);
+		return outputPath + "_from_" + inputPath + "_" + recipeType;
+
 	}
 
 	@Override

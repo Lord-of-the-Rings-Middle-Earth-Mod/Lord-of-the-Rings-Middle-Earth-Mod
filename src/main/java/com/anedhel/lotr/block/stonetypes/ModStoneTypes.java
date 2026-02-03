@@ -31,6 +31,17 @@ public enum ModStoneTypes {
 		this.name = name;
 	}
 
+	/**
+	 * Returns the file-conform name of the stone type.
+	 * <p>
+	 * This is the display name converted to lowercase and with spaces replaced by underscores.
+	 *
+	 * @return The file-conform name of the stone type.
+	 */
+	public String getFileConformName() {
+		return name.toLowerCase().replace(" ", "_");
+	}
+
 	public ModStoneSet getModStoneSet() {
 		return modStoneSet;
 	}

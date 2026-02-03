@@ -184,6 +184,57 @@ public class ModStoneSet {
 		);
 	}
 
+	/**
+	 * Retrieves the appropriate stone variant family based on the provided variant.
+	 *
+	 * @param variant the {@link StoneTypeVariants} to get the family for
+	 * @return the corresponding {@link BlockFamily}
+	 * @throws IllegalArgumentException if the provided variant is not a stone variant
+	 */
+	public BlockFamily getStoneVariantFamily(StoneTypeVariants variant) {
+		return switch (variant) {
+			case STONE -> STONE_FAMILY;
+			case MOSSY_STONE -> MOSSY_STONE_FAMILY;
+			case OVERGROWN_STONE -> OVERGROWN_STONE_FAMILY;
+			default -> null; // throw new IllegalArgumentException("Variant " + variant + " is not a stone variant.");
+		};
+	}
+
+	/**
+	 * Retrieves the appropriate cobbled variant family based on the provided variant.
+	 *
+	 * @param cobbledVariant the {@link StoneTypeVariants} to get the cobbled family for
+	 * @return the corresponding {@link BlockFamily}
+	 * @throws IllegalArgumentException if the provided variant is not a cobbled variant
+	 */
+	public BlockFamily getCobbledVariantFamily(StoneTypeVariants cobbledVariant) {
+		return switch (cobbledVariant) {
+			case STONE -> COBBLED_FAMILY;
+			case MOSSY_STONE -> MOSSY_COBBLED_FAMILY;
+			case OVERGROWN_STONE -> OVERGROWN_COBBLED_FAMILY;
+			default -> null; // throw new IllegalArgumentException("Variant " + cobbledVariant + " is not a cobbled variant.");
+		};
+	}
+
+	/**
+	 * Retrieves the appropriate smooth variant family based on the provided variant.
+	 *
+	 * @param smoothVariant the {@link StoneTypeVariants} to get the smooth family for
+	 * @return the corresponding {@link BlockFamily}
+	 * @throws IllegalArgumentException if the provided variant is not a smooth variant
+	 */
+	public BlockFamily getSmoothVariantFamily(StoneTypeVariants smoothVariant) {
+		return switch (smoothVariant) {
+			case STONE -> SMOOTH_FAMILY;
+			case MOSSY_STONE -> MOSSY_SMOOTH_FAMILY;
+			case OVERGROWN_STONE -> OVERGROWN_SMOOTH_FAMILY;
+			case CRACKED_STONE -> CRACKED_SMOOTH_FAMILY;
+			case CRACKED_MOSSY_STONE -> MOSSY_CRACKED_SMOOTH_FAMILY;
+			case CRACKED_OVERGROWN_STONE -> OVERGROWN_CRACKED_SMOOTH_FAMILY;
+			default -> null; // throw new IllegalArgumentException("Variant " + smoothVariant + " is not a smooth variant.");
+		};
+	}
+
 	public BlockFamily getStoneFamily() {
 		return STONE_FAMILY;
 	}

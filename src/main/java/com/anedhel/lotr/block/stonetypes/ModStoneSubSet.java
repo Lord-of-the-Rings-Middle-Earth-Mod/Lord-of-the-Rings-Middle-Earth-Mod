@@ -181,6 +181,41 @@ public class ModStoneSubSet {
 		);
 	}
 
+	/**
+	 * Gets the block family corresponding to the specified stone type variant.
+	 *
+	 * @param variant the {@link StoneTypeVariants} to look up
+	 * @return the corresponding {@link BlockFamily}
+	 */
+	public BlockFamily getStoneTypeVariantFamily (StoneTypeVariants variant) {
+		return switch (variant) {
+			case STONE -> BASE_FAMILY;
+			case MOSSY_STONE -> MOSSY_FAMILY;
+			case OVERGROWN_STONE -> OVERGROWN_FAMILY;
+			case CRACKED_STONE -> CRACKED_FAMILY;
+			case CRACKED_MOSSY_STONE -> MOSSY_CRACKED_FAMILY;
+			case CRACKED_OVERGROWN_STONE -> OVERGROWN_CRACKED_FAMILY;
+			case BRONZE_STONE -> BRONZE_FAMILY;
+			case MOSSY_BRONZE_STONE -> MOSSY_BRONZE_FAMILY;
+			case OVERGROWN_BRONZE_STONE -> OVERGROWN_BRONZE_FAMILY;
+			case CRACKED_BRONZE_STONE -> CRACKED_BRONZE_FAMILY;
+			case CRACKED_MOSSY_BRONZE_STONE -> MOSSY_CRACKED_BRONZE_FAMILY;
+			case CRACKED_OVERGROWN_BRONZE_STONE -> OVERGROWN_CRACKED_BRONZE_FAMILY;
+			case SILVER_STONE -> SILVER_FAMILY;
+			case MOSSY_SILVER_STONE -> MOSSY_SILVER_FAMILY;
+			case OVERGROWN_SILVER_STONE -> OVERGROWN_SILVER_FAMILY;
+			case CRACKED_SILVER_STONE -> CRACKED_SILVER_FAMILY;
+			case CRACKED_MOSSY_SILVER_STONE -> MOSSY_CRACKED_SILVER_FAMILY;
+			case CRACKED_OVERGROWN_SILVER_STONE -> OVERGROWN_CRACKED_SILVER_FAMILY;
+			case GOLD_STONE -> GOLD_FAMILY;
+			case MOSSY_GOLD_STONE -> MOSSY_GOLD_FAMILY;
+			case OVERGROWN_GOLD_STONE -> OVERGROWN_GOLD_FAMILY;
+			case CRACKED_GOLD_STONE -> CRACKED_GOLD_FAMILY;
+			case CRACKED_MOSSY_GOLD_STONE -> MOSSY_CRACKED_GOLD_FAMILY;
+			case CRACKED_OVERGROWN_GOLD_STONE -> OVERGROWN_CRACKED_GOLD_FAMILY;
+		};
+	}
+
 	// While the method isn´t used at the moment, we provide this Getter as it may be useful in the future
 	public BlockFamily getCrackedFamily(BlockFamily family) {
 		return crackedFamilyMap.get(family);
