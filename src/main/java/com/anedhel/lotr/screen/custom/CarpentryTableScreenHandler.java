@@ -36,6 +36,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Server-side screen handler for the carpentry table GUI.
+ * <p>
+ * This class manages the carpentry table's inventory, recipe selection,
+ * and crafting logic. It handles player interactions and synchronizes
+ * the GUI state between server and client.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see com.anedhel.lotr.screen.custom.CarpentryTableScreen
+ * @see com.anedhel.lotr.block.custom.CarpentryTable
+ * @since 0.1.0
+ */
 public class CarpentryTableScreenHandler extends ScreenHandler {
 
 	public static final int INPUT_ID = 0;

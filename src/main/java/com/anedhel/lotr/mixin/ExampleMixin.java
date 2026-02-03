@@ -16,8 +16,23 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+/**
+ * Example mixin class demonstrating how to inject code into Minecraft's MinecraftServer class.
+ * <p>
+ * This mixin is currently inactive but serves as a template for future mixins.
+ * Mixins allow modifying vanilla Minecraft behavior without directly editing the source code.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @since 0.1.0
+ */
 @Mixin(MinecraftServer.class)
 public class ExampleMixin {
+	/**
+	 * Example injection point that runs at the head of MinecraftServer.loadWorld().
+	 *
+	 * @param info the callback info
+	 */
 	@Inject(at = @At("HEAD"), method = "loadWorld")
 	private void init(CallbackInfo info) {
 		// This code is injected into the start of MinecraftServer.loadWorld()V

@@ -21,6 +21,18 @@ import net.minecraft.recipe.display.SlotDisplay;
 
 import java.util.List;
 
+/**
+ * Represents a carpentry recipe for the carpentry table.
+ * <p>
+ * Carpentry recipes take a single input item and produce a single output item,
+ * similar to stonecutter recipes but processed at the carpentry table.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see CarpentryRecipeDisplay
+ * @see com.anedhel.lotr.block.custom.CarpentryTable
+ * @since 0.1.0
+ */
 public class CarpentryRecipe extends SingleStackRecipe {
 
 	public CarpentryRecipe(String group, Ingredient ingredient, ItemStack result) {
@@ -43,6 +55,11 @@ public class CarpentryRecipe extends SingleStackRecipe {
 				new SlotDisplay.ItemSlotDisplay(Item.fromBlock(ModBlocks.CARPENTRY_TABLE))));
 	}
 
+	/**
+	 * Creates the display representation of the recipe result.
+	 *
+	 * @return the slot display for the result item
+	 */
 	public SlotDisplay createResultDisplay() {
 		return new SlotDisplay.StackSlotDisplay(this.result());
 	}
@@ -52,6 +69,9 @@ public class CarpentryRecipe extends SingleStackRecipe {
 		return RecipeBookCategories.STONECUTTER;
 	}
 
+	/**
+	 * Serializer for carpentry recipes.
+	 */
 	public static class CarpentryRecipeSerializer extends SingleStackRecipe.Serializer<CarpentryRecipe> {
 		public CarpentryRecipeSerializer() {
 			super(CarpentryRecipe::new);
