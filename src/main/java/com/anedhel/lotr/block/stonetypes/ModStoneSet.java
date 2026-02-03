@@ -17,6 +17,20 @@ import net.minecraft.item.ItemStack;
 
 import java.util.List;
 
+/**
+ * Represents a complete set of stone blocks including multiple variants and decorative styles.
+ * <p>
+ * This class organizes stone blocks into families based on their state (stone, cobbled, smooth),
+ * condition (normal, mossy, overgrown, cracked), and ornamentation (bronze, silver, gold).
+ * It also manages specialized stone subsets like polished, pillars, friezes, and various brick styles.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModStoneTypes
+ * @see ModStoneSubSet
+ * @see StoneTypeVariants
+ * @since 0.1.0
+ */
 public class ModStoneSet {
 
 	private final BlockFamily STONE_FAMILY;
@@ -85,6 +99,11 @@ public class ModStoneSet {
 		FANCY_BRICK_SET = fancyBrickSet;
 	}
 
+	/**
+	 * Generates a list of all stone items for display in item groups.
+	 *
+	 * @return a list of item stacks containing all stone blocks in this set
+	 */
 	public List<ItemStack> getStoneItemGroupList() {
 		List<ItemStack> stoneItemGroupList = new java.util.LinkedList<>();
 		stoneItemGroupList.addAll(getBlockFamilyList(STONE_FAMILY));
@@ -112,6 +131,12 @@ public class ModStoneSet {
 		return stoneItemGroupList;
 	}
 
+	/**
+	 * Converts a block family to a list of item stacks.
+	 *
+	 * @param family the block family to convert
+	 * @return a list of item stacks for all blocks in the family
+	 */
 	private List<ItemStack> getBlockFamilyList(BlockFamily family) {
 		List<ItemStack> blockFamilyList = new java.util.LinkedList<>();
 		blockFamilyList.add(new ItemStack(family.getBaseBlock()));
@@ -119,6 +144,11 @@ public class ModStoneSet {
 		return blockFamilyList;
 	}
 
+	/**
+	 * Retrieves all block families in this stone set.
+	 *
+	 * @return a list of all block families
+	 */
 	public List<BlockFamily> getAllBlockFamilies() {
 		return List.of(
 				STONE_FAMILY,
@@ -136,6 +166,11 @@ public class ModStoneSet {
 		);
 	}
 
+	/**
+	 * Retrieves all stone subsets in this stone set.
+	 *
+	 * @return a list of all stone subsets
+	 */
 	public List<ModStoneSubSet> getAllStoneSubSets() {
 		return List.of(
 				POLISHED_SET,
@@ -154,6 +189,12 @@ public class ModStoneSet {
 		return STONE_FAMILY;
 	}
 
+	/**
+	 * Retrieves a specific variant block from the stone family.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @return the block matching the variant name
+	 */
 	public Block getStoneVariant(String variant) {
 		return ModUtil.getBlockFromFamily(STONE_FAMILY, variant);
 	}
