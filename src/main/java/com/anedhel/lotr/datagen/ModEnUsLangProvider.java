@@ -29,6 +29,16 @@ import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Data generator for English (US) language translations.
+ * <p>
+ * This provider generates translation files for blocks, items, item groups,
+ * and tags, converting registry names to properly formatted display names.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @since 0.1.0
+ */
 public class ModEnUsLangProvider extends FabricLanguageProvider {
 
 	public ModEnUsLangProvider(FabricDataOutput dataOutput,

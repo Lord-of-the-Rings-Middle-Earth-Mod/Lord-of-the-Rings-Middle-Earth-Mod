@@ -28,6 +28,17 @@ import net.minecraft.registry.tag.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Data generator for block tags.
+ * <p>
+ * This provider generates tags for blocks, categorizing them by material, tool requirements,
+ * and custom groupings. Tags are used for recipes, mining level requirements, and block behavior.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModItemTagProvider
+ * @since 0.1.0
+ */
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
 	public ModBlockTagProvider(FabricDataOutput output,

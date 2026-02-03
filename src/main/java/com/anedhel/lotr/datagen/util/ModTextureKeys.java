@@ -12,6 +12,17 @@ package com.anedhel.lotr.datagen.util;
 
 import net.minecraft.client.data.TextureKey;
 
+/**
+ * Custom texture keys for data generation.
+ * <p>
+ * This class defines additional texture keys beyond Minecraft's defaults,
+ * used for blocks with multiple overlay layers.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModModels
+ * @since 0.1.0
+ */
 public class ModTextureKeys {
 
 	public static final TextureKey TOP_LAYER1 = TextureKey.of("top_layer1");

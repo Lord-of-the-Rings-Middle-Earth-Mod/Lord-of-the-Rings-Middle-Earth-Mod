@@ -13,14 +13,37 @@ package com.anedhel.lotr.datagen.util;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Utility class for data generation operations.
+ * <p>
+ * This class provides helper methods for working with translation keys
+ * and formatting strings for language files.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see com.anedhel.lotr.datagen.ModEnUsLangProvider
+ * @since 0.1.0
+ */
 public class DataGenUtils {
 
 	private final static Pattern FIRST_LETTER_PATTERN = Pattern.compile("\\b[a-z]");
 
+	/**
+	 * Extracts the name portion from a translation key.
+	 *
+	 * @param translationKey the translation key to extract from
+	 * @return the name portion after "lotr."
+	 */
 	public static String extractNameFromTranslationKey(String translationKey){
 		return translationKey.substring(translationKey.indexOf("lotr.") + 5);
 	}
 
+	/**
+	 * Capitalizes the first letter of each word in a string.
+	 *
+	 * @param translationKey the string to capitalize
+	 * @return the string with capitalized words
+	 */
 	public static String capitalizeWords(String translationKey){
 		Matcher matcher = FIRST_LETTER_PATTERN.matcher(translationKey);
 		StringBuilder result = new StringBuilder();

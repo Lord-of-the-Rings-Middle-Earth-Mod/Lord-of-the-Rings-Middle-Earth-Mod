@@ -36,6 +36,18 @@ import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Data generator for block loot tables.
+ * <p>
+ * This provider generates loot tables for blocks, defining what items drop
+ * when blocks are broken, including support for silk touch, fortune enchantments,
+ * and crop age-based drops.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModRecipeProvider
+ * @since 0.1.0
+ */
 public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 
 	public ModLootTableGenerator(FabricDataOutput dataOutput,

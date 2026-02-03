@@ -40,6 +40,17 @@ import net.minecraft.resource.featuretoggle.FeatureFlags;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+/**
+ * Data generator for crafting recipes.
+ * <p>
+ * This provider generates recipe JSON files for all crafting recipes including
+ * shaped, shapeless, smelting, smoking, carpentry, and stonecutting recipes.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModLootTableGenerator
+ * @since 0.1.0
+ */
 public class ModRecipeProvider extends FabricRecipeProvider {
 
 	public ModRecipeProvider(FabricDataOutput output,
