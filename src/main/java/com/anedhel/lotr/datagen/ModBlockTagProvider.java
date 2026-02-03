@@ -30,13 +30,8 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * Data generator for block tags.
- * <p>
- * This provider generates tags for blocks, categorizing them by material, tool requirements,
- * and custom groupings. Tags are used for recipes, mining level requirements, and block behavior.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModItemTagProvider
  * @since 0.1.0
  */
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
@@ -46,6 +41,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 		super(output, registriesFuture);
 	}
 
+	/**
+	 * Configure block tags by adding mod blocks to the appropriate tags.
+	 * @param wrapperLookup the {@link RegistryWrapper.WrapperLookup}
+	 */
 	@Override
 	protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 		configureModWoodTypes();
@@ -94,6 +93,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 				.add(ModBlocks.SILVER_BLOCK);
 	}
 
+	/**
+	 * Configure tags for all wood types.
+	 */
 	private void configureModWoodTypes() {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
 			ModWoodSet woodSet = woodType.getModWoodSet();
@@ -114,6 +116,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 		}
 	}
 
+	/**
+	 * Configure tags for all stone types.
+	 */
 	private void configureModStoneTypes() {
 		for(ModStoneTypes stoneType : ModStoneTypes.values()) {
 			ModStoneSet stoneSet = stoneType.getModStoneSet();
@@ -130,6 +135,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 		}
 	}
 
+	/**
+	 * Configure tags for a wood block family.
+	 * @param family the {@link BlockFamily} to configure tags for
+	 */
 	private void configureWoodFamilyTags(BlockFamily family) {
 		ProvidedTagBuilder<Block, Block> axeMinableBuilder = valueLookupBuilder(BlockTags.AXE_MINEABLE)
 				.add(family.getBaseBlock());
@@ -142,10 +151,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 				.add(family.getVariant(BlockFamily.Variant.FENCE_GATE));
 	}
 
+	/**
+	 * Configure tags for all block families in a stone sub set.
+	 * @param subSet the {@link ModStoneSubSet} to configure tags for
+	 */
 	private void configureStoneSubSetTags(ModStoneSubSet subSet) {
 		subSet.getAllBlockFamilies().forEach(this::configureStoneFamilyTags);
 	}
 
+	/**
+	 * Configure tags for a stone block family.
+	 * @param family the {@link BlockFamily} to configure tags for
+	 */
 	private void configureStoneFamilyTags(BlockFamily family) {
 		ProvidedTagBuilder<Block, Block> pickaxeMineableBuilder = valueLookupBuilder(BlockTags.PICKAXE_MINEABLE);
 		family.getVariants().values().forEach(pickaxeMineableBuilder::add);

@@ -16,11 +16,8 @@ package com.anedhel.lotr.block.stonetypes;
  * Stone variants include base types (stone, mossy, overgrown), cracked states,
  * and metal ornamentations (bronze, silver, gold). This enum is used for
  * generating recipes and managing stone block variants programmatically.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModStoneSet
- * @see ModStoneSubSet
  * @since 0.1.0
  */
 public enum StoneTypeVariants {
@@ -301,11 +298,11 @@ public enum StoneTypeVariants {
 
 	/**
 	 * Checks whether a stone variant has metal ornamentation.
+	 * While not used now, the Getter might be used in the future
 	 *
 	 * @param variant the stone variant to check
 	 * @return true if the variant has bronze, silver, or gold ornamentation
 	 */
-	// While not used now, the Getter might be used in the future
 	public static boolean isOrnamented(StoneTypeVariants variant) {
 		switch(variant) {
 			case BRONZE_STONE, MOSSY_BRONZE_STONE, OVERGROWN_BRONZE_STONE,
@@ -321,11 +318,11 @@ public enum StoneTypeVariants {
 
 	/**
 	 * Checks whether a stone variant is in a cracked state.
+	 * While not used now, the Getter might be used in the future
 	 *
 	 * @param variant the stone variant to check
 	 * @return true if the variant is cracked
 	 */
-	// While not used now, the Getter might be used in the future
 	public static boolean isCracked(StoneTypeVariants variant) {
 		switch(variant) {
 			case CRACKED_STONE, CRACKED_MOSSY_STONE, CRACKED_OVERGROWN_STONE,

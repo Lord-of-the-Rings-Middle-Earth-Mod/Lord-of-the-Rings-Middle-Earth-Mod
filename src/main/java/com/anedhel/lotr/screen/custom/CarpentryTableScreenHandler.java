@@ -42,7 +42,7 @@ import java.util.Optional;
  * This class manages the carpentry table's inventory, recipe selection,
  * and crafting logic. It handles player interactions and synchronizes
  * the GUI state between server and client.
- * </p>
+ * ToDo: Check all JavaDocs
  *
  * @author Moritz Rohleder
  * @see com.anedhel.lotr.screen.custom.CarpentryTableScreen

@@ -27,7 +27,7 @@ import java.util.Optional;
  * <p>
  * This record handles serialization and rendering of carpentry recipes
  * in the client-side GUI, including input, result, and crafting station displays.
- * </p>
+ * ToDo: Check all JavaDocs
  *
  * @author Moritz Rohleder
  * @see CarpentryRecipe

@@ -19,18 +19,21 @@ import net.minecraft.util.Identifier;
 
 /**
  * Defines block tags used by the mod for grouping and identifying blocks.
- * <p>
- * Tags are used for various purposes including recipes, mining requirements,
- * block behavior, and block connections (pillars and friezes).
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModBlocks
  * @since 0.1.0
  */
 public class ModBlockTags {
 
+	/**
+	 * Tag for blocks that use vertically connected Textures
+	 * @see com.anedhel.lotr.block.custom.ModPillarBlock
+	 */
 	public static final TagKey<Block> PILLARS = createCommonTag("pillars");
+	/**
+	 * Tag for blocks that use horizontally connected Textures
+	 * @see com.anedhel.lotr.block.custom.ModFriezeBlock
+	 */
 	public static final TagKey<Block> FRIEZES = createCommonTag("friezes");
 
 	public static final TagKey<Block> PINE_LOGS = createModTag("pine_logs");
@@ -41,7 +44,7 @@ public class ModBlockTags {
 	 * Creates a tag in the common namespace for cross-mod compatibility.
 	 *
 	 * @param name the tag name
-	 * @return the created tag key
+	 * @return the created {@link TagKey<Block>}
 	 */
 	private static TagKey<Block> createCommonTag(String name) {
 		return TagKey.of(RegistryKeys.BLOCK, Identifier.of(TagUtil.C_TAG_NAMESPACE, name));
@@ -51,7 +54,7 @@ public class ModBlockTags {
 	 * Creates a tag in this mod's namespace.
 	 *
 	 * @param name the tag name
-	 * @return the created tag key
+	 * @return the created {@link TagKey<Block>}
 	 */
 	private static TagKey<Block> createModTag(String name) {
 		return TagKey.of(RegistryKeys.BLOCK, Identifier.of(LotRMEMod.MOD_ID, name));

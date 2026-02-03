@@ -30,7 +30,6 @@ import org.jspecify.annotations.Nullable;
  * allowing for seamless vertical connections.
  * The pillar type is stored in the {@link #PILLAR_TYPE} property and is updated on placement
  * and when neighboring blocks change.
- * </p>
  *
  * @author Moritz Rohleder
  * @since 0.1.0

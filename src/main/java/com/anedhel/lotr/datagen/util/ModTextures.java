@@ -11,15 +11,10 @@
 package com.anedhel.lotr.datagen.util;
 
 /**
- * Enum of texture identifiers for ornamented stone blocks.
- * <p>
- * This enum provides a convenient way to reference texture files for stone blocks
- * with bronze, silver, and gold ornamentations in various states (normal, mossy,
- * overgrown, cracked).
- * </p>
+ * Enum of texture identifiers.
+ * This enum provides a convenient way to reference texture files.
  *
  * @author Moritz Rohleder
- * @see com.anedhel.lotr.datagen.ModModelProvider
  * @since 0.1.0
  */
 public enum ModTextures {

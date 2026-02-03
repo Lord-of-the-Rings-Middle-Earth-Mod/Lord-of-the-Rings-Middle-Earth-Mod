@@ -19,7 +19,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
  * <p>
  * This class registers all data generation providers for automatic generation of
  * tags, models, recipes, loot tables, and language files during the build process.
- * </p>
  *
  * @author Moritz Rohleder
  * @see ModBlockTagProvider
@@ -28,6 +27,12 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
  * @since 0.1.0
  */
 public class LotRMEModDataGenerator implements DataGeneratorEntrypoint {
+
+	/**
+	 * Initializes the data generator by adding various data providers.
+	 *
+	 * @param fabricDataGenerator The Fabric data generator instance.
+	 */
 	@Override
 	public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
 		FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();

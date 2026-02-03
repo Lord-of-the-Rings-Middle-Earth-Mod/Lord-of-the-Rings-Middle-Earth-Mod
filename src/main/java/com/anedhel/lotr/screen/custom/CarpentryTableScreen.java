@@ -34,7 +34,7 @@ import net.minecraft.util.math.MathHelper;
  * This class handles rendering the carpentry table interface, including
  * the recipe list, scrollbar, and visual feedback. It manages user input
  * for recipe selection and scrolling.
- * </p>
+ * ToDo: Check all JavaDocs
  *
  * @author Moritz Rohleder
  * @see CarpentryTableScreenHandler

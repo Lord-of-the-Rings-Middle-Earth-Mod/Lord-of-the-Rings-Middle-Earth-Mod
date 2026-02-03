@@ -19,13 +19,8 @@ import java.util.Optional;
 
 /**
  * Custom model definitions for data generation.
- * <p>
- * This class defines custom model templates for blocks with complex geometry
- * like pillars, friezes, and blocks with overlay textures.
- * </p>
  *
  * @author Moritz Rohleder
- * @see com.anedhel.lotr.datagen.ModModelProvider
  * @since 0.1.0
  */
 public class ModModels {
@@ -157,19 +152,48 @@ public class ModModels {
 	public static final Model DOUBLE_POLISHED_TWO_OVERLAY = block("polished_two_overlay",
 			TextureKey.END, TextureKey.SIDE, TextureKey.LAYER1, ModTextureKeys.END_LAYER1, TextureKey.LAYER2, ModTextureKeys.END_LAYER2);
 
+	/**
+	 * Helper method to create a block model with the given parent and required texture keys.
+	 * @param parent the parent model's name as String
+	 * @param requiredTextureKeys the required texture keys, seperated by commas
+	 * @return the created block {@link Model}
+	 */
 	private static Model block(String parent, TextureKey ... requiredTextureKeys) {
 		return block(Identifier.of(LotRMEMod.MOD_ID, "block/" + parent), requiredTextureKeys);
 	}
 
+	/**
+	 * Helper method to create a block model with the given parent, variant and required texture keys.
+	 *
+	 * @param parent the parent model's name as String
+	 * @param variant the variant suffix
+	 * @param requiredTextureKeys the required texture keys, seperated by commas
+	 * @return the created block {@link Model}
+	 */
 	private static Model block(String parent, String variant, TextureKey... requiredTextureKeys) {
 		return block(Identifier.of(LotRMEMod.MOD_ID, "block/" + parent), variant, requiredTextureKeys);
 	}
 
+	/**
+	 * Helper method to create a block model with the given parent and required texture keys.
+	 *
+	 * @param parent the parent model's {@link Identifier}
+	 * @param requiredTextureKeys the required texture keys, seperated by commas
+	 * @return the created block {@link Model}
+	 */
 	private static Model block(Identifier parent, TextureKey ... requiredTextureKeys) {
 		return new Model(Optional.of(parent),
 				Optional.empty(), requiredTextureKeys);
 	}
 
+	/**
+	 * Helper method to create a block model with the given parent, variant and required texture keys.
+	 *
+	 * @param parent the parent model's {@link Identifier}
+	 * @param variant the variant suffix
+	 * @param requiredTextureKeys the required texture keys, seperated by commas
+	 * @return the created block {@link Model}
+	 */
 	private static Model block(Identifier parent, String variant, TextureKey... requiredTextureKeys) {
 		return new Model(Optional.of(parent) ,Optional.of(variant), requiredTextureKeys);
 	}

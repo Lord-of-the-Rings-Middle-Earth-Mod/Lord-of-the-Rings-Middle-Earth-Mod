@@ -22,10 +22,8 @@ import java.util.List;
  * <p>
  * Each gear type associates all related items (tools and armor pieces) with
  * their material and provides methods to retrieve items for creative tabs.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModItems
  * @see ModArmorMaterials
  * @see ModToolMaterials
  * @since 0.1.0
@@ -69,7 +67,7 @@ public enum ModGearType {
 	/**
 	 * Generates a list of tool items for display in the tools item group.
 	 *
-	 * @return a list of item stacks containing all tools in this gear set
+	 * @return a list of {@link ItemStack} containing all tools in this gear set
 	 */
 	public List<ItemStack> getToolItemGroupList() {
 		return List.of(
@@ -83,7 +81,7 @@ public enum ModGearType {
 	/**
 	 * Generates a list of armor items and weapons for display in the combat item group.
 	 *
-	 * @return a list of item stacks containing armor pieces and sword
+	 * @return a list of {@link ItemStack} containing armor pieces and sword
 	 */
 	public List<ItemStack> getArmorItemGroupList() {
 		return List.of(

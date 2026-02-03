@@ -27,7 +27,6 @@ import static com.anedhel.lotr.block.ModBlocks.registerBlock;
  * cobbled, smooth, and cracked variants, each with normal, mossy, and overgrown states.
  * It also includes specialized subsets for polished stone, pillars, friezes, and various
  * brick styles, all with optional metal ornamentations (bronze, silver, gold).
- * </p>
  *
  * @author Moritz Rohleder
  * @see ModStoneSet

@@ -23,14 +23,11 @@ import java.util.List;
 /**
  * Represents a complete set of wood blocks including logs, stripped logs, and planks.
  * <p>
- * This class organizes wood blocks into families for easier management, data generation,
+ * This class organizes wood blocks into {@link BlockFamily} for easier management, data generation,
  * and display in item groups. It provides access to individual variants and generates
  * lists of all blocks for creative tabs.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModWoodTypes
- * @see PineBlocks
  * @since 0.1.0
  */
 public class ModWoodSet {
@@ -65,7 +62,7 @@ public class ModWoodSet {
 	/**
 	 * Generates a list of all wood items for display in item groups.
 	 *
-	 * @return a list of item stacks containing all wood blocks in this set
+	 * @return a list of {@link ItemStack} containing all wood blocks in this set
 	 */
 	public List<ItemStack> getWoodItemGroupList() {
 		List<ItemStack> woodItemGroupList = new LinkedList<>();
@@ -80,8 +77,8 @@ public class ModWoodSet {
 	/**
 	 * Converts a block family to a list of item stacks.
 	 *
-	 * @param family the block family to convert
-	 * @return a list of item stacks for all blocks in the family
+	 * @param family the {@link BlockFamily} to convert
+	 * @return a list of {@link ItemStack} for all blocks in the family
 	 */
 	private static List<ItemStack> getBlockFamilyList(BlockFamily family) {
 		List<ItemStack> blockFamilyList = new LinkedList<>();
@@ -102,6 +99,7 @@ public class ModWoodSet {
 	 * Retrieves a specific variant block from the wood family.
 	 *
 	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
 	 * @return the block matching the variant name
 	 */
 	public Block getWoodVariant(String variant) {
@@ -120,6 +118,7 @@ public class ModWoodSet {
 	 * Retrieves a specific variant block from the stripped wood family.
 	 *
 	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
 	 * @return the block matching the variant name
 	 */
 	public Block getStrippedWoodVariant(String variant) {
@@ -134,6 +133,7 @@ public class ModWoodSet {
 	 * Retrieves a specific variant block from the planks family.
 	 *
 	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
 	 * @return the block matching the variant name
 	 */
 	public Block getPlanksVariant(String variant) {

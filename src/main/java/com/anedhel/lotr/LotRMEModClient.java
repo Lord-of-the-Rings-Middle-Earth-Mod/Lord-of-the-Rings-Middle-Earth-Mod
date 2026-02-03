@@ -29,11 +29,8 @@ import net.minecraft.data.family.BlockFamily;
  * This class handles client-specific initialization such as registering render layers
  * for blocks (cutout rendering for transparent blocks like doors, trapdoors, and crops)
  * and registering screen handlers for custom GUIs.
- * </p>
  *
  * @author Moritz Rohleder
- * @see LotRMEMod
- * @see CarpentryTableScreen
  * @since 0.1.0
  */
 public class LotRMEModClient implements ClientModInitializer {
@@ -53,7 +50,7 @@ public class LotRMEModClient implements ClientModInitializer {
 	}
 
 	/**
-	 * Registers cutout render layers for wood type blocks (doors and trapdoors).
+	 * Registers cutout render layers for all wood type blocks (doors and trapdoors).
 	 */
 	private void registerWoodTypeCutoutLayers() {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
@@ -65,7 +62,7 @@ public class LotRMEModClient implements ClientModInitializer {
 	}
 
 	/**
-	 * Registers cutout render layers for stone type blocks with overlay textures.
+	 * Registers cutout render layers for all stone type blocks with overlay textures.
 	 */
 	private void registerStoneTypeCutoutLayers() {
 		for(ModStoneTypes stoneType : ModStoneTypes.values()) {
@@ -76,7 +73,7 @@ public class LotRMEModClient implements ClientModInitializer {
 	}
 
 	/**
-	 * Registers cutout render layers for crop blocks.
+	 * Registers cutout render layers for all crop blocks.
 	 */
 	private void registerCropCutoutLayers() {
 		BlockRenderLayerMap.putBlock(ModBlocks.TOMATO_CROP, BlockRenderLayer.CUTOUT);

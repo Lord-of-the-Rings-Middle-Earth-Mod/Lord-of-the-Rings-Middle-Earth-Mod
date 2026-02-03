@@ -15,13 +15,8 @@ import net.minecraft.item.ToolMaterial;
 
 /**
  * Defines tool materials for custom tools added by the mod.
- * <p>
- * Tool materials specify properties like durability, mining speed, attack damage,
- * enchantability, and repair materials for tools.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModItems
  * @since 0.1.0
  */
 public class ModToolMaterials {

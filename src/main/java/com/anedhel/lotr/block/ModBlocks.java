@@ -35,12 +35,8 @@ import java.util.function.Function;
  * This class registers blocks including crops, flowers, ores, metal blocks,
  * and custom functional blocks. It provides utility methods for block registration
  * and automatically creates associated block items.
- * </p>
  *
  * @author Moritz Rohleder
- * @see PineBlocks
- * @see BlueslateBlocks
- * @see CarpentryTable
  * @since 0.1.0
  */
 public class ModBlocks {
@@ -87,7 +83,7 @@ public class ModBlocks {
 			settings -> new CarpentryTable(settings.strength(2.5f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
 
 	/**
-	 * Registers a block and creates its associated block item.
+	 * Registers a {@link Block} and creates its associated {@link BlockItem}.
 	 *
 	 * @param name the registry name for the block
 	 * @param blockFactory the function to create the block from settings
@@ -102,10 +98,10 @@ public class ModBlocks {
 	}
 
 	/**
-	 * Registers a block without creating a block item.
+	 * Registers a {@link Block} without creating a block item.
 	 * <p>
 	 * Used for blocks that should not appear in the creative inventory directly,
-	 * such as crop blocks that are placed via seeds.
+	 * such as {@link CropBlock} that are placed via seeds.
 	 * </p>
 	 *
 	 * @param name the registry name for the block
@@ -119,10 +115,10 @@ public class ModBlocks {
 	}
 
 	/**
-	 * Creates and registers a block item for the given block.
+	 * Creates and registers a {@link BlockItem} for the given {@link Block}.
 	 *
-	 * @param name the registry name for the item
-	 * @param block the block to create an item for
+	 * @param name the registry name for the {@link BlockItem}
+	 * @param block the {@link Block} to create an {@link BlockItem} for
 	 */
 	private static void registerBlockItem(String name, Block block){
 		Registry.register(Registries.ITEM, Identifier.of(LotRMEMod.MOD_ID, name),
@@ -139,11 +135,17 @@ public class ModBlocks {
 		registerModStoneBlocks();
 	}
 
+	/**
+	 * Registers all mod wood block sets.
+	 */
 	private static void registerModWoodBlocks() {
 		LotRMEMod.LOGGER.info("Registering Mod Wood Blocks for " + LotRMEMod.MOD_ID);
 		PineBlocks.registerPineBlocks();
 	}
 
+	/**
+	 * Registers all mod stone block sets.
+	 */
 	private static void registerModStoneBlocks() {
 		LotRMEMod.LOGGER.info("Registering Mod Stone Blocks for " + LotRMEMod.MOD_ID);
 		BlueslateBlocks.registerBlueslateBlocks();

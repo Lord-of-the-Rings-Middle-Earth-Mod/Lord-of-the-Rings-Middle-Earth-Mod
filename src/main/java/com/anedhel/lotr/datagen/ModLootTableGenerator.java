@@ -20,6 +20,7 @@ import com.anedhel.lotr.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.FlowerBlock;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
@@ -38,14 +39,8 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * Data generator for block loot tables.
- * <p>
- * This provider generates loot tables for blocks, defining what items drop
- * when blocks are broken, including support for silk touch, fortune enchantments,
- * and crop age-based drops.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModRecipeProvider
  * @since 0.1.0
  */
 public class ModLootTableGenerator extends FabricBlockLootTableProvider {
@@ -55,6 +50,9 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 		super(dataOutput, registryLookup);
 	}
 
+	/**
+	 * Generates the loot tables for the mod.
+	 */
 	@Override
 	public void generate() {
 		generateModWoodTypeLootTables();
@@ -86,6 +84,9 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 		addDrop(ModBlocks.POTTED_WILD_TOMATO, pottedPlantDrops(ModBlocks.WILD_TOMATO));
 	}
 
+	/**
+	 * Generates loot tables for all mod wood types.
+	 */
 	private void generateModWoodTypeLootTables() {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
 			ModWoodSet woodSet = woodType.getModWoodSet();
@@ -100,6 +101,9 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 		}
 	}
 
+	/**
+	 * Generates loot tables for all mod stone types.
+	 */
 	private void generateModStoneTypeLootTables() {
 		for(ModStoneTypes stoneType: ModStoneTypes.values()) {
 			ModStoneSet stoneSet = stoneType.getModStoneSet();
@@ -108,6 +112,11 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 		}
 	}
 
+	/**
+	 * Generates loot tables for all variants of a {@link BlockFamily}.
+	 *
+	 * @param family The {@link BlockFamily} to generate loot tables for.
+	 */
 	private void generateBlockFamilyLootTables(BlockFamily family) {
 		for(Block value : family.getVariants().values()) {
 			if(value == family.getVariant(BlockFamily.Variant.SLAB)){
@@ -120,7 +129,15 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 		}
 	}
 
-	// Currently the itemDrop is always Raw Tin, but that will change with the addition of more ores.
+	/**
+	 * Generates loot table for ores that drop a multiple of the same {@link Item} or themselves when mined with silk touch.
+	 * Currently the item drop is always tin, that will change with the addition of more ores.
+	 *
+	 * @param blockDrop the {@link Block} that is being dropped with silk touch
+	 * @param itemDrop the {@link Item} that is being dropped without silk touch
+	 * @param dropRange the range of items to drop
+	 * @return the generated {@link LootTable.Builder}
+	 */
 	private LootTable.Builder multipleOreDrops(Block blockDrop, Item itemDrop, UniformLootNumberProvider dropRange) {
 		RegistryWrapper.Impl<Enchantment> impl = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT);
 		return this.dropsWithSilkTouch(
@@ -133,8 +150,16 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 		);
 	}
 
-	// Currently the drop is always Wild Tomato and the item Tomato, but that will change with the addition of more wild
-	// flowers.
+	/**
+	 * Generates loot table for wild flowers of a {@link net.minecraft.block.CropBlock}.
+	 * Currently the drop is always Wild Tomato and the item Tomato,
+	 * but that will change with the addition of more wildflowers.
+	 *
+	 * @param drop the {@link FlowerBlock} that is being dropped with shears.
+	 * @param item the {@link Item} that is being dropped without shears.
+	 * @param dropRange the range of items to drop.
+	 * @return the generated {@link LootTable.Builder}
+	 */
 	private LootTable.Builder wildFlowerDrops (Block drop, Item item, UniformLootNumberProvider dropRange) {
 		return this.dropsWithShears(drop, this.applyExplosionDecay(
 				drop, ItemEntry.builder(item).apply(SetCountLootFunction.builder(dropRange))

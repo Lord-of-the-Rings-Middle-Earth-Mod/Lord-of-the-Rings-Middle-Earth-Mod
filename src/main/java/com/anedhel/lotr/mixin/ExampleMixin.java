@@ -21,13 +21,13 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
  * <p>
  * This mixin is currently inactive but serves as a template for future mixins.
  * Mixins allow modifying vanilla Minecraft behavior without directly editing the source code.
- * </p>
  *
  * @author Moritz Rohleder
  * @since 0.1.0
  */
 @Mixin(MinecraftServer.class)
 public class ExampleMixin {
+
 	/**
 	 * Example injection point that runs at the head of MinecraftServer.loadWorld().
 	 *

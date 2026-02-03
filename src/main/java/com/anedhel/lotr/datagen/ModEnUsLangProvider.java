@@ -31,10 +31,6 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * Data generator for English (US) language translations.
- * <p>
- * This provider generates translation files for blocks, items, item groups,
- * and tags, converting registry names to properly formatted display names.
- * </p>
  *
  * @author Moritz Rohleder
  * @since 0.1.0
@@ -47,12 +43,9 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 	}
 
 	/**
-	 * Implement this method to register languages.
-	 *
-	 * <p>Call {@link TranslationBuilder#add(String, String)} to add a translation.
-	 *
-	 * @param registryLookup
-	 * @param translationBuilder
+	 * Generates translations for various mod elements.
+	 * @param registryLookup the {@link RegistryWrapper.WrapperLookup} for registry access
+	 * @param translationBuilder the {@link TranslationBuilder} to add translations to
 	 */
 	@Override
 	public void generateTranslations(RegistryWrapper.WrapperLookup registryLookup,
@@ -93,6 +86,10 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add("lotr.container.carpentry_table", "Carpentry Table");
 	}
 
+	/**
+	 * Generates translations for item groups.
+	 * @param translationBuilder the {@link TranslationBuilder} to add translations to
+	 */
 	private void generateItemGroupTranslations(TranslationBuilder translationBuilder) {
 		translationBuilder.add("itemgroup.lotr_blocks", "LotR Blocks");
 		translationBuilder.add("itemgroup.lotr_stone", "LotR Stone");
@@ -103,6 +100,10 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add("itemgroup.lotr_food", "LotR Food");
 	}
 
+	/**
+	 * Generates translations for tags.
+	 * @param translationBuilder the {@link TranslationBuilder} to add translations to
+	 */
 	private void generateTagTranslations(TranslationBuilder translationBuilder) {
 		translationBuilder.add(ModBlockTags.PILLARS, "Pillars");
 		translationBuilder.add(ModBlockTags.FRIEZES, "Friezes");
@@ -112,6 +113,10 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModItemTags.BRONZE_MATERIALS, "Bronze Materials");
 	}
 
+	/**
+	 * Generates translations for all gear types.
+	 * @param translationBuilder the {@link TranslationBuilder} to add translations to
+	 */
 	private void generateGearTypeTranslations(TranslationBuilder translationBuilder) {
 		for(ModGearType gearType: ModGearType.values()) {
 			translationBuilder.add(gearType.getHelmet(), generateNameFromItem(gearType.getHelmet()));
@@ -127,6 +132,10 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		}
 	}
 
+	/**
+	 * Generates translations for all wood types.
+	 * @param translationBuilder the {@link TranslationBuilder} to add translations to
+	 */
 	private void generateWoodTypeTranslations(TranslationBuilder translationBuilder) {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
 			ModWoodSet woodSet = woodType.getModWoodSet();
@@ -140,6 +149,10 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		}
 	}
 
+	/**
+	 * Generates translations for all stone types.
+	 * @param translationBuilder the {@link TranslationBuilder} to add translations to
+	 */
 	private void generateStoneTypeTranslations(TranslationBuilder translationBuilder) {
 		for(ModStoneTypes stoneType : ModStoneTypes.values()) {
 			ModStoneSet stoneSet = stoneType.getModStoneSet();
@@ -149,6 +162,11 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		}
 	}
 
+	/**
+	 * Generates translations for a block family.
+	 * @param translationBuilder the {@link TranslationBuilder} to add translations to
+	 * @param family the {@link BlockFamily} to generate translations for
+	 */
 	private void generateBlockFamilyTranslations(TranslationBuilder translationBuilder, BlockFamily family) {
 		translationBuilder.add(family.getBaseBlock(),
 				generateNameFromTranslationKey(family.getBaseBlock().getTranslationKey()));
@@ -158,14 +176,35 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		});
 	}
 
+	/**
+	 * Generates a human-readable name from a {@link Block}.
+	 *
+	 * @param block the block
+	 * @return the generated name
+	 * @see #generateNameFromTranslationKey(String)
+	 */
 	private String generateNameFromBlock(Block block) {
 		return generateNameFromTranslationKey(block.getTranslationKey());
 	}
 
+	/**
+	 * Generates a human-readable name from an {@link Item}.
+	 *
+	 * @param item the item
+	 * @return the generated name
+	 * @see #generateNameFromTranslationKey(String)
+	 */
 	private String generateNameFromItem(Item item) {
 		return generateNameFromTranslationKey(item.getTranslationKey());
 	}
 
+	/**
+	 * Generates a human-readable name from a translation key.
+	 *
+	 * @param translationKey the translation key
+	 * @return the generated name
+	 * @see DataGenUtils#extractNameFromTranslationKey(String)
+	 */
 	private String generateNameFromTranslationKey(String translationKey) {
 		String name = DataGenUtils.extractNameFromTranslationKey(translationKey).replace('_', ' ');
 		return DataGenUtils.capitalizeWords(name);

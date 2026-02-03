@@ -24,13 +24,8 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * Data generator for item tags.
- * <p>
- * This provider generates tags for items, categorizing them by material, tool type,
- * and custom groupings. Tags are used for recipes, repair materials, and item interactions.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModBlockTagProvider
  * @since 0.1.0
  */
 public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
@@ -40,6 +35,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 		super(output, registriesFuture);
 	}
 
+	/**
+	 * Configures the item tags by adding mod items to the appropriate tags.
+	 *
+	 * @param wrapperLookup The registry wrapper lookup.
+	 */
 	@Override
 	protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
 		configureModGearTypes();
@@ -56,6 +56,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 				.add(ModItems.SILVER_NUGGET);
 	}
 
+	/**
+	 * Configures item tags for all mod gear types.
+	 */
 	private void configureModGearTypes() {
 		for(ModGearType gearType : ModGearType.values()) {
 			valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
@@ -66,6 +69,9 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 		}
 	}
 
+	/**
+	 * Configures item tags for all mod wood types.
+	 */
 	private void configureModWoodTypes() {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
 			ModWoodSet woodSet = woodType.getModWoodSet();

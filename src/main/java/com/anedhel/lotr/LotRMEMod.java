@@ -23,15 +23,8 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Main mod initialization class for the Lord of the Rings Middle Earth Mod.
- * <p>
- * This class handles the registration of all mod components including blocks, items,
- * item groups, screen handlers, recipes, and compostable items.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModBlocks
- * @see ModItems
- * @see ModItemGroups
  * @since 0.1.0
  */
 public class LotRMEMod implements ModInitializer {
@@ -39,6 +32,9 @@ public class LotRMEMod implements ModInitializer {
 	public static final String MOD_ID = "lotr";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	/**
+	 * Called when the mod is initialized.
+	 */
 	@Override
 	public void onInitialize() {
 		LOGGER.info("Initializing " + MOD_ID + " mod.");

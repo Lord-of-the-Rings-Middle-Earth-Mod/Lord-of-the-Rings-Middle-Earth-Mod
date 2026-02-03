@@ -37,10 +37,9 @@ import org.jspecify.annotations.Nullable;
  * <p>
  * This block provides a custom GUI interface for players to access carpentry recipes.
  * It is directional and can be placed facing any horizontal direction.
- * </p>
+ * ToDo: Refine the JavaDoc
  *
  * @author Moritz Rohleder
- * @see CarpentryTableScreenHandler
  * @since 0.1.0
  */
 public class CarpentryTable extends HorizontalFacingBlock {

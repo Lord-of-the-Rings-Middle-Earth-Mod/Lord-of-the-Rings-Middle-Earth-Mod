@@ -15,9 +15,7 @@ import net.minecraft.client.data.TextureKey;
 /**
  * Custom texture keys for data generation.
  * <p>
- * This class defines additional texture keys beyond Minecraft's defaults,
- * used for blocks with multiple overlay layers.
- * </p>
+ * This class defines additional texture keys beyond Minecraft's defaults.
  *
  * @author Moritz Rohleder
  * @see ModModels

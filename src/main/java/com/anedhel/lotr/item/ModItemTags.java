@@ -19,19 +19,13 @@ import net.minecraft.util.Identifier;
 
 /**
  * Defines item tags used by the mod for grouping and identifying items.
- * <p>
- * Tags are used for various purposes including recipes, repair materials,
- * and item categorization.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModItems
  * @since 0.1.0
  */
 public class ModItemTags {
 
 	public static TagKey<Item> PINE_LOGS = createModTag("pine_logs");
-
 	public static TagKey<Item> BRONZE_MATERIALS = createModTag("bronze_materials");
 
 	/**

@@ -30,10 +30,8 @@ import org.jspecify.annotations.Nullable;
  * allowing for seamless horizontal connections.
  * The frieze type is stored in the {@link #FRIEZE_TYPE} property and is updated on placement
  * and when neighboring blocks change.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModFriezeType
  * @since 0.1.0
  */
 public class ModFriezeBlock extends Block {

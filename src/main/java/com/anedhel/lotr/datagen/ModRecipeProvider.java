@@ -42,13 +42,8 @@ import java.util.concurrent.CompletableFuture;
 
 /**
  * Data generator for crafting recipes.
- * <p>
- * This provider generates recipe JSON files for all crafting recipes including
- * shaped, shapeless, smelting, smoking, carpentry, and stonecutting recipes.
- * </p>
  *
  * @author Moritz Rohleder
- * @see ModLootTableGenerator
  * @since 0.1.0
  */
 public class ModRecipeProvider extends FabricRecipeProvider {
@@ -59,11 +54,10 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 	}
 
 	/**
-	 * Implement this method and then use the range of methods in {@link RecipeGenerator} or from one of the recipe json
-	 * factories such as {@link ShapedRecipeJsonBuilder} or {@link ShapelessRecipeJsonBuilder}.
-	 *
-	 * @param registryLookup
-	 * @param exporter
+	 * Generate the recipe generator.
+	 * @param registryLookup the {@link RegistryWrapper.WrapperLookup}
+	 * @param exporter the {@link RecipeExporter}
+	 * @return the {@link RecipeGenerator}
 	 */
 	@Override
 	protected RecipeGenerator getRecipeGenerator(RegistryWrapper.WrapperLookup registryLookup,
@@ -75,6 +69,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			private final List<ItemConvertible> SILVER_SMELTABLES = List.of(ModItems.RAW_SILVER, ModBlocks.SILVER_ORE,
 					ModBlocks.DEEPSLATE_SILVER_ORE);
 
+			/**
+			 * Generate the recipes.
+			 */
 			@Override
 			public void generate() {
 				generateModWoodTypeRecipes();
@@ -125,6 +122,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						ModItems.CORN, ModItems.COOKED_CORN, 1f);
 			}
 
+			/**
+			 * Generate the recipes for all mod wood types.
+			 */
 			private void generateModWoodTypeRecipes() {
 				for(ModWoodTypes woodType : ModWoodTypes.values()) {
 					ModWoodSet woodSet = woodType.getModWoodSet();
@@ -139,6 +139,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				}
 			}
 
+			/**
+			 * Generate the recipes for all mod stone types.
+			 */
 			private void generateModStoneTypeRecipes() {
 				//ToDo: Generate the stonecutting recipes too
 				for(ModStoneTypes stoneType : ModStoneTypes.values()) {
@@ -154,6 +157,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				}
 			}
 
+			/**
+			 * Generate the recipes for all mod gear types.
+			 */
 			private void generateModGearTypeRecipes() {
 				for(ModGearType gearType : ModGearType.values()) {
 					generateSwordRecipe(gearType.getMaterial(), gearType.getSword());
@@ -169,6 +175,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				}
 			}
 
+			/**
+			 * Generate the crafting tree for a stone set.
+			 *
+			 * @param stoneSet the {@link ModStoneSet}
+			 */
 			private void generateStoneCraftingTree(ModStoneSet stoneSet) {
 				generateStoneSmelting(stoneSet.getCobbledVariant("base"),
 						stoneSet.getStoneVariant("base"),  null);
@@ -227,6 +238,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						stoneSet.getPavementSet().getCrackedFamilyVariant("base"), 1);
 			}
 
+			/**
+			 * Generate the recipes for a stone sub set.
+			 *
+			 * @param subSet the {@link ModStoneSubSet}
+			 * @param name the name of the sub set
+			 */
 			private void generateModStoneSubSetRecipes(ModStoneSubSet subSet, String name) {
 				subSet.getAllBlockFamilies().forEach(family -> generateFamily(family, FeatureFlags.VANILLA_FEATURES));
 
@@ -425,6 +442,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 								StoneTypeVariants.OVERGROWN_GOLD_STONE, ""));
 			}
 
+			/**
+			 * Generate a stone smelting recipe.
+			 *
+			 * @param baseBlock the base {@link Block}
+			 * @param crackedBlock the cracked {@link Block}
+			 * @param recipePath the recipe path or null for default path naming
+			 */
 			private void generateStoneSmelting(Block baseBlock, Block crackedBlock, String recipePath) {
 				if(recipePath != null) {
 					CookingRecipeJsonBuilder.createSmelting(
@@ -443,6 +467,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				}
 			}
 
+			/**
+			 * Generate an ornamented stone block recipe.
+			 *
+			 * @param baseBlock the base {@link Block}
+			 * @param ornamentedBlock the ornamented {@link Block}
+			 * @param ornament the ornament {@link Item}
+			 * @param recipePath the recipe path
+			 */
 			private void generateOrnamentRecipe(Block baseBlock, Block ornamentedBlock, Item ornament,
 					String recipePath) {
 				this.createShaped(RecipeCategory.BUILDING_BLOCKS, ornamentedBlock)
@@ -457,6 +489,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 			}
 
+			/**
+			 * Generate a mossy stone block recipe.
+			 *
+			 * @param normal the normal {@link Block}
+			 * @param mossy the mossy {@link Block}
+			 * @param recipePath the recipe path
+			 */
 			private void generateMossyRecipe(Block normal, Block mossy, String recipePath) {
 				this.createShapeless(RecipeCategory.BUILDING_BLOCKS, mossy)
 						.input(normal)
@@ -472,6 +511,17 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter, recipePath + "_moss");
 			}
 
+			/**
+			 * Generate an overgrown stone block recipe and the mossy recipe using {@link #generateMossyRecipe(Block, Block, String)}.
+			 *
+			 * @param normal the normal {@link Block}
+			 * @param mossy the mossy {@link Block}
+			 * @param overgrown the overgrown {@link Block}
+			 * @param normalVariant the normal {@link StoneTypeVariants}
+			 * @param mossyVariant the mossy {@link StoneTypeVariants}
+			 * @param overgrownVariant the overgrown {@link StoneTypeVariants}
+			 * @param name the name of the stone sub set
+			 */
 			private void generateOvergrownRecipe(Block normal, Block mossy, Block overgrown,
 					StoneTypeVariants normalVariant, StoneTypeVariants mossyVariant, StoneTypeVariants overgrownVariant,
 					String name) {
@@ -491,6 +541,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter, createModStoneRecipeName(name, overgrownVariant, normalVariant, "ct") + "_moss");
 			}
 
+			/**
+			 * Generate a pillar stone block recipe.
+			 * Intended for {@link com.anedhel.lotr.block.custom.ModPillarBlock}
+			 *
+			 * @param input the input {@link Block}
+			 * @param pillar the pillar {@link Block}
+			 * @param outputCount the output count
+			 */
 			private void generatePillarRecipe(Block input, Block pillar, int outputCount) {
 				this.createShaped(RecipeCategory.BUILDING_BLOCKS, pillar, outputCount)
 						.pattern("B")
@@ -503,6 +561,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 			}
 
+			/**
+			 * Generate a frieze stone block recipe.
+			 * Intended for {@link com.anedhel.lotr.block.custom.ModFriezeBlock}
+			 *
+			 * @param input the input {@link Block}
+			 * @param frieze the frieze {@link Block}
+			 * @param outputCount the output count
+			 */
 			private void generateFriezeRecipe(Block input, Block frieze, int outputCount) {
 				this.createShaped(RecipeCategory.BUILDING_BLOCKS, frieze, outputCount)
 						.pattern("BBB")
@@ -512,6 +578,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a pavement stone block recipe.
+			 *
+			 * @param input the input {@link Block}
+			 * @param output the pavement {@link Block}
+			 * @param outputCount the output count
+			 */
 			private void generatePavementRecipe(Block input, Block output, int outputCount) {
 				this.createShaped(RecipeCategory.BUILDING_BLOCKS, output, outputCount)
 						.pattern("B")
@@ -522,6 +595,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a 2x2 checkerboard stone block recipe.
+			 *
+			 * @param inputA the first input {@link Block}
+			 * @param inputB the second input {@link Block}
+			 * @param output the checkerboard {@link Block}
+			 * @param outputCount the output count
+			 */
 			private void generate2x2CheckerboardRecipe(Block inputA, Block inputB, Block output, int outputCount) {
 				this.createShaped(RecipeCategory.BUILDING_BLOCKS, output, outputCount)
 						.pattern("AB")
@@ -534,6 +615,13 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a 2x2 stone block recipe.
+			 *
+			 * @param input the input {@link Block}
+			 * @param output the output {@link Block}
+			 * @param outputCount the output count
+			 */
 			private void generate2x2Recipe(Block input, Block output, int outputCount) {
 				this.createShaped(RecipeCategory.BUILDING_BLOCKS, output, outputCount)
 						.pattern("AA")
@@ -544,6 +632,14 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a alloy crafting recipe.
+			 *
+			 * @param inputOne the first input {@link Item}
+			 * @param inputTwo the second input {@link Item}
+			 * @param output the output {@link Item}
+			 * @param outputCount the output count
+			 */
 			private void generateAlloyCrafting(Item inputOne, Item inputTwo, Item output, int outputCount) {
 				this.createShapeless(RecipeCategory.MISC, ModItems.BRONZE_INGOT, outputCount)
 						.input(inputOne)
@@ -554,6 +650,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter, getItemPath(output) + "_from_alloy_crafting");
 			}
 
+			/**
+			 * Generate a sword crafting recipe.
+			 *
+			 * @param material the material {@link Item}
+			 * @param sword the sword {@link Item}
+			 */
 			private void generateSwordRecipe(Item material, Item sword) {
 				this.createShaped(RecipeCategory.COMBAT, sword)
 						.pattern(" X ")
@@ -566,6 +668,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate an axe crafting recipe.
+			 *
+			 * @param material the material {@link Item}
+			 * @param axe the axe {@link Item}
+			 */
 			private void generateAxeRecipe(Item material, Item axe) {
 				this.createShaped(RecipeCategory.TOOLS, axe)
 						.pattern("XX ")
@@ -578,6 +686,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a pickaxe crafting recipe.
+			 *
+			 * @param material the material {@link Item}
+			 * @param pickaxe the pickaxe {@link Item}
+			 */
 			private void generatePickaxeRecipe(Item material, Item pickaxe) {
 				this.createShaped(RecipeCategory.TOOLS, pickaxe)
 						.pattern("XXX")
@@ -590,6 +704,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a shovel crafting recipe.
+			 *
+			 * @param material the material {@link Item}
+			 * @param shovel the shovel {@link Item}
+			 */
 			private void generateShovelRecipe(Item material, Item shovel) {
 				this.createShaped(RecipeCategory.TOOLS, shovel)
 						.pattern(" X ")
@@ -602,6 +722,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a hoe crafting recipe.
+			 *
+			 * @param material the material {@link Item}
+			 * @param hoe the hoe {@link Item}
+			 */
 			private void generateHoeRecipe(Item material, Item hoe) {
 				this.createShaped(RecipeCategory.TOOLS, hoe)
 						.pattern("XX ")
@@ -614,6 +740,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a helmet crafting recipe.
+			 *
+			 * @param material the material {@link Item}
+			 * @param helmet the helmet {@link Item}
+			 */
 			private void generateHelmetRecipe(Item material, Item helmet) {
 				this.createShaped(RecipeCategory.COMBAT, helmet)
 						.pattern("XXX")
@@ -624,6 +756,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a chestplate crafting recipe.
+			 *
+			 * @param material the material {@link Item}
+			 * @param chestplate the chestplate {@link Item}
+			 */
 			private void generateChestplateRecipe(Item material, Item chestplate) {
 				this.createShaped(RecipeCategory.COMBAT, chestplate)
 						.pattern("X X")
@@ -635,6 +773,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a leggings crafting recipe.
+			 *
+			 * @param material the material {@link Item}
+			 * @param leggings the leggings {@link Item}
+			 */
 			private void generateLeggingsRecipe(Item material, Item leggings) {
 				this.createShaped(RecipeCategory.COMBAT, leggings)
 						.pattern("XXX")
@@ -646,6 +790,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter);
 			}
 
+			/**
+			 * Generate a boots crafting recipe.
+			 *
+			 * @param material the material {@link Item}
+			 * @param boots the boots {@link Item}
+			 */
 			private void generateBootsRecipe(Item material, Item boots) {
 				this.createShaped(RecipeCategory.COMBAT, boots)
 						.pattern("X X")
@@ -658,11 +808,28 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		};
 	}
 
+	/**
+	 * Create a mod stone recipe name.
+	 *
+	 * @param baseName the name of the base Block
+	 * @param variant the {@link StoneTypeVariants}
+	 * @param recipeType the recipe type suffix
+	 * @return the recipe name as String
+	 */
 	protected String createModStoneRecipeName(String baseName, StoneTypeVariants variant,
 			String recipeType) {
 		return createModStoneRecipeName(baseName, variant, variant, recipeType);
 	}
 
+	/**
+	 * Create a mod stone recipe name.
+	 *
+	 * @param baseName the name of the base Block
+	 * @param outputVariant the output {@link StoneTypeVariants}
+	 * @param inputVariant the input {@link StoneTypeVariants}
+	 * @param recipeType the recipe type suffix
+	 * @return the recipe name as String
+	 */
 	protected String createModStoneRecipeName(String baseName, StoneTypeVariants outputVariant,
 			StoneTypeVariants inputVariant, String recipeType) {
 		String outputPath = StoneTypeVariants.getRecipePath(outputVariant, baseName);

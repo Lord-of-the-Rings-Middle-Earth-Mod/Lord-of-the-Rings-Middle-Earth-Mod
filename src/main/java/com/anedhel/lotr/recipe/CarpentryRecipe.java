@@ -26,7 +26,7 @@ import java.util.List;
  * <p>
  * Carpentry recipes take a single input item and produce a single output item,
  * similar to stonecutter recipes but processed at the carpentry table.
- * </p>
+ * ToDo: Check all JavaDocs
  *
  * @author Moritz Rohleder
  * @see CarpentryRecipeDisplay

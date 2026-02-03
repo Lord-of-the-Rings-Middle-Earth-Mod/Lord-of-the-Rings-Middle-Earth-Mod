@@ -15,13 +15,8 @@ import java.util.regex.Pattern;
 
 /**
  * Utility class for data generation operations.
- * <p>
- * This class provides helper methods for working with translation keys
- * and formatting strings for language files.
- * </p>
  *
  * @author Moritz Rohleder
- * @see com.anedhel.lotr.datagen.ModEnUsLangProvider
  * @since 0.1.0
  */
 public class DataGenUtils {

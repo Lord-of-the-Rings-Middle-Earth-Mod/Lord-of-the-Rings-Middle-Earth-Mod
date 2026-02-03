@@ -20,10 +20,9 @@ import java.util.List;
 /**
  * Represents a complete set of stone blocks including multiple variants and decorative styles.
  * <p>
- * This class organizes stone blocks into families based on their state (stone, cobbled, smooth),
+ * This class organizes stone blocks into {@link BlockFamily} based on their state (stone, cobbled, smooth),
  * condition (normal, mossy, overgrown, cracked), and ornamentation (bronze, silver, gold).
  * It also manages specialized stone subsets like polished, pillars, friezes, and various brick styles.
- * </p>
  *
  * @author Moritz Rohleder
  * @see ModStoneTypes
@@ -102,7 +101,7 @@ public class ModStoneSet {
 	/**
 	 * Generates a list of all stone items for display in item groups.
 	 *
-	 * @return a list of item stacks containing all stone blocks in this set
+	 * @return a list of {@link ItemStack} containing all stone blocks in this set
 	 */
 	public List<ItemStack> getStoneItemGroupList() {
 		List<ItemStack> stoneItemGroupList = new java.util.LinkedList<>();
@@ -132,10 +131,10 @@ public class ModStoneSet {
 	}
 
 	/**
-	 * Converts a block family to a list of item stacks.
+	 * Converts a {@link BlockFamily} to a list of item stacks.
 	 *
-	 * @param family the block family to convert
-	 * @return a list of item stacks for all blocks in the family
+	 * @param family the {@link BlockFamily} to convert
+	 * @return a list of {@link ItemStack} for all blocks in the family
 	 */
 	private List<ItemStack> getBlockFamilyList(BlockFamily family) {
 		List<ItemStack> blockFamilyList = new java.util.LinkedList<>();
@@ -147,7 +146,7 @@ public class ModStoneSet {
 	/**
 	 * Retrieves all block families in this stone set.
 	 *
-	 * @return a list of all block families
+	 * @return a list of all {@link BlockFamily}
 	 */
 	public List<BlockFamily> getAllBlockFamilies() {
 		return List.of(
@@ -169,7 +168,7 @@ public class ModStoneSet {
 	/**
 	 * Retrieves all stone subsets in this stone set.
 	 *
-	 * @return a list of all stone subsets
+	 * @return a list of all {@link ModStoneSubSet}
 	 */
 	public List<ModStoneSubSet> getAllStoneSubSets() {
 		return List.of(
@@ -193,6 +192,7 @@ public class ModStoneSet {
 	 * Retrieves a specific variant block from the stone family.
 	 *
 	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
 	 * @return the block matching the variant name
 	 */
 	public Block getStoneVariant(String variant) {
@@ -203,7 +203,14 @@ public class ModStoneSet {
 		return MOSSY_STONE_FAMILY;
 	}
 
-	// While the method isn´t used at the moment, we provide this Getter as it may be useful in the future
+	/**
+	 * Retrieves a specific variant block from the mossy stone family.
+	 * While the method isn´t used at the moment, we provide this Getter as it may be useful in the future.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getMossyStoneVariant(String variant) {
 		return ModUtil.getBlockFromFamily(MOSSY_STONE_FAMILY, variant);
 	}
@@ -212,7 +219,14 @@ public class ModStoneSet {
 		return OVERGROWN_STONE_FAMILY;
 	}
 
-	// While the method isn´t used at the moment, we provide this Getter as it may be useful in the future
+	/**
+	 * Retrieves a specific variant block from the overgrown stone family.
+	 * While the method isn´t used at the moment, we provide this Getter as it may be useful in the future.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getOvergrownStoneVariant(String variant) {
 		return ModUtil.getBlockFromFamily(OVERGROWN_STONE_FAMILY, variant);
 	}
@@ -221,6 +235,14 @@ public class ModStoneSet {
 		return COBBLED_FAMILY;
 	}
 
+	/**
+	 * Retrieves a specific variant block from the cobbled family.
+	 * While the method isn´t used at the moment, we provide this Getter as it may be useful in the future.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getCobbledVariant(String variant) {
 		return ModUtil.getBlockFromFamily(COBBLED_FAMILY, variant);
 	}
@@ -229,7 +251,14 @@ public class ModStoneSet {
 		return MOSSY_COBBLED_FAMILY;
 	}
 
-	// While the method isn´t used at the moment, we provide this Getter as it may be useful in the future
+	/**
+	 * Retrieves a specific variant block from the mossy cobbled family.
+	 * While the method isn´t used at the moment, we provide this Getter as it may be useful in the future.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getMossyCobbledVariant(String variant) {
 		return ModUtil.getBlockFromFamily(MOSSY_COBBLED_FAMILY, variant);
 	}
@@ -238,7 +267,14 @@ public class ModStoneSet {
 		return OVERGROWN_COBBLED_FAMILY;
 	}
 
-	// While the method isn´t used at the moment, we provide this Getter as it may be useful in the future
+	/**
+	 * Retrieves a specific variant block from the overgrown cobbled family.
+	 * While the method isn´t used at the moment, we provide this Getter as it may be useful in the future.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getOvergrownCobbledVariant(String variant) {
 		return ModUtil.getBlockFromFamily(OVERGROWN_COBBLED_FAMILY, variant);
 	}
@@ -247,6 +283,13 @@ public class ModStoneSet {
 		return SMOOTH_FAMILY;
 	}
 
+	/**
+	 * Retrieves a specific variant block from the smooth family.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getSmoothVariant(String variant) {
 		return ModUtil.getBlockFromFamily(SMOOTH_FAMILY, variant);
 	}
@@ -255,7 +298,14 @@ public class ModStoneSet {
 		return MOSSY_SMOOTH_FAMILY;
 	}
 
-	// While the method isn´t used at the moment, we provide this Getter as it may be useful in the future
+	/**
+	 * Retrieves a specific variant block from the mossy smooth family.
+	 * While the method isn´t used at the moment, we provide this Getter as it may be useful in the future.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getMossySmoothVariant(String variant) {
 		return ModUtil.getBlockFromFamily(MOSSY_SMOOTH_FAMILY, variant);
 	}
@@ -264,7 +314,14 @@ public class ModStoneSet {
 		return OVERGROWN_SMOOTH_FAMILY;
 	}
 
-	// While the method isn´t used at the moment, we provide this Getter as it may be useful in the future
+	/**
+	 * Retrieves a specific variant block from the overgrown smooth family.
+	 * While the method isn´t used at the moment, we provide this Getter as it may be useful in the future.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getOvergrownSmoothVariant(String variant) {
 		return ModUtil.getBlockFromFamily(OVERGROWN_SMOOTH_FAMILY, variant);
 	}
@@ -273,6 +330,13 @@ public class ModStoneSet {
 		return CRACKED_SMOOTH_FAMILY;
 	}
 
+	/**
+	 * Retrieves a specific variant block from the cracked smooth family.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getCrackedSmoothVariant(String variant) {
 		return ModUtil.getBlockFromFamily(CRACKED_SMOOTH_FAMILY, variant);
 	}
@@ -281,7 +345,14 @@ public class ModStoneSet {
 		return MOSSY_CRACKED_SMOOTH_FAMILY;
 	}
 
-	// While the method isn´t used at the moment, we provide this Getter as it may be useful in the future
+	/**
+	 * Retrieves a specific variant block from the mossy cracked smooth family.
+	 * While the method isn´t used at the moment, we provide this Getter as it may be useful in the future.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getMossyCrackedSmoothVariant(String variant) {
 		return ModUtil.getBlockFromFamily(MOSSY_CRACKED_SMOOTH_FAMILY, variant);
 	}
@@ -290,7 +361,14 @@ public class ModStoneSet {
 		return OVERGROWN_CRACKED_SMOOTH_FAMILY;
 	}
 
-	// While the method isn´t used at the moment, we provide this Getter as it may be useful in the future
+	/**
+	 * Retrieves a specific variant block from the overgrown cracked smooth family.
+	 * While the method isn´t used at the moment, we provide this Getter as it may be useful in the future.
+	 *
+	 * @param variant the variant name (e.g., "stairs", "slab")
+	 * @see ModUtil#getBlockFromFamily(BlockFamily, String)
+	 * @return the block matching the variant name
+	 */
 	public Block getOvergrownCrackedSmoothVariant(String variant) {
 		return ModUtil.getBlockFromFamily(OVERGROWN_CRACKED_SMOOTH_FAMILY, variant);
 	}

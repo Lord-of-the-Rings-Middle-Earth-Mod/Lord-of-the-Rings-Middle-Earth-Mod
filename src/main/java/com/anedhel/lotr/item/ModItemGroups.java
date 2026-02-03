@@ -25,13 +25,10 @@ import net.minecraft.util.Identifier;
 /**
  * This class is responsible for creating and registering custom item groups for the mod.
  * <p>
- * The order of the item groups being registered is also the order they appear in-game.
  * The order of the items within each group is determined by the order they are added in the entries method.
  * </p>
  *
  * @author Moritz Rohleder
- * @see ModItems
- * @see ModBlocks
  * @since 0.1.0
  */
 public class ModItemGroups {
@@ -113,9 +110,6 @@ public class ModItemGroups {
 						entries.add(ModItems.COOKED_CORN);
 					})).build());
 
-	/**
-	 * Logs the registration of item groups for debugging purposes.
-	 */
 	public static void registerItemGroups() {
 		LotRMEMod.LOGGER.info("Registering Item Groups for " + LotRMEMod.MOD_ID);
 	}

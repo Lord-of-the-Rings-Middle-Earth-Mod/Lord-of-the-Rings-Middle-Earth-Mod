@@ -23,7 +23,6 @@ import net.minecraft.state.property.Properties;
  * Represents a custom crop block for tomatoes in the Vanilla Extensions Mod.
  * <p>
  * This crop grows through 6 stages (0-5) and uses custom tomato seeds for planting.
- * </p>
  *
  * @author Moritz Rohleder
  * @see net.minecraft.block.CropBlock
@@ -57,7 +56,6 @@ public class TomatoCropBlock extends CropBlock {
 	 * <p>
 	 * This method ensures that the {@link #AGE} property is included
 	 * in the block's state, allowing the crop's growth stages to be tracked.
-	 * </p>
 	 *
 	 * @param builder the {@link StateManager.Builder} used to define the block's state properties.
 	 */

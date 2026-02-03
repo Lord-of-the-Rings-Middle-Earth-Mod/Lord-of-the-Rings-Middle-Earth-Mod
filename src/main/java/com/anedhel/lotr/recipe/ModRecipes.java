@@ -20,13 +20,9 @@ import net.minecraft.util.Identifier;
 /**
  * Central registry for all custom recipes and recipe displays added by the mod.
  * <p>
- * This class registers recipe serializers, recipe types, and recipe displays
- * for custom crafting systems like the carpentry table.
- * </p>
+ * This class registers recipe serializers, recipe types, and recipe displays.
  *
  * @author Moritz Rohleder
- * @see CarpentryRecipe
- * @see CarpentryRecipeDisplay
  * @since 0.1.0
  */
 public class ModRecipes {
@@ -43,9 +39,6 @@ public class ModRecipes {
 				}
 			});
 
-	/**
-	 * Logs the registration of custom recipes for debugging purposes.
-	 */
 	public static void registerRecipes() {
 		LotRMEMod.LOGGER.info("Registering Custom Recipes for " + LotRMEMod.MOD_ID);
 		registerRecipeDisplays();
