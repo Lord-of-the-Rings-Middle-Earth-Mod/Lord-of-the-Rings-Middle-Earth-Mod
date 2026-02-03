@@ -14,6 +14,16 @@ import net.minecraft.util.StringIdentifiable;
 
 import java.util.Locale;
 
+/**
+ * Enum representing the different frieze types for the Vanilla Extensions Mod.
+ * <p>
+ * Each type describes a possible connection or ending of a frieze block
+ * and is used at runtime for block rendering.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @since 0.1.0
+ */
 public enum ModFriezeType implements StringIdentifiable {
 	SINGLE("single"),
 	NORTH_END("n_end"),

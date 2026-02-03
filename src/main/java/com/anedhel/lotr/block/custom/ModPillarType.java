@@ -14,6 +14,15 @@ import net.minecraft.util.StringIdentifiable;
 
 import java.util.Locale;
 
+/**
+ * Enum representing the different pillar types for the Vanilla Extensions Mod.
+ * <p>
+ * Each type describes a possible connection or segment of a pillar block and is used at runtime for block rendering.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @since 0.1.0
+ */
 public enum ModPillarType implements StringIdentifiable {
 	SINGLE("single"),
 	TOP("top"),

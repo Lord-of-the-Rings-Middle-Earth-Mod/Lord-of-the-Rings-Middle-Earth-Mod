@@ -19,6 +19,16 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
 
+/**
+ * Represents a custom crop block for tomatoes in the Vanilla Extensions Mod.
+ * <p>
+ * This crop grows through 6 stages (0-5) and uses custom tomato seeds for planting.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see net.minecraft.block.CropBlock
+ * @since 0.1.0
+ */
 public class TomatoCropBlock extends CropBlock {
 
 	public static final int MAX_AGE = 5;
@@ -28,9 +38,32 @@ public class TomatoCropBlock extends CropBlock {
 		super(settings);
 	}
 
+	/**
+	 * Retrieves the seed item associated with this crop block.
+	 * <p>
+	 * This method is overridden to return the custom {@link ModItems#TOMATO_SEEDS} item
+	 * used for planting this crop.
+	 * </p>
+	 *
+	 * @return the {@link ItemConvertible} representing the tomato seeds.
+	 */
 	@Override
 	protected ItemConvertible getSeedsItem() {
 		return ModItems.TOMATO_SEEDS;
+	}
+
+	/**
+	 * Adds the age property to the block's state manager.
+	 * <p>
+	 * This method ensures that the {@link #AGE} property is included
+	 * in the block's state, allowing the crop's growth stages to be tracked.
+	 * </p>
+	 *
+	 * @param builder the {@link StateManager.Builder} used to define the block's state properties.
+	 */
+	@Override
+	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+		builder.add(AGE);
 	}
 
 	@Override
@@ -41,10 +74,5 @@ public class TomatoCropBlock extends CropBlock {
 	@Override
 	public int getMaxAge() {
 		return MAX_AGE;
-	}
-
-	@Override
-	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-		builder.add(AGE);
 	}
 }
