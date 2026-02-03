@@ -87,9 +87,9 @@ public class ModFriezeBlock extends Block {
 	}
 
 	/**
-	 * Fügt die Eigenschaft {@link #FRIEZE_TYPE} zum Zustandsmanager des Blocks hinzu.
+	 * Adds the {@link #FRIEZE_TYPE} property to the block's state manager.
 	 *
-	 * @param builder der Zustandsmanager-Builder, der verwendet wird, um die Blockeigenschaften zu definieren
+	 * @param builder the state manager builder used to define the block's state properties
 	 */
 	@Override
 	protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {

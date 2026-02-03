@@ -10,6 +10,18 @@
 
 package com.anedhel.lotr.block.woodtypes;
 
+/**
+ * Enum representing all wood types available in the mod.
+ * <p>
+ * Each wood type associates a {@link ModWoodSet} containing all block variants
+ * with a display name used in translations.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModWoodSet
+ * @see PineBlocks
+ * @since 0.1.0
+ */
 public enum ModWoodTypes {
 
 	PINE(PineBlocks.PINE_SET, "Pine");

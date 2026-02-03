@@ -21,6 +21,19 @@ import net.minecraft.block.ComposterBlock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Main mod initialization class for the Lord of the Rings Middle Earth Mod.
+ * <p>
+ * This class handles the registration of all mod components including blocks, items,
+ * item groups, screen handlers, recipes, and compostable items.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModBlocks
+ * @see ModItems
+ * @see ModItemGroups
+ * @since 0.1.0
+ */
 public class LotRMEMod implements ModInitializer {
 
 	public static final String MOD_ID = "lotr";
@@ -38,6 +51,9 @@ public class LotRMEMod implements ModInitializer {
 		addCompostableItems();
 	}
 
+	/**
+	 * Registers mod items as compostable with their respective composting chances.
+	 */
 	private void addCompostableItems() {
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.TOMATO_SEEDS, 0.3f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.TOMATO, 0.65f);
