@@ -60,6 +60,9 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add(ModBlocks.TOMATO_CROP, "Tomato Crop");
 		translationBuilder.add(ModBlocks.WILD_TOMATO, "Wild Tomato");
 		translationBuilder.add(ModBlocks.POTTED_WILD_TOMATO, "Potted Wild Tomato");
+		translationBuilder.add(ModItems.CORN_SEEDS, "Corn Seeds");
+		translationBuilder.add(ModBlocks.CORN_CROP, "Corn Crop");
+		translationBuilder.add(ModBlocks.WILD_CORN, "Wild Corn");
 
 		translationBuilder.add(ModItems.TIN_INGOT, "Tin Ingot");
 		translationBuilder.add(ModItems.SILVER_INGOT, "Silver Ingot");

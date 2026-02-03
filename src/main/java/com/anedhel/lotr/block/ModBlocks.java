@@ -12,6 +12,7 @@ package com.anedhel.lotr.block;
 
 import com.anedhel.lotr.LotRMEMod;
 import com.anedhel.lotr.block.custom.CarpentryTable;
+import com.anedhel.lotr.block.custom.crops.CornCropBlock;
 import com.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import com.anedhel.lotr.block.stonetypes.BlueslateBlocks;
 import com.anedhel.lotr.block.woodtypes.PineBlocks;
@@ -44,6 +45,9 @@ public class ModBlocks {
 	public static final Block TOMATO_CROP = registerBlockWithoutBlockItem("tomato_crop",
 			settings -> new TomatoCropBlock(settings.noCollision().ticksRandomly().breakInstantly()
 					.sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY)));
+	public static final Block CORN_CROP = registerBlockWithoutBlockItem("corn_crop",
+			settings -> new CornCropBlock(settings.noCollision().ticksRandomly().breakInstantly()
+					.sounds(BlockSoundGroup.CROP).pistonBehavior(PistonBehavior.DESTROY)));
 
 	public static final Block WILD_TOMATO = registerBlock("wild_tomato",
 			settings -> new FlowerBlock(StatusEffects.SATURATION, 0.5f,
@@ -57,6 +61,14 @@ public class ModBlocks {
 			settings -> new FlowerPotBlock(WILD_TOMATO,
 					settings.breakInstantly()
 							.nonOpaque()
+							.pistonBehavior(PistonBehavior.DESTROY)));
+
+	public static final Block WILD_CORN = registerBlock("wild_corn",
+			settings -> new TallFlowerBlock(settings.noCollision()
+							.breakInstantly()
+							.nonOpaque()
+							.sounds(BlockSoundGroup.GRASS)
+							.offset(AbstractBlock.OffsetType.XZ)
 							.pistonBehavior(PistonBehavior.DESTROY)));
 
 	public static final Block SILVER_ORE = registerBlock("silver_ore",

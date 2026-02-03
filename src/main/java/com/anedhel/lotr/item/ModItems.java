@@ -43,6 +43,8 @@ public class ModItems {
 			settings -> new Item(settings.food(ModFoodComponents.TOMATO)));
 	public static final Item BAKED_TOMATO = registerItem("baked_tomato",
 			settings -> new Item(settings.food(ModFoodComponents.BAKED_TOMATO)));
+	public static final Item CORN_SEEDS = registerItem("corn_seeds",
+			settings -> new BlockItem(ModBlocks.CORN_CROP, settings));
 	public static final Item CORN = registerItem("corn",
 			settings -> new Item(settings.food(ModFoodComponents.CORN)));
 	public static final Item COOKED_CORN = registerItem("cooked_corn",

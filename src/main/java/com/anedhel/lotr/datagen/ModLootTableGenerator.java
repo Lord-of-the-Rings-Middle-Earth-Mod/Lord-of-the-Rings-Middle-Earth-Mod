@@ -11,6 +11,7 @@
 package com.anedhel.lotr.datagen;
 
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.block.custom.crops.CornCropBlock;
 import com.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import com.anedhel.lotr.block.stonetypes.ModStoneSet;
 import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
@@ -21,11 +22,14 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.TallPlantBlock;
+import net.minecraft.block.enums.DoubleBlockHalf;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
 import net.minecraft.loot.LootTable;
+import net.minecraft.loot.condition.AnyOfLootCondition;
 import net.minecraft.loot.condition.BlockStatePropertyLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.ApplyBonusLootFunction;
@@ -82,6 +86,15 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 				ModBlocks.WILD_TOMATO, ModItems.TOMATO, UniformLootNumberProvider.create(1.0F, 2.0F)
 		));
 		addDrop(ModBlocks.POTTED_WILD_TOMATO, pottedPlantDrops(ModBlocks.WILD_TOMATO));
+
+		addDrop(ModBlocks.WILD_CORN, (Block block) -> this.dropsWithProperty(block, TallPlantBlock.HALF, DoubleBlockHalf.LOWER));
+		AnyOfLootCondition.Builder builder2 =
+				BlockStatePropertyLootCondition.builder(ModBlocks.CORN_CROP).properties(StatePredicate.Builder.create()
+								.exactMatch(CornCropBlock.AGE, 7))
+						.or(BlockStatePropertyLootCondition.builder(ModBlocks.CORN_CROP).properties(StatePredicate.Builder.create()
+								.exactMatch(CornCropBlock.AGE, 8)));
+
+		addDrop(ModBlocks.CORN_CROP, cropDrops(ModBlocks.CORN_CROP, ModItems.CORN, ModItems.CORN_SEEDS, builder2));
 	}
 
 	/**

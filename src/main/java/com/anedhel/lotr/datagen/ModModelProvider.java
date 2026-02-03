@@ -14,6 +14,7 @@ import com.anedhel.lotr.LotRMEMod;
 import com.anedhel.lotr.block.ModBlocks;
 import com.anedhel.lotr.block.custom.ModPillarBlock;
 import com.anedhel.lotr.block.custom.ModPillarType;
+import com.anedhel.lotr.block.custom.crops.CornCropBlock;
 import com.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import com.anedhel.lotr.block.stonetypes.ModStoneSubSet;
 import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
@@ -62,6 +63,8 @@ public class ModModelProvider extends FabricModelProvider {
 
 		blockStateModelGenerator.registerCrop(ModBlocks.TOMATO_CROP, TomatoCropBlock.AGE, 0, 1, 2, 3, 4, 5);
 		blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.WILD_TOMATO, ModBlocks.POTTED_WILD_TOMATO, BlockStateModelGenerator.CrossType.NOT_TINTED);
+		blockStateModelGenerator.registerCrop(ModBlocks.CORN_CROP, CornCropBlock.AGE, 0, 1, 2, 3, 4, 5, 6, 7, 8);
+		blockStateModelGenerator.registerDoubleBlock(ModBlocks.WILD_CORN, CrossType.NOT_TINTED);
 
 		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SILVER_ORE);
 		blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DEEPSLATE_SILVER_ORE);

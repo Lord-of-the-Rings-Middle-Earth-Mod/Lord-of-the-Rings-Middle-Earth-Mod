@@ -79,6 +79,9 @@ public class LotRMEModClient implements ClientModInitializer {
 		BlockRenderLayerMap.putBlock(ModBlocks.TOMATO_CROP, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.WILD_TOMATO, BlockRenderLayer.CUTOUT);
 		BlockRenderLayerMap.putBlock(ModBlocks.POTTED_WILD_TOMATO, BlockRenderLayer.CUTOUT);
+
+		BlockRenderLayerMap.putBlock(ModBlocks.CORN_CROP, BlockRenderLayer.CUTOUT);
+		BlockRenderLayerMap.putBlock(ModBlocks.WILD_CORN, BlockRenderLayer.CUTOUT);
 	}
 
 	/**
