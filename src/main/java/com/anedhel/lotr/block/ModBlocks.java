@@ -29,6 +29,20 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
 
+/**
+ * Central registry for all custom blocks added by the mod.
+ * <p>
+ * This class registers blocks including crops, flowers, ores, metal blocks,
+ * and custom functional blocks. It provides utility methods for block registration
+ * and automatically creates associated block items.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see PineBlocks
+ * @see BlueslateBlocks
+ * @see CarpentryTable
+ * @since 0.1.0
+ */
 public class ModBlocks {
 
 	public static final Block TOMATO_CROP = registerBlockWithoutBlockItem("tomato_crop",
@@ -72,6 +86,13 @@ public class ModBlocks {
 	public static final Block CARPENTRY_TABLE = registerBlock("carpentry_table",
 			settings -> new CarpentryTable(settings.strength(2.5f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
 
+	/**
+	 * Registers a block and creates its associated block item.
+	 *
+	 * @param name the registry name for the block
+	 * @param blockFactory the function to create the block from settings
+	 * @return the registered block
+	 */
 	public static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> blockFactory){
 		Block toRegister =
 				blockFactory.apply(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK,
@@ -80,18 +101,38 @@ public class ModBlocks {
 		return Registry.register(Registries.BLOCK, Identifier.of(LotRMEMod.MOD_ID, name), toRegister);
 	}
 
+	/**
+	 * Registers a block without creating a block item.
+	 * <p>
+	 * Used for blocks that should not appear in the creative inventory directly,
+	 * such as crop blocks that are placed via seeds.
+	 * </p>
+	 *
+	 * @param name the registry name for the block
+	 * @param blockFactory the function to create the block from settings
+	 * @return the registered block
+	 */
 	public static Block registerBlockWithoutBlockItem(String name,
 			Function<AbstractBlock.Settings, Block> blockFactory){
 		return Registry.register(Registries.BLOCK, Identifier.of(LotRMEMod.MOD_ID, name),
 				blockFactory.apply(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(LotRMEMod.MOD_ID, name)))));
 	}
 
+	/**
+	 * Creates and registers a block item for the given block.
+	 *
+	 * @param name the registry name for the item
+	 * @param block the block to create an item for
+	 */
 	private static void registerBlockItem(String name, Block block){
 		Registry.register(Registries.ITEM, Identifier.of(LotRMEMod.MOD_ID, name),
 				new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey()
 						.registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(LotRMEMod.MOD_ID, name)))));
 	}
 
+	/**
+	 * Registers all mod blocks including wood and stone block sets.
+	 */
 	public static void registerModBlocks(){
 		LotRMEMod.LOGGER.info("Registering Mod Blocks for " + LotRMEMod.MOD_ID);
 		registerModWoodBlocks();

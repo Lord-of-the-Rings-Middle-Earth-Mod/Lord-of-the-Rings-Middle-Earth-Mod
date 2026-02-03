@@ -17,6 +17,19 @@ import net.minecraft.registry.RegistryKey;
 
 import java.util.List;
 
+/**
+ * Enum representing complete gear sets including tools and armor.
+ * <p>
+ * Each gear type associates all related items (tools and armor pieces) with
+ * their material and provides methods to retrieve items for creative tabs.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModItems
+ * @see ModArmorMaterials
+ * @see ModToolMaterials
+ * @since 0.1.0
+ */
 public enum ModGearType {
 	BRONZE(ModItems.BRONZE_INGOT, ModArmorMaterials.BRONZE_ARMOR_KEY,
 			ModItems.BRONZE_HELMET, ModItems.BRONZE_CHESTPLATE, ModItems.BRONZE_LEGGINGS,
@@ -53,6 +66,11 @@ public enum ModGearType {
 		this.hoe = hoe;
 	}
 
+	/**
+	 * Generates a list of tool items for display in the tools item group.
+	 *
+	 * @return a list of item stacks containing all tools in this gear set
+	 */
 	public List<ItemStack> getToolItemGroupList() {
 		return List.of(
 				new ItemStack(this.axe),
@@ -62,6 +80,11 @@ public enum ModGearType {
 		);
 	}
 
+	/**
+	 * Generates a list of armor items and weapons for display in the combat item group.
+	 *
+	 * @return a list of item stacks containing armor pieces and sword
+	 */
 	public List<ItemStack> getArmorItemGroupList() {
 		return List.of(
 				new ItemStack(this.helmet),

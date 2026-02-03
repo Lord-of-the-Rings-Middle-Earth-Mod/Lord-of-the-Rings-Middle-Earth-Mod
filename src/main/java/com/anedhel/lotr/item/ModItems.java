@@ -22,6 +22,19 @@ import net.minecraft.util.Identifier;
 
 import java.util.function.Function;
 
+/**
+ * Central registry for all custom items added by the mod.
+ * <p>
+ * This class registers items including raw materials, ingots, food items,
+ * tools, and armor pieces. It provides a utility method for item registration.
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModToolMaterials
+ * @see ModArmorMaterials
+ * @see ModFoodComponents
+ * @since 0.1.0
+ */
 public class ModItems {
 
 	public static final Item RAW_TIN = registerItem("raw_tin", Item::new);
@@ -62,11 +75,21 @@ public class ModItems {
 	public static final Item BRONZE_BOOTS = registerItem("bronze_boots",
 			settings -> new Item(settings.armor(ModArmorMaterials.BRONZE_ARMOR_MATERIAL, EquipmentType.BOOTS)));
 
+	/**
+	 * Registers an item with the given name and factory function.
+	 *
+	 * @param name the registry name for the item
+	 * @param itemFactory the function to create the item from settings
+	 * @return the registered item
+	 */
 	private static Item registerItem(String name, Function<Item.Settings, Item> itemFactory) {
 		return Registry.register(Registries.ITEM, Identifier.of(LotRMEMod.MOD_ID, name), 
 				itemFactory.apply(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(LotRMEMod.MOD_ID, name)))));
 	}
 
+	/**
+	 * Logs the registration of mod items for debugging purposes.
+	 */
 	public static void registerModItems() {
 		LotRMEMod.LOGGER.info("Registering Mod Items for " + LotRMEMod.MOD_ID);
 	}

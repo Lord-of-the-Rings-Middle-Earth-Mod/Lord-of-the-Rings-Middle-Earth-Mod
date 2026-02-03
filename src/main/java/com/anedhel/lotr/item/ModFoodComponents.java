@@ -12,6 +12,17 @@ package com.anedhel.lotr.item;
 
 import net.minecraft.component.type.FoodComponent;
 
+/**
+ * Defines food components for custom food items added by the mod.
+ * <p>
+ * Food components specify properties like nutrition, saturation, and whether
+ * the food is always edible (can be eaten when not hungry).
+ * </p>
+ *
+ * @author Moritz Rohleder
+ * @see ModItems
+ * @since 0.1.0
+ */
 public class ModFoodComponents {
 
 	public static final FoodComponent TOMATO = new FoodComponent.Builder()
