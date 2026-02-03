@@ -1,3 +1,13 @@
+/*
+ * Copyright (c) 2026.
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * The Vanilla Extensions Mod is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ * The Vanilla Extensions Mod is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>
+ */
+
 package com.anedhel.lotr.datagen;
 
 import com.anedhel.lotr.block.ModBlocks;
@@ -98,6 +108,7 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 		}
 	}
 
+	// Currently the itemDrop is always Raw Tin, but that will change with the addition of more ores.
 	private LootTable.Builder multipleOreDrops(Block blockDrop, Item itemDrop, UniformLootNumberProvider dropRange) {
 		RegistryWrapper.Impl<Enchantment> impl = this.registries.getOrThrow(RegistryKeys.ENCHANTMENT);
 		return this.dropsWithSilkTouch(
@@ -110,6 +121,8 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 		);
 	}
 
+	// Currently the drop is always Wild Tomato and the item Tomato, but that will change with the addition of more wild
+	// flowers.
 	private LootTable.Builder wildFlowerDrops (Block drop, Item item, UniformLootNumberProvider dropRange) {
 		return this.dropsWithShears(drop, this.applyExplosionDecay(
 				drop, ItemEntry.builder(item).apply(SetCountLootFunction.builder(dropRange))

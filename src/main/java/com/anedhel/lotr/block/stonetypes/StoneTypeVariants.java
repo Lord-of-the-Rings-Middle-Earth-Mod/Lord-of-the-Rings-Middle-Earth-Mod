@@ -1,3 +1,13 @@
+/*
+ * Copyright (c) 2026.
+ * Authors/Developers are listed in the CONTRIBUTING.md
+ *
+ * The Vanilla Extensions Mod is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+ *
+ * The Vanilla Extensions Mod is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR PARTICULAR PURPOSE. See the GNU General Public License for more details.
+ * You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>
+ */
+
 package com.anedhel.lotr.block.stonetypes;
 
 public enum StoneTypeVariants {
@@ -116,6 +126,8 @@ public enum StoneTypeVariants {
 
 	/**
 	 * Returns the variant, from which the given ornamented variant is crafted
+	 * While not used now, the Getter might be used in the future
+	 *
 	 * @param variant the ornamented variant
 	 * @return the base variant
 	 */
@@ -147,6 +159,7 @@ public enum StoneTypeVariants {
 
 	/**
 	 * Returns the base variant from which the given cracked variant is derived.
+	 * While not used now, the Getter might be used in the future
 	 *
 	 * @param variant the cracked variant
 	 * @return the base variant
@@ -197,6 +210,7 @@ public enum StoneTypeVariants {
 
 	/**
 	 * Returns the base variant from which the given mossy or overgrown variant is derived.
+	 * While not used now, the Getter might be used in the future
 	 *
 	 * @param variant the mossy or overgrown variant
 	 * @return the base variant
@@ -235,6 +249,7 @@ public enum StoneTypeVariants {
 
 	/**
 	 * Returns the mossy variant from the given overgrown variant.
+	 * While not used now, the Getter might be used in the future
 	 *
 	 * @param variant the overgrown variant
 	 * @return the corresponding mossy variant
@@ -271,6 +286,7 @@ public enum StoneTypeVariants {
 		}
 	}
 
+	// While not used now, the Getter might be used in the future
 	public static boolean isOrnamented(StoneTypeVariants variant) {
 		switch(variant) {
 			case BRONZE_STONE, MOSSY_BRONZE_STONE, OVERGROWN_BRONZE_STONE,
@@ -284,7 +300,7 @@ public enum StoneTypeVariants {
 		}
 	}
 
-
+	// While not used now, the Getter might be used in the future
 	public static boolean isCracked(StoneTypeVariants variant) {
 		switch(variant) {
 			case CRACKED_STONE, CRACKED_MOSSY_STONE, CRACKED_OVERGROWN_STONE,
