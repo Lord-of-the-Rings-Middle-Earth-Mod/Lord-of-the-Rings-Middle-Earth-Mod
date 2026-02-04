@@ -23,6 +23,8 @@ ___
 + Added Corn and Cooked Corn as food items, with the following properties:
   + Corn: 3 hunger, 0.25 saturation, always edible
   + Cooked Corn: 6 hunger, 1.0 saturation
++ Added Wild-Corn as a tall flower
++ Added Corn Crops grown from Corn Seeds, as two tall crops blocks
 + Added Tin
   + Tin Ore for Stone and Deepslate
   + Raw Tin and Raw Tin Block
