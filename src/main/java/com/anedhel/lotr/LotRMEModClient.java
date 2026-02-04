@@ -56,8 +56,16 @@ public class LotRMEModClient implements ClientModInitializer {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
 			ModWoodSet woodSet = woodType.getModWoodSet();
 
+			BlockRenderLayerMap.putBlock(woodSet.getWoodVariant("door"), BlockRenderLayer.CUTOUT);
+			BlockRenderLayerMap.putBlock(woodSet.getWoodVariant("trapdoor"), BlockRenderLayer.CUTOUT);
+
+			BlockRenderLayerMap.putBlock(woodSet.getStrippedWoodVariant("door"), BlockRenderLayer.CUTOUT);
+			BlockRenderLayerMap.putBlock(woodSet.getStrippedWoodVariant("trapdoor"), BlockRenderLayer.CUTOUT);
+
 			BlockRenderLayerMap.putBlock(woodSet.getPlanksVariant("door"), BlockRenderLayer.CUTOUT);
 			BlockRenderLayerMap.putBlock(woodSet.getPlanksVariant("trapdoor"), BlockRenderLayer.CUTOUT);
+
+			BlockRenderLayerMap.putBlock(woodSet.getSapling(), BlockRenderLayer.CUTOUT);
 		}
 	}
 

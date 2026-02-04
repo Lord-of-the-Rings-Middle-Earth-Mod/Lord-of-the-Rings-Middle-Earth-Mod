@@ -11,8 +11,12 @@
 package com.anedhel.lotr;
 
 import com.anedhel.lotr.datagen.*;
+import com.anedhel.lotr.world.ModConfiguredFeatures;
+import com.anedhel.lotr.world.ModPlacedFeatures;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.minecraft.registry.RegistryBuilder;
+import net.minecraft.registry.RegistryKeys;
 
 /**
  * Data generator initialization class for the Lord of the Rings Middle Earth Mod.
@@ -43,5 +47,17 @@ public class LotRMEModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModLootTableGenerator::new);
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
+		pack.addProvider(ModRegistryDataGenerator::new);
+	}
+
+	/**
+	 * Builds custom registries for configured and placed features.
+	 *
+	 * @param registryBuilder The registry builder used to add custom registries.
+	 */
+	@Override
+	public void buildRegistry(RegistryBuilder registryBuilder) {
+		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
+		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
 	}
 }

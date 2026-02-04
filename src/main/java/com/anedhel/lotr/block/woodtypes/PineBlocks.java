@@ -13,7 +13,9 @@ package com.anedhel.lotr.block.woodtypes;
 import com.anedhel.lotr.LotRMEMod;
 import com.anedhel.lotr.block.ModBlockTags;
 import com.anedhel.lotr.item.ModItemTags;
+import com.anedhel.lotr.world.tree.ModSaplingGenerators;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.sound.BlockSoundGroup;
@@ -133,10 +135,29 @@ public class PineBlocks{
 			.trapdoor(PINE_PLANKS_TRAPDOOR)
 			.build();
 
+	public static Block PINE_LEAVES = registerBlock("pine_leaves",
+			settings -> new TintedParticleLeavesBlock(0.01F, settings
+					.mapColor(MapColor.DARK_GREEN)
+					.strength(0.2F)
+					.ticksRandomly()
+					.sounds(BlockSoundGroup.GRASS)
+					.nonOpaque()
+					.allowsSpawning(Blocks::canSpawnOnLeaves)
+					.suffocates(Blocks::never)
+					.blockVision(Blocks::never)
+					.burnable()
+					.pistonBehavior(PistonBehavior.DESTROY)
+					.solidBlock(Blocks::never)));
+	public static Block PINE_SAPLING = registerBlock("pine_sapling",
+			settings -> new SaplingBlock(ModSaplingGenerators.PINE, settings.mapColor(MapColor.DARK_GREEN)
+					.noCollision().ticksRandomly().breakInstantly()
+					.sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
+
 	public static ModWoodSet PINE_SET = new ModWoodSet(
 			PINE_LOG, PINE_WOOD_FAMILY,
 			STRIPPED_PINE_LOG, STRIPPED_PINE_WOOD_FAMILY,
 			PINE_PLANKS_FAMILY,
+			PINE_SAPLING, PINE_LEAVES,
 			ModBlockTags.PINE_LOGS, ModItemTags.PINE_LOGS
 	);
 

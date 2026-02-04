@@ -26,7 +26,6 @@ import net.minecraft.util.Identifier;
  * This class is responsible for creating and registering custom item groups for the mod.
  * <p>
  * The order of the items within each group is determined by the order they are added in the entries method.
- * </p>
  *
  * @author Moritz Rohleder
  * @since 0.1.0
@@ -97,6 +96,10 @@ public class ModItemGroups {
 					.entries(((displayContext, entries) -> {
 						entries.add(ModBlocks.WILD_TOMATO);
 						entries.add(ModItems.TOMATO_SEEDS);
+						entries.add(ModBlocks.WILD_CORN);
+						entries.add(ModItems.CORN_SEEDS);
+						entries.add(PineBlocks.PINE_LEAVES);
+						entries.add(PineBlocks.PINE_SAPLING);
 					})).build());
 
 	public static final ItemGroup LOTR_FOOD = Registry.register(Registries.ITEM_GROUP,

@@ -119,6 +119,10 @@ public class ModModelProvider extends FabricModelProvider {
 			BlockStateModelGenerator.BlockTexturePool pinePlanksTexturePool =
 					blockStateModelGenerator.registerCubeAllModelTexturePool(woodSet.getPlanksVariant("base"));
 			pinePlanksTexturePool.family(woodSet.getPlanksFamily());
+
+			blockStateModelGenerator.registerSingleton(woodSet.getLeaves(), TexturedModel.LEAVES);
+			blockStateModelGenerator.registerTintableCrossBlockState(woodSet.getSapling(),
+					CrossType.NOT_TINTED);
 		}
 	}
 

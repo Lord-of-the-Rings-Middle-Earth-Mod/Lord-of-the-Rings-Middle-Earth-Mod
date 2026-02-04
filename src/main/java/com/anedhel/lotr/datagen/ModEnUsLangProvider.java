@@ -149,6 +149,9 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 			generateBlockFamilyTranslations(translationBuilder, woodSet.getStrippedWoodFamily());
 
 			generateBlockFamilyTranslations(translationBuilder, woodSet.getPlanksFamily());
+
+			translationBuilder.add(woodSet.getSapling(), generateNameFromBlock(woodSet.getSapling()));
+			translationBuilder.add(woodSet.getLeaves(), generateNameFromBlock(woodSet.getLeaves()));
 		}
 	}
 

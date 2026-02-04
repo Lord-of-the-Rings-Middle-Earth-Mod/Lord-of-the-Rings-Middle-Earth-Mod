@@ -110,9 +110,18 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 					.add(woodSet.getStrippedLog())
 					.add(woodSet.getStrippedWoodVariant("base"));
 
+			valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
+					.add(woodSet.getLog())
+					.add(woodSet.getStrippedLog())
+					.add(woodSet.getWoodVariant("base"))
+					.add(woodSet.getStrippedWoodVariant("base"));
+
 			valueLookupBuilder(BlockTags.AXE_MINEABLE)
 					.add(woodSet.getLog())
 					.add(woodSet.getStrippedLog());
+
+			valueLookupBuilder(BlockTags.LEAVES)
+					.add(woodSet.getLeaves());
 		}
 	}
 

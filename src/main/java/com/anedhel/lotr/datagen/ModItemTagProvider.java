@@ -81,6 +81,12 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 					.add(woodSet.getStrippedLog().asItem())
 					.add(woodSet.getWoodVariant("base").asItem())
 					.add(woodSet.getStrippedWoodVariant("base").asItem());
+
+			valueLookupBuilder(ItemTags.PLANKS)
+					.add(woodSet.getPlanksVariant("base").asItem());
+
+			valueLookupBuilder(ItemTags.LEAVES)
+					.add(woodSet.getLeaves().asItem());
 		}
 	}
 

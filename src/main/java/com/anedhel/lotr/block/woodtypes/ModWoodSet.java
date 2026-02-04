@@ -39,12 +39,16 @@ public class ModWoodSet {
 
 	private final BlockFamily PLANKS_FAMILY;
 
+	private final Block SAPLING;
+	private final Block LEAVES;
+
 	private final TagKey<Block> LOG_BLOCK_TAG;
 	private final TagKey<Item> LOG_ITEM_TAG;
 
 	public ModWoodSet(Block log, BlockFamily woodFamily,
 			Block strippedLog, BlockFamily strippedWoodFamily,
 			BlockFamily planksFamily,
+			Block sapling, Block leaves,
 			TagKey<Block> logTag,
 			TagKey<Item> logItemTag) {
 		LOG = log;
@@ -54,6 +58,9 @@ public class ModWoodSet {
 		STRIPPED_WOOD_FAMILY = strippedWoodFamily;
 
 		PLANKS_FAMILY = planksFamily;
+
+		SAPLING = sapling;
+		LEAVES = leaves;
 
 		LOG_BLOCK_TAG = logTag;
 		LOG_ITEM_TAG = logItemTag;
@@ -138,6 +145,14 @@ public class ModWoodSet {
 	 */
 	public Block getPlanksVariant(String variant) {
 		return ModUtil.getBlockFromFamily(PLANKS_FAMILY, variant);
+	}
+
+	public Block getSapling() {
+		return SAPLING;
+	}
+
+	public Block getLeaves() {
+		return LEAVES;
 	}
 
 	public TagKey<Block> getLogBlockTag() {

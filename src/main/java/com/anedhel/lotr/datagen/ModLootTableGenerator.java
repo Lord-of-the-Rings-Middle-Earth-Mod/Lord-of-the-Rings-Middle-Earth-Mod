@@ -111,6 +111,9 @@ public class ModLootTableGenerator extends FabricBlockLootTableProvider {
 			addDrop(woodSet.getStrippedWoodVariant("base"));
 
 			generateBlockFamilyLootTables(woodSet.getPlanksFamily());
+
+			addDrop(woodSet.getSapling());
+			addDrop(woodSet.getLeaves(), leavesDrops(woodSet.getLeaves(), woodSet.getSapling(), 0.0625f));
 		}
 	}
 
