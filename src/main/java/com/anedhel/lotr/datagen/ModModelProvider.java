@@ -1172,7 +1172,47 @@ public class ModModelProvider extends FabricModelProvider {
 	}
 
 	/**
-	*	private void registerOneOverlayFriezeBlock (missing)
+	 *	private void registerOneOverlayFriezeBlock (what im i doing here?
+	 *
+
+	private void registerOneOverlayFriezeBlock(BlockStateModelGenerator blockStateModelGenerator, Block frieze,
+		Block friezeSlab, String topTexture, String northTexture, String eastTexture, String southTexture, String westTexture,
+		boolean ornamented, String overlays) {
+		TextureMap singleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_single", ornamented, overlays);
+		TextureMap northEndFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_northend", ornamented, overlays);
+		TextureMap eastEndFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_eastend", ornamented, overlays);
+		TextureMap southEndFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_southend", ornamented, overlays);
+		TextureMap westEndeFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_westend", ornamented, overlays);
+		TextureMap northEastCornerFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_northeastcorner", ornamented, overlays);
+		TextureMap northWestCornerFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_northwestcorner", ornamented, overlays);
+		TextureMap southEastCornerFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_southeastcorner", ornamented, overlays);
+		TextureMap southWestCornerFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_southwestcorner", ornamented, overlays);
+		TextureMap tNorthMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_tnorthmiddle", ornamented, overlays);
+		TextureMap tEastMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_teastmiddle", ornamented, overlays);
+		TextureMap tSouthMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_tsouthmiddle", ornamented, overlays);
+		TextureMap tWestMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_twestmiddle", ornamented, overlays);
+		TextureMap northSouthMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_northsouthmiddle", ornamented, overlays);
+		TextureMap eastWestMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_eastwestmiddle", ornamented, overlays);
+		TextureMap crossMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_crossmiddle", ornamented, overlays);
+	}
+
+	 *
 	 * private void registerTwoOverlayFriezeBlock	(missing)
 	**/
 	private TextureMap createFriezeTextureMap(String topTexture, String northTexture, String eastTexture,
