@@ -22,18 +22,36 @@ import net.minecraft.world.biome.BiomeKeys;
 import net.minecraft.world.gen.GenerationStep;
 
 /**
- * Handles the generation of custom trees in the mod.
+ * Handles the generation of custom Vegetation in the mod.
  * @author Moritz Rohleder
  * @since 0.1.0
  */
-public class ModTreeGeneration {
+public class ModVegetationGeneration {
+
+	/**
+	 * Generates all vegetation features in the mod.
+	 */
+	public static void generateVegetation() {
+		generateTrees();
+		generateFlowers();
+	}
 
 	/**
 	 * Registers the tree generation for custom trees in the mod.
 	 */
-	public static void generateTrees() {
+	private static void generateTrees() {
 		BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MEADOW, BiomeKeys.OLD_GROWTH_PINE_TAIGA,
 				BiomeKeys.TAIGA), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.PINE_PLACED_KEY);
+	}
+
+	/**
+	 * Registers the flower generation for custom flowers in the mod.
+	 */
+	private static void generateFlowers() {
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.MEADOW, BiomeKeys.SAVANNA,
+				BiomeKeys.SAVANNA_PLATEAU), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WILD_TOMATO_PLACED_KEY);
+		BiomeModifications.addFeature(BiomeSelectors.includeByKey(BiomeKeys.PLAINS, BiomeKeys.FLOWER_FOREST,
+				BiomeKeys.SUNFLOWER_PLAINS), GenerationStep.Feature.VEGETAL_DECORATION, ModPlacedFeatures.WILD_CORN_PLACED_KEY);
 	}
 
 }

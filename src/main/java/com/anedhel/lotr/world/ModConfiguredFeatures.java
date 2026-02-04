@@ -41,10 +41,12 @@ import java.util.List;
  */
 public class ModConfiguredFeatures {
 
+	public static final RegistryKey<ConfiguredFeature<?, ?>> WILD_TOMATO_KEY = registerKey("wild_tomato");
+	public static final RegistryKey<ConfiguredFeature<?, ?>> WILD_CORN_KEY = registerKey("wild_corn");
+
 	public static final RegistryKey<ConfiguredFeature<?, ?>> PINE_KEY = registerKey("pine_key");
 
 	public static final RegistryKey<ConfiguredFeature<?, ?>> TIN_ORE_KEY = registerKey("tin_ore");
-
 	public static final RegistryKey<ConfiguredFeature<?, ?>> SILVER_ORE_KEY = registerKey("silver_ore");
 
 	/**
@@ -53,13 +55,6 @@ public class ModConfiguredFeatures {
 	 * @param context The registerable context.
 	 */
 	public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
-		register(context, PINE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
-				BlockStateProvider.of(PineBlocks.PINE_LOG),
-				new StraightTrunkPlacer(5, 2, 1),
-				BlockStateProvider.of(PineBlocks.PINE_LEAVES),
-				new SpruceFoliagePlacer(UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)),
-				new TwoLayersFeatureSize(2, 0, 2)
-		).build());
 
 		RuleTest stoneReplaceable = new TagMatchRuleTest(BlockTags.STONE_ORE_REPLACEABLES);
 		RuleTest deepslateReplaceable = new TagMatchRuleTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
@@ -72,6 +67,21 @@ public class ModConfiguredFeatures {
 				OreFeatureConfig.createTarget(stoneReplaceable, ModBlocks.SILVER_ORE.getDefaultState()),
 				OreFeatureConfig.createTarget(deepslateReplaceable, ModBlocks.DEEPSLATE_SILVER_ORE.getDefaultState())
 		);
+
+		register(context, WILD_TOMATO_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2,
+				PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+						new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_TOMATO)))));
+		register(context, WILD_CORN_KEY, Feature.FLOWER, new RandomPatchFeatureConfig(32, 6, 2,
+				PlacedFeatures.createEntry(Feature.SIMPLE_BLOCK,
+						new SimpleBlockFeatureConfig(BlockStateProvider.of(ModBlocks.WILD_CORN)))));
+
+		register(context, PINE_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+				BlockStateProvider.of(PineBlocks.PINE_LOG),
+				new StraightTrunkPlacer(5, 2, 1),
+				BlockStateProvider.of(PineBlocks.PINE_LEAVES),
+				new SpruceFoliagePlacer(UniformIntProvider.create(2, 3), UniformIntProvider.create(0, 2), UniformIntProvider.create(1, 2)),
+				new TwoLayersFeatureSize(2, 0, 2)
+		).build());
 
 		register(context, TIN_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldTinOres, 10));
 		register(context, SILVER_ORE_KEY, Feature.ORE, new OreFeatureConfig(overworldSilverOres, 9));

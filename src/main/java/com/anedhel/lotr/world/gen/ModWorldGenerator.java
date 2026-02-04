@@ -28,6 +28,6 @@ public class ModWorldGenerator {
 	public static void generateModWorldGen() {
 		ModOreGeneration.oreGeneration();
 
-		ModTreeGeneration.generateTrees();
+		ModVegetationGeneration.generateVegetation();
 	}
 }

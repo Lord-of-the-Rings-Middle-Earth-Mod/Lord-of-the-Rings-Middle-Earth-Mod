@@ -14,16 +14,19 @@ ___
 + Added Frieze Blocks with horizontal connected textures
   + Common Tag c:frieze for connecting freeze textures
 + Added Blueslate as stoneType
-+ Added Pine as woodType
++ Added Pine as woodType and Tree
+  + Spawns in Meadow, Taige and Old Growth Pine Taiga biomes
 + Added Tomatoes and Baked Tomatoes as food items, with the following properties:
   + Tomatoes: 3 hunger, 0.25 saturation, always edible
   + Baked Tomatoes: 6 hunger, 1.0 saturation
 + Added Wild-Tomato as pottable plants
+  + Generates in Plains, Sunflower Plains and Flower Forest biomes
 + Added Tomato Crops grown from Tomato Seeds
 + Added Corn and Cooked Corn as food items, with the following properties:
   + Corn: 3 hunger, 0.25 saturation, always edible
   + Cooked Corn: 6 hunger, 1.0 saturation
 + Added Wild-Corn as a tall flower
+  + Generates in Savanna, Savanna Plateau and Meadow biomes
 + Added Corn Crops grown from Corn Seeds, as two tall crops blocks
 + Added Tin
   + Tin Ore for Stone and Deepslate

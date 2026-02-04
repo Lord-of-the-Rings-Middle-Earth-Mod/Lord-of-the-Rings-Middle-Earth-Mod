@@ -24,8 +24,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.placementmodifier.HeightRangePlacementModifier;
-import net.minecraft.world.gen.placementmodifier.PlacementModifier;
+import net.minecraft.world.gen.placementmodifier.*;
 
 import java.util.List;
 
@@ -35,6 +34,9 @@ import java.util.List;
  * @since 0.1.0
  */
 public class ModPlacedFeatures {
+
+	public static final RegistryKey<PlacedFeature> WILD_TOMATO_PLACED_KEY = registerKey("wild_tomato_placed");
+	public static final RegistryKey<PlacedFeature> WILD_CORN_PLACED_KEY = registerKey("wild_corn_placed");
 
 	public static final RegistryKey<PlacedFeature> PINE_PLACED_KEY = registerKey("pine_placed");
 
@@ -48,6 +50,15 @@ public class ModPlacedFeatures {
 	 */
 	public static void bootstrap(Registerable<PlacedFeature> context) {
 		var configuredFeatureRegistryEntryLookup = context.getRegistryLookup(RegistryKeys.CONFIGURED_FEATURE);
+
+		register(context, WILD_TOMATO_PLACED_KEY,
+				configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_TOMATO_KEY),
+				RarityFilterPlacementModifier.of(4), SquarePlacementModifier.of(),
+				PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
+		register(context, WILD_CORN_PLACED_KEY,
+				configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.WILD_CORN_KEY),
+				RarityFilterPlacementModifier.of(5), SquarePlacementModifier.of(),
+				PlacedFeatures.MOTION_BLOCKING_HEIGHTMAP, BiomePlacementModifier.of());
 
 		register(context, PINE_PLACED_KEY,
 				configuredFeatureRegistryEntryLookup.getOrThrow(ModConfiguredFeatures.PINE_KEY),
