@@ -17,7 +17,6 @@ package com.anedhel.lotr.world.biome;
 
 import com.anedhel.lotr.block.stonetypes.BlueslateBlocks;
 import net.minecraft.block.Blocks;
-import net.minecraft.util.math.VerticalSurfaceType;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.noise.NoiseParametersKeys;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
@@ -72,23 +71,23 @@ public class ModMaterialRules {
 		MaterialRules.MaterialRule stoneLayer = MaterialRules.condition(
 				MaterialRules.aboveY(YOffset.fixed(0), 0),
 				MaterialRules.sequence(
-						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.CALCITE, -1.0, -0.6),
+						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.GRAVEL, -1.0, -0.7),
 								andesite),
-						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.CALCITE, -0.6, -0.2),
+						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.GRAVEL, -0.5, -0.3),
 								granite),
-						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.CALCITE, -0.2, 0.2),
-								diorite),
-						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.GRAVEL, 0.5, 0.8),
+						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.GRAVEL, 0.6, 0.9),
 								gravel),
-						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.CALCITE, -0.15, 0.15),
-								blueslate), stone));
+						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.SURFACE, -0.12, 0.12),
+								blueslate),
+						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.GRAVEL, 0.2, 0.5),
+								diorite), stone));
 
 		MaterialRules.MaterialRule deepslateLayer = MaterialRules.condition(
-				MaterialRules.stoneDepth(0, true, 0, VerticalSurfaceType.FLOOR),
+				MaterialRules.not(MaterialRules.aboveY(YOffset.fixed(0), 0)),
 				MaterialRules.sequence(
-						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.CALCITE, -0.15, 0.15),
+						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.GRAVEL, -0.12, 0.12),
 								deepBlueslate),
-						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.NOODLE, -0.1, 0.1),
+						MaterialRules.condition(MaterialRules.noiseThreshold(NoiseParametersKeys.GRAVEL, 0.3, 0.5),
 								tuff), deepslate));
 
 		MaterialRules.MaterialRule bedrockLayer = MaterialRules.condition(
