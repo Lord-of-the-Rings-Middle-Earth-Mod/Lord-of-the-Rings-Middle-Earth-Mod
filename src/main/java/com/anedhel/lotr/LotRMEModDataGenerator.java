@@ -13,6 +13,8 @@ package com.anedhel.lotr;
 import com.anedhel.lotr.datagen.*;
 import com.anedhel.lotr.world.ModConfiguredFeatures;
 import com.anedhel.lotr.world.ModPlacedFeatures;
+import com.anedhel.lotr.world.biome.ModBiomes;
+import com.anedhel.lotr.world.dimension.ModDimensionProvider;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.registry.RegistryBuilder;
@@ -48,6 +50,7 @@ public class LotRMEModDataGenerator implements DataGeneratorEntrypoint {
 		pack.addProvider(ModModelProvider::new);
 		pack.addProvider(ModRecipeProvider::new);
 		pack.addProvider(ModRegistryDataGenerator::new);
+		pack.addProvider(ModDimensionProvider::new);
 	}
 
 	/**
@@ -59,5 +62,10 @@ public class LotRMEModDataGenerator implements DataGeneratorEntrypoint {
 	public void buildRegistry(RegistryBuilder registryBuilder) {
 		registryBuilder.addRegistry(RegistryKeys.CONFIGURED_FEATURE, ModConfiguredFeatures::bootstrap);
 		registryBuilder.addRegistry(RegistryKeys.PLACED_FEATURE, ModPlacedFeatures::bootstrap);
+
+		registryBuilder.addRegistry(RegistryKeys.BIOME, ModBiomes::bootstrap);
+
+		registryBuilder.addRegistry(RegistryKeys.DIMENSION_TYPE, ModDimensionProvider::bootstrapType);
+		registryBuilder.addRegistry(RegistryKeys.CHUNK_GENERATOR_SETTINGS, ModDimensionProvider::bootstrapSettings);
 	}
 }

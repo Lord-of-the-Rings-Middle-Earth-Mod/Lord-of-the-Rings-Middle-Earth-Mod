@@ -44,3 +44,6 @@ ___
   + Functional crafting station with custom GUI
   + Custom carpentry recipe system
 <!--- Functionality is work in progress --->
++ Added the Arda Dimension
++ Added the Shire Biome
+  + Generates in the Arda Dimension
