@@ -12,6 +12,7 @@ package com.anedhel.lotr.item;
 
 import com.anedhel.lotr.LotRMEMod;
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.entity.ModEntities;
 import net.minecraft.item.*;
 import net.minecraft.item.equipment.EquipmentType;
 import net.minecraft.registry.Registries;
@@ -69,6 +70,9 @@ public class ModItems {
 			settings -> new Item(settings.armor(ModArmorMaterials.BRONZE_ARMOR_MATERIAL, EquipmentType.LEGGINGS)));
 	public static final Item BRONZE_BOOTS = registerItem("bronze_boots",
 			settings -> new Item(settings.armor(ModArmorMaterials.BRONZE_ARMOR_MATERIAL, EquipmentType.BOOTS)));
+
+	public static final Item HOBBIT_SPAWN_EGG = registerItem("hobbit_spawn_egg",
+			settings -> new SpawnEggItem(settings.spawnEgg(ModEntities.HOBBIT)));
 
 	/**
 	 * Registers an {@link Item} with the given name and factory function.

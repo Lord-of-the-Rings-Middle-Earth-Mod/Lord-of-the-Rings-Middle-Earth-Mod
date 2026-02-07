@@ -35,6 +35,7 @@ import net.minecraft.client.render.model.json.WeightedVariant;
 import net.minecraft.data.family.BlockFamily;
 import net.minecraft.util.Identifier;
 
+import java.util.Optional;
 import java.util.function.Function;
 
 import static net.minecraft.client.data.BlockStateModelGenerator.*;
@@ -96,6 +97,9 @@ public class ModModelProvider extends FabricModelProvider {
 		itemModelGenerator.register(ModItems.TIN_INGOT, Models.GENERATED);
 		itemModelGenerator.register(ModItems.SILVER_INGOT, Models.GENERATED);
 		itemModelGenerator.register(ModItems.SILVER_NUGGET, Models.GENERATED);
+
+		itemModelGenerator.register(ModItems.HOBBIT_SPAWN_EGG,
+				new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
 	}
 
 	/**

@@ -14,13 +14,20 @@ import com.anedhel.lotr.block.ModBlocks;
 import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
 import com.anedhel.lotr.block.woodtypes.ModWoodSet;
 import com.anedhel.lotr.block.woodtypes.ModWoodTypes;
+import com.anedhel.lotr.entity.ModEntities;
+import com.anedhel.lotr.entity.client.HobbitModel;
+import com.anedhel.lotr.entity.client.HobbitRenderer;
+import com.anedhel.lotr.entity.client.ModEntityModelLayers;
 import com.anedhel.lotr.screen.ModScreenHandlers;
 import com.anedhel.lotr.screen.custom.CarpentryTableScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.BlockRenderLayer;
+import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.data.family.BlockFamily;
 
 /**
@@ -45,8 +52,10 @@ public class LotRMEModClient implements ClientModInitializer {
 		registerCropCutoutLayers();
 
 		BlockRenderLayerMap.putBlock(ModBlocks.CARPENTRY_TABLE, BlockRenderLayer.CUTOUT);
-
 		HandledScreens.register(ModScreenHandlers.CARPENTRY_TABLE_SCREEN_HANDLER, CarpentryTableScreen::new);
+
+		EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.HOBBIT, HobbitModel::getTexturedModelData);
+		EntityRendererRegistry.register(ModEntities.HOBBIT, HobbitRenderer::new);
 	}
 
 	/**

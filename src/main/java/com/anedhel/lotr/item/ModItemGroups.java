@@ -113,6 +113,14 @@ public class ModItemGroups {
 						entries.add(ModItems.COOKED_CORN);
 					})).build());
 
+	public static final ItemGroup LOTR_SPAWNS = Registry.register(Registries.ITEM_GROUP,
+			Identifier.of(LotRMEMod.MOD_ID, "lotr_spawns"), FabricItemGroup.builder().displayName(
+					Text.translatableWithFallback("itemgroup.lotr_spawns", "LOTR Spawns"))
+					.icon(ModItems.HOBBIT_SPAWN_EGG::getDefaultStack)
+					.entries(((displayContext, entries) -> {
+						entries.add(ModItems.HOBBIT_SPAWN_EGG);
+					})).build());
+
 	public static void registerItemGroups() {
 		LotRMEMod.LOGGER.info("Registering Item Groups for " + LotRMEMod.MOD_ID);
 	}

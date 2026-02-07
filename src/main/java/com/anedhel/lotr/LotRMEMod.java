@@ -11,14 +11,18 @@
 package com.anedhel.lotr;
 
 import com.anedhel.lotr.block.ModBlocks;
+import com.anedhel.lotr.entity.ModEntities;
+import com.anedhel.lotr.entity.custom.HobbitEntity;
 import com.anedhel.lotr.item.ModItemGroups;
 import com.anedhel.lotr.item.ModItems;
 import com.anedhel.lotr.recipe.ModRecipes;
 import com.anedhel.lotr.screen.ModScreenHandlers;
 import com.anedhel.lotr.world.dimension.ModDimensions;
+import com.anedhel.lotr.world.gen.ModEntitySpawns;
 import com.anedhel.lotr.world.gen.ModWorldGenerator;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.block.ComposterBlock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,13 +47,18 @@ public class LotRMEMod implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
+
 		ModScreenHandlers.registerScreenHandlers();
 		ModRecipes.registerRecipes();
+
+		ModEntities.registerModEntities();
+		ModEntitySpawns.addSpawns();
 
 		ModWorldGenerator.generateModWorldGen();
 		ModDimensions.register();
 
 		addCompostableItems();
+		addDefaultAttributes();
 	}
 
 	/**
@@ -63,5 +72,12 @@ public class LotRMEMod implements ModInitializer {
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.TOMATO, 0.65f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.CORN_SEEDS, 0.3f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.CORN, 0.65f);
+	}
+
+	/**
+	 * Registers default attributes for custom entities added by the mod.
+	 */
+	private void addDefaultAttributes() {
+		FabricDefaultAttributeRegistry.register(ModEntities.HOBBIT, HobbitEntity.createHobbitAttributes());
 	}
 }

@@ -101,6 +101,7 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		translationBuilder.add("itemgroup.lotr_combat", "LotR Combat");
 		translationBuilder.add("itemgroup.lotr_plants", "LotR Plants");
 		translationBuilder.add("itemgroup.lotr_food", "LotR Food");
+		translationBuilder.add("itemgroup.lotr_spawns", "LotR Spawns");
 	}
 
 	/**
