@@ -15,6 +15,8 @@ import com.anedhel.lotr.block.ModBlocks;
 import com.anedhel.lotr.block.custom.ModPillarBlock;
 import com.anedhel.lotr.block.custom.ModPillarType;
 import com.anedhel.lotr.block.custom.crops.CornCropBlock;
+import com.anedhel.lotr.block.custom.ModFriezeBlock;
+import com.anedhel.lotr.block.custom.ModFriezeType;
 import com.anedhel.lotr.block.custom.crops.TomatoCropBlock;
 import com.anedhel.lotr.block.stonetypes.ModStoneSubSet;
 import com.anedhel.lotr.block.stonetypes.ModStoneTypes;
@@ -54,7 +56,7 @@ public class ModModelProvider extends FabricModelProvider {
 
 	/**
 	 * Generates block state models for mod blocks.
-	 * 
+	 *
 	 * @param blockStateModelGenerator the {@link BlockStateModelGenerator}
 	 */
 	@Override
@@ -80,7 +82,7 @@ public class ModModelProvider extends FabricModelProvider {
 
 	/**
 	 * Generates item models for mod items.
-	 * 
+	 *
 	 * @param itemModelGenerator the {@link ItemModelGenerator}.
 	 */
 	@Override
@@ -172,7 +174,10 @@ public class ModModelProvider extends FabricModelProvider {
 			generatePillarSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getPillarSet(),
 					"bronze_pillar","silver_pillar","gold_pillar");
 
-			stoneSet.getFriezeSet(); //mossy two ToDo: Set up the frieze models soon
+			generateFriezeSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getFriezeSet(),
+					"bronze_frieze", "silver_frieze", "gold_frieze");
+
+			//stoneSet.getFriezeSet(); //mossy two ToDo: Set up the frieze models soon
 
 			generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getCobbledBrickSet(),
 					ModTextures.BRONZE_COBBLED_BRICK_OVERLAY, ModTextures.SILVER_COBBLED_BRICK_OVERLAY,
@@ -462,6 +467,27 @@ public class ModModelProvider extends FabricModelProvider {
 	 * @param mossyOverlay the name for the mossy overlay texture
 	 * @see ModTextures
 	 */
+	private void generateFriezeSubSetBlockStateModels(BlockStateModelGenerator blockStateModelGenerator,
+		  ModStoneSubSet subSet, String bronze, String silver, String gold) {
+		String topTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
+				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
+				.concat("_end");
+		String northTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
+				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
+				.concat("_north");
+		String eastTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
+				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
+				.concat("_east");
+		String southTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
+				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
+				.concat("_south");
+		String westTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
+				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
+				.concat("_west");
+
+		registerFriezeBlock();
+	}
+
 	private void generateCubeAllSubSetBlockStateModels(BlockStateModelGenerator blockStateModelGenerator,
 			ModStoneSubSet subSet, ModTextures bronzeOverlay, ModTextures silverOverlay, ModTextures goldOverlay,
 			ModTextures mossyOverlay) {
@@ -1255,6 +1281,280 @@ public class ModModelProvider extends FabricModelProvider {
 				.register(ModPillarType.TOP, topVariant)
 				.register(ModPillarType.MIDDLE, middleVariant)
 				.register(ModPillarType.BASE, baseVariant));
+	}
+
+	private void registerFriezeBlock(BlockStateModelGenerator blockStateModelGenerator, Block frieze,
+			Block friezeSlab, String topTexture, String northTexture, String eastTexture, String southTexture, String westTexture) {
+		TextureMap singleFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap northEndFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_left"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_right"));
+		TextureMap eastEndFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_left"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_right"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap southEndFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_singe"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_right"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_left"));
+		TextureMap westEndFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_left"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_right"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap northEastCornerFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_left"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_right"));
+		TextureMap northWestCornerFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_left"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_right"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap southEastCornerFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_right"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_left"));
+		TextureMap southWestCornerFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_left"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_right"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap tNorthMiddleFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_middle"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap tEastMiddleFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_middle"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap tSouthMiddleFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_middle"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap tWestMiddleFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_middle"));
+		TextureMap northSouthMiddleFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_middle"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_middle"));
+		TextureMap eastWestMiddleFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_middle"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_middle"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		TextureMap crossMiddleFriezeTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_middle"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_middle"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_middle"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_middle"));
+		Identifier singleFriezeIdentifier = ModModels.FRIEZE.upload(frieze, singleFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier northEndFriezeIdentifier = ModModels.FRIEZE_NORTHEND.upload(frieze,northEndFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier eastEndFriezeIdentifier = ModModels.FRIEZE_EASTEND.upload(frieze, eastEndFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier southEndFriezeIdentifier = ModModels.FRIEZE_SOUTHEND.upload(frieze, southEndFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier westEndFriezeIdentifier = ModModels.FRIEZE_WESTEND.upload(frieze, westEndFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier northEastCornerFriezeIdentifier = ModModels.FRIEZE_NORTHEASTCORNER.upload(frieze,northEastCornerFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier northWestCornerFriezeIdentifier = ModModels.FRIEZE_NORTHWESTCORNER.upload(frieze, northWestCornerFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier southEastCornerFriezeIdentifier = ModModels.FRIEZE_SOUTHEASTCORNER.upload(frieze, southEastCornerFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier southWestCornerFriezeIdentifier = ModModels.FRIEZE_SOUTHWESTCORNER.upload(frieze, southWestCornerFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier tNorthMiddleFriezeIdentifier = ModModels.FRIEZE_TNORTHMIDDLE.upload(frieze, tNorthMiddleFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier tEastMiddleFriezeIdentifier = ModModels.FRIEZE_TEASTMIDDLE.upload(frieze, tEastMiddleFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier tSouthMiddleFriezeIdentifier = ModModels.FRIEZE_TSOUTHMIDDLE.upload(frieze, tSouthMiddleFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier tWestMiddleFriezeIdentifier = ModModels.FRIEZE_TWESTMIDDLE.upload(frieze, tWestMiddleFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier northSouthMiddleFriezeIdentifier = ModModels.FRIEZE_NORTHSOUTHMIDDLE.upload(frieze, northSouthMiddleFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier eastWestMiddleFriezeIdentifier = ModModels.FRIEZE_EASTWESTMIDDLE.upload(frieze, eastWestMiddleFriezeTM,
+				blockStateModelGenerator.modelCollector);
+		Identifier crossMiddleFriezeIdentifier = ModModels.FRIEZE_CROSSMIDDLE.upload(frieze, crossMiddleFriezeTM,
+				blockStateModelGenerator.modelCollector);
+
+		blockStateModelGenerator.blockStateCollector.accept(createFriezeBlockState(frieze, singleFriezeIdentifier, northEndFriezeIdentifier,
+				eastEndFriezeIdentifier, southEndFriezeIdentifier, westEndFriezeIdentifier, northEastCornerFriezeIdentifier,
+				northWestCornerFriezeIdentifier, southEastCornerFriezeIdentifier, southWestCornerFriezeIdentifier,
+				tNorthMiddleFriezeIdentifier, tEastMiddleFriezeIdentifier, tSouthMiddleFriezeIdentifier, tWestMiddleFriezeIdentifier,
+				northSouthMiddleFriezeIdentifier, eastWestMiddleFriezeIdentifier, crossMiddleFriezeIdentifier));
+
+		TextureMap slabTM = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + "_single"))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + "_single"))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + "_single"))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + "_single"));
+		Identifier slabIdentifier = Models.SLAB.upload(friezeSlab, slabTM, blockStateModelGenerator.modelCollector);
+		Identifier slabTopIdentifier = Models.SLAB_TOP.upload(friezeSlab, slabTM, blockStateModelGenerator.modelCollector);
+		Identifier doubleSlabIdentifier = Models.CUBE_TOP.uploadWithoutVariant(friezeSlab, "_double", slabTM,
+				blockStateModelGenerator.modelCollector);
+		WeightedVariant slabVariant = createWeightedVariant(slabIdentifier);
+		WeightedVariant slabTopVariant = createWeightedVariant(slabTopIdentifier);
+		WeightedVariant doubleSlabVariant = createWeightedVariant(doubleSlabIdentifier);
+		blockStateModelGenerator.blockStateCollector.accept(BlockStateModelGenerator.createSlabBlockState(friezeSlab,
+				slabVariant, slabTopVariant, doubleSlabVariant));
+	}
+
+	/**
+	 *	private void registerOneOverlayFriezeBlock (what im i doing here?
+	 *
+
+	private void registerOneOverlayFriezeBlock(BlockStateModelGenerator blockStateModelGenerator, Block frieze,
+		Block friezeSlab, String topTexture, String northTexture, String eastTexture, String southTexture, String westTexture,
+		boolean ornamented, String overlays) {
+		TextureMap singleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_single", ornamented, overlays);
+		TextureMap northEndFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_northend", ornamented, overlays);
+		TextureMap eastEndFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_eastend", ornamented, overlays);
+		TextureMap southEndFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_southend", ornamented, overlays);
+		TextureMap westEndeFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_westend", ornamented, overlays);
+		TextureMap northEastCornerFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_northeastcorner", ornamented, overlays);
+		TextureMap northWestCornerFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_northwestcorner", ornamented, overlays);
+		TextureMap southEastCornerFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_southeastcorner", ornamented, overlays);
+		TextureMap southWestCornerFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_southwestcorner", ornamented, overlays);
+		TextureMap tNorthMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_tnorthmiddle", ornamented, overlays);
+		TextureMap tEastMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_teastmiddle", ornamented, overlays);
+		TextureMap tSouthMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_tsouthmiddle", ornamented, overlays);
+		TextureMap tWestMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_twestmiddle", ornamented, overlays);
+		TextureMap northSouthMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_northsouthmiddle", ornamented, overlays);
+		TextureMap eastWestMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_eastwestmiddle", ornamented, overlays);
+		TextureMap crossMiddleFriezeTM = createFriezeTextureMap(topTexture, northTexture, eastTexture, southTexture, westTexture,
+				"_crossmiddle", ornamented, overlays);
+	}
+
+	 *
+	 * private void registerTwoOverlayFriezeBlock	(missing)
+	**/
+	private TextureMap createFriezeTextureMap(String topTexture, String northTexture, String eastTexture,
+											  String southTexture, String westTexture, String position,
+											  boolean ornamented, String... overlays) {
+		TextureMap textureMap = new TextureMap()
+				.put(TextureKey.END, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture))
+				.put(TextureKey.NORTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + northTexture + position))
+				.put(TextureKey.EAST, Identifier.of(LotRMEMod.MOD_ID, "block/" + eastTexture + position))
+				.put(TextureKey.SOUTH, Identifier.of(LotRMEMod.MOD_ID, "block/" + southTexture + position))
+				.put(TextureKey.WEST, Identifier.of(LotRMEMod.MOD_ID, "block/" + westTexture + position))
+				.put(TextureKey.PARTICLE, Identifier.of(LotRMEMod.MOD_ID, "block/" + topTexture));
+		if(overlays.length == 1) {
+			if (ornamented) {
+				textureMap.put(TextureKey.LAYER1,Identifier.of(LotRMEMod.MOD_ID,
+						"block/overlays/" + overlays[0] + "_side" + position + "_overlay"));
+				textureMap.put(ModTextureKeys.END_LAYER1,Identifier.of(LotRMEMod.MOD_ID,
+						"block/overlays/" + overlays[0] + "_end" + "_overlay"));
+			} else {
+				textureMap.put(TextureKey.LAYER1,Identifier.of(LotRMEMod.MOD_ID, "block/overlays"
+						+ "/" + overlays[0]));
+				textureMap.put(ModTextureKeys.END_LAYER1,Identifier.of(LotRMEMod.MOD_ID,
+						"block/overlays/" + overlays[0]));
+			}
+		} else if(overlays.length == 2) {
+			textureMap.put(TextureKey.LAYER1,Identifier.of(LotRMEMod.MOD_ID,
+							"block/overlays/" + overlays[0] + "_side" + position + "_overlay"))
+					.put(TextureKey.LAYER2,Identifier.of(LotRMEMod.MOD_ID, "block/overlays/" + overlays[1]))
+					.put(ModTextureKeys.END_LAYER1,Identifier.of(LotRMEMod.MOD_ID,
+							"block/overlays/" + overlays[0] + "_end" + "_overlay"))
+					.put(ModTextureKeys.END_LAYER2,Identifier.of(LotRMEMod.MOD_ID,
+							"block/overlays/" + overlays[1]));
+		}
+		return textureMap;
+	}
+
+	private VariantsBlockModelDefinitionCreator createFriezeBlockState(Block frieze, Identifier singleFriezeIdentifier,
+		Identifier northEndFriezeIdentifier, Identifier eastEndFriezeIdentifier, Identifier southEndFriezeIdentifier, Identifier westEndFriezeIdentifier,
+		Identifier northEastCornerFriezeIdentifier, Identifier northWestCornerFriezeIdentifier, Identifier southEastCornerFriezeIdentifier,
+		Identifier southWestCornerFriezeIdentifier, Identifier tNorthMiddleFriezeIdentifier, Identifier tEastMiddleFriezeIdentifier,
+		Identifier tSouthMiddleFriezeIdentifier,Identifier tWestMiddleFriezeIdentifier, Identifier northSouthMiddleFriezeIdentifier,
+		Identifier eastWestMiddleFriezeIdentifier, Identifier crossMiddleFriezeIdentifier) {
+		WeightedVariant singleVariant = createWeightedVariant(singleFriezeIdentifier);
+		WeightedVariant northEndVariant = createWeightedVariant(northEndFriezeIdentifier);
+		WeightedVariant eastEndVariant = createWeightedVariant(eastEndFriezeIdentifier);
+		WeightedVariant southEndVariant = createWeightedVariant(southEndFriezeIdentifier);
+		WeightedVariant westEndVariant = createWeightedVariant(westEndFriezeIdentifier);
+		WeightedVariant northEastCornerVariant = createWeightedVariant(northEastCornerFriezeIdentifier);
+		WeightedVariant northWestCornerVariant = createWeightedVariant(northWestCornerFriezeIdentifier);
+		WeightedVariant southEastCornerVariant = createWeightedVariant(southEastCornerFriezeIdentifier);
+		WeightedVariant southWestCornerVariant = createWeightedVariant(southWestCornerFriezeIdentifier);
+		WeightedVariant tNorthMiddleVariant = createWeightedVariant(tNorthMiddleFriezeIdentifier);
+		WeightedVariant tEastMiddleVariant = createWeightedVariant(tEastMiddleFriezeIdentifier);
+		WeightedVariant tSouthMiddleVariant = createWeightedVariant(tSouthMiddleFriezeIdentifier);
+		WeightedVariant tWestMiddleVariant = createWeightedVariant(tWestMiddleFriezeIdentifier);
+		WeightedVariant northSouthMiddleVariant = createWeightedVariant(northSouthMiddleFriezeIdentifier);
+		WeightedVariant eastWestMiddleVariant = createWeightedVariant(eastWestMiddleFriezeIdentifier);
+		WeightedVariant crossMiddleVariant = createWeightedVariant(crossMiddleFriezeIdentifier);
+		return VariantsBlockModelDefinitionCreator.of(frieze)
+				.with(BlockStateVariantMap.models(ModFriezeBlock.FRIEZE_TYPE)
+				.register(ModFriezeType.SINGLE, singleVariant)
+				.register(ModFriezeType.NORTH_END, northEndVariant)
+				.register(ModFriezeType.EAST_END, eastEndVariant)
+				.register(ModFriezeType.SOUTH_END, southEndVariant)
+				.register(ModFriezeType.WEST_END, westEndVariant)
+				.register(ModFriezeType.NORTH_EAST_CORNER, northEastCornerVariant)
+				.register(ModFriezeType.NORTH_WEST_CORNER, northWestCornerVariant)
+				.register(ModFriezeType.SOUTH_EAST_CORNER, southEastCornerVariant)
+				.register(ModFriezeType.SOUTH_WEST_CORNER, southWestCornerVariant)
+				.register(ModFriezeType.T_NORTH_MIDDLE, tNorthMiddleVariant)
+				.register(ModFriezeType.T_EAST_MIDDLE, tEastMiddleVariant)
+				.register(ModFriezeType.T_SOUTH_MIDDLE, tSouthMiddleVariant)
+				.register(ModFriezeType.T_WEST_MIDDLE, tWestMiddleVariant)
+				.register(ModFriezeType.NORTH_SOUTH_MIDDLE, northSouthMiddleVariant)
+				.register(ModFriezeType.EAST_WEST_MIDDLE, eastWestMiddleVariant)
+				.register(ModFriezeType.CROSS_MIDDLE, crossMiddleVariant));
 	}
 
 	/**
