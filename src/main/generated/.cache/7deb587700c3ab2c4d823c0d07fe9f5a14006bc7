@@ -1,8 +1,0 @@
-// 1.20.2	2025-09-08T14:12:06.8548893	Lord of the Rings Middle Earth/World Gen
-48b2deb7c530d21b11917e4d89d21fcfaebd4e11 data\lotr\dimension_type\arda_type.json
-95ee660ed569eee77998399c3621ef603654dd9c data\lotr\worldgen\biome\shire.json
-9f8209fa9565421ca6340434369334f785e85dc3 data\lotr\worldgen\configured_feature\tin_ore_large.json
-832437e4ceea6174eddf0da17625345e3774b45f data\lotr\worldgen\configured_feature\tin_ore_small.json
-fd2e22170307634c0b00ac7f8702aa26de7af146 data\lotr\worldgen\placed_feature\pine_placed.json
-9e76963c2ea9a625ad46868f20ddc71e21f49be9 data\lotr\worldgen\configured_feature\pine.json
-971555d8ebd3824d87c8268f6686e61d52a921d1 data\lotr\worldgen\placed_feature\tin_ore.json

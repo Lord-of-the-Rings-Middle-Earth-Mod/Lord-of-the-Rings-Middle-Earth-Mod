@@ -1,0 +1,8 @@
+{
+	"type": "vext:carpentry",
+	"ingredient": "vext:pine_log",
+	"result": {
+		"count": 4,
+		"id": "vext:pine_planks"
+	}
+}

@@ -5,7 +5,7 @@ on:
     branches:
       - develop
     paths:
-      - 'src/main/java/me/anedhel/lotr/datagen/**'
+      - 'src/main/java/me/anedhel/vext/datagen/**'
   
   # Manual trigger
   workflow_dispatch:

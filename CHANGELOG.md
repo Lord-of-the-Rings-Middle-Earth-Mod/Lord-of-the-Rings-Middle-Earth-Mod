@@ -41,9 +41,10 @@ ___
   + Bronze Tools: Sword, Shovel, Pickaxe, Axe, and Hoe
   + Bronze Armor: Helmet, Chestplate, Leggings, and Boots (trimmable)
 + Added Carpentry Table 
-  + Functional crafting station with custom GUI
-  + Custom carpentry recipe system
-<!--- Functionality is work in progress --->
+  + Recipe Type and UI are currently Disabled as to a current bug without fix at the moment.
 + Added the Arda Dimension
 + Added the Shire Biome
   + Generates in the Arda Dimension
++ Added Hobbits as Mobs
+  + Currently Spawn Egg doesn´t Show up in the creative inventory, nor spawns in the Shire biome, due to a bug 
+    without fix.

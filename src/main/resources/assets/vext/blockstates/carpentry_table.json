@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=east": {
+			"model": "vext:block/carpentry_table",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "vext:block/carpentry_table",
+			"y": 180
+		},
+		"facing=north": {
+			"model": "vext:block/carpentry_table"
+		},
+		"facing=west": {
+			"model": "vext:block/carpentry_table",
+			"y": 270
+		}
+	}
+}

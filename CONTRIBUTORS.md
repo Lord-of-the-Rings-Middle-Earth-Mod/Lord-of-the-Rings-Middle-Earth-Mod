@@ -11,6 +11,7 @@ Special thanks go to following contributors for their contributions.
 
 ### Code
 - Anedhel/Moritz Rohleder
+- Ano_Jedt
   
 ### Art (Textures, Models, etc.)
 - bakbar

@@ -1,32 +1,32 @@
 {
 	"schemaVersion": 1,
-	"id": "lotr",
+	"id": "vext",
 	"version": "${version}",
-	"name": "LotR-ME-Mod",
-	"description": "This Mod adds content from Lord of the Rings to Minecraft.",
+	"name": "Vanilla Extension",
+	"description": "This Mod extends Vanilla Minecraft with generic content",
 	"authors": [
-		"Anedhel"
+		"Moritz Rohleder"
 	],
 	"contact": {
 		"homepage": "",
 		"sources": "https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/LotR-ME-Mod"
 	},
 	"license": "GPL-3.0",
-	"icon": "assets/lotr/icon.png",
+	"icon": "assets/vext/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.anedhel.lotr.LotRMEMod"
+			"com.anedhel.vext.VExtMod"
 		],
 		"fabric-datagen": [
-			"com.anedhel.lotr.LotRMEModDataGenerator"
+			"com.anedhel.vext.VExtModDataGenerator"
 		],
 		"client": [
-			"com.anedhel.lotr.LotRMEModClient"
+			"com.anedhel.vext.VExtModClient"
 		]
 	},
 	"mixins": [
-		"lotr.mixins.json"
+		"vext.mixins.json"
 	],
 	"depends": {
 		"fabricloader": ">=0.18.3",

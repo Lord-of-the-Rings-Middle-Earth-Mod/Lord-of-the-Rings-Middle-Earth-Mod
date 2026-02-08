@@ -1,12 +1,13 @@
-# Lord of the Rings Middle Earth Mod
+# Vanilla Extensions Mod
 ![LotrModBannerv1](https://github.com/user-attachments/assets/c0394c6c-ad56-4576-b0dd-dabd99106ab7)
-The *Lord of the Rings Middle Earth Mod* (*LotR ME Mod* in short) is a Fabric Minecraft Mod, with the goal of bringing the world of J.R.R. Tolkiens Books into Minecraft, with a focus on the third age. 
+The *Vanilla Extensions Mod* is a Fabric Minecraft Mod, with the goal to extend vanilla Minecraft with generic 
+Additions. 
 This Mod is an open Source Project and as such welcoming anyone who is wishing to help. 
 
 Before you interact with the community please read our [Community Standards and Rules](CODE_OF_CONDUCT.md) and make sure you understand them.
 
 > [!Important]
-> As of the current situation this is not a Lord of the Rings Mod, but by the idea.
+> As of the current situation this is not a Lord of the Rings Mod, but by the idea to make on is there.
 > We do not yet have approval by Middle-Earth Enterprises to use any name or content from Tolkien's works, that is
 > under copyright. We have contacted Middle-Earth Enterprises regarding this and are awaiting a response on this topic.
 
@@ -93,7 +94,7 @@ Within the Project we define several roles with different responsibilities and p
 Apart from the above roles, Moderators are responsible for making sure the Community Standards and Rules are followed and the Community is a friendly place for everyone.
 
 ### Moderators
-The *LotR ME Mod* has the following Moderators:
+The *Vanilla Extensions Mod* has the following Moderators:
 
 #### How to become a Moderator
 When we are looking for new Moderators we will announce it on our discord and ask for applications.
@@ -124,7 +125,7 @@ If all criteria are met to our satisfaction, the user will be granted triage acc
 After the 3 months of triage access, the Maintainers will make a final decision based on the performance during the triage period.
 
 ### Maintainers
-The *LotR ME Mod* has the following Maintainers:
+The *Vanilla Extensions Mod* has the following Maintainers:
 - Ano_Jedt
 - bakbar
 
@@ -133,5 +134,5 @@ The selection is based on the performance of the Contributor and the need for Ma
 In order to become a maintainer a unanimously vote of all Lead-Maintainers is needed.
 
 ### Lead-Maintainers
-The *LotR ME Mod* has the following Lead-Maintainers:
+The *Vanilla Extensions Mod* has the following Lead-Maintainers:
 - Anedhel/Moritz (Lead Maintainer)
