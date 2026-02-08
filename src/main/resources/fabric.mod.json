@@ -2,36 +2,36 @@
 	"schemaVersion": 1,
 	"id": "lotr",
 	"version": "${version}",
-	"name": "Lord of the Rings Middle Earth",
-	"description": "The *Lord of the Rings Middle Earth Mod* (*LotR ME Mod* in short) is a mod that aims to bring the world of J.R.R. Tolkiens Books into Minecraft.",
+	"name": "LotR-ME-Mod",
+	"description": "This Mod adds content from Lord of the Rings to Minecraft.",
 	"authors": [
 		"Anedhel"
 	],
 	"contact": {
 		"homepage": "",
-		"sources": "https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod"
+		"sources": "https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/LotR-ME-Mod"
 	},
-	"license": "MIT",
-	"icon": "assets/lotr/lotr_middle_earth_mod_logo.png",
+	"license": "GPL-3.0",
+	"icon": "assets/lotr/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "me.anedhel.lotr.LordOfTheRingsMiddleEarthMod"
-		],
-		"client": [
-			"me.anedhel.lotr.LordOfTheRingsMiddleEarthModClient"
+			"com.anedhel.lotr.LotRMEMod"
 		],
 		"fabric-datagen": [
-			"me.anedhel.lotr.LordOfTheRingsMiddleEarthModDataGenerator"
+			"com.anedhel.lotr.LotRMEModDataGenerator"
+		],
+		"client": [
+			"com.anedhel.lotr.LotRMEModClient"
 		]
 	},
 	"mixins": [
-		"lotr-middle-earth.mixins.json"
+		"lotr.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
+		"fabricloader": ">=0.18.3",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"suggests": {

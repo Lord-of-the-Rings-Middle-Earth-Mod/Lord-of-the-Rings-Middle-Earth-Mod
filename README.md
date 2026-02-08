@@ -104,7 +104,7 @@ Within those applications we are looking for the following:
 - Activity within the Community, especially within the chats
 
 ### Contributors
-A list of all Contributors can be found [here](CONTRIBUTORS.md#contributors).
+A list of all Contributors can be found [here](CONTRIBUTORS.md).
 Contributors are able to perform Code-Reviews and are also involved in the decision-making process to a certain extent.
 Contributors can be active in all areas of the Mod where we look for [contributions](#how-to-contribute), and are not limited to code contributions.
 

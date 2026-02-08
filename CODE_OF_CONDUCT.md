@@ -1,7 +1,7 @@
 # Code of Conduct and Rules
 
 ## Scope
-This Code of Conduct applies within all community spaces, like this Github, our discord and the code.
+This Code of Conduct applies within all community spaces, like this GitHub, our discord and the code.
 
 ## Our Pledge
 We as members, contributors, and leaders pledge to make participation in our

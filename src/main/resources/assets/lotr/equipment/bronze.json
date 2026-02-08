@@ -1,0 +1,24 @@
+{
+	"layers": {
+		"wolf_body": [
+			{
+				"texture": "lotr:bronze"
+			}
+		],
+		"horse_body": [
+			{
+				"texture": "lotr:bronze"
+			}
+		],
+		"humanoid": [
+			{
+				"texture": "lotr:bronze"
+			}
+		],
+		"humanoid_leggings": [
+			{
+				"texture": "lotr:bronze"
+			}
+		]
+	}
+}
