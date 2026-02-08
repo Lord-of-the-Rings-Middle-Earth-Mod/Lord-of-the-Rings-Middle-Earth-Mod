@@ -17,7 +17,7 @@ import net.minecraft.client.data.TextureKey;
  * <p>
  * This class defines additional texture keys beyond Minecraft's defaults.
  *
- * @author Moritz Rohleder
+ * @author Moritz Rohleder, AnoJedt
  * @see ModModels
  * @since 0.1.0
  */
