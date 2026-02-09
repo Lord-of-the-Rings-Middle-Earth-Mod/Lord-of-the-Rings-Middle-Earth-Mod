@@ -1,6 +1,6 @@
 # Changelog
 ___
-## 0.1.0 (Next Release)
+## 0.1.0
 ### Additions:
 + Set up the Mod with entry points for the Server-Side, the Client-Side and DataGen
 + Added DataGen for Stone Types, Wood Types and other Mod Components, this includes the following:
