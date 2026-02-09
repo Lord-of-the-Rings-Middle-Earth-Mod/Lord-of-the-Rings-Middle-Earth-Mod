@@ -351,7 +351,7 @@ jobs:
           BUILT_JAR=$(find build/libs -name "${ORIGINAL_BASE}-${MOD_VERSION}.jar" -type f)
 
           if [ -f "$BUILT_JAR" ]; then
-            RENAMED_JAR="build/libs/lotr-me-${JAR_NAME}.jar"
+            RENAMED_JAR="build/libs/vext-${JAR_NAME}.jar"
             cp "$BUILT_JAR" "$RENAMED_JAR"
             echo "RENAMED_JAR=$RENAMED_JAR" >> $GITHUB_ENV
             echo "JAR file renamed to: $RENAMED_JAR"

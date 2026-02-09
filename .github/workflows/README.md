@@ -102,8 +102,8 @@ The workflow extracts version information from `gradle.properties`:
 - **Minecraft Version** (`minecraft_version`): e.g., `1.20.2`
 
 **Output JAR Names:**
-- **Dev Builds**: `lotr-me-0.1.0+1.20.2-dev.jar`
-- **Release Builds**: `lotr-me-0.1.0+1.20.2.jar`
+- **Dev Builds**: `vext-0.1.0+1.20.2-dev.jar`
+- **Release Builds**: `vext-0.1.0+1.20.2.jar`
 
 ### What It Does
 
