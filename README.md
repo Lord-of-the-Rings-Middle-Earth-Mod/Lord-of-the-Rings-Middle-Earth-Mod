@@ -37,7 +37,7 @@ Roadmap is a rough plan of all planned releases. It is not set in stone and can 
 
 The full and more detailed Roadmap, including planned features and ideas, can be found [here](ROADMAP.md).
 
-## How to get startet
+## How to get started
 If you want to play the Mod on a server, you need to have it installed on your PC and the Server needs to have the Mod installed as well.
 You can always download all version of the Mod on our [GitHub](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/releases).
 The latest is marked as latest version.
