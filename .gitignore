@@ -40,4 +40,5 @@ replay_*.log
 *.jfr
 
 # generated
-.chache/
+.cache/
+src/main/generated/

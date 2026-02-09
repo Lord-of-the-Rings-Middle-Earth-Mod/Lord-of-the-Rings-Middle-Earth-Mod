@@ -1,37 +1,37 @@
 {
 	"schemaVersion": 1,
-	"id": "lotr",
+	"id": "vext",
 	"version": "${version}",
-	"name": "Lord of the Rings Middle Earth",
-	"description": "This is a Lord of the Rings Mod for Minecraft inspired by Mevans work.",
+	"name": "Vanilla Extensions Mod",
+	"description": "This Mod extends Vanilla Minecraft with generic content",
 	"authors": [
-		"Anedhel"
+		"Moritz Rohleder"
 	],
 	"contact": {
 		"homepage": "",
-		"sources": ""
+		"sources": "https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod"
 	},
-	"license": "MIT",
-	"icon": "assets/lotr-middle-earth/icon.png",
+	"license": "GPL-3.0",
+	"icon": "assets/vext/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-          "me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthMod"
-		],
-		"client": [
-			"me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthModClient"
+			"com.anedhel.vext.VExtMod"
 		],
 		"fabric-datagen": [
-			"me.anedhel.lotrmiddleearth.LordOfTheRingsMiddleEarthModDataGenerator"
+			"com.anedhel.vext.VExtModDataGenerator"
+		],
+		"client": [
+			"com.anedhel.vext.VExtModClient"
 		]
 	},
 	"mixins": [
-		"lotr-middle-earth.mixins.json"
+		"vext.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
+		"fabricloader": ">=0.18.3",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"suggests": {

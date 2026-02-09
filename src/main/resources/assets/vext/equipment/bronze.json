@@ -1,0 +1,24 @@
+{
+	"layers": {
+		"wolf_body": [
+			{
+				"texture": "vext:bronze"
+			}
+		],
+		"horse_body": [
+			{
+				"texture": "vext:bronze"
+			}
+		],
+		"humanoid": [
+			{
+				"texture": "vext:bronze"
+			}
+		],
+		"humanoid_leggings": [
+			{
+				"texture": "vext:bronze"
+			}
+		]
+	}
+}

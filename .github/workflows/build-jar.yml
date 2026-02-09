@@ -1,0 +1,428 @@
+name: Build JAR
+
+"on":
+  # Scenario 1: When an issue is moved to Test status on project board
+  project_card:
+    types: [moved]
+
+  # Scenario 2: When a release is published
+  release:
+    types: [published]
+
+  # Scenario 3: Manual trigger
+  # Note: The "Use workflow from" dropdown in GitHub UI determines which version of this
+  # workflow file to execute. It's recommended to run from 'develop' branch for consistency.
+  # The actual branch to BUILD from is determined automatically by the workflow logic below.
+  workflow_dispatch:
+    inputs:
+      trigger_type:
+        description: 'Run workflow for branch or issue?'
+        required: true
+        default: 'branch'
+        type: choice
+        options:
+          - branch
+          - issue
+      build_type:
+        description: 'Build type (dev or release) - only used when trigger_type is "branch"'
+        required: false
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - release
+      issue_number:
+        description: 'Issue number - only used when trigger_type is "issue"'
+        required: false
+        type: string
+
+jobs:
+  determine-build-type:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: read
+      actions: read
+    outputs:
+      should_build: ${{ steps.check.outputs.should_build }}
+      build_type: ${{ steps.check.outputs.build_type }}
+      branch: ${{ steps.check.outputs.branch }}
+      issue_number: ${{ steps.check.outputs.issue_number }}
+    steps:
+      - name: Determine build type and conditions
+        id: check
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const eventName = context.eventName;
+            let shouldBuild = false;
+            let buildType = 'dev';
+            let branch = 'develop';
+            let issueNumber = '';
+
+            if (eventName === 'workflow_dispatch') {
+              // Manual trigger
+              shouldBuild = true;
+              const triggerType = context.payload.inputs.trigger_type || 'branch';
+              
+              if (triggerType === 'branch') {
+                // Branch mode - use build_type input
+                buildType = context.payload.inputs.build_type || 'dev';
+                branch = buildType === 'dev' ? 'develop' : 'master';
+                console.log(`Manual trigger detected - branch mode: ${branch}`);
+              } else if (triggerType === 'issue') {
+                // Issue mode - fetch issue and check for linked branch
+                issueNumber = context.payload.inputs.issue_number;
+                
+                if (!issueNumber) {
+                  core.setFailed('Issue number is required when trigger_type is "issue"');
+                  shouldBuild = false;
+                } else {
+                  // Validate issue number is a positive integer
+                  const issueNum = parseInt(issueNumber, 10);
+                  if (isNaN(issueNum) || issueNum <= 0 || issueNum.toString() !== issueNumber.trim()) {
+                    core.setFailed(`Invalid issue number: "${issueNumber}". Must be a positive integer.`);
+                    shouldBuild = false;
+                  } else {
+                    console.log(`Manual trigger detected - issue mode: #${issueNumber}`);
+                    
+                    try {
+                      // Fetch the issue details
+                      const issue = await github.rest.issues.get({
+                        owner: context.repo.owner,
+                        repo: context.repo.repo,
+                        issue_number: parseInt(issueNumber, 10)
+                      });
+                      
+                      console.log(`Issue title: ${issue.data.title}`);
+                      
+                      // Check if issue is open
+                      if (issue.data.state !== 'open') {
+                        console.log('Warning: Issue is not open');
+                      }
+                      
+                      // Look for linked branch using multiple strategies:
+                      // Strategy 1: Use GraphQL to query for linked development branches
+                      let foundBranch = null;
+                      
+                      try {
+                        console.log('Strategy 1: Checking for linked branches via GraphQL API...');
+                        const graphqlQuery = `
+                          query($owner: String!, $repo: String!, $issueNumber: Int!) {
+                            repository(owner: $owner, name: $repo) {
+                              issue(number: $issueNumber) {
+                                linkedBranches(first: 10) {
+                                  nodes {
+                                    ref {
+                                      name
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        `;
+                        
+                        const graphqlResult = await github.graphql(graphqlQuery, {
+                          owner: context.repo.owner,
+                          repo: context.repo.repo,
+                          issueNumber: parseInt(issueNumber, 10)
+                        });
+                        
+                        const linkedBranches = graphqlResult?.repository?.issue?.linkedBranches?.nodes || [];
+                        if (linkedBranches.length > 0) {
+                          foundBranch = linkedBranches[0].ref.name;
+                          console.log(`✓ Found linked branch via GraphQL: ${foundBranch}`);
+                        } else {
+                          console.log('No linked branches found via GraphQL');
+                        }
+                      } catch (e) {
+                        console.log(`GraphQL query failed: ${e.message}`);
+                      }
+                      
+                      // Strategy 2: Check timeline events for connected branches
+                      if (!foundBranch) {
+                        try {
+                          console.log('Strategy 2: Checking timeline events for connected branches...');
+                          const timeline = await github.rest.issues.listEventsForTimeline({
+                            owner: context.repo.owner,
+                            repo: context.repo.repo,
+                            issue_number: parseInt(issueNumber, 10),
+                            per_page: 100
+                          });
+                          
+                          // Look for "connected" events that link branches
+                          for (const event of timeline.data) {
+                            if (event.event === 'connected' && event.source?.type === 'branch') {
+                              foundBranch = event.source.name;
+                              console.log(`✓ Found connected branch via timeline: ${foundBranch}`);
+                              break;
+                            }
+                          }
+                          
+                          if (!foundBranch) {
+                            console.log('No connected branches found in timeline');
+                          }
+                        } catch (e) {
+                          console.log(`Timeline check failed: ${e.message}`);
+                        }
+                      }
+                      
+                      // Strategy 3: Search all branches for patterns matching the issue number
+                      // This handles various naming conventions: {number}-, feature/{number}-, etc.
+                      if (!foundBranch) {
+                        try {
+                          console.log('Strategy 3: Searching all branches for issue number patterns...');
+                          const branches = await github.rest.repos.listBranches({
+                            owner: context.repo.owner,
+                            repo: context.repo.repo,
+                            per_page: 100
+                          });
+                          
+                          // Escape issue number for safe regex usage (defense in depth)
+                          const escapedIssueNum = issueNumber.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                          
+                          // Look for branches containing the issue number
+                          // Patterns: {num}-, feature/{num}-, fix/{num}-, {num}, etc.
+                          const patterns = [
+                            new RegExp(`^${escapedIssueNum}-`),           // 122-description
+                            new RegExp(`^feature/${escapedIssueNum}-`),   // feature/122-description
+                            new RegExp(`^fix/${escapedIssueNum}-`),       // fix/122-description
+                            new RegExp(`^bugfix/${escapedIssueNum}-`),    // bugfix/122-description
+                            new RegExp(`^issue[-/]${escapedIssueNum}`),   // issue-122, issue/122
+                            new RegExp(`^${escapedIssueNum}$`)            // exact: 122
+                          ];
+                          
+                          for (const branch of branches.data) {
+                            for (const pattern of patterns) {
+                              if (pattern.test(branch.name)) {
+                                foundBranch = branch.name;
+                                console.log(`✓ Found matching branch via pattern: ${foundBranch}`);
+                                break;
+                              }
+                            }
+                            if (foundBranch) break;
+                          }
+                          
+                          if (!foundBranch) {
+                            console.log('No branches found matching issue number patterns');
+                          }
+                        } catch (e) {
+                          console.log(`Branch pattern search failed: ${e.message}`);
+                        }
+                      }
+                      
+                      if (foundBranch) {
+                        branch = foundBranch;
+                        console.log(`Using issue branch: ${branch}`);
+                      } else {
+                        branch = 'develop';
+                        console.log(`No issue-specific branch found, falling back to: ${branch}`);
+                      }
+                      
+                      buildType = 'dev';
+                    } catch (error) {
+                      console.error(`Error fetching issue: ${error.message}`);
+                      core.setFailed(`Failed to fetch issue #${issueNumber}: ${error.message}`);
+                      shouldBuild = false;
+                    }
+                  }
+                }
+              }
+            } else if (eventName === 'release') {
+              // Release published
+              shouldBuild = true;
+              buildType = 'release';
+              branch = context.payload.release.tag_name;
+              console.log(`Release published: ${branch}`);
+            } else if (eventName === 'project_card') {
+              // Project card moved
+              const card = context.payload.project_card;
+
+              // Get the column name
+              const column = await github.rest.projects.getColumn({
+                column_id: context.payload.project_card.column_id
+              });
+
+              console.log(`Card moved to column: ${column.data.name}`);
+
+              // Check if the column is "Test"
+              if (column.data.name.toLowerCase() === 'test') {
+                // Get card content to find the issue
+                if (card.content_url) {
+                  const urlParts = card.content_url.split('/');
+                  issueNumber = urlParts[urlParts.length - 1];
+                  shouldBuild = true;
+                  buildType = 'dev';
+                  branch = 'develop';
+                  console.log(`Issue #${issueNumber} moved to Test`);
+                }
+              }
+            }
+
+            core.setOutput('should_build', shouldBuild);
+            core.setOutput('build_type', buildType);
+            core.setOutput('branch', branch);
+            core.setOutput('issue_number', issueNumber);
+
+            console.log(`Should build: ${shouldBuild}`);
+            console.log(`Build type: ${buildType}`);
+            console.log(`Branch: ${branch}`);
+            console.log(`Issue number: ${issueNumber}`);
+
+  build:
+    needs: determine-build-type
+    if: needs.determine-build-type.outputs.should_build == 'true'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.determine-build-type.outputs.branch }}
+          fetch-depth: 0
+
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: wrapper
+          cache-read-only: false
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v3
+
+      - name: Extract version information
+        id: version
+        run: |
+          MOD_VERSION=$(grep '^mod_version=' gradle.properties | cut -d'=' -f2)
+          MC_VERSION=$(grep '^minecraft_version=' gradle.properties | cut -d'=' -f2)
+
+          echo "mod_version=$MOD_VERSION" >> $GITHUB_OUTPUT
+          echo "minecraft_version=$MC_VERSION" >> $GITHUB_OUTPUT
+
+          echo "Mod Version: $MOD_VERSION"
+          echo "Minecraft Version: $MC_VERSION"
+
+      - name: Set JAR name
+        id: jar_name
+        run: |
+          MOD_VERSION="${{ steps.version.outputs.mod_version }}"
+          MC_VERSION="${{ steps.version.outputs.minecraft_version }}"
+          BUILD_TYPE="${{ needs.determine-build-type.outputs.build_type }}"
+
+          # Remove the minecraft version suffix from mod_version if exists
+          MOD_VERSION_BASE=$(echo "$MOD_VERSION" | sed 's/-[0-9]\+\.[0-9]\+\.[0-9]\+$//')
+
+          if [ "$BUILD_TYPE" = "dev" ]; then
+            JAR_NAME="${MOD_VERSION_BASE}+${MC_VERSION}-dev"
+          else
+            JAR_NAME="${MOD_VERSION_BASE}+${MC_VERSION}"
+          fi
+
+          echo "jar_name=$JAR_NAME" >> $GITHUB_OUTPUT
+          echo "JAR name will be: $JAR_NAME"
+
+      - name: Run DataGen
+        run: ./gradlew runDataGen --no-daemon --stacktrace
+
+      - name: Build JAR
+        run: ./gradlew build --no-daemon --stacktrace
+
+      - name: Rename JAR file
+        run: |
+          ORIGINAL_BASE=$(grep '^archives_base_name=' gradle.properties | cut -d'=' -f2)
+          MOD_VERSION="${{ steps.version.outputs.mod_version }}"
+          JAR_NAME="${{ steps.jar_name.outputs.jar_name }}"
+
+          # Find the built JAR file (excluding sources jar)
+          BUILT_JAR=$(find build/libs -name "${ORIGINAL_BASE}-${MOD_VERSION}.jar" -type f)
+
+          if [ -f "$BUILT_JAR" ]; then
+            RENAMED_JAR="build/libs/vext-${JAR_NAME}.jar"
+            cp "$BUILT_JAR" "$RENAMED_JAR"
+            echo "RENAMED_JAR=$RENAMED_JAR" >> $GITHUB_ENV
+            echo "JAR file renamed to: $RENAMED_JAR"
+          else
+            echo "ERROR: Built JAR not found"
+            exit 1
+          fi
+
+      - name: Upload JAR as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.jar_name.outputs.jar_name }}
+          path: ${{ env.RENAMED_JAR }}
+
+      - name: Upload JAR file directly to issue
+        if: needs.determine-build-type.outputs.issue_number != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const issueNum = parseInt('${{ needs.determine-build-type.outputs.issue_number }}', 10);
+            const jarName = '${{ steps.jar_name.outputs.jar_name }}';
+            const branch = '${{ needs.determine-build-type.outputs.branch }}';
+            const jarPath = '${{ env.RENAMED_JAR }}';
+            const tagName = `test-build-issue-${issueNum}-${context.runId}`;
+            
+            // Create a temporary draft release to upload the JAR
+            const release = await github.rest.repos.createRelease({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag_name: tagName,
+              name: `Test Build for Issue #${issueNum}`,
+              body: `Temporary release for test build of issue #${issueNum}`,
+              draft: true,
+              prerelease: true
+            });
+            
+            console.log(`Created temporary draft release: ${release.data.id}`);
+            
+            // Read the JAR file asynchronously
+            const jarContent = await fs.promises.readFile(jarPath);
+            
+            // Upload the JAR as a release asset
+            const asset = await github.rest.repos.uploadReleaseAsset({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              release_id: release.data.id,
+              name: `${jarName}.jar`,
+              data: jarContent,
+              headers: {
+                'content-type': 'application/java-archive',
+                'content-length': jarContent.length
+              }
+            });
+            
+            console.log(`Uploaded JAR as release asset: ${asset.data.browser_download_url}`);
+            
+            // Comment on the issue with direct download link to the JAR file
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNum,
+              body: `🎉 **Test Build Ready!**\n\nA JAR file has been built for testing:\n\n**File:** \`${jarName}.jar\`\n\n📦 [Download JAR file](${asset.data.browser_download_url})\n\n_Built from branch: \`${branch}\`_\n\n**Note:** This is a direct JAR download link. The file is hosted in a draft release and can be manually cleaned up when no longer needed.`
+            });
+            
+            console.log(`Posted comment to issue #${issueNum}`);
+
+      - name: Upload JAR to release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ env.RENAMED_JAR }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
