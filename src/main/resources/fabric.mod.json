@@ -2,7 +2,7 @@
 	"schemaVersion": 1,
 	"id": "vext",
 	"version": "${version}",
-	"name": "Vanilla Extension",
+	"name": "Vanilla Extensions Mod",
 	"description": "This Mod extends Vanilla Minecraft with generic content",
 	"authors": [
 		"Moritz Rohleder"
