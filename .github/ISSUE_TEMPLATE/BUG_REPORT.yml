@@ -1,7 +1,7 @@
 name: Bug Report
 description: Create a bug report issue, so we can work on resolving the issue.
 projects:
-  - "LotR Mod Issue Board"
+  - "VExt Mod Issue Board"
 title: "[Bug Report] "
 type: "Bug"
 body:

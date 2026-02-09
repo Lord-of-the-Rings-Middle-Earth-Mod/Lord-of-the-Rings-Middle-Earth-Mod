@@ -30,7 +30,7 @@ import net.minecraft.client.render.BlockRenderLayer;
 import net.minecraft.data.family.BlockFamily;
 
 /**
- * Client-side initialization class for the Lord of the Rings Middle Earth Mod.
+ * Client-side initialization class for the Vanilla Extensions Mod.
  * <p>
  * This class handles client-specific initialization such as registering render layers
  * for blocks (cutout rendering for transparent blocks like doors, trapdoors, and crops)

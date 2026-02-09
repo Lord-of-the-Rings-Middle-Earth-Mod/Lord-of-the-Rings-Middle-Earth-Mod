@@ -4,7 +4,7 @@ that are planned to be added to the mod at some point, but don´t have a dedicat
 The list of ideas contains all ideas that currently are discussed but not actually planned to be added to the mod.
 
 > [!Important]
-> As of the current situation this is not a Lord of the Rings Mod, but by the idea to make on is there. This idea is 
+> As of the current situation this is not a Lord of the Rings Mod, but the idea to make one is there. This idea is 
 > resembled within the Roadmap.
 > We do not yet have approval by Middle-Earth Enterprises to use any name or content from Tolkien's works, that is
 > under copyright. We have contacted Middle-Earth Enterprises regarding this and are awaiting a response on this topic.

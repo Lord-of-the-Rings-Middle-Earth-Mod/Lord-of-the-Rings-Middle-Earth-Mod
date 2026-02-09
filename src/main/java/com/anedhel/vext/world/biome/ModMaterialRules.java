@@ -22,7 +22,7 @@ import net.minecraft.world.gen.noise.NoiseParametersKeys;
 import net.minecraft.world.gen.surfacebuilder.MaterialRules;
 
 /**
- * This class defines the material rules in the Lord of the Rings mod.
+ * This class defines the material rules in the Vanilla Extensions mod.
  *
  * @author Moritz Rohleder
  * @since 0.1.0
