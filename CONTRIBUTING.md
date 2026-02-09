@@ -3,7 +3,7 @@
 Before contributing please read the [Code of Conduct](CODE_OF_CONDUCT.md) and make sure you understand it.
 It is also advised to join our [discord](https://discord.com/invite/cQSpXR6bjz), as this is our main communication platform.
 
-Many of the following information is compacted to the most essential information, for a more indepth view with background information check out our [Project Wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/wiki).
+Many of the following information is compacted to the most essential information, for a more indepth view with background information check out our [Project Wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/wiki).
 
 | Table of Contents                                                  |
 |:-------------------------------------------------------------------|
@@ -23,7 +23,7 @@ We use a branching model based on [GitFlow](https://nvie.com/posts/a-successful-
 In most cases you will only come into contact with feature branches, which are branches created from the develop branch.
 When you are done with your work, you create a Pull Request to merge your feature branch into the develop branch.
 Maintainers and Contributors will check Pull Requests regularly and give feedback on them or merge them.
-For a more in-depth guide on our branching model, check out the [wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/wiki/Workflow-Documentation#branching).
+For a more in-depth guide on our branching model, check out the [wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/wiki/Workflow-Documentation#branching).
 
 ### Issues
 We use GitHub Issues to track bugs, features and other tasks, all Issues can be seen with their current status on our [Issue Board](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2)
@@ -61,16 +61,16 @@ Please provide as much and as detailed information as you can.
 
 For further information on how to report a bug check out https://www.chiark.greenend.org.uk/~sgtatham/bugs.html
 
-If you want to know more about the workflow behind a bug-report, you can check out the [wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/wiki/Workflow-Documentation#bug-report).
+If you want to know more about the workflow behind a bug-report, you can check out the [wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/wiki/Workflow-Documentation#bug-report).
 ### Suggestions
-Suggestions can be submitted either on our [discord](https://discord.com/channels/1237739289689985138/1283840850144792616) or via a [GitHub Discussion](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/discussions/categories/ideas-and-suggestions).
+Suggestions can be submitted either on our [discord](https://discord.com/channels/1237739289689985138/1283840850144792616) or via a [GitHub Discussion](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/discussions/categories/ideas-and-suggestions).
 
-Before posting a suggestion, please make sure it isn´t already planned on our [Roadmap](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/blob/master/ROADMAP.md) or has already been posted to [discord](https://discord.com/channels/1237739289689985138/1283840850144792616) or [GitHub](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/discussions/categories/ideas-and-suggestions).
+Before posting a suggestion, please make sure it isn´t already planned on our [Roadmap](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/blob/master/ROADMAP.md) or has already been posted to [discord](https://discord.com/channels/1237739289689985138/1283840850144792616) or [GitHub](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/discussions/categories/ideas-and-suggestions).
 
 Please give as much context alongside your suggestion as you can and describe it as detailed as possible. That will allow us to understand your idea better without having to ask everything from you first. If you are suggesting something with textures, please provide an example if possible.
 
 For more information on how to properly make a suggestion check out https://nohello.net/en/ and https://xyproblem.info/
-You can get more information on the full suggestion workflow on the [wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/wiki/Workflow-Documentation#suggestion).
+You can get more information on the full suggestion workflow on the [wiki](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/wiki/Workflow-Documentation#suggestion).
 
 ---
 
@@ -130,7 +130,7 @@ When contributing code follow the following Workflows steps to ensure the integr
 
 1. Pick an Issue from the *To Do* Column of the [Issue Tracker](https://github.com/orgs/Lord-of-the-Rings-Middle-Earth-Mod/projects/2/views/1)
 2. Move the Issue to *In Progress* and assign yourself as Assignee
-3. Create a branch from the issue following the conventions mentioned in [Issues](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/blob/task/setting-up-the-open-source-project/CONTRIBUTING.md#issues)
+3. Create a branch from the issue following the conventions mentioned in [Issues](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/blob/task/setting-up-the-open-source-project/CONTRIBUTING.md#issues)
 4. Work on the issue until you finished, you are finished, if all acceptance criteria (ACs) are met. *Test what you have implemented in a [developers test]() to ensure it also works as intended.*
 5. Open a Pull Request from the branch to the develop branch. The Pull Request should be named `IssueNumber - IssueName` and will be reviewed by a maintainer.
 6. Link the Pull Request to the Issue and move the Issue into *In Review*

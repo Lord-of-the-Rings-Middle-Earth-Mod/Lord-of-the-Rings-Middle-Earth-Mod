@@ -976,6 +976,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
 	@Override
 	public String getName() {
-		return "LotR-ME-Mod Recipes";
+		return "VExt-Mod Recipes";
 	}
 }

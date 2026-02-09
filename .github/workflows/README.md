@@ -1,6 +1,6 @@
 # GitHub Actions Workflows
 
-This directory contains automated workflows for the Lord of the Rings Middle Earth Mod project.
+This directory contains automated workflows for the Vanilla Extensions Mod project.
 
 ## DataGen Workflow (`datagen.yml`)
 
@@ -9,7 +9,7 @@ Automatically runs the DataGen task whenever changes are made to the project's d
 
 ### Trigger Conditions
 - **Event**: Pull request (opened, synchronized, reopened)
-- **Path Filter**: Only triggers when files in `src/main/java/me/anedhel/lotr/datagen/` are modified
+- **Path Filter**: Only triggers when files in `src/main/java/com/anedhel/vext/datagen/` are modified
 - **Branches**: Runs on pull requests targeting any branch
 
 ### What It Does
@@ -47,14 +47,14 @@ The workflow is designed to work with branch protection rules that require the "
 
 ### DataGen Source Files
 The workflow monitors changes in:
-- `src/main/java/me/anedhel/lotr/datagen/ModBlockTagProvider.java`
-- `src/main/java/me/anedhel/lotr/datagen/ModEnUsLangProvider.java`
-- `src/main/java/me/anedhel/lotr/datagen/ModItemTagProvider.java`
-- `src/main/java/me/anedhel/lotr/datagen/ModLootTableProvider.java`
-- `src/main/java/me/anedhel/lotr/datagen/ModModelProvider.java`
-- `src/main/java/me/anedhel/lotr/datagen/ModRecipeProvider.java`
-- `src/main/java/me/anedhel/lotr/datagen/ModWorldGenerator.java`
-- `src/main/java/me/anedhel/lotr/datagen/util/` (utility classes)
+- `src/main/java/com/anedhel/vext/datagen/ModBlockTagProvider.java`
+- `src/main/java/com/anedhel/vext/datagen/ModEnUsLangProvider.java`
+- `src/main/java/com/anedhel/vext/datagen/ModItemTagProvider.java`
+- `src/main/java/com/anedhel/vext/datagen/ModLootTableProvider.java`
+- `src/main/java/com/anedhel/vext/datagen/ModModelProvider.java`
+- `src/main/java/com/anedhel/vext/datagen/ModRecipeProvider.java`
+- `src/main/java/com/anedhel/vext/datagen/ModWorldGenerator.java`
+- `src/main/java/com/anedhel/vext/datagen/util/` (utility classes)
 
 ### Benefits
 - **Automation**: Eliminates manual DataGen runs

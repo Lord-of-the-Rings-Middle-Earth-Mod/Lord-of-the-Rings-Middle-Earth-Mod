@@ -94,14 +94,14 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 	 * @param translationBuilder the {@link TranslationBuilder} to add translations to
 	 */
 	private void generateItemGroupTranslations(TranslationBuilder translationBuilder) {
-		translationBuilder.add("itemgroup.lotr_blocks", "LotR Blocks");
-		translationBuilder.add("itemgroup.lotr_stone", "LotR Stone");
-		translationBuilder.add("itemgroup.lotr_ingredients", "LotR Ingredients");
-		translationBuilder.add("itemgroup.lotr_tools", "LotR Tools");
-		translationBuilder.add("itemgroup.lotr_combat", "LotR Combat");
-		translationBuilder.add("itemgroup.lotr_plants", "LotR Plants");
-		translationBuilder.add("itemgroup.lotr_food", "LotR Food");
-		translationBuilder.add("itemgroup.lotr_spawns", "LotR Spawns");
+		translationBuilder.add("itemgroup.vext_blocks", "VExt Blocks");
+		translationBuilder.add("itemgroup.vext_stone", "VExt Stone");
+		translationBuilder.add("itemgroup.vext_ingredients", "VExt Ingredients");
+		translationBuilder.add("itemgroup.vext_tools", "VExt Tools");
+		translationBuilder.add("itemgroup.vext_combat", "VExt Combat");
+		translationBuilder.add("itemgroup.vext_plants", "VExt Plants");
+		translationBuilder.add("itemgroup.vext_food", "VExt Food");
+		translationBuilder.add("itemgroup.vext_spawns", "VExt Spawns");
 	}
 
 	/**

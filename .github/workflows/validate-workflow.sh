@@ -10,7 +10,7 @@ if [ ! -f ".github/workflows/datagen.yml" ]; then
 fi
 
 # Check if DataGen source directory exists
-if [ ! -d "src/main/java/me/anedhel/lotr/datagen" ]; then
+if [ ! -d "src/main/java/com/anedhel/vext/datagen" ]; then
     echo "❌ DataGen source directory not found!"
     exit 1
 fi
@@ -27,8 +27,8 @@ if ! grep -q "fabric-datagen" src/main/resources/fabric.mod.json; then
     exit 1
 fi
 
-# Check if LordOfTheRingsMiddleEarthModDataGenerator exists
-if [ ! -f "src/main/java/me/anedhel/lotr/LordOfTheRingsMiddleEarthModDataGenerator.java" ]; then
+# Check if VExtModDataGenerator exists
+if [ ! -f "src/main/java/com/anedhel/vext/VExtModDataGenerator.java" ]; then
     echo "❌ DataGenerator entrypoint class not found!"
     exit 1
 fi
@@ -42,7 +42,7 @@ fi
 
 echo "✅ All validation checks passed!"
 echo "📋 Workflow Summary:"
-echo "   - Triggers on changes to: src/main/java/me/anedhel/lotr/datagen/**"
+echo "   - Triggers on changes to: src/main/java/com/anedhel/vext/datagen/**"
 echo "   - Uses Java 17 with Temurin distribution"
 echo "   - Runs command: ./gradlew runDataGen"
 echo "   - Commits changes to: src/main/generated/"

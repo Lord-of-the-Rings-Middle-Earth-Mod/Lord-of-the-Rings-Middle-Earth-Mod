@@ -21,7 +21,7 @@ import net.minecraft.registry.RegistryBuilder;
 import net.minecraft.registry.RegistryKeys;
 
 /**
- * Data generator initialization class for the Lord of the Rings Middle Earth Mod.
+ * Data generator initialization class for the Vanilla Extensions Mod.
  * <p>
  * This class registers all data generation providers for automatic generation of
  * tags, models, recipes, loot tables, and language files during the build process.

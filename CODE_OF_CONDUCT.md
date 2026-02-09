@@ -19,7 +19,7 @@ diverse, inclusive, and healthy community.
 Disagreement and sometimes even frustration are normal, but should not lead to poor behaviour.
 Be respectful and considered of others even if you disagree with them.
 2. Be friendly and welcoming
-This community is meant for everyone interested in Lord of the Rings, Minecraft or Modding.
+This community is meant for everyone interested in Vanilla Minecraft, Modding, or the Vanilla Extensions Mod.
 Be welcoming to those who freshly join the community and keep all discussions and chats friendly.
 3. Be patient and forgiving
 Every member of this community is putting their free time into this, be patient if things might take a bit longer.
@@ -59,7 +59,7 @@ These Rules apply to any chat within the discord Server as well as all content o
    Any member breaking this rule will also be reported to Discord directly!
 6. **No NSFW content, or other sexualizing content.**
     
-   We are a Lord of the Rings Minecraft Community and do not content with sexual content in our Community.  
+   We are a Vanilla Minecraft Community and do not content with sexual content in our Community.  
    We also consider Erotic Roleplay (ERP), gore, excessive violence or animal harm to be NSFW content.
 7. **Respect each other and their opinions.**
    

@@ -17,19 +17,19 @@ The code of the Mod is licensed under the [GNU General Public License Version 3]
 ## What if I have questions or need help?
 If you have any questions, the best way to get them answered is to join our [discord](https://discord.com/invite/cQSpXR6bjz) where we have a channel dedicated for questions and one for technical support.
 You can also contact any maintainer on discord.
-Should you not have a discord account and do not want to create one, you can also contact [Anedhel/Moritz](mailto:moritz_rohleder+lotrmod@outlook.de) directly,
+Should you not have a discord account and do not want to create one, you can also contact [Anedhel/Moritz](mailto:moritz_rohleder+vextmod@outlook.de) directly,
 however it might not get you a response within short time.
 
 ## Bug Reports and Suggestions
 ### **Bug Reports:**
 - **How it works:** When reporting a bug, be as detailed as possible. Include steps to reproduce, expected vs actual behavior, and any relevant logs or screenshots. The Templates are meant to help you accomplish that.
 - **Where to report:** Bug reports can be submitted via the [bug-report channel](https://discord.com/channels/1237739289689985138/1286200697045520405) on our discord or using the [issue template]() for bug-reports.
-- **More info:** See the [Bug Report Documentation](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/discussions/categories/ideas-and-suggestions) for more information on bugs reports and how we handle them.
+- **More info:** See the [Bug Report Documentation](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/discussions/categories/ideas-and-suggestions) for more information on bugs reports and how we handle them.
 
 ### **Feature Proposals:**
 - **How it works:** Feature proposals can be submitted via GitHub Discussions or the community Discord. Please be as detailed as possible and follow the templates.
-- **Where to propose:** Suggestions can be submitted either on our [discord](https://discord.com/channels/1237739289689985138/1283840850144792616) or via a [GitHub Discussion](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/discussions/categories/ideas-and-suggestions).
-- **More info:** See the [Suggestion Documentation](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/discussions/categories/ideas-and-suggestions) for more information on Suggestions and how we handle them.
+- **Where to propose:** Suggestions can be submitted either on our [discord](https://discord.com/channels/1237739289689985138/1283840850144792616) or via a [GitHub Discussion](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/discussions/categories/ideas-and-suggestions).
+- **More info:** See the [Suggestion Documentation](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/discussions/categories/ideas-and-suggestions) for more information on Suggestions and how we handle them.
 
 ## Roadmap
 Roadmap is a rough plan of all planned releases. It is not set in stone and can change at any time.
@@ -37,9 +37,9 @@ Roadmap is a rough plan of all planned releases. It is not set in stone and can 
 
 The full and more detailed Roadmap, including planned features and ideas, can be found [here](ROADMAP.md).
 
-## How to get startet
+## How to get started
 If you want to play the Mod on a server, you need to have it installed on your PC and the Server needs to have the Mod installed as well.
-You can always download all version of the Mod on our [GitHub](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/Lord-of-the-Rings-Middle-Earth-Mod/releases).
+You can always download all version of the Mod on our [GitHub](https://github.com/Lord-of-the-Rings-Middle-Earth-Mod/VExt-Mod/releases).
 The latest is marked as latest version.
 
 ### How to install the Mod on your PC
@@ -72,7 +72,7 @@ The above steps are only for a local server, if you use a server host, you need 
 Should you wish to contribute within your possibilities there is more than just coding we are always happy for help with:
 - Coding the Mod
 - Creating models, textures and models 
-- Translations [![Crowdin](https://badges.crowdin.net/lord-of-the-rings-middle-earth/localized.svg)](https://crowdin.com/project/lord-of-the-rings-middle-earth)
+- Translations [![Crowdin](https://badges.crowdin.net/vanilla-extensions-mod/localized.svg)](https://crowdin.com/project/vanilla-extensions-mod)
 - Testing
 
 Depending on how you wish to contribute following skills are advised:
