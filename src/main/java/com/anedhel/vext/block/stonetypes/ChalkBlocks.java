@@ -2119,14 +2119,14 @@ public class ChalkBlocks {
 			.wall(OVERGROWN_CRACKED_CHALK_TILE_WALL)
 			.build();
 
-	public static Block BRONZE_CHALK_TILES = registerBlock("bronze_chalk_tiless",
+	public static Block BRONZE_CHALK_TILES = registerBlock("bronze_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block BRONZE_CHALK_TILE_STAIRS = registerBlock("bronze_chalk_tiles_stairs",
+	public static Block BRONZE_CHALK_TILE_STAIRS = registerBlock("bronze_chalk_tile_stairs",
 			settings -> new StairsBlock(BRONZE_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block BRONZE_CHALK_TILE_SLAB = registerBlock("bronze_chalk_tiles_slab",
+	public static Block BRONZE_CHALK_TILE_SLAB = registerBlock("bronze_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block BRONZE_CHALK_TILE_WALL = registerBlock("bronze_chalk_tiles_wall",
+	public static Block BRONZE_CHALK_TILE_WALL = registerBlock("bronze_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily BRONZE_CHALK_TILE_FAMILY = BlockFamilies.register(BRONZE_CHALK_TILES)
 			.stairs(BRONZE_CHALK_TILE_STAIRS)
@@ -2134,14 +2134,14 @@ public class ChalkBlocks {
 			.wall(BRONZE_CHALK_TILE_WALL)
 			.build();
 
-	public static Block MOSSY_BRONZE_CHALK_TILES = registerBlock("mossy_bronze_chalk_tiless",
+	public static Block MOSSY_BRONZE_CHALK_TILES = registerBlock("mossy_bronze_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_BRONZE_CHALK_TILE_STAIRS = registerBlock("mossy_bronze_chalk_tiles_stairs",
+	public static Block MOSSY_BRONZE_CHALK_TILE_STAIRS = registerBlock("mossy_bronze_chalk_tile_stairs",
 			settings -> new StairsBlock(MOSSY_BRONZE_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_BRONZE_CHALK_TILE_SLAB = registerBlock("mossy_bronze_chalk_tiles_slab",
+	public static Block MOSSY_BRONZE_CHALK_TILE_SLAB = registerBlock("mossy_bronze_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_BRONZE_CHALK_TILE_WALL = registerBlock("mossy_bronze_chalk_tiles_wall",
+	public static Block MOSSY_BRONZE_CHALK_TILE_WALL = registerBlock("mossy_bronze_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_BRONZE_CHALK_TILE_FAMILY = BlockFamilies.register(MOSSY_BRONZE_CHALK_TILES)
 			.stairs(MOSSY_BRONZE_CHALK_TILE_STAIRS)
@@ -2149,14 +2149,14 @@ public class ChalkBlocks {
 			.wall(MOSSY_BRONZE_CHALK_TILE_WALL)
 			.build();
 
-	public static Block OVERGROWN_BRONZE_CHALK_TILES = registerBlock("overgrown_bronze_chalk_tiless",
+	public static Block OVERGROWN_BRONZE_CHALK_TILES = registerBlock("overgrown_bronze_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_BRONZE_CHALK_TILE_STAIRS = registerBlock("overgrown_bronze_chalk_tiles_stairs",
+	public static Block OVERGROWN_BRONZE_CHALK_TILE_STAIRS = registerBlock("overgrown_bronze_chalk_tile_stairs",
 			settings -> new StairsBlock(OVERGROWN_BRONZE_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_BRONZE_CHALK_TILE_SLAB = registerBlock("overgrown_bronze_chalk_tiles_slab",
+	public static Block OVERGROWN_BRONZE_CHALK_TILE_SLAB = registerBlock("overgrown_bronze_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_BRONZE_CHALK_TILE_WALL = registerBlock("overgrown_bronze_chalk_tiles_wall",
+	public static Block OVERGROWN_BRONZE_CHALK_TILE_WALL = registerBlock("overgrown_bronze_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_BRONZE_CHALK_TILE_FAMILY = BlockFamilies.register(OVERGROWN_BRONZE_CHALK_TILES)
 			.stairs(OVERGROWN_BRONZE_CHALK_TILE_STAIRS)
@@ -2164,14 +2164,14 @@ public class ChalkBlocks {
 			.wall(OVERGROWN_BRONZE_CHALK_TILE_WALL)
 			.build();
 
-	public static Block CRACKED_BRONZE_CHALK_TILES = registerBlock("cracked_bronze_chalk_tiless",
+	public static Block CRACKED_BRONZE_CHALK_TILES = registerBlock("cracked_bronze_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block CRACKED_BRONZE_CHALK_TILE_STAIRS = registerBlock("cracked_bronze_chalk_tiles_stairs",
+	public static Block CRACKED_BRONZE_CHALK_TILE_STAIRS = registerBlock("cracked_bronze_chalk_tile_stairs",
 			settings -> new StairsBlock(CRACKED_BRONZE_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block CRACKED_BRONZE_CHALK_TILE_SLAB = registerBlock("cracked_bronze_chalk_tiles_slab",
+	public static Block CRACKED_BRONZE_CHALK_TILE_SLAB = registerBlock("cracked_bronze_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block CRACKED_BRONZE_CHALK_TILE_WALL = registerBlock("cracked_bronze_chalk_tiles_wall",
+	public static Block CRACKED_BRONZE_CHALK_TILE_WALL = registerBlock("cracked_bronze_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily CRACKED_BRONZE_CHALK_TILE_FAMILY = BlockFamilies.register(CRACKED_BRONZE_CHALK_TILES)
 			.stairs(CRACKED_BRONZE_CHALK_TILE_STAIRS)
@@ -2179,14 +2179,14 @@ public class ChalkBlocks {
 			.wall(CRACKED_BRONZE_CHALK_TILE_WALL)
 			.build();
 
-	public static Block MOSSY_CRACKED_BRONZE_CHALK_TILES = registerBlock("mossy_cracked_bronze_chalk_tiless",
+	public static Block MOSSY_CRACKED_BRONZE_CHALK_TILES = registerBlock("mossy_cracked_bronze_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_CRACKED_BRONZE_CHALK_TILE_STAIRS = registerBlock("mossy_cracked_bronze_chalk_tiles_stairs",
+	public static Block MOSSY_CRACKED_BRONZE_CHALK_TILE_STAIRS = registerBlock("mossy_cracked_bronze_chalk_tile_stairs",
 			settings -> new StairsBlock(MOSSY_CRACKED_BRONZE_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_CRACKED_BRONZE_CHALK_TILE_SLAB = registerBlock("mossy_cracked_bronze_chalk_tiles_slab",
+	public static Block MOSSY_CRACKED_BRONZE_CHALK_TILE_SLAB = registerBlock("mossy_cracked_bronze_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_CRACKED_BRONZE_CHALK_TILE_WALL = registerBlock("mossy_cracked_bronze_chalk_tiles_wall",
+	public static Block MOSSY_CRACKED_BRONZE_CHALK_TILE_WALL = registerBlock("mossy_cracked_bronze_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_CRACKED_BRONZE_CHALK_TILE_FAMILY = BlockFamilies.register(MOSSY_CRACKED_BRONZE_CHALK_TILES)
 			.stairs(MOSSY_CRACKED_BRONZE_CHALK_TILE_STAIRS)
@@ -2194,14 +2194,14 @@ public class ChalkBlocks {
 			.wall(MOSSY_CRACKED_BRONZE_CHALK_TILE_WALL)
 			.build();
 
-	public static Block OVERGROWN_CRACKED_BRONZE_CHALK_TILES = registerBlock("overgrown_cracked_bronze_chalk_tiless",
+	public static Block OVERGROWN_CRACKED_BRONZE_CHALK_TILES = registerBlock("overgrown_cracked_bronze_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_CRACKED_BRONZE_CHALK_TILE_STAIRS = registerBlock("overgrown_cracked_bronze_chalk_tiles_stairs",
+	public static Block OVERGROWN_CRACKED_BRONZE_CHALK_TILE_STAIRS = registerBlock("overgrown_cracked_bronze_chalk_tile_stairs",
 			settings -> new StairsBlock(OVERGROWN_CRACKED_BRONZE_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_CRACKED_BRONZE_CHALK_TILE_SLAB = registerBlock("overgrown_cracked_bronze_chalk_tiles_slab",
+	public static Block OVERGROWN_CRACKED_BRONZE_CHALK_TILE_SLAB = registerBlock("overgrown_cracked_bronze_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_CRACKED_BRONZE_CHALK_TILE_WALL = registerBlock("overgrown_cracked_bronze_chalk_tiles_wall",
+	public static Block OVERGROWN_CRACKED_BRONZE_CHALK_TILE_WALL = registerBlock("overgrown_cracked_bronze_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_CRACKED_BRONZE_CHALK_TILE_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_BRONZE_CHALK_TILES)
 			.stairs(OVERGROWN_CRACKED_BRONZE_CHALK_TILE_STAIRS)
@@ -2209,14 +2209,14 @@ public class ChalkBlocks {
 			.wall(OVERGROWN_CRACKED_BRONZE_CHALK_TILE_WALL)
 			.build();
 
-	public static Block SILVER_CHALK_TILES = registerBlock("silver_chalk_tiless",
+	public static Block SILVER_CHALK_TILES = registerBlock("silver_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block SILVER_CHALK_TILE_STAIRS = registerBlock("silver_chalk_tiles_stairs",
+	public static Block SILVER_CHALK_TILE_STAIRS = registerBlock("silver_chalk_tile_stairs",
 			settings -> new StairsBlock(SILVER_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block SILVER_CHALK_TILE_SLAB = registerBlock("silver_chalk_tiles_slab",
+	public static Block SILVER_CHALK_TILE_SLAB = registerBlock("silver_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block SILVER_CHALK_TILE_WALL = registerBlock("silver_chalk_tiles_wall",
+	public static Block SILVER_CHALK_TILE_WALL = registerBlock("silver_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily SILVER_CHALK_TILE_FAMILY = BlockFamilies.register(SILVER_CHALK_TILES)
 			.stairs(SILVER_CHALK_TILE_STAIRS)
@@ -2224,14 +2224,14 @@ public class ChalkBlocks {
 			.wall(SILVER_CHALK_TILE_WALL)
 			.build();
 
-	public static Block MOSSY_SILVER_CHALK_TILES = registerBlock("mossy_silver_chalk_tiless",
+	public static Block MOSSY_SILVER_CHALK_TILES = registerBlock("mossy_silver_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_SILVER_CHALK_TILE_STAIRS = registerBlock("mossy_silver_chalk_tiles_stairs",
+	public static Block MOSSY_SILVER_CHALK_TILE_STAIRS = registerBlock("mossy_silver_chalk_tile_stairs",
 			settings -> new StairsBlock(MOSSY_SILVER_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_SILVER_CHALK_TILE_SLAB = registerBlock("mossy_silver_chalk_tiles_slab",
+	public static Block MOSSY_SILVER_CHALK_TILE_SLAB = registerBlock("mossy_silver_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_SILVER_CHALK_TILE_WALL = registerBlock("mossy_silver_chalk_tiles_wall",
+	public static Block MOSSY_SILVER_CHALK_TILE_WALL = registerBlock("mossy_silver_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_SILVER_CHALK_TILE_FAMILY = BlockFamilies.register(MOSSY_SILVER_CHALK_TILES)
 			.stairs(MOSSY_SILVER_CHALK_TILE_STAIRS)
@@ -2239,14 +2239,14 @@ public class ChalkBlocks {
 			.wall(MOSSY_SILVER_CHALK_TILE_WALL)
 			.build();
 
-	public static Block OVERGROWN_SILVER_CHALK_TILES = registerBlock("overgrown_silver_chalk_tiless",
+	public static Block OVERGROWN_SILVER_CHALK_TILES = registerBlock("overgrown_silver_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_SILVER_CHALK_TILE_STAIRS = registerBlock("overgrown_silver_chalk_tiles_stairs",
+	public static Block OVERGROWN_SILVER_CHALK_TILE_STAIRS = registerBlock("overgrown_silver_chalk_tile_stairs",
 			settings -> new StairsBlock(OVERGROWN_SILVER_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_SILVER_CHALK_TILE_SLAB = registerBlock("overgrown_silver_chalk_tiles_slab",
+	public static Block OVERGROWN_SILVER_CHALK_TILE_SLAB = registerBlock("overgrown_silver_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_SILVER_CHALK_TILE_WALL = registerBlock("overgrown_silver_chalk_tiles_wall",
+	public static Block OVERGROWN_SILVER_CHALK_TILE_WALL = registerBlock("overgrown_silver_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_SILVER_CHALK_TILE_FAMILY = BlockFamilies.register(OVERGROWN_SILVER_CHALK_TILES)
 			.stairs(OVERGROWN_SILVER_CHALK_TILE_STAIRS)
@@ -2254,14 +2254,14 @@ public class ChalkBlocks {
 			.wall(OVERGROWN_SILVER_CHALK_TILE_WALL)
 			.build();
 
-	public static Block CRACKED_SILVER_CHALK_TILES = registerBlock("cracked_silver_chalk_tiless",
+	public static Block CRACKED_SILVER_CHALK_TILES = registerBlock("cracked_silver_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block CRACKED_SILVER_CHALK_TILE_STAIRS = registerBlock("cracked_silver_chalk_tiles_stairs",
+	public static Block CRACKED_SILVER_CHALK_TILE_STAIRS = registerBlock("cracked_silver_chalk_tile_stairs",
 			settings -> new StairsBlock(CRACKED_SILVER_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block CRACKED_SILVER_CHALK_TILE_SLAB = registerBlock("cracked_silver_chalk_tiles_slab",
+	public static Block CRACKED_SILVER_CHALK_TILE_SLAB = registerBlock("cracked_silver_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block CRACKED_SILVER_CHALK_TILE_WALL = registerBlock("cracked_silver_chalk_tiles_wall",
+	public static Block CRACKED_SILVER_CHALK_TILE_WALL = registerBlock("cracked_silver_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily CRACKED_SILVER_CHALK_TILE_FAMILY = BlockFamilies.register(CRACKED_SILVER_CHALK_TILES)
 			.stairs(CRACKED_SILVER_CHALK_TILE_STAIRS)
@@ -2269,14 +2269,14 @@ public class ChalkBlocks {
 			.wall(CRACKED_SILVER_CHALK_TILE_WALL)
 			.build();
 
-	public static Block MOSSY_CRACKED_SILVER_CHALK_TILES = registerBlock("mossy_cracked_silver_chalk_tiless",
+	public static Block MOSSY_CRACKED_SILVER_CHALK_TILES = registerBlock("mossy_cracked_silver_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_CRACKED_SILVER_CHALK_TILE_STAIRS = registerBlock("mossy_cracked_silver_chalk_tiles_stairs",
+	public static Block MOSSY_CRACKED_SILVER_CHALK_TILE_STAIRS = registerBlock("mossy_cracked_silver_chalk_tile_stairs",
 			settings -> new StairsBlock(MOSSY_CRACKED_SILVER_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_CRACKED_SILVER_CHALK_TILE_SLAB = registerBlock("mossy_cracked_silver_chalk_tiles_slab",
+	public static Block MOSSY_CRACKED_SILVER_CHALK_TILE_SLAB = registerBlock("mossy_cracked_silver_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_CRACKED_SILVER_CHALK_TILE_WALL = registerBlock("mossy_cracked_silver_chalk_tiles_wall",
+	public static Block MOSSY_CRACKED_SILVER_CHALK_TILE_WALL = registerBlock("mossy_cracked_silver_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_CRACKED_SILVER_CHALK_TILE_FAMILY = BlockFamilies.register(MOSSY_CRACKED_SILVER_CHALK_TILES)
 			.stairs(MOSSY_CRACKED_SILVER_CHALK_TILE_STAIRS)
@@ -2284,14 +2284,14 @@ public class ChalkBlocks {
 			.wall(MOSSY_CRACKED_SILVER_CHALK_TILE_WALL)
 			.build();
 
-	public static Block OVERGROWN_CRACKED_SILVER_CHALK_TILES = registerBlock("overgrown_cracked_silver_chalk_tiless",
+	public static Block OVERGROWN_CRACKED_SILVER_CHALK_TILES = registerBlock("overgrown_cracked_silver_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_CRACKED_SILVER_CHALK_TILE_STAIRS = registerBlock("overgrown_cracked_silver_chalk_tiles_stairs",
+	public static Block OVERGROWN_CRACKED_SILVER_CHALK_TILE_STAIRS = registerBlock("overgrown_cracked_silver_chalk_tile_stairs",
 			settings -> new StairsBlock(OVERGROWN_CRACKED_SILVER_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_CRACKED_SILVER_CHALK_TILE_SLAB = registerBlock("overgrown_cracked_silver_chalk_tiles_slab",
+	public static Block OVERGROWN_CRACKED_SILVER_CHALK_TILE_SLAB = registerBlock("overgrown_cracked_silver_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_CRACKED_SILVER_CHALK_TILE_WALL = registerBlock("overgrown_cracked_silver_chalk_tiles_wall",
+	public static Block OVERGROWN_CRACKED_SILVER_CHALK_TILE_WALL = registerBlock("overgrown_cracked_silver_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_CRACKED_SILVER_CHALK_TILE_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_SILVER_CHALK_TILES)
 			.stairs(OVERGROWN_CRACKED_SILVER_CHALK_TILE_STAIRS)
@@ -2299,14 +2299,14 @@ public class ChalkBlocks {
 			.wall(OVERGROWN_CRACKED_SILVER_CHALK_TILE_WALL)
 			.build();
 
-	public static Block GOLD_CHALK_TILES = registerBlock("gold_chalk_tiless",
+	public static Block GOLD_CHALK_TILES = registerBlock("gold_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block GOLD_CHALK_TILE_STAIRS = registerBlock("gold_chalk_tiles_stairs",
+	public static Block GOLD_CHALK_TILE_STAIRS = registerBlock("gold_chalk_tile_stairs",
 			settings -> new StairsBlock(GOLD_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block GOLD_CHALK_TILE_SLAB = registerBlock("gold_chalk_tiles_slab",
+	public static Block GOLD_CHALK_TILE_SLAB = registerBlock("gold_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block GOLD_CHALK_TILE_WALL = registerBlock("gold_chalk_tiles_wall",
+	public static Block GOLD_CHALK_TILE_WALL = registerBlock("gold_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily GOLD_CHALK_TILE_FAMILY = BlockFamilies.register(GOLD_CHALK_TILES)
 			.stairs(GOLD_CHALK_TILE_STAIRS)
@@ -2314,14 +2314,14 @@ public class ChalkBlocks {
 			.wall(GOLD_CHALK_TILE_WALL)
 			.build();
 
-	public static Block MOSSY_GOLD_CHALK_TILES = registerBlock("mossy_gold_chalk_tiless",
+	public static Block MOSSY_GOLD_CHALK_TILES = registerBlock("mossy_gold_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_GOLD_CHALK_TILE_STAIRS = registerBlock("mossy_gold_chalk_tiles_stairs",
+	public static Block MOSSY_GOLD_CHALK_TILE_STAIRS = registerBlock("mossy_gold_chalk_tile_stairs",
 			settings -> new StairsBlock(MOSSY_GOLD_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_GOLD_CHALK_TILE_SLAB = registerBlock("mossy_gold_chalk_tiles_slab",
+	public static Block MOSSY_GOLD_CHALK_TILE_SLAB = registerBlock("mossy_gold_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_GOLD_CHALK_TILE_WALL = registerBlock("mossy_gold_chalk_tiles_wall",
+	public static Block MOSSY_GOLD_CHALK_TILE_WALL = registerBlock("mossy_gold_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_GOLD_CHALK_TILE_FAMILY = BlockFamilies.register(MOSSY_GOLD_CHALK_TILES)
 			.stairs(MOSSY_GOLD_CHALK_TILE_STAIRS)
@@ -2329,14 +2329,14 @@ public class ChalkBlocks {
 			.wall(MOSSY_GOLD_CHALK_TILE_WALL)
 			.build();
 
-	public static Block OVERGROWN_GOLD_CHALK_TILES = registerBlock("overgrown_gold_chalk_tiless",
+	public static Block OVERGROWN_GOLD_CHALK_TILES = registerBlock("overgrown_gold_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_GOLD_CHALK_TILE_STAIRS = registerBlock("overgrown_gold_chalk_tiles_stairs",
+	public static Block OVERGROWN_GOLD_CHALK_TILE_STAIRS = registerBlock("overgrown_gold_chalk_tile_stairs",
 			settings -> new StairsBlock(OVERGROWN_GOLD_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_GOLD_CHALK_TILE_SLAB = registerBlock("overgrown_gold_chalk_tiles_slab",
+	public static Block OVERGROWN_GOLD_CHALK_TILE_SLAB = registerBlock("overgrown_gold_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_GOLD_CHALK_TILE_WALL = registerBlock("overgrown_gold_chalk_tiles_wall",
+	public static Block OVERGROWN_GOLD_CHALK_TILE_WALL = registerBlock("overgrown_gold_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_GOLD_CHALK_TILE_FAMILY = BlockFamilies.register(OVERGROWN_GOLD_CHALK_TILES)
 			.stairs(OVERGROWN_GOLD_CHALK_TILE_STAIRS)
@@ -2344,14 +2344,14 @@ public class ChalkBlocks {
 			.wall(OVERGROWN_GOLD_CHALK_TILE_WALL)
 			.build();
 
-	public static Block CRACKED_GOLD_CHALK_TILES = registerBlock("cracked_gold_chalk_tiless",
+	public static Block CRACKED_GOLD_CHALK_TILES = registerBlock("cracked_gold_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block CRACKED_GOLD_CHALK_TILE_STAIRS = registerBlock("cracked_gold_chalk_tiles_stairs",
+	public static Block CRACKED_GOLD_CHALK_TILE_STAIRS = registerBlock("cracked_gold_chalk_tile_stairs",
 			settings -> new StairsBlock(CRACKED_GOLD_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block CRACKED_GOLD_CHALK_TILE_SLAB = registerBlock("cracked_gold_chalk_tiles_slab",
+	public static Block CRACKED_GOLD_CHALK_TILE_SLAB = registerBlock("cracked_gold_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block CRACKED_GOLD_CHALK_TILE_WALL = registerBlock("cracked_gold_chalk_tiles_wall",
+	public static Block CRACKED_GOLD_CHALK_TILE_WALL = registerBlock("cracked_gold_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily CRACKED_GOLD_CHALK_TILE_FAMILY = BlockFamilies.register(CRACKED_GOLD_CHALK_TILES)
 			.stairs(CRACKED_GOLD_CHALK_TILE_STAIRS)
@@ -2359,14 +2359,14 @@ public class ChalkBlocks {
 			.wall(CRACKED_GOLD_CHALK_TILE_WALL)
 			.build();
 
-	public static Block MOSSY_CRACKED_GOLD_CHALK_TILES = registerBlock("mossy_cracked_gold_chalk_tiless",
+	public static Block MOSSY_CRACKED_GOLD_CHALK_TILES = registerBlock("mossy_cracked_gold_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_CRACKED_GOLD_CHALK_TILE_STAIRS = registerBlock("mossy_cracked_gold_chalk_tiles_stairs",
+	public static Block MOSSY_CRACKED_GOLD_CHALK_TILE_STAIRS = registerBlock("mossy_cracked_gold_chalk_tile_stairs",
 			settings -> new StairsBlock(MOSSY_CRACKED_GOLD_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_CRACKED_GOLD_CHALK_TILE_SLAB = registerBlock("mossy_cracked_gold_chalk_tiles_slab",
+	public static Block MOSSY_CRACKED_GOLD_CHALK_TILE_SLAB = registerBlock("mossy_cracked_gold_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block MOSSY_CRACKED_GOLD_CHALK_TILE_WALL = registerBlock("mossy_cracked_gold_chalk_tiles_wall",
+	public static Block MOSSY_CRACKED_GOLD_CHALK_TILE_WALL = registerBlock("mossy_cracked_gold_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_CRACKED_GOLD_CHALK_TILE_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GOLD_CHALK_TILES)
 			.stairs(MOSSY_CRACKED_GOLD_CHALK_TILE_STAIRS)
@@ -2374,14 +2374,14 @@ public class ChalkBlocks {
 			.wall(MOSSY_CRACKED_GOLD_CHALK_TILE_WALL)
 			.build();
 
-	public static Block OVERGROWN_CRACKED_GOLD_CHALK_TILES = registerBlock("overgrown_cracked_gold_chalk_tiless",
+	public static Block OVERGROWN_CRACKED_GOLD_CHALK_TILES = registerBlock("overgrown_cracked_gold_chalk_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_CRACKED_GOLD_CHALK_TILE_STAIRS = registerBlock("overgrown_cracked_gold_chalk_tiles_stairs",
+	public static Block OVERGROWN_CRACKED_GOLD_CHALK_TILE_STAIRS = registerBlock("overgrown_cracked_gold_chalk_tile_stairs",
 			settings -> new StairsBlock(OVERGROWN_CRACKED_GOLD_CHALK_TILES.getDefaultState(),
 					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_CRACKED_GOLD_CHALK_TILE_SLAB = registerBlock("overgrown_cracked_gold_chalk_tiles_slab",
+	public static Block OVERGROWN_CRACKED_GOLD_CHALK_TILE_SLAB = registerBlock("overgrown_cracked_gold_chalk_tile_slab",
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
-	public static Block OVERGROWN_CRACKED_GOLD_CHALK_TILE_WALL = registerBlock("overgrown_cracked_gold_chalk_tiles_wall",
+	public static Block OVERGROWN_CRACKED_GOLD_CHALK_TILE_WALL = registerBlock("overgrown_cracked_gold_chalk_tile_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_CRACKED_GOLD_CHALK_TILE_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GOLD_CHALK_TILES)
 			.stairs(OVERGROWN_CRACKED_GOLD_CHALK_TILE_STAIRS)
