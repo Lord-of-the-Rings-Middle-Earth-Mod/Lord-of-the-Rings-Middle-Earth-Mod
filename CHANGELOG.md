@@ -14,6 +14,7 @@ ___
 + Added Frieze Blocks with horizontal connected textures
   + Common Tag c:frieze for connecting freeze textures
 + Added Blueslate as stoneType
++ Added Chalk as stoneType
 + Added Pine as woodType and Tree
   + Spawns in Meadow, Taige and Old Growth Pine Taiga biomes
 + Added Tomatoes and Baked Tomatoes as food items, with the following properties:
