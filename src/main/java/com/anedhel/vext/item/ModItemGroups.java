@@ -113,6 +113,14 @@ public class ModItemGroups {
 						entries.add(ModItems.COOKED_CORN);
 					})).build());
 
+	public static final ItemGroup VEXT_CITYBUILDER = Registry.register(Registries.ITEM_GROUP,
+			Identifier.of(VExtMod.MOD_ID, "vext_citybuilder"), FabricItemGroup.builder().displayName(
+							Text.translatableWithFallback("itemgroup.vext_citybuilder", "VEXT CityBuilder"))
+					.icon(() -> new ItemStack(ModBlocks.FACTION_BLOCK))
+					.entries(((displayContext, entries) -> {
+						entries.add(ModBlocks.FACTION_BLOCK);
+						entries.add(ModBlocks.SPIDER_WEB);
+					})).build());
 	/**
 	 * Currently disable to not include the Hobbit_Spawn Egg into the game, as Hobbits are bugged without fix.
 	 *

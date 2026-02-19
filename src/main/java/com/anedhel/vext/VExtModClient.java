@@ -20,6 +20,7 @@ import com.anedhel.vext.entity.client.HobbitRenderer;
 import com.anedhel.vext.entity.client.ModEntityModelLayers;
 import com.anedhel.vext.screen.ModScreenHandlers;
 import com.anedhel.vext.screen.custom.CarpentryTableScreen;
+import com.anedhel.vext.screen.custom.FactionBlockScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
@@ -49,9 +50,12 @@ public class VExtModClient implements ClientModInitializer {
 		registerWoodTypeCutoutLayers();
 		registerStoneTypeCutoutLayers();
 		registerCropCutoutLayers();
+		registerDecoBlockCutoutLayers();
 
 		BlockRenderLayerMap.putBlock(ModBlocks.CARPENTRY_TABLE, BlockRenderLayer.CUTOUT);
 		HandledScreens.register(ModScreenHandlers.CARPENTRY_TABLE_SCREEN_HANDLER, CarpentryTableScreen::new);
+
+		HandledScreens.register(ModScreenHandlers.FACTION_BLOCK_SCREEN_HANDLER, FactionBlockScreen::new);
 
 		EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.HOBBIT, HobbitModel::getTexturedModelData);
 		EntityRendererRegistry.register(ModEntities.HOBBIT, HobbitRenderer::new);
@@ -74,6 +78,7 @@ public class VExtModClient implements ClientModInitializer {
 			BlockRenderLayerMap.putBlock(woodSet.getPlanksVariant("trapdoor"), BlockRenderLayer.CUTOUT);
 
 			BlockRenderLayerMap.putBlock(woodSet.getSapling(), BlockRenderLayer.CUTOUT);
+
 		}
 	}
 
@@ -110,5 +115,11 @@ public class VExtModClient implements ClientModInitializer {
 		for (Block variant : stoneFamily.getVariants().values()) {
 			BlockRenderLayerMap.putBlock(variant, BlockRenderLayer.CUTOUT);
 		}
+	}
+	/**
+	 * Registers cutout render layers for all deco blocks.
+	 */
+	private void registerDecoBlockCutoutLayers() {
+		BlockRenderLayerMap.putBlock(ModBlocks.SPIDER_WEB, BlockRenderLayer.CUTOUT);
 	}
 }

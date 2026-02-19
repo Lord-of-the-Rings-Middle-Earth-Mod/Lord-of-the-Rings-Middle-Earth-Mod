@@ -12,6 +12,8 @@ package com.anedhel.vext.screen;
 
 import com.anedhel.vext.VExtMod;
 import com.anedhel.vext.screen.custom.CarpentryTableScreenHandler;
+import com.anedhel.vext.screen.custom.FactionBlockScreenHandler;
+import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
@@ -27,11 +29,17 @@ import net.minecraft.util.Identifier;
  * @author Moritz Rohleder
  * @since 0.1.0
  */
+
 public class ModScreenHandlers {
 
 	public static final ScreenHandlerType<CarpentryTableScreenHandler> CARPENTRY_TABLE_SCREEN_HANDLER =
 			Registry.register(Registries.SCREEN_HANDLER, Identifier.of(VExtMod.MOD_ID, "carpentry_screen_handler"),
 					new ScreenHandlerType<>(CarpentryTableScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
+
+	public static final ScreenHandlerType<FactionBlockScreenHandler> FACTION_BLOCK_SCREEN_HANDLER =
+			Registry.register(Registries.SCREEN_HANDLER, Identifier.of(VExtMod.MOD_ID, "faction_block_screen_handler"),
+					new ScreenHandlerType<>(FactionBlockScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
+
 
 	public static void registerScreenHandlers() {
 		VExtMod.LOGGER.info("Registering Screen Handlers for " + VExtMod.MOD_ID);

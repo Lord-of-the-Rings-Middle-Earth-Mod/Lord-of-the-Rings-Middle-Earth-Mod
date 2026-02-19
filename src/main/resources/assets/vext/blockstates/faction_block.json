@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"": {
+			"model": "vext:block/faction_block"
+		}
+	}
+}

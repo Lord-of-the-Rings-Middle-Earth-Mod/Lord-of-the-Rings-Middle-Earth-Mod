@@ -22,6 +22,7 @@ import com.anedhel.vext.world.gen.ModEntitySpawns;
 import com.anedhel.vext.world.gen.ModWorldGenerator;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.minecraft.block.ComposterBlock;
 import org.slf4j.Logger;

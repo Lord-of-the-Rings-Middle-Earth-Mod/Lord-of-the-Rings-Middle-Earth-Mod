@@ -12,6 +12,8 @@ package com.anedhel.vext.block;
 
 import com.anedhel.vext.VExtMod;
 import com.anedhel.vext.block.custom.CarpentryTable;
+import com.anedhel.vext.block.custom.FactionBlock;
+import com.anedhel.vext.block.custom.SpiderWebBlock;
 import com.anedhel.vext.block.custom.crops.CornCropBlock;
 import com.anedhel.vext.block.custom.crops.TomatoCropBlock;
 import com.anedhel.vext.block.stonetypes.BlueslateBlocks;
@@ -93,6 +95,12 @@ public class ModBlocks {
 
 	public static final Block CARPENTRY_TABLE = registerBlock("carpentry_table",
 			settings -> new CarpentryTable(settings.strength(2.5f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+
+	public static final Block SPIDER_WEB = registerBlock("spider_web",
+	settings -> new SpiderWebBlock(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.COBWEB).nonOpaque()));
+
+	public static final Block FACTION_BLOCK = registerBlock("faction_block",
+			settings -> new FactionBlock(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.WOOD).nonOpaque()));
 
 	/**
 	 * Registers a {@link Block} and creates its associated {@link BlockItem}.
