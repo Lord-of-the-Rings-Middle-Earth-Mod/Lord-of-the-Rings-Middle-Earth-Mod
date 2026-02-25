@@ -11,6 +11,8 @@
 package com.anedhel.vext;
 
 import com.anedhel.vext.block.ModBlocks;
+import com.anedhel.vext.block.woodtypes.ModWoodSet;
+import com.anedhel.vext.block.woodtypes.ModWoodTypes;
 import com.anedhel.vext.entity.ModEntities;
 import com.anedhel.vext.entity.custom.HobbitEntity;
 import com.anedhel.vext.item.ModItemGroups;
@@ -23,6 +25,7 @@ import com.anedhel.vext.world.gen.ModWorldGenerator;
 import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
+import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
 import net.minecraft.block.ComposterBlock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,6 +62,7 @@ public class VExtMod implements ModInitializer {
 
 		addCompostableItems();
 		addDefaultAttributes();
+		addFuelItems();
 	}
 
 	/**
@@ -72,6 +76,65 @@ public class VExtMod implements ModInitializer {
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.TOMATO, 0.65f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.CORN_SEEDS, 0.3f);
 		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.CORN, 0.65f);
+
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.WARPED_BARK, 0.5f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.CRIMSON_BARK, 0.5f);
+
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.OAK_BARK, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.BIRCH_BARK, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.SPRUCE_BARK, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.JUNGLE_BARK, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.ACACIA_BARK, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.DARK_OAK_BARK, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.PALE_OAK_BARK, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.MANGROVE_BARK, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.BAMBOO_BARK, 0.3f);
+		ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(ModItems.CHERRY_BARK, 0.3f);
+
+		for(ModWoodTypes woodType : ModWoodTypes.values()) {
+			ModWoodSet woodSet = woodType.getModWoodSet();
+			ComposterBlock.ITEM_TO_LEVEL_INCREASE_CHANCE.put(woodSet.getBark(), 0.3f);
+		}
+	}
+
+	/**
+	 * Registers mod items as fuel with their respective burn times.
+	 * <p>
+	 * Birch Bark → 120
+	 * Spruce Bark → 140
+	 * Jungle Bark → 150
+	 * Cherry Bark → 160
+	 * Acacia Bark → 170
+	 * Oak Bark → 180
+	 * Pale Oak Bark → 190
+	 * Dark Oak Bark → 200
+	 * Mangrove Bark → 100
+	 * Crimson Bark → not a fuel
+	 * Warped Bark → not a fuel
+	 */
+	private void addFuelItems() {
+		for(ModWoodTypes woodType : ModWoodTypes.values()) {
+			ModWoodSet woodSet = woodType.getModWoodSet();
+			FuelRegistryEvents.BUILD.register((builder, context) -> {
+				switch(woodType) {
+					case PINE:
+						builder.add(woodSet.getBark(), 150);
+						break;
+				}
+			});
+		}
+		FuelRegistryEvents.BUILD.register((builder, context) ->{
+			builder.add(ModItems.OAK_BARK, 180);
+			builder.add(ModItems.BIRCH_BARK, 120);
+			builder.add(ModItems.SPRUCE_BARK, 140);
+			builder.add(ModItems.JUNGLE_BARK, 150);
+			builder.add(ModItems.CHERRY_BARK, 160);
+			builder.add(ModItems.ACACIA_BARK, 170);
+			builder.add(ModItems.PALE_OAK_BARK, 190);
+			builder.add(ModItems.DARK_OAK_BARK, 200);
+			builder.add(ModItems.MANGROVE_BARK, 110);
+			builder.add(ModItems.BAMBOO_BARK, 80);
+		});
 	}
 
 	/**

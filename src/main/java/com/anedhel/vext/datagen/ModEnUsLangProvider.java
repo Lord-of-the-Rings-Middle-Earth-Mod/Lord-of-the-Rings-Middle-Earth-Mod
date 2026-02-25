@@ -56,6 +56,19 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 		generateWoodTypeTranslations(translationBuilder);
 		generateStoneTypeTranslations(translationBuilder);
 
+		translationBuilder.add(ModItems.OAK_BARK, "Oak Bark");
+		translationBuilder.add(ModItems.SPRUCE_BARK, "Spruce Bark");
+		translationBuilder.add(ModItems.BIRCH_BARK, "Birch Bark");
+		translationBuilder.add(ModItems.JUNGLE_BARK, "Jungle Bark");
+		translationBuilder.add(ModItems.ACACIA_BARK, "Acacia Bark");
+		translationBuilder.add(ModItems.DARK_OAK_BARK, "Dark Oak Bark");
+		translationBuilder.add(ModItems.PALE_OAK_BARK, "Pale Oak Bark");
+		translationBuilder.add(ModItems.MANGROVE_BARK, "Mangrove Bark");
+		translationBuilder.add(ModItems.CHERRY_BARK, "Cherry Bark");
+		translationBuilder.add(ModItems.BAMBOO_BARK, "Bamboo Bark");
+		translationBuilder.add(ModItems.WARPED_BARK, "Warped Bark");
+		translationBuilder.add(ModItems.CRIMSON_BARK, "Crimson Bark");
+
 		translationBuilder.add(ModItems.TOMATO_SEEDS, "Tomato Seeds");
 		translationBuilder.add(ModBlocks.TOMATO_CROP, "Tomato Crop");
 		translationBuilder.add(ModBlocks.WILD_TOMATO, "Wild Tomato");
@@ -153,6 +166,7 @@ public class ModEnUsLangProvider extends FabricLanguageProvider {
 
 			translationBuilder.add(woodSet.getSapling(), generateNameFromBlock(woodSet.getSapling()));
 			translationBuilder.add(woodSet.getLeaves(), generateNameFromBlock(woodSet.getLeaves()));
+			translationBuilder.add(woodSet.getBark(), generateNameFromItem(woodSet.getBark()));
 		}
 	}
 

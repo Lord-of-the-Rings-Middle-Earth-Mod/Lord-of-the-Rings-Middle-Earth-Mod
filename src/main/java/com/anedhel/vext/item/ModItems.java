@@ -31,6 +31,19 @@ import java.util.function.Function;
  */
 public class ModItems {
 
+	public static final Item OAK_BARK = registerItem("oak_bark", Item::new);
+	public static final Item BIRCH_BARK = registerItem("birch_bark", Item::new);
+	public static final Item SPRUCE_BARK = registerItem("spruce_bark", Item::new);
+	public static final Item JUNGLE_BARK = registerItem("jungle_bark", Item::new);
+	public static final Item ACACIA_BARK = registerItem("acacia_bark", Item::new);
+	public static final Item DARK_OAK_BARK = registerItem("dark_oak_bark", Item::new);
+	public static final Item MANGROVE_BARK = registerItem("mangrove_bark", Item::new);
+	public static final Item CHERRY_BARK = registerItem("cherry_bark", Item::new);
+	public static final Item PALE_OAK_BARK = registerItem("pale_oak_bark", Item::new);
+	public static final Item BAMBOO_BARK = registerItem("bamboo_bark", Item::new);
+	public static final Item WARPED_BARK = registerItem("warped_bark", Item::new);
+	public static final Item CRIMSON_BARK = registerItem("crimson_bark", Item::new);
+
 	public static final Item RAW_TIN = registerItem("raw_tin", Item::new);
 	public static final Item TIN_INGOT = registerItem("tin_ingot",Item::new);
 	public static final Item RAW_SILVER = registerItem("raw_silver",Item::new);
@@ -81,7 +94,7 @@ public class ModItems {
 	 * @param itemFactory the function to create the item from settings
 	 * @return the registered {@link Item}
 	 */
-	private static Item registerItem(String name, Function<Item.Settings, Item> itemFactory) {
+	public static Item registerItem(String name, Function<Item.Settings, Item> itemFactory) {
 		return Registry.register(Registries.ITEM, Identifier.of(VExtMod.MOD_ID, name),
 				itemFactory.apply(new Item.Settings().registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(
 						VExtMod.MOD_ID, name)))));
