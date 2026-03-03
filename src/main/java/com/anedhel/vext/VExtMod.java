@@ -99,18 +99,6 @@ public class VExtMod implements ModInitializer {
 
 	/**
 	 * Registers mod items as fuel with their respective burn times.
-	 * <p>
-	 * Birch Bark → 120
-	 * Spruce Bark → 140
-	 * Jungle Bark → 150
-	 * Cherry Bark → 160
-	 * Acacia Bark → 170
-	 * Oak Bark → 180
-	 * Pale Oak Bark → 190
-	 * Dark Oak Bark → 200
-	 * Mangrove Bark → 100
-	 * Crimson Bark → not a fuel
-	 * Warped Bark → not a fuel
 	 */
 	private void addFuelItems() {
 		for(ModWoodTypes woodType : ModWoodTypes.values()) {
