@@ -69,6 +69,18 @@ public class ModItemGroups {
 						entries.add(ModItems.SILVER_INGOT);
 						entries.add(ModItems.SILVER_NUGGET);
 						entries.add(ModItems.BRONZE_INGOT);
+						entries.add(PineBlocks.PINE_BARK);
+						entries.add(ModItems.OAK_BARK);
+						entries.add(ModItems.SPRUCE_BARK);
+						entries.add(ModItems.BIRCH_BARK);
+						entries.add(ModItems.JUNGLE_BARK);
+						entries.add(ModItems.ACACIA_BARK);
+						entries.add(ModItems.DARK_OAK_BARK);
+						entries.add(ModItems.PALE_OAK_BARK);
+						entries.add(ModItems.MANGROVE_BARK);
+						entries.add(ModItems.BAMBOO_BARK);
+						entries.add(ModItems.WARPED_BARK);
+						entries.add(ModItems.CRIMSON_BARK);
 					})).build());
 
 	public static final ItemGroup VEXT_TOOLS = Registry.register(Registries.ITEM_GROUP,

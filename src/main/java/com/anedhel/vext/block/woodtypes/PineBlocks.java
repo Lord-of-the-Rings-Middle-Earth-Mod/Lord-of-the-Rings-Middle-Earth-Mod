@@ -13,14 +13,17 @@ package com.anedhel.vext.block.woodtypes;
 import com.anedhel.vext.VExtMod;
 import com.anedhel.vext.block.ModBlockTags;
 import com.anedhel.vext.item.ModItemTags;
+import com.anedhel.vext.item.ModItems;
 import com.anedhel.vext.world.tree.ModSaplingGenerators;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.data.family.BlockFamilies;
 import net.minecraft.data.family.BlockFamily;
+import net.minecraft.item.Item;
 import net.minecraft.sound.BlockSoundGroup;
 
 import static com.anedhel.vext.block.ModBlocks.registerBlock;
+import static com.anedhel.vext.item.ModItems.registerItem;
 
 /**
  * Defines and registers all pine wood blocks and their variants.
@@ -153,11 +156,13 @@ public class PineBlocks{
 					.noCollision().ticksRandomly().breakInstantly()
 					.sounds(BlockSoundGroup.GRASS).pistonBehavior(PistonBehavior.DESTROY)));
 
+	public static final Item PINE_BARK = registerItem("pine_bark", Item::new);
+
 	public static ModWoodSet PINE_SET = new ModWoodSet(
 			PINE_LOG, PINE_WOOD_FAMILY,
 			STRIPPED_PINE_LOG, STRIPPED_PINE_WOOD_FAMILY,
 			PINE_PLANKS_FAMILY,
-			PINE_SAPLING, PINE_LEAVES,
+			PINE_SAPLING, PINE_LEAVES, PINE_BARK,
 			ModBlockTags.PINE_LOGS, ModItemTags.PINE_LOGS
 	);
 
