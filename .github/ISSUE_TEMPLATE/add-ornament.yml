@@ -1,0 +1,92 @@
+name: Add Ornament
+description: Add a new ornament type to all ModStoneSubSets in the VExt Mod
+title: "Adding OrnamentName Ornament to all ModStoneSubSets (Copilot Issue)"
+projects:
+  - "VExt Mod Issue Board"
+type: "Feature"
+labels:
+  - good first issue
+body:
+  - type: input
+    id: ornament_name
+    attributes:
+      label: Ornament Name
+      description: Enter the name of the new ornament (e.g., Glowstone)
+      placeholder: Ornament name
+    validations:
+      required: true
+
+  - type: input
+    id: ornament_item
+    attributes:
+      label: Ornament Item
+      description: Enter the item used to craft this ornament (e.g., Glowstone Dust, Gold Ingot)
+      placeholder: Crafting item
+    validations:
+      required: true
+
+  - type: textarea
+    id: special_behaviour
+    attributes:
+      label: Special Block Behaviour
+      description: Optional — describe any special block behaviour beyond decoration (e.g., light emission, redstone interaction). Leave empty if purely decorative.
+      placeholder: e.g., Normal variant emits light level 15 via .luminance(state -> 15). Cracked variant emits light level 7 via .luminance(state -> 7).
+
+  - type: textarea
+    id: issue_description
+    attributes:
+      label: Description
+      value: "Add a new OrnamentName Ornament to every ModStoneSubSet across all StoneTypes currently registered in ModStoneTypes. The OrnamentName Ornament extends the existing ornamentation system (Bronze, Silver, Gold) with a new variant. It follows all established patterns of the existing ornaments throughout the entire codebase."
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue_details
+    attributes:
+      label: Details
+      description: Please replace "OrnamentName" / "ornament_name" in the following text with the actual ornament name.
+      value: |
+        Use the Bronze, Silver, and Gold ornament implementations as the sole reference throughout. Do not deviate from established patterns unless necessary.
+
+        **Scope**
+        This issue applies to all StoneTypes currently present in `ModStoneTypes` at the time of implementation, across all 9 `ModStoneSubSet` types: Polished, Pillar, Frieze, Cobbled Brick, Rustic Brick, Brick, Fancy Brick, Tile, and Pavement. Vanilla StoneTypes not yet extended with `ModStoneSubSet` support are out of scope — the OrnamentName Ornament must be included as part of their respective extension tasks. For any StoneType added after this issue is written, the OrnamentName Ornament must be included from the start as part of their initial implementation.
+
+        **Block & BlockFamily Registration**
+        Register all OrnamentName Ornament blocks and their `BlockFamily` entries (base + stairs, slab, wall) in the respective `Blocks` file of each StoneType, mirroring the Bronze/Silver/Gold ornament definitions. All variants must be covered: base, mossy, overgrown, cracked, and all combinations thereof.
+
+        **`StoneTypeVariants` Extension**
+        Add new enum entries for all OrnamentName variants (e.g. `ORNAMENT_NAME_STONE`, `MOSSY_ORNAMENT_NAME_STONE`, etc.) following the Bronze/Silver/Gold pattern. Extend `getRecipePath()`, `getBaseFromOrnamented()`, `isOrnamented()`, and all other relevant switch statements.
+
+        **`ModStoneSubSet` Update**
+        Add the new OrnamentName `BlockFamily` fields, extend the constructor, and update `getAllBlockFamilies()`, `getStoneSubSetItemGroupList()`, `getStoneTypeVariantFamily()`, and `crackedFamilyMap` — following the Bronze/Silver/Gold fields as a 1:1 reference.
+
+        **`ModStoneSet` Instantiation**
+        Pass the new OrnamentName families when constructing each `ModStoneSubSet` instance, as done for the existing ornaments.
+
+        **Data Generation**
+        - **`ModBlockTagProvider`**, **`ModLootTableProvider`**, **`ModEnUsLangProvider`** — These iterate over `getAllBlockFamilies()` and will cover the new blocks automatically, provided the steps above are completed correctly. Verify coverage after implementation.
+        - **`ModRecipeProvider`** — Extend `generateModStoneSubSetRecipes()` with OrnamentName ornament recipes using `generateOrnamentRecipe()` with the ornament item specified above. Extend `generateStoneCuttingRecipes()` and `generateBlockFamilyStoneCutting()` accordingly. The cracked variant is obtained via smelting, following the existing `generateStoneSmelting()` pattern.
+        - **`ModModelProvider`** — Each SubSet type has its own dedicated generation method. Extend each with the OrnamentName overlay calls following the Bronze/Silver/Gold pattern. Add all required entries to `ModTextures` (e.g. `ORNAMENT_NAME_BRICK_OVERLAY`, `CRACKED_ORNAMENT_NAME_BRICK_OVERLAY`, etc.). The `getCrackedVariant()` method in `ModTextures` relies on the `CRACKED_` prefix naming convention — all new OrnamentName overlay entries must follow this convention.
+
+        **Textures**
+        OrnamentName overlay textures must be created manually for all required SubSet types and placed in `block/overlays/`. The required texture names are determined by the `ModTextures` entries added above. This is the only asset step not handled by DataGen.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance_criteria
+    attributes:
+      label: Acceptance Criteria
+      value: |
+        - [ ] For every StoneType in `ModStoneTypes`, all 9 SubSets contain an OrnamentName Ornament block with its full variant matrix (base, mossy, overgrown, cracked, and all combinations thereof)
+        - [ ] All OrnamentName Ornament blocks are mineable with a pickaxe
+        - [ ] All OrnamentName Ornament blocks and their variants (stairs, slab, wall) drop themselves correctly, including double-slab behaviour
+        - [ ] All OrnamentName Ornament blocks appear in the correct item group with correct translations
+        - [ ] The OrnamentName Ornament can be crafted from the respective base block and the ornament item using the ornament recipe pattern
+        - [ ] The cracked OrnamentName Ornament variant is obtainable by smelting the normal variant
+        - [ ] Mossy and overgrown OrnamentName Ornament variants are obtainable via the existing mossy/overgrown crafting recipes
+        - [ ] Stonecutting recipes exist for all OrnamentName Ornament variants and their block family members
+        - [ ] All OrnamentName Ornament blocks render correctly in-game with the appropriate overlay textures for each SubSet type
+        - [ ] No existing ornament (Bronze, Silver, Gold) functionality is broken by the changes
+    validations:
+      required: true
