@@ -324,7 +324,7 @@ jobs:
           BUILD_TYPE="${{ needs.determine-build-type.outputs.build_type }}"
 
           # Remove the minecraft version suffix from mod_version if exists
-          MOD_VERSION_BASE=$(echo "$MOD_VERSION" | sed 's/-[0-9]\+\.[0-9]\+\.[0-9]\+$//')
+          MOD_VERSION_BASE=$(echo "$MOD_VERSION" | sed -E 's/-[0-9]+\.[0-9]+\.[0-9]+$//')
 
           if [ "$BUILD_TYPE" = "dev" ]; then
             JAR_NAME="${MOD_VERSION_BASE}+${MC_VERSION}-dev"
@@ -366,57 +366,33 @@ jobs:
           name: ${{ steps.jar_name.outputs.jar_name }}
           path: ${{ env.RENAMED_JAR }}
 
-      - name: Upload JAR file directly to issue
+      - name: Post comment on issue with artifact link
         if: needs.determine-build-type.outputs.issue_number != ''
         uses: actions/github-script@v7
         with:
           script: |
-            const fs = require('fs');
             const issueNum = parseInt('${{ needs.determine-build-type.outputs.issue_number }}', 10);
             const jarName = '${{ steps.jar_name.outputs.jar_name }}';
             const branch = '${{ needs.determine-build-type.outputs.branch }}';
-            const jarPath = '${{ env.RENAMED_JAR }}';
-            const tagName = `test-build-issue-${issueNum}-${context.runId}`;
-            
-            // Create a temporary draft release to upload the JAR
-            const release = await github.rest.repos.createRelease({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              tag_name: tagName,
-              name: `Test Build for Issue #${issueNum}`,
-              body: `Temporary release for test build of issue #${issueNum}`,
-              draft: true,
-              prerelease: true
-            });
-            
-            console.log(`Created temporary draft release: ${release.data.id}`);
-            
-            // Read the JAR file asynchronously
-            const jarContent = await fs.promises.readFile(jarPath);
-            
-            // Upload the JAR as a release asset
-            const asset = await github.rest.repos.uploadReleaseAsset({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              release_id: release.data.id,
-              name: `${jarName}.jar`,
-              data: jarContent,
-              headers: {
-                'content-type': 'application/java-archive',
-                'content-length': jarContent.length
-              }
-            });
-            
-            console.log(`Uploaded JAR as release asset: ${asset.data.browser_download_url}`);
-            
-            // Comment on the issue with direct download link to the JAR file
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const sha = context.sha;
+
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: issueNum,
-              body: `🎉 **Test Build Ready!**\n\nA JAR file has been built for testing:\n\n**File:** \`${jarName}.jar\`\n\n📦 [Download JAR file](${asset.data.browser_download_url})\n\n_Built from branch: \`${branch}\`_\n\n**Note:** This is a direct JAR download link. The file is hosted in a draft release and can be manually cleaned up when no longer needed.`
+              body: [
+                '🔨 **Test Build Ready**',
+                '',
+                `**Artifact:** \`${jarName}.jar\``,
+                `**Built from:** \`${branch}\` at commit \`${sha}\``,
+                '',
+                `📥 [Download the artifact from this workflow run](${runUrl})`,
+                '',
+                '_Navigate to the run linked above, open the **Artifacts** section at the bottom of the summary page, and download the JAR._'
+              ].join('\n')
             });
-            
+
             console.log(`Posted comment to issue #${issueNum}`);
 
       - name: Upload JAR to release
