@@ -1,0 +1,160 @@
+name: Build JAR on Testing
+
+on:
+  # Trigger for classic Projects (V1): fires when a card is moved between columns
+  project_card:
+    types: [moved]
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check-column:
+    runs-on: ubuntu-latest
+    outputs:
+      should_build: ${{ steps.check.outputs.should_build }}
+      issue_number: ${{ steps.check.outputs.issue_number }}
+    steps:
+      - name: Check if card moved to Testing column
+        id: check
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const card = context.payload.project_card;
+
+            // Only process cards linked to issues (content_url will be set)
+            if (!card.content_url) {
+              console.log('Card is not linked to an issue — skipping.');
+              core.setOutput('should_build', 'false');
+              core.setOutput('issue_number', '');
+              return;
+            }
+
+            // Fetch the destination column name
+            const column = await github.rest.projects.getColumn({
+              column_id: card.column_id
+            });
+
+            const columnName = column.data.name;
+            console.log(`Card moved to column: "${columnName}"`);
+
+            // Case-insensitive match for "Testing"
+            if (columnName.toLowerCase() !== 'testing') {
+              console.log('Column is not "Testing" — skipping.');
+              core.setOutput('should_build', 'false');
+              core.setOutput('issue_number', '');
+              return;
+            }
+
+            // Extract the issue number from the content URL
+            const urlParts = card.content_url.split('/');
+            const issueNumber = urlParts[urlParts.length - 1];
+            console.log(`Issue #${issueNumber} moved to Testing — triggering build.`);
+
+            core.setOutput('should_build', 'true');
+            core.setOutput('issue_number', issueNumber);
+
+  build:
+    needs: check-column
+    if: needs.check-column.outputs.should_build == 'true'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout dev branch
+        uses: actions/checkout@v4
+        with:
+          ref: develop
+          fetch-depth: 0
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: wrapper
+          cache-read-only: false
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
+      - name: Validate Gradle wrapper
+        uses: gradle/actions/wrapper-validation@v3
+
+      - name: Extract version information
+        id: version
+        run: |
+          MOD_VERSION=$(grep '^mod_version=' gradle.properties | cut -d'=' -f2)
+          MC_VERSION=$(grep '^minecraft_version=' gradle.properties | cut -d'=' -f2)
+          echo "mod_version=$MOD_VERSION" >> $GITHUB_OUTPUT
+          echo "minecraft_version=$MC_VERSION" >> $GITHUB_OUTPUT
+
+      - name: Run DataGen
+        run: ./gradlew runDataGen --no-daemon --stacktrace
+
+      - name: Build JAR
+        run: ./gradlew build --no-daemon --stacktrace
+
+      - name: Locate and rename JAR
+        id: jar
+        run: |
+          ORIGINAL_BASE=$(grep '^archives_base_name=' gradle.properties | cut -d'=' -f2)
+          MOD_VERSION="${{ steps.version.outputs.mod_version }}"
+          MC_VERSION="${{ steps.version.outputs.minecraft_version }}"
+
+          # Strip any minecraft-version suffix from the mod version string
+          MOD_VERSION_BASE=$(echo "$MOD_VERSION" | sed -E 's/-[0-9]+\.[0-9]+\.[0-9]+$//')
+          ARTIFACT_NAME="${MOD_VERSION_BASE}+${MC_VERSION}-dev"
+
+          BUILT_JAR=$(find build/libs -name "${ORIGINAL_BASE}-${MOD_VERSION}.jar" -type f | head -1)
+          if [ -z "$BUILT_JAR" ]; then
+            echo "ERROR: Built JAR not found in build/libs"
+            ls build/libs/
+            exit 1
+          fi
+
+          RENAMED_JAR="build/libs/vext-${ARTIFACT_NAME}.jar"
+          cp "$BUILT_JAR" "$RENAMED_JAR"
+          echo "jar_path=$RENAMED_JAR" >> $GITHUB_OUTPUT
+          echo "artifact_name=$ARTIFACT_NAME" >> $GITHUB_OUTPUT
+          echo "JAR renamed to: $RENAMED_JAR"
+
+      - name: Upload JAR as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.jar.outputs.artifact_name }}
+          path: ${{ steps.jar.outputs.jar_path }}
+          retention-days: 90
+
+      - name: Post comment on issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNumber = parseInt('${{ needs.check-column.outputs.issue_number }}', 10);
+            const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+            const sha = context.sha;
+            const artifactName = '${{ steps.jar.outputs.artifact_name }}';
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber,
+              body: [
+                '🔨 **Test Build Ready**',
+                '',
+                'This build was triggered automatically when the card was moved to the **Testing** column.',
+                '',
+                `**Artifact:** \`${artifactName}.jar\``,
+                `**Built from:** \`develop\` branch at commit \`${sha}\``,
+                '',
+                `📥 [Download the artifact from this workflow run](${runUrl})`,
+                '',
+                '_Navigate to the run linked above, open the **Artifacts** section at the bottom of the summary page, and download the JAR._'
+              ].join('\n')
+            });
+
+            console.log(`Comment posted to issue #${issueNumber}`);
