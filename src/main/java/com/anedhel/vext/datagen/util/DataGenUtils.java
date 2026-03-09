@@ -10,6 +10,9 @@
 
 package com.anedhel.vext.datagen.util;
 
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.util.Identifier;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,6 +25,10 @@ import java.util.regex.Pattern;
 public class DataGenUtils {
 
 	private final static Pattern FIRST_LETTER_PATTERN = Pattern.compile("\\b[a-z]");
+
+	public static RegistryKey createRegistryKey(RegistryKey registryKey, String idString){
+		return RegistryKey.of(registryKey, Identifier.of("vext", idString));
+	}
 
 	/**
 	 * Extracts the name portion from a translation key.

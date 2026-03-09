@@ -18,6 +18,7 @@ import com.anedhel.vext.block.stonetypes.StoneTypeVariants;
 import com.anedhel.vext.block.woodtypes.ModWoodSet;
 import com.anedhel.vext.block.woodtypes.ModWoodTypes;
 import com.anedhel.vext.block.woodtypes.PineBlocks;
+import com.anedhel.vext.datagen.builder.CarpentryRecipeJsonBuilder;
 import com.anedhel.vext.datagen.util.DataGenUtils;
 import com.anedhel.vext.item.ModGearType;
 import com.anedhel.vext.item.ModItems;
@@ -36,6 +37,7 @@ import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.SmokingRecipe;
 import net.minecraft.recipe.book.RecipeCategory;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
 
@@ -75,6 +77,35 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					ModBlocks.DEEPSLATE_SILVER_ORE);
 
 			/**
+			 * Helper method to create a carpentry recipe with advancement criteria.
+			 *
+			 * @param category the recipe category
+			 * @param output the output item
+			 * @param input the input item
+			 * @param count the output count
+			 */
+			public void createCarpentryRecipe(RecipeCategory category, ItemConvertible output, ItemConvertible input,
+					int count) {
+				CarpentryRecipeJsonBuilder.createCarpentryRecipeJsonBuilder(category, output, Ingredient.ofItem(input), count)
+						.criterion(hasItem(input), this.conditionsFromItem(input))
+						.offerTo(this.exporter, DataGenUtils.createRegistryKey(RegistryKeys.RECIPE, convertBetween(output, input) + "_carpentry"));
+			}
+
+			 /**
+			 * Helper method to create a carpentry recipe with advancement criteria and default count of 1.
+			 *
+			 * @param category the recipe category
+			 * @param output the output item
+			 * @param input the input item
+			 */
+			public void createCarpentryRecipe(RecipeCategory category, ItemConvertible output, ItemConvertible input) {
+				CarpentryRecipeJsonBuilder.createCarpentryRecipeJsonBuilder(category, output,
+								Ingredient.ofItem(input), 1)
+						.criterion(hasItem(input), this.conditionsFromItem(input))
+						.offerTo(this.exporter, convertBetween(output, input) + "_carpentry");
+			}
+
+			/**
 			 * Generate the recipes.
 			 */
 			@Override
@@ -83,8 +114,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 				generateModStoneTypeRecipes();
 				generateModGearTypeRecipes();
 
-				//ToDo: Remove wood recipe from stonecutting when the carpentry table is working
-				offerStonecuttingRecipe(RecipeCategory.BUILDING_BLOCKS, PineBlocks.PINE_PLANKS, PineBlocks.PINE_LOG, 4);
+				createCarpentryRecipe(RecipeCategory.BUILDING_BLOCKS, PineBlocks.PINE_PLANKS, PineBlocks.PINE_LOG, 4);
 
 				offerSmelting(TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 200, "tin");
 				offerBlasting(TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT, 0.7f, 100, "tin");
@@ -142,6 +172,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					generateFamily(woodSet.getPlanksFamily(), FeatureFlags.VANILLA_FEATURES);
 					generateFamily(woodSet.getWoodFamily(), FeatureFlags.VANILLA_FEATURES);
 					generateFamily(woodSet.getStrippedWoodFamily(), FeatureFlags.VANILLA_FEATURES);
+
+					generateCarpentryRecipes(woodSet);
 				}
 			}
 
@@ -149,7 +181,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 			 * Generate the recipes for all mod stone types.
 			 */
 			private void generateModStoneTypeRecipes() {
-				//ToDo: Generate the stonecutting recipes too
 				for(ModStoneTypes stoneType : ModStoneTypes.values()) {
 					ModStoneSet stoneSet = stoneType.getModStoneSet();
 
@@ -563,6 +594,37 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						.offerTo(this.exporter, recipePath);
 			}
 
+			private void generateCarpentryRecipes(ModWoodSet woodSet) {
+				generateBlockFamilyCarpentryRecipes(woodSet.getWoodFamily());
+				generateBlockFamilyCarpentryRecipes(woodSet.getStrippedWoodFamily());
+				generateBlockFamilyCarpentryRecipes(woodSet.getPlanksFamily(), woodSet.getLog(),
+						woodSet.getStrippedLog(), woodSet.getWoodVariant("base"), woodSet.getStrippedWoodVariant("base"));
+			}
+
+			private void generateBlockFamilyCarpentryRecipes(BlockFamily family, Block... baseBlocks) {
+				if (family == null) {
+					return;
+				}
+				List<Block> filteredBaseBlocks = Arrays.stream(baseBlocks).filter(Objects::nonNull).toList();
+				for(Map.Entry<BlockFamily.Variant, Block> entry : family.getVariants().entrySet()) {
+					int count = entry.getKey() == BlockFamily.Variant.SLAB ? 2 : 1;
+					RecipeCategory category = entry.getKey() == BlockFamily.Variant.BUTTON ?
+							RecipeCategory.REDSTONE : entry.getKey() == BlockFamily.Variant.PRESSURE_PLATE ?
+							RecipeCategory.REDSTONE : RecipeCategory.BUILDING_BLOCKS;
+					createCarpentryRecipe(category, entry.getValue(), family.getBaseBlock(), count);
+				}
+				for(Block block : filteredBaseBlocks) {
+					createCarpentryRecipe(RecipeCategory.BUILDING_BLOCKS, block, family.getBaseBlock(), 4);
+					for(Map.Entry<BlockFamily.Variant, Block> entry : family.getVariants().entrySet()) {
+						int count = entry.getKey() == BlockFamily.Variant.SLAB ? 2 : 1;
+						RecipeCategory category = entry.getKey() == BlockFamily.Variant.BUTTON ?
+								RecipeCategory.REDSTONE : entry.getKey() == BlockFamily.Variant.PRESSURE_PLATE ?
+								RecipeCategory.REDSTONE : RecipeCategory.BUILDING_BLOCKS;
+						createCarpentryRecipe(category, entry.getValue(), block, count*4);
+					}
+				}
+			}
+
 			/**
 			 * Generate a stone smelting recipe.
 			 *
@@ -971,7 +1033,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 		String outputPath = StoneTypeVariants.getRecipePath(variant, output);
 		String inputPath = StoneTypeVariants.getRecipePath(variant, input);
 		return outputPath + "_from_" + inputPath + "_" + recipeType;
-
 	}
 
 	@Override
