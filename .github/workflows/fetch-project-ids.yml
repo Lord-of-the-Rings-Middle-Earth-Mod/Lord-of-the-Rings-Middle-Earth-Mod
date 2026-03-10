@@ -1,0 +1,86 @@
+name: Fetch Project IDs
+
+on:
+  workflow_dispatch:
+
+jobs:
+  fetch-ids:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Fetch and print project IDs
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN || secrets.GITHUB_TOKEN }}
+          script: |
+            const query = `
+              query($org: String!, $number: Int!) {
+                organization(login: $org) {
+                  projectV2(number: $number) {
+                    id
+                    fields(first: 50) {
+                      nodes {
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          name
+                          options {
+                            id
+                            name
+                          }
+                        }
+                        ... on ProjectV2Field {
+                          id
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+
+            const result = await github.graphql(query, {
+              org:    'Lord-of-the-Rings-Middle-Earth-Mod',
+              number: 2,
+            });
+
+            const project = result?.organization?.projectV2;
+            if (!project) {
+              core.setFailed('Project not found. Ensure the token has read:project scope.');
+              return;
+            }
+
+            const projectId = project.id;
+
+            // Find the Status field
+            const statusField = project.fields.nodes.find(
+              (f) => f.name === 'Status' && f.options
+            );
+
+            if (!statusField) {
+              core.setFailed('Status field not found on the project board.');
+              return;
+            }
+
+            const statusFieldId = statusField.id;
+
+            // Build option lines
+            const optionLines = statusField.options
+              .map(
+                (opt) =>
+                  `  STATUS_${opt.name.toUpperCase().replace(/\s+/g, '_')}: "${opt.id}"   # "${opt.name}"`
+              )
+              .join('\n');
+
+            const block = [
+              '════════════════════════════════════════════════',
+              'Copy-paste block for workflow env: sections',
+              '════════════════════════════════════════════════',
+              `  PROJECT_ID:      "${projectId}"`,
+              `  STATUS_FIELD_ID: "${statusFieldId}"`,
+              optionLines,
+              '════════════════════════════════════════════════',
+            ].join('\n');
+
+            console.log(block);
