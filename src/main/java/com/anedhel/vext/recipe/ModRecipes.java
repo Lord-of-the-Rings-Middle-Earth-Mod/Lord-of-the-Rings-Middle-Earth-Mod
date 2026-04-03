@@ -11,6 +11,7 @@
 package com.anedhel.vext.recipe;
 
 import com.anedhel.vext.VExtMod;
+import net.fabricmc.fabric.api.recipe.v1.sync.RecipeSynchronization;
 import net.minecraft.recipe.RecipeSerializer;
 import net.minecraft.recipe.RecipeType;
 import net.minecraft.registry.Registries;
@@ -41,6 +42,7 @@ public class ModRecipes {
 
 	public static void registerRecipes() {
 		VExtMod.LOGGER.info("Registering Custom Recipes for " + VExtMod.MOD_ID);
+		RecipeSynchronization.synchronizeRecipeSerializer(CARPENTRY_RECIPE_SERIALIZER);
 		registerRecipeDisplays();
 	}
 

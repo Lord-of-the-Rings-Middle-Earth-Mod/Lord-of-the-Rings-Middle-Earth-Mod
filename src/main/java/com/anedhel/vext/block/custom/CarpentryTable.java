@@ -16,6 +16,7 @@ import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.state.StateManager;
@@ -66,9 +67,9 @@ public class CarpentryTable extends HorizontalFacingBlock {
 	 */
 	@Override
 	protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-//		if(!world.isClient()) {
-//			player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
-//		}
+		if(!world.isClient()) {
+			player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
+		}
 		return ActionResult.SUCCESS;
 	}
 
@@ -84,7 +85,8 @@ public class CarpentryTable extends HorizontalFacingBlock {
 	protected @Nullable NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world,
 			BlockPos pos) {
 		return new SimpleNamedScreenHandlerFactory(
-				(syncId, inv, player) -> new CarpentryTableScreenHandler(syncId, inv),
+				(syncId, inv, player) -> new CarpentryTableScreenHandler(syncId, inv,
+						ScreenHandlerContext.create(world, pos)),
 				TITLE
 		);
 	}
