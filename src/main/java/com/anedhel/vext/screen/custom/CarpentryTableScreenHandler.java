@@ -11,11 +11,11 @@
 package com.anedhel.vext.screen.custom;
 
 import com.anedhel.vext.VExtMod;
+import com.anedhel.vext.block.ModBlocks;
 import com.anedhel.vext.recipe.CarpentryRecipe;
 import com.anedhel.vext.recipe.CarpentryRecipeDisplay;
 import com.anedhel.vext.recipe.ModRecipes;
 import com.anedhel.vext.screen.ModScreenHandlers;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.CraftingResultInventory;
@@ -135,7 +135,7 @@ public class CarpentryTableScreenHandler extends ScreenHandler {
 
 	@Override
 	public boolean canUse(PlayerEntity player) {
-		return canUse(this.context, player, Blocks.CRAFTING_TABLE);
+		return canUse(this.context, player, ModBlocks.CARPENTRY_TABLE);
 	}
 
 	@Override
@@ -293,7 +293,7 @@ public class CarpentryTableScreenHandler extends ScreenHandler {
 	@Override
 	public void onClosed(PlayerEntity player) {
 		super.onClosed(player);
-		this.output.removeStack(1);
+		this.output.removeStack(INPUT_ID);
 		this.context.run((world, pos) -> this.dropInventory(player, this.input));
 	}
 }
