@@ -2,8 +2,8 @@
 	"format_version": "1.21.11",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "vext:block/spiderweb_side",
-		"particle": "vext:block/spiderweb_side"
+		"0": "vext:block/spiderweb_side01",
+		"particle": "vext:block/spiderweb_side01"
 	},
 	"elements": [
 		{

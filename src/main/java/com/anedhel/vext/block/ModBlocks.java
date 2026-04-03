@@ -18,6 +18,7 @@ import com.anedhel.vext.block.custom.crops.CornCropBlock;
 import com.anedhel.vext.block.custom.crops.TomatoCropBlock;
 import com.anedhel.vext.block.stonetypes.BlueslateBlocks;
 import com.anedhel.vext.block.woodtypes.PineBlocks;
+import com.anedhel.vext.sound.ModSounds;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.effect.StatusEffects;
@@ -97,7 +98,7 @@ public class ModBlocks {
 			settings -> new CarpentryTable(settings.strength(2.5f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
 
 	public static final Block SPIDER_WEB = registerBlock("spider_web",
-	settings -> new SpiderWebBlock(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.COBWEB).nonOpaque()));
+	settings -> new SpiderWebBlock(settings.strength(5.0f).requiresTool().sounds(ModSounds.SPIDER_WEB_SOUNDS).nonOpaque()));
 
 	public static final Block FACTION_BLOCK = registerBlock("faction_block",
 			settings -> new FactionBlock(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.WOOD).nonOpaque()));

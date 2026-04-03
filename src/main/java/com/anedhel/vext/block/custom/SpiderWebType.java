@@ -25,7 +25,6 @@ import java.util.Locale;
  * @since 0.1.0
  */
 public enum SpiderWebType implements StringIdentifiable {
-	SINGLE("single"),
 	NORTH("n"),
 	EAST("e"),
 	SOUTH("s"),

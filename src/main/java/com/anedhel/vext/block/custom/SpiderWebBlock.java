@@ -4,13 +4,24 @@ import com.anedhel.vext.block.ModBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.ShapeContext;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityCollisionHandler;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
+import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
 import org.jspecify.annotations.Nullable;
@@ -125,6 +136,29 @@ public class SpiderWebBlock extends Block {
         }
 
         return state;
+    }
+
+    @Override
+    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler, boolean bl) {
+        if (world.isClient()) return;
+
+        if (entity instanceof PlayerEntity player && !world.isClient()) {
+            if (player.isSprinting()) {
+                world.breakBlock(pos, false);
+            }
+        }
+    /**
+     * not sure: it breaks around 5 blocks, but also with head hit so really high up*/
+        Vec3d velocity = entity.getVelocity();
+        double speed = velocity.length();
+            if (speed > 0.8) {
+                world.breakBlock(pos, false); //no item drop
+            }
+    }
+
+    @Override
+    protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return VoxelShapes.empty();
     }
 
     @Override

@@ -3,21 +3,22 @@
     "spider_web_type=single": {
       "model": "vext:block/spider_web_test"
     },
-    "spider_web_type=n": {
-      "model": "vext:block/spider_web_side"
-    },
-    "spider_web_type=e": {
-      "model": "vext:block/spider_web_side",
-      "y": 90
-    },
-    "spider_web_type=s": {
-      "model": "vext:block/spider_web_side",
-      "y": 180
-    },
-    "spider_web_type=w": {
-      "model": "vext:block/spider_web_side",
-      "y": 270
-    },
+    "spider_web_type=n": [
+      {"model": "vext:block/spider_web_side01", "weight": 1},
+      {"model": "vext:block/spider_web_side02", "weight": 1}
+    ],
+    "spider_web_type=e": [
+      {"model": "vext:block/spider_web_side01", "y": 90, "weight": 1},
+      {"model": "vext:block/spider_web_side02", "y": 90, "weight": 1}
+    ],
+    "spider_web_type=s": [
+      {"model": "vext:block/spider_web_side01", "y": 180, "weight": 1},
+      {"model": "vext:block/spider_web_side02", "y": 180, "weight": 1}
+    ],
+    "spider_web_type=w": [
+      {"model": "vext:block/spider_web_side01", "y": 270, "weight": 1},
+      {"model": "vext:block/spider_web_side02", "y": 270, "weight": 1}
+    ],
     "spider_web_type=u": {
       "model": "vext:block/spider_web_up"
     },
@@ -25,7 +26,7 @@
       "model": "vext:block/spider_web_twocorner"
     },
     "spider_web_type=ns": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_opposite"
     },
     "spider_web_type=nw": {
       "model": "vext:block/spider_web_twocorner",
@@ -40,7 +41,8 @@
       "y": 90
     },
     "spider_web_type=ew": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_opposite",
+      "y": 90
     },
     "spider_web_type=eu": {
       "model": "vext:block/spider_web_twocorner",
