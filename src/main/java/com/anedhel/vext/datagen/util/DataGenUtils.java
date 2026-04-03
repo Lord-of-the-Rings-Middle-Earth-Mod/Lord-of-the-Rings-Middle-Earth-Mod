@@ -30,6 +30,10 @@ public class DataGenUtils {
 		return RegistryKey.of(registryKey, Identifier.of("vext", idString));
 	}
 
+	public static boolean isVanilla(String translationKey) {
+		return translationKey.contains("minecraft");
+	}
+
 	/**
 	 * Extracts the name portion from a translation key.
 	 *
