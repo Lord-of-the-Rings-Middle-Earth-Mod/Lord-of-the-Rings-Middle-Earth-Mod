@@ -33,8 +33,7 @@
       "y": 270
     },
     "spider_web_type=nu": {
-      "model": "vext:block/spider_web_twocorner",
-      "z": 270
+      "model": "vext:block/spider_web_sideup"
     },
     "spider_web_type=es": {
       "model": "vext:block/spider_web_twocorner",
@@ -45,74 +44,78 @@
       "y": 90
     },
     "spider_web_type=eu": {
-      "model": "vext:block/spider_web_twocorner",
-      "z": -90,
-      "x": 90
+      "model": "vext:block/spider_web_sideup",
+      "y": 90
     },
     "spider_web_type=sw": {
       "model": "vext:block/spider_web_twocorner",
       "y": 180
     },
     "spider_web_type=su": {
-      "model": "vext:block/spider_web_twocorner",
-      "z": -90,
-      "x": 180
+      "model": "vext:block/spider_web_sideup",
+      "y": 180
     },
     "spider_web_type=wu": {
-      "model": "vext:block/spider_web_twocorner",
-      "z": -90,
-      "x": 270
+      "model": "vext:block/spider_web_sideup",
+      "y": 270
     },
     "spider_web_type=nes": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_threeside"
     },
     "spider_web_type=new": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_threeside",
+      "y": 270
     },
     "spider_web_type=neu": {
       "model": "vext:block/spider_web_threecorner"
     },
     "spider_web_type=nsw": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_threeside",
+      "y": 180
     },
     "spider_web_type=nsu": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_oppositeup"
     },
     "spider_web_type=nwu": {
       "model": "vext:block/spider_web_threecorner",
       "y": 270
     },
     "spider_web_type=esw": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_threeside",
+      "y": 90
     },
     "spider_web_type=esu": {
       "model": "vext:block/spider_web_threecorner",
       "y": 90
     },
     "spider_web_type=ewu": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_oppositeup",
+      "y": 90
     },
     "spider_web_type=swu": {
       "model": "vext:block/spider_web_threecorner",
       "y": 180
     },
     "spider_web_type=nesw": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_fourside"
     },
     "spider_web_type=nesu": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_threesideup"
     },
     "spider_web_type=newu": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_threesideup",
+      "y": 270
     },
     "spider_web_type=nswu": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_threesideup",
+      "y": 180
     },
     "spider_web_type=eswu": {
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_threesideup",
+      "y": 90
     },
     "spider_web_type=neswu":{
-      "model": "vext:block/spider_web_test"
+      "model": "vext:block/spider_web_foursideup"
     }
   }
 }

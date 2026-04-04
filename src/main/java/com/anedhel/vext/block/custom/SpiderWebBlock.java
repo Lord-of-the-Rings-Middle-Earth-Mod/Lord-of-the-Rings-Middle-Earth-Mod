@@ -1,30 +1,37 @@
 package com.anedhel.vext.block.custom;
 
-import com.anedhel.vext.block.ModBlockTags;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCollisionHandler;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
-import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
 import org.jspecify.annotations.Nullable;
+
+/**
+ * Represents a custom SpiderWebBlock for the Vanilla Extensions Mod.
+ * <p>
+ * This block dynamically determines its {@link SpiderWebType} based on adjacent full blocks,
+ * allowing for seamless vertical connections.
+ * The Spiderweb type is stored in the {@link #SPIDER_WEB_TYPE} property and is updated on placement
+ * and when neighboring blocks change.
+ *
+ * @author AnoJedt
+ * @since after 0.1.0
+ */
 
 public class SpiderWebBlock extends Block {
     public static final EnumProperty<SpiderWebType> SPIDER_WEB_TYPE = EnumProperty.of("spider_web_type", SpiderWebType.class);
@@ -40,7 +47,7 @@ public class SpiderWebBlock extends Block {
      *
      * @param world the world view used to check the state of neighboring blocks
      * @param pos the position of this block in the world
-     * @return the updated block state with the correct {@link ModFriezeType}
+     * @return the updated block state with the correct {@link SpiderWebType}
      */
     private BlockState getUpdatedState(WorldView world, BlockPos pos) {
         boolean hasBlockNorth = world.getBlockState(pos.north()).isSideSolidFullSquare(world, pos.north(), Direction.SOUTH);
@@ -129,7 +136,10 @@ public class SpiderWebBlock extends Block {
     protected BlockState getStateForNeighborUpdate(BlockState state, WorldView world, ScheduledTickView tickView,
                                                    BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
         if (!state.canPlaceAt(world, pos)) {
-            return Blocks.AIR.getDefaultState();
+            if (world instanceof World realWorld && !realWorld.isClient()) {
+                realWorld.breakBlock(pos, false); // false = no drops
+            }
+            return state;
         }
         if(direction == Direction.NORTH || direction == Direction.EAST || direction == Direction.SOUTH || direction == Direction.WEST || direction == Direction.UP) {
             return getUpdatedState(world, pos);
@@ -158,7 +168,7 @@ public class SpiderWebBlock extends Block {
 
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return VoxelShapes.empty();
+        return SHAPE;
     }
 
     @Override

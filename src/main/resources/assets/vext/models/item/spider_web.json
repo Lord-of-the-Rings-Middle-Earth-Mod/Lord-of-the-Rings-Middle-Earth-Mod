@@ -1,3 +1,6 @@
 {
-	"parent": "vext:block/spider_web_"
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "vext:item/spiderweb_item"
+	}
 }

@@ -17,12 +17,12 @@ import java.util.Locale;
 /**
  * Enum representing the different frieze types for the Vanilla Extensions Mod.
  * <p>
- * Each type describes a possible connection or ending of a frieze block
+ * Each type describes a possible connection to full blocks
  * and is used at runtime for block rendering.
  *
- * @author Moritz Rohleder
- * @see ModFriezeBlock
- * @since 0.1.0
+ * @author AnoJedt
+ * @see SpiderWebBlock
+ * @since after 0.1.0
  */
 public enum SpiderWebType implements StringIdentifiable {
 	NORTH("n"),
