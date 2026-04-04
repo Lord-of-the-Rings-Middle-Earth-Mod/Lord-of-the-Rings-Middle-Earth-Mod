@@ -6,7 +6,8 @@ license: CC-BY-NC-SA
 
 # Adding a New Stone Type
  
-Throughout this guide, `StoneType` / `stone_type` are placeholders. Replace them with the actual stone type name from the issue title in all file names, class names, and identifiers.
+Throughout this guide, `StoneType`, `stone_type`, etc. are placeholders. Replace them with the actual stone type name 
+from the issue title in all file names, class names, and identifiers.
  
 Use `BlueslateBlocks.java` as your sole reference throughout. Do not deviate from established patterns unless explicitly required.
  
