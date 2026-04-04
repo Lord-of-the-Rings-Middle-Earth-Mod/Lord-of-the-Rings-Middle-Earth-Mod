@@ -2,7 +2,6 @@ package com.anedhel.vext.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCollisionHandler;
@@ -158,7 +157,8 @@ public class SpiderWebBlock extends Block {
             }
         }
     /**
-     * not sure: it breaks around 5 blocks, but also with head hit so really high up*/
+     * not sure: it breaks around 5 blocks, but also with head hit so really high up
+     */
         Vec3d velocity = entity.getVelocity();
         double speed = velocity.length();
             if (speed > 0.8) {
