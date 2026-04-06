@@ -674,6 +674,7 @@ public class ModModelProvider extends FabricModelProvider {
 	 * @param bronzeOverlay the name for the bronze overlay texture
 	 * @param silverOverlay the name for the silver overlay texture
 	 * @param goldOverlay the name for the gold overlay texture
+	 * @param glowstoneOverlay the name for the glowstone overlay texture
 	 * @param mossyOverlay the name for the mossy overlay texture
 	 * @see ModTextures
 	 */
@@ -753,10 +754,12 @@ public class ModModelProvider extends FabricModelProvider {
 	 * @param bronzeOverlay             the bronze overlay texture for non-chiseled variants
 	 * @param silverOverlay             the silver overlay texture for non-chiseled variants
 	 * @param goldOverlay               the gold overlay texture for non-chiseled variants
+	 * @param glowstoneOverlay          the glowstone overlay texture for non-chiseled variants
 	 * @param mossyOverlay              the mossy overlay texture (shared by chiseled and non-chiseled)
 	 * @param bronzeChiseledOverlay     the bronze overlay texture for chiseled variants
 	 * @param silverChiseledOverlay     the silver overlay texture for chiseled variants
 	 * @param goldChiseledOverlay       the gold overlay texture for chiseled variants
+	 * @param glowstoneChiseledOverlay  the glowstone overlay texture for chiseled variants
 	 * @see ModTextures
 	 */
 	private void generateCubeAllSubSetBlockStateModels(BlockStateModelGenerator blockStateModelGenerator,
