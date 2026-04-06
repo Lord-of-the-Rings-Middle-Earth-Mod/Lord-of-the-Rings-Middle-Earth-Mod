@@ -1,5 +1,15 @@
 # Changelog
 ___
+## Unreleased
+### Additions:
++ Added Glowstone Ornament for all StoneTypes across all 9 ModStoneSubSet types (Polished, Pillar, Frieze, Cobbled Brick, Rustic Brick, Brick, Fancy Brick, Tile, Pavement)
+  + Normal Glowstone Ornament variant emits light level 15
+  + Cracked Glowstone Ornament variant emits light level 7
+  + Craftable from the respective base block using Glowstone Dust
+  + Cracked variant obtainable via smelting the normal variant
+  + All mossy/overgrown variants craftable via existing recipes
+  + Full stonecutting recipe support for all variants and block family members
+___
 ## 0.1.0
 ### Additions:
 + Set up the Mod with entry points for the Server-Side, the Client-Side and DataGen

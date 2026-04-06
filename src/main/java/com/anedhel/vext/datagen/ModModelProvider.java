@@ -198,28 +198,32 @@ public class ModModelProvider extends FabricModelProvider {
 			generatePolishedSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getPolishedSet());
 
 			generatePillarSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getPillarSet(),
-					"bronze_pillar","silver_pillar","gold_pillar");
+					"bronze_pillar","silver_pillar","gold_pillar","glowstone_pillar");
 
 			generateFriezeSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getFriezeSet(),
-					stoneSet.getPolishedSet(), "bronze_frieze", "silver_frieze", "gold_frieze");
+					stoneSet.getPolishedSet(), "bronze_frieze", "silver_frieze", "gold_frieze", "glowstone_frieze");
 
 			generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getCobbledBrickSet(),
 					ModTextures.BRONZE_COBBLED_BRICK_OVERLAY, ModTextures.SILVER_COBBLED_BRICK_OVERLAY,
-					ModTextures.GOLD_COBBLED_BRICK_OVERLAY, ModTextures.MOSSY_OVERLAY_THREE);
+					ModTextures.GOLD_COBBLED_BRICK_OVERLAY, ModTextures.GLOWSTONE_COBBLED_BRICK_OVERLAY,
+					ModTextures.MOSSY_OVERLAY_THREE);
 
 			generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getRusticBrickSet(),
 					ModTextures.BRONZE_BRICK_OVERLAY, ModTextures.SILVER_BRICK_OVERLAY,
-					ModTextures.GOLD_BRICK_OVERLAY, ModTextures.MOSSY_OVERLAY_ONE);
+					ModTextures.GOLD_BRICK_OVERLAY, ModTextures.GLOWSTONE_BRICK_OVERLAY,
+					ModTextures.MOSSY_OVERLAY_ONE);
 
 			generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getBrickSet(),
 					ModTextures.BRONZE_BRICK_OVERLAY, ModTextures.SILVER_BRICK_OVERLAY,
-					ModTextures.GOLD_BRICK_OVERLAY, ModTextures.MOSSY_OVERLAY_ONE,
+					ModTextures.GOLD_BRICK_OVERLAY, ModTextures.GLOWSTONE_BRICK_OVERLAY,
+					ModTextures.MOSSY_OVERLAY_ONE,
 					ModTextures.BRONZE_CHISELED_OVERLAY, ModTextures.SILVER_CHISELED_OVERLAY,
-					ModTextures.GOLD_CHISELED_OVERLAY);
+					ModTextures.GOLD_CHISELED_OVERLAY, ModTextures.GLOWSTONE_CHISELED_OVERLAY);
 
 			generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getTileSet(),
 					ModTextures.BRONZE_TILES_OVERLAY, ModTextures.SILVER_TILES_OVERLAY,
-					ModTextures.GOLD_TILES_OVERLAY, ModTextures.MOSSY_OVERLAY_TWO);
+					ModTextures.GOLD_TILES_OVERLAY, ModTextures.GLOWSTONE_TILES_OVERLAY,
+					ModTextures.MOSSY_OVERLAY_TWO);
 
 			generatePavementSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getPavementSet(),
 					stoneSet.getTileSet().getBaseFamilyVariant("base"),
@@ -227,7 +231,8 @@ public class ModModelProvider extends FabricModelProvider {
 
 			generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getFancyBrickSet(),
 					ModTextures.BRONZE_FANCY_BRICKS_OVERLAY, ModTextures.SILVER_FANCY_BRICKS_OVERLAY,
-					ModTextures.GOLD_FANCY_BRICKS_OVERLAY, ModTextures.MOSSY_OVERLAY_TWO);
+					ModTextures.GOLD_FANCY_BRICKS_OVERLAY, ModTextures.GLOWSTONE_FANCY_BRICKS_OVERLAY,
+					ModTextures.MOSSY_OVERLAY_TWO);
 		}
 	}
 
@@ -318,6 +323,20 @@ public class ModModelProvider extends FabricModelProvider {
 				subSet.getOvergrownGoldFamilyVariant("slab"),
 				ModTextures.GOLD_POLISHED_OVERLAY, ModTextures.GOLD_POLISHED_SLAB_OVERLAY,
 				ModTextures.OVERGROWN_OVERLAY);
+		registerOneOverlayPolishedStone(blockStateModelGenerator, subSet.getBaseFamilyVariant("base"),
+				subSet.getBaseFamilyVariant("slab"), subSet.getGlowstoneFamilyVariant("base"),
+				subSet.getGlowstoneFamilyVariant("slab"), true,
+				ModTextures.GLOWSTONE_POLISHED_OVERLAY, ModTextures.GLOWSTONE_POLISHED_SLAB_OVERLAY);
+		registerTwoOverlayPolishedStone(blockStateModelGenerator, subSet.getBaseFamilyVariant("base"),
+				subSet.getBaseFamilyVariant("slab"), subSet.getMossyGlowstoneFamilyVariant("base"),
+				subSet.getMossyGlowstoneFamilyVariant("slab"),
+				ModTextures.GLOWSTONE_POLISHED_OVERLAY, ModTextures.GLOWSTONE_POLISHED_SLAB_OVERLAY,
+				ModTextures.MOSSY_OVERLAY_ONE);
+		registerTwoOverlayPolishedStone(blockStateModelGenerator, subSet.getBaseFamilyVariant("base"),
+				subSet.getBaseFamilyVariant("slab"), subSet.getOvergrownGlowstoneFamilyVariant("base"),
+				subSet.getOvergrownGlowstoneFamilyVariant("slab"),
+				ModTextures.GLOWSTONE_POLISHED_OVERLAY, ModTextures.GLOWSTONE_POLISHED_SLAB_OVERLAY,
+				ModTextures.OVERGROWN_OVERLAY);
 
 		registerPolishedStone(blockStateModelGenerator, subSet.getCrackedFamilyVariant("base"),
 				subSet.getCrackedFamilyVariant("slab"));
@@ -371,6 +390,20 @@ public class ModModelProvider extends FabricModelProvider {
 				subSet.getOvergrownCrackedGoldFamilyVariant("slab"),
 				ModTextures.CRACKED_GOLD_POLISHED_OVERLAY, ModTextures.CRACKED_GOLD_POLISHED_SLAB_OVERLAY,
 				ModTextures.OVERGROWN_OVERLAY);
+		registerOneOverlayPolishedStone(blockStateModelGenerator, subSet.getCrackedFamilyVariant("base"),
+				subSet.getCrackedFamilyVariant("slab"), subSet.getCrackedGlowstoneFamilyVariant("base"),
+				subSet.getCrackedGlowstoneFamilyVariant("slab"), true,
+				ModTextures.CRACKED_GLOWSTONE_POLISHED_OVERLAY, ModTextures.CRACKED_GLOWSTONE_POLISHED_SLAB_OVERLAY);
+		registerTwoOverlayPolishedStone(blockStateModelGenerator, subSet.getCrackedFamilyVariant("base"),
+				subSet.getCrackedFamilyVariant("slab"), subSet.getMossyCrackedGlowstoneFamilyVariant("base"),
+				subSet.getMossyCrackedGlowstoneFamilyVariant("slab"),
+				ModTextures.CRACKED_GLOWSTONE_POLISHED_OVERLAY, ModTextures.CRACKED_GLOWSTONE_POLISHED_SLAB_OVERLAY,
+				ModTextures.MOSSY_OVERLAY_ONE);
+		registerTwoOverlayPolishedStone(blockStateModelGenerator, subSet.getCrackedFamilyVariant("base"),
+				subSet.getCrackedFamilyVariant("slab"), subSet.getOvergrownCrackedGlowstoneFamilyVariant("base"),
+				subSet.getOvergrownCrackedGlowstoneFamilyVariant("slab"),
+				ModTextures.CRACKED_GLOWSTONE_POLISHED_OVERLAY, ModTextures.CRACKED_GLOWSTONE_POLISHED_SLAB_OVERLAY,
+				ModTextures.OVERGROWN_OVERLAY);
 	}
 
 	/**
@@ -381,10 +414,11 @@ public class ModModelProvider extends FabricModelProvider {
 	 * @param bronze the name for the bronze overlay texture without the face-suffix
 	 * @param silver the name for the silver overlay texture without the face-suffix
 	 * @param gold the name for the gold overlay texture without the face-suffix
+	 * @param glowstone the name for the glowstone overlay texture without the face-suffix
 	 * @see ModTextures
 	 */
 	private void generatePillarSubSetBlockStateModels(BlockStateModelGenerator blockStateModelGenerator,
-			ModStoneSubSet subSet, String bronze, String silver, String gold) {
+			ModStoneSubSet subSet, String bronze, String silver, String gold, String glowstone) {
 		String topTexture = subSet.getBaseFamilyVariant("base").getTranslationKey()
 				.substring(subSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6)
 				.concat("_end");
@@ -431,6 +465,17 @@ public class ModModelProvider extends FabricModelProvider {
 		registerTwoOverlayPillarBlock(blockStateModelGenerator, subSet.getOvergrownGoldFamilyVariant("base"),
 				subSet.getOvergrownGoldFamilyVariant("slab"), topTexture, sideTexture,
 				gold,
+				ModTextures.OVERGROWN_OVERLAY.getTextureName());
+		registerOneOverlayPillarBlock(blockStateModelGenerator, subSet.getGlowstoneFamilyVariant("base"),
+				subSet.getGlowstoneFamilyVariant("slab"), topTexture, sideTexture, true,
+				glowstone);
+		registerTwoOverlayPillarBlock(blockStateModelGenerator, subSet.getMossyGlowstoneFamilyVariant("base"),
+				subSet.getMossyGlowstoneFamilyVariant("slab"), topTexture, sideTexture,
+				glowstone,
+				ModTextures.MOSSY_OVERLAY_TWO.getTextureName());
+		registerTwoOverlayPillarBlock(blockStateModelGenerator, subSet.getOvergrownGlowstoneFamilyVariant("base"),
+				subSet.getOvergrownGlowstoneFamilyVariant("slab"), topTexture, sideTexture,
+				glowstone,
 				ModTextures.OVERGROWN_OVERLAY.getTextureName());
 
 		String crackedTopTexture = subSet.getCrackedFamilyVariant("base").getTranslationKey()
@@ -480,6 +525,17 @@ public class ModModelProvider extends FabricModelProvider {
 				subSet.getOvergrownCrackedGoldFamilyVariant("slab"), crackedTopTexture, crackedSideTexture,
 				gold,
 				ModTextures.OVERGROWN_OVERLAY.getTextureName());
+		registerOneOverlayPillarBlock(blockStateModelGenerator, subSet.getCrackedGlowstoneFamilyVariant("base"),
+				subSet.getCrackedGlowstoneFamilyVariant("slab"), crackedTopTexture, crackedSideTexture, true,
+				glowstone);
+		registerTwoOverlayPillarBlock(blockStateModelGenerator, subSet.getMossyCrackedGlowstoneFamilyVariant("base"),
+				subSet.getMossyCrackedGlowstoneFamilyVariant("slab"), crackedTopTexture, crackedSideTexture,
+				glowstone,
+				ModTextures.MOSSY_OVERLAY_TWO.getTextureName());
+		registerTwoOverlayPillarBlock(blockStateModelGenerator, subSet.getOvergrownCrackedGlowstoneFamilyVariant("base"),
+				subSet.getOvergrownCrackedGlowstoneFamilyVariant("slab"), crackedTopTexture, crackedSideTexture,
+				glowstone,
+				ModTextures.OVERGROWN_OVERLAY.getTextureName());
 	}
 
 	/**
@@ -491,10 +547,11 @@ public class ModModelProvider extends FabricModelProvider {
 	 * @param bronze the name for the bronze overlay texture without the face-suffix
 	 * @param silver the name for the silver overlay texture without the face-suffix
 	 * @param gold the name for the gold overlay texture without the face-suffix
+	 * @param glowstone the name for the glowstone overlay texture without the face-suffix
 	 * @see ModTextures
 	 */
 	private void generateFriezeSubSetBlockStateModels(BlockStateModelGenerator blockStateModelGenerator,
-		  ModStoneSubSet friezeSet, ModStoneSubSet polishedSet, String bronze, String silver, String gold) {
+		  ModStoneSubSet friezeSet, ModStoneSubSet polishedSet, String bronze, String silver, String gold, String glowstone) {
 		String endTexture = polishedSet.getBaseFamilyVariant("base").getTranslationKey()
 				.substring(polishedSet.getBaseFamilyVariant("base").getTranslationKey().indexOf('.')+6);
 		String northTexture = friezeSet.getBaseFamilyVariant("base").getTranslationKey()
@@ -541,6 +598,15 @@ public class ModModelProvider extends FabricModelProvider {
 		registerTwoOverlayFriezeBlock(blockStateModelGenerator, friezeSet.getOvergrownGoldFamilyVariant("base"),
 				friezeSet.getOvergrownGoldFamilyVariant("slab"), endTexture,  northTexture, eastTexture, southTexture,
 				westTexture, true, gold, ModTextures.OVERGROWN_OVERLAY.getTextureName());
+		registerOneOverlayFriezeBlock(blockStateModelGenerator, friezeSet.getGlowstoneFamilyVariant("base"),
+				friezeSet.getGlowstoneFamilyVariant("slab"), endTexture, northTexture, eastTexture, southTexture,
+				westTexture, true, glowstone);
+		registerTwoOverlayFriezeBlock(blockStateModelGenerator, friezeSet.getMossyGlowstoneFamilyVariant("base"),
+				friezeSet.getMossyGlowstoneFamilyVariant("slab"), endTexture,  northTexture, eastTexture, southTexture,
+				westTexture, true, glowstone, ModTextures.MOSSY_OVERLAY_ONE.getTextureName());
+		registerTwoOverlayFriezeBlock(blockStateModelGenerator, friezeSet.getOvergrownGlowstoneFamilyVariant("base"),
+				friezeSet.getOvergrownGlowstoneFamilyVariant("slab"), endTexture,  northTexture, eastTexture, southTexture,
+				westTexture, true, glowstone, ModTextures.OVERGROWN_OVERLAY.getTextureName());
 
 		String crackedEndTexture = polishedSet.getCrackedFamilyVariant("base").getTranslationKey()
 				.substring(polishedSet.getCrackedFamilyVariant("base").getTranslationKey().indexOf('.')+6);
@@ -589,6 +655,15 @@ public class ModModelProvider extends FabricModelProvider {
 		registerTwoOverlayFriezeBlock(blockStateModelGenerator, friezeSet.getOvergrownCrackedGoldFamilyVariant("base"),
 				friezeSet.getOvergrownCrackedGoldFamilyVariant("slab"), endTexture,  northTexture, eastTexture, southTexture,
 				westTexture, true, "cracked_" + gold, ModTextures.OVERGROWN_OVERLAY.getTextureName());
+		registerOneOverlayFriezeBlock(blockStateModelGenerator, friezeSet.getCrackedGlowstoneFamilyVariant("base"),
+				friezeSet.getCrackedGlowstoneFamilyVariant("slab"), crackedEndTexture, crackedNorthTexture, crackedEastTexture,
+				crackedSouthTexture, crackedWestTexture, true, "cracked_" + glowstone);
+		registerTwoOverlayFriezeBlock(blockStateModelGenerator, friezeSet.getMossyCrackedGlowstoneFamilyVariant("base"),
+				friezeSet.getMossyCrackedGlowstoneFamilyVariant("slab"), endTexture,  northTexture, eastTexture, southTexture,
+				westTexture, true, "cracked_" + glowstone, ModTextures.MOSSY_OVERLAY_ONE.getTextureName());
+		registerTwoOverlayFriezeBlock(blockStateModelGenerator, friezeSet.getOvergrownCrackedGlowstoneFamilyVariant("base"),
+				friezeSet.getOvergrownCrackedGlowstoneFamilyVariant("slab"), endTexture,  northTexture, eastTexture, southTexture,
+				westTexture, true, "cracked_" + glowstone, ModTextures.OVERGROWN_OVERLAY.getTextureName());
 	}
 
 	/**
@@ -604,7 +679,7 @@ public class ModModelProvider extends FabricModelProvider {
 	 */
 	private void generateCubeAllSubSetBlockStateModels(BlockStateModelGenerator blockStateModelGenerator,
 			ModStoneSubSet subSet, ModTextures bronzeOverlay, ModTextures silverOverlay, ModTextures goldOverlay,
-			ModTextures mossyOverlay) {
+			ModTextures glowstoneOverlay, ModTextures mossyOverlay) {
 		blockStateModelGenerator.registerCubeAllModelTexturePool(subSet.getBaseFamilyVariant("base"))
 				.family(subSet.getBaseFamily());
 		registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, subSet.getBaseFamilyVariant("base"),
@@ -629,6 +704,12 @@ public class ModModelProvider extends FabricModelProvider {
 				subSet.getMossyGoldFamily(), goldOverlay, mossyOverlay);
 		registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, subSet.getBaseFamilyVariant("base"),
 				subSet.getOvergrownGoldFamily(), goldOverlay, ModTextures.OVERGROWN_OVERLAY);
+		registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, subSet.getBaseFamilyVariant("base"),
+				subSet.getGlowstoneFamily(), glowstoneOverlay);
+		registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, subSet.getBaseFamilyVariant("base"),
+				subSet.getMossyGlowstoneFamily(), glowstoneOverlay, mossyOverlay);
+		registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, subSet.getBaseFamilyVariant("base"),
+				subSet.getOvergrownGlowstoneFamily(), glowstoneOverlay, ModTextures.OVERGROWN_OVERLAY);
 
 		blockStateModelGenerator.registerCubeAllModelTexturePool(subSet.getCrackedFamilyVariant("base"))
 				.family(subSet.getCrackedFamily());
@@ -654,6 +735,12 @@ public class ModModelProvider extends FabricModelProvider {
 				subSet.getMossyCrackedGoldFamily(), goldOverlay.getCrackedVariant(), mossyOverlay);
 		registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, subSet.getCrackedFamilyVariant("base"),
 				subSet.getOvergrownCrackedGoldFamily(), goldOverlay.getCrackedVariant(), ModTextures.OVERGROWN_OVERLAY);
+		registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, subSet.getCrackedFamilyVariant("base"),
+				subSet.getCrackedGlowstoneFamily(), glowstoneOverlay.getCrackedVariant());
+		registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, subSet.getCrackedFamilyVariant("base"),
+				subSet.getMossyCrackedGlowstoneFamily(), glowstoneOverlay.getCrackedVariant(), mossyOverlay);
+		registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, subSet.getCrackedFamilyVariant("base"),
+				subSet.getOvergrownCrackedGlowstoneFamily(), glowstoneOverlay.getCrackedVariant(), ModTextures.OVERGROWN_OVERLAY);
 	}
 
 	/**
@@ -674,10 +761,11 @@ public class ModModelProvider extends FabricModelProvider {
 	 */
 	private void generateCubeAllSubSetBlockStateModels(BlockStateModelGenerator blockStateModelGenerator,
 			ModStoneSubSet subSet, ModTextures bronzeOverlay, ModTextures silverOverlay, ModTextures goldOverlay,
-			ModTextures mossyOverlay,
-			ModTextures bronzeChiseledOverlay, ModTextures silverChiseledOverlay, ModTextures goldChiseledOverlay) {
+			ModTextures glowstoneOverlay, ModTextures mossyOverlay,
+			ModTextures bronzeChiseledOverlay, ModTextures silverChiseledOverlay, ModTextures goldChiseledOverlay,
+			ModTextures glowstoneChiseledOverlay) {
 		generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, subSet,
-				bronzeOverlay, silverOverlay, goldOverlay, mossyOverlay);
+				bronzeOverlay, silverOverlay, goldOverlay, glowstoneOverlay, mossyOverlay);
 
 		Block chiseledBase = subSet.getBaseFamily().getVariant(BlockFamily.Variant.CHISELED);
 		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyFamily(), chiseledBase, mossyOverlay);
@@ -691,6 +779,9 @@ public class ModModelProvider extends FabricModelProvider {
 		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getGoldFamily(), chiseledBase, goldChiseledOverlay);
 		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyGoldFamily(), chiseledBase, goldChiseledOverlay, mossyOverlay);
 		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownGoldFamily(), chiseledBase, goldChiseledOverlay, ModTextures.OVERGROWN_OVERLAY);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getGlowstoneFamily(), chiseledBase, glowstoneChiseledOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyGlowstoneFamily(), chiseledBase, glowstoneChiseledOverlay, mossyOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownGlowstoneFamily(), chiseledBase, glowstoneChiseledOverlay, ModTextures.OVERGROWN_OVERLAY);
 
 		Block crackedChiseledBase = subSet.getCrackedFamily().getVariant(BlockFamily.Variant.CHISELED);
 		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyCrackedFamily(), crackedChiseledBase, mossyOverlay);
@@ -704,6 +795,9 @@ public class ModModelProvider extends FabricModelProvider {
 		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getCrackedGoldFamily(), crackedChiseledBase, goldChiseledOverlay.getCrackedVariant());
 		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyCrackedGoldFamily(), crackedChiseledBase, goldChiseledOverlay.getCrackedVariant(), mossyOverlay);
 		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownCrackedGoldFamily(), crackedChiseledBase, goldChiseledOverlay.getCrackedVariant(), ModTextures.OVERGROWN_OVERLAY);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getCrackedGlowstoneFamily(), crackedChiseledBase, glowstoneChiseledOverlay.getCrackedVariant());
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyCrackedGlowstoneFamily(), crackedChiseledBase, glowstoneChiseledOverlay.getCrackedVariant(), mossyOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownCrackedGlowstoneFamily(), crackedChiseledBase, glowstoneChiseledOverlay.getCrackedVariant(), ModTextures.OVERGROWN_OVERLAY);
 	}
 
 	/**
@@ -773,6 +867,14 @@ public class ModModelProvider extends FabricModelProvider {
 		registerTwoOverlayPavement(blockStateModelGenerator, subSet.getOvergrownGoldFamily(), topTexture, sideTexture,
 				ModTextures.GOLD_TILES_OVERLAY, ModTextures.GOLD_PAVEMENT_OVERLAY,
 				ModTextures.OVERGROWN_OVERLAY);
+		registerOneOverlayPavement(blockStateModelGenerator, subSet.getGlowstoneFamily(), topTexture, sideTexture,
+				ModTextures.GLOWSTONE_TILES_OVERLAY, ModTextures.GLOWSTONE_PAVEMENT_OVERLAY);
+		registerTwoOverlayPavement(blockStateModelGenerator, subSet.getMossyGlowstoneFamily(), topTexture, sideTexture,
+				ModTextures.GLOWSTONE_TILES_OVERLAY, ModTextures.GLOWSTONE_PAVEMENT_OVERLAY,
+				ModTextures.MOSSY_OVERLAY_TWO);
+		registerTwoOverlayPavement(blockStateModelGenerator, subSet.getOvergrownGlowstoneFamily(), topTexture, sideTexture,
+				ModTextures.GLOWSTONE_TILES_OVERLAY, ModTextures.GLOWSTONE_PAVEMENT_OVERLAY,
+				ModTextures.OVERGROWN_OVERLAY);
 
 		String crackedTopTexture = subSet.getCrackedFamilyVariant("base").getTranslationKey()
 				.substring(subSet.getCrackedFamilyVariant("base").getTranslationKey().indexOf('.')+6);
@@ -806,6 +908,14 @@ public class ModModelProvider extends FabricModelProvider {
 				ModTextures.MOSSY_OVERLAY_TWO);
 		registerTwoOverlayPavement(blockStateModelGenerator, subSet.getOvergrownCrackedGoldFamily(), crackedTopTexture,
 				crackedSideTexture, ModTextures.CRACKED_GOLD_TILES_OVERLAY, ModTextures.CRACKED_GOLD_PAVEMENT_OVERLAY,
+				ModTextures.OVERGROWN_OVERLAY);
+		registerOneOverlayPavement(blockStateModelGenerator, subSet.getCrackedGlowstoneFamily(), crackedTopTexture,
+				crackedSideTexture, ModTextures.CRACKED_GLOWSTONE_TILES_OVERLAY, ModTextures.CRACKED_GLOWSTONE_PAVEMENT_OVERLAY);
+		registerTwoOverlayPavement(blockStateModelGenerator, subSet.getMossyCrackedGlowstoneFamily(), crackedTopTexture,
+				crackedSideTexture, ModTextures.CRACKED_GLOWSTONE_TILES_OVERLAY, ModTextures.CRACKED_GLOWSTONE_PAVEMENT_OVERLAY,
+				ModTextures.MOSSY_OVERLAY_TWO);
+		registerTwoOverlayPavement(blockStateModelGenerator, subSet.getOvergrownCrackedGlowstoneFamily(), crackedTopTexture,
+				crackedSideTexture, ModTextures.CRACKED_GLOWSTONE_TILES_OVERLAY, ModTextures.CRACKED_GLOWSTONE_PAVEMENT_OVERLAY,
 				ModTextures.OVERGROWN_OVERLAY);
 	}
 
