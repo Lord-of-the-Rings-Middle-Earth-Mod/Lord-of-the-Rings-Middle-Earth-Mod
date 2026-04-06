@@ -650,7 +650,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 					createCarpentryRecipe(category, entry.getValue(), family.getBaseBlock(), count);
 				}
 				for(Block block : filteredBaseBlocks) {
-					createCarpentryRecipe(RecipeCategory.BUILDING_BLOCKS, block, family.getBaseBlock(), 4);
+					createCarpentryRecipe(RecipeCategory.BUILDING_BLOCKS, family.getBaseBlock(), block, 4);
 					for(Map.Entry<BlockFamily.Variant, Block> entry : family.getVariants().entrySet()) {
 						if(EXCLUDED_CARPENTRY_VARIANTS.contains(entry.getKey())) {
 							continue;
