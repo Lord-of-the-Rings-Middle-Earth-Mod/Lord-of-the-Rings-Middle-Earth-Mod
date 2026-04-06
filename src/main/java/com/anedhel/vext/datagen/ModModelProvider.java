@@ -213,7 +213,9 @@ public class ModModelProvider extends FabricModelProvider {
 
 			generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getBrickSet(),
 					ModTextures.BRONZE_BRICK_OVERLAY, ModTextures.SILVER_BRICK_OVERLAY,
-					ModTextures.GOLD_BRICK_OVERLAY, ModTextures.MOSSY_OVERLAY_ONE);
+					ModTextures.GOLD_BRICK_OVERLAY, ModTextures.MOSSY_OVERLAY_ONE,
+					ModTextures.BRONZE_CHISELED_OVERLAY, ModTextures.SILVER_CHISELED_OVERLAY,
+					ModTextures.GOLD_CHISELED_OVERLAY);
 
 			generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, stoneSet.getTileSet(),
 					ModTextures.BRONZE_TILES_OVERLAY, ModTextures.SILVER_TILES_OVERLAY,
@@ -652,6 +654,80 @@ public class ModModelProvider extends FabricModelProvider {
 				subSet.getMossyCrackedGoldFamily(), goldOverlay.getCrackedVariant(), mossyOverlay);
 		registerCubeAllOverlayBlockFamilyModel(blockStateModelGenerator, subSet.getCrackedFamilyVariant("base"),
 				subSet.getOvergrownCrackedGoldFamily(), goldOverlay.getCrackedVariant(), ModTextures.OVERGROWN_OVERLAY);
+	}
+
+	/**
+	 * Generates block state models for cube all stone sub sets with overlays, including chiseled variants.
+	 * Delegates all non-chiseled handling to the base overload; chiseled blocks use their own base texture
+	 * and dedicated chiseled overlay textures. Mossy variants reuse the shared {@code mossyOverlay}.
+	 *
+	 * @param blockStateModelGenerator  the {@link BlockStateModelGenerator}
+	 * @param subSet                    the {@link ModStoneSubSet}
+	 * @param bronzeOverlay             the bronze overlay texture for non-chiseled variants
+	 * @param silverOverlay             the silver overlay texture for non-chiseled variants
+	 * @param goldOverlay               the gold overlay texture for non-chiseled variants
+	 * @param mossyOverlay              the mossy overlay texture (shared by chiseled and non-chiseled)
+	 * @param bronzeChiseledOverlay     the bronze overlay texture for chiseled variants
+	 * @param silverChiseledOverlay     the silver overlay texture for chiseled variants
+	 * @param goldChiseledOverlay       the gold overlay texture for chiseled variants
+	 * @see ModTextures
+	 */
+	private void generateCubeAllSubSetBlockStateModels(BlockStateModelGenerator blockStateModelGenerator,
+			ModStoneSubSet subSet, ModTextures bronzeOverlay, ModTextures silverOverlay, ModTextures goldOverlay,
+			ModTextures mossyOverlay,
+			ModTextures bronzeChiseledOverlay, ModTextures silverChiseledOverlay, ModTextures goldChiseledOverlay) {
+		generateCubeAllSubSetBlockStateModels(blockStateModelGenerator, subSet,
+				bronzeOverlay, silverOverlay, goldOverlay, mossyOverlay);
+
+		Block chiseledBase = subSet.getBaseFamily().getVariant(BlockFamily.Variant.CHISELED);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyFamily(), chiseledBase, mossyOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownFamily(), chiseledBase, ModTextures.OVERGROWN_OVERLAY);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getBronzeFamily(), chiseledBase, bronzeChiseledOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyBronzeFamily(), chiseledBase, bronzeChiseledOverlay, mossyOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownBronzeFamily(), chiseledBase, bronzeChiseledOverlay, ModTextures.OVERGROWN_OVERLAY);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getSilverFamily(), chiseledBase, silverChiseledOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossySilverFamily(), chiseledBase, silverChiseledOverlay, mossyOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownSilverFamily(), chiseledBase, silverChiseledOverlay, ModTextures.OVERGROWN_OVERLAY);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getGoldFamily(), chiseledBase, goldChiseledOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyGoldFamily(), chiseledBase, goldChiseledOverlay, mossyOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownGoldFamily(), chiseledBase, goldChiseledOverlay, ModTextures.OVERGROWN_OVERLAY);
+
+		Block crackedChiseledBase = subSet.getCrackedFamily().getVariant(BlockFamily.Variant.CHISELED);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyCrackedFamily(), crackedChiseledBase, mossyOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownCrackedFamily(), crackedChiseledBase, ModTextures.OVERGROWN_OVERLAY);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getCrackedBronzeFamily(), crackedChiseledBase, bronzeChiseledOverlay.getCrackedVariant());
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyCrackedBronzeFamily(), crackedChiseledBase, bronzeChiseledOverlay.getCrackedVariant(), mossyOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownCrackedBronzeFamily(), crackedChiseledBase, bronzeChiseledOverlay.getCrackedVariant(), ModTextures.OVERGROWN_OVERLAY);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getCrackedSilverFamily(), crackedChiseledBase, silverChiseledOverlay.getCrackedVariant());
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyCrackedSilverFamily(), crackedChiseledBase, silverChiseledOverlay.getCrackedVariant(), mossyOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownCrackedSilverFamily(), crackedChiseledBase, silverChiseledOverlay.getCrackedVariant(), ModTextures.OVERGROWN_OVERLAY);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getCrackedGoldFamily(), crackedChiseledBase, goldChiseledOverlay.getCrackedVariant());
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getMossyCrackedGoldFamily(), crackedChiseledBase, goldChiseledOverlay.getCrackedVariant(), mossyOverlay);
+		registerChiseledOverlayModel(blockStateModelGenerator, subSet.getOvergrownCrackedGoldFamily(), crackedChiseledBase, goldChiseledOverlay.getCrackedVariant(), ModTextures.OVERGROWN_OVERLAY);
+	}
+
+	/**
+	 * Registers a one- or two-overlay cube-all model for the {@link BlockFamily.Variant#CHISELED} variant
+	 * of the given family. The overlay is applied on top of {@code chiseledBase}'s texture.
+	 * Does nothing if the family has no chiseled variant.
+	 *
+	 * @param blockStateModelGenerator the {@link BlockStateModelGenerator}
+	 * @param family                   the {@link BlockFamily} that may contain a chiseled variant
+	 * @param chiseledBase             the {@link Block} providing the base (chiseled) texture
+	 * @param overlays                 one or two {@link ModTextures} overlays to apply
+	 */
+	private void registerChiseledOverlayModel(BlockStateModelGenerator blockStateModelGenerator,
+			BlockFamily family, Block chiseledBase, ModTextures... overlays) {
+		if (!family.getVariants().containsKey(BlockFamily.Variant.CHISELED)) return;
+		Block chiseledBlock = family.getVariant(BlockFamily.Variant.CHISELED);
+		if (overlays.length == 2) {
+			TextureMap textureMap = createCubeAllOverlayTextureMap(chiseledBase,
+					overlays[0].getTextureName(), overlays[1].getTextureName());
+			twoOverlayBlock(blockStateModelGenerator, chiseledBlock, textureMap);
+		} else if (overlays.length == 1) {
+			TextureMap textureMap = createCubeAllOverlayTextureMap(chiseledBase, overlays[0].getTextureName());
+			oneOverlayBlock(blockStateModelGenerator, chiseledBlock, textureMap);
+		}
 	}
 
 	/**

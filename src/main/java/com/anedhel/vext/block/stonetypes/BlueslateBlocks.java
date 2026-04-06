@@ -1679,10 +1679,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block MOSSY_BLUESLATE_BRICK_WALL = registerBlock("mossy_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block MOSSY_CHISELED_BLUESLATE_BRICK = registerBlock("mossy_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_BLUESLATE_BRICKS)
 			.stairs(MOSSY_BLUESLATE_BRICK_STAIRS)
 			.slab(MOSSY_BLUESLATE_BRICK_SLAB)
 			.wall(MOSSY_BLUESLATE_BRICK_WALL)
+			.chiseled(MOSSY_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block OVERGROWN_BLUESLATE_BRICKS = registerBlock("overgrown_blueslate_bricks",
@@ -1694,10 +1697,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block OVERGROWN_BLUESLATE_BRICK_WALL = registerBlock("overgrown_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block OVERGROWN_CHISELED_BLUESLATE_BRICK = registerBlock("overgrown_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_BLUESLATE_BRICKS)
 			.stairs(OVERGROWN_BLUESLATE_BRICK_STAIRS)
 			.slab(OVERGROWN_BLUESLATE_BRICK_SLAB)
 			.wall(OVERGROWN_BLUESLATE_BRICK_WALL)
+			.chiseled(OVERGROWN_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block CRACKED_BLUESLATE_BRICKS = registerBlock("cracked_blueslate_bricks",
@@ -1709,10 +1715,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block CRACKED_BLUESLATE_BRICK_WALL = registerBlock("cracked_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block CRACKED_CHISELED_BLUESLATE_BRICK = registerBlock("cracked_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily CRACKED_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_BLUESLATE_BRICKS)
 			.stairs(CRACKED_BLUESLATE_BRICK_STAIRS)
 			.slab(CRACKED_BLUESLATE_BRICK_SLAB)
 			.wall(CRACKED_BLUESLATE_BRICK_WALL)
+			.chiseled(CRACKED_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block MOSSY_CRACKED_BLUESLATE_BRICKS = registerBlock("mossy_cracked_blueslate_bricks",
@@ -1724,10 +1733,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block MOSSY_CRACKED_BLUESLATE_BRICK_WALL = registerBlock("mossy_cracked_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block MOSSY_CRACKED_CHISELED_BLUESLATE_BRICK = registerBlock("mossy_cracked_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_CRACKED_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_CRACKED_BLUESLATE_BRICKS)
 			.stairs(MOSSY_CRACKED_BLUESLATE_BRICK_STAIRS)
 			.slab(MOSSY_CRACKED_BLUESLATE_BRICK_SLAB)
 			.wall(MOSSY_CRACKED_BLUESLATE_BRICK_WALL)
+			.chiseled(MOSSY_CRACKED_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block OVERGROWN_CRACKED_BLUESLATE_BRICKS = registerBlock("overgrown_cracked_blueslate_bricks",
@@ -1739,10 +1751,14 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block OVERGROWN_CRACKED_BLUESLATE_BRICK_WALL = registerBlock("overgrown_cracked_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block OVERGROWN_CRACKED_CHISELED_BLUESLATE_BRICK = registerBlock(
+			"overgrown_cracked_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_CRACKED_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_BLUESLATE_BRICKS)
 			.stairs(OVERGROWN_CRACKED_BLUESLATE_BRICK_STAIRS)
 			.slab(OVERGROWN_CRACKED_BLUESLATE_BRICK_SLAB)
 			.wall(OVERGROWN_CRACKED_BLUESLATE_BRICK_WALL)
+			.chiseled(OVERGROWN_CRACKED_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block BRONZE_BLUESLATE_BRICKS = registerBlock("bronze_blueslate_bricks",
@@ -1754,10 +1770,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block BRONZE_BLUESLATE_BRICK_WALL = registerBlock("bronze_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block BRONZE_CHISELED_BLUESLATE_BRICK = registerBlock("bronze_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(BRONZE_BLUESLATE_BRICKS)
 			.stairs(BRONZE_BLUESLATE_BRICK_STAIRS)
 			.slab(BRONZE_BLUESLATE_BRICK_SLAB)
 			.wall(BRONZE_BLUESLATE_BRICK_WALL)
+			.chiseled(BRONZE_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block MOSSY_BRONZE_BLUESLATE_BRICKS = registerBlock("mossy_bronze_blueslate_bricks",
@@ -1769,10 +1788,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block MOSSY_BRONZE_BLUESLATE_BRICK_WALL = registerBlock("mossy_bronze_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block MOSSY_BRONZE_CHISELED_BLUESLATE_BRICK = registerBlock("mossy_bronze_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_BRONZE_BLUESLATE_BRICKS)
 			.stairs(MOSSY_BRONZE_BLUESLATE_BRICK_STAIRS)
 			.slab(MOSSY_BRONZE_BLUESLATE_BRICK_SLAB)
 			.wall(MOSSY_BRONZE_BLUESLATE_BRICK_WALL)
+			.chiseled(MOSSY_BRONZE_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block OVERGROWN_BRONZE_BLUESLATE_BRICKS = registerBlock("overgrown_bronze_blueslate_bricks",
@@ -1784,10 +1806,14 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block OVERGROWN_BRONZE_BLUESLATE_BRICK_WALL = registerBlock("overgrown_bronze_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block OVERGROWN_BRONZE_CHISELED_BLUESLATE_BRICK = registerBlock(
+			"overgrown_bronze_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_BRONZE_BLUESLATE_BRICKS)
 			.stairs(OVERGROWN_BRONZE_BLUESLATE_BRICK_STAIRS)
 			.slab(OVERGROWN_BRONZE_BLUESLATE_BRICK_SLAB)
 			.wall(OVERGROWN_BRONZE_BLUESLATE_BRICK_WALL)
+			.chiseled(OVERGROWN_BRONZE_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block CRACKED_BRONZE_BLUESLATE_BRICKS = registerBlock("cracked_bronze_blueslate_bricks",
@@ -1799,10 +1825,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block CRACKED_BRONZE_BLUESLATE_BRICK_WALL = registerBlock("cracked_bronze_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block CRACKED_BRONZE_CHISELED_BLUESLATE_BRICK = registerBlock("cracked_bronze_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily CRACKED_BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_BRONZE_BLUESLATE_BRICKS)
 			.stairs(CRACKED_BRONZE_BLUESLATE_BRICK_STAIRS)
 			.slab(CRACKED_BRONZE_BLUESLATE_BRICK_SLAB)
 			.wall(CRACKED_BRONZE_BLUESLATE_BRICK_WALL)
+			.chiseled(CRACKED_BRONZE_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block MOSSY_CRACKED_BRONZE_BLUESLATE_BRICKS = registerBlock("mossy_cracked_bronze_blueslate_bricks",
@@ -1814,10 +1843,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block MOSSY_CRACKED_BRONZE_BLUESLATE_BRICK_WALL = registerBlock("mossy_cracked_bronze_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block MOSSY_CRACKED_BRONZE_CHISELED_BLUESLATE_BRICK = registerBlock("mossy_cracked_bronze_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_CRACKED_BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_CRACKED_BRONZE_BLUESLATE_BRICKS)
 			.stairs(MOSSY_CRACKED_BRONZE_BLUESLATE_BRICK_STAIRS)
 			.slab(MOSSY_CRACKED_BRONZE_BLUESLATE_BRICK_SLAB)
 			.wall(MOSSY_CRACKED_BRONZE_BLUESLATE_BRICK_WALL)
+			.chiseled(MOSSY_CRACKED_BRONZE_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block OVERGROWN_CRACKED_BRONZE_BLUESLATE_BRICKS = registerBlock("overgrown_cracked_bronze_blueslate_bricks",
@@ -1829,10 +1861,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block OVERGROWN_CRACKED_BRONZE_BLUESLATE_BRICK_WALL = registerBlock("overgrown_cracked_bronze_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block OVERGROWN_CRACKED_BRONZE_CHISELED_BLUESLATE_BRICK = registerBlock("overgrown_cracked_bronze_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_CRACKED_BRONZE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_BRONZE_BLUESLATE_BRICKS)
 			.stairs(OVERGROWN_CRACKED_BRONZE_BLUESLATE_BRICK_STAIRS)
 			.slab(OVERGROWN_CRACKED_BRONZE_BLUESLATE_BRICK_SLAB)
 			.wall(OVERGROWN_CRACKED_BRONZE_BLUESLATE_BRICK_WALL)
+			.chiseled(OVERGROWN_CRACKED_BRONZE_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block SILVER_BLUESLATE_BRICKS = registerBlock("silver_blueslate_bricks",
@@ -1844,10 +1879,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block SILVER_BLUESLATE_BRICK_WALL = registerBlock("silver_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block SILVER_CHISELED_BLUESLATE_BRICK = registerBlock("silver_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(SILVER_BLUESLATE_BRICKS)
 			.stairs(SILVER_BLUESLATE_BRICK_STAIRS)
 			.slab(SILVER_BLUESLATE_BRICK_SLAB)
 			.wall(SILVER_BLUESLATE_BRICK_WALL)
+			.chiseled(SILVER_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block MOSSY_SILVER_BLUESLATE_BRICKS = registerBlock("mossy_silver_blueslate_bricks",
@@ -1859,10 +1897,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block MOSSY_SILVER_BLUESLATE_BRICK_WALL = registerBlock("mossy_silver_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block MOSSY_SILVER_CHISELED_BLUESLATE_BRICK = registerBlock("mossy_silver_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_SILVER_BLUESLATE_BRICKS)
 			.stairs(MOSSY_SILVER_BLUESLATE_BRICK_STAIRS)
 			.slab(MOSSY_SILVER_BLUESLATE_BRICK_SLAB)
 			.wall(MOSSY_SILVER_BLUESLATE_BRICK_WALL)
+			.chiseled(MOSSY_SILVER_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block OVERGROWN_SILVER_BLUESLATE_BRICKS = registerBlock("overgrown_silver_blueslate_bricks",
@@ -1874,10 +1915,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block OVERGROWN_SILVER_BLUESLATE_BRICK_WALL = registerBlock("overgrown_silver_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block OVERGROWN_SILVER_CHISELED_BLUESLATE_BRICK = registerBlock("overgrown_silver_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_SILVER_BLUESLATE_BRICKS)
 			.stairs(OVERGROWN_SILVER_BLUESLATE_BRICK_STAIRS)
 			.slab(OVERGROWN_SILVER_BLUESLATE_BRICK_SLAB)
 			.wall(OVERGROWN_SILVER_BLUESLATE_BRICK_WALL)
+			.chiseled(OVERGROWN_SILVER_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block CRACKED_SILVER_BLUESLATE_BRICKS = registerBlock("cracked_silver_blueslate_bricks",
@@ -1889,10 +1933,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block CRACKED_SILVER_BLUESLATE_BRICK_WALL = registerBlock("cracked_silver_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block CRACKED_SILVER_CHISELED_BLUESLATE_BRICK = registerBlock("cracked_silver_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily CRACKED_SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_SILVER_BLUESLATE_BRICKS)
 			.stairs(CRACKED_SILVER_BLUESLATE_BRICK_STAIRS)
 			.slab(CRACKED_SILVER_BLUESLATE_BRICK_SLAB)
 			.wall(CRACKED_SILVER_BLUESLATE_BRICK_WALL)
+			.chiseled(CRACKED_SILVER_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block MOSSY_CRACKED_SILVER_BLUESLATE_BRICKS = registerBlock("mossy_cracked_silver_blueslate_bricks",
@@ -1904,10 +1951,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block MOSSY_CRACKED_SILVER_BLUESLATE_BRICK_WALL = registerBlock("mossy_cracked_silver_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block MOSSY_CRACKED_SILVER_CHISELED_BLUESLATE_BRICK = registerBlock("mossy_cracked_silver_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_CRACKED_SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_CRACKED_SILVER_BLUESLATE_BRICKS)
 			.stairs(MOSSY_CRACKED_SILVER_BLUESLATE_BRICK_STAIRS)
 			.slab(MOSSY_CRACKED_SILVER_BLUESLATE_BRICK_SLAB)
 			.wall(MOSSY_CRACKED_SILVER_BLUESLATE_BRICK_WALL)
+			.chiseled(MOSSY_CRACKED_SILVER_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block OVERGROWN_CRACKED_SILVER_BLUESLATE_BRICKS = registerBlock("overgrown_cracked_silver_blueslate_bricks",
@@ -1919,10 +1969,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block OVERGROWN_CRACKED_SILVER_BLUESLATE_BRICK_WALL = registerBlock("overgrown_cracked_silver_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block OVERGROWN_CRACKED_SILVER_CHISELED_BLUESLATE_BRICK = registerBlock("overgrown_cracked_silver_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_CRACKED_SILVER_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_SILVER_BLUESLATE_BRICKS)
 			.stairs(OVERGROWN_CRACKED_SILVER_BLUESLATE_BRICK_STAIRS)
 			.slab(OVERGROWN_CRACKED_SILVER_BLUESLATE_BRICK_SLAB)
 			.wall(OVERGROWN_CRACKED_SILVER_BLUESLATE_BRICK_WALL)
+			.chiseled(OVERGROWN_CRACKED_SILVER_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block GOLD_BLUESLATE_BRICKS = registerBlock("gold_blueslate_bricks",
@@ -1934,10 +1987,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block GOLD_BLUESLATE_BRICK_WALL = registerBlock("gold_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block GOLD_CHISELED_BLUESLATE_BRICK = registerBlock("gold_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(GOLD_BLUESLATE_BRICKS)
 			.stairs(GOLD_BLUESLATE_BRICK_STAIRS)
 			.slab(GOLD_BLUESLATE_BRICK_SLAB)
 			.wall(GOLD_BLUESLATE_BRICK_WALL)
+			.chiseled(GOLD_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block MOSSY_GOLD_BLUESLATE_BRICKS = registerBlock("mossy_gold_blueslate_bricks",
@@ -1949,10 +2005,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block MOSSY_GOLD_BLUESLATE_BRICK_WALL = registerBlock("mossy_gold_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block MOSSY_GOLD_CHISELED_BLUESLATE_BRICK = registerBlock("mossy_gold_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_GOLD_BLUESLATE_BRICKS)
 			.stairs(MOSSY_GOLD_BLUESLATE_BRICK_STAIRS)
 			.slab(MOSSY_GOLD_BLUESLATE_BRICK_SLAB)
 			.wall(MOSSY_GOLD_BLUESLATE_BRICK_WALL)
+			.chiseled(MOSSY_GOLD_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block OVERGROWN_GOLD_BLUESLATE_BRICKS = registerBlock("overgrown_gold_blueslate_bricks",
@@ -1964,10 +2023,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block OVERGROWN_GOLD_BLUESLATE_BRICK_WALL = registerBlock("overgrown_gold_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block OVERGROWN_GOLD_CHISELED_BLUESLATE_BRICK = registerBlock("overgrown_gold_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_GOLD_BLUESLATE_BRICKS)
 			.stairs(OVERGROWN_GOLD_BLUESLATE_BRICK_STAIRS)
 			.slab(OVERGROWN_GOLD_BLUESLATE_BRICK_SLAB)
 			.wall(OVERGROWN_GOLD_BLUESLATE_BRICK_WALL)
+			.chiseled(OVERGROWN_GOLD_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block CRACKED_GOLD_BLUESLATE_BRICKS = registerBlock("cracked_gold_blueslate_bricks",
@@ -1979,10 +2041,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block CRACKED_GOLD_BLUESLATE_BRICK_WALL = registerBlock("cracked_gold_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block CRACKED_GOLD_CHISELED_BLUESLATE_BRICK = registerBlock("cracked_gold_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily CRACKED_GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_GOLD_BLUESLATE_BRICKS)
 			.stairs(CRACKED_GOLD_BLUESLATE_BRICK_STAIRS)
 			.slab(CRACKED_GOLD_BLUESLATE_BRICK_SLAB)
 			.wall(CRACKED_GOLD_BLUESLATE_BRICK_WALL)
+			.chiseled(CRACKED_GOLD_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block MOSSY_CRACKED_GOLD_BLUESLATE_BRICKS = registerBlock("mossy_cracked_gold_blueslate_bricks",
@@ -1994,10 +2059,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block MOSSY_CRACKED_GOLD_BLUESLATE_BRICK_WALL = registerBlock("mossy_cracked_gold_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block MOSSY_CRACKED_GOLD_CHISELED_BLUESLATE_BRICK = registerBlock("mossy_cracked_gold_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily MOSSY_CRACKED_GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GOLD_BLUESLATE_BRICKS)
 			.stairs(MOSSY_CRACKED_GOLD_BLUESLATE_BRICK_STAIRS)
 			.slab(MOSSY_CRACKED_GOLD_BLUESLATE_BRICK_SLAB)
 			.wall(MOSSY_CRACKED_GOLD_BLUESLATE_BRICK_WALL)
+			.chiseled(MOSSY_CRACKED_GOLD_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static Block OVERGROWN_CRACKED_GOLD_BLUESLATE_BRICKS = registerBlock("overgrown_cracked_gold_blueslate_bricks",
@@ -2009,10 +2077,13 @@ public class BlueslateBlocks {
 			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static Block OVERGROWN_CRACKED_GOLD_BLUESLATE_BRICK_WALL = registerBlock("overgrown_cracked_gold_blueslate_brick_wall",
 			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
+	public static Block OVERGROWN_CRACKED_GOLD_CHISELED_BLUESLATE_BRICK = registerBlock("overgrown_cracked_gold_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
 	public static BlockFamily OVERGROWN_CRACKED_GOLD_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GOLD_BLUESLATE_BRICKS)
 			.stairs(OVERGROWN_CRACKED_GOLD_BLUESLATE_BRICK_STAIRS)
 			.slab(OVERGROWN_CRACKED_GOLD_BLUESLATE_BRICK_SLAB)
 			.wall(OVERGROWN_CRACKED_GOLD_BLUESLATE_BRICK_WALL)
+			.chiseled(OVERGROWN_CRACKED_GOLD_CHISELED_BLUESLATE_BRICK)
 			.build();
 
 	public static ModStoneSubSet BLUESLATE_BRICK_SUBSET = new ModStoneSubSet(
