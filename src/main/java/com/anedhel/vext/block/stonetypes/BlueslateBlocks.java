@@ -479,6 +479,54 @@ public class BlueslateBlocks {
 			.slab(OVERGROWN_CRACKED_GOLD_POLISHED_BLUESLATE_SLAB)
 			.build();
 
+	public static Block GLOWSTONE_POLISHED_BLUESLATE = registerBlock("glowstone_polished_blueslate",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_POLISHED_BLUESLATE_SLAB = registerBlock("glowstone_polished_blueslate_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily GLOWSTONE_POLISHED_BLUESLATE_FAMILY = BlockFamilies.register(GLOWSTONE_POLISHED_BLUESLATE)
+			.slab(GLOWSTONE_POLISHED_BLUESLATE_SLAB)
+			.build();
+
+	public static Block MOSSY_GLOWSTONE_POLISHED_BLUESLATE = registerBlock("mossy_glowstone_polished_blueslate",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_POLISHED_BLUESLATE_SLAB = registerBlock("mossy_glowstone_polished_blueslate_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily MOSSY_GLOWSTONE_POLISHED_BLUESLATE_FAMILY = BlockFamilies.register(MOSSY_GLOWSTONE_POLISHED_BLUESLATE)
+			.slab(MOSSY_GLOWSTONE_POLISHED_BLUESLATE_SLAB)
+			.build();
+
+	public static Block OVERGROWN_GLOWSTONE_POLISHED_BLUESLATE = registerBlock("overgrown_glowstone_polished_blueslate",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_POLISHED_BLUESLATE_SLAB = registerBlock("overgrown_glowstone_polished_blueslate_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily OVERGROWN_GLOWSTONE_POLISHED_BLUESLATE_FAMILY = BlockFamilies.register(OVERGROWN_GLOWSTONE_POLISHED_BLUESLATE)
+			.slab(OVERGROWN_GLOWSTONE_POLISHED_BLUESLATE_SLAB)
+			.build();
+
+	public static Block CRACKED_GLOWSTONE_POLISHED_BLUESLATE = registerBlock("cracked_glowstone_polished_blueslate",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_POLISHED_BLUESLATE_SLAB = registerBlock("cracked_glowstone_polished_blueslate_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily CRACKED_GLOWSTONE_POLISHED_BLUESLATE_FAMILY = BlockFamilies.register(CRACKED_GLOWSTONE_POLISHED_BLUESLATE)
+			.slab(CRACKED_GLOWSTONE_POLISHED_BLUESLATE_SLAB)
+			.build();
+
+	public static Block MOSSY_CRACKED_GLOWSTONE_POLISHED_BLUESLATE = registerBlock("mossy_cracked_glowstone_polished_blueslate",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_POLISHED_BLUESLATE_SLAB = registerBlock("mossy_cracked_glowstone_polished_blueslate_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily MOSSY_CRACKED_GLOWSTONE_POLISHED_BLUESLATE_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GLOWSTONE_POLISHED_BLUESLATE)
+			.slab(MOSSY_CRACKED_GLOWSTONE_POLISHED_BLUESLATE_SLAB)
+			.build();
+
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_POLISHED_BLUESLATE = registerBlock("overgrown_cracked_glowstone_polished_blueslate",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_POLISHED_BLUESLATE_SLAB = registerBlock("overgrown_cracked_glowstone_polished_blueslate_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily OVERGROWN_CRACKED_GLOWSTONE_POLISHED_BLUESLATE_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GLOWSTONE_POLISHED_BLUESLATE)
+			.slab(OVERGROWN_CRACKED_GLOWSTONE_POLISHED_BLUESLATE_SLAB)
+			.build();
+
 	public static ModStoneSubSet POLISHED_BLUESLATE_SUBSET = new ModStoneSubSet(
 			POLISHED_BLUESLATE_FAMILY,
 			MOSSY_POLISHED_BLUESLATE_FAMILY,
@@ -490,7 +538,10 @@ public class BlueslateBlocks {
 			CRACKED_SILVER_POLISHED_BLUESLATE_FAMILY, MOSSY_CRACKED_SILVER_POLISHED_BLUESLATE_FAMILY, OVERGROWN_CRACKED_SILVER_POLISHED_BLUESLATE_FAMILY,
 			GOLD_POLISHED_BLUESLATE_FAMILY, MOSSY_GOLD_POLISHED_BLUESLATE_FAMILY, OVERGROWN_GOLD_POLISHED_BLUESLATE_FAMILY,
 			CRACKED_GOLD_POLISHED_BLUESLATE_FAMILY, MOSSY_CRACKED_GOLD_POLISHED_BLUESLATE_FAMILY,
-			OVERGROWN_CRACKED_GOLD_POLISHED_BLUESLATE_FAMILY, "polished_blueslate");
+			OVERGROWN_CRACKED_GOLD_POLISHED_BLUESLATE_FAMILY,
+			GLOWSTONE_POLISHED_BLUESLATE_FAMILY, MOSSY_GLOWSTONE_POLISHED_BLUESLATE_FAMILY, OVERGROWN_GLOWSTONE_POLISHED_BLUESLATE_FAMILY,
+			CRACKED_GLOWSTONE_POLISHED_BLUESLATE_FAMILY, MOSSY_CRACKED_GLOWSTONE_POLISHED_BLUESLATE_FAMILY,
+			OVERGROWN_CRACKED_GLOWSTONE_POLISHED_BLUESLATE_FAMILY, "polished_blueslate");
 
 	public static Block BLUESLATE_PILLAR = registerBlock("blueslate_pillar",
 			settings -> new ModPillarBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
@@ -684,6 +735,54 @@ public class BlueslateBlocks {
 			.slab(OVERGROWN_CRACKED_GOLD_BLUESLATE_PILLAR_SLAB)
 			.build();
 
+	public static Block GLOWSTONE_BLUESLATE_PILLAR = registerBlock("glowstone_blueslate_pillar",
+			settings -> new ModPillarBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_BLUESLATE_PILLAR_SLAB = registerBlock("glowstone_blueslate_pillar_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily GLOWSTONE_BLUESLATE_PILLAR_FAMILY = BlockFamilies.register(GLOWSTONE_BLUESLATE_PILLAR)
+			.slab(GLOWSTONE_BLUESLATE_PILLAR_SLAB)
+			.build();
+
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_PILLAR = registerBlock("mossy_glowstone_blueslate_pillar",
+			settings -> new ModPillarBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_PILLAR_SLAB = registerBlock("mossy_glowstone_blueslate_pillar_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily MOSSY_GLOWSTONE_BLUESLATE_PILLAR_FAMILY = BlockFamilies.register(MOSSY_GLOWSTONE_BLUESLATE_PILLAR)
+			.slab(MOSSY_GLOWSTONE_BLUESLATE_PILLAR_SLAB)
+			.build();
+
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_PILLAR = registerBlock("overgrown_glowstone_blueslate_pillar",
+			settings -> new ModPillarBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_PILLAR_SLAB = registerBlock("overgrown_glowstone_blueslate_pillar_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily OVERGROWN_GLOWSTONE_BLUESLATE_PILLAR_FAMILY = BlockFamilies.register(OVERGROWN_GLOWSTONE_BLUESLATE_PILLAR)
+			.slab(OVERGROWN_GLOWSTONE_BLUESLATE_PILLAR_SLAB)
+			.build();
+
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_PILLAR = registerBlock("cracked_glowstone_blueslate_pillar",
+			settings -> new ModPillarBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_PILLAR_SLAB = registerBlock("cracked_glowstone_blueslate_pillar_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily CRACKED_GLOWSTONE_BLUESLATE_PILLAR_FAMILY = BlockFamilies.register(CRACKED_GLOWSTONE_BLUESLATE_PILLAR)
+			.slab(CRACKED_GLOWSTONE_BLUESLATE_PILLAR_SLAB)
+			.build();
+
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PILLAR = registerBlock("mossy_cracked_glowstone_blueslate_pillar",
+			settings -> new ModPillarBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PILLAR_SLAB = registerBlock("mossy_cracked_glowstone_blueslate_pillar_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PILLAR_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PILLAR)
+			.slab(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PILLAR_SLAB)
+			.build();
+
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PILLAR = registerBlock("overgrown_cracked_glowstone_blueslate_pillar",
+			settings -> new ModPillarBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PILLAR_SLAB = registerBlock("overgrown_cracked_glowstone_blueslate_pillar_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PILLAR_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PILLAR)
+			.slab(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PILLAR_SLAB)
+			.build();
+
 	public static ModStoneSubSet BLUESLATE_PILLAR_SUBSET = new ModStoneSubSet(
 			BLUESLATE_PILLAR_FAMILY,
 			MOSSY_BLUESLATE_PILLAR_FAMILY,
@@ -695,7 +794,10 @@ public class BlueslateBlocks {
 			CRACKED_SILVER_BLUESLATE_PILLAR_FAMILY, MOSSY_CRACKED_SILVER_BLUESLATE_PILLAR_FAMILY, OVERGROWN_CRACKED_SILVER_BLUESLATE_PILLAR_FAMILY,
 			GOLD_BLUESLATE_PILLAR_FAMILY, MOSSY_GOLD_BLUESLATE_PILLAR_FAMILY, OVERGROWN_GOLD_BLUESLATE_PILLAR_FAMILY,
 			CRACKED_GOLD_BLUESLATE_PILLAR_FAMILY, MOSSY_CRACKED_GOLD_BLUESLATE_PILLAR_FAMILY,
-			OVERGROWN_CRACKED_GOLD_BLUESLATE_PILLAR_FAMILY, "blueslate_pillar");
+			OVERGROWN_CRACKED_GOLD_BLUESLATE_PILLAR_FAMILY,
+			GLOWSTONE_BLUESLATE_PILLAR_FAMILY, MOSSY_GLOWSTONE_BLUESLATE_PILLAR_FAMILY, OVERGROWN_GLOWSTONE_BLUESLATE_PILLAR_FAMILY,
+			CRACKED_GLOWSTONE_BLUESLATE_PILLAR_FAMILY, MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PILLAR_FAMILY,
+			OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PILLAR_FAMILY, "blueslate_pillar");
 
 	public static Block BLUESLATE_FRIEZE = registerBlock("blueslate_frieze",
 			settings -> new ModFriezeBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
@@ -889,6 +991,54 @@ public class BlueslateBlocks {
 			.slab(OVERGROWN_CRACKED_GOLD_BLUESLATE_FRIEZE_SLAB)
 			.build();
 
+	public static Block GLOWSTONE_BLUESLATE_FRIEZE = registerBlock("glowstone_blueslate_frieze",
+			settings -> new ModFriezeBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_BLUESLATE_FRIEZE_SLAB = registerBlock("glowstone_blueslate_frieze_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily GLOWSTONE_BLUESLATE_FRIEZE_FAMILY = BlockFamilies.register(GLOWSTONE_BLUESLATE_FRIEZE)
+			.slab(GLOWSTONE_BLUESLATE_FRIEZE_SLAB)
+			.build();
+
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_FRIEZE = registerBlock("mossy_glowstone_blueslate_frieze",
+			settings -> new ModFriezeBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_FRIEZE_SLAB = registerBlock("mossy_glowstone_blueslate_frieze_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily MOSSY_GLOWSTONE_BLUESLATE_FRIEZE_FAMILY = BlockFamilies.register(MOSSY_GLOWSTONE_BLUESLATE_FRIEZE)
+			.slab(MOSSY_GLOWSTONE_BLUESLATE_FRIEZE_SLAB)
+			.build();
+
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_FRIEZE = registerBlock("overgrown_glowstone_blueslate_frieze",
+			settings -> new ModFriezeBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_FRIEZE_SLAB = registerBlock("overgrown_glowstone_blueslate_frieze_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily OVERGROWN_GLOWSTONE_BLUESLATE_FRIEZE_FAMILY = BlockFamilies.register(OVERGROWN_GLOWSTONE_BLUESLATE_FRIEZE)
+			.slab(OVERGROWN_GLOWSTONE_BLUESLATE_FRIEZE_SLAB)
+			.build();
+
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_FRIEZE = registerBlock("cracked_glowstone_blueslate_frieze",
+			settings -> new ModFriezeBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_SLAB = registerBlock("cracked_glowstone_blueslate_frieze_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_FAMILY = BlockFamilies.register(CRACKED_GLOWSTONE_BLUESLATE_FRIEZE)
+			.slab(CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_SLAB)
+			.build();
+
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE = registerBlock("mossy_cracked_glowstone_blueslate_frieze",
+			settings -> new ModFriezeBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_SLAB = registerBlock("mossy_cracked_glowstone_blueslate_frieze_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily MOSSY_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE)
+			.slab(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_SLAB)
+			.build();
+
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE = registerBlock("overgrown_cracked_glowstone_blueslate_frieze",
+			settings -> new ModFriezeBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_SLAB = registerBlock("overgrown_cracked_glowstone_blueslate_frieze_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE)
+			.slab(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_SLAB)
+			.build();
+
 	public static ModStoneSubSet BLUESLATE_FRIEZE_SUBSET = new ModStoneSubSet(
 			BLUESLATE_FRIEZE_FAMILY,
 			MOSSY_BLUESLATE_FRIEZE_FAMILY,
@@ -900,7 +1050,10 @@ public class BlueslateBlocks {
 			CRACKED_SILVER_BLUESLATE_FRIEZE_FAMILY, MOSSY_CRACKED_SILVER_BLUESLATE_FRIEZE_FAMILY, OVERGROWN_CRACKED_SILVER_BLUESLATE_FRIEZE_FAMILY,
 			GOLD_BLUESLATE_FRIEZE_FAMILY, MOSSY_GOLD_BLUESLATE_FRIEZE_FAMILY, OVERGROWN_GOLD_BLUESLATE_FRIEZE_FAMILY,
 			CRACKED_GOLD_BLUESLATE_FRIEZE_FAMILY, MOSSY_CRACKED_GOLD_BLUESLATE_FRIEZE_FAMILY,
-			OVERGROWN_CRACKED_GOLD_BLUESLATE_FRIEZE_FAMILY, "blueslate_frieze");
+			OVERGROWN_CRACKED_GOLD_BLUESLATE_FRIEZE_FAMILY,
+			GLOWSTONE_BLUESLATE_FRIEZE_FAMILY, MOSSY_GLOWSTONE_BLUESLATE_FRIEZE_FAMILY, OVERGROWN_GLOWSTONE_BLUESLATE_FRIEZE_FAMILY,
+			CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_FAMILY, MOSSY_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_FAMILY,
+			OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_FRIEZE_FAMILY, "blueslate_frieze");
 
 	public static Block COBBLED_BLUESLATE_BRICKS = registerBlock("cobbled_blueslate_bricks",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
@@ -1263,6 +1416,96 @@ public class BlueslateBlocks {
 			.wall(OVERGROWN_CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_WALL)
 			.build();
 
+	public static Block GLOWSTONE_COBBLED_BLUESLATE_BRICKS = registerBlock("glowstone_cobbled_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("glowstone_cobbled_blueslate_brick_stairs",
+			settings -> new StairsBlock(GLOWSTONE_COBBLED_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("glowstone_cobbled_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("glowstone_cobbled_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(GLOWSTONE_COBBLED_BLUESLATE_BRICKS)
+			.stairs(GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS)
+			.slab(GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB)
+			.wall(GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICKS = registerBlock("mossy_glowstone_cobbled_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_glowstone_cobbled_blueslate_brick_stairs",
+			settings -> new StairsBlock(MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("mossy_glowstone_cobbled_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("mossy_glowstone_cobbled_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICKS)
+			.stairs(MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS)
+			.slab(MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB)
+			.wall(MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICKS = registerBlock("overgrown_glowstone_cobbled_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_glowstone_cobbled_blueslate_brick_stairs",
+			settings -> new StairsBlock(OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_glowstone_cobbled_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("overgrown_glowstone_cobbled_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS)
+			.slab(OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB)
+			.wall(OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICKS = registerBlock("cracked_glowstone_cobbled_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_glowstone_cobbled_blueslate_brick_stairs",
+			settings -> new StairsBlock(CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("cracked_glowstone_cobbled_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("cracked_glowstone_cobbled_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICKS)
+			.stairs(CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS)
+			.slab(CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB)
+			.wall(CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICKS = registerBlock("mossy_cracked_glowstone_cobbled_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_cracked_glowstone_cobbled_blueslate_brick_stairs",
+			settings -> new StairsBlock(MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("mossy_cracked_glowstone_cobbled_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("mossy_cracked_glowstone_cobbled_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICKS)
+			.stairs(MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS)
+			.slab(MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB)
+			.wall(MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICKS = registerBlock("overgrown_cracked_glowstone_cobbled_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_cracked_glowstone_cobbled_blueslate_brick_stairs",
+			settings -> new StairsBlock(OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_cracked_glowstone_cobbled_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL = registerBlock("overgrown_cracked_glowstone_cobbled_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_STAIRS)
+			.slab(OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_SLAB)
+			.wall(OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_WALL)
+			.build();
+
 	public static ModStoneSubSet COBBLED_BLUESLATE_BRICK_SUBSET = new ModStoneSubSet(
 			COBBLED_BLUESLATE_BRICK_FAMILY,
 			MOSSY_COBBLED_BLUESLATE_BRICK_FAMILY,
@@ -1275,7 +1518,10 @@ public class BlueslateBlocks {
 			CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_FAMILY, OVERGROWN_CRACKED_SILVER_COBBLED_BLUESLATE_BRICK_FAMILY,
 			GOLD_COBBLED_BLUESLATE_BRICK_FAMILY, MOSSY_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY, OVERGROWN_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY,
 			CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY,
-			OVERGROWN_CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY, "cobbled_blueslate_brick");
+			OVERGROWN_CRACKED_GOLD_COBBLED_BLUESLATE_BRICK_FAMILY,
+			GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY, MOSSY_GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY, OVERGROWN_GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY,
+			CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY,
+			OVERGROWN_CRACKED_GLOWSTONE_COBBLED_BLUESLATE_BRICK_FAMILY, "cobbled_blueslate_brick");
 
 	public static Block RUSTIC_BLUESLATE_BRICKS = registerBlock("rustic_blueslate_bricks",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
@@ -1638,6 +1884,96 @@ public class BlueslateBlocks {
 			.wall(OVERGROWN_CRACKED_GOLD_RUSTIC_BLUESLATE_BRICK_WALL)
 			.build();
 
+	public static Block GLOWSTONE_RUSTIC_BLUESLATE_BRICKS = registerBlock("glowstone_rustic_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS = registerBlock("glowstone_rustic_blueslate_brick_stairs",
+			settings -> new StairsBlock(GLOWSTONE_RUSTIC_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB = registerBlock("glowstone_rustic_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL = registerBlock("glowstone_rustic_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(GLOWSTONE_RUSTIC_BLUESLATE_BRICKS)
+			.stairs(GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS)
+			.slab(GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB)
+			.wall(GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS = registerBlock("mossy_glowstone_rustic_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_glowstone_rustic_blueslate_brick_stairs",
+			settings -> new StairsBlock(MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB = registerBlock("mossy_glowstone_rustic_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL = registerBlock("mossy_glowstone_rustic_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS)
+			.stairs(MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS)
+			.slab(MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB)
+			.wall(MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS = registerBlock("overgrown_glowstone_rustic_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_glowstone_rustic_blueslate_brick_stairs",
+			settings -> new StairsBlock(OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_glowstone_rustic_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL = registerBlock("overgrown_glowstone_rustic_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS)
+			.slab(OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB)
+			.wall(OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS = registerBlock("cracked_glowstone_rustic_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_glowstone_rustic_blueslate_brick_stairs",
+			settings -> new StairsBlock(CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB = registerBlock("cracked_glowstone_rustic_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL = registerBlock("cracked_glowstone_rustic_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS)
+			.stairs(CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS)
+			.slab(CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB)
+			.wall(CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS = registerBlock("mossy_cracked_glowstone_rustic_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_cracked_glowstone_rustic_blueslate_brick_stairs",
+			settings -> new StairsBlock(MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB = registerBlock("mossy_cracked_glowstone_rustic_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL = registerBlock("mossy_cracked_glowstone_rustic_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS)
+			.stairs(MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS)
+			.slab(MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB)
+			.wall(MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS = registerBlock("overgrown_cracked_glowstone_rustic_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_cracked_glowstone_rustic_blueslate_brick_stairs",
+			settings -> new StairsBlock(OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_cracked_glowstone_rustic_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL = registerBlock("overgrown_cracked_glowstone_rustic_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_STAIRS)
+			.slab(OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_SLAB)
+			.wall(OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_WALL)
+			.build();
+
 	public static ModStoneSubSet RUSTIC_BLUESLATE_BRICK_SUBSET = new ModStoneSubSet(
 			RUSTIC_BLUESLATE_BRICK_FAMILY,
 			MOSSY_RUSTIC_BLUESLATE_BRICK_FAMILY,
@@ -1650,7 +1986,10 @@ public class BlueslateBlocks {
 			CRACKED_SILVER_RUSTIC_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_SILVER_RUSTIC_BLUESLATE_BRICK_FAMILY, OVERGROWN_CRACKED_SILVER_RUSTIC_BLUESLATE_BRICK_FAMILY,
 			GOLD_RUSTIC_BLUESLATE_BRICK_FAMILY, MOSSY_GOLD_RUSTIC_BLUESLATE_BRICK_FAMILY, OVERGROWN_GOLD_RUSTIC_BLUESLATE_BRICK_FAMILY,
 			CRACKED_GOLD_RUSTIC_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_GOLD_RUSTIC_BLUESLATE_BRICK_FAMILY,
-			OVERGROWN_CRACKED_GOLD_RUSTIC_BLUESLATE_BRICK_FAMILY, "rustic_blueslate_brick");
+			OVERGROWN_CRACKED_GOLD_RUSTIC_BLUESLATE_BRICK_FAMILY,
+			GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY, MOSSY_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY, OVERGROWN_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY,
+			CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY,
+			OVERGROWN_CRACKED_GLOWSTONE_RUSTIC_BLUESLATE_BRICK_FAMILY, "rustic_blueslate_brick");
 
 	public static Block BLUESLATE_BRICKS = registerBlock("blueslate_bricks",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
@@ -2086,6 +2425,114 @@ public class BlueslateBlocks {
 			.chiseled(OVERGROWN_CRACKED_GOLD_CHISELED_BLUESLATE_BRICK)
 			.build();
 
+	public static Block GLOWSTONE_BLUESLATE_BRICKS = registerBlock("glowstone_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_BLUESLATE_BRICK_STAIRS = registerBlock("glowstone_blueslate_brick_stairs",
+			settings -> new StairsBlock(GLOWSTONE_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_BLUESLATE_BRICK_SLAB = registerBlock("glowstone_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_BLUESLATE_BRICK_WALL = registerBlock("glowstone_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_CHISELED_BLUESLATE_BRICK = registerBlock("glowstone_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily GLOWSTONE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(GLOWSTONE_BLUESLATE_BRICKS)
+			.stairs(GLOWSTONE_BLUESLATE_BRICK_STAIRS)
+			.slab(GLOWSTONE_BLUESLATE_BRICK_SLAB)
+			.wall(GLOWSTONE_BLUESLATE_BRICK_WALL)
+			.chiseled(GLOWSTONE_CHISELED_BLUESLATE_BRICK)
+			.build();
+
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_BRICKS = registerBlock("mossy_glowstone_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_glowstone_blueslate_brick_stairs",
+			settings -> new StairsBlock(MOSSY_GLOWSTONE_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_BRICK_SLAB = registerBlock("mossy_glowstone_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_BRICK_WALL = registerBlock("mossy_glowstone_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_CHISELED_BLUESLATE_BRICK = registerBlock("mossy_glowstone_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily MOSSY_GLOWSTONE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_GLOWSTONE_BLUESLATE_BRICKS)
+			.stairs(MOSSY_GLOWSTONE_BLUESLATE_BRICK_STAIRS)
+			.slab(MOSSY_GLOWSTONE_BLUESLATE_BRICK_SLAB)
+			.wall(MOSSY_GLOWSTONE_BLUESLATE_BRICK_WALL)
+			.chiseled(MOSSY_GLOWSTONE_CHISELED_BLUESLATE_BRICK)
+			.build();
+
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_BRICKS = registerBlock("overgrown_glowstone_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_glowstone_blueslate_brick_stairs",
+			settings -> new StairsBlock(OVERGROWN_GLOWSTONE_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_glowstone_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_BRICK_WALL = registerBlock("overgrown_glowstone_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_CHISELED_BLUESLATE_BRICK = registerBlock("overgrown_glowstone_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily OVERGROWN_GLOWSTONE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_GLOWSTONE_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_GLOWSTONE_BLUESLATE_BRICK_STAIRS)
+			.slab(OVERGROWN_GLOWSTONE_BLUESLATE_BRICK_SLAB)
+			.wall(OVERGROWN_GLOWSTONE_BLUESLATE_BRICK_WALL)
+			.chiseled(OVERGROWN_GLOWSTONE_CHISELED_BLUESLATE_BRICK)
+			.build();
+
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_BRICKS = registerBlock("cracked_glowstone_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_glowstone_blueslate_brick_stairs",
+			settings -> new StairsBlock(CRACKED_GLOWSTONE_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_BRICK_SLAB = registerBlock("cracked_glowstone_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_BRICK_WALL = registerBlock("cracked_glowstone_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_CHISELED_BLUESLATE_BRICK = registerBlock("cracked_glowstone_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily CRACKED_GLOWSTONE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_GLOWSTONE_BLUESLATE_BRICKS)
+			.stairs(CRACKED_GLOWSTONE_BLUESLATE_BRICK_STAIRS)
+			.slab(CRACKED_GLOWSTONE_BLUESLATE_BRICK_SLAB)
+			.wall(CRACKED_GLOWSTONE_BLUESLATE_BRICK_WALL)
+			.chiseled(CRACKED_GLOWSTONE_CHISELED_BLUESLATE_BRICK)
+			.build();
+
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICKS = registerBlock("mossy_cracked_glowstone_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_cracked_glowstone_blueslate_brick_stairs",
+			settings -> new StairsBlock(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICK_SLAB = registerBlock("mossy_cracked_glowstone_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICK_WALL = registerBlock("mossy_cracked_glowstone_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_CHISELED_BLUESLATE_BRICK = registerBlock("mossy_cracked_glowstone_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICKS)
+			.stairs(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICK_STAIRS)
+			.slab(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICK_SLAB)
+			.wall(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICK_WALL)
+			.chiseled(MOSSY_CRACKED_GLOWSTONE_CHISELED_BLUESLATE_BRICK)
+			.build();
+
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICKS = registerBlock("overgrown_cracked_glowstone_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_cracked_glowstone_blueslate_brick_stairs",
+			settings -> new StairsBlock(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_cracked_glowstone_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICK_WALL = registerBlock("overgrown_cracked_glowstone_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_CHISELED_BLUESLATE_BRICK = registerBlock("overgrown_cracked_glowstone_chiseled_blueslate_brick",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICK_STAIRS)
+			.slab(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICK_SLAB)
+			.wall(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICK_WALL)
+			.chiseled(OVERGROWN_CRACKED_GLOWSTONE_CHISELED_BLUESLATE_BRICK)
+			.build();
+
 	public static ModStoneSubSet BLUESLATE_BRICK_SUBSET = new ModStoneSubSet(
 			BLUESLATE_BRICK_FAMILY,
 			MOSSY_BLUESLATE_BRICK_FAMILY,
@@ -2098,7 +2545,10 @@ public class BlueslateBlocks {
 			CRACKED_SILVER_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_SILVER_BLUESLATE_BRICK_FAMILY, OVERGROWN_CRACKED_SILVER_BLUESLATE_BRICK_FAMILY,
 			GOLD_BLUESLATE_BRICK_FAMILY, MOSSY_GOLD_BLUESLATE_BRICK_FAMILY, OVERGROWN_GOLD_BLUESLATE_BRICK_FAMILY,
 			CRACKED_GOLD_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_GOLD_BLUESLATE_BRICK_FAMILY,
-			OVERGROWN_CRACKED_GOLD_BLUESLATE_BRICK_FAMILY, "blueslate_brick");
+			OVERGROWN_CRACKED_GOLD_BLUESLATE_BRICK_FAMILY,
+			GLOWSTONE_BLUESLATE_BRICK_FAMILY, MOSSY_GLOWSTONE_BLUESLATE_BRICK_FAMILY, OVERGROWN_GLOWSTONE_BLUESLATE_BRICK_FAMILY,
+			CRACKED_GLOWSTONE_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_GLOWSTONE_BLUESLATE_BRICK_FAMILY,
+			OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_BRICK_FAMILY, "blueslate_brick");
 
 	public static Block BLUESLATE_TILES = registerBlock("blueslate_tiles",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
@@ -2460,6 +2910,96 @@ public class BlueslateBlocks {
 			.wall(OVERGROWN_CRACKED_GOLD_BLUESLATE_TILE_WALL)
 			.build();
 
+	public static Block GLOWSTONE_BLUESLATE_TILES = registerBlock("glowstone_blueslate_tiles",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_BLUESLATE_TILE_STAIRS = registerBlock("glowstone_blueslate_tile_stairs",
+			settings -> new StairsBlock(GLOWSTONE_BLUESLATE_TILES.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_BLUESLATE_TILE_SLAB = registerBlock("glowstone_blueslate_tile_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_BLUESLATE_TILE_WALL = registerBlock("glowstone_blueslate_tile_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily GLOWSTONE_BLUESLATE_TILE_FAMILY = BlockFamilies.register(GLOWSTONE_BLUESLATE_TILES)
+			.stairs(GLOWSTONE_BLUESLATE_TILE_STAIRS)
+			.slab(GLOWSTONE_BLUESLATE_TILE_SLAB)
+			.wall(GLOWSTONE_BLUESLATE_TILE_WALL)
+			.build();
+
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_TILES = registerBlock("mossy_glowstone_blueslate_tiles",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_TILE_STAIRS = registerBlock("mossy_glowstone_blueslate_tile_stairs",
+			settings -> new StairsBlock(MOSSY_GLOWSTONE_BLUESLATE_TILES.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_TILE_SLAB = registerBlock("mossy_glowstone_blueslate_tile_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_TILE_WALL = registerBlock("mossy_glowstone_blueslate_tile_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily MOSSY_GLOWSTONE_BLUESLATE_TILE_FAMILY = BlockFamilies.register(MOSSY_GLOWSTONE_BLUESLATE_TILES)
+			.stairs(MOSSY_GLOWSTONE_BLUESLATE_TILE_STAIRS)
+			.slab(MOSSY_GLOWSTONE_BLUESLATE_TILE_SLAB)
+			.wall(MOSSY_GLOWSTONE_BLUESLATE_TILE_WALL)
+			.build();
+
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_TILES = registerBlock("overgrown_glowstone_blueslate_tiles",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_TILE_STAIRS = registerBlock("overgrown_glowstone_blueslate_tile_stairs",
+			settings -> new StairsBlock(OVERGROWN_GLOWSTONE_BLUESLATE_TILES.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_TILE_SLAB = registerBlock("overgrown_glowstone_blueslate_tile_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_TILE_WALL = registerBlock("overgrown_glowstone_blueslate_tile_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily OVERGROWN_GLOWSTONE_BLUESLATE_TILE_FAMILY = BlockFamilies.register(OVERGROWN_GLOWSTONE_BLUESLATE_TILES)
+			.stairs(OVERGROWN_GLOWSTONE_BLUESLATE_TILE_STAIRS)
+			.slab(OVERGROWN_GLOWSTONE_BLUESLATE_TILE_SLAB)
+			.wall(OVERGROWN_GLOWSTONE_BLUESLATE_TILE_WALL)
+			.build();
+
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_TILES = registerBlock("cracked_glowstone_blueslate_tiles",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_TILE_STAIRS = registerBlock("cracked_glowstone_blueslate_tile_stairs",
+			settings -> new StairsBlock(CRACKED_GLOWSTONE_BLUESLATE_TILES.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_TILE_SLAB = registerBlock("cracked_glowstone_blueslate_tile_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_TILE_WALL = registerBlock("cracked_glowstone_blueslate_tile_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily CRACKED_GLOWSTONE_BLUESLATE_TILE_FAMILY = BlockFamilies.register(CRACKED_GLOWSTONE_BLUESLATE_TILES)
+			.stairs(CRACKED_GLOWSTONE_BLUESLATE_TILE_STAIRS)
+			.slab(CRACKED_GLOWSTONE_BLUESLATE_TILE_SLAB)
+			.wall(CRACKED_GLOWSTONE_BLUESLATE_TILE_WALL)
+			.build();
+
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILES = registerBlock("mossy_cracked_glowstone_blueslate_tiles",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILE_STAIRS = registerBlock("mossy_cracked_glowstone_blueslate_tile_stairs",
+			settings -> new StairsBlock(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILES.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILE_SLAB = registerBlock("mossy_cracked_glowstone_blueslate_tile_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILE_WALL = registerBlock("mossy_cracked_glowstone_blueslate_tile_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILE_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILES)
+			.stairs(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILE_STAIRS)
+			.slab(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILE_SLAB)
+			.wall(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILE_WALL)
+			.build();
+
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILES = registerBlock("overgrown_cracked_glowstone_blueslate_tiles",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILE_STAIRS = registerBlock("overgrown_cracked_glowstone_blueslate_tile_stairs",
+			settings -> new StairsBlock(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILES.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILE_SLAB = registerBlock("overgrown_cracked_glowstone_blueslate_tile_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILE_WALL = registerBlock("overgrown_cracked_glowstone_blueslate_tile_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILE_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILES)
+			.stairs(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILE_STAIRS)
+			.slab(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILE_SLAB)
+			.wall(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILE_WALL)
+			.build();
+
 	public static ModStoneSubSet BLUESLATE_TILE_SUBSET = new ModStoneSubSet(
 			BLUESLATE_TILE_FAMILY,
 			MOSSY_BLUESLATE_TILE_FAMILY,
@@ -2472,7 +3012,10 @@ public class BlueslateBlocks {
 			CRACKED_SILVER_BLUESLATE_TILE_FAMILY, MOSSY_CRACKED_SILVER_BLUESLATE_TILE_FAMILY, OVERGROWN_CRACKED_SILVER_BLUESLATE_TILE_FAMILY,
 			GOLD_BLUESLATE_TILE_FAMILY, MOSSY_GOLD_BLUESLATE_TILE_FAMILY, OVERGROWN_GOLD_BLUESLATE_TILE_FAMILY,
 			CRACKED_GOLD_BLUESLATE_TILE_FAMILY, MOSSY_CRACKED_GOLD_BLUESLATE_TILE_FAMILY,
-			OVERGROWN_CRACKED_GOLD_BLUESLATE_TILE_FAMILY, "blueslate_tiles");
+			OVERGROWN_CRACKED_GOLD_BLUESLATE_TILE_FAMILY,
+			GLOWSTONE_BLUESLATE_TILE_FAMILY, MOSSY_GLOWSTONE_BLUESLATE_TILE_FAMILY, OVERGROWN_GLOWSTONE_BLUESLATE_TILE_FAMILY,
+			CRACKED_GLOWSTONE_BLUESLATE_TILE_FAMILY, MOSSY_CRACKED_GLOWSTONE_BLUESLATE_TILE_FAMILY,
+			OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_TILE_FAMILY, "blueslate_tiles");
 
 	public static Block BLUESLATE_PAVEMENT = registerBlock("blueslate_pavement",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
@@ -2762,6 +3305,78 @@ public class BlueslateBlocks {
 			.slab(OVERGROWN_CRACKED_GOLD_BLUESLATE_PAVEMENT_SLAB)
 			.build();
 
+	public static Block GLOWSTONE_BLUESLATE_PAVEMENT = registerBlock("glowstone_blueslate_pavement",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS = registerBlock("glowstone_blueslate_pavement_stairs",
+			settings -> new StairsBlock(GLOWSTONE_BLUESLATE_PAVEMENT.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_BLUESLATE_PAVEMENT_SLAB = registerBlock("glowstone_blueslate_pavement_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY = BlockFamilies.register(GLOWSTONE_BLUESLATE_PAVEMENT)
+			.stairs(GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS)
+			.slab(GLOWSTONE_BLUESLATE_PAVEMENT_SLAB)
+			.build();
+
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_PAVEMENT = registerBlock("mossy_glowstone_blueslate_pavement",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS = registerBlock("mossy_glowstone_blueslate_pavement_stairs",
+			settings -> new StairsBlock(MOSSY_GLOWSTONE_BLUESLATE_PAVEMENT.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_BLUESLATE_PAVEMENT_SLAB = registerBlock("mossy_glowstone_blueslate_pavement_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily MOSSY_GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY = BlockFamilies.register(MOSSY_GLOWSTONE_BLUESLATE_PAVEMENT)
+			.stairs(MOSSY_GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS)
+			.slab(MOSSY_GLOWSTONE_BLUESLATE_PAVEMENT_SLAB)
+			.build();
+
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_PAVEMENT = registerBlock("overgrown_glowstone_blueslate_pavement",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS = registerBlock("overgrown_glowstone_blueslate_pavement_stairs",
+			settings -> new StairsBlock(OVERGROWN_GLOWSTONE_BLUESLATE_PAVEMENT.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_BLUESLATE_PAVEMENT_SLAB = registerBlock("overgrown_glowstone_blueslate_pavement_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily OVERGROWN_GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY = BlockFamilies.register(OVERGROWN_GLOWSTONE_BLUESLATE_PAVEMENT)
+			.stairs(OVERGROWN_GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS)
+			.slab(OVERGROWN_GLOWSTONE_BLUESLATE_PAVEMENT_SLAB)
+			.build();
+
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT = registerBlock("cracked_glowstone_blueslate_pavement",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS = registerBlock("cracked_glowstone_blueslate_pavement_stairs",
+			settings -> new StairsBlock(CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_SLAB = registerBlock("cracked_glowstone_blueslate_pavement_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY = BlockFamilies.register(CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT)
+			.stairs(CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS)
+			.slab(CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_SLAB)
+			.build();
+
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT = registerBlock("mossy_cracked_glowstone_blueslate_pavement",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS = registerBlock("mossy_cracked_glowstone_blueslate_pavement_stairs",
+			settings -> new StairsBlock(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_SLAB = registerBlock("mossy_cracked_glowstone_blueslate_pavement_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT)
+			.stairs(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS)
+			.slab(MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_SLAB)
+			.build();
+
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT = registerBlock("overgrown_cracked_glowstone_blueslate_pavement",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS = registerBlock("overgrown_cracked_glowstone_blueslate_pavement_stairs",
+			settings -> new StairsBlock(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_SLAB = registerBlock("overgrown_cracked_glowstone_blueslate_pavement_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT)
+			.stairs(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_STAIRS)
+			.slab(OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_SLAB)
+			.build();
+
 	public static ModStoneSubSet BLUESLATE_PAVEMENT_SUBSET = new ModStoneSubSet(
 			BLUESLATE_PAVEMENT_FAMILY,
 			MOSSY_BLUESLATE_PAVEMENT_FAMILY,
@@ -2774,7 +3389,10 @@ public class BlueslateBlocks {
 			CRACKED_SILVER_BLUESLATE_PAVEMENT_FAMILY, MOSSY_CRACKED_SILVER_BLUESLATE_PAVEMENT_FAMILY, OVERGROWN_CRACKED_SILVER_BLUESLATE_PAVEMENT_FAMILY,
 			GOLD_BLUESLATE_PAVEMENT_FAMILY, MOSSY_GOLD_BLUESLATE_PAVEMENT_FAMILY, OVERGROWN_GOLD_BLUESLATE_PAVEMENT_FAMILY,
 			CRACKED_GOLD_BLUESLATE_PAVEMENT_FAMILY, MOSSY_CRACKED_GOLD_BLUESLATE_PAVEMENT_FAMILY,
-			OVERGROWN_CRACKED_GOLD_BLUESLATE_PAVEMENT_FAMILY, "blueslate_pavement");
+			OVERGROWN_CRACKED_GOLD_BLUESLATE_PAVEMENT_FAMILY,
+			GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY, MOSSY_GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY, OVERGROWN_GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY,
+			CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY, MOSSY_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY,
+			OVERGROWN_CRACKED_GLOWSTONE_BLUESLATE_PAVEMENT_FAMILY, "blueslate_pavement");
 
 	public static Block FANCY_BLUESLATE_BRICKS = registerBlock("fancy_blueslate_bricks",
 			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE)));
@@ -3136,6 +3754,96 @@ public class BlueslateBlocks {
 			.wall(OVERGROWN_CRACKED_GOLD_FANCY_BLUESLATE_BRICK_WALL)
 			.build();
 
+	public static Block GLOWSTONE_FANCY_BLUESLATE_BRICKS = registerBlock("glowstone_fancy_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS = registerBlock("glowstone_fancy_blueslate_brick_stairs",
+			settings -> new StairsBlock(GLOWSTONE_FANCY_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB = registerBlock("glowstone_fancy_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL = registerBlock("glowstone_fancy_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(GLOWSTONE_FANCY_BLUESLATE_BRICKS)
+			.stairs(GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS)
+			.slab(GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB)
+			.wall(GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICKS = registerBlock("mossy_glowstone_fancy_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_glowstone_fancy_blueslate_brick_stairs",
+			settings -> new StairsBlock(MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB = registerBlock("mossy_glowstone_fancy_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL = registerBlock("mossy_glowstone_fancy_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICKS)
+			.stairs(MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS)
+			.slab(MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB)
+			.wall(MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICKS = registerBlock("overgrown_glowstone_fancy_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_glowstone_fancy_blueslate_brick_stairs",
+			settings -> new StairsBlock(OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_glowstone_fancy_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static Block OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL = registerBlock("overgrown_glowstone_fancy_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 15)));
+	public static BlockFamily OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS)
+			.slab(OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB)
+			.wall(OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICKS = registerBlock("cracked_glowstone_fancy_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS = registerBlock("cracked_glowstone_fancy_blueslate_brick_stairs",
+			settings -> new StairsBlock(CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB = registerBlock("cracked_glowstone_fancy_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL = registerBlock("cracked_glowstone_fancy_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICKS)
+			.stairs(CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS)
+			.slab(CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB)
+			.wall(CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICKS = registerBlock("mossy_cracked_glowstone_fancy_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS = registerBlock("mossy_cracked_glowstone_fancy_blueslate_brick_stairs",
+			settings -> new StairsBlock(MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB = registerBlock("mossy_cracked_glowstone_fancy_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL = registerBlock("mossy_cracked_glowstone_fancy_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICKS)
+			.stairs(MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS)
+			.slab(MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB)
+			.wall(MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL)
+			.build();
+
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICKS = registerBlock("overgrown_cracked_glowstone_fancy_blueslate_bricks",
+			settings -> new Block(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS = registerBlock("overgrown_cracked_glowstone_fancy_blueslate_brick_stairs",
+			settings -> new StairsBlock(OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICKS.getDefaultState(),
+					settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB = registerBlock("overgrown_cracked_glowstone_fancy_blueslate_brick_slab",
+			settings -> new SlabBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static Block OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL = registerBlock("overgrown_cracked_glowstone_fancy_blueslate_brick_wall",
+			settings -> new WallBlock(settings.strength(2.0f).requiresTool().sounds(BlockSoundGroup.STONE).luminance(state -> 7)));
+	public static BlockFamily OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY = BlockFamilies.register(OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICKS)
+			.stairs(OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_STAIRS)
+			.slab(OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_SLAB)
+			.wall(OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_WALL)
+			.build();
+
 	public static ModStoneSubSet FANCY_BLUESLATE_BRICK_SUBSET = new ModStoneSubSet(
 			FANCY_BLUESLATE_BRICK_FAMILY,
 			MOSSY_FANCY_BLUESLATE_BRICK_FAMILY,
@@ -3148,7 +3856,10 @@ public class BlueslateBlocks {
 			CRACKED_SILVER_FANCY_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_SILVER_FANCY_BLUESLATE_BRICK_FAMILY, OVERGROWN_CRACKED_SILVER_FANCY_BLUESLATE_BRICK_FAMILY,
 			GOLD_FANCY_BLUESLATE_BRICK_FAMILY, MOSSY_GOLD_FANCY_BLUESLATE_BRICK_FAMILY, OVERGROWN_GOLD_FANCY_BLUESLATE_BRICK_FAMILY,
 			CRACKED_GOLD_FANCY_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_GOLD_FANCY_BLUESLATE_BRICK_FAMILY,
-			OVERGROWN_CRACKED_GOLD_FANCY_BLUESLATE_BRICK_FAMILY, "fancy_blueslate_brick");
+			OVERGROWN_CRACKED_GOLD_FANCY_BLUESLATE_BRICK_FAMILY,
+			GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY, MOSSY_GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY, OVERGROWN_GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY,
+			CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY, MOSSY_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY,
+			OVERGROWN_CRACKED_GLOWSTONE_FANCY_BLUESLATE_BRICK_FAMILY, "fancy_blueslate_brick");
 
 	public static ModStoneSet BLUESLATE_SET = new ModStoneSet(BLUESLATE_FAMILY, MOSSY_BLUESLATE_FAMILY,
 			OVERGROWN_BLUESLATE_FAMILY,

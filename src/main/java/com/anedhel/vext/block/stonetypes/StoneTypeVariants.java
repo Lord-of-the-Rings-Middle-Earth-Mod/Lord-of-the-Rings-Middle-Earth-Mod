@@ -33,6 +33,9 @@ public enum StoneTypeVariants {
 	GOLD_STONE,
 	MOSSY_GOLD_STONE,
 	OVERGROWN_GOLD_STONE,
+	GLOWSTONE_STONE,
+	MOSSY_GLOWSTONE_STONE,
+	OVERGROWN_GLOWSTONE_STONE,
 	CRACKED_STONE,
 	CRACKED_MOSSY_STONE,
 	CRACKED_OVERGROWN_STONE,
@@ -44,7 +47,10 @@ public enum StoneTypeVariants {
 	CRACKED_OVERGROWN_SILVER_STONE,
 	CRACKED_GOLD_STONE,
 	CRACKED_MOSSY_GOLD_STONE,
-	CRACKED_OVERGROWN_GOLD_STONE;
+	CRACKED_OVERGROWN_GOLD_STONE,
+	CRACKED_GLOWSTONE_STONE,
+	CRACKED_MOSSY_GLOWSTONE_STONE,
+	CRACKED_OVERGROWN_GLOWSTONE_STONE;
 
 	/**
 	 * Returns the recipe path for the given stone type variant.
@@ -92,6 +98,15 @@ public enum StoneTypeVariants {
 			case OVERGROWN_GOLD_STONE -> {
 				return "o_g_" + name;
 			}
+			case GLOWSTONE_STONE -> {
+				return "gl_" + name;
+			}
+			case MOSSY_GLOWSTONE_STONE -> {
+				return "m_gl_" + name;
+			}
+			case OVERGROWN_GLOWSTONE_STONE -> {
+				return "o_gl_" + name;
+			}
 			case CRACKED_STONE -> {
 				return "c_" + name;
 			}
@@ -128,6 +143,15 @@ public enum StoneTypeVariants {
 			case CRACKED_OVERGROWN_GOLD_STONE -> {
 				return "c_o_g_" + name;
 			}
+			case CRACKED_GLOWSTONE_STONE -> {
+				return "c_gl_" + name;
+			}
+			case CRACKED_MOSSY_GLOWSTONE_STONE -> {
+				return "c_m_gl_" + name;
+			}
+			case CRACKED_OVERGROWN_GLOWSTONE_STONE -> {
+				return "c_o_gl_" + name;
+			}
 			default -> {
 				return "";
 			}
@@ -143,22 +167,22 @@ public enum StoneTypeVariants {
 	 */
 	public static StoneTypeVariants getBaseFromOrnamented(StoneTypeVariants variant) {
 		switch(variant){
-			case BRONZE_STONE, SILVER_STONE, GOLD_STONE -> {
+			case BRONZE_STONE, SILVER_STONE, GOLD_STONE, GLOWSTONE_STONE -> {
 				return StoneTypeVariants.STONE;
 			}
-			case MOSSY_BRONZE_STONE, MOSSY_SILVER_STONE, MOSSY_GOLD_STONE -> {
+			case MOSSY_BRONZE_STONE, MOSSY_SILVER_STONE, MOSSY_GOLD_STONE, MOSSY_GLOWSTONE_STONE -> {
 				return StoneTypeVariants.MOSSY_STONE;
 			}
-			case OVERGROWN_BRONZE_STONE, OVERGROWN_SILVER_STONE, OVERGROWN_GOLD_STONE -> {
+			case OVERGROWN_BRONZE_STONE, OVERGROWN_SILVER_STONE, OVERGROWN_GOLD_STONE, OVERGROWN_GLOWSTONE_STONE -> {
 				return StoneTypeVariants.OVERGROWN_STONE;
 			}
-			case CRACKED_BRONZE_STONE, CRACKED_SILVER_STONE, CRACKED_GOLD_STONE -> {
+			case CRACKED_BRONZE_STONE, CRACKED_SILVER_STONE, CRACKED_GOLD_STONE, CRACKED_GLOWSTONE_STONE -> {
 				return StoneTypeVariants.CRACKED_STONE;
 			}
-			case CRACKED_MOSSY_BRONZE_STONE, CRACKED_MOSSY_SILVER_STONE, CRACKED_MOSSY_GOLD_STONE -> {
+			case CRACKED_MOSSY_BRONZE_STONE, CRACKED_MOSSY_SILVER_STONE, CRACKED_MOSSY_GOLD_STONE, CRACKED_MOSSY_GLOWSTONE_STONE -> {
 				return StoneTypeVariants.CRACKED_MOSSY_STONE;
 			}
-			case CRACKED_OVERGROWN_BRONZE_STONE, CRACKED_OVERGROWN_SILVER_STONE, CRACKED_OVERGROWN_GOLD_STONE -> {
+			case CRACKED_OVERGROWN_BRONZE_STONE, CRACKED_OVERGROWN_SILVER_STONE, CRACKED_OVERGROWN_GOLD_STONE, CRACKED_OVERGROWN_GLOWSTONE_STONE -> {
 				return StoneTypeVariants.CRACKED_OVERGROWN_STONE;
 			}
 			default -> {
@@ -212,6 +236,15 @@ public enum StoneTypeVariants {
 			case CRACKED_OVERGROWN_GOLD_STONE -> {
 				return StoneTypeVariants.OVERGROWN_GOLD_STONE;
 			}
+			case CRACKED_GLOWSTONE_STONE -> {
+				return StoneTypeVariants.GLOWSTONE_STONE;
+			}
+			case CRACKED_MOSSY_GLOWSTONE_STONE -> {
+				return StoneTypeVariants.MOSSY_GLOWSTONE_STONE;
+			}
+			case CRACKED_OVERGROWN_GLOWSTONE_STONE -> {
+				return StoneTypeVariants.OVERGROWN_GLOWSTONE_STONE;
+			}
 			default -> {
 				return variant;
 			}
@@ -250,6 +283,12 @@ public enum StoneTypeVariants {
 			}
 			case CRACKED_MOSSY_GOLD_STONE, CRACKED_OVERGROWN_GOLD_STONE -> {
 				return StoneTypeVariants.CRACKED_GOLD_STONE;
+			}
+			case MOSSY_GLOWSTONE_STONE, OVERGROWN_GLOWSTONE_STONE -> {
+				return StoneTypeVariants.GLOWSTONE_STONE;
+			}
+			case CRACKED_MOSSY_GLOWSTONE_STONE, CRACKED_OVERGROWN_GLOWSTONE_STONE -> {
+				return StoneTypeVariants.CRACKED_GLOWSTONE_STONE;
 			}
 			default -> {
 				return variant;
@@ -290,6 +329,12 @@ public enum StoneTypeVariants {
 			case CRACKED_OVERGROWN_GOLD_STONE -> {
 				return StoneTypeVariants.CRACKED_MOSSY_GOLD_STONE;
 			}
+			case OVERGROWN_GLOWSTONE_STONE -> {
+				return StoneTypeVariants.MOSSY_GLOWSTONE_STONE;
+			}
+			case CRACKED_OVERGROWN_GLOWSTONE_STONE -> {
+				return StoneTypeVariants.CRACKED_MOSSY_GLOWSTONE_STONE;
+			}
 			default -> {
 				return variant;
 			}
@@ -307,7 +352,8 @@ public enum StoneTypeVariants {
 		switch(variant) {
 			case BRONZE_STONE, MOSSY_BRONZE_STONE, OVERGROWN_BRONZE_STONE,
 			     SILVER_STONE, MOSSY_SILVER_STONE, OVERGROWN_SILVER_STONE,
-			     GOLD_STONE, MOSSY_GOLD_STONE, OVERGROWN_GOLD_STONE -> {
+			     GOLD_STONE, MOSSY_GOLD_STONE, OVERGROWN_GOLD_STONE,
+			     GLOWSTONE_STONE, MOSSY_GLOWSTONE_STONE, OVERGROWN_GLOWSTONE_STONE -> {
 				return true;
 			}
 			default -> {
@@ -328,7 +374,8 @@ public enum StoneTypeVariants {
 			case CRACKED_STONE, CRACKED_MOSSY_STONE, CRACKED_OVERGROWN_STONE,
 			     CRACKED_BRONZE_STONE, CRACKED_MOSSY_BRONZE_STONE, CRACKED_OVERGROWN_BRONZE_STONE,
 			     CRACKED_SILVER_STONE, CRACKED_MOSSY_SILVER_STONE, CRACKED_OVERGROWN_SILVER_STONE,
-			     CRACKED_GOLD_STONE, CRACKED_MOSSY_GOLD_STONE, CRACKED_OVERGROWN_GOLD_STONE -> {
+			     CRACKED_GOLD_STONE, CRACKED_MOSSY_GOLD_STONE, CRACKED_OVERGROWN_GOLD_STONE,
+			     CRACKED_GLOWSTONE_STONE, CRACKED_MOSSY_GLOWSTONE_STONE, CRACKED_OVERGROWN_GLOWSTONE_STONE -> {
 				return true;
 			}
 			default -> {

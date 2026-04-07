@@ -63,6 +63,14 @@ public class ModStoneSubSet {
 	private final BlockFamily MOSSY_CRACKED_GOLD_FAMILY;
 	private final BlockFamily OVERGROWN_CRACKED_GOLD_FAMILY;
 
+	private final BlockFamily GLOWSTONE_FAMILY;
+	private final BlockFamily MOSSY_GLOWSTONE_FAMILY;
+	private final BlockFamily OVERGROWN_GLOWSTONE_FAMILY;
+
+	private final BlockFamily CRACKED_GLOWSTONE_FAMILY;
+	private final BlockFamily MOSSY_CRACKED_GLOWSTONE_FAMILY;
+	private final BlockFamily OVERGROWN_CRACKED_GLOWSTONE_FAMILY;
+
 	private final String NAME;
 
 	private final Map<BlockFamily, BlockFamily> crackedFamilyMap = new HashMap<>();
@@ -76,7 +84,11 @@ public class ModStoneSubSet {
 			BlockFamily crackedSilverBaseFamily, BlockFamily mossyCrackedSilverBaseFamily,
 			BlockFamily overgrownCrackedSilverBaseFamily, BlockFamily goldBaseFamily, BlockFamily mossyGoldBaseFamily,
 			BlockFamily overgrownGoldBaseFamily, BlockFamily crackedGoldBaseFamily,
-			BlockFamily mossyCrackedGoldBaseFamily, BlockFamily overgrownCrackedGoldBaseFamily, String name) {
+			BlockFamily mossyCrackedGoldBaseFamily, BlockFamily overgrownCrackedGoldBaseFamily,
+			BlockFamily glowstoneBaseFamily, BlockFamily mossyGlowstoneBaseFamily,
+			BlockFamily overgrownGlowstoneBaseFamily, BlockFamily crackedGlowstoneBaseFamily,
+			BlockFamily mossyCrackedGlowstoneBaseFamily, BlockFamily overgrownCrackedGlowstoneBaseFamily,
+			String name) {
 		BASE_FAMILY = baseFamily;
 		MOSSY_FAMILY = mossyBaseFamily;
 		OVERGROWN_FAMILY = overgrownBaseFamily;
@@ -102,6 +114,13 @@ public class ModStoneSubSet {
 		MOSSY_CRACKED_GOLD_FAMILY = mossyCrackedGoldBaseFamily;
 		OVERGROWN_CRACKED_GOLD_FAMILY = overgrownCrackedGoldBaseFamily;
 
+		GLOWSTONE_FAMILY = glowstoneBaseFamily;
+		MOSSY_GLOWSTONE_FAMILY = mossyGlowstoneBaseFamily;
+		OVERGROWN_GLOWSTONE_FAMILY = overgrownGlowstoneBaseFamily;
+		CRACKED_GLOWSTONE_FAMILY = crackedGlowstoneBaseFamily;
+		MOSSY_CRACKED_GLOWSTONE_FAMILY = mossyCrackedGlowstoneBaseFamily;
+		OVERGROWN_CRACKED_GLOWSTONE_FAMILY = overgrownCrackedGlowstoneBaseFamily;
+
 		NAME = name;
 
 		crackedFamilyMap.put(BASE_FAMILY, CRACKED_FAMILY);
@@ -116,6 +135,9 @@ public class ModStoneSubSet {
 		crackedFamilyMap.put(GOLD_FAMILY, CRACKED_GOLD_FAMILY);
 		crackedFamilyMap.put(MOSSY_GOLD_FAMILY, MOSSY_CRACKED_GOLD_FAMILY);
 		crackedFamilyMap.put(OVERGROWN_GOLD_FAMILY, OVERGROWN_CRACKED_GOLD_FAMILY);
+		crackedFamilyMap.put(GLOWSTONE_FAMILY, CRACKED_GLOWSTONE_FAMILY);
+		crackedFamilyMap.put(MOSSY_GLOWSTONE_FAMILY, MOSSY_CRACKED_GLOWSTONE_FAMILY);
+		crackedFamilyMap.put(OVERGROWN_GLOWSTONE_FAMILY, OVERGROWN_CRACKED_GLOWSTONE_FAMILY);
 	}
 
 	/**
@@ -149,6 +171,12 @@ public class ModStoneSubSet {
 		stoneSubSetItemGroupList.addAll(getBlockFamilyList(CRACKED_GOLD_FAMILY));
 		stoneSubSetItemGroupList.addAll(getBlockFamilyList(MOSSY_CRACKED_GOLD_FAMILY));
 		stoneSubSetItemGroupList.addAll(getBlockFamilyList(OVERGROWN_CRACKED_GOLD_FAMILY));
+		stoneSubSetItemGroupList.addAll(getBlockFamilyList(GLOWSTONE_FAMILY));
+		stoneSubSetItemGroupList.addAll(getBlockFamilyList(MOSSY_GLOWSTONE_FAMILY));
+		stoneSubSetItemGroupList.addAll(getBlockFamilyList(OVERGROWN_GLOWSTONE_FAMILY));
+		stoneSubSetItemGroupList.addAll(getBlockFamilyList(CRACKED_GLOWSTONE_FAMILY));
+		stoneSubSetItemGroupList.addAll(getBlockFamilyList(MOSSY_CRACKED_GLOWSTONE_FAMILY));
+		stoneSubSetItemGroupList.addAll(getBlockFamilyList(OVERGROWN_CRACKED_GLOWSTONE_FAMILY));
 		return stoneSubSetItemGroupList;
 	}
 
@@ -177,7 +205,9 @@ public class ModStoneSubSet {
 				CRACKED_BRONZE_FAMILY, MOSSY_CRACKED_BRONZE_FAMILY, OVERGROWN_CRACKED_BRONZE_FAMILY, SILVER_FAMILY,
 				MOSSY_SILVER_FAMILY, OVERGROWN_SILVER_FAMILY, CRACKED_SILVER_FAMILY, MOSSY_CRACKED_SILVER_FAMILY,
 				OVERGROWN_CRACKED_SILVER_FAMILY, GOLD_FAMILY, MOSSY_GOLD_FAMILY, OVERGROWN_GOLD_FAMILY,
-				CRACKED_GOLD_FAMILY, MOSSY_CRACKED_GOLD_FAMILY, OVERGROWN_CRACKED_GOLD_FAMILY
+				CRACKED_GOLD_FAMILY, MOSSY_CRACKED_GOLD_FAMILY, OVERGROWN_CRACKED_GOLD_FAMILY,
+				GLOWSTONE_FAMILY, MOSSY_GLOWSTONE_FAMILY, OVERGROWN_GLOWSTONE_FAMILY,
+				CRACKED_GLOWSTONE_FAMILY, MOSSY_CRACKED_GLOWSTONE_FAMILY, OVERGROWN_CRACKED_GLOWSTONE_FAMILY
 		);
 	}
 
@@ -213,6 +243,12 @@ public class ModStoneSubSet {
 			case CRACKED_GOLD_STONE -> CRACKED_GOLD_FAMILY;
 			case CRACKED_MOSSY_GOLD_STONE -> MOSSY_CRACKED_GOLD_FAMILY;
 			case CRACKED_OVERGROWN_GOLD_STONE -> OVERGROWN_CRACKED_GOLD_FAMILY;
+			case GLOWSTONE_STONE -> GLOWSTONE_FAMILY;
+			case MOSSY_GLOWSTONE_STONE -> MOSSY_GLOWSTONE_FAMILY;
+			case OVERGROWN_GLOWSTONE_STONE -> OVERGROWN_GLOWSTONE_FAMILY;
+			case CRACKED_GLOWSTONE_STONE -> CRACKED_GLOWSTONE_FAMILY;
+			case CRACKED_MOSSY_GLOWSTONE_STONE -> MOSSY_CRACKED_GLOWSTONE_FAMILY;
+			case CRACKED_OVERGROWN_GLOWSTONE_STONE -> OVERGROWN_CRACKED_GLOWSTONE_FAMILY;
 		};
 	}
 
@@ -411,6 +447,54 @@ public class ModStoneSubSet {
 
 	public Block getOvergrownCrackedGoldFamilyVariant(String variant) {
 		return ModUtil.getBlockFromFamily(OVERGROWN_CRACKED_GOLD_FAMILY, variant);
+	}
+
+	public BlockFamily getGlowstoneFamily() {
+		return GLOWSTONE_FAMILY;
+	}
+
+	public Block getGlowstoneFamilyVariant(String variant) {
+		return ModUtil.getBlockFromFamily(GLOWSTONE_FAMILY, variant);
+	}
+
+	public BlockFamily getMossyGlowstoneFamily() {
+		return MOSSY_GLOWSTONE_FAMILY;
+	}
+
+	public Block getMossyGlowstoneFamilyVariant(String variant) {
+		return ModUtil.getBlockFromFamily(MOSSY_GLOWSTONE_FAMILY, variant);
+	}
+
+	public BlockFamily getOvergrownGlowstoneFamily() {
+		return OVERGROWN_GLOWSTONE_FAMILY;
+	}
+
+	public Block getOvergrownGlowstoneFamilyVariant(String variant) {
+		return ModUtil.getBlockFromFamily(OVERGROWN_GLOWSTONE_FAMILY, variant);
+	}
+
+	public BlockFamily getCrackedGlowstoneFamily() {
+		return CRACKED_GLOWSTONE_FAMILY;
+	}
+
+	public Block getCrackedGlowstoneFamilyVariant(String variant) {
+		return ModUtil.getBlockFromFamily(CRACKED_GLOWSTONE_FAMILY, variant);
+	}
+
+	public BlockFamily getMossyCrackedGlowstoneFamily() {
+		return MOSSY_CRACKED_GLOWSTONE_FAMILY;
+	}
+
+	public Block getMossyCrackedGlowstoneFamilyVariant(String variant) {
+		return ModUtil.getBlockFromFamily(MOSSY_CRACKED_GLOWSTONE_FAMILY, variant);
+	}
+
+	public BlockFamily getOvergrownCrackedGlowstoneFamily() {
+		return OVERGROWN_CRACKED_GLOWSTONE_FAMILY;
+	}
+
+	public Block getOvergrownCrackedGlowstoneFamilyVariant(String variant) {
+		return ModUtil.getBlockFromFamily(OVERGROWN_CRACKED_GLOWSTONE_FAMILY, variant);
 	}
 
 	public String getName() {
