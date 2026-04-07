@@ -41,4 +41,5 @@ replay_*.log
 
 # generated
 .cache/
-src/main/generated/
+src/main/generated/javac.*.args
+*.class
