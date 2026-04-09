@@ -14,6 +14,7 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
@@ -23,8 +24,9 @@ import org.jspecify.annotations.Nullable;
 /**
  * Represents a custom SpiderWebBlock for the Vanilla Extensions Mod.
  * <p>
- * This block dynamically determines its {@link SpiderWebType} based on adjacent full blocks,
- * allowing for seamless vertical connections.
+ * This block dynamically determines its {@link SpiderWebType} based on adjacent full blocks.
+ * This block is walk through and breaks if the player is running or an entitys velocity
+ * is greater 0.9 (arrow, egg, falling player...).
  * The Spiderweb type is stored in the {@link #SPIDER_WEB_TYPE} property and is updated on placement
  * and when neighboring blocks change.
  *
@@ -147,6 +149,10 @@ public class SpiderWebBlock extends Block {
         return state;
     }
 
+    /**
+     * breaks the block on entity Collision.
+     * breaks when entitys velocity is greater than 0.9 or player is running.
+     */
     @Override
     protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity, EntityCollisionHandler handler, boolean bl) {
         if (world.isClient()) return;
@@ -157,11 +163,11 @@ public class SpiderWebBlock extends Block {
             }
         }
     /**
-     * not sure: it breaks around 5 blocks, but also with head hit so really high up
+     * not sure: it breaks around 5 blocks fall, but the head counts as hit so really high up
      */
         Vec3d velocity = entity.getVelocity();
         double speed = velocity.length();
-            if (speed > 0.8) {
+            if (speed > 0.9) {
                 world.breakBlock(pos, false); //no item drop
             }
     }
@@ -169,6 +175,15 @@ public class SpiderWebBlock extends Block {
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
+    }
+
+    /**
+     * disables collision of the player (block is walkthrough)
+     * entitycollision is still working
+     */
+    @Override
+    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return VoxelShapes.empty(); // no collision
     }
 
     @Override
