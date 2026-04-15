@@ -563,6 +563,61 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 						subSet.getOvergrownCrackedGoldFamilyVariant("base"),
 						createModStoneRecipeName(name, StoneTypeVariants.CRACKED_OVERGROWN_GOLD_STONE,
 								StoneTypeVariants.OVERGROWN_GOLD_STONE, ""));
+
+				generateOrnamentRecipe(subSet.getBaseFamilyVariant("base"),
+						subSet.getGlowstoneFamilyVariant("base"), Items.GLOWSTONE_DUST,
+						createModStoneRecipeName(name, StoneTypeVariants.GLOWSTONE_STONE,
+								StoneTypeVariants.STONE, "ct"));
+				generateOrnamentRecipe(subSet.getMossyFamilyVariant("base"),
+						subSet.getMossyGlowstoneFamilyVariant("base"), Items.GLOWSTONE_DUST,
+						createModStoneRecipeName(name, StoneTypeVariants.MOSSY_GLOWSTONE_STONE,
+								StoneTypeVariants.MOSSY_STONE, "ct"));
+				generateOrnamentRecipe(subSet.getOvergrownFamilyVariant("base"),
+						subSet.getOvergrownGlowstoneFamilyVariant("base"), Items.GLOWSTONE_DUST,
+						createModStoneRecipeName(name, StoneTypeVariants.OVERGROWN_GLOWSTONE_STONE,
+								StoneTypeVariants.OVERGROWN_STONE, "ct"));
+
+				generateOrnamentRecipe(subSet.getCrackedFamilyVariant("base"),
+						subSet.getCrackedGlowstoneFamilyVariant("base"), Items.GLOWSTONE_DUST,
+						createModStoneRecipeName(name, StoneTypeVariants.CRACKED_GLOWSTONE_STONE,
+								StoneTypeVariants.CRACKED_STONE, "ct"));
+				generateOrnamentRecipe(subSet.getMossyCrackedFamilyVariant("base"),
+						subSet.getMossyCrackedGlowstoneFamilyVariant("base"), Items.GLOWSTONE_DUST,
+						createModStoneRecipeName(name, StoneTypeVariants.CRACKED_MOSSY_GLOWSTONE_STONE,
+								StoneTypeVariants.CRACKED_MOSSY_STONE, "ct"));
+				generateOrnamentRecipe(subSet.getOvergrownCrackedFamilyVariant("base"),
+						subSet.getOvergrownCrackedGlowstoneFamilyVariant("base"), Items.GLOWSTONE_DUST,
+						createModStoneRecipeName(name, StoneTypeVariants.CRACKED_OVERGROWN_GLOWSTONE_STONE,
+								StoneTypeVariants.CRACKED_OVERGROWN_STONE, "ct"));
+
+				generateOvergrownRecipe(
+						subSet.getGlowstoneFamilyVariant("base"),
+						subSet.getMossyGlowstoneFamilyVariant("base"),
+						subSet.getOvergrownGlowstoneFamilyVariant("base"),
+						StoneTypeVariants.GLOWSTONE_STONE,
+						StoneTypeVariants.MOSSY_GLOWSTONE_STONE,
+						StoneTypeVariants.OVERGROWN_GLOWSTONE_STONE, name);
+
+				generateOvergrownRecipe(
+						subSet.getCrackedGlowstoneFamilyVariant("base"),
+						subSet.getMossyCrackedGlowstoneFamilyVariant("base"),
+						subSet.getOvergrownCrackedGlowstoneFamilyVariant("base"),
+						StoneTypeVariants.CRACKED_GLOWSTONE_STONE,
+						StoneTypeVariants.CRACKED_MOSSY_GLOWSTONE_STONE,
+						StoneTypeVariants.CRACKED_OVERGROWN_GLOWSTONE_STONE, name);
+
+				generateStoneSmelting(subSet.getGlowstoneFamilyVariant("base"),
+						subSet.getCrackedGlowstoneFamilyVariant("base"),
+						createModStoneRecipeName(name, StoneTypeVariants.CRACKED_GLOWSTONE_STONE,
+								StoneTypeVariants.GLOWSTONE_STONE, ""));
+				generateStoneSmelting(subSet.getMossyGlowstoneFamilyVariant("base"),
+						subSet.getMossyCrackedGlowstoneFamilyVariant("base"),
+						createModStoneRecipeName(name, StoneTypeVariants.CRACKED_MOSSY_GLOWSTONE_STONE,
+								StoneTypeVariants.MOSSY_GLOWSTONE_STONE, ""));
+				generateStoneSmelting(subSet.getOvergrownGlowstoneFamilyVariant("base"),
+						subSet.getOvergrownCrackedGlowstoneFamilyVariant("base"),
+						createModStoneRecipeName(name, StoneTypeVariants.CRACKED_OVERGROWN_GLOWSTONE_STONE,
+								StoneTypeVariants.OVERGROWN_GLOWSTONE_STONE, ""));
 			}
 
 			/**
