@@ -3,7 +3,7 @@
 	"package": "com.anedhel.vext.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"AxeItemMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

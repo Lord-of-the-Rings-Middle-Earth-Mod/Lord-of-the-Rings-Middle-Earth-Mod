@@ -26,6 +26,7 @@ import net.fabricmc.api.ModInitializer;
 
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
+import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.block.ComposterBlock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -63,6 +64,7 @@ public class VExtMod implements ModInitializer {
 		addCompostableItems();
 		addDefaultAttributes();
 		addFuelItems();
+		addStrippableBlocks();
 	}
 
 	/**
@@ -123,6 +125,21 @@ public class VExtMod implements ModInitializer {
 			builder.add(ModItems.MANGROVE_BARK, 110);
 			builder.add(ModItems.BAMBOO_BARK, 80);
 		});
+	}
+
+	/**
+	 * Registers all custom mod wood blocks and their stripped variants with the
+	 * {@link StrippableBlockRegistry}.
+	 */
+	private void addStrippableBlocks() {
+		for(ModWoodTypes woodType : ModWoodTypes.values()) {
+			ModWoodSet woodSet = woodType.getModWoodSet();
+			StrippableBlockRegistry.register(woodSet.getLog(), woodSet.getStrippedLog());
+			StrippableBlockRegistry.register(woodSet.getWoodVariant("base"), woodSet.getStrippedWoodVariant("base"));
+			woodSet.getWoodFamily().getVariants().forEach((variant, block) -> {
+				StrippableBlockRegistry.register(block, woodSet.getStrippedWoodVariant(variant.getName()));
+			});
+		}
 	}
 
 	/**
