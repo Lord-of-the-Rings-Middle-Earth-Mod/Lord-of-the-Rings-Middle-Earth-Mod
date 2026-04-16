@@ -21,7 +21,8 @@ package com.anedhel.vext.block.stonetypes;
  */
 public enum ModStoneTypes {
 
-	BLUESLATE(BlueslateBlocks.BLUESLATE_SET, "Blueslate");
+	BLUESLATE(BlueslateBlocks.BLUESLATE_SET, "Blueslate"),
+	CHALK(ChalkBlocks.CHALK_SET, "Chalk");
 
 	private final ModStoneSet modStoneSet;
 	private final String name;

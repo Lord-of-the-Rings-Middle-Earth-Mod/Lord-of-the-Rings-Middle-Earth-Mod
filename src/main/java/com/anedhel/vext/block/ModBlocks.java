@@ -15,6 +15,7 @@ import com.anedhel.vext.block.custom.CarpentryTable;
 import com.anedhel.vext.block.custom.crops.CornCropBlock;
 import com.anedhel.vext.block.custom.crops.TomatoCropBlock;
 import com.anedhel.vext.block.stonetypes.BlueslateBlocks;
+import com.anedhel.vext.block.stonetypes.ChalkBlocks;
 import com.anedhel.vext.block.woodtypes.PineBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -162,5 +163,6 @@ public class ModBlocks {
 	private static void registerModStoneBlocks() {
 		VExtMod.LOGGER.info("Registering Mod Stone Blocks for " + VExtMod.MOD_ID);
 		BlueslateBlocks.registerBlueslateBlocks();
+		ChalkBlocks.registerChalkBlocks();
 	}
 }
