@@ -37,6 +37,7 @@ public class ModBlockTags {
 	public static final TagKey<Block> FRIEZES = createCommonTag("friezes");
 
 	public static final TagKey<Block> PINE_LOGS = createModTag("pine_logs");
+	public static final TagKey<Block> PINE_STRIPPABLE = createModTag("pine_strippable");
 
 	public static final TagKey<Block> INCORRECT_FOR_BRONZE_TOOL = createModTag("incorrect_for_bronze_tool");
 

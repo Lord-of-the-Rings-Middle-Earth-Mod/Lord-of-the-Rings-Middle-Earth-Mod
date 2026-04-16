@@ -13,7 +13,6 @@ package com.anedhel.vext.block.woodtypes;
 import com.anedhel.vext.VExtMod;
 import com.anedhel.vext.block.ModBlockTags;
 import com.anedhel.vext.item.ModItemTags;
-import com.anedhel.vext.item.ModItems;
 import com.anedhel.vext.world.tree.ModSaplingGenerators;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -163,7 +162,7 @@ public class PineBlocks{
 			STRIPPED_PINE_LOG, STRIPPED_PINE_WOOD_FAMILY,
 			PINE_PLANKS_FAMILY,
 			PINE_SAPLING, PINE_LEAVES, PINE_BARK,
-			ModBlockTags.PINE_LOGS, ModItemTags.PINE_LOGS
+			ModBlockTags.PINE_LOGS, ModItemTags.PINE_LOGS, ModBlockTags.PINE_STRIPPABLE
 	);
 
 	public static void registerPineBlocks() {

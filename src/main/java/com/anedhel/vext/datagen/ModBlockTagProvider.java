@@ -110,6 +110,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 					.add(woodSet.getStrippedLog())
 					.add(woodSet.getStrippedWoodVariant("base"));
 
+			ProvidedTagBuilder<Block, Block> strippableTagBuilder = valueLookupBuilder(woodSet.getStrippableTag())
+					.add(woodSet.getLog())
+					.add(woodSet.getWoodVariant("base"));
+			woodSet.getWoodFamily().getVariants().values().forEach(strippableTagBuilder::add);
+
 			valueLookupBuilder(BlockTags.LOGS_THAT_BURN)
 					.add(woodSet.getLog())
 					.add(woodSet.getStrippedLog())

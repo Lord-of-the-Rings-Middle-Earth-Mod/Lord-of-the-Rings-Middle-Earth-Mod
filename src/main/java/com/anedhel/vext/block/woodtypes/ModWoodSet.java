@@ -46,6 +46,7 @@ public class ModWoodSet {
 
 	private final TagKey<Block> LOG_BLOCK_TAG;
 	private final TagKey<Item> LOG_ITEM_TAG;
+	private final TagKey<Block> STRIPPABLE_TAG;
 
 	public ModWoodSet(Block log, BlockFamily woodFamily,
 			Block strippedLog, BlockFamily strippedWoodFamily,
@@ -53,7 +54,8 @@ public class ModWoodSet {
 			Block sapling, Block leaves,
 			Item bark,
 			TagKey<Block> logTag,
-			TagKey<Item> logItemTag) {
+			TagKey<Item> logItemTag,
+			TagKey<Block> strippableTag) {
 		LOG = log;
 		WOOD_FAMILY = woodFamily;
 
@@ -69,6 +71,7 @@ public class ModWoodSet {
 
 		LOG_BLOCK_TAG = logTag;
 		LOG_ITEM_TAG = logItemTag;
+		STRIPPABLE_TAG = strippableTag;
 	}
 
 	/**
@@ -170,5 +173,9 @@ public class ModWoodSet {
 
 	public TagKey<Item> getLogItemTag() {
 		return LOG_ITEM_TAG;
+	}
+
+	public TagKey<Block> getStrippableTag() {
+		return STRIPPABLE_TAG;
 	}
 }
