@@ -1,5 +1,5 @@
 ---
-name: add-stone-type
+name: add-stone-ornament
 description: Complete implementation guide for adding a new Ornament for all Stone Types to the VExt Mod. Use this skill when asked to add an ornament.
 license: CC-BY-NC-SA
 ---
@@ -34,6 +34,8 @@ Pass the new OrnamentName families when constructing each `ModStoneSubSet` insta
 Extend `generateModStoneSubSetRecipes()` with all OrnamentName ornament recipes following the Bronze/Silver/Gold pattern — `generateOrnamentRecipe()`, `generateOvergrownRecipe()`, and `generateStoneSmelting()` for the cracked variants. Extend `generateStoneCuttingRecipes()` and `generateBlockFamilyStoneCutting()` accordingly.
 
 Extend `ModModelProvider` — each SubSet type has its own generation method, extend each following the Bronze/Silver/Gold pattern.
+Don´t forget to add the new ornament to the "? : " statements in `registerOneOverlayFriezeBlock()` and 
+`registerTwoOverlayFriezeBlock()` in order to have the proper polished textures on the top.
 
 ### `ModTextures`
 Add all required overlay entries following the `CRACKED_` prefix naming convention as required by `getCrackedVariant()`. When opening the PR, list all added entry names in the PR comment so Texture Artists know the exact file names expected in `block/overlays/`.

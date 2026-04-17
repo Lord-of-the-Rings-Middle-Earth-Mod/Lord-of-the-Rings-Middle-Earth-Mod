@@ -1811,7 +1811,8 @@ public class ModModelProvider extends FabricModelProvider {
 
 		overlays = new String[overlays.length + 1];
 		overlays[0] = overlaysInput[0].contains("bronze_frieze") ? "bronze_polished" :
-				overlaysInput[0].contains("silver_frieze") ? "silver_polished" : "gold_polished";
+				overlaysInput[0].contains("silver_frieze") ? "silver_polished" :
+						overlaysInput[0].contains("gold_frieze") ? "gold_polished": "glowstone_polished";
 		System.arraycopy(overlaysInput, 0, overlays, 1, overlaysInput.length);
 
 		TextureMap singleFriezeTM = createFriezeTextureMap(endTexture, northTexture, "_single", eastTexture, "_single",
