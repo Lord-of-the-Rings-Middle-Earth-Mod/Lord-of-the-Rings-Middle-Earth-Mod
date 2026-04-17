@@ -1,0 +1,149 @@
+name: Issue Status Automation
+
+on:
+  pull_request:
+    types: [opened, ready_for_review]
+  pull_request_target:
+    types: [closed]
+  pull_request_review:
+    types: [submitted]
+
+# Replace placeholder values by running the fetch-project-ids.yml workflow_dispatch
+# helper, then copying the printed IDs into the variables below.
+env:
+  GH_ORG:             Lord-of-the-Rings-Middle-Earth-Mod
+  PROJECT_NUMBER:     2
+  PROJECT_ID:         "PLACEHOLDER_PROJECT_ID"
+  STATUS_FIELD_ID:    "PLACEHOLDER_STATUS_FIELD_ID"
+  STATUS_IN_PROGRESS: "PLACEHOLDER_STATUS_IN_PROGRESS"
+  STATUS_REVIEW:      "PLACEHOLDER_STATUS_REVIEW"
+  STATUS_TESTING:     "PLACEHOLDER_STATUS_TESTING"
+
+jobs:
+  # Trigger: PR opened or ready_for_review (non-draft only) → Review
+  move-to-review:
+    if: >-
+      github.event_name == 'pull_request' &&
+      (github.event.action == 'opened' || github.event.action == 'ready_for_review') &&
+      github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Move linked issues to Review
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            const { moveLinkedIssuesToStatus } = await import(
+              '${{ github.workspace }}/.github/scripts/project-utils.mjs'
+            );
+            await moveLinkedIssuesToStatus({
+              github,
+              context,
+              core,
+              prNumber:        context.payload.pull_request.number,
+              projectId:       process.env.PROJECT_ID,
+              statusFieldId:   process.env.STATUS_FIELD_ID,
+              targetStatusId:  process.env.STATUS_REVIEW,
+              targetStatusName: 'Review',
+            });
+
+  # Trigger: PR closed and merged → Testing
+  move-to-testing:
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.action == 'closed' &&
+      github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Move linked issues to Testing
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            const { moveLinkedIssuesToStatus } = await import(
+              '${{ github.workspace }}/.github/scripts/project-utils.mjs'
+            );
+            await moveLinkedIssuesToStatus({
+              github,
+              context,
+              core,
+              prNumber:        context.payload.pull_request.number,
+              projectId:       process.env.PROJECT_ID,
+              statusFieldId:   process.env.STATUS_FIELD_ID,
+              targetStatusId:  process.env.STATUS_TESTING,
+              targetStatusName: 'Testing',
+            });
+
+  # Trigger: PR closed and NOT merged → In Progress
+  move-to-in-progress-on-close:
+    if: >-
+      github.event_name == 'pull_request_target' &&
+      github.event.action == 'closed' &&
+      github.event.pull_request.merged == false
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Move linked issues to In Progress (PR closed unmerged)
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            const { moveLinkedIssuesToStatus } = await import(
+              '${{ github.workspace }}/.github/scripts/project-utils.mjs'
+            );
+            await moveLinkedIssuesToStatus({
+              github,
+              context,
+              core,
+              prNumber:        context.payload.pull_request.number,
+              projectId:       process.env.PROJECT_ID,
+              statusFieldId:   process.env.STATUS_FIELD_ID,
+              targetStatusId:  process.env.STATUS_IN_PROGRESS,
+              targetStatusName: 'In Progress',
+            });
+
+  # Trigger: Review submitted with changes_requested → In Progress
+  move-to-in-progress-on-changes-requested:
+    if: >-
+      github.event_name == 'pull_request_review' &&
+      github.event.action == 'submitted' &&
+      github.event.review.state == 'changes_requested'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Move linked issues to In Progress (changes requested)
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
+          script: |
+            const { moveLinkedIssuesToStatus } = await import(
+              '${{ github.workspace }}/.github/scripts/project-utils.mjs'
+            );
+            await moveLinkedIssuesToStatus({
+              github,
+              context,
+              core,
+              prNumber:        context.payload.pull_request.number,
+              projectId:       process.env.PROJECT_ID,
+              statusFieldId:   process.env.STATUS_FIELD_ID,
+              targetStatusId:  process.env.STATUS_IN_PROGRESS,
+              targetStatusName: 'In Progress',
+            });

@@ -1,64 +1,142 @@
 name: Build JAR on Testing
 
 on:
-  # Trigger for classic Projects (V1): fires when a card is moved between columns
-  project_card:
-    types: [moved]
+  pull_request_target:
+    types: [closed]
+    branches:
+      - develop
 
-permissions:
-  issues: write
-  contents: read
+# Replace placeholder values by running the fetch-project-ids.yml workflow_dispatch
+# helper, then copying the printed IDs into the variables below.
+env:
+  PROJECT_ID:        "PLACEHOLDER_PROJECT_ID"
+  STATUS_FIELD_ID:   "PLACEHOLDER_STATUS_FIELD_ID"
+  STATUS_TESTING_ID: "PLACEHOLDER_STATUS_TESTING_ID"
 
 jobs:
-  check-column:
+  check-should-build:
     runs-on: ubuntu-latest
     outputs:
       should_build: ${{ steps.check.outputs.should_build }}
       issue_number: ${{ steps.check.outputs.issue_number }}
     steps:
-      - name: Check if card moved to Testing column
+      - name: Check if merged PR has a Testing issue
         id: check
         uses: actions/github-script@v7
         with:
+          github-token: ${{ secrets.PROJECT_TOKEN }}
           script: |
-            const card = context.payload.project_card;
-
-            // Only process cards linked to issues (content_url will be set)
-            if (!card.content_url) {
-              console.log('Card is not linked to an issue — skipping.');
+            // Skip if the PR was not merged
+            if (!context.payload.pull_request.merged) {
+              console.log('PR was not merged — skipping.');
               core.setOutput('should_build', 'false');
               core.setOutput('issue_number', '');
               return;
             }
 
-            // Fetch the destination column name
-            const column = await github.rest.projects.getColumn({
-              column_id: card.column_id
+            const prNumber = context.payload.pull_request.number;
+            console.log(`Merged PR #${prNumber} — checking linked issues…`);
+
+            // Find the linked issue via closingIssuesReferences
+            const linkedQuery = `
+              query($owner: String!, $repo: String!, $prNumber: Int!) {
+                repository(owner: $owner, name: $repo) {
+                  pullRequest(number: $prNumber) {
+                    closingIssuesReferences(first: 25) {
+                      nodes {
+                        number
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+
+            const linked = await github.graphql(linkedQuery, {
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              prNumber,
             });
 
-            const columnName = column.data.name;
-            console.log(`Card moved to column: "${columnName}"`);
+            const nodes =
+              linked?.repository?.pullRequest?.closingIssuesReferences?.nodes ?? [];
 
-            // Case-insensitive match for "Testing"
-            if (columnName.toLowerCase() !== 'testing') {
-              console.log('Column is not "Testing" — skipping.');
+            if (nodes.length === 0) {
+              console.log('No linked issues found — skipping.');
               core.setOutput('should_build', 'false');
               core.setOutput('issue_number', '');
               return;
             }
 
-            // Extract the issue number from the content URL
-            const urlParts = card.content_url.split('/');
-            const issueNumber = urlParts[urlParts.length - 1];
-            console.log(`Issue #${issueNumber} moved to Testing — triggering build.`);
+            // Use the first linked issue
+            const issueNumber = nodes[0].number;
+            console.log(`Linked issue: #${issueNumber}`);
 
+            // Query the issue's current Status field value on the project board
+            const statusQuery = `
+              query($owner: String!, $repo: String!, $issueNumber: Int!) {
+                repository(owner: $owner, name: $repo) {
+                  issue(number: $issueNumber) {
+                    projectItems(first: 20) {
+                      nodes {
+                        id
+                        project {
+                          id
+                        }
+                        fieldValueByName(name: "Status") {
+                          ... on ProjectV2ItemFieldSingleSelectValue {
+                            optionId
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `;
+
+            const statusResult = await github.graphql(statusQuery, {
+              owner: context.repo.owner,
+              repo:  context.repo.repo,
+              issueNumber,
+            });
+
+            const projectItems =
+              statusResult?.repository?.issue?.projectItems?.nodes ?? [];
+
+            const projectItem = projectItems.find(
+              (item) => item.project.id === process.env.PROJECT_ID
+            );
+
+            if (!projectItem) {
+              console.log(`Issue #${issueNumber} is not on the project board — skipping.`);
+              core.setOutput('should_build', 'false');
+              core.setOutput('issue_number', '');
+              return;
+            }
+
+            const statusOptionId = projectItem?.fieldValueByName?.optionId ?? null;
+            console.log(`Issue #${issueNumber} status option ID: ${statusOptionId}`);
+
+            if (statusOptionId !== process.env.STATUS_TESTING_ID) {
+              console.log('Issue is not in Testing status — skipping.');
+              core.setOutput('should_build', 'false');
+              core.setOutput('issue_number', '');
+              return;
+            }
+
+            console.log(`Issue #${issueNumber} is in Testing — triggering build.`);
             core.setOutput('should_build', 'true');
-            core.setOutput('issue_number', issueNumber);
+            core.setOutput('issue_number', String(issueNumber));
 
   build:
-    needs: check-column
-    if: needs.check-column.outputs.should_build == 'true'
+    needs: check-should-build
+    if: needs.check-should-build.outputs.should_build == 'true'
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
 
     steps:
       - name: Checkout dev branch
@@ -134,7 +212,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const issueNumber = parseInt('${{ needs.check-column.outputs.issue_number }}', 10);
+            const issueNumber = parseInt('${{ needs.check-should-build.outputs.issue_number }}', 10);
             const runUrl = `${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
             const sha = context.sha;
             const artifactName = '${{ steps.jar.outputs.artifact_name }}';
@@ -146,7 +224,7 @@ jobs:
               body: [
                 '🔨 **Test Build Ready**',
                 '',
-                'This build was triggered automatically when the card was moved to the **Testing** column.',
+                'This build was triggered automatically when the linked PR was merged and the issue was in the **Testing** status.',
                 '',
                 `**Artifact:** \`${artifactName}.jar\``,
                 `**Built from:** \`develop\` branch at commit \`${sha}\``,
