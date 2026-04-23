@@ -12,8 +12,7 @@ package com.anedhel.vext.item;
 
 import com.anedhel.vext.VExtMod;
 import com.anedhel.vext.block.ModBlocks;
-import com.anedhel.vext.block.stonetypes.BlueslateBlocks;
-import com.anedhel.vext.block.stonetypes.ChalkBlocks;
+import com.anedhel.vext.block.stonetypes.ModStoneBlocks;
 import com.anedhel.vext.block.woodtypes.PineBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
@@ -54,10 +53,10 @@ public class ModItemGroups {
 	public static final ItemGroup VEXT_STONE = Registry.register(Registries.ITEM_GROUP,
 			Identifier.of(VExtMod.MOD_ID, "vext_stone"), FabricItemGroup.builder().displayName(
 					Text.translatableWithFallback("itemgroup.vext_stone", "VEXT Stone"))
-					.icon(() -> new ItemStack(BlueslateBlocks.BLUESLATE))
+					.icon(() -> new ItemStack(ModStoneBlocks.CHALK_SET.getStoneVariant("base")))
 					.entries(((displayContext, entries) -> {
-						entries.addAll(BlueslateBlocks.BLUESLATE_SET.getStoneItemGroupList());
-						entries.addAll(ChalkBlocks.CHALK_SET.getStoneItemGroupList());
+						entries.addAll(ModStoneBlocks.BLUESLATE_SET.getStoneItemGroupList());
+						entries.addAll(ModStoneBlocks.CHALK_SET.getStoneItemGroupList());
 					})).build());
 
 	public static final ItemGroup VEXT_INGREDIENTS = Registry.register(Registries.ITEM_GROUP,

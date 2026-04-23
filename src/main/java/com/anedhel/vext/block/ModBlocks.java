@@ -14,8 +14,7 @@ import com.anedhel.vext.VExtMod;
 import com.anedhel.vext.block.custom.CarpentryTable;
 import com.anedhel.vext.block.custom.crops.CornCropBlock;
 import com.anedhel.vext.block.custom.crops.TomatoCropBlock;
-import com.anedhel.vext.block.stonetypes.BlueslateBlocks;
-import com.anedhel.vext.block.stonetypes.ChalkBlocks;
+import com.anedhel.vext.block.stonetypes.ModStoneBlocks;
 import com.anedhel.vext.block.woodtypes.PineBlocks;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
@@ -146,7 +145,7 @@ public class ModBlocks {
 	public static void registerModBlocks(){
 		VExtMod.LOGGER.info("Registering Mod Blocks for " + VExtMod.MOD_ID);
 		registerModWoodBlocks();
-		registerModStoneBlocks();
+		ModStoneBlocks.registerModStoneBlocks();
 	}
 
 	/**
@@ -155,14 +154,5 @@ public class ModBlocks {
 	private static void registerModWoodBlocks() {
 		VExtMod.LOGGER.info("Registering Mod Wood Blocks for " + VExtMod.MOD_ID);
 		PineBlocks.registerPineBlocks();
-	}
-
-	/**
-	 * Registers all mod stone block sets.
-	 */
-	private static void registerModStoneBlocks() {
-		VExtMod.LOGGER.info("Registering Mod Stone Blocks for " + VExtMod.MOD_ID);
-		BlueslateBlocks.registerBlueslateBlocks();
-		ChalkBlocks.registerChalkBlocks();
 	}
 }

@@ -15,7 +15,7 @@
 
 package com.anedhel.vext.world.biome;
 
-import com.anedhel.vext.block.stonetypes.BlueslateBlocks;
+import com.anedhel.vext.block.stonetypes.ModStoneBlocks;
 import net.minecraft.block.Blocks;
 import net.minecraft.world.gen.YOffset;
 import net.minecraft.world.gen.noise.NoiseParametersKeys;
@@ -50,11 +50,12 @@ public class ModMaterialRules {
 		MaterialRules.MaterialRule granite = MaterialRules.block(Blocks.GRANITE.getDefaultState());
 		MaterialRules.MaterialRule diorite = MaterialRules.block(Blocks.DIORITE.getDefaultState());
 		MaterialRules.MaterialRule gravel = MaterialRules.block(Blocks.GRAVEL.getDefaultState());
-		MaterialRules.MaterialRule blueslate = MaterialRules.block(BlueslateBlocks.BLUESLATE.getDefaultState());
+		MaterialRules.MaterialRule blueslate =
+				MaterialRules.block(ModStoneBlocks.BLUESLATE_SET.getStoneVariant("base").getDefaultState());
 
 		MaterialRules.MaterialRule deepslate = MaterialRules.block(Blocks.DEEPSLATE.getDefaultState());
 		MaterialRules.MaterialRule tuff = MaterialRules.block(Blocks.TUFF.getDefaultState());
-		MaterialRules.MaterialRule deepBlueslate = MaterialRules.block(BlueslateBlocks.BLUESLATE.getDefaultState());
+		MaterialRules.MaterialRule deepBlueslate = MaterialRules.block(ModStoneBlocks.BLUESLATE_SET.getStoneVariant("base").getDefaultState());
 
 		MaterialRules.MaterialRule surfaceLayer = MaterialRules.condition(
 				MaterialRules.STONE_DEPTH_FLOOR,
