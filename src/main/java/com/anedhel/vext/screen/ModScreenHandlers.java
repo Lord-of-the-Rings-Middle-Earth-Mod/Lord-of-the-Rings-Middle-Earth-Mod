@@ -27,13 +27,11 @@ import net.minecraft.util.Identifier;
  * @author Moritz Rohleder
  * @since 0.1.0
  */
-
 public class ModScreenHandlers {
 
 	public static final ScreenHandlerType<CarpentryTableScreenHandler> CARPENTRY_TABLE_SCREEN_HANDLER =
 			Registry.register(Registries.SCREEN_HANDLER, Identifier.of(VExtMod.MOD_ID, "carpentry_screen_handler"),
 					new ScreenHandlerType<>(CarpentryTableScreenHandler::new, FeatureFlags.VANILLA_FEATURES));
-
 
 	public static void registerScreenHandlers() {
 		VExtMod.LOGGER.info("Registering Screen Handlers for " + VExtMod.MOD_ID);

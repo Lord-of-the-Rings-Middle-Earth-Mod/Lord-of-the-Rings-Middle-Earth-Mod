@@ -54,7 +54,6 @@ public class VExtModClient implements ClientModInitializer {
 		BlockRenderLayerMap.putBlock(ModBlocks.CARPENTRY_TABLE, BlockRenderLayer.CUTOUT);
 		HandledScreens.register(ModScreenHandlers.CARPENTRY_TABLE_SCREEN_HANDLER, CarpentryTableScreen::new);
 
-
 		EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.HOBBIT, HobbitModel::getTexturedModelData);
 		EntityRendererRegistry.register(ModEntities.HOBBIT, HobbitRenderer::new);
 	}
@@ -76,7 +75,6 @@ public class VExtModClient implements ClientModInitializer {
 			BlockRenderLayerMap.putBlock(woodSet.getPlanksVariant("trapdoor"), BlockRenderLayer.CUTOUT);
 
 			BlockRenderLayerMap.putBlock(woodSet.getSapling(), BlockRenderLayer.CUTOUT);
-
 		}
 	}
 
