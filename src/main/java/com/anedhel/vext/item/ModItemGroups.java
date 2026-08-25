@@ -127,6 +127,13 @@ public class ModItemGroups {
 						entries.add(ModItems.COOKED_CORN);
 					})).build());
 
+	public static final ItemGroup VEXT_Nature_Deco = Registry.register(Registries.ITEM_GROUP,
+			Identifier.of(VExtMod.MOD_ID, "nature_deco"), FabricItemGroup.builder().displayName(
+							Text.translatableWithFallback("itemgroup.vext_naturedeco", "VEXT Nature Deco"))
+					.icon(() -> new ItemStack(ModBlocks.SPIDER_WEB))
+					.entries(((displayContext, entries) -> {
+						entries.add(ModBlocks.SPIDER_WEB);
+					})).build());
 	/**
 	 * Currently disable to not include the Hobbit_Spawn Egg into the game, as Hobbits are bugged without fix.
 	 *

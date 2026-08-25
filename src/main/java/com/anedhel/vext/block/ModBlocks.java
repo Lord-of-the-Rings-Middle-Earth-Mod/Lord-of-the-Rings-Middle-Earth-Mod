@@ -12,11 +12,13 @@ package com.anedhel.vext.block;
 
 import com.anedhel.vext.VExtMod;
 import com.anedhel.vext.block.custom.CarpentryTable;
+import com.anedhel.vext.block.custom.SpiderWebBlock;
 import com.anedhel.vext.block.custom.crops.CornCropBlock;
 import com.anedhel.vext.block.custom.crops.TomatoCropBlock;
 import com.anedhel.vext.block.stonetypes.BlueslateBlocks;
 import com.anedhel.vext.block.stonetypes.ChalkBlocks;
 import com.anedhel.vext.block.woodtypes.PineBlocks;
+import com.anedhel.vext.sound.ModSounds;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.entity.effect.StatusEffects;
@@ -94,6 +96,9 @@ public class ModBlocks {
 
 	public static final Block CARPENTRY_TABLE = registerBlock("carpentry_table",
 			settings -> new CarpentryTable(settings.strength(2.5f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
+
+	public static final Block SPIDER_WEB = registerBlock("spider_web",
+	settings -> new SpiderWebBlock(settings.breakInstantly().sounds(ModSounds.SPIDER_WEB_SOUNDS).nonOpaque()));
 
 	/**
 	 * Registers a {@link Block} and creates its associated {@link BlockItem}.

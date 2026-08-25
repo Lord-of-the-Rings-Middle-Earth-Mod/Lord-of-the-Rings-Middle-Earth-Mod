@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "minecraft:string"
+    },
+  "pattern": [
+    " #",
+    "# "
+  ],
+  "result": {
+    "count": 4,
+    "id": "vext:spider_web"
+  }
+}
