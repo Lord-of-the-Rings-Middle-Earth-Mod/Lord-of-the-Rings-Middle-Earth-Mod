@@ -252,9 +252,8 @@ public class SpiderWebBlock extends Block {
                 world.breakBlock(pos, false);
             }
         }
-    /**
-     * not sure: it breaks around 5 blocks fall, but the head counts as hit so really high up
-     */
+
+    /*not sure: it breaks around 5 blocks fall, but the head counts as hit so really high up*/
         Vec3d velocity = entity.getVelocity();
         double speed = velocity.length();
             if (speed > 0.9) {
