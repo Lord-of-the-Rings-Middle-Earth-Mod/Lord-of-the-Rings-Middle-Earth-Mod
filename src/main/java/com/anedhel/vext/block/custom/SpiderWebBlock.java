@@ -19,6 +19,9 @@ import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldView;
 import net.minecraft.world.tick.ScheduledTickView;
+import java.util.Collections;
+import java.util.EnumMap;
+import java.util.Map;
 import org.jspecify.annotations.Nullable;
 
 /**
@@ -36,12 +39,99 @@ import org.jspecify.annotations.Nullable;
 
 public class SpiderWebBlock extends Block {
     public static final EnumProperty<SpiderWebType> SPIDER_WEB_TYPE = EnumProperty.of("spider_web_type", SpiderWebType.class);
-    private static final VoxelShape SHAPE = Block.createCuboidShape(4.0D, 4.0D, 4.0D, 12.0D, 12.0D, 12.0D);
+    private static final Map<SpiderWebType, VoxelShape> SHAPES =
+    createShapes();
 
     public SpiderWebBlock(Settings settings) {
         super(settings);
         setDefaultState(getStateManager().getDefaultState().with(SPIDER_WEB_TYPE, SpiderWebType.UP));
     }
+
+    /**
+     * Creates a map of {@link SpiderWebType} to their corresponding {@link VoxelShape}.
+     */
+    private static Map<SpiderWebType, VoxelShape> createShapes() {
+        EnumMap<SpiderWebType, VoxelShape> shapes =
+                new EnumMap<>(SpiderWebType.class);
+
+        VoxelShape shapenorth = Block.createCuboidShape(
+                0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 1.0D
+        );
+        VoxelShape shapeeast = Block.createCuboidShape(
+                15.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D
+        );
+        VoxelShape shapesouth = Block.createCuboidShape(
+                0.0D, 0.0D, 15.0D, 16.0D, 16.0D, 16.0D
+        );
+        VoxelShape shapewest = Block.createCuboidShape(
+                0.0D, 0.0D, 0.0D, 1.0D, 16.0D, 16.0D
+        );
+        VoxelShape shapeup = Block.createCuboidShape(
+                5.0D, 7.0D, 6.0D, 10.0D, 16.0D, 10.0D
+        );
+        VoxelShape shapetwoside = Block.createCuboidShape(
+                0.0D, 13.0D, 0.0D, 16.0D, 16.0D, 16.0D
+        );
+        VoxelShape shapethreeside = Block.createCuboidShape(
+                0.0D, 7.0D, 0.0D, 16.0D, 16.0D, 16.0D
+        );
+        VoxelShape shapenorthsouth = Block.createCuboidShape(
+                4.0D, 7.0D, 0.0D, 12.0D, 16.0D, 16.0D
+        );
+        VoxelShape shapeeastwest = Block.createCuboidShape(
+                0.0D, 7.0D, 4.0D, 16.0D, 16.0D, 12.0D
+        );
+        VoxelShape shapenorthup = Block.createCuboidShape(
+                0.0D, 7.0D, 1.0D, 10.0D, 16.0D, 10.0D
+        );
+        VoxelShape shapeeastup = Block.createCuboidShape(
+                6.0D, 7.0D, 5.0D, 15.0D, 16.0D, 10.0D
+        );
+        VoxelShape shapesouthup = Block.createCuboidShape(
+                6.0D, 7.0D, 6.0D, 11.0D, 16.0D, 15.0D
+        );
+        VoxelShape shapewestup = Block.createCuboidShape(
+                1.0D, 7.0D, 6.0D, 10.0D, 16.0D, 11.0D
+        );
+        VoxelShape shapefull = Block.createCuboidShape(
+                0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D
+        );
+
+        shapes.put(SpiderWebType.NORTH, shapenorth);
+        shapes.put(SpiderWebType.EAST, shapeeast);
+        shapes.put(SpiderWebType.SOUTH, shapesouth);
+        shapes.put(SpiderWebType.WEST, shapewest);
+        shapes.put(SpiderWebType.UP, shapeup);
+        shapes.put(SpiderWebType.NORTH_EAST, shapetwoside);
+        shapes.put(SpiderWebType.NORTH_SOUTH, VoxelShapes.union(shapenorth, shapesouth, shapenorthsouth));
+        shapes.put(SpiderWebType.NORTH_WEST, shapetwoside);
+        shapes.put(SpiderWebType.NORTH_UP, VoxelShapes.union(shapenorth, shapenorthup));
+        shapes.put(SpiderWebType.EAST_SOUTH, shapetwoside);
+        shapes.put(SpiderWebType.EAST_WEST, VoxelShapes.union(shapeeast, shapewest, shapeeastwest));
+        shapes.put(SpiderWebType.EAST_UP, VoxelShapes.union(shapeeast, shapeeastup));
+        shapes.put(SpiderWebType.SOUTH_WEST, shapetwoside);
+        shapes.put(SpiderWebType.SOUTH_UP, VoxelShapes.union(shapesouth, shapesouthup));
+        shapes.put(SpiderWebType.WEST_UP, VoxelShapes.union(shapewest, shapewestup));
+        shapes.put(SpiderWebType.NORTH_EAST_SOUTH, shapethreeside);
+        shapes.put(SpiderWebType.NORTH_EAST_WEST, shapethreeside);
+        shapes.put(SpiderWebType.NORTH_EAST_UP, shapefull);
+        shapes.put(SpiderWebType.NORTH_SOUTH_WEST, shapethreeside);
+        shapes.put(SpiderWebType.NORTH_SOUTH_UP, VoxelShapes.union(shapenorth, shapesouth, shapenorthsouth));
+        shapes.put(SpiderWebType.NORTH_WEST_UP, shapefull);
+        shapes.put(SpiderWebType.EAST_SOUTH_WEST, shapethreeside);
+        shapes.put(SpiderWebType.EAST_SOUTH_UP, shapefull);
+        shapes.put(SpiderWebType.EAST_WEST_UP, VoxelShapes.union(shapeeast, shapewest, shapeeastwest));
+        shapes.put(SpiderWebType.SOUTH_WEST_UP, shapefull);
+        shapes.put(SpiderWebType.NORTH_EAST_SOUTH_WEST, shapethreeside);
+        shapes.put(SpiderWebType.NORTH_EAST_SOUTH_UP, shapefull);
+        shapes.put(SpiderWebType.NORTH_EAST_WEST_UP, shapefull);
+        shapes.put(SpiderWebType.NORTH_SOUTH_WEST_UP, shapefull);
+        shapes.put(SpiderWebType.EAST_SOUTH_WEST_UP, shapefull);
+        shapes.put(SpiderWebType.NORTH_EAST_SOUTH_WEST_UP, shapefull);
+
+        return Collections.unmodifiableMap(shapes);
+    }
+
 
     /**
      * Determines the updated block state for this SpiderWeb block based on the presence of adjacent full blocks.
@@ -121,7 +211,7 @@ public class SpiderWebBlock extends Block {
     }
 
     /**
-     * Updates the block state when a neigboring block is updated.
+     * Updates the block state when a neighboring block is updated.
      *
      * @param state the state of this block
      * @param world the world
@@ -138,7 +228,7 @@ public class SpiderWebBlock extends Block {
                                                    BlockPos pos, Direction direction, BlockPos neighborPos, BlockState neighborState, Random random) {
         if (!state.canPlaceAt(world, pos)) {
             if (world instanceof World realWorld && !realWorld.isClient()) {
-                realWorld.breakBlock(pos, false); // false = no drops
+                realWorld.breakBlock(pos, true);
             }
             return state;
         }
@@ -174,7 +264,8 @@ public class SpiderWebBlock extends Block {
 
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return SHAPE;
+        SpiderWebType type = state.get(SPIDER_WEB_TYPE);
+        return SHAPES.get(type);
     }
 
     /**

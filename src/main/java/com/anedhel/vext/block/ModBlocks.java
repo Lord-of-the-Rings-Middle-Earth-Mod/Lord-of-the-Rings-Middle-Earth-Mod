@@ -98,7 +98,7 @@ public class ModBlocks {
 			settings -> new CarpentryTable(settings.strength(2.5f).sounds(BlockSoundGroup.WOOD).nonOpaque()));
 
 	public static final Block SPIDER_WEB = registerBlock("spider_web",
-	settings -> new SpiderWebBlock(settings.strength(5.0f).requiresTool().sounds(ModSounds.SPIDER_WEB_SOUNDS).nonOpaque()));
+	settings -> new SpiderWebBlock(settings.breakInstantly().sounds(ModSounds.SPIDER_WEB_SOUNDS).nonOpaque()));
 
 	public static final Block FACTION_BLOCK = registerBlock("faction_block",
 			settings -> new FactionBlock(settings.strength(5.0f).requiresTool().sounds(BlockSoundGroup.WOOD).nonOpaque()));
