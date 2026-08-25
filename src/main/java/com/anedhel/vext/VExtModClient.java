@@ -20,7 +20,6 @@ import com.anedhel.vext.entity.client.HobbitRenderer;
 import com.anedhel.vext.entity.client.ModEntityModelLayers;
 import com.anedhel.vext.screen.ModScreenHandlers;
 import com.anedhel.vext.screen.custom.CarpentryTableScreen;
-import com.anedhel.vext.screen.custom.FactionBlockScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
@@ -55,7 +54,6 @@ public class VExtModClient implements ClientModInitializer {
 		BlockRenderLayerMap.putBlock(ModBlocks.CARPENTRY_TABLE, BlockRenderLayer.CUTOUT);
 		HandledScreens.register(ModScreenHandlers.CARPENTRY_TABLE_SCREEN_HANDLER, CarpentryTableScreen::new);
 
-		HandledScreens.register(ModScreenHandlers.FACTION_BLOCK_SCREEN_HANDLER, FactionBlockScreen::new);
 
 		EntityModelLayerRegistry.registerModelLayer(ModEntityModelLayers.HOBBIT, HobbitModel::getTexturedModelData);
 		EntityRendererRegistry.register(ModEntities.HOBBIT, HobbitRenderer::new);

@@ -113,12 +113,11 @@ public class ModItemGroups {
 						entries.add(ModItems.COOKED_CORN);
 					})).build());
 
-	public static final ItemGroup VEXT_CITYBUILDER = Registry.register(Registries.ITEM_GROUP,
-			Identifier.of(VExtMod.MOD_ID, "vext_citybuilder"), FabricItemGroup.builder().displayName(
-							Text.translatableWithFallback("itemgroup.vext_citybuilder", "VEXT CityBuilder"))
-					.icon(() -> new ItemStack(ModBlocks.FACTION_BLOCK))
+	public static final ItemGroup NaturalDeco = Registry.register(Registries.ITEM_GROUP,
+			Identifier.of(VExtMod.MOD_ID, "natural_deco"), FabricItemGroup.builder().displayName(
+							Text.translatableWithFallback("itemgroup.vext_naturaldeco", "VEXT Natural Deco"))
+					.icon(() -> new ItemStack(ModBlocks.SPIDER_WEB))
 					.entries(((displayContext, entries) -> {
-						entries.add(ModBlocks.FACTION_BLOCK);
 						entries.add(ModBlocks.SPIDER_WEB);
 					})).build());
 	/**
