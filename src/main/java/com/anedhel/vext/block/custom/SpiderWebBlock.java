@@ -2,6 +2,7 @@ package com.anedhel.vext.block.custom;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.MultifaceBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityCollisionHandler;
@@ -140,12 +141,24 @@ public class SpiderWebBlock extends Block {
      * @param pos the position of this block in the world
      * @return the updated block state with the correct {@link SpiderWebType}
      */
+
+    private boolean canAttachTo(WorldView world, BlockPos pos, Direction direction) {
+        BlockState state = world.getBlockState(pos);
+
+        return MultifaceBlock.canGrowOn(
+                world,
+                direction,
+                pos,
+                state
+        );
+    }
+
     private BlockState getUpdatedState(WorldView world, BlockPos pos) {
-        boolean hasBlockNorth = world.getBlockState(pos.north()).isSideSolidFullSquare(world, pos.north(), Direction.SOUTH);
-        boolean hasBlockEast = world.getBlockState(pos.east()).isSideSolidFullSquare(world, pos.east(), Direction.WEST);
-        boolean hasBlockSouth = world.getBlockState(pos.south()).isSideSolidFullSquare(world, pos.south(), Direction.NORTH);
-        boolean hasBlockWest = world.getBlockState(pos.west()).isSideSolidFullSquare(world, pos.west(), Direction.EAST);
-        boolean hasBlockUp = world.getBlockState(pos.up()).isSideSolidFullSquare(world, pos.up(), Direction.DOWN);
+        boolean hasBlockNorth = canAttachTo(world, pos.north(), Direction.SOUTH);
+        boolean hasBlockEast = canAttachTo(world, pos.east(), Direction.WEST);
+        boolean hasBlockSouth = canAttachTo(world, pos.south(), Direction.NORTH);
+        boolean hasBlockWest = canAttachTo(world, pos.west(), Direction.EAST);
+        boolean hasBlockUp = canAttachTo(world, pos.up(), Direction.DOWN);
 
         // Bitmask: 1 = North, 2 = East, 4 = South, 8 = West, 16 Up
         int mask = 0;
@@ -278,16 +291,11 @@ public class SpiderWebBlock extends Block {
 
     @Override
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        boolean hasBlockNorth = world.getBlockState(pos.north())
-                .isSideSolidFullSquare(world, pos.north(), Direction.SOUTH);
-        boolean hasBlockEast = world.getBlockState(pos.east())
-                .isSideSolidFullSquare(world, pos.east(), Direction.WEST);
-        boolean hasBlockSouth = world.getBlockState(pos.south())
-                .isSideSolidFullSquare(world, pos.south(), Direction.NORTH);
-        boolean hasBlockWest = world.getBlockState(pos.west())
-                .isSideSolidFullSquare(world, pos.west(), Direction.EAST);
-        boolean hasBlockUp = world.getBlockState(pos.up())
-                .isSideSolidFullSquare(world, pos.up(), Direction.DOWN);
+        boolean hasBlockNorth = canAttachTo(world, pos.north(), Direction.SOUTH);
+        boolean hasBlockEast = canAttachTo(world, pos.east(), Direction.WEST);
+        boolean hasBlockSouth = canAttachTo(world, pos.south(), Direction.NORTH);
+        boolean hasBlockWest = canAttachTo(world, pos.west(), Direction.EAST);
+        boolean hasBlockUp = canAttachTo(world, pos.up(), Direction.DOWN);
 
         return hasBlockNorth || hasBlockEast || hasBlockSouth || hasBlockWest || hasBlockUp;
     }
